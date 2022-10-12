@@ -9,7 +9,7 @@ from signal import signal, SIGPIPE, SIG_DFL
 signal(SIGPIPE, SIG_DFL)
 
 tmp_dir = '/tmp/tt'
-DEFAULT_NUM_PROJECTS = 498
+DEFAULT_NUM_PROJECTS = 473
 
 
 class Projects():
@@ -365,6 +365,8 @@ class CaravelConfig():
                             fh.write(instance)
 
                     num_macros_placed += 1
+
+        logging.info("total user macros placed: {}".format(num_macros_placed))
 
         # macro_power.tcl: extra file for macro power hooks
         logging.info("creating macro_power.tcl")
