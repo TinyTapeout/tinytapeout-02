@@ -56,9 +56,15 @@ class Projects():
     # filling the space with default projects is handled by returning the default on exception
     def get_macro_instance(self, id):
         try:
-            return "scan_wrapper_{}_{}".format(self.wokwi_ids[id], id)
+            return "user_module_{}_{}".format(self.wokwi_ids[id], id)
         except IndexError:
-            return "scan_wrapper_{}_{}".format(self.wokwi_ids[self.default_project], id)
+            return "user_module_{}_{}".format(self.wokwi_ids[self.default_project], id)
+
+    def get_scanchain_instance(self, id):
+        try:
+            return "scanchain_{}".format(id)
+        except IndexError:
+            return "scanchain_{}".format(id)
 
     def get_wokwi_id(self, id):
         try:
@@ -68,37 +74,37 @@ class Projects():
 
     def get_macro_gds_name(self, id):
         try:
-            return "scan_wrapper_{}.gds".format(self.wokwi_ids[id])
+            return "user_module_{}.gds".format(self.wokwi_ids[id])
         except IndexError:
-            return "scan_wrapper_{}.gds".format(self.wokwi_ids[self.default_project])
+            return "user_module_{}.gds".format(self.wokwi_ids[self.default_project])
 
     def get_macro_lef_name(self, id):
         try:
-            return "scan_wrapper_{}.lef".format(self.wokwi_ids[id])
+            return "user_module_{}.lef".format(self.wokwi_ids[id])
         except IndexError:
-            return "scan_wrapper_{}.lef".format(self.wokwi_ids[self.default_project])
+            return "user_module_{}.lef".format(self.wokwi_ids[self.default_project])
 
     def get_macro_name(self, id):
         try:
-            return "scan_wrapper_{}".format(self.wokwi_ids[id])
+            return "user_module_{}".format(self.wokwi_ids[id])
         except IndexError:
-            return "scan_wrapper_{}".format(self.wokwi_ids[self.default_project])
+            return "user_module_{}".format(self.wokwi_ids[self.default_project])
 
     def get_verilog_include(self, id):
         try:
-            return '`include "scan_wrapper_{}.v"\n'.format(self.wokwi_ids[id])
+            return '`include "user_module_{}.v"\n'.format(self.wokwi_ids[id])
         except IndexError:
             return ''
 
     def get_gl_verilog_names(self, id):
         try:
-            return ['scan_wrapper_{}.v'.format(self.wokwi_ids[id])]
+            return ['user_module_{}.v'.format(self.wokwi_ids[id])]
         except IndexError:
             return []
 
     def get_verilog_names(self, id):
         try:
-            return ["scan_wrapper_{}.v".format(self.wokwi_ids[id]), "user_module_{}.v".format(self.wokwi_ids[id])]
+            return ["user_module_{}.v".format(self.wokwi_ids[id])]
         except IndexError:
             return []
 
@@ -205,10 +211,9 @@ class Projects():
 
         # copy all important files to the correct places. Everything is dependent on the id
         files = [
-            ("/tmp/tt/runs/wokwi/results/final/gds/scan_wrapper_{}.gds".format(wokwi_id), "gds/scan_wrapper_{}.gds".format(wokwi_id)),
-            ("/tmp/tt/runs/wokwi/results/final/lef/scan_wrapper_{}.lef".format(wokwi_id), "lef/scan_wrapper_{}.lef".format(wokwi_id)),
-            ("/tmp/tt/runs/wokwi/results/final/verilog/gl/scan_wrapper_{}.v".format(wokwi_id), "verilog/gl/scan_wrapper_{}.v".format(wokwi_id)),
-            ("/tmp/tt/src/scan_wrapper_{}.v".format(wokwi_id), "verilog/rtl/scan_wrapper_{}.v".format(wokwi_id)),
+            ("/tmp/tt/runs/wokwi/results/final/gds/user_module_{}.gds".format(wokwi_id), "gds/user_module_{}.gds".format(wokwi_id)),
+            ("/tmp/tt/runs/wokwi/results/final/lef/user_module_{}.lef".format(wokwi_id), "lef/user_module_{}.lef".format(wokwi_id)),
+            ("/tmp/tt/runs/wokwi/results/final/verilog/gl/user_module_{}.v".format(wokwi_id), "verilog/gl/user_module_{}.v".format(wokwi_id)),
             ("/tmp/tt/src/user_module_{}.v".format(wokwi_id), "verilog/rtl/user_module_{}.v".format(wokwi_id)),
             ]
 
@@ -219,7 +224,6 @@ class Projects():
 
         # Uniquify the Verilog for this project
         self.uniquify_project(wokwi_id, [
-            f"verilog/rtl/scan_wrapper_{wokwi_id}.v",
             f"verilog/rtl/user_module_{wokwi_id}.v",
         ])
 
@@ -307,10 +311,11 @@ class CaravelConfig():
     def create_macro_config(self):
         start_x = 80
         start_y = 80
-        step_x  = 140
+        step_x  = 145
         step_y  = 135
         rows    = 25
-        cols    = 20
+        cols    = 19
+        scanchain_w = 36
 
         num_macros_placed = 0
 
@@ -332,11 +337,32 @@ class CaravelConfig():
                         continue
 
                     if num_macros_placed < self.num_projects:
-                        macro_instance = self.projects.get_macro_instance(num_macros_placed)
-                        instance = "{} {:<4} {:<4} {}\n".format(
-                            macro_instance, start_x + col * step_x, start_y + row * step_y, orientation
-                        )
-                        fh.write(instance)
+                        if orientation == 'N':
+                            # scanchain first
+                            macro_instance = self.projects.get_scanchain_instance(num_macros_placed)
+                            instance = "{} {:<4} {:<4} {}\n".format(
+                                macro_instance, start_x + col * step_x, start_y + row * step_y, orientation
+                            )
+                            fh.write(instance)
+
+                            macro_instance = self.projects.get_macro_instance(num_macros_placed)
+                            instance = "{} {:<4} {:<4} {}\n".format(
+                                macro_instance, start_x + scanchain_w + col * step_x, start_y + row * step_y, orientation
+                            )
+                            fh.write(instance)
+                        else:
+                            # macro first
+                            macro_instance = self.projects.get_macro_instance(num_macros_placed)
+                            instance = "{} {:<4} {:<4} {}\n".format(
+                                macro_instance, start_x + col * step_x, start_y + row * step_y, orientation
+                            )
+                            fh.write(instance)
+
+                            macro_instance = self.projects.get_scanchain_instance(num_macros_placed)
+                            instance = "{} {:<4} {:<4} {}\n".format(
+                                macro_instance, start_x + (step_x - scanchain_w) + col * step_x, start_y + row * step_y, orientation
+                            )
+                            fh.write(instance)
 
                     num_macros_placed += 1
 
@@ -349,6 +375,9 @@ class CaravelConfig():
             fh.write(" vccd1 vssd1 vccd1 vssd1")
             fh.write(", \\\n")
             for i in range(self.num_projects):
+                fh.write("	")
+                fh.write(self.projects.get_scanchain_instance(i))
+                fh.write(" vccd1 vssd1 vccd1 vssd1, \\\n")
                 fh.write("	")
                 fh.write(self.projects.get_macro_instance(i))
                 fh.write(" vccd1 vssd1 vccd1 vssd1")
@@ -371,6 +400,7 @@ class CaravelConfig():
         with open("openlane/user_project_wrapper/extra_lef_gds.tcl", 'w') as fh:
             fh.write('set ::env(EXTRA_LEFS) "\\\n')
             fh.write("$script_dir/../../lef/scan_controller.lef \\\n")
+            fh.write("$script_dir/../../lef/scanchain.lef \\\n")
             for i, lef in enumerate(lefs):
                 fh.write("$script_dir/../../lef/{}".format(lef))
                 if i != len(lefs) - 1:
@@ -379,6 +409,7 @@ class CaravelConfig():
                     fh.write('"\n')
             fh.write('set ::env(EXTRA_GDS_FILES) "\\\n')
             fh.write("$script_dir/../../gds/scan_controller.gds \\\n")
+            fh.write("$script_dir/../../gds/scanchain.gds \\\n")
             for i, gds in enumerate(gdss):
                 fh.write("$script_dir/../../gds/{}".format(gds))
                 if i != len(gdss) - 1:
@@ -441,14 +472,16 @@ class CaravelConfig():
             # Pickup the Wokwi design ID and github URL for the project
             wk_id  = self.projects.get_wokwi_id(idx)
             giturl = self.projects.get_giturl(idx)
-            logging.debug("instance %(idx)d scan_wrapper_%(wk_id)s", { "idx"  : idx,
+            logging.debug("instance %(idx)d user_module_%(wk_id)s", { "idx"  : idx,
                                                                        "wk_id": wk_id })
             # Append the instance to the body
             body += [
                 "",
                 f"// [{idx:03d}] {giturl}",
                 f"wire {pfx}_clk_out, {pfx}_data_out, {pfx}_scan_out, {pfx}_latch_out;",
-                f"scan_wrapper_{wk_id} #(.NUM_IOS(8)) {self.projects.get_macro_instance(idx)} (",
+                f"wire [7:0] {pfx}_module_data_in;",
+                f"wire [7:0] {pfx}_module_data_out;",
+                f"scanchain #(.NUM_IOS(8)) {self.projects.get_scanchain_instance(idx)} (",
                 f"    .clk_in          ({prev_pfx}_clk_out),",
                 f"    .data_in         ({prev_pfx}_data_out),",
                 f"    .scan_select_in  ({prev_pfx}_scan_out),",
@@ -456,8 +489,20 @@ class CaravelConfig():
                 f"    .clk_out         ({pfx}_clk_out),",
                 f"    .data_out        ({pfx}_data_out),",
                 f"    .scan_select_out ({pfx}_scan_out),",
-                f"    .latch_enable_out({pfx}_latch_out)",
+                f"    .latch_enable_out({pfx}_latch_out),",
+                f"    .module_data_in  ({pfx}_module_data_in),",
+                f"    .module_data_out ({pfx}_module_data_out)",
                 ");"
+            ]
+
+            # Append the user module to the body
+            body += [
+                "",
+                f"user_module_{wk_id} {self.projects.get_macro_instance(idx)} (",
+                f"    .io_in  ({pfx}_module_data_in),",
+                f"    .io_out ({pfx}_module_data_out)",
+                ");"
+
             ]
 
         # Link the final design back to the scan controller
@@ -489,6 +534,7 @@ class CaravelConfig():
 
         with open('verilog/rtl/user_project_includes.v', 'w') as fh:
             fh.write('`include "scan_controller/scan_controller.v"\n')
+            fh.write('`include "scanchain/scanchain.v"\n')
             for verilog in verilogs:
                 fh.write(verilog)
 
@@ -500,6 +546,7 @@ class CaravelConfig():
         with open('verilog/includes/includes.rtl.caravel_user_project', 'w') as fh:
             fh.write('-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/rtl/scan_controller/scan_controller.v\n')
+            fh.write('-v $(USER_PROJECT_VERILOG)/rtl/scanchain/scanchain.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/rtl/cells.v\n')
             for verilog in verilog_files:
                 fh.write('-v $(USER_PROJECT_VERILOG)/rtl/{}\n'.format(verilog))
@@ -512,6 +559,7 @@ class CaravelConfig():
         with open('verilog/includes/includes.gl.caravel_user_project', 'w') as fh:
             fh.write('-v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/gl/scan_controller.v\n')
+            fh.write('-v $(USER_PROJECT_VERILOG)/gl/scanchain.v\n')
             for verilog in verilog_files:
                 fh.write('-v $(USER_PROJECT_VERILOG)/gl/{}\n'.format(verilog))
 

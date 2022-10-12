@@ -53,90 +53,610 @@ module user_project_wrapper (user_clock2,
  output [31:0] wbs_dat_o;
  input [3:0] wbs_sel_i;
 
- wire \clk[0] ;
- wire \clk[10] ;
- wire \clk[11] ;
- wire \clk[12] ;
- wire \clk[13] ;
- wire \clk[14] ;
- wire \clk[15] ;
- wire \clk[16] ;
- wire \clk[17] ;
- wire \clk[18] ;
- wire \clk[19] ;
- wire \clk[1] ;
- wire \clk[20] ;
- wire \clk[2] ;
- wire \clk[3] ;
- wire \clk[4] ;
- wire \clk[5] ;
- wire \clk[6] ;
- wire \clk[7] ;
- wire \clk[8] ;
- wire \clk[9] ;
- wire \data[0] ;
- wire \data[10] ;
- wire \data[11] ;
- wire \data[12] ;
- wire \data[13] ;
- wire \data[14] ;
- wire \data[15] ;
- wire \data[16] ;
- wire \data[17] ;
- wire \data[18] ;
- wire \data[19] ;
- wire \data[1] ;
- wire \data[20] ;
- wire \data[2] ;
- wire \data[3] ;
- wire \data[4] ;
- wire \data[5] ;
- wire \data[6] ;
- wire \data[7] ;
- wire \data[8] ;
- wire \data[9] ;
- wire \latch[0] ;
- wire \latch[10] ;
- wire \latch[11] ;
- wire \latch[12] ;
- wire \latch[13] ;
- wire \latch[14] ;
- wire \latch[15] ;
- wire \latch[16] ;
- wire \latch[17] ;
- wire \latch[18] ;
- wire \latch[19] ;
- wire \latch[1] ;
- wire \latch[20] ;
- wire \latch[2] ;
- wire \latch[3] ;
- wire \latch[4] ;
- wire \latch[5] ;
- wire \latch[6] ;
- wire \latch[7] ;
- wire \latch[8] ;
- wire \latch[9] ;
- wire \scan[0] ;
- wire \scan[10] ;
- wire \scan[11] ;
- wire \scan[12] ;
- wire \scan[13] ;
- wire \scan[14] ;
- wire \scan[15] ;
- wire \scan[16] ;
- wire \scan[17] ;
- wire \scan[18] ;
- wire \scan[19] ;
- wire \scan[1] ;
- wire \scan[20] ;
- wire \scan[2] ;
- wire \scan[3] ;
- wire \scan[4] ;
- wire \scan[5] ;
- wire \scan[6] ;
- wire \scan[7] ;
- wire \scan[8] ;
- wire \scan[9] ;
+ wire sc_clk_in;
+ wire sc_clk_out;
+ wire sc_data_in;
+ wire sc_data_out;
+ wire sc_latch_out;
+ wire sc_scan_out;
+ wire sw_000_clk_out;
+ wire sw_000_data_out;
+ wire sw_000_latch_out;
+ wire \sw_000_module_data_in[0] ;
+ wire \sw_000_module_data_in[1] ;
+ wire \sw_000_module_data_in[2] ;
+ wire \sw_000_module_data_in[3] ;
+ wire \sw_000_module_data_in[4] ;
+ wire \sw_000_module_data_in[5] ;
+ wire \sw_000_module_data_in[6] ;
+ wire \sw_000_module_data_in[7] ;
+ wire \sw_000_module_data_out[0] ;
+ wire \sw_000_module_data_out[1] ;
+ wire \sw_000_module_data_out[2] ;
+ wire \sw_000_module_data_out[3] ;
+ wire \sw_000_module_data_out[4] ;
+ wire \sw_000_module_data_out[5] ;
+ wire \sw_000_module_data_out[6] ;
+ wire \sw_000_module_data_out[7] ;
+ wire sw_000_scan_out;
+ wire sw_001_clk_out;
+ wire sw_001_data_out;
+ wire sw_001_latch_out;
+ wire \sw_001_module_data_in[0] ;
+ wire \sw_001_module_data_in[1] ;
+ wire \sw_001_module_data_in[2] ;
+ wire \sw_001_module_data_in[3] ;
+ wire \sw_001_module_data_in[4] ;
+ wire \sw_001_module_data_in[5] ;
+ wire \sw_001_module_data_in[6] ;
+ wire \sw_001_module_data_in[7] ;
+ wire \sw_001_module_data_out[0] ;
+ wire \sw_001_module_data_out[1] ;
+ wire \sw_001_module_data_out[2] ;
+ wire \sw_001_module_data_out[3] ;
+ wire \sw_001_module_data_out[4] ;
+ wire \sw_001_module_data_out[5] ;
+ wire \sw_001_module_data_out[6] ;
+ wire \sw_001_module_data_out[7] ;
+ wire sw_001_scan_out;
+ wire sw_002_clk_out;
+ wire sw_002_data_out;
+ wire sw_002_latch_out;
+ wire \sw_002_module_data_in[0] ;
+ wire \sw_002_module_data_in[1] ;
+ wire \sw_002_module_data_in[2] ;
+ wire \sw_002_module_data_in[3] ;
+ wire \sw_002_module_data_in[4] ;
+ wire \sw_002_module_data_in[5] ;
+ wire \sw_002_module_data_in[6] ;
+ wire \sw_002_module_data_in[7] ;
+ wire \sw_002_module_data_out[0] ;
+ wire \sw_002_module_data_out[1] ;
+ wire \sw_002_module_data_out[2] ;
+ wire \sw_002_module_data_out[3] ;
+ wire \sw_002_module_data_out[4] ;
+ wire \sw_002_module_data_out[5] ;
+ wire \sw_002_module_data_out[6] ;
+ wire \sw_002_module_data_out[7] ;
+ wire sw_002_scan_out;
+ wire sw_003_clk_out;
+ wire sw_003_data_out;
+ wire sw_003_latch_out;
+ wire \sw_003_module_data_in[0] ;
+ wire \sw_003_module_data_in[1] ;
+ wire \sw_003_module_data_in[2] ;
+ wire \sw_003_module_data_in[3] ;
+ wire \sw_003_module_data_in[4] ;
+ wire \sw_003_module_data_in[5] ;
+ wire \sw_003_module_data_in[6] ;
+ wire \sw_003_module_data_in[7] ;
+ wire \sw_003_module_data_out[0] ;
+ wire \sw_003_module_data_out[1] ;
+ wire \sw_003_module_data_out[2] ;
+ wire \sw_003_module_data_out[3] ;
+ wire \sw_003_module_data_out[4] ;
+ wire \sw_003_module_data_out[5] ;
+ wire \sw_003_module_data_out[6] ;
+ wire \sw_003_module_data_out[7] ;
+ wire sw_003_scan_out;
+ wire sw_004_clk_out;
+ wire sw_004_data_out;
+ wire sw_004_latch_out;
+ wire \sw_004_module_data_in[0] ;
+ wire \sw_004_module_data_in[1] ;
+ wire \sw_004_module_data_in[2] ;
+ wire \sw_004_module_data_in[3] ;
+ wire \sw_004_module_data_in[4] ;
+ wire \sw_004_module_data_in[5] ;
+ wire \sw_004_module_data_in[6] ;
+ wire \sw_004_module_data_in[7] ;
+ wire \sw_004_module_data_out[0] ;
+ wire \sw_004_module_data_out[1] ;
+ wire \sw_004_module_data_out[2] ;
+ wire \sw_004_module_data_out[3] ;
+ wire \sw_004_module_data_out[4] ;
+ wire \sw_004_module_data_out[5] ;
+ wire \sw_004_module_data_out[6] ;
+ wire \sw_004_module_data_out[7] ;
+ wire sw_004_scan_out;
+ wire sw_005_clk_out;
+ wire sw_005_data_out;
+ wire sw_005_latch_out;
+ wire \sw_005_module_data_in[0] ;
+ wire \sw_005_module_data_in[1] ;
+ wire \sw_005_module_data_in[2] ;
+ wire \sw_005_module_data_in[3] ;
+ wire \sw_005_module_data_in[4] ;
+ wire \sw_005_module_data_in[5] ;
+ wire \sw_005_module_data_in[6] ;
+ wire \sw_005_module_data_in[7] ;
+ wire \sw_005_module_data_out[0] ;
+ wire \sw_005_module_data_out[1] ;
+ wire \sw_005_module_data_out[2] ;
+ wire \sw_005_module_data_out[3] ;
+ wire \sw_005_module_data_out[4] ;
+ wire \sw_005_module_data_out[5] ;
+ wire \sw_005_module_data_out[6] ;
+ wire \sw_005_module_data_out[7] ;
+ wire sw_005_scan_out;
+ wire sw_006_clk_out;
+ wire sw_006_data_out;
+ wire sw_006_latch_out;
+ wire \sw_006_module_data_in[0] ;
+ wire \sw_006_module_data_in[1] ;
+ wire \sw_006_module_data_in[2] ;
+ wire \sw_006_module_data_in[3] ;
+ wire \sw_006_module_data_in[4] ;
+ wire \sw_006_module_data_in[5] ;
+ wire \sw_006_module_data_in[6] ;
+ wire \sw_006_module_data_in[7] ;
+ wire \sw_006_module_data_out[0] ;
+ wire \sw_006_module_data_out[1] ;
+ wire \sw_006_module_data_out[2] ;
+ wire \sw_006_module_data_out[3] ;
+ wire \sw_006_module_data_out[4] ;
+ wire \sw_006_module_data_out[5] ;
+ wire \sw_006_module_data_out[6] ;
+ wire \sw_006_module_data_out[7] ;
+ wire sw_006_scan_out;
+ wire sw_007_clk_out;
+ wire sw_007_data_out;
+ wire sw_007_latch_out;
+ wire \sw_007_module_data_in[0] ;
+ wire \sw_007_module_data_in[1] ;
+ wire \sw_007_module_data_in[2] ;
+ wire \sw_007_module_data_in[3] ;
+ wire \sw_007_module_data_in[4] ;
+ wire \sw_007_module_data_in[5] ;
+ wire \sw_007_module_data_in[6] ;
+ wire \sw_007_module_data_in[7] ;
+ wire \sw_007_module_data_out[0] ;
+ wire \sw_007_module_data_out[1] ;
+ wire \sw_007_module_data_out[2] ;
+ wire \sw_007_module_data_out[3] ;
+ wire \sw_007_module_data_out[4] ;
+ wire \sw_007_module_data_out[5] ;
+ wire \sw_007_module_data_out[6] ;
+ wire \sw_007_module_data_out[7] ;
+ wire sw_007_scan_out;
+ wire sw_008_clk_out;
+ wire sw_008_data_out;
+ wire sw_008_latch_out;
+ wire \sw_008_module_data_in[0] ;
+ wire \sw_008_module_data_in[1] ;
+ wire \sw_008_module_data_in[2] ;
+ wire \sw_008_module_data_in[3] ;
+ wire \sw_008_module_data_in[4] ;
+ wire \sw_008_module_data_in[5] ;
+ wire \sw_008_module_data_in[6] ;
+ wire \sw_008_module_data_in[7] ;
+ wire \sw_008_module_data_out[0] ;
+ wire \sw_008_module_data_out[1] ;
+ wire \sw_008_module_data_out[2] ;
+ wire \sw_008_module_data_out[3] ;
+ wire \sw_008_module_data_out[4] ;
+ wire \sw_008_module_data_out[5] ;
+ wire \sw_008_module_data_out[6] ;
+ wire \sw_008_module_data_out[7] ;
+ wire sw_008_scan_out;
+ wire sw_009_clk_out;
+ wire sw_009_data_out;
+ wire sw_009_latch_out;
+ wire \sw_009_module_data_in[0] ;
+ wire \sw_009_module_data_in[1] ;
+ wire \sw_009_module_data_in[2] ;
+ wire \sw_009_module_data_in[3] ;
+ wire \sw_009_module_data_in[4] ;
+ wire \sw_009_module_data_in[5] ;
+ wire \sw_009_module_data_in[6] ;
+ wire \sw_009_module_data_in[7] ;
+ wire \sw_009_module_data_out[0] ;
+ wire \sw_009_module_data_out[1] ;
+ wire \sw_009_module_data_out[2] ;
+ wire \sw_009_module_data_out[3] ;
+ wire \sw_009_module_data_out[4] ;
+ wire \sw_009_module_data_out[5] ;
+ wire \sw_009_module_data_out[6] ;
+ wire \sw_009_module_data_out[7] ;
+ wire sw_009_scan_out;
+ wire sw_010_clk_out;
+ wire sw_010_data_out;
+ wire sw_010_latch_out;
+ wire \sw_010_module_data_in[0] ;
+ wire \sw_010_module_data_in[1] ;
+ wire \sw_010_module_data_in[2] ;
+ wire \sw_010_module_data_in[3] ;
+ wire \sw_010_module_data_in[4] ;
+ wire \sw_010_module_data_in[5] ;
+ wire \sw_010_module_data_in[6] ;
+ wire \sw_010_module_data_in[7] ;
+ wire \sw_010_module_data_out[0] ;
+ wire \sw_010_module_data_out[1] ;
+ wire \sw_010_module_data_out[2] ;
+ wire \sw_010_module_data_out[3] ;
+ wire \sw_010_module_data_out[4] ;
+ wire \sw_010_module_data_out[5] ;
+ wire \sw_010_module_data_out[6] ;
+ wire \sw_010_module_data_out[7] ;
+ wire sw_010_scan_out;
+ wire sw_011_clk_out;
+ wire sw_011_data_out;
+ wire sw_011_latch_out;
+ wire \sw_011_module_data_in[0] ;
+ wire \sw_011_module_data_in[1] ;
+ wire \sw_011_module_data_in[2] ;
+ wire \sw_011_module_data_in[3] ;
+ wire \sw_011_module_data_in[4] ;
+ wire \sw_011_module_data_in[5] ;
+ wire \sw_011_module_data_in[6] ;
+ wire \sw_011_module_data_in[7] ;
+ wire \sw_011_module_data_out[0] ;
+ wire \sw_011_module_data_out[1] ;
+ wire \sw_011_module_data_out[2] ;
+ wire \sw_011_module_data_out[3] ;
+ wire \sw_011_module_data_out[4] ;
+ wire \sw_011_module_data_out[5] ;
+ wire \sw_011_module_data_out[6] ;
+ wire \sw_011_module_data_out[7] ;
+ wire sw_011_scan_out;
+ wire sw_012_clk_out;
+ wire sw_012_data_out;
+ wire sw_012_latch_out;
+ wire \sw_012_module_data_in[0] ;
+ wire \sw_012_module_data_in[1] ;
+ wire \sw_012_module_data_in[2] ;
+ wire \sw_012_module_data_in[3] ;
+ wire \sw_012_module_data_in[4] ;
+ wire \sw_012_module_data_in[5] ;
+ wire \sw_012_module_data_in[6] ;
+ wire \sw_012_module_data_in[7] ;
+ wire \sw_012_module_data_out[0] ;
+ wire \sw_012_module_data_out[1] ;
+ wire \sw_012_module_data_out[2] ;
+ wire \sw_012_module_data_out[3] ;
+ wire \sw_012_module_data_out[4] ;
+ wire \sw_012_module_data_out[5] ;
+ wire \sw_012_module_data_out[6] ;
+ wire \sw_012_module_data_out[7] ;
+ wire sw_012_scan_out;
+ wire sw_013_clk_out;
+ wire sw_013_data_out;
+ wire sw_013_latch_out;
+ wire \sw_013_module_data_in[0] ;
+ wire \sw_013_module_data_in[1] ;
+ wire \sw_013_module_data_in[2] ;
+ wire \sw_013_module_data_in[3] ;
+ wire \sw_013_module_data_in[4] ;
+ wire \sw_013_module_data_in[5] ;
+ wire \sw_013_module_data_in[6] ;
+ wire \sw_013_module_data_in[7] ;
+ wire \sw_013_module_data_out[0] ;
+ wire \sw_013_module_data_out[1] ;
+ wire \sw_013_module_data_out[2] ;
+ wire \sw_013_module_data_out[3] ;
+ wire \sw_013_module_data_out[4] ;
+ wire \sw_013_module_data_out[5] ;
+ wire \sw_013_module_data_out[6] ;
+ wire \sw_013_module_data_out[7] ;
+ wire sw_013_scan_out;
+ wire sw_014_clk_out;
+ wire sw_014_data_out;
+ wire sw_014_latch_out;
+ wire \sw_014_module_data_in[0] ;
+ wire \sw_014_module_data_in[1] ;
+ wire \sw_014_module_data_in[2] ;
+ wire \sw_014_module_data_in[3] ;
+ wire \sw_014_module_data_in[4] ;
+ wire \sw_014_module_data_in[5] ;
+ wire \sw_014_module_data_in[6] ;
+ wire \sw_014_module_data_in[7] ;
+ wire \sw_014_module_data_out[0] ;
+ wire \sw_014_module_data_out[1] ;
+ wire \sw_014_module_data_out[2] ;
+ wire \sw_014_module_data_out[3] ;
+ wire \sw_014_module_data_out[4] ;
+ wire \sw_014_module_data_out[5] ;
+ wire \sw_014_module_data_out[6] ;
+ wire \sw_014_module_data_out[7] ;
+ wire sw_014_scan_out;
+ wire sw_015_clk_out;
+ wire sw_015_data_out;
+ wire sw_015_latch_out;
+ wire \sw_015_module_data_in[0] ;
+ wire \sw_015_module_data_in[1] ;
+ wire \sw_015_module_data_in[2] ;
+ wire \sw_015_module_data_in[3] ;
+ wire \sw_015_module_data_in[4] ;
+ wire \sw_015_module_data_in[5] ;
+ wire \sw_015_module_data_in[6] ;
+ wire \sw_015_module_data_in[7] ;
+ wire \sw_015_module_data_out[0] ;
+ wire \sw_015_module_data_out[1] ;
+ wire \sw_015_module_data_out[2] ;
+ wire \sw_015_module_data_out[3] ;
+ wire \sw_015_module_data_out[4] ;
+ wire \sw_015_module_data_out[5] ;
+ wire \sw_015_module_data_out[6] ;
+ wire \sw_015_module_data_out[7] ;
+ wire sw_015_scan_out;
+ wire sw_016_clk_out;
+ wire sw_016_data_out;
+ wire sw_016_latch_out;
+ wire \sw_016_module_data_in[0] ;
+ wire \sw_016_module_data_in[1] ;
+ wire \sw_016_module_data_in[2] ;
+ wire \sw_016_module_data_in[3] ;
+ wire \sw_016_module_data_in[4] ;
+ wire \sw_016_module_data_in[5] ;
+ wire \sw_016_module_data_in[6] ;
+ wire \sw_016_module_data_in[7] ;
+ wire \sw_016_module_data_out[0] ;
+ wire \sw_016_module_data_out[1] ;
+ wire \sw_016_module_data_out[2] ;
+ wire \sw_016_module_data_out[3] ;
+ wire \sw_016_module_data_out[4] ;
+ wire \sw_016_module_data_out[5] ;
+ wire \sw_016_module_data_out[6] ;
+ wire \sw_016_module_data_out[7] ;
+ wire sw_016_scan_out;
+ wire sw_017_clk_out;
+ wire sw_017_data_out;
+ wire sw_017_latch_out;
+ wire \sw_017_module_data_in[0] ;
+ wire \sw_017_module_data_in[1] ;
+ wire \sw_017_module_data_in[2] ;
+ wire \sw_017_module_data_in[3] ;
+ wire \sw_017_module_data_in[4] ;
+ wire \sw_017_module_data_in[5] ;
+ wire \sw_017_module_data_in[6] ;
+ wire \sw_017_module_data_in[7] ;
+ wire \sw_017_module_data_out[0] ;
+ wire \sw_017_module_data_out[1] ;
+ wire \sw_017_module_data_out[2] ;
+ wire \sw_017_module_data_out[3] ;
+ wire \sw_017_module_data_out[4] ;
+ wire \sw_017_module_data_out[5] ;
+ wire \sw_017_module_data_out[6] ;
+ wire \sw_017_module_data_out[7] ;
+ wire sw_017_scan_out;
+ wire sw_018_clk_out;
+ wire sw_018_data_out;
+ wire sw_018_latch_out;
+ wire \sw_018_module_data_in[0] ;
+ wire \sw_018_module_data_in[1] ;
+ wire \sw_018_module_data_in[2] ;
+ wire \sw_018_module_data_in[3] ;
+ wire \sw_018_module_data_in[4] ;
+ wire \sw_018_module_data_in[5] ;
+ wire \sw_018_module_data_in[6] ;
+ wire \sw_018_module_data_in[7] ;
+ wire \sw_018_module_data_out[0] ;
+ wire \sw_018_module_data_out[1] ;
+ wire \sw_018_module_data_out[2] ;
+ wire \sw_018_module_data_out[3] ;
+ wire \sw_018_module_data_out[4] ;
+ wire \sw_018_module_data_out[5] ;
+ wire \sw_018_module_data_out[6] ;
+ wire \sw_018_module_data_out[7] ;
+ wire sw_018_scan_out;
+ wire sw_019_clk_out;
+ wire sw_019_data_out;
+ wire sw_019_latch_out;
+ wire \sw_019_module_data_in[0] ;
+ wire \sw_019_module_data_in[1] ;
+ wire \sw_019_module_data_in[2] ;
+ wire \sw_019_module_data_in[3] ;
+ wire \sw_019_module_data_in[4] ;
+ wire \sw_019_module_data_in[5] ;
+ wire \sw_019_module_data_in[6] ;
+ wire \sw_019_module_data_in[7] ;
+ wire \sw_019_module_data_out[0] ;
+ wire \sw_019_module_data_out[1] ;
+ wire \sw_019_module_data_out[2] ;
+ wire \sw_019_module_data_out[3] ;
+ wire \sw_019_module_data_out[4] ;
+ wire \sw_019_module_data_out[5] ;
+ wire \sw_019_module_data_out[6] ;
+ wire \sw_019_module_data_out[7] ;
+ wire sw_019_scan_out;
+ wire sw_020_clk_out;
+ wire sw_020_data_out;
+ wire sw_020_latch_out;
+ wire \sw_020_module_data_in[0] ;
+ wire \sw_020_module_data_in[1] ;
+ wire \sw_020_module_data_in[2] ;
+ wire \sw_020_module_data_in[3] ;
+ wire \sw_020_module_data_in[4] ;
+ wire \sw_020_module_data_in[5] ;
+ wire \sw_020_module_data_in[6] ;
+ wire \sw_020_module_data_in[7] ;
+ wire \sw_020_module_data_out[0] ;
+ wire \sw_020_module_data_out[1] ;
+ wire \sw_020_module_data_out[2] ;
+ wire \sw_020_module_data_out[3] ;
+ wire \sw_020_module_data_out[4] ;
+ wire \sw_020_module_data_out[5] ;
+ wire \sw_020_module_data_out[6] ;
+ wire \sw_020_module_data_out[7] ;
+ wire sw_020_scan_out;
+ wire sw_021_clk_out;
+ wire sw_021_data_out;
+ wire sw_021_latch_out;
+ wire \sw_021_module_data_in[0] ;
+ wire \sw_021_module_data_in[1] ;
+ wire \sw_021_module_data_in[2] ;
+ wire \sw_021_module_data_in[3] ;
+ wire \sw_021_module_data_in[4] ;
+ wire \sw_021_module_data_in[5] ;
+ wire \sw_021_module_data_in[6] ;
+ wire \sw_021_module_data_in[7] ;
+ wire \sw_021_module_data_out[0] ;
+ wire \sw_021_module_data_out[1] ;
+ wire \sw_021_module_data_out[2] ;
+ wire \sw_021_module_data_out[3] ;
+ wire \sw_021_module_data_out[4] ;
+ wire \sw_021_module_data_out[5] ;
+ wire \sw_021_module_data_out[6] ;
+ wire \sw_021_module_data_out[7] ;
+ wire sw_021_scan_out;
+ wire sw_022_clk_out;
+ wire sw_022_data_out;
+ wire sw_022_latch_out;
+ wire \sw_022_module_data_in[0] ;
+ wire \sw_022_module_data_in[1] ;
+ wire \sw_022_module_data_in[2] ;
+ wire \sw_022_module_data_in[3] ;
+ wire \sw_022_module_data_in[4] ;
+ wire \sw_022_module_data_in[5] ;
+ wire \sw_022_module_data_in[6] ;
+ wire \sw_022_module_data_in[7] ;
+ wire \sw_022_module_data_out[0] ;
+ wire \sw_022_module_data_out[1] ;
+ wire \sw_022_module_data_out[2] ;
+ wire \sw_022_module_data_out[3] ;
+ wire \sw_022_module_data_out[4] ;
+ wire \sw_022_module_data_out[5] ;
+ wire \sw_022_module_data_out[6] ;
+ wire \sw_022_module_data_out[7] ;
+ wire sw_022_scan_out;
+ wire sw_023_clk_out;
+ wire sw_023_data_out;
+ wire sw_023_latch_out;
+ wire \sw_023_module_data_in[0] ;
+ wire \sw_023_module_data_in[1] ;
+ wire \sw_023_module_data_in[2] ;
+ wire \sw_023_module_data_in[3] ;
+ wire \sw_023_module_data_in[4] ;
+ wire \sw_023_module_data_in[5] ;
+ wire \sw_023_module_data_in[6] ;
+ wire \sw_023_module_data_in[7] ;
+ wire \sw_023_module_data_out[0] ;
+ wire \sw_023_module_data_out[1] ;
+ wire \sw_023_module_data_out[2] ;
+ wire \sw_023_module_data_out[3] ;
+ wire \sw_023_module_data_out[4] ;
+ wire \sw_023_module_data_out[5] ;
+ wire \sw_023_module_data_out[6] ;
+ wire \sw_023_module_data_out[7] ;
+ wire sw_023_scan_out;
+ wire sw_024_clk_out;
+ wire sw_024_data_out;
+ wire sw_024_latch_out;
+ wire \sw_024_module_data_in[0] ;
+ wire \sw_024_module_data_in[1] ;
+ wire \sw_024_module_data_in[2] ;
+ wire \sw_024_module_data_in[3] ;
+ wire \sw_024_module_data_in[4] ;
+ wire \sw_024_module_data_in[5] ;
+ wire \sw_024_module_data_in[6] ;
+ wire \sw_024_module_data_in[7] ;
+ wire \sw_024_module_data_out[0] ;
+ wire \sw_024_module_data_out[1] ;
+ wire \sw_024_module_data_out[2] ;
+ wire \sw_024_module_data_out[3] ;
+ wire \sw_024_module_data_out[4] ;
+ wire \sw_024_module_data_out[5] ;
+ wire \sw_024_module_data_out[6] ;
+ wire \sw_024_module_data_out[7] ;
+ wire sw_024_scan_out;
+ wire sw_025_clk_out;
+ wire sw_025_data_out;
+ wire sw_025_latch_out;
+ wire \sw_025_module_data_in[0] ;
+ wire \sw_025_module_data_in[1] ;
+ wire \sw_025_module_data_in[2] ;
+ wire \sw_025_module_data_in[3] ;
+ wire \sw_025_module_data_in[4] ;
+ wire \sw_025_module_data_in[5] ;
+ wire \sw_025_module_data_in[6] ;
+ wire \sw_025_module_data_in[7] ;
+ wire \sw_025_module_data_out[0] ;
+ wire \sw_025_module_data_out[1] ;
+ wire \sw_025_module_data_out[2] ;
+ wire \sw_025_module_data_out[3] ;
+ wire \sw_025_module_data_out[4] ;
+ wire \sw_025_module_data_out[5] ;
+ wire \sw_025_module_data_out[6] ;
+ wire \sw_025_module_data_out[7] ;
+ wire sw_025_scan_out;
+ wire sw_026_clk_out;
+ wire sw_026_data_out;
+ wire sw_026_latch_out;
+ wire \sw_026_module_data_in[0] ;
+ wire \sw_026_module_data_in[1] ;
+ wire \sw_026_module_data_in[2] ;
+ wire \sw_026_module_data_in[3] ;
+ wire \sw_026_module_data_in[4] ;
+ wire \sw_026_module_data_in[5] ;
+ wire \sw_026_module_data_in[6] ;
+ wire \sw_026_module_data_in[7] ;
+ wire \sw_026_module_data_out[0] ;
+ wire \sw_026_module_data_out[1] ;
+ wire \sw_026_module_data_out[2] ;
+ wire \sw_026_module_data_out[3] ;
+ wire \sw_026_module_data_out[4] ;
+ wire \sw_026_module_data_out[5] ;
+ wire \sw_026_module_data_out[6] ;
+ wire \sw_026_module_data_out[7] ;
+ wire sw_026_scan_out;
+ wire sw_027_clk_out;
+ wire sw_027_data_out;
+ wire sw_027_latch_out;
+ wire \sw_027_module_data_in[0] ;
+ wire \sw_027_module_data_in[1] ;
+ wire \sw_027_module_data_in[2] ;
+ wire \sw_027_module_data_in[3] ;
+ wire \sw_027_module_data_in[4] ;
+ wire \sw_027_module_data_in[5] ;
+ wire \sw_027_module_data_in[6] ;
+ wire \sw_027_module_data_in[7] ;
+ wire \sw_027_module_data_out[0] ;
+ wire \sw_027_module_data_out[1] ;
+ wire \sw_027_module_data_out[2] ;
+ wire \sw_027_module_data_out[3] ;
+ wire \sw_027_module_data_out[4] ;
+ wire \sw_027_module_data_out[5] ;
+ wire \sw_027_module_data_out[6] ;
+ wire \sw_027_module_data_out[7] ;
+ wire sw_027_scan_out;
+ wire sw_028_clk_out;
+ wire sw_028_data_out;
+ wire sw_028_latch_out;
+ wire \sw_028_module_data_in[0] ;
+ wire \sw_028_module_data_in[1] ;
+ wire \sw_028_module_data_in[2] ;
+ wire \sw_028_module_data_in[3] ;
+ wire \sw_028_module_data_in[4] ;
+ wire \sw_028_module_data_in[5] ;
+ wire \sw_028_module_data_in[6] ;
+ wire \sw_028_module_data_in[7] ;
+ wire \sw_028_module_data_out[0] ;
+ wire \sw_028_module_data_out[1] ;
+ wire \sw_028_module_data_out[2] ;
+ wire \sw_028_module_data_out[3] ;
+ wire \sw_028_module_data_out[4] ;
+ wire \sw_028_module_data_out[5] ;
+ wire \sw_028_module_data_out[6] ;
+ wire \sw_028_module_data_out[7] ;
+ wire sw_028_scan_out;
+ wire sw_029_latch_out;
+ wire \sw_029_module_data_in[0] ;
+ wire \sw_029_module_data_in[1] ;
+ wire \sw_029_module_data_in[2] ;
+ wire \sw_029_module_data_in[3] ;
+ wire \sw_029_module_data_in[4] ;
+ wire \sw_029_module_data_in[5] ;
+ wire \sw_029_module_data_in[6] ;
+ wire \sw_029_module_data_in[7] ;
+ wire \sw_029_module_data_out[0] ;
+ wire \sw_029_module_data_out[1] ;
+ wire \sw_029_module_data_out[2] ;
+ wire \sw_029_module_data_out[3] ;
+ wire \sw_029_module_data_out[4] ;
+ wire \sw_029_module_data_out[5] ;
+ wire \sw_029_module_data_out[6] ;
+ wire \sw_029_module_data_out[7] ;
+ wire sw_029_scan_out;
 
  scan_controller scan_controller (.clk(wb_clk_i),
     .la_scan_clk_in(la_data_in[0]),
@@ -146,12 +666,12 @@ module user_project_wrapper (user_clock2,
     .la_scan_select(la_data_in[2]),
     .ready(io_out[37]),
     .reset(wb_rst_i),
-    .scan_clk_in(\clk[20] ),
-    .scan_clk_out(\clk[0] ),
-    .scan_data_in(\data[20] ),
-    .scan_data_out(\data[0] ),
-    .scan_latch_en(\latch[0] ),
-    .scan_select(\scan[0] ),
+    .scan_clk_in(sc_clk_in),
+    .scan_clk_out(sc_clk_out),
+    .scan_data_in(sc_data_in),
+    .scan_data_out(sc_data_out),
+    .scan_latch_en(sc_latch_out),
+    .scan_select(sc_scan_out),
     .set_clk_div(io_in[11]),
     .slow_clk(io_out[10]),
     .vccd1(vccd1),
@@ -221,204 +741,1324 @@ module user_project_wrapper (user_clock2,
     io_out[31],
     io_out[30],
     io_out[29]}));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_0 (.clk_in(\clk[0] ),
-    .clk_out(\clk[1] ),
-    .data_in(\data[0] ),
-    .data_out(\data[1] ),
-    .latch_enable_in(\latch[0] ),
-    .latch_enable_out(\latch[1] ),
-    .scan_select_in(\scan[0] ),
-    .scan_select_out(\scan[1] ),
+ scanchain scanchain_0 (.clk_in(sc_clk_out),
+    .clk_out(sw_000_clk_out),
+    .data_in(sc_data_out),
+    .data_out(sw_000_data_out),
+    .latch_enable_in(sc_latch_out),
+    .latch_enable_out(sw_000_latch_out),
+    .scan_select_in(sc_scan_out),
+    .scan_select_out(sw_000_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_10 (.clk_in(\clk[10] ),
-    .clk_out(\clk[11] ),
-    .data_in(\data[10] ),
-    .data_out(\data[11] ),
-    .latch_enable_in(\latch[10] ),
-    .latch_enable_out(\latch[11] ),
-    .scan_select_in(\scan[10] ),
-    .scan_select_out(\scan[11] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_000_module_data_in[7] ,
+    \sw_000_module_data_in[6] ,
+    \sw_000_module_data_in[5] ,
+    \sw_000_module_data_in[4] ,
+    \sw_000_module_data_in[3] ,
+    \sw_000_module_data_in[2] ,
+    \sw_000_module_data_in[1] ,
+    \sw_000_module_data_in[0] }),
+    .module_data_out({\sw_000_module_data_out[7] ,
+    \sw_000_module_data_out[6] ,
+    \sw_000_module_data_out[5] ,
+    \sw_000_module_data_out[4] ,
+    \sw_000_module_data_out[3] ,
+    \sw_000_module_data_out[2] ,
+    \sw_000_module_data_out[1] ,
+    \sw_000_module_data_out[0] }));
+ scanchain scanchain_1 (.clk_in(sw_000_clk_out),
+    .clk_out(sw_001_clk_out),
+    .data_in(sw_000_data_out),
+    .data_out(sw_001_data_out),
+    .latch_enable_in(sw_000_latch_out),
+    .latch_enable_out(sw_001_latch_out),
+    .scan_select_in(sw_000_scan_out),
+    .scan_select_out(sw_001_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_11 (.clk_in(\clk[11] ),
-    .clk_out(\clk[12] ),
-    .data_in(\data[11] ),
-    .data_out(\data[12] ),
-    .latch_enable_in(\latch[11] ),
-    .latch_enable_out(\latch[12] ),
-    .scan_select_in(\scan[11] ),
-    .scan_select_out(\scan[12] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_001_module_data_in[7] ,
+    \sw_001_module_data_in[6] ,
+    \sw_001_module_data_in[5] ,
+    \sw_001_module_data_in[4] ,
+    \sw_001_module_data_in[3] ,
+    \sw_001_module_data_in[2] ,
+    \sw_001_module_data_in[1] ,
+    \sw_001_module_data_in[0] }),
+    .module_data_out({\sw_001_module_data_out[7] ,
+    \sw_001_module_data_out[6] ,
+    \sw_001_module_data_out[5] ,
+    \sw_001_module_data_out[4] ,
+    \sw_001_module_data_out[3] ,
+    \sw_001_module_data_out[2] ,
+    \sw_001_module_data_out[1] ,
+    \sw_001_module_data_out[0] }));
+ scanchain scanchain_10 (.clk_in(sw_009_clk_out),
+    .clk_out(sw_010_clk_out),
+    .data_in(sw_009_data_out),
+    .data_out(sw_010_data_out),
+    .latch_enable_in(sw_009_latch_out),
+    .latch_enable_out(sw_010_latch_out),
+    .scan_select_in(sw_009_scan_out),
+    .scan_select_out(sw_010_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_12 (.clk_in(\clk[12] ),
-    .clk_out(\clk[13] ),
-    .data_in(\data[12] ),
-    .data_out(\data[13] ),
-    .latch_enable_in(\latch[12] ),
-    .latch_enable_out(\latch[13] ),
-    .scan_select_in(\scan[12] ),
-    .scan_select_out(\scan[13] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_010_module_data_in[7] ,
+    \sw_010_module_data_in[6] ,
+    \sw_010_module_data_in[5] ,
+    \sw_010_module_data_in[4] ,
+    \sw_010_module_data_in[3] ,
+    \sw_010_module_data_in[2] ,
+    \sw_010_module_data_in[1] ,
+    \sw_010_module_data_in[0] }),
+    .module_data_out({\sw_010_module_data_out[7] ,
+    \sw_010_module_data_out[6] ,
+    \sw_010_module_data_out[5] ,
+    \sw_010_module_data_out[4] ,
+    \sw_010_module_data_out[3] ,
+    \sw_010_module_data_out[2] ,
+    \sw_010_module_data_out[1] ,
+    \sw_010_module_data_out[0] }));
+ scanchain scanchain_11 (.clk_in(sw_010_clk_out),
+    .clk_out(sw_011_clk_out),
+    .data_in(sw_010_data_out),
+    .data_out(sw_011_data_out),
+    .latch_enable_in(sw_010_latch_out),
+    .latch_enable_out(sw_011_latch_out),
+    .scan_select_in(sw_010_scan_out),
+    .scan_select_out(sw_011_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_13 (.clk_in(\clk[13] ),
-    .clk_out(\clk[14] ),
-    .data_in(\data[13] ),
-    .data_out(\data[14] ),
-    .latch_enable_in(\latch[13] ),
-    .latch_enable_out(\latch[14] ),
-    .scan_select_in(\scan[13] ),
-    .scan_select_out(\scan[14] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_011_module_data_in[7] ,
+    \sw_011_module_data_in[6] ,
+    \sw_011_module_data_in[5] ,
+    \sw_011_module_data_in[4] ,
+    \sw_011_module_data_in[3] ,
+    \sw_011_module_data_in[2] ,
+    \sw_011_module_data_in[1] ,
+    \sw_011_module_data_in[0] }),
+    .module_data_out({\sw_011_module_data_out[7] ,
+    \sw_011_module_data_out[6] ,
+    \sw_011_module_data_out[5] ,
+    \sw_011_module_data_out[4] ,
+    \sw_011_module_data_out[3] ,
+    \sw_011_module_data_out[2] ,
+    \sw_011_module_data_out[1] ,
+    \sw_011_module_data_out[0] }));
+ scanchain scanchain_12 (.clk_in(sw_011_clk_out),
+    .clk_out(sw_012_clk_out),
+    .data_in(sw_011_data_out),
+    .data_out(sw_012_data_out),
+    .latch_enable_in(sw_011_latch_out),
+    .latch_enable_out(sw_012_latch_out),
+    .scan_select_in(sw_011_scan_out),
+    .scan_select_out(sw_012_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_14 (.clk_in(\clk[14] ),
-    .clk_out(\clk[15] ),
-    .data_in(\data[14] ),
-    .data_out(\data[15] ),
-    .latch_enable_in(\latch[14] ),
-    .latch_enable_out(\latch[15] ),
-    .scan_select_in(\scan[14] ),
-    .scan_select_out(\scan[15] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_012_module_data_in[7] ,
+    \sw_012_module_data_in[6] ,
+    \sw_012_module_data_in[5] ,
+    \sw_012_module_data_in[4] ,
+    \sw_012_module_data_in[3] ,
+    \sw_012_module_data_in[2] ,
+    \sw_012_module_data_in[1] ,
+    \sw_012_module_data_in[0] }),
+    .module_data_out({\sw_012_module_data_out[7] ,
+    \sw_012_module_data_out[6] ,
+    \sw_012_module_data_out[5] ,
+    \sw_012_module_data_out[4] ,
+    \sw_012_module_data_out[3] ,
+    \sw_012_module_data_out[2] ,
+    \sw_012_module_data_out[1] ,
+    \sw_012_module_data_out[0] }));
+ scanchain scanchain_13 (.clk_in(sw_012_clk_out),
+    .clk_out(sw_013_clk_out),
+    .data_in(sw_012_data_out),
+    .data_out(sw_013_data_out),
+    .latch_enable_in(sw_012_latch_out),
+    .latch_enable_out(sw_013_latch_out),
+    .scan_select_in(sw_012_scan_out),
+    .scan_select_out(sw_013_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_15 (.clk_in(\clk[15] ),
-    .clk_out(\clk[16] ),
-    .data_in(\data[15] ),
-    .data_out(\data[16] ),
-    .latch_enable_in(\latch[15] ),
-    .latch_enable_out(\latch[16] ),
-    .scan_select_in(\scan[15] ),
-    .scan_select_out(\scan[16] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_013_module_data_in[7] ,
+    \sw_013_module_data_in[6] ,
+    \sw_013_module_data_in[5] ,
+    \sw_013_module_data_in[4] ,
+    \sw_013_module_data_in[3] ,
+    \sw_013_module_data_in[2] ,
+    \sw_013_module_data_in[1] ,
+    \sw_013_module_data_in[0] }),
+    .module_data_out({\sw_013_module_data_out[7] ,
+    \sw_013_module_data_out[6] ,
+    \sw_013_module_data_out[5] ,
+    \sw_013_module_data_out[4] ,
+    \sw_013_module_data_out[3] ,
+    \sw_013_module_data_out[2] ,
+    \sw_013_module_data_out[1] ,
+    \sw_013_module_data_out[0] }));
+ scanchain scanchain_14 (.clk_in(sw_013_clk_out),
+    .clk_out(sw_014_clk_out),
+    .data_in(sw_013_data_out),
+    .data_out(sw_014_data_out),
+    .latch_enable_in(sw_013_latch_out),
+    .latch_enable_out(sw_014_latch_out),
+    .scan_select_in(sw_013_scan_out),
+    .scan_select_out(sw_014_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_16 (.clk_in(\clk[16] ),
-    .clk_out(\clk[17] ),
-    .data_in(\data[16] ),
-    .data_out(\data[17] ),
-    .latch_enable_in(\latch[16] ),
-    .latch_enable_out(\latch[17] ),
-    .scan_select_in(\scan[16] ),
-    .scan_select_out(\scan[17] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_014_module_data_in[7] ,
+    \sw_014_module_data_in[6] ,
+    \sw_014_module_data_in[5] ,
+    \sw_014_module_data_in[4] ,
+    \sw_014_module_data_in[3] ,
+    \sw_014_module_data_in[2] ,
+    \sw_014_module_data_in[1] ,
+    \sw_014_module_data_in[0] }),
+    .module_data_out({\sw_014_module_data_out[7] ,
+    \sw_014_module_data_out[6] ,
+    \sw_014_module_data_out[5] ,
+    \sw_014_module_data_out[4] ,
+    \sw_014_module_data_out[3] ,
+    \sw_014_module_data_out[2] ,
+    \sw_014_module_data_out[1] ,
+    \sw_014_module_data_out[0] }));
+ scanchain scanchain_15 (.clk_in(sw_014_clk_out),
+    .clk_out(sw_015_clk_out),
+    .data_in(sw_014_data_out),
+    .data_out(sw_015_data_out),
+    .latch_enable_in(sw_014_latch_out),
+    .latch_enable_out(sw_015_latch_out),
+    .scan_select_in(sw_014_scan_out),
+    .scan_select_out(sw_015_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_17 (.clk_in(\clk[17] ),
-    .clk_out(\clk[18] ),
-    .data_in(\data[17] ),
-    .data_out(\data[18] ),
-    .latch_enable_in(\latch[17] ),
-    .latch_enable_out(\latch[18] ),
-    .scan_select_in(\scan[17] ),
-    .scan_select_out(\scan[18] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_015_module_data_in[7] ,
+    \sw_015_module_data_in[6] ,
+    \sw_015_module_data_in[5] ,
+    \sw_015_module_data_in[4] ,
+    \sw_015_module_data_in[3] ,
+    \sw_015_module_data_in[2] ,
+    \sw_015_module_data_in[1] ,
+    \sw_015_module_data_in[0] }),
+    .module_data_out({\sw_015_module_data_out[7] ,
+    \sw_015_module_data_out[6] ,
+    \sw_015_module_data_out[5] ,
+    \sw_015_module_data_out[4] ,
+    \sw_015_module_data_out[3] ,
+    \sw_015_module_data_out[2] ,
+    \sw_015_module_data_out[1] ,
+    \sw_015_module_data_out[0] }));
+ scanchain scanchain_16 (.clk_in(sw_015_clk_out),
+    .clk_out(sw_016_clk_out),
+    .data_in(sw_015_data_out),
+    .data_out(sw_016_data_out),
+    .latch_enable_in(sw_015_latch_out),
+    .latch_enable_out(sw_016_latch_out),
+    .scan_select_in(sw_015_scan_out),
+    .scan_select_out(sw_016_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_18 (.clk_in(\clk[18] ),
-    .clk_out(\clk[19] ),
-    .data_in(\data[18] ),
-    .data_out(\data[19] ),
-    .latch_enable_in(\latch[18] ),
-    .latch_enable_out(\latch[19] ),
-    .scan_select_in(\scan[18] ),
-    .scan_select_out(\scan[19] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_016_module_data_in[7] ,
+    \sw_016_module_data_in[6] ,
+    \sw_016_module_data_in[5] ,
+    \sw_016_module_data_in[4] ,
+    \sw_016_module_data_in[3] ,
+    \sw_016_module_data_in[2] ,
+    \sw_016_module_data_in[1] ,
+    \sw_016_module_data_in[0] }),
+    .module_data_out({\sw_016_module_data_out[7] ,
+    \sw_016_module_data_out[6] ,
+    \sw_016_module_data_out[5] ,
+    \sw_016_module_data_out[4] ,
+    \sw_016_module_data_out[3] ,
+    \sw_016_module_data_out[2] ,
+    \sw_016_module_data_out[1] ,
+    \sw_016_module_data_out[0] }));
+ scanchain scanchain_17 (.clk_in(sw_016_clk_out),
+    .clk_out(sw_017_clk_out),
+    .data_in(sw_016_data_out),
+    .data_out(sw_017_data_out),
+    .latch_enable_in(sw_016_latch_out),
+    .latch_enable_out(sw_017_latch_out),
+    .scan_select_in(sw_016_scan_out),
+    .scan_select_out(sw_017_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_19 (.clk_in(\clk[19] ),
-    .clk_out(\clk[20] ),
-    .data_in(\data[19] ),
-    .data_out(\data[20] ),
-    .latch_enable_in(\latch[19] ),
-    .latch_enable_out(\latch[20] ),
-    .scan_select_in(\scan[19] ),
-    .scan_select_out(\scan[20] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_017_module_data_in[7] ,
+    \sw_017_module_data_in[6] ,
+    \sw_017_module_data_in[5] ,
+    \sw_017_module_data_in[4] ,
+    \sw_017_module_data_in[3] ,
+    \sw_017_module_data_in[2] ,
+    \sw_017_module_data_in[1] ,
+    \sw_017_module_data_in[0] }),
+    .module_data_out({\sw_017_module_data_out[7] ,
+    \sw_017_module_data_out[6] ,
+    \sw_017_module_data_out[5] ,
+    \sw_017_module_data_out[4] ,
+    \sw_017_module_data_out[3] ,
+    \sw_017_module_data_out[2] ,
+    \sw_017_module_data_out[1] ,
+    \sw_017_module_data_out[0] }));
+ scanchain scanchain_18 (.clk_in(sw_017_clk_out),
+    .clk_out(sw_018_clk_out),
+    .data_in(sw_017_data_out),
+    .data_out(sw_018_data_out),
+    .latch_enable_in(sw_017_latch_out),
+    .latch_enable_out(sw_018_latch_out),
+    .scan_select_in(sw_017_scan_out),
+    .scan_select_out(sw_018_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_3 (.clk_in(\clk[3] ),
-    .clk_out(\clk[4] ),
-    .data_in(\data[3] ),
-    .data_out(\data[4] ),
-    .latch_enable_in(\latch[3] ),
-    .latch_enable_out(\latch[4] ),
-    .scan_select_in(\scan[3] ),
-    .scan_select_out(\scan[4] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_018_module_data_in[7] ,
+    \sw_018_module_data_in[6] ,
+    \sw_018_module_data_in[5] ,
+    \sw_018_module_data_in[4] ,
+    \sw_018_module_data_in[3] ,
+    \sw_018_module_data_in[2] ,
+    \sw_018_module_data_in[1] ,
+    \sw_018_module_data_in[0] }),
+    .module_data_out({\sw_018_module_data_out[7] ,
+    \sw_018_module_data_out[6] ,
+    \sw_018_module_data_out[5] ,
+    \sw_018_module_data_out[4] ,
+    \sw_018_module_data_out[3] ,
+    \sw_018_module_data_out[2] ,
+    \sw_018_module_data_out[1] ,
+    \sw_018_module_data_out[0] }));
+ scanchain scanchain_19 (.clk_in(sw_018_clk_out),
+    .clk_out(sw_019_clk_out),
+    .data_in(sw_018_data_out),
+    .data_out(sw_019_data_out),
+    .latch_enable_in(sw_018_latch_out),
+    .latch_enable_out(sw_019_latch_out),
+    .scan_select_in(sw_018_scan_out),
+    .scan_select_out(sw_019_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_4 (.clk_in(\clk[4] ),
-    .clk_out(\clk[5] ),
-    .data_in(\data[4] ),
-    .data_out(\data[5] ),
-    .latch_enable_in(\latch[4] ),
-    .latch_enable_out(\latch[5] ),
-    .scan_select_in(\scan[4] ),
-    .scan_select_out(\scan[5] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_019_module_data_in[7] ,
+    \sw_019_module_data_in[6] ,
+    \sw_019_module_data_in[5] ,
+    \sw_019_module_data_in[4] ,
+    \sw_019_module_data_in[3] ,
+    \sw_019_module_data_in[2] ,
+    \sw_019_module_data_in[1] ,
+    \sw_019_module_data_in[0] }),
+    .module_data_out({\sw_019_module_data_out[7] ,
+    \sw_019_module_data_out[6] ,
+    \sw_019_module_data_out[5] ,
+    \sw_019_module_data_out[4] ,
+    \sw_019_module_data_out[3] ,
+    \sw_019_module_data_out[2] ,
+    \sw_019_module_data_out[1] ,
+    \sw_019_module_data_out[0] }));
+ scanchain scanchain_2 (.clk_in(sw_001_clk_out),
+    .clk_out(sw_002_clk_out),
+    .data_in(sw_001_data_out),
+    .data_out(sw_002_data_out),
+    .latch_enable_in(sw_001_latch_out),
+    .latch_enable_out(sw_002_latch_out),
+    .scan_select_in(sw_001_scan_out),
+    .scan_select_out(sw_002_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_5 (.clk_in(\clk[5] ),
-    .clk_out(\clk[6] ),
-    .data_in(\data[5] ),
-    .data_out(\data[6] ),
-    .latch_enable_in(\latch[5] ),
-    .latch_enable_out(\latch[6] ),
-    .scan_select_in(\scan[5] ),
-    .scan_select_out(\scan[6] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_002_module_data_in[7] ,
+    \sw_002_module_data_in[6] ,
+    \sw_002_module_data_in[5] ,
+    \sw_002_module_data_in[4] ,
+    \sw_002_module_data_in[3] ,
+    \sw_002_module_data_in[2] ,
+    \sw_002_module_data_in[1] ,
+    \sw_002_module_data_in[0] }),
+    .module_data_out({\sw_002_module_data_out[7] ,
+    \sw_002_module_data_out[6] ,
+    \sw_002_module_data_out[5] ,
+    \sw_002_module_data_out[4] ,
+    \sw_002_module_data_out[3] ,
+    \sw_002_module_data_out[2] ,
+    \sw_002_module_data_out[1] ,
+    \sw_002_module_data_out[0] }));
+ scanchain scanchain_20 (.clk_in(sw_019_clk_out),
+    .clk_out(sw_020_clk_out),
+    .data_in(sw_019_data_out),
+    .data_out(sw_020_data_out),
+    .latch_enable_in(sw_019_latch_out),
+    .latch_enable_out(sw_020_latch_out),
+    .scan_select_in(sw_019_scan_out),
+    .scan_select_out(sw_020_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_6 (.clk_in(\clk[6] ),
-    .clk_out(\clk[7] ),
-    .data_in(\data[6] ),
-    .data_out(\data[7] ),
-    .latch_enable_in(\latch[6] ),
-    .latch_enable_out(\latch[7] ),
-    .scan_select_in(\scan[6] ),
-    .scan_select_out(\scan[7] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_020_module_data_in[7] ,
+    \sw_020_module_data_in[6] ,
+    \sw_020_module_data_in[5] ,
+    \sw_020_module_data_in[4] ,
+    \sw_020_module_data_in[3] ,
+    \sw_020_module_data_in[2] ,
+    \sw_020_module_data_in[1] ,
+    \sw_020_module_data_in[0] }),
+    .module_data_out({\sw_020_module_data_out[7] ,
+    \sw_020_module_data_out[6] ,
+    \sw_020_module_data_out[5] ,
+    \sw_020_module_data_out[4] ,
+    \sw_020_module_data_out[3] ,
+    \sw_020_module_data_out[2] ,
+    \sw_020_module_data_out[1] ,
+    \sw_020_module_data_out[0] }));
+ scanchain scanchain_21 (.clk_in(sw_020_clk_out),
+    .clk_out(sw_021_clk_out),
+    .data_in(sw_020_data_out),
+    .data_out(sw_021_data_out),
+    .latch_enable_in(sw_020_latch_out),
+    .latch_enable_out(sw_021_latch_out),
+    .scan_select_in(sw_020_scan_out),
+    .scan_select_out(sw_021_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_7 (.clk_in(\clk[7] ),
-    .clk_out(\clk[8] ),
-    .data_in(\data[7] ),
-    .data_out(\data[8] ),
-    .latch_enable_in(\latch[7] ),
-    .latch_enable_out(\latch[8] ),
-    .scan_select_in(\scan[7] ),
-    .scan_select_out(\scan[8] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_021_module_data_in[7] ,
+    \sw_021_module_data_in[6] ,
+    \sw_021_module_data_in[5] ,
+    \sw_021_module_data_in[4] ,
+    \sw_021_module_data_in[3] ,
+    \sw_021_module_data_in[2] ,
+    \sw_021_module_data_in[1] ,
+    \sw_021_module_data_in[0] }),
+    .module_data_out({\sw_021_module_data_out[7] ,
+    \sw_021_module_data_out[6] ,
+    \sw_021_module_data_out[5] ,
+    \sw_021_module_data_out[4] ,
+    \sw_021_module_data_out[3] ,
+    \sw_021_module_data_out[2] ,
+    \sw_021_module_data_out[1] ,
+    \sw_021_module_data_out[0] }));
+ scanchain scanchain_22 (.clk_in(sw_021_clk_out),
+    .clk_out(sw_022_clk_out),
+    .data_in(sw_021_data_out),
+    .data_out(sw_022_data_out),
+    .latch_enable_in(sw_021_latch_out),
+    .latch_enable_out(sw_022_latch_out),
+    .scan_select_in(sw_021_scan_out),
+    .scan_select_out(sw_022_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_8 (.clk_in(\clk[8] ),
-    .clk_out(\clk[9] ),
-    .data_in(\data[8] ),
-    .data_out(\data[9] ),
-    .latch_enable_in(\latch[8] ),
-    .latch_enable_out(\latch[9] ),
-    .scan_select_in(\scan[8] ),
-    .scan_select_out(\scan[9] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_022_module_data_in[7] ,
+    \sw_022_module_data_in[6] ,
+    \sw_022_module_data_in[5] ,
+    \sw_022_module_data_in[4] ,
+    \sw_022_module_data_in[3] ,
+    \sw_022_module_data_in[2] ,
+    \sw_022_module_data_in[1] ,
+    \sw_022_module_data_in[0] }),
+    .module_data_out({\sw_022_module_data_out[7] ,
+    \sw_022_module_data_out[6] ,
+    \sw_022_module_data_out[5] ,
+    \sw_022_module_data_out[4] ,
+    \sw_022_module_data_out[3] ,
+    \sw_022_module_data_out[2] ,
+    \sw_022_module_data_out[1] ,
+    \sw_022_module_data_out[0] }));
+ scanchain scanchain_23 (.clk_in(sw_022_clk_out),
+    .clk_out(sw_023_clk_out),
+    .data_in(sw_022_data_out),
+    .data_out(sw_023_data_out),
+    .latch_enable_in(sw_022_latch_out),
+    .latch_enable_out(sw_023_latch_out),
+    .scan_select_in(sw_022_scan_out),
+    .scan_select_out(sw_023_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_339501025136214612 scan_wrapper_339501025136214612_9 (.clk_in(\clk[9] ),
-    .clk_out(\clk[10] ),
-    .data_in(\data[9] ),
-    .data_out(\data[10] ),
-    .latch_enable_in(\latch[9] ),
-    .latch_enable_out(\latch[10] ),
-    .scan_select_in(\scan[9] ),
-    .scan_select_out(\scan[10] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_023_module_data_in[7] ,
+    \sw_023_module_data_in[6] ,
+    \sw_023_module_data_in[5] ,
+    \sw_023_module_data_in[4] ,
+    \sw_023_module_data_in[3] ,
+    \sw_023_module_data_in[2] ,
+    \sw_023_module_data_in[1] ,
+    \sw_023_module_data_in[0] }),
+    .module_data_out({\sw_023_module_data_out[7] ,
+    \sw_023_module_data_out[6] ,
+    \sw_023_module_data_out[5] ,
+    \sw_023_module_data_out[4] ,
+    \sw_023_module_data_out[3] ,
+    \sw_023_module_data_out[2] ,
+    \sw_023_module_data_out[1] ,
+    \sw_023_module_data_out[0] }));
+ scanchain scanchain_24 (.clk_in(sw_023_clk_out),
+    .clk_out(sw_024_clk_out),
+    .data_in(sw_023_data_out),
+    .data_out(sw_024_data_out),
+    .latch_enable_in(sw_023_latch_out),
+    .latch_enable_out(sw_024_latch_out),
+    .scan_select_in(sw_023_scan_out),
+    .scan_select_out(sw_024_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_340805072482992722 scan_wrapper_340805072482992722_1 (.clk_in(\clk[1] ),
-    .clk_out(\clk[2] ),
-    .data_in(\data[1] ),
-    .data_out(\data[2] ),
-    .latch_enable_in(\latch[1] ),
-    .latch_enable_out(\latch[2] ),
-    .scan_select_in(\scan[1] ),
-    .scan_select_out(\scan[2] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_024_module_data_in[7] ,
+    \sw_024_module_data_in[6] ,
+    \sw_024_module_data_in[5] ,
+    \sw_024_module_data_in[4] ,
+    \sw_024_module_data_in[3] ,
+    \sw_024_module_data_in[2] ,
+    \sw_024_module_data_in[1] ,
+    \sw_024_module_data_in[0] }),
+    .module_data_out({\sw_024_module_data_out[7] ,
+    \sw_024_module_data_out[6] ,
+    \sw_024_module_data_out[5] ,
+    \sw_024_module_data_out[4] ,
+    \sw_024_module_data_out[3] ,
+    \sw_024_module_data_out[2] ,
+    \sw_024_module_data_out[1] ,
+    \sw_024_module_data_out[0] }));
+ scanchain scanchain_25 (.clk_in(sw_024_clk_out),
+    .clk_out(sw_025_clk_out),
+    .data_in(sw_024_data_out),
+    .data_out(sw_025_data_out),
+    .latch_enable_in(sw_024_latch_out),
+    .latch_enable_out(sw_025_latch_out),
+    .scan_select_in(sw_024_scan_out),
+    .scan_select_out(sw_025_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
- scan_wrapper_341535056611770964 scan_wrapper_341535056611770964_2 (.clk_in(\clk[2] ),
-    .clk_out(\clk[3] ),
-    .data_in(\data[2] ),
-    .data_out(\data[3] ),
-    .latch_enable_in(\latch[2] ),
-    .latch_enable_out(\latch[3] ),
-    .scan_select_in(\scan[2] ),
-    .scan_select_out(\scan[3] ),
+    .vssd1(vssd1),
+    .module_data_in({\sw_025_module_data_in[7] ,
+    \sw_025_module_data_in[6] ,
+    \sw_025_module_data_in[5] ,
+    \sw_025_module_data_in[4] ,
+    \sw_025_module_data_in[3] ,
+    \sw_025_module_data_in[2] ,
+    \sw_025_module_data_in[1] ,
+    \sw_025_module_data_in[0] }),
+    .module_data_out({\sw_025_module_data_out[7] ,
+    \sw_025_module_data_out[6] ,
+    \sw_025_module_data_out[5] ,
+    \sw_025_module_data_out[4] ,
+    \sw_025_module_data_out[3] ,
+    \sw_025_module_data_out[2] ,
+    \sw_025_module_data_out[1] ,
+    \sw_025_module_data_out[0] }));
+ scanchain scanchain_26 (.clk_in(sw_025_clk_out),
+    .clk_out(sw_026_clk_out),
+    .data_in(sw_025_data_out),
+    .data_out(sw_026_data_out),
+    .latch_enable_in(sw_025_latch_out),
+    .latch_enable_out(sw_026_latch_out),
+    .scan_select_in(sw_025_scan_out),
+    .scan_select_out(sw_026_scan_out),
     .vccd1(vccd1),
-    .vssd1(vssd1));
+    .vssd1(vssd1),
+    .module_data_in({\sw_026_module_data_in[7] ,
+    \sw_026_module_data_in[6] ,
+    \sw_026_module_data_in[5] ,
+    \sw_026_module_data_in[4] ,
+    \sw_026_module_data_in[3] ,
+    \sw_026_module_data_in[2] ,
+    \sw_026_module_data_in[1] ,
+    \sw_026_module_data_in[0] }),
+    .module_data_out({\sw_026_module_data_out[7] ,
+    \sw_026_module_data_out[6] ,
+    \sw_026_module_data_out[5] ,
+    \sw_026_module_data_out[4] ,
+    \sw_026_module_data_out[3] ,
+    \sw_026_module_data_out[2] ,
+    \sw_026_module_data_out[1] ,
+    \sw_026_module_data_out[0] }));
+ scanchain scanchain_27 (.clk_in(sw_026_clk_out),
+    .clk_out(sw_027_clk_out),
+    .data_in(sw_026_data_out),
+    .data_out(sw_027_data_out),
+    .latch_enable_in(sw_026_latch_out),
+    .latch_enable_out(sw_027_latch_out),
+    .scan_select_in(sw_026_scan_out),
+    .scan_select_out(sw_027_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_027_module_data_in[7] ,
+    \sw_027_module_data_in[6] ,
+    \sw_027_module_data_in[5] ,
+    \sw_027_module_data_in[4] ,
+    \sw_027_module_data_in[3] ,
+    \sw_027_module_data_in[2] ,
+    \sw_027_module_data_in[1] ,
+    \sw_027_module_data_in[0] }),
+    .module_data_out({\sw_027_module_data_out[7] ,
+    \sw_027_module_data_out[6] ,
+    \sw_027_module_data_out[5] ,
+    \sw_027_module_data_out[4] ,
+    \sw_027_module_data_out[3] ,
+    \sw_027_module_data_out[2] ,
+    \sw_027_module_data_out[1] ,
+    \sw_027_module_data_out[0] }));
+ scanchain scanchain_28 (.clk_in(sw_027_clk_out),
+    .clk_out(sw_028_clk_out),
+    .data_in(sw_027_data_out),
+    .data_out(sw_028_data_out),
+    .latch_enable_in(sw_027_latch_out),
+    .latch_enable_out(sw_028_latch_out),
+    .scan_select_in(sw_027_scan_out),
+    .scan_select_out(sw_028_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_028_module_data_in[7] ,
+    \sw_028_module_data_in[6] ,
+    \sw_028_module_data_in[5] ,
+    \sw_028_module_data_in[4] ,
+    \sw_028_module_data_in[3] ,
+    \sw_028_module_data_in[2] ,
+    \sw_028_module_data_in[1] ,
+    \sw_028_module_data_in[0] }),
+    .module_data_out({\sw_028_module_data_out[7] ,
+    \sw_028_module_data_out[6] ,
+    \sw_028_module_data_out[5] ,
+    \sw_028_module_data_out[4] ,
+    \sw_028_module_data_out[3] ,
+    \sw_028_module_data_out[2] ,
+    \sw_028_module_data_out[1] ,
+    \sw_028_module_data_out[0] }));
+ scanchain scanchain_29 (.clk_in(sw_028_clk_out),
+    .clk_out(sc_clk_in),
+    .data_in(sw_028_data_out),
+    .data_out(sc_data_in),
+    .latch_enable_in(sw_028_latch_out),
+    .latch_enable_out(sw_029_latch_out),
+    .scan_select_in(sw_028_scan_out),
+    .scan_select_out(sw_029_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_029_module_data_in[7] ,
+    \sw_029_module_data_in[6] ,
+    \sw_029_module_data_in[5] ,
+    \sw_029_module_data_in[4] ,
+    \sw_029_module_data_in[3] ,
+    \sw_029_module_data_in[2] ,
+    \sw_029_module_data_in[1] ,
+    \sw_029_module_data_in[0] }),
+    .module_data_out({\sw_029_module_data_out[7] ,
+    \sw_029_module_data_out[6] ,
+    \sw_029_module_data_out[5] ,
+    \sw_029_module_data_out[4] ,
+    \sw_029_module_data_out[3] ,
+    \sw_029_module_data_out[2] ,
+    \sw_029_module_data_out[1] ,
+    \sw_029_module_data_out[0] }));
+ scanchain scanchain_3 (.clk_in(sw_002_clk_out),
+    .clk_out(sw_003_clk_out),
+    .data_in(sw_002_data_out),
+    .data_out(sw_003_data_out),
+    .latch_enable_in(sw_002_latch_out),
+    .latch_enable_out(sw_003_latch_out),
+    .scan_select_in(sw_002_scan_out),
+    .scan_select_out(sw_003_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_003_module_data_in[7] ,
+    \sw_003_module_data_in[6] ,
+    \sw_003_module_data_in[5] ,
+    \sw_003_module_data_in[4] ,
+    \sw_003_module_data_in[3] ,
+    \sw_003_module_data_in[2] ,
+    \sw_003_module_data_in[1] ,
+    \sw_003_module_data_in[0] }),
+    .module_data_out({\sw_003_module_data_out[7] ,
+    \sw_003_module_data_out[6] ,
+    \sw_003_module_data_out[5] ,
+    \sw_003_module_data_out[4] ,
+    \sw_003_module_data_out[3] ,
+    \sw_003_module_data_out[2] ,
+    \sw_003_module_data_out[1] ,
+    \sw_003_module_data_out[0] }));
+ scanchain scanchain_4 (.clk_in(sw_003_clk_out),
+    .clk_out(sw_004_clk_out),
+    .data_in(sw_003_data_out),
+    .data_out(sw_004_data_out),
+    .latch_enable_in(sw_003_latch_out),
+    .latch_enable_out(sw_004_latch_out),
+    .scan_select_in(sw_003_scan_out),
+    .scan_select_out(sw_004_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_004_module_data_in[7] ,
+    \sw_004_module_data_in[6] ,
+    \sw_004_module_data_in[5] ,
+    \sw_004_module_data_in[4] ,
+    \sw_004_module_data_in[3] ,
+    \sw_004_module_data_in[2] ,
+    \sw_004_module_data_in[1] ,
+    \sw_004_module_data_in[0] }),
+    .module_data_out({\sw_004_module_data_out[7] ,
+    \sw_004_module_data_out[6] ,
+    \sw_004_module_data_out[5] ,
+    \sw_004_module_data_out[4] ,
+    \sw_004_module_data_out[3] ,
+    \sw_004_module_data_out[2] ,
+    \sw_004_module_data_out[1] ,
+    \sw_004_module_data_out[0] }));
+ scanchain scanchain_5 (.clk_in(sw_004_clk_out),
+    .clk_out(sw_005_clk_out),
+    .data_in(sw_004_data_out),
+    .data_out(sw_005_data_out),
+    .latch_enable_in(sw_004_latch_out),
+    .latch_enable_out(sw_005_latch_out),
+    .scan_select_in(sw_004_scan_out),
+    .scan_select_out(sw_005_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_005_module_data_in[7] ,
+    \sw_005_module_data_in[6] ,
+    \sw_005_module_data_in[5] ,
+    \sw_005_module_data_in[4] ,
+    \sw_005_module_data_in[3] ,
+    \sw_005_module_data_in[2] ,
+    \sw_005_module_data_in[1] ,
+    \sw_005_module_data_in[0] }),
+    .module_data_out({\sw_005_module_data_out[7] ,
+    \sw_005_module_data_out[6] ,
+    \sw_005_module_data_out[5] ,
+    \sw_005_module_data_out[4] ,
+    \sw_005_module_data_out[3] ,
+    \sw_005_module_data_out[2] ,
+    \sw_005_module_data_out[1] ,
+    \sw_005_module_data_out[0] }));
+ scanchain scanchain_6 (.clk_in(sw_005_clk_out),
+    .clk_out(sw_006_clk_out),
+    .data_in(sw_005_data_out),
+    .data_out(sw_006_data_out),
+    .latch_enable_in(sw_005_latch_out),
+    .latch_enable_out(sw_006_latch_out),
+    .scan_select_in(sw_005_scan_out),
+    .scan_select_out(sw_006_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_006_module_data_in[7] ,
+    \sw_006_module_data_in[6] ,
+    \sw_006_module_data_in[5] ,
+    \sw_006_module_data_in[4] ,
+    \sw_006_module_data_in[3] ,
+    \sw_006_module_data_in[2] ,
+    \sw_006_module_data_in[1] ,
+    \sw_006_module_data_in[0] }),
+    .module_data_out({\sw_006_module_data_out[7] ,
+    \sw_006_module_data_out[6] ,
+    \sw_006_module_data_out[5] ,
+    \sw_006_module_data_out[4] ,
+    \sw_006_module_data_out[3] ,
+    \sw_006_module_data_out[2] ,
+    \sw_006_module_data_out[1] ,
+    \sw_006_module_data_out[0] }));
+ scanchain scanchain_7 (.clk_in(sw_006_clk_out),
+    .clk_out(sw_007_clk_out),
+    .data_in(sw_006_data_out),
+    .data_out(sw_007_data_out),
+    .latch_enable_in(sw_006_latch_out),
+    .latch_enable_out(sw_007_latch_out),
+    .scan_select_in(sw_006_scan_out),
+    .scan_select_out(sw_007_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_007_module_data_in[7] ,
+    \sw_007_module_data_in[6] ,
+    \sw_007_module_data_in[5] ,
+    \sw_007_module_data_in[4] ,
+    \sw_007_module_data_in[3] ,
+    \sw_007_module_data_in[2] ,
+    \sw_007_module_data_in[1] ,
+    \sw_007_module_data_in[0] }),
+    .module_data_out({\sw_007_module_data_out[7] ,
+    \sw_007_module_data_out[6] ,
+    \sw_007_module_data_out[5] ,
+    \sw_007_module_data_out[4] ,
+    \sw_007_module_data_out[3] ,
+    \sw_007_module_data_out[2] ,
+    \sw_007_module_data_out[1] ,
+    \sw_007_module_data_out[0] }));
+ scanchain scanchain_8 (.clk_in(sw_007_clk_out),
+    .clk_out(sw_008_clk_out),
+    .data_in(sw_007_data_out),
+    .data_out(sw_008_data_out),
+    .latch_enable_in(sw_007_latch_out),
+    .latch_enable_out(sw_008_latch_out),
+    .scan_select_in(sw_007_scan_out),
+    .scan_select_out(sw_008_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_008_module_data_in[7] ,
+    \sw_008_module_data_in[6] ,
+    \sw_008_module_data_in[5] ,
+    \sw_008_module_data_in[4] ,
+    \sw_008_module_data_in[3] ,
+    \sw_008_module_data_in[2] ,
+    \sw_008_module_data_in[1] ,
+    \sw_008_module_data_in[0] }),
+    .module_data_out({\sw_008_module_data_out[7] ,
+    \sw_008_module_data_out[6] ,
+    \sw_008_module_data_out[5] ,
+    \sw_008_module_data_out[4] ,
+    \sw_008_module_data_out[3] ,
+    \sw_008_module_data_out[2] ,
+    \sw_008_module_data_out[1] ,
+    \sw_008_module_data_out[0] }));
+ scanchain scanchain_9 (.clk_in(sw_008_clk_out),
+    .clk_out(sw_009_clk_out),
+    .data_in(sw_008_data_out),
+    .data_out(sw_009_data_out),
+    .latch_enable_in(sw_008_latch_out),
+    .latch_enable_out(sw_009_latch_out),
+    .scan_select_in(sw_008_scan_out),
+    .scan_select_out(sw_009_scan_out),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .module_data_in({\sw_009_module_data_in[7] ,
+    \sw_009_module_data_in[6] ,
+    \sw_009_module_data_in[5] ,
+    \sw_009_module_data_in[4] ,
+    \sw_009_module_data_in[3] ,
+    \sw_009_module_data_in[2] ,
+    \sw_009_module_data_in[1] ,
+    \sw_009_module_data_in[0] }),
+    .module_data_out({\sw_009_module_data_out[7] ,
+    \sw_009_module_data_out[6] ,
+    \sw_009_module_data_out[5] ,
+    \sw_009_module_data_out[4] ,
+    \sw_009_module_data_out[3] ,
+    \sw_009_module_data_out[2] ,
+    \sw_009_module_data_out[1] ,
+    \sw_009_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_0 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_000_module_data_in[7] ,
+    \sw_000_module_data_in[6] ,
+    \sw_000_module_data_in[5] ,
+    \sw_000_module_data_in[4] ,
+    \sw_000_module_data_in[3] ,
+    \sw_000_module_data_in[2] ,
+    \sw_000_module_data_in[1] ,
+    \sw_000_module_data_in[0] }),
+    .io_out({\sw_000_module_data_out[7] ,
+    \sw_000_module_data_out[6] ,
+    \sw_000_module_data_out[5] ,
+    \sw_000_module_data_out[4] ,
+    \sw_000_module_data_out[3] ,
+    \sw_000_module_data_out[2] ,
+    \sw_000_module_data_out[1] ,
+    \sw_000_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_1 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_001_module_data_in[7] ,
+    \sw_001_module_data_in[6] ,
+    \sw_001_module_data_in[5] ,
+    \sw_001_module_data_in[4] ,
+    \sw_001_module_data_in[3] ,
+    \sw_001_module_data_in[2] ,
+    \sw_001_module_data_in[1] ,
+    \sw_001_module_data_in[0] }),
+    .io_out({\sw_001_module_data_out[7] ,
+    \sw_001_module_data_out[6] ,
+    \sw_001_module_data_out[5] ,
+    \sw_001_module_data_out[4] ,
+    \sw_001_module_data_out[3] ,
+    \sw_001_module_data_out[2] ,
+    \sw_001_module_data_out[1] ,
+    \sw_001_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_10 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_010_module_data_in[7] ,
+    \sw_010_module_data_in[6] ,
+    \sw_010_module_data_in[5] ,
+    \sw_010_module_data_in[4] ,
+    \sw_010_module_data_in[3] ,
+    \sw_010_module_data_in[2] ,
+    \sw_010_module_data_in[1] ,
+    \sw_010_module_data_in[0] }),
+    .io_out({\sw_010_module_data_out[7] ,
+    \sw_010_module_data_out[6] ,
+    \sw_010_module_data_out[5] ,
+    \sw_010_module_data_out[4] ,
+    \sw_010_module_data_out[3] ,
+    \sw_010_module_data_out[2] ,
+    \sw_010_module_data_out[1] ,
+    \sw_010_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_11 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_011_module_data_in[7] ,
+    \sw_011_module_data_in[6] ,
+    \sw_011_module_data_in[5] ,
+    \sw_011_module_data_in[4] ,
+    \sw_011_module_data_in[3] ,
+    \sw_011_module_data_in[2] ,
+    \sw_011_module_data_in[1] ,
+    \sw_011_module_data_in[0] }),
+    .io_out({\sw_011_module_data_out[7] ,
+    \sw_011_module_data_out[6] ,
+    \sw_011_module_data_out[5] ,
+    \sw_011_module_data_out[4] ,
+    \sw_011_module_data_out[3] ,
+    \sw_011_module_data_out[2] ,
+    \sw_011_module_data_out[1] ,
+    \sw_011_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_12 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_012_module_data_in[7] ,
+    \sw_012_module_data_in[6] ,
+    \sw_012_module_data_in[5] ,
+    \sw_012_module_data_in[4] ,
+    \sw_012_module_data_in[3] ,
+    \sw_012_module_data_in[2] ,
+    \sw_012_module_data_in[1] ,
+    \sw_012_module_data_in[0] }),
+    .io_out({\sw_012_module_data_out[7] ,
+    \sw_012_module_data_out[6] ,
+    \sw_012_module_data_out[5] ,
+    \sw_012_module_data_out[4] ,
+    \sw_012_module_data_out[3] ,
+    \sw_012_module_data_out[2] ,
+    \sw_012_module_data_out[1] ,
+    \sw_012_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_13 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_013_module_data_in[7] ,
+    \sw_013_module_data_in[6] ,
+    \sw_013_module_data_in[5] ,
+    \sw_013_module_data_in[4] ,
+    \sw_013_module_data_in[3] ,
+    \sw_013_module_data_in[2] ,
+    \sw_013_module_data_in[1] ,
+    \sw_013_module_data_in[0] }),
+    .io_out({\sw_013_module_data_out[7] ,
+    \sw_013_module_data_out[6] ,
+    \sw_013_module_data_out[5] ,
+    \sw_013_module_data_out[4] ,
+    \sw_013_module_data_out[3] ,
+    \sw_013_module_data_out[2] ,
+    \sw_013_module_data_out[1] ,
+    \sw_013_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_14 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_014_module_data_in[7] ,
+    \sw_014_module_data_in[6] ,
+    \sw_014_module_data_in[5] ,
+    \sw_014_module_data_in[4] ,
+    \sw_014_module_data_in[3] ,
+    \sw_014_module_data_in[2] ,
+    \sw_014_module_data_in[1] ,
+    \sw_014_module_data_in[0] }),
+    .io_out({\sw_014_module_data_out[7] ,
+    \sw_014_module_data_out[6] ,
+    \sw_014_module_data_out[5] ,
+    \sw_014_module_data_out[4] ,
+    \sw_014_module_data_out[3] ,
+    \sw_014_module_data_out[2] ,
+    \sw_014_module_data_out[1] ,
+    \sw_014_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_15 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_015_module_data_in[7] ,
+    \sw_015_module_data_in[6] ,
+    \sw_015_module_data_in[5] ,
+    \sw_015_module_data_in[4] ,
+    \sw_015_module_data_in[3] ,
+    \sw_015_module_data_in[2] ,
+    \sw_015_module_data_in[1] ,
+    \sw_015_module_data_in[0] }),
+    .io_out({\sw_015_module_data_out[7] ,
+    \sw_015_module_data_out[6] ,
+    \sw_015_module_data_out[5] ,
+    \sw_015_module_data_out[4] ,
+    \sw_015_module_data_out[3] ,
+    \sw_015_module_data_out[2] ,
+    \sw_015_module_data_out[1] ,
+    \sw_015_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_16 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_016_module_data_in[7] ,
+    \sw_016_module_data_in[6] ,
+    \sw_016_module_data_in[5] ,
+    \sw_016_module_data_in[4] ,
+    \sw_016_module_data_in[3] ,
+    \sw_016_module_data_in[2] ,
+    \sw_016_module_data_in[1] ,
+    \sw_016_module_data_in[0] }),
+    .io_out({\sw_016_module_data_out[7] ,
+    \sw_016_module_data_out[6] ,
+    \sw_016_module_data_out[5] ,
+    \sw_016_module_data_out[4] ,
+    \sw_016_module_data_out[3] ,
+    \sw_016_module_data_out[2] ,
+    \sw_016_module_data_out[1] ,
+    \sw_016_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_17 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_017_module_data_in[7] ,
+    \sw_017_module_data_in[6] ,
+    \sw_017_module_data_in[5] ,
+    \sw_017_module_data_in[4] ,
+    \sw_017_module_data_in[3] ,
+    \sw_017_module_data_in[2] ,
+    \sw_017_module_data_in[1] ,
+    \sw_017_module_data_in[0] }),
+    .io_out({\sw_017_module_data_out[7] ,
+    \sw_017_module_data_out[6] ,
+    \sw_017_module_data_out[5] ,
+    \sw_017_module_data_out[4] ,
+    \sw_017_module_data_out[3] ,
+    \sw_017_module_data_out[2] ,
+    \sw_017_module_data_out[1] ,
+    \sw_017_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_18 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_018_module_data_in[7] ,
+    \sw_018_module_data_in[6] ,
+    \sw_018_module_data_in[5] ,
+    \sw_018_module_data_in[4] ,
+    \sw_018_module_data_in[3] ,
+    \sw_018_module_data_in[2] ,
+    \sw_018_module_data_in[1] ,
+    \sw_018_module_data_in[0] }),
+    .io_out({\sw_018_module_data_out[7] ,
+    \sw_018_module_data_out[6] ,
+    \sw_018_module_data_out[5] ,
+    \sw_018_module_data_out[4] ,
+    \sw_018_module_data_out[3] ,
+    \sw_018_module_data_out[2] ,
+    \sw_018_module_data_out[1] ,
+    \sw_018_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_19 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_019_module_data_in[7] ,
+    \sw_019_module_data_in[6] ,
+    \sw_019_module_data_in[5] ,
+    \sw_019_module_data_in[4] ,
+    \sw_019_module_data_in[3] ,
+    \sw_019_module_data_in[2] ,
+    \sw_019_module_data_in[1] ,
+    \sw_019_module_data_in[0] }),
+    .io_out({\sw_019_module_data_out[7] ,
+    \sw_019_module_data_out[6] ,
+    \sw_019_module_data_out[5] ,
+    \sw_019_module_data_out[4] ,
+    \sw_019_module_data_out[3] ,
+    \sw_019_module_data_out[2] ,
+    \sw_019_module_data_out[1] ,
+    \sw_019_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_2 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_002_module_data_in[7] ,
+    \sw_002_module_data_in[6] ,
+    \sw_002_module_data_in[5] ,
+    \sw_002_module_data_in[4] ,
+    \sw_002_module_data_in[3] ,
+    \sw_002_module_data_in[2] ,
+    \sw_002_module_data_in[1] ,
+    \sw_002_module_data_in[0] }),
+    .io_out({\sw_002_module_data_out[7] ,
+    \sw_002_module_data_out[6] ,
+    \sw_002_module_data_out[5] ,
+    \sw_002_module_data_out[4] ,
+    \sw_002_module_data_out[3] ,
+    \sw_002_module_data_out[2] ,
+    \sw_002_module_data_out[1] ,
+    \sw_002_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_20 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_020_module_data_in[7] ,
+    \sw_020_module_data_in[6] ,
+    \sw_020_module_data_in[5] ,
+    \sw_020_module_data_in[4] ,
+    \sw_020_module_data_in[3] ,
+    \sw_020_module_data_in[2] ,
+    \sw_020_module_data_in[1] ,
+    \sw_020_module_data_in[0] }),
+    .io_out({\sw_020_module_data_out[7] ,
+    \sw_020_module_data_out[6] ,
+    \sw_020_module_data_out[5] ,
+    \sw_020_module_data_out[4] ,
+    \sw_020_module_data_out[3] ,
+    \sw_020_module_data_out[2] ,
+    \sw_020_module_data_out[1] ,
+    \sw_020_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_21 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_021_module_data_in[7] ,
+    \sw_021_module_data_in[6] ,
+    \sw_021_module_data_in[5] ,
+    \sw_021_module_data_in[4] ,
+    \sw_021_module_data_in[3] ,
+    \sw_021_module_data_in[2] ,
+    \sw_021_module_data_in[1] ,
+    \sw_021_module_data_in[0] }),
+    .io_out({\sw_021_module_data_out[7] ,
+    \sw_021_module_data_out[6] ,
+    \sw_021_module_data_out[5] ,
+    \sw_021_module_data_out[4] ,
+    \sw_021_module_data_out[3] ,
+    \sw_021_module_data_out[2] ,
+    \sw_021_module_data_out[1] ,
+    \sw_021_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_22 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_022_module_data_in[7] ,
+    \sw_022_module_data_in[6] ,
+    \sw_022_module_data_in[5] ,
+    \sw_022_module_data_in[4] ,
+    \sw_022_module_data_in[3] ,
+    \sw_022_module_data_in[2] ,
+    \sw_022_module_data_in[1] ,
+    \sw_022_module_data_in[0] }),
+    .io_out({\sw_022_module_data_out[7] ,
+    \sw_022_module_data_out[6] ,
+    \sw_022_module_data_out[5] ,
+    \sw_022_module_data_out[4] ,
+    \sw_022_module_data_out[3] ,
+    \sw_022_module_data_out[2] ,
+    \sw_022_module_data_out[1] ,
+    \sw_022_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_23 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_023_module_data_in[7] ,
+    \sw_023_module_data_in[6] ,
+    \sw_023_module_data_in[5] ,
+    \sw_023_module_data_in[4] ,
+    \sw_023_module_data_in[3] ,
+    \sw_023_module_data_in[2] ,
+    \sw_023_module_data_in[1] ,
+    \sw_023_module_data_in[0] }),
+    .io_out({\sw_023_module_data_out[7] ,
+    \sw_023_module_data_out[6] ,
+    \sw_023_module_data_out[5] ,
+    \sw_023_module_data_out[4] ,
+    \sw_023_module_data_out[3] ,
+    \sw_023_module_data_out[2] ,
+    \sw_023_module_data_out[1] ,
+    \sw_023_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_24 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_024_module_data_in[7] ,
+    \sw_024_module_data_in[6] ,
+    \sw_024_module_data_in[5] ,
+    \sw_024_module_data_in[4] ,
+    \sw_024_module_data_in[3] ,
+    \sw_024_module_data_in[2] ,
+    \sw_024_module_data_in[1] ,
+    \sw_024_module_data_in[0] }),
+    .io_out({\sw_024_module_data_out[7] ,
+    \sw_024_module_data_out[6] ,
+    \sw_024_module_data_out[5] ,
+    \sw_024_module_data_out[4] ,
+    \sw_024_module_data_out[3] ,
+    \sw_024_module_data_out[2] ,
+    \sw_024_module_data_out[1] ,
+    \sw_024_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_25 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_025_module_data_in[7] ,
+    \sw_025_module_data_in[6] ,
+    \sw_025_module_data_in[5] ,
+    \sw_025_module_data_in[4] ,
+    \sw_025_module_data_in[3] ,
+    \sw_025_module_data_in[2] ,
+    \sw_025_module_data_in[1] ,
+    \sw_025_module_data_in[0] }),
+    .io_out({\sw_025_module_data_out[7] ,
+    \sw_025_module_data_out[6] ,
+    \sw_025_module_data_out[5] ,
+    \sw_025_module_data_out[4] ,
+    \sw_025_module_data_out[3] ,
+    \sw_025_module_data_out[2] ,
+    \sw_025_module_data_out[1] ,
+    \sw_025_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_26 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_026_module_data_in[7] ,
+    \sw_026_module_data_in[6] ,
+    \sw_026_module_data_in[5] ,
+    \sw_026_module_data_in[4] ,
+    \sw_026_module_data_in[3] ,
+    \sw_026_module_data_in[2] ,
+    \sw_026_module_data_in[1] ,
+    \sw_026_module_data_in[0] }),
+    .io_out({\sw_026_module_data_out[7] ,
+    \sw_026_module_data_out[6] ,
+    \sw_026_module_data_out[5] ,
+    \sw_026_module_data_out[4] ,
+    \sw_026_module_data_out[3] ,
+    \sw_026_module_data_out[2] ,
+    \sw_026_module_data_out[1] ,
+    \sw_026_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_27 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_027_module_data_in[7] ,
+    \sw_027_module_data_in[6] ,
+    \sw_027_module_data_in[5] ,
+    \sw_027_module_data_in[4] ,
+    \sw_027_module_data_in[3] ,
+    \sw_027_module_data_in[2] ,
+    \sw_027_module_data_in[1] ,
+    \sw_027_module_data_in[0] }),
+    .io_out({\sw_027_module_data_out[7] ,
+    \sw_027_module_data_out[6] ,
+    \sw_027_module_data_out[5] ,
+    \sw_027_module_data_out[4] ,
+    \sw_027_module_data_out[3] ,
+    \sw_027_module_data_out[2] ,
+    \sw_027_module_data_out[1] ,
+    \sw_027_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_28 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_028_module_data_in[7] ,
+    \sw_028_module_data_in[6] ,
+    \sw_028_module_data_in[5] ,
+    \sw_028_module_data_in[4] ,
+    \sw_028_module_data_in[3] ,
+    \sw_028_module_data_in[2] ,
+    \sw_028_module_data_in[1] ,
+    \sw_028_module_data_in[0] }),
+    .io_out({\sw_028_module_data_out[7] ,
+    \sw_028_module_data_out[6] ,
+    \sw_028_module_data_out[5] ,
+    \sw_028_module_data_out[4] ,
+    \sw_028_module_data_out[3] ,
+    \sw_028_module_data_out[2] ,
+    \sw_028_module_data_out[1] ,
+    \sw_028_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_29 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_029_module_data_in[7] ,
+    \sw_029_module_data_in[6] ,
+    \sw_029_module_data_in[5] ,
+    \sw_029_module_data_in[4] ,
+    \sw_029_module_data_in[3] ,
+    \sw_029_module_data_in[2] ,
+    \sw_029_module_data_in[1] ,
+    \sw_029_module_data_in[0] }),
+    .io_out({\sw_029_module_data_out[7] ,
+    \sw_029_module_data_out[6] ,
+    \sw_029_module_data_out[5] ,
+    \sw_029_module_data_out[4] ,
+    \sw_029_module_data_out[3] ,
+    \sw_029_module_data_out[2] ,
+    \sw_029_module_data_out[1] ,
+    \sw_029_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_3 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_003_module_data_in[7] ,
+    \sw_003_module_data_in[6] ,
+    \sw_003_module_data_in[5] ,
+    \sw_003_module_data_in[4] ,
+    \sw_003_module_data_in[3] ,
+    \sw_003_module_data_in[2] ,
+    \sw_003_module_data_in[1] ,
+    \sw_003_module_data_in[0] }),
+    .io_out({\sw_003_module_data_out[7] ,
+    \sw_003_module_data_out[6] ,
+    \sw_003_module_data_out[5] ,
+    \sw_003_module_data_out[4] ,
+    \sw_003_module_data_out[3] ,
+    \sw_003_module_data_out[2] ,
+    \sw_003_module_data_out[1] ,
+    \sw_003_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_4 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_004_module_data_in[7] ,
+    \sw_004_module_data_in[6] ,
+    \sw_004_module_data_in[5] ,
+    \sw_004_module_data_in[4] ,
+    \sw_004_module_data_in[3] ,
+    \sw_004_module_data_in[2] ,
+    \sw_004_module_data_in[1] ,
+    \sw_004_module_data_in[0] }),
+    .io_out({\sw_004_module_data_out[7] ,
+    \sw_004_module_data_out[6] ,
+    \sw_004_module_data_out[5] ,
+    \sw_004_module_data_out[4] ,
+    \sw_004_module_data_out[3] ,
+    \sw_004_module_data_out[2] ,
+    \sw_004_module_data_out[1] ,
+    \sw_004_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_5 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_005_module_data_in[7] ,
+    \sw_005_module_data_in[6] ,
+    \sw_005_module_data_in[5] ,
+    \sw_005_module_data_in[4] ,
+    \sw_005_module_data_in[3] ,
+    \sw_005_module_data_in[2] ,
+    \sw_005_module_data_in[1] ,
+    \sw_005_module_data_in[0] }),
+    .io_out({\sw_005_module_data_out[7] ,
+    \sw_005_module_data_out[6] ,
+    \sw_005_module_data_out[5] ,
+    \sw_005_module_data_out[4] ,
+    \sw_005_module_data_out[3] ,
+    \sw_005_module_data_out[2] ,
+    \sw_005_module_data_out[1] ,
+    \sw_005_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_6 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_006_module_data_in[7] ,
+    \sw_006_module_data_in[6] ,
+    \sw_006_module_data_in[5] ,
+    \sw_006_module_data_in[4] ,
+    \sw_006_module_data_in[3] ,
+    \sw_006_module_data_in[2] ,
+    \sw_006_module_data_in[1] ,
+    \sw_006_module_data_in[0] }),
+    .io_out({\sw_006_module_data_out[7] ,
+    \sw_006_module_data_out[6] ,
+    \sw_006_module_data_out[5] ,
+    \sw_006_module_data_out[4] ,
+    \sw_006_module_data_out[3] ,
+    \sw_006_module_data_out[2] ,
+    \sw_006_module_data_out[1] ,
+    \sw_006_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_7 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_007_module_data_in[7] ,
+    \sw_007_module_data_in[6] ,
+    \sw_007_module_data_in[5] ,
+    \sw_007_module_data_in[4] ,
+    \sw_007_module_data_in[3] ,
+    \sw_007_module_data_in[2] ,
+    \sw_007_module_data_in[1] ,
+    \sw_007_module_data_in[0] }),
+    .io_out({\sw_007_module_data_out[7] ,
+    \sw_007_module_data_out[6] ,
+    \sw_007_module_data_out[5] ,
+    \sw_007_module_data_out[4] ,
+    \sw_007_module_data_out[3] ,
+    \sw_007_module_data_out[2] ,
+    \sw_007_module_data_out[1] ,
+    \sw_007_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_8 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_008_module_data_in[7] ,
+    \sw_008_module_data_in[6] ,
+    \sw_008_module_data_in[5] ,
+    \sw_008_module_data_in[4] ,
+    \sw_008_module_data_in[3] ,
+    \sw_008_module_data_in[2] ,
+    \sw_008_module_data_in[1] ,
+    \sw_008_module_data_in[0] }),
+    .io_out({\sw_008_module_data_out[7] ,
+    \sw_008_module_data_out[6] ,
+    \sw_008_module_data_out[5] ,
+    \sw_008_module_data_out[4] ,
+    \sw_008_module_data_out[3] ,
+    \sw_008_module_data_out[2] ,
+    \sw_008_module_data_out[1] ,
+    \sw_008_module_data_out[0] }));
+ user_module_341535056611770964 user_module_341535056611770964_9 (.vccd1(vccd1),
+    .vssd1(vssd1),
+    .io_in({\sw_009_module_data_in[7] ,
+    \sw_009_module_data_in[6] ,
+    \sw_009_module_data_in[5] ,
+    \sw_009_module_data_in[4] ,
+    \sw_009_module_data_in[3] ,
+    \sw_009_module_data_in[2] ,
+    \sw_009_module_data_in[1] ,
+    \sw_009_module_data_in[0] }),
+    .io_out({\sw_009_module_data_out[7] ,
+    \sw_009_module_data_out[6] ,
+    \sw_009_module_data_out[5] ,
+    \sw_009_module_data_out[4] ,
+    \sw_009_module_data_out[3] ,
+    \sw_009_module_data_out[2] ,
+    \sw_009_module_data_out[1] ,
+    \sw_009_module_data_out[0] }));
 endmodule

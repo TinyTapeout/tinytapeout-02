@@ -1,5 +1,6 @@
 [options]
 mode prove
+multiclock on
 
 [engines]
 smtbmc
