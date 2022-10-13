@@ -1,6 +1,6 @@
-[![tinytapeout](https://github.com/mattvenn/tinytapeout-mpw7/actions/workflows/tinytapeout.yaml/badge.svg)](https://github.com/mattvenn/tinytapeout-mpw7/actions/workflows/tinytapeout.yaml)
-[![verification](https://github.com/mattvenn/tinytapeout-mpw7/actions/workflows/verification.yaml/badge.svg)](https://github.com/mattvenn/tinytapeout-mpw7/actions/workflows/verification.yaml)
-[![tt_datasheet](https://github.com/mattvenn/tinytapeout-mpw7/actions/workflows/tt_datasheet.yaml/badge.svg)](https://github.com/mattvenn/tinytapeout-mpw7/actions/workflows/tt_datasheet.yaml)
+[![tinytapeout](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tinytapeout.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tinytapeout.yaml)
+[![verification](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/verification.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/verification.yaml)
+[![tt_datasheet](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tt_datasheet.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tt_datasheet.yaml)
 
 # TinyTapeout
 
@@ -10,8 +10,7 @@
 
 # Datasheet
 
-We are building a datasheet of all the projects. Only 20% of projects so far have documentation.
-To read it, [click the latest tt_datasheet build](https://github.com/TinyTapeout/tt_docs/actions), then download the PDF artifact.
+We are building a datasheet of all the projects.  To read it, click the tt_datasheet badge above, then download the PDF artifact.
 
 # GDS layout of all projects
 
