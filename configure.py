@@ -194,8 +194,12 @@ class Projects():
             artifacts = [a for a in data['artifacts'] if a['name'] == 'GDS']
             logging.debug("found {} artifacts".format(len(artifacts)))
 
+        if len(artifacts) == 0:
+            logging.error("no artifacts for this project")
+            exit(1)
+
         download_url = Projects.get_most_recent_action_url(commits, artifacts)
-        logging.debug(download_url)
+        logging.debug("download url {}".format(download_url))
 
         # need actions access on the token to get the artifact
         # won't work on a pull request because they won't have the token
