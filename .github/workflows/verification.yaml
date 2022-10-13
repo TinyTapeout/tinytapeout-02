@@ -9,12 +9,12 @@ jobs:
         PDK:                sky130B
         GH_TOKEN:           ${{ secrets.GH_TOKEN }}
         GH_USERNAME:        ${{ secrets.GH_USERNAME }}
-        DESIGNS:            /home/runner/work/tinytapeout-mpw7/tinytapeout-mpw7
-        TARGET_PATH:        /home/runner/work/tinytapeout-mpw7/tinytapeout-mpw7
-        MGMT_AREA_ROOT:     /home/runner/work/tinytapeout-mpw7/tinytapeout-mpw7/mgmt_core_wrapper
-        MCW_ROOT:           /home/runner/work/tinytapeout-mpw7/tinytapeout-mpw7/mgmt_core_wrapper
-        CARAVEL_ROOT:       /home/runner/work/tinytapeout-mpw7/tinytapeout-mpw7/caravel
-        CORE_VERILOG_PATH:  /home/runner/work/tinytapeout-mpw7/tinytapeout-mpw7/mgmt_core_wrapper/verilog
+        DESIGNS:            /home/runner/work/tinytapeout-02/tinytapeout-02
+        TARGET_PATH:        /home/runner/work/tinytapeout-02/tinytapeout-02
+        MGMT_AREA_ROOT:     /home/runner/work/tinytapeout-02/tinytapeout-02/mgmt_core_wrapper
+        MCW_ROOT:           /home/runner/work/tinytapeout-02/tinytapeout-02/mgmt_core_wrapper
+        CARAVEL_ROOT:       /home/runner/work/tinytapeout-02/tinytapeout-02/caravel
+        CORE_VERILOG_PATH:  /home/runner/work/tinytapeout-02/tinytapeout-02/mgmt_core_wrapper/verilog
         GCC_PATH:           /home/runner/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin/
         GCC_PREFIX:         riscv64-unknown-elf
 
@@ -49,7 +49,7 @@ jobs:
     # pwd debug
     - name: pwd
       run: |
-        pwd # /home/runner/work/tinytapeout-mpw7/tinytapeout-mpw7
+        pwd # /home/runner/work/tinytapeout-02/tinytapeout-02
 
     # install oss fpga tools for cocotb and iverilog
     - name: install oss-cad-suite
