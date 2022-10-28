@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import re
+import yaml
 from typing import List
 from urllib.parse import urlparse
 import argparse, requests, base64, zipfile, io, logging, pickle, shutil, sys, os, collections, subprocess
@@ -136,6 +137,21 @@ class Projects():
             logging.error("duplicate projects: {}".format(duplicates))
             exit(1)
 
+    @classmethod
+    def load_yaml(project, yaml_file):
+        with open(yaml_file, "r") as stream:
+            return (yaml.safe_load(stream))
+
+    @classmethod
+    def get_wokwi_id_from_yaml(project, yaml):
+        # wokwi_id must be an int or 0
+        try:
+            wokwi_id = int(yaml['project']['wokwi_id'])
+            return wokwi_id
+        except ValueError:
+            logging.error("wokwi id must be an integer")
+            exit(1)
+
     # the latest artifact isn't necessarily the one related to the latest commit, as github
     # could have taken longer to process an older commit than a newer one.
     # so iterate through commits and return the artifact that matches
@@ -208,8 +224,8 @@ class Projects():
         z.extractall(tmp_dir)
 
         # get the wokwi id
-        with open(os.path.join(tmp_dir, 'src/ID')) as fh:
-            wokwi_id = fh.readline().strip()
+        info_yaml = Projects.load_yaml(os.path.join(tmp_dir, 'src/info.yaml'))
+        wokwi_id = Projects.get_wokwi_id_from_yaml(info_yaml)
 
         logging.info("wokwi id {} github url {}".format(wokwi_id, url))
 
@@ -271,7 +287,7 @@ class Projects():
                 for match in rgx_mod.finditer(flat_text):
                     all_mod.add(match.group(1))
         # Replace just the names which don't contain the Wokwi ID
-        problems = { x for x in all_mod if wokwi_id not in x }
+        problems = { x for x in all_mod if str(wokwi_id) not in x }
         if problems:
             # Create regular expression to match uses of the module name
             rgx_repl = re.compile(rf"\b({'|'.join(problems)})\b")
