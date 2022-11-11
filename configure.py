@@ -599,7 +599,6 @@ if __name__ == '__main__':
     parser.add_argument('--list', help="list projects", action='store_const', const=True)
     parser.add_argument('--clone-all', help="clone all projects", action="store_const", const=True)
     parser.add_argument('--clone-single', help='only fetch a single repo for debug', type=int)
-    parser.add_argument('--fetch-gds', help='fetch gds', action='store_const', const=True)
     parser.add_argument('--update-caravel', help='configure caravel for build', action='store_const', const=True)
     parser.add_argument('--limit-num-projects', help='only configure for the first n projects', type=int, default=DEFAULT_NUM_PROJECTS)
     parser.add_argument('--test', help='use test projects', action='store_const', const=True)
