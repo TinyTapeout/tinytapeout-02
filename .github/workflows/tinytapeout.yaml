@@ -35,30 +35,14 @@ jobs:
         cache: 'pip'
     - run: pip install -r requirements.txt
 
-    # install riscv gcc
-#    - name: riscv gcc
-#      run: |
-#        cd $HOME
-#        wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14.tar.gz
-#        tar -xzf riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14.tar.gz
-
     # pwd debug
     - name: pwd
       run: |
         pwd # /home/runner/work/tinytapeout-mpw7/tinytapeout-mpw7
 
-    # install oss fpga tools
-#    - name: install oss-cad-suite
-#      uses: YosysHQ/setup-oss-cad-suite@v1
-#      with:
-#          python-override: true # don't want to use that python
-#    - run: | 
-#        yosys --version
-#        iverilog -V
-
     # fetch the repos
     - name: fetch all
-      run: python ./configure.py --update-projects --debug --test
+      run: python ./configure.py --clone-all --debug --test
 
     # install projects
     - name: configure
