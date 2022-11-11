@@ -22,14 +22,14 @@ class Projects():
         self.args = args
         # project urls are defined in project_urls module
         # by default, this method will fill empty slots with the 'filler project'
-        self.project_urls = self.get_project_urls()
-        assert len(self.project_urls) == DEFAULT_NUM_PROJECTS
-        logging.info(f"loaded {len(self.project_urls)} projects")
-
-        if args.test:
+        if self.args.test:
+            self.project_urls = test_project_urls
             project_dir = 'test_projects'
         else:
+            self.project_urls = project_urls
             project_dir = 'projects'
+
+        logging.info(f"loaded {len(self.project_urls)} projects")
 
         if not os.path.exists(project_dir):
             os.makedirs(project_dir)
@@ -37,57 +37,35 @@ class Projects():
         self.projects = []
         filler = False
         filler_id = 0
-        for index, git_url in enumerate(self.project_urls):
-            if git_url == filler_project_url:
+        for index in range(args.limit_num_projects):
+            try:
+                git_url = self.project_urls[index]
+            except IndexError as e:
                 if filler == False:
-                    filler_id = index
+                    git_url = filler_project_url
+                    filler_id = 0 # first project is always fill
                 filler = True
-            self.projects.append(Project(index, git_url, project_dir, fill=filler, fill_id=filler_id))
+
+            project = Project(index, git_url, project_dir, fill=filler, fill_id=filler_id)
            
-        if args.clone_single is not None:
-            project = self.projects[args.clone_single]
-            logging.info(f"cloning {project}")
-            project.clone()
-
-        # clone git repos locally
-        if args.clone_all:
-            first_fill = False
-            for project in self.projects:
-                if not first_fill:
-                    logging.info(f"cloning {project}")
+            # clone git repos locally & gds artifacts from action build
+            if args.clone_all:
+                logging.info(f"cloning & fetching gds")
+                if filler == False:
                     project.clone()
-                    first_fill = project.fill
-
-            # gds artifacts from action build
-            first_fill = False
-            for project in self.projects:
-                if not first_fill:
-                    logging.info(f"installing gds for {project}")
                     project.fetch_gds()
-                    first_fill = project.fill
 
-        # projects should now be installed, so load all the data from the yaml files
-        # up to this point projects objects don't know themselves
-        logging.info(f"loading project yaml")
-        for project in self.projects:
+            # projects should now be installed, so load all the data from the yaml files
+            logging.info(f"loading project yaml")
             # fill projects will load from the fill project's directory
             project.load_yaml()
 
-        logging.info(f"copying files to caravel")
-        first_fill = False
-        for project in self.projects:
-            if not first_fill:
+            logging.info(f"copying files to caravel")
+            if filler == False:
                 project.copy_files_to_caravel()
-                first_fill = project.fill
+
+            self.projects.append(project)
     
-    def get_project_urls(self):
-        # regardless of test, always first project is filler
-        if self.args.test:
-            filler_projects = DEFAULT_NUM_PROJECTS - len(test_project_urls) - 1
-            return [filler_project_url] + test_project_urls + filler_projects * [filler_project_url]
-        else:
-            filler_projects = DEFAULT_NUM_PROJECTS - len(project_urls) - 1
-            return [filler_project_url] + project_urls + filler_projects * [filler_project_url]
 
     def check_dupes(self):
         from project_urls import project_urls
@@ -146,7 +124,7 @@ class Project():
 
     def __str__(self):
         return f"[{self.index:03} : {self.git_url} fill {self.fill} wokwi id {self.wokwi_id}]"
-        return f"[{self.index:03} : {self.git_url}]"
+        #return f"[{self.index:03} : {self.git_url}]"
 
     def fetch_gds(self):
         install_artifacts(self.git_url, self.local_dir)
@@ -580,18 +558,6 @@ class CaravelConfig():
             for verilog in verilog_files:
                 fh.write('-v $(USER_PROJECT_VERILOG)/gl/{}\n'.format(verilog))
 
-    def build_docs(self):
-        pass
-        """
-        logging.info("building doc index")
-        with open("README_init.md") as fh:
-            readme = fh.read()
-        with open("README.md", 'w') as fh:
-            fh.write(readme)
-            for wokwi_id, project_url in zip(self.projects.get_wokwi_ids(), self.projects.get_project_urls()):
-                fh.write("* [{}]({}) {}\n".format(wokwi_id, Projects.build_wokwi_url(wokwi_id), project_url))
-        """
-
     def list(self):
         for project in self.projects:
             logging.info(project)
@@ -601,7 +567,6 @@ if __name__ == '__main__':
 
     parser.add_argument('--list', help="list projects", action='store_const', const=True)
     parser.add_argument('--clone-all', help="clone all projects", action="store_const", const=True)
-    parser.add_argument('--clone-single', help='only fetch a single repo for debug', type=int)
     parser.add_argument('--update-caravel', help='configure caravel for build', action='store_const', const=True)
     parser.add_argument('--limit-num-projects', help='only configure for the first n projects', type=int, default=DEFAULT_NUM_PROJECTS)
     parser.add_argument('--test', help='use test projects', action='store_const', const=True)
@@ -627,7 +592,7 @@ if __name__ == '__main__':
     log.addHandler(ch)
 
     projects = Projects(args)
-    projects.check_dupes()
+#    projects.check_dupes()
 
     caravel = CaravelConfig(projects.projects, num_projects=args.limit_num_projects)
 
