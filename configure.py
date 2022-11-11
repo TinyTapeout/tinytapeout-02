@@ -20,6 +20,8 @@ class Projects():
 
     def __init__(self, args):
         self.args = args
+        # project urls are defined in project_urls module
+        # by default, this method will fill empty slots with the 'filler project'
         self.project_urls = self.get_project_urls()
         assert len(self.project_urls) == DEFAULT_NUM_PROJECTS
         logging.info(f"loaded {len(self.project_urls)} projects")
@@ -30,17 +32,21 @@ class Projects():
             project_dir = 'projects'
 
         self.projects = []
+        filler = False
+        filler_id = 0
         for index, git_url in enumerate(self.project_urls):
             if git_url == filler_project_url:
-                self.projects.append(Project(index, git_url, project_dir, fill=True))
-            else:
-                self.projects.append(Project(index, git_url, project_dir, fill=False))
+                if filler == False:
+                    filler_id = index
+                filler = True
+            self.projects.append(Project(index, git_url, project_dir, fill=filler, fill_id=filler_id))
            
         if args.clone_single is not None:
             project = self.projects[args.clone_single]
             logging.info(f"cloning {project}")
             project.clone()
 
+        # clone git repos locally
         if args.clone_all:
             first_fill = False
             for project in self.projects:
@@ -57,13 +63,12 @@ class Projects():
                     project.fetch_gds()
                     first_fill = project.fill
 
-        # projects should now be installed
-        first_fill = False
+        # projects should now be installed, so load all the data from the yaml files
+        # up to this point projects objects don't know themselves
         logging.info(f"loading project yaml")
         for project in self.projects:
-            if not first_fill:
-                project.load_yaml()
-                first_fill = project.fill
+            # fill projects will load from the fill project's directory
+            project.load_yaml()
 
         logging.info(f"copying files to caravel")
         first_fill = False
@@ -71,7 +76,7 @@ class Projects():
             if not first_fill:
                 project.copy_files_to_caravel()
                 first_fill = project.fill
-
+    
     def get_project_urls(self):
         if self.args.test:
             filler_projects = DEFAULT_NUM_PROJECTS - len(test_project_urls)
@@ -89,24 +94,38 @@ class Projects():
 
 class Project():
 
-    def __init__(self, index, git_url, project_dir, fill):
+    def __init__(self, index, git_url, project_dir, fill, fill_id=0):
         self.git_url = git_url
         self.index = index
         self.fill = fill
         self.project_dir = project_dir
-        self.local_dir = os.path.join(os.path.join(self.project_dir, str(self.index)))
+        self.local_dir = self.gen_local_dir(fill_id)
+
+    # if the project is a filler, then use the config from the first fill project
+    def gen_local_dir(self, fill_id):
+        if self.fill:
+            return os.path.join(os.path.join(self.project_dir, str(fill_id)))
+        else:
+            return os.path.join(os.path.join(self.project_dir, str(self.index)))
+
+    def is_wokwi(self):
+        if self.wokwi_id != 0:
+            return True
+
+    def is_hdl(self):
+        return not self.is_wokwi()
 
     def load_yaml(self):
         try:
             with open(os.path.join(self.local_dir, 'info.yaml')) as fh:
                 self.yaml = yaml.safe_load(fh)
         except FileNotFoundError:
-            logging.error("yaml file not found - do you need to --clone the project repos?")
+            logging.error(f"yaml file not found for {self} - do you need to --clone the project repos?")
             exit(1)
+
         self.wokwi_id = self.yaml['project']['wokwi_id']
-        if self.wokwi_id == 0:
-            # HDL project
-            # HDL project
+
+        if self.is_hdl():
             self.top_module = self.yaml['project']['top_module']
             self.src_files = self.yaml['project']['source_files']
 
@@ -122,67 +141,80 @@ class Project():
         pass
 
     def __str__(self):
-        return f"{self.index} {self.git_url}"
+        return f"[{self.index:03} : {self.git_url}]"
 
     def fetch_gds(self):
         install_artifacts(self.git_url, self.local_dir)
 
-    def get_macro_instance(self):
-        print(self)
-        if self.wokwi_id == 0:
+    def get_macro_name(self):
+        if self.is_hdl():
             return self.top_module
         else:
             return f"user_module_{self.wokwi_id}"
 
+    # instance name of the project, different for each id
+    def get_macro_instance(self):
+        if self.is_hdl():
+            return f"{self.top_module}_{self.index}"
+        else:
+            return f"user_module_{self.wokwi_id}_{self.index}"
+
+    # instance name of the scanchain module, different for each id
     def get_scanchain_instance(self):
         return f"scanchain_{self.index}"
 
+    # unique id
     def get_index(self):
         return self.index
 
-    def get_wokwi_id(self):
-        return self.wokwi_id
-
+    # name of the gds file
     def get_macro_gds_name(self):
-        if self.wokwi_id == 0:
+        if self.is_hdl():
             return f"{self.top_module}.gds"
         else:
+            # return diff if fill
             return f"user_module_{self.wokwi_id}.gds"
 
     def get_macro_lef_name(self):
-        if self.wokwi_id == 0:
+        if self.is_hdl():
             return f"{self.top_module}.lef"
         else:
+            # return diff if fill
             return f"user_module_{self.wokwi_id}.lef"
 
+    # for black boxing when building GDS, just need module name and ports
     def get_verilog_include(self):
-        if self.wokwi_id == 0:
+        if self.is_hdl():
             # wrong
             return f'`include "{self.top_module}.v"\n'
         else:
+            # return diff if fill
             return f'`include "user_module_{self.wokwi_id}.v"\n'
 
+    # for GL sims
     def get_gl_verilog_names(self):
-        if self.wokwi_id == 0:
+        if self.is_hdl():
             return [f"{self.top_module}.v"]
         else:
-            return [f'user_module_{self.index}.v']
+            # return diff if fill
+            return [f'user_module_{self.wokwi_id}.v']
 
+    # for the includes file for simulation
     def get_verilog_names(self):
-        if self.wokwi_id == 0:
+        if self.is_hdl():
             files = []
             for src in self.src_files:
                 files.append(src)
             return files
         else:
+            # return diff if fill
             return [f'user_module_{self.wokwi_id}.v']
 
     def get_giturl(self):
         return self.git_url
 
-    # todo, do the source and GL files as well
     def copy_files_to_caravel(self):
-        if self.wokwi_id == 0:
+        if self.is_hdl():
             files = [
                 (f"{self.index}/runs/wokwi/results/final/gds/{self.top_module}.gds", f"gds/{self.top_module}.gds"),
                 (f"{self.index}/runs/wokwi/results/final/lef/{self.top_module}.lef", f"lef/{self.top_module}.lef"),
@@ -190,7 +222,6 @@ class Project():
                 ]
 # Tholin has used * in src
             for src in self.src_files:
-                print(src)
                 files.append((f"{self.index}/src/{src}", f"verilog/rtl/{src}"))
         else:
             # copy all important files to the correct places. Everything is dependent on the id
@@ -297,9 +328,8 @@ class CaravelConfig():
         rows    = 25
         cols    = 19
         scanchain_w = 36
-
         num_macros_placed = 0
-        logging.info(self.num_projects)
+
         # macro.cfg: where macros are placed
         logging.info("creating macro.cfg")
         with open("openlane/user_project_wrapper/macro.cfg", 'w') as fh:
@@ -480,7 +510,7 @@ class CaravelConfig():
             # Append the user module to the body
             body += [
                 "",
-                f"user_module_{index} {self.projects[idx].get_macro_instance()} (",
+                f"{self.projects[idx].get_macro_name()} {self.projects[idx].get_macro_instance()} (",
                 f"    .io_in  ({pfx}_module_data_in),",
                 f"    .io_out ({pfx}_module_data_out)",
                 ");"
