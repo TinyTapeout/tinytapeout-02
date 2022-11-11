@@ -31,6 +31,9 @@ class Projects():
         else:
             project_dir = 'projects'
 
+        if not os.path.exists(project_dir):
+            os.makedirs(project_dir)
+
         self.projects = []
         filler = False
         filler_id = 0
@@ -78,12 +81,13 @@ class Projects():
                 first_fill = project.fill
     
     def get_project_urls(self):
+        # regardless of test, always first project is filler
         if self.args.test:
-            filler_projects = DEFAULT_NUM_PROJECTS - len(test_project_urls)
-            return test_project_urls + filler_projects * [filler_project_url]
+            filler_projects = DEFAULT_NUM_PROJECTS - len(test_project_urls) - 1
+            return [filler_project_url] + test_project_urls + filler_projects * [filler_project_url]
         else:
-            filler_projects = DEFAULT_NUM_PROJECTS - len(project_urls)
-            return project_urls + filler_projects * [filler_project_url]
+            filler_projects = DEFAULT_NUM_PROJECTS - len(project_urls) - 1
+            return [filler_project_url] + project_urls + filler_projects * [filler_project_url]
 
     def check_dupes(self):
         from project_urls import project_urls
@@ -141,6 +145,7 @@ class Project():
         pass
 
     def __str__(self):
+        return f"[{self.index:03} : {self.git_url} fill {self.fill} wokwi id {self.wokwi_id}]"
         return f"[{self.index:03} : {self.git_url}]"
 
     def fetch_gds(self):
@@ -588,10 +593,8 @@ class CaravelConfig():
         """
 
     def list(self):
-        count = 0
-        for wokwi_id, project_url in zip(self.projects.get_wokwi_ids(), self.projects.get_project_urls()):
-            logging.info("{:3} {:20} {}".format(count, wokwi_id, project_url))
-            count += 1
+        for project in self.projects:
+            logging.info(project)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="TinyTapeout")
