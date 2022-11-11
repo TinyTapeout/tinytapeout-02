@@ -6,14 +6,13 @@ from urllib.parse import urlparse
 import argparse, requests, base64, io, logging, pickle, shutil, sys, os, collections, subprocess
 from git_utils import fetch_file_from_git, install_artifacts
 import git
-
+from project_urls import filler_project_url, test_project_urls, project_urls
 
 # pipe handling
 from signal import signal, SIGPIPE, SIG_DFL
 signal(SIGPIPE, SIG_DFL)
 
 tmp_dir = '/tmp/tt'
-project_dir = 'projects'
 DEFAULT_NUM_PROJECTS = 473
 
 
@@ -25,12 +24,17 @@ class Projects():
         assert len(self.project_urls) == DEFAULT_NUM_PROJECTS
         logging.info(f"loaded {len(self.project_urls)} projects")
 
+        if args.test:
+            project_dir = 'test_projects'
+        else:
+            project_dir = 'projects'
+
         self.projects = []
         for index, git_url in enumerate(self.project_urls):
-            if git_url == self.get_filler_project():
-                self.projects.append(Project(index, git_url, fill=True))
+            if git_url == filler_project_url:
+                self.projects.append(Project(index, git_url, project_dir, fill=True))
             else:
-                self.projects.append(Project(index, git_url, fill=False))
+                self.projects.append(Project(index, git_url, project_dir, fill=False))
            
         if args.clone_single is not None:
             project = self.projects[args.clone_single]
@@ -45,7 +49,7 @@ class Projects():
                     project.clone()
                     first_fill = project.fill
 
-        if args.fetch_gds:
+            # gds artifacts from action build
             first_fill = False
             for project in self.projects:
                 if not first_fill:
@@ -68,21 +72,13 @@ class Projects():
                 project.copy_files_to_caravel()
                 first_fill = project.fill
 
-    def get_filler_project(self):
-        if self.args.test:
-            from project_urls_test import filler_project_url
-        else:
-            from project_urls import filler_project_url
-        return filler_project_url
-
     def get_project_urls(self):
         if self.args.test:
-            from project_urls_test import project_urls, filler_project_url
+            filler_projects = DEFAULT_NUM_PROJECTS - len(test_project_urls)
+            return test_project_urls + filler_projects * [filler_project_url]
         else:
-            from project_urls import project_urls, filler_project_url
-
-        filler_projects = DEFAULT_NUM_PROJECTS - len(project_urls)
-        return project_urls + filler_projects * [filler_project_url]
+            filler_projects = DEFAULT_NUM_PROJECTS - len(project_urls)
+            return project_urls + filler_projects * [filler_project_url]
 
     def check_dupes(self):
         from project_urls import project_urls
@@ -93,15 +89,20 @@ class Projects():
 
 class Project():
 
-    def __init__(self, index, git_url, fill):
+    def __init__(self, index, git_url, project_dir, fill):
         self.git_url = git_url
         self.index = index
         self.fill = fill
-        self.local_dir = os.path.join(os.path.join(project_dir, str(self.index)))
+        self.project_dir = project_dir
+        self.local_dir = os.path.join(os.path.join(self.project_dir, str(self.index)))
 
     def load_yaml(self):
-        with open(os.path.join(self.local_dir, 'info.yaml')) as fh:
-            self.yaml = yaml.safe_load(fh)
+        try:
+            with open(os.path.join(self.local_dir, 'info.yaml')) as fh:
+                self.yaml = yaml.safe_load(fh)
+        except FileNotFoundError:
+            logging.error("yaml file not found - do you need to --clone the project repos?")
+            exit(1)
         self.wokwi_id = self.yaml['project']['wokwi_id']
         if self.wokwi_id == 0:
             # HDL project
@@ -183,25 +184,26 @@ class Project():
     def copy_files_to_caravel(self):
         if self.wokwi_id == 0:
             files = [
-                (f"projects/{self.index}/runs/wokwi/results/final/gds/{self.top_module}.gds", f"gds/{self.top_module}.gds"),
-                (f"projects/{self.index}/runs/wokwi/results/final/lef/{self.top_module}.lef", f"lef/{self.top_module}.lef"),
-                (f"projects/{self.index}/runs/wokwi/results/final/verilog/gl/{self.top_module}.v", f"verilog/gl/{self.top_module}.v"),
+                (f"{self.index}/runs/wokwi/results/final/gds/{self.top_module}.gds", f"gds/{self.top_module}.gds"),
+                (f"{self.index}/runs/wokwi/results/final/lef/{self.top_module}.lef", f"lef/{self.top_module}.lef"),
+                (f"{self.index}/runs/wokwi/results/final/verilog/gl/{self.top_module}.v", f"verilog/gl/{self.top_module}.v"),
                 ]
 # Tholin has used * in src
             for src in self.src_files:
                 print(src)
-                files.append((f"projects/{self.index}/src/{src}", f"verilog/rtl/{src}"))
+                files.append((f"{self.index}/src/{src}", f"verilog/rtl/{src}"))
         else:
             # copy all important files to the correct places. Everything is dependent on the id
             files = [
-                (f"projects/{self.index}/runs/wokwi/results/final/gds/user_module_{self.wokwi_id}.gds", f"gds/user_module_{self.wokwi_id}.gds"),
-                (f"projects/{self.index}/runs/wokwi/results/final/lef/user_module_{self.wokwi_id}.lef", f"lef/user_module_{self.wokwi_id}.lef"),
-                (f"projects/{self.index}/runs/wokwi/results/final/verilog/gl/user_module_{self.wokwi_id}.v", f"verilog/gl/user_module_{self.wokwi_id}.v"),
-                (f"projects/{self.index}/src/user_module_{self.wokwi_id}.v", f"verilog/rtl/user_module_{self.wokwi_id}.v"),
+                (f"{self.index}/runs/wokwi/results/final/gds/user_module_{self.wokwi_id}.gds", f"gds/user_module_{self.wokwi_id}.gds"),
+                (f"{self.index}/runs/wokwi/results/final/lef/user_module_{self.wokwi_id}.lef", f"lef/user_module_{self.wokwi_id}.lef"),
+                (f"{self.index}/runs/wokwi/results/final/verilog/gl/user_module_{self.wokwi_id}.v", f"verilog/gl/user_module_{self.wokwi_id}.v"),
+                (f"{self.index}/src/user_module_{self.wokwi_id}.v", f"verilog/rtl/user_module_{self.wokwi_id}.v"),
                 ]
 
         logging.debug("copying files into position")
         for from_path, to_path in files:
+            from_path = os.path.join(self.project_dir, from_path)
             logging.debug(f"copy {from_path} to {to_path}")
             shutil.copyfile(from_path, to_path)
 
