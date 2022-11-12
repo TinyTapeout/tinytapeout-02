@@ -16,19 +16,19 @@ jobs:
     steps:
     # need the repo checked out, and the tt_docs repo checked out
     - name: checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with: 
         submodules: true
 
     # need python
     - name: setup python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.7.7' # install the python version needed
 
     # python deps from reqirements file, use a marketplace action
     - name: Install Python dependencies
-      uses: py-actions/py-dependency-install@v2
+      uses: py-actions/py-dependency-install@v4
       with:
         path: "tt_docs/requirements.txt"
 
@@ -51,14 +51,14 @@ jobs:
 
     # archive the PDF
     - name: Archive PDF
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
           name: PDF
-          path: tt_docs/tt01.pdf
+          path: tt_docs/tt02.pdf
 
     # archive the MD
     - name: Archive MD
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
           name: MD
-          path: tt_docs/tt01.md
+          path: tt_docs/tt02.md

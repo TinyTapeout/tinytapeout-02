@@ -14,7 +14,7 @@ jobs:
     steps:
     # need the repo checked out
     - name: checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     # build pdk - have to move this back above to get caravel makefile
     - name: pdk & openlane & precheck
@@ -29,7 +29,7 @@ jobs:
 
     # need python
     - name: setup python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.7.7'
         cache: 'pip'
@@ -56,7 +56,7 @@ jobs:
 
     # archive the results
     - name: Archive Wrapper GDS
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
           name: Wrapper GDS
           path: |
