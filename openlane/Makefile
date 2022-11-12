@@ -23,12 +23,13 @@ current_design = null
 
 openlane_cmd = \
 	"flow.tcl \
-	-design $$(realpath ./$*) \
+	-verbose 2 \
+    -design $$(realpath ./$*) \
 	-save_path $$(realpath ..) \
 	-save \
 	-tag $(OPENLANE_RUN_TAG) \
 	-overwrite"
-openlane_cmd_interactive = "flow.tcl -it -file $$(realpath ./$*/interactive.tcl)"
+openlane_cmd_interactive = "flow.tcl -verbose 2 -it -file $$(realpath ./$*/interactive.tcl)"
 
 docker_mounts = \
 	-v $$(realpath $(PWD)/..):$$(realpath $(PWD)/..) \
