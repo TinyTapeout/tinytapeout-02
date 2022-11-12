@@ -108,7 +108,7 @@ And then source it before running the tool.
 This goes through all the projects in project_urls.py, and fetches the latest artifact zip from GitHub. It takes the verilog, the GL verilog, and the GDS and copies 
 them to the correct place.
 
-    ./configure.py --update-projects
+    ./configure.py --clone-all
 
 ### Configure Caravel
 

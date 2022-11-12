@@ -13,7 +13,7 @@ You will need the GitHub tokens setup as described in [INFO](INFO.md#instruction
 The default of 498 projects takes a very long time to simulate, so I advise overriding the configuration:
 
     # fetch the test projects
-    ./configure.py --test --update-projects
+    ./configure.py --test --clone-all
     # rebuild config with only 20 projects
     ./configure.py --test --update-caravel --limit 20
 
