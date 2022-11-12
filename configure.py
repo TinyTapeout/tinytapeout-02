@@ -110,6 +110,25 @@ class Project():
         if self.is_hdl():
             self.top_module = self.yaml['project']['top_module']
             self.src_files = self.yaml['project']['source_files']
+            self.top_verilog_file = self.find_top_verilog()
+   
+    # top module name is defined in one of the source files, which one?
+    def find_top_verilog(self):
+        rgx_mod  = re.compile(r"(?:^|[\W])module[\s]{1,}([\w]+)")
+        top_verilog = []
+        for src in self.src_files:
+            with open(os.path.join(self.local_dir, 'src', src)) as fh:
+                for line in fh.readlines():
+                    for match in rgx_mod.finditer(line):
+                        if match.group(1) == self.top_module:
+                            top_verilog.append(src)
+        assert len(top_verilog) == 1
+        return top_verilog[0]
+
+    def prep_src_file(self, src):
+        filename = os.path.basename(src)
+        # make filename unique
+        return f'{self.index}_{filename}'
 
     def clone(self):
         try:
@@ -168,8 +187,7 @@ class Project():
     # for black boxing when building GDS, just need module name and ports
     def get_verilog_include(self):
         if self.is_hdl():
-            # wrong
-            return f'`include "{self.top_module}.v"\n'
+            return f'`include "{self.get_top_verilog_file()}"\n'
         else:
             # return diff if fill
             return f'`include "user_module_{self.wokwi_id}.v"\n'
@@ -182,13 +200,17 @@ class Project():
             # return diff if fill
             return [f'user_module_{self.wokwi_id}.v']
 
+    def get_top_verilog_file(self):
+        if self.is_hdl():
+            return self.prep_src_file(self.top_verilog_file)
+        else:
+            # return diff if fill
+            return [f'user_module_{self.wokwi_id}.v']
+
     # for the includes file for simulation
     def get_verilog_names(self):
         if self.is_hdl():
-            files = []
-            for src in self.src_files:
-                files.append(src)
-            return files
+            return [ self.prep_src_file(src) for src in self.src_files ]
         else:
             # return diff if fill
             return [f'user_module_{self.wokwi_id}.v']
@@ -198,14 +220,18 @@ class Project():
 
     def copy_files_to_caravel(self):
         if self.is_hdl():
+            # this is going to fail if people use duplicate top module names
+            # and can't be fixed by changing the name as that will not match with the gds or lef
+            to_uniquify = []
             files = [
                 (f"{self.index}/runs/wokwi/results/final/gds/{self.top_module}.gds", f"gds/{self.top_module}.gds"),
                 (f"{self.index}/runs/wokwi/results/final/lef/{self.top_module}.lef", f"lef/{self.top_module}.lef"),
                 (f"{self.index}/runs/wokwi/results/final/verilog/gl/{self.top_module}.v", f"verilog/gl/{self.top_module}.v"),
                 ]
-# Tholin has used * in src
             for src in self.src_files:
-                files.append((f"{self.index}/src/{src}", f"verilog/rtl/{src}"))
+                prepped = self.prep_src_file(src)
+                files.append((f"{self.index}/src/{src}", f"verilog/rtl/{prepped}"))
+                to_uniquify.append(f"verilog/rtl/{prepped}")
         else:
             # copy all important files to the correct places. Everything is dependent on the id
             files = [
@@ -222,10 +248,9 @@ class Project():
             shutil.copyfile(from_path, to_path)
 
         # Uniquify the Verilog for this project
-#        self.uniquify_project(wokwi_id, [
-#            f"verilog/rtl/user_module_{wokwi_id}.v",
-#        ])
-
+        if self.is_hdl():
+            all_modules = self.uniquify_project(self.index, to_uniquify)
+            print(all_modules)
 
     def uniquify_project(self, wokwi_id : str, rtl_files : List[str]) -> None:
         """
@@ -286,6 +311,8 @@ class Project():
                 with open(path, "w", encoding="utf-8") as fh:
                     fh.writelines(new_txt)
 
+        return all_mod
+     
 class CaravelConfig():
 
     def __init__(self, projects, num_projects):
@@ -605,5 +632,3 @@ if __name__ == '__main__':
     if args.update_caravel:
         caravel.create_macro_config()
         caravel.instantiate()
-        if not args.test:
-            caravel.build_docs()
