@@ -1,4 +1,4 @@
-[![tinytapeout](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tinytapeout.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tinytapeout.yaml)
+[![tinytapeout](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/gds.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/gds.yaml)
 [![verification](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/verification.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/verification.yaml)
 [![tt_datasheet](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tt_datasheet.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tt_datasheet.yaml)
 

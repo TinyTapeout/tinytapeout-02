@@ -126,7 +126,10 @@ class Project():
             self.top_module = self.yaml['project']['top_module']
             self.src_files = self.yaml['project']['source_files']
             self.top_verilog_file = self.find_top_verilog()
-   
+  
+    def get_index_row(self):
+        return f'| {self.yaml["documentation"]["author"]} | {self.yaml["documentation"]["title"]} | {self.git_url} |\n'
+
     # top module name is defined in one of the source files, which one?
     def find_top_verilog(self):
         rgx_mod  = re.compile(r"(?:^|[\W])module[\s]{1,}([\w]+)")
@@ -519,6 +522,20 @@ class CaravelConfig():
         for project in self.projects:
             logging.info(project)
 
+
+    def build_index(self):
+        logging.info("building doc index")
+        with open("README_init.md") as fh:
+            readme = fh.read()
+        with open("README.md", 'w') as fh:
+            fh.write(readme)
+            fh.write("| Author | Title | Git Repo |\n")
+            fh.write("| ------ | ------| ---------|\n")
+            for project in self.projects:
+                if not project.fill:
+                    fh.write(project.get_index_row())
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="TinyTapeout")
 
@@ -559,3 +576,4 @@ if __name__ == '__main__':
     if args.update_caravel:
         caravel.create_macro_config()
         caravel.instantiate()
+        caravel.build_index()
