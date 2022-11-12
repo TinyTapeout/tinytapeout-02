@@ -60,4 +60,5 @@ jobs:
       with:
           name: Wrapper GDS
           path: |
-            openlane/user_project_wrapper/runs/user_project_wrapper/*
+            # symlinked user_project_wrapper directory doesn't work
+            openlane/user_project_wrapper/runs/*_*/
