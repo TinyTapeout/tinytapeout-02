@@ -4,6 +4,7 @@
 -v $(USER_PROJECT_VERILOG)/rtl/cells.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_339501025136214612.v
 -v $(USER_PROJECT_VERILOG)/rtl/fraserbc_simon.v
+-v $(USER_PROJECT_VERILOG)/rtl/tomkeddie_top_tto.v
 -v $(USER_PROJECT_VERILOG)/rtl/chrisruk_matrix.v
 -v $(USER_PROJECT_VERILOG)/rtl/loxodes_sequencer.v
 -v $(USER_PROJECT_VERILOG)/rtl/migcorre_pwm.v
@@ -23,4 +24,6 @@
 -v $(USER_PROJECT_VERILOG)/rtl/chase_the_beat.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_347688030570545747.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_342981109408072274.v
+-v $(USER_PROJECT_VERILOG)/rtl/asic_multiplier_wrapper.v
 -v $(USER_PROJECT_VERILOG)/rtl/tholin_avalonsemi_tbb1143.v
+-v $(USER_PROJECT_VERILOG)/rtl/tomkeddie_top_tto_a.v

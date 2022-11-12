@@ -3,6 +3,7 @@ $script_dir/../../lef/scan_controller.lef \
 $script_dir/../../lef/scanchain.lef \
 $script_dir/../../lef/user_module_339501025136214612.lef \
 $script_dir/../../lef/fraserbc_simon.lef \
+$script_dir/../../lef/tomkeddie_top_tto.lef \
 $script_dir/../../lef/chrisruk_matrix.lef \
 $script_dir/../../lef/loxodes_sequencer.lef \
 $script_dir/../../lef/migcorre_pwm.lef \
@@ -22,12 +23,15 @@ $script_dir/../../lef/user_module_347594509754827347.lef \
 $script_dir/../../lef/chase_the_beat.lef \
 $script_dir/../../lef/user_module_347688030570545747.lef \
 $script_dir/../../lef/user_module_342981109408072274.lef \
-$script_dir/../../lef/tholin_avalonsemi_tbb1143.lef"
+$script_dir/../../lef/asic_multiplier_wrapper.lef \
+$script_dir/../../lef/tholin_avalonsemi_tbb1143.lef \
+$script_dir/../../lef/tomkeddie_top_tto_a.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
 $script_dir/../../gds/user_module_339501025136214612.gds \
 $script_dir/../../gds/fraserbc_simon.gds \
+$script_dir/../../gds/tomkeddie_top_tto.gds \
 $script_dir/../../gds/chrisruk_matrix.gds \
 $script_dir/../../gds/loxodes_sequencer.gds \
 $script_dir/../../gds/migcorre_pwm.gds \
@@ -47,4 +51,6 @@ $script_dir/../../gds/user_module_347594509754827347.gds \
 $script_dir/../../gds/chase_the_beat.gds \
 $script_dir/../../gds/user_module_347688030570545747.gds \
 $script_dir/../../gds/user_module_342981109408072274.gds \
-$script_dir/../../gds/tholin_avalonsemi_tbb1143.gds"
+$script_dir/../../gds/asic_multiplier_wrapper.gds \
+$script_dir/../../gds/tholin_avalonsemi_tbb1143.gds \
+$script_dir/../../gds/tomkeddie_top_tto_a.gds"

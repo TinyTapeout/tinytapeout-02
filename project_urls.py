@@ -7,7 +7,7 @@ test_project_urls = [
 project_urls = [
     'https://github.com/TinyTapeout/tt02-test-straight',
     "https://github.com/Fraserbc/tt02-simon",
-    # "https://github.com/TomKeddie/tinytapeout-2022-2", # currently building
+    "https://github.com/TomKeddie/tinytapeout-2022-2", # currently building
     "https://github.com/chrisruk/matrixchip",
     "https://github.com/loxodes/tt02-submission-loxodes",
     "https://github.com/migcorre/tt02-dc",
@@ -28,6 +28,7 @@ project_urls = [
     "https://github.com/ekliptik/tt02-chase-the-beat",
     "https://github.com/maehw/tt02-bcd-7segment-encoder",
     "https://github.com/benevpi/tt02-LED-flasher",
-   # "https://github.com/kuriousd/tt02-4bit-multiplier", # invalid module port
+    "https://github.com/kuriousd/tt02-4bit-multiplier", # invalid module port
     "https://github.com/89Mods/tt2-avalonsemi-TBB1143",
+    "https://github.com/TomKeddie/tinytapeout-2022-2a",
 ]

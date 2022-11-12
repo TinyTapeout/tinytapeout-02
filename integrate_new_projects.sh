@@ -9,7 +9,7 @@ set -e
 make uncompress
 
 # fetch designs
-./configure.py --update-projects
+./configure.py --clone-all
 # update caravel config
 ./configure.py --update-caravel
 

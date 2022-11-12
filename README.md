@@ -20,8 +20,9 @@ We are building a datasheet of all the projects.  To read it, click the tt_datas
 
 | Author | Title | Git Repo |
 | ------ | ------| ---------|
-| Matt Venn | Test project | https://github.com/TinyTapeout/tt02-test-straight |
+|  |  | https://github.com/TinyTapeout/tt02-test-straight |
 | Fraser Price | SIMON Cipher | https://github.com/Fraserbc/tt02-simon |
+| Tom Keddie | HD74480 Clock | https://github.com/TomKeddie/tinytapeout-2022-2 |
 | Chris | Matrix display | https://github.com/chrisruk/matrixchip |
 | Jon Klein | Power supply sequencer | https://github.com/loxodes/tt02-submission-loxodes |
 | Marcelo Pouso / Miguel Correia | Duty Controler | https://github.com/migcorre/tt02-dc |
@@ -41,4 +42,6 @@ We are building a datasheet of all the projects.  To read it, click the tt_datas
 | Emil J Tywoniak | chase the beat | https://github.com/ekliptik/tt02-chase-the-beat |
 | maehw | BCD to 7-segment encoder | https://github.com/maehw/tt02-bcd-7segment-encoder |
 | Ben Everard | A LED Flasher | https://github.com/benevpi/tt02-LED-flasher |
+| Fernando Dominguez Pousa | 4-bit Multiplier | https://github.com/kuriousd/tt02-4bit-multiplier |
 | Tholin | Avalon Semiconductors 'TBB1143' Programmable Sound Generator | https://github.com/89Mods/tt2-avalonsemi-TBB1143 |
+| Tom Keddie | Transmit UART | https://github.com/TomKeddie/tinytapeout-2022-2a |
