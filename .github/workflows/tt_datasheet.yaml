@@ -35,6 +35,7 @@ jobs:
     # run the job
     - name: build datasheet
       run: |
+        cp project_urls.py tt_docs/tt02_projects.py
         cd tt_docs
         python builddoc.py
 
