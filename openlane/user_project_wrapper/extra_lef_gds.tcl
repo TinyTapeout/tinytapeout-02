@@ -1,8 +1,50 @@
 set ::env(EXTRA_LEFS) "\
 $script_dir/../../lef/scan_controller.lef \
 $script_dir/../../lef/scanchain.lef \
-$script_dir/../../lef/user_module_341535056611770964.lef"
+$script_dir/../../lef/user_module_339501025136214612.lef \
+$script_dir/../../lef/fraserbc_simon.lef \
+$script_dir/../../lef/chrisruk_matrix.lef \
+$script_dir/../../lef/loxodes_sequencer.lef \
+$script_dir/../../lef/migcorre_pwm.lef \
+$script_dir/../../lef/cpu_top.lef \
+$script_dir/../../lef/aidan_McCoy.lef \
+$script_dir/../../lef/azdle_binary_clock.lef \
+$script_dir/../../lef/user_module_347787021138264660.lef \
+$script_dir/../../lef/jar_sram_top.lef \
+$script_dir/../../lef/user_module_347690870424732244.lef \
+$script_dir/../../lef/user_module_347592305412145748.lef \
+$script_dir/../../lef/tholin_avalonsemi_5401.lef \
+$script_dir/../../lef/tiny_fft.lef \
+$script_dir/../../lef/user_module_346553315158393428.lef \
+$script_dir/../../lef/user_module_347894637149553236.lef \
+$script_dir/../../lef/user_module_346916357828248146.lef \
+$script_dir/../../lef/user_module_347594509754827347.lef \
+$script_dir/../../lef/chase_the_beat.lef \
+$script_dir/../../lef/user_module_347688030570545747.lef \
+$script_dir/../../lef/user_module_342981109408072274.lef \
+$script_dir/../../lef/tholin_avalonsemi_tbb1143.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
-$script_dir/../../gds/user_module_341535056611770964.gds"
+$script_dir/../../gds/user_module_339501025136214612.gds \
+$script_dir/../../gds/fraserbc_simon.gds \
+$script_dir/../../gds/chrisruk_matrix.gds \
+$script_dir/../../gds/loxodes_sequencer.gds \
+$script_dir/../../gds/migcorre_pwm.gds \
+$script_dir/../../gds/cpu_top.gds \
+$script_dir/../../gds/aidan_McCoy.gds \
+$script_dir/../../gds/azdle_binary_clock.gds \
+$script_dir/../../gds/user_module_347787021138264660.gds \
+$script_dir/../../gds/jar_sram_top.gds \
+$script_dir/../../gds/user_module_347690870424732244.gds \
+$script_dir/../../gds/user_module_347592305412145748.gds \
+$script_dir/../../gds/tholin_avalonsemi_5401.gds \
+$script_dir/../../gds/tiny_fft.gds \
+$script_dir/../../gds/user_module_346553315158393428.gds \
+$script_dir/../../gds/user_module_347894637149553236.gds \
+$script_dir/../../gds/user_module_346916357828248146.gds \
+$script_dir/../../gds/user_module_347594509754827347.gds \
+$script_dir/../../gds/chase_the_beat.gds \
+$script_dir/../../gds/user_module_347688030570545747.gds \
+$script_dir/../../gds/user_module_342981109408072274.gds \
+$script_dir/../../gds/tholin_avalonsemi_tbb1143.gds"
