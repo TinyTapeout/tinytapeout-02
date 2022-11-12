@@ -82,7 +82,7 @@ source $script_dir/extra_lef_gds.tcl
 # these get generated - if a project specifies obstruction in the info.yaml
 #source user_project_wrapper/obstruction.tcl
 
-#set ::env(GLB_RT_ALLOW_CONGESTION) "1"
+set ::env(GLB_RT_ALLOW_CONGESTION) "1"
 
 #Reduction in the routing capacity of the edges between the cells in the global routing graph. Values range from 0 to 1.
 #1 = most reduction, 0 = least reduction 
