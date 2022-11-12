@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import re
+import re, glob
 import yaml
 from typing import List
 from urllib.parse import urlparse
@@ -15,6 +15,14 @@ signal(SIGPIPE, SIG_DFL)
 tmp_dir = '/tmp/tt'
 DEFAULT_NUM_PROJECTS = 473
 
+def unique(duplist):
+    unique_list = []
+    # traverse for all elements
+    for x in duplist:
+        # check if exists in unique_list or not
+        if x not in unique_list:
+            unique_list.append(x)
+    return unique_list
 
 class Projects():
 
@@ -50,7 +58,7 @@ class Projects():
            
             # clone git repos locally & gds artifacts from action build
             if args.clone_all:
-                logging.info(f"cloning & fetching gds")
+                logging.info(f"cloning & fetching gds for {project}")
                 if filler == False:
                     project.clone()
                     project.fetch_gds()
@@ -65,6 +73,13 @@ class Projects():
                 project.copy_files_to_caravel()
 
             self.projects.append(project)
+        
+        # now do some sanity checks
+        all_macro_instances = [ project.get_macro_instance() for project in self.projects ]
+        assert len(all_macro_instances) == len(unique(all_macro_instances))
+
+        all_top_files = [ project.get_top_verilog_file() for project in self.projects if not project.fill ]
+        assert len(all_top_files) == len(unique(all_top_files))
     
 
     def check_dupes(self):
@@ -125,11 +140,6 @@ class Project():
         assert len(top_verilog) == 1
         return top_verilog[0]
 
-    def prep_src_file(self, src):
-        filename = os.path.basename(src)
-        # make filename unique
-        return f'{self.index}_{filename}'
-
     def clone(self):
         try:
             git.Repo.clone_from(self.git_url, self.local_dir)
@@ -142,8 +152,8 @@ class Project():
         pass
 
     def __str__(self):
-        return f"[{self.index:03} : {self.git_url} fill {self.fill} wokwi id {self.wokwi_id}]"
-        #return f"[{self.index:03} : {self.git_url}]"
+        return f"[{self.index:03} : {self.git_url}]"
+        #return f"[{self.index:03} : {self.git_url} fill {self.fill} wokwi id {self.wokwi_id}]"
 
     def fetch_gds(self):
         install_artifacts(self.git_url, self.local_dir)
@@ -189,31 +199,26 @@ class Project():
         if self.is_hdl():
             return f'`include "{self.get_top_verilog_file()}"\n'
         else:
-            # return diff if fill
             return f'`include "user_module_{self.wokwi_id}.v"\n'
 
     # for GL sims
     def get_gl_verilog_names(self):
         if self.is_hdl():
-            return [f"{self.top_module}.v"]
+            return f"{self.top_module}.v"
         else:
-            # return diff if fill
-            return [f'user_module_{self.wokwi_id}.v']
+            return f'user_module_{self.wokwi_id}.v'
 
     def get_top_verilog_file(self):
         if self.is_hdl():
-            return self.prep_src_file(self.top_verilog_file)
+            # make sure it's unique and without leading directories
+            filename = os.path.basename(self.top_verilog_file)
+            return f'{self.index}_{filename}'
         else:
-            # return diff if fill
-            return [f'user_module_{self.wokwi_id}.v']
+            return f'user_module_{self.wokwi_id}.v'
 
     # for the includes file for simulation
     def get_verilog_names(self):
-        if self.is_hdl():
-            return [ self.prep_src_file(src) for src in self.src_files ]
-        else:
-            # return diff if fill
-            return [f'user_module_{self.wokwi_id}.v']
+        return [ self.get_gl_verilog_names() ]
 
     def get_giturl(self):
         return self.git_url
@@ -222,16 +227,12 @@ class Project():
         if self.is_hdl():
             # this is going to fail if people use duplicate top module names
             # and can't be fixed by changing the name as that will not match with the gds or lef
-            to_uniquify = []
             files = [
                 (f"{self.index}/runs/wokwi/results/final/gds/{self.top_module}.gds", f"gds/{self.top_module}.gds"),
                 (f"{self.index}/runs/wokwi/results/final/lef/{self.top_module}.lef", f"lef/{self.top_module}.lef"),
                 (f"{self.index}/runs/wokwi/results/final/verilog/gl/{self.top_module}.v", f"verilog/gl/{self.top_module}.v"),
+                (f"{self.index}/src/{self.top_verilog_file}", f"verilog/rtl/{self.get_top_verilog_file()}"),
                 ]
-            for src in self.src_files:
-                prepped = self.prep_src_file(src)
-                files.append((f"{self.index}/src/{src}", f"verilog/rtl/{prepped}"))
-                to_uniquify.append(f"verilog/rtl/{prepped}")
         else:
             # copy all important files to the correct places. Everything is dependent on the id
             files = [
@@ -247,87 +248,13 @@ class Project():
             logging.debug(f"copy {from_path} to {to_path}")
             shutil.copyfile(from_path, to_path)
 
-        # Uniquify the Verilog for this project
-        if self.is_hdl():
-            all_modules = self.uniquify_project(self.index, to_uniquify)
-            print(all_modules)
 
-    def uniquify_project(self, wokwi_id : str, rtl_files : List[str]) -> None:
-        """
-        Ensure all modules within a given subproject include the Wokwi ID, this
-        avoids collisions between names. This is a relatively simplistic function
-        for uniquification, it could probably be improved a lot.
-
-        :param wokwi_id:    The unique ID for the project
-        :param rtl_files:   List of paths to Verilog files to uniquify
-        """
-        # Identify all of the module names in this project
-        rgx_mod  = re.compile(r"(?:^|[\W])module[\s]{1,}([\w]+)")
-        all_mod  = set()
-        full_txt = {}
-        for path in rtl_files:
-            with open(path, "r", encoding="utf-8") as fh:
-                # Pull in full text
-                full_txt[path] = list(fh.readlines())
-                # Strip single and multi line comments
-                in_block = False
-                clean    = []
-                for line in full_txt[path]:
-                    if "/*" in line and "*/" in line:
-                        line = line.split("/*")[0] + line.split("*/")[1]
-                    elif "/*" in line:
-                        line     = line.split("/*")[0]
-                        in_block = True
-                    elif in_block and "*/" in line:
-                        line     = line.split("*/")[1]
-                        in_block = False
-                    clean.append(line.split("//")[0].strip())
-                # Join cleaned up lines together
-                flat_text = " ".join(clean)
-                # Search for 'module X' declarations
-                for match in rgx_mod.finditer(flat_text):
-                    all_mod.add(match.group(1))
-        # Replace just the names which don't contain the Wokwi ID
-        problems = { x for x in all_mod if str(wokwi_id) not in x }
-        if problems:
-            # Create regular expression to match uses of the module name
-            rgx_repl = re.compile(rf"\b({'|'.join(problems)})\b")
-            # Run through each Verilog file
-            for path, orig_txt in full_txt.items():
-                new_txt = []
-                for line in orig_txt:
-                    # For every match, substitute with a safe module name
-                    for match in list(rgx_repl.finditer(line))[::-1]:
-                        m_start, m_end = match.span()
-                        m_sub          = f"{match.group(1)}_{wokwi_id}"
-                        line           = line[:m_start] + m_sub + line[m_end:]
-                        # Some projects seem to have hardcoded RTL and forgotten
-                        # to replace 'USER_MODULE_ID' with the Wokwi ID
-                        if "_USER_MODULE_ID_" in line:
-                            line = line.replace("_USER_MODULE_ID_", "_")
-                    new_txt.append(line)
-                # Overwrite the file
-                logging.info(f"Writing uniquified RTL for {path}")
-                with open(path, "w", encoding="utf-8") as fh:
-                    fh.writelines(new_txt)
-
-        return all_mod
-     
 class CaravelConfig():
 
     def __init__(self, projects, num_projects):
         self.projects = projects
         self.num_projects = num_projects
 
-    @classmethod
-    def unique(cls, duplist):
-        unique_list = []
-        # traverse for all elements
-        for x in duplist:
-            # check if exists in unique_list or not
-            if x not in unique_list:
-                unique_list.append(x)
-        return unique_list
 
     # create macro file & positions, power hooks
     def create_macro_config(self):
@@ -420,8 +347,8 @@ class CaravelConfig():
             gdss.append(self.projects[i].get_macro_gds_name())
 
         # can't have duplicates or OpenLane crashes at PDN
-        lefs = CaravelConfig.unique(lefs)
-        gdss = CaravelConfig.unique(gdss)
+        lefs = unique(lefs)
+        gdss = unique(gdss)
 
         with open("openlane/user_project_wrapper/extra_lef_gds.tcl", 'w') as fh:
             fh.write('set ::env(EXTRA_LEFS) "\\\n')
@@ -555,7 +482,7 @@ class CaravelConfig():
         verilogs = []
         for i in range(self.num_projects):
             verilogs.append(self.projects[i].get_verilog_include())
-        verilogs = CaravelConfig.unique(verilogs)
+        verilogs = unique(verilogs)
 
         with open('verilog/rtl/user_project_includes.v', 'w') as fh:
             fh.write('`include "scan_controller/scan_controller.v"\n')
@@ -567,7 +494,7 @@ class CaravelConfig():
         verilog_files = []
         for i in range(self.num_projects):
             verilog_files += self.projects[i].get_verilog_names()
-        verilog_files = CaravelConfig.unique(verilog_files)
+        verilog_files = unique(verilog_files)
         with open('verilog/includes/includes.rtl.caravel_user_project', 'w') as fh:
             fh.write('-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/rtl/scan_controller/scan_controller.v\n')
@@ -580,7 +507,7 @@ class CaravelConfig():
         verilog_files = []
         for i in range(self.num_projects):
             verilog_files += self.projects[i].get_gl_verilog_names()
-        verilog_files = CaravelConfig.unique(verilog_files)
+        verilog_files = unique(verilog_files)
         with open('verilog/includes/includes.gl.caravel_user_project', 'w') as fh:
             fh.write('-v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/gl/scan_controller.v\n')
