@@ -60,5 +60,4 @@ jobs:
       with:
           name: Wrapper GDS
           path: |
-            openlane/user_project_wrapper/runs/user_project_wrapper/reports/final_summary_report.csv
-            gds/user_project_wrapper.gds
+            openlane/user_project_wrapper/runs/user_project_wrapper/
