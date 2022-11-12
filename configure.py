@@ -310,7 +310,9 @@ class CaravelConfig():
         step_y  = 135
         rows    = 25
         cols    = 19
-        scanchain_w = 36
+        scanchain_w = 30
+        scanchain_spc = 6
+        module_w = 90
         num_macros_placed = 0
 
         # macro.cfg: where macros are placed
@@ -333,6 +335,7 @@ class CaravelConfig():
                     if num_macros_placed < self.num_projects:
                         if orientation == 'N':
                             # scanchain first
+                            # co-ords are bottom left corner
                             macro_instance = self.projects[num_macros_placed].get_scanchain_instance()
                             instance = "{} {:<4} {:<4} {}\n".format(
                                 macro_instance, start_x + col * step_x, start_y + row * step_y, orientation
@@ -341,7 +344,7 @@ class CaravelConfig():
 
                             macro_instance = self.projects[num_macros_placed].get_macro_instance()
                             instance = "{} {:<4} {:<4} {}\n".format(
-                                macro_instance, start_x + scanchain_w + col * step_x, start_y + row * step_y, orientation
+                                macro_instance, start_x + scanchain_spc + scanchain_w + col * step_x, start_y + row * step_y, orientation
                             )
                             fh.write(instance)
                         else:
@@ -354,7 +357,7 @@ class CaravelConfig():
 
                             macro_instance = self.projects[num_macros_placed].get_scanchain_instance()
                             instance = "{} {:<4} {:<4} {}\n".format(
-                                macro_instance, start_x + (step_x - scanchain_w) + col * step_x, start_y + row * step_y, orientation
+                                macro_instance, start_x + module_w + scanchain_spc + col * step_x, start_y + row * step_y, orientation
                             )
                             fh.write(instance)
 
