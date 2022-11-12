@@ -42,11 +42,11 @@ jobs:
 
     # fetch the repos
     - name: fetch all
-      run: python ./configure.py --clone-all --debug --test
+      run: python ./configure.py --clone-all --debug
 
     # install projects
     - name: configure
-      run: python ./configure.py --update-caravel --test
+      run: python ./configure.py --update-caravel
 
     - name: user project wrapper GDS
       run: make user_project_wrapper
