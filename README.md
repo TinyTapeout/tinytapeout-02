@@ -20,12 +20,13 @@ We are building a datasheet of all the projects.  To read it, click the tt_datas
 
 | Author | Title | Git Repo |
 | ------ | ------| ---------|
-|  |  | https://github.com/TinyTapeout/tt02-test-straight |
+| Matt Venn | Test Straight Project | https://github.com/TinyTapeout/tt02-test-straight |
 | Fraser Price | SIMON Cipher | https://github.com/Fraserbc/tt02-simon |
 | Tom Keddie | HD74480 Clock | https://github.com/TomKeddie/tinytapeout-2022-2 |
 | Chris | Matrix display | https://github.com/chrisruk/matrixchip |
 | Jon Klein | Power supply sequencer | https://github.com/loxodes/tt02-submission-loxodes |
 | Marcelo Pouso / Miguel Correia | Duty Controler | https://github.com/migcorre/tt02-dc |
+| Jan Gray | S4GA | https://github.com/grayresearch/tt02-s4ga |
 | Ryan C | CPU | https://github.com/ryancor/tt02-submission-template |
 | Aidan Good | The McCoy 6-bit Microprocessor | https://github.com/AidanGood/tt02-McCoy |
 | Azdle | binary clock | https://github.com/azdle/binary-clock-asic |
@@ -45,3 +46,6 @@ We are building a datasheet of all the projects.  To read it, click the tt_datas
 | Fernando Dominguez Pousa | 4-bit Multiplier | https://github.com/kuriousd/tt02-4bit-multiplier |
 | Tholin | Avalon Semiconductors 'TBB1143' Programmable Sound Generator | https://github.com/89Mods/tt2-avalonsemi-TBB1143 |
 | Tom Keddie | Transmit UART | https://github.com/TomKeddie/tinytapeout-2022-2a |
+| Matt M | RGB LED Matrix Driver | https://github.com/mm21/tinytapeout2-led-matrix |
+| argunda | Tiny Phase/Frequency Detector | https://github.com/argunda/tt02-TinyPFD |
+| Milosch & Andre Meriac | Loading Animation | https://github.com/meriac/loading-animation |

@@ -7,7 +7,8 @@ $script_dir/../../lef/tomkeddie_top_tto.lef \
 $script_dir/../../lef/chrisruk_matrix.lef \
 $script_dir/../../lef/loxodes_sequencer.lef \
 $script_dir/../../lef/migcorre_pwm.lef \
-$script_dir/../../lef/cpu_top.lef \
+$script_dir/../../lef/s4ga.lef \
+$script_dir/../../lef/alu_top.lef \
 $script_dir/../../lef/aidan_McCoy.lef \
 $script_dir/../../lef/azdle_binary_clock.lef \
 $script_dir/../../lef/user_module_347787021138264660.lef \
@@ -25,7 +26,10 @@ $script_dir/../../lef/user_module_347688030570545747.lef \
 $script_dir/../../lef/user_module_342981109408072274.lef \
 $script_dir/../../lef/asic_multiplier_wrapper.lef \
 $script_dir/../../lef/tholin_avalonsemi_tbb1143.lef \
-$script_dir/../../lef/tomkeddie_top_tto_a.lef"
+$script_dir/../../lef/tomkeddie_top_tto_a.lef \
+$script_dir/../../lef/mm21_LEDMatrixTop.lef \
+$script_dir/../../lef/user_module_348195845106041428.lef \
+$script_dir/../../lef/user_module_348121131386929746.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -35,7 +39,8 @@ $script_dir/../../gds/tomkeddie_top_tto.gds \
 $script_dir/../../gds/chrisruk_matrix.gds \
 $script_dir/../../gds/loxodes_sequencer.gds \
 $script_dir/../../gds/migcorre_pwm.gds \
-$script_dir/../../gds/cpu_top.gds \
+$script_dir/../../gds/s4ga.gds \
+$script_dir/../../gds/alu_top.gds \
 $script_dir/../../gds/aidan_McCoy.gds \
 $script_dir/../../gds/azdle_binary_clock.gds \
 $script_dir/../../gds/user_module_347787021138264660.gds \
@@ -53,4 +58,7 @@ $script_dir/../../gds/user_module_347688030570545747.gds \
 $script_dir/../../gds/user_module_342981109408072274.gds \
 $script_dir/../../gds/asic_multiplier_wrapper.gds \
 $script_dir/../../gds/tholin_avalonsemi_tbb1143.gds \
-$script_dir/../../gds/tomkeddie_top_tto_a.gds"
+$script_dir/../../gds/tomkeddie_top_tto_a.gds \
+$script_dir/../../gds/mm21_LEDMatrixTop.gds \
+$script_dir/../../gds/user_module_348195845106041428.gds \
+$script_dir/../../gds/user_module_348121131386929746.gds"

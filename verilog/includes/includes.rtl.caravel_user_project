@@ -8,7 +8,8 @@
 -v $(USER_PROJECT_VERILOG)/rtl/chrisruk_matrix.v
 -v $(USER_PROJECT_VERILOG)/rtl/loxodes_sequencer.v
 -v $(USER_PROJECT_VERILOG)/rtl/migcorre_pwm.v
--v $(USER_PROJECT_VERILOG)/rtl/cpu_top.v
+-v $(USER_PROJECT_VERILOG)/rtl/s4ga.v
+-v $(USER_PROJECT_VERILOG)/rtl/alu_top.v
 -v $(USER_PROJECT_VERILOG)/rtl/aidan_McCoy.v
 -v $(USER_PROJECT_VERILOG)/rtl/azdle_binary_clock.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_347787021138264660.v
@@ -27,3 +28,6 @@
 -v $(USER_PROJECT_VERILOG)/rtl/asic_multiplier_wrapper.v
 -v $(USER_PROJECT_VERILOG)/rtl/tholin_avalonsemi_tbb1143.v
 -v $(USER_PROJECT_VERILOG)/rtl/tomkeddie_top_tto_a.v
+-v $(USER_PROJECT_VERILOG)/rtl/mm21_LEDMatrixTop.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_module_348195845106041428.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_module_348121131386929746.v

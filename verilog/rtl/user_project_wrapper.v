@@ -246,7 +246,7 @@ module user_project_wrapper #(
         .io_out (sw_005_module_data_out)
     );
 
-    // [006] https://github.com/ryancor/tt02-submission-template
+    // [006] https://github.com/grayresearch/tt02-s4ga
     wire sw_006_clk_out, sw_006_data_out, sw_006_scan_out, sw_006_latch_out;
     wire [7:0] sw_006_module_data_in;
     wire [7:0] sw_006_module_data_out;
@@ -263,12 +263,12 @@ module user_project_wrapper #(
         .module_data_out (sw_006_module_data_out)
     );
 
-    cpu_top cpu_top_6 (
+    s4ga s4ga_6 (
         .io_in  (sw_006_module_data_in),
         .io_out (sw_006_module_data_out)
     );
 
-    // [007] https://github.com/AidanGood/tt02-McCoy
+    // [007] https://github.com/ryancor/tt02-submission-template
     wire sw_007_clk_out, sw_007_data_out, sw_007_scan_out, sw_007_latch_out;
     wire [7:0] sw_007_module_data_in;
     wire [7:0] sw_007_module_data_out;
@@ -285,12 +285,12 @@ module user_project_wrapper #(
         .module_data_out (sw_007_module_data_out)
     );
 
-    aidan_McCoy aidan_McCoy_7 (
+    alu_top alu_top_7 (
         .io_in  (sw_007_module_data_in),
         .io_out (sw_007_module_data_out)
     );
 
-    // [008] https://github.com/azdle/binary-clock-asic
+    // [008] https://github.com/AidanGood/tt02-McCoy
     wire sw_008_clk_out, sw_008_data_out, sw_008_scan_out, sw_008_latch_out;
     wire [7:0] sw_008_module_data_in;
     wire [7:0] sw_008_module_data_out;
@@ -307,12 +307,12 @@ module user_project_wrapper #(
         .module_data_out (sw_008_module_data_out)
     );
 
-    azdle_binary_clock azdle_binary_clock_8 (
+    aidan_McCoy aidan_McCoy_8 (
         .io_in  (sw_008_module_data_in),
         .io_out (sw_008_module_data_out)
     );
 
-    // [009] https://github.com/justinP-wrk/tt02-TinySensor
+    // [009] https://github.com/azdle/binary-clock-asic
     wire sw_009_clk_out, sw_009_data_out, sw_009_scan_out, sw_009_latch_out;
     wire [7:0] sw_009_module_data_in;
     wire [7:0] sw_009_module_data_out;
@@ -329,12 +329,12 @@ module user_project_wrapper #(
         .module_data_out (sw_009_module_data_out)
     );
 
-    user_module_347787021138264660 user_module_347787021138264660_9 (
+    azdle_binary_clock azdle_binary_clock_9 (
         .io_in  (sw_009_module_data_in),
         .io_out (sw_009_module_data_out)
     );
 
-    // [010] https://github.com/jar/tt02_sram
+    // [010] https://github.com/justinP-wrk/tt02-TinySensor
     wire sw_010_clk_out, sw_010_data_out, sw_010_scan_out, sw_010_latch_out;
     wire [7:0] sw_010_module_data_in;
     wire [7:0] sw_010_module_data_out;
@@ -351,12 +351,12 @@ module user_project_wrapper #(
         .module_data_out (sw_010_module_data_out)
     );
 
-    jar_sram_top jar_sram_top_10 (
+    user_module_347787021138264660 user_module_347787021138264660_10 (
         .io_in  (sw_010_module_data_in),
         .io_out (sw_010_module_data_out)
     );
 
-    // [011] https://github.com/JensIMS/tt02-trafficlight
+    // [011] https://github.com/jar/tt02_sram
     wire sw_011_clk_out, sw_011_data_out, sw_011_scan_out, sw_011_latch_out;
     wire [7:0] sw_011_module_data_in;
     wire [7:0] sw_011_module_data_out;
@@ -373,12 +373,12 @@ module user_project_wrapper #(
         .module_data_out (sw_011_module_data_out)
     );
 
-    user_module_347690870424732244 user_module_347690870424732244_11 (
+    jar_sram_top jar_sram_top_11 (
         .io_in  (sw_011_module_data_in),
         .io_out (sw_011_module_data_out)
     );
 
-    // [012] https://github.com/svd321/tt02-Ising
+    // [012] https://github.com/JensIMS/tt02-trafficlight
     wire sw_012_clk_out, sw_012_data_out, sw_012_scan_out, sw_012_latch_out;
     wire [7:0] sw_012_module_data_in;
     wire [7:0] sw_012_module_data_out;
@@ -395,12 +395,12 @@ module user_project_wrapper #(
         .module_data_out (sw_012_module_data_out)
     );
 
-    user_module_347592305412145748 user_module_347592305412145748_12 (
+    user_module_347690870424732244 user_module_347690870424732244_12 (
         .io_in  (sw_012_module_data_in),
         .io_out (sw_012_module_data_out)
     );
 
-    // [013] https://github.com/89Mods/tt2-AvalonSemi-5401
+    // [013] https://github.com/svd321/tt02-Ising
     wire sw_013_clk_out, sw_013_data_out, sw_013_scan_out, sw_013_latch_out;
     wire [7:0] sw_013_module_data_in;
     wire [7:0] sw_013_module_data_out;
@@ -417,12 +417,12 @@ module user_project_wrapper #(
         .module_data_out (sw_013_module_data_out)
     );
 
-    tholin_avalonsemi_5401 tholin_avalonsemi_5401_13 (
+    user_module_347592305412145748 user_module_347592305412145748_13 (
         .io_in  (sw_013_module_data_in),
         .io_out (sw_013_module_data_out)
     );
 
-    // [014] https://github.com/RiceShelley/tiny-fft
+    // [014] https://github.com/89Mods/tt2-AvalonSemi-5401
     wire sw_014_clk_out, sw_014_data_out, sw_014_scan_out, sw_014_latch_out;
     wire [7:0] sw_014_module_data_in;
     wire [7:0] sw_014_module_data_out;
@@ -439,12 +439,12 @@ module user_project_wrapper #(
         .module_data_out (sw_014_module_data_out)
     );
 
-    tiny_fft tiny_fft_14 (
+    tholin_avalonsemi_5401 tholin_avalonsemi_5401_14 (
         .io_in  (sw_014_module_data_in),
         .io_out (sw_014_module_data_out)
     );
 
-    // [015] https://github.com/moyesw/tt02-moyesw-StreamIntegrator
+    // [015] https://github.com/RiceShelley/tiny-fft
     wire sw_015_clk_out, sw_015_data_out, sw_015_scan_out, sw_015_latch_out;
     wire [7:0] sw_015_module_data_in;
     wire [7:0] sw_015_module_data_out;
@@ -461,12 +461,12 @@ module user_project_wrapper #(
         .module_data_out (sw_015_module_data_out)
     );
 
-    user_module_346553315158393428 user_module_346553315158393428_15 (
+    tiny_fft tiny_fft_15 (
         .io_in  (sw_015_module_data_in),
         .io_out (sw_015_module_data_out)
     );
 
-    // [016] https://github.com/Tschucker/tt02-submission-tiny-fir
+    // [016] https://github.com/moyesw/tt02-moyesw-StreamIntegrator
     wire sw_016_clk_out, sw_016_data_out, sw_016_scan_out, sw_016_latch_out;
     wire [7:0] sw_016_module_data_in;
     wire [7:0] sw_016_module_data_out;
@@ -483,12 +483,12 @@ module user_project_wrapper #(
         .module_data_out (sw_016_module_data_out)
     );
 
-    user_module_347894637149553236 user_module_347894637149553236_16 (
+    user_module_346553315158393428 user_module_346553315158393428_16 (
         .io_in  (sw_016_module_data_in),
         .io_out (sw_016_module_data_out)
     );
 
-    // [017] https://github.com/steieio/tt02-submission-universal-sr
+    // [017] https://github.com/Tschucker/tt02-submission-tiny-fir
     wire sw_017_clk_out, sw_017_data_out, sw_017_scan_out, sw_017_latch_out;
     wire [7:0] sw_017_module_data_in;
     wire [7:0] sw_017_module_data_out;
@@ -505,12 +505,12 @@ module user_project_wrapper #(
         .module_data_out (sw_017_module_data_out)
     );
 
-    user_module_346916357828248146 user_module_346916357828248146_17 (
+    user_module_347894637149553236 user_module_347894637149553236_17 (
         .io_in  (sw_017_module_data_in),
         .io_out (sw_017_module_data_out)
     );
 
-    // [018] https://github.com/leardilap/tt02-LUTRAM
+    // [018] https://github.com/steieio/tt02-submission-universal-sr
     wire sw_018_clk_out, sw_018_data_out, sw_018_scan_out, sw_018_latch_out;
     wire [7:0] sw_018_module_data_in;
     wire [7:0] sw_018_module_data_out;
@@ -527,12 +527,12 @@ module user_project_wrapper #(
         .module_data_out (sw_018_module_data_out)
     );
 
-    user_module_347594509754827347 user_module_347594509754827347_18 (
+    user_module_346916357828248146 user_module_346916357828248146_18 (
         .io_in  (sw_018_module_data_in),
         .io_out (sw_018_module_data_out)
     );
 
-    // [019] https://github.com/ekliptik/tt02-chase-the-beat
+    // [019] https://github.com/leardilap/tt02-LUTRAM
     wire sw_019_clk_out, sw_019_data_out, sw_019_scan_out, sw_019_latch_out;
     wire [7:0] sw_019_module_data_in;
     wire [7:0] sw_019_module_data_out;
@@ -549,12 +549,12 @@ module user_project_wrapper #(
         .module_data_out (sw_019_module_data_out)
     );
 
-    chase_the_beat chase_the_beat_19 (
+    user_module_347594509754827347 user_module_347594509754827347_19 (
         .io_in  (sw_019_module_data_in),
         .io_out (sw_019_module_data_out)
     );
 
-    // [020] https://github.com/maehw/tt02-bcd-7segment-encoder
+    // [020] https://github.com/ekliptik/tt02-chase-the-beat
     wire sw_020_clk_out, sw_020_data_out, sw_020_scan_out, sw_020_latch_out;
     wire [7:0] sw_020_module_data_in;
     wire [7:0] sw_020_module_data_out;
@@ -571,12 +571,12 @@ module user_project_wrapper #(
         .module_data_out (sw_020_module_data_out)
     );
 
-    user_module_347688030570545747 user_module_347688030570545747_20 (
+    chase_the_beat chase_the_beat_20 (
         .io_in  (sw_020_module_data_in),
         .io_out (sw_020_module_data_out)
     );
 
-    // [021] https://github.com/benevpi/tt02-LED-flasher
+    // [021] https://github.com/maehw/tt02-bcd-7segment-encoder
     wire sw_021_clk_out, sw_021_data_out, sw_021_scan_out, sw_021_latch_out;
     wire [7:0] sw_021_module_data_in;
     wire [7:0] sw_021_module_data_out;
@@ -593,12 +593,12 @@ module user_project_wrapper #(
         .module_data_out (sw_021_module_data_out)
     );
 
-    user_module_342981109408072274 user_module_342981109408072274_21 (
+    user_module_347688030570545747 user_module_347688030570545747_21 (
         .io_in  (sw_021_module_data_in),
         .io_out (sw_021_module_data_out)
     );
 
-    // [022] https://github.com/kuriousd/tt02-4bit-multiplier
+    // [022] https://github.com/benevpi/tt02-LED-flasher
     wire sw_022_clk_out, sw_022_data_out, sw_022_scan_out, sw_022_latch_out;
     wire [7:0] sw_022_module_data_in;
     wire [7:0] sw_022_module_data_out;
@@ -615,12 +615,12 @@ module user_project_wrapper #(
         .module_data_out (sw_022_module_data_out)
     );
 
-    asic_multiplier_wrapper asic_multiplier_wrapper_22 (
+    user_module_342981109408072274 user_module_342981109408072274_22 (
         .io_in  (sw_022_module_data_in),
         .io_out (sw_022_module_data_out)
     );
 
-    // [023] https://github.com/89Mods/tt2-avalonsemi-TBB1143
+    // [023] https://github.com/kuriousd/tt02-4bit-multiplier
     wire sw_023_clk_out, sw_023_data_out, sw_023_scan_out, sw_023_latch_out;
     wire [7:0] sw_023_module_data_in;
     wire [7:0] sw_023_module_data_out;
@@ -637,12 +637,12 @@ module user_project_wrapper #(
         .module_data_out (sw_023_module_data_out)
     );
 
-    tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143_23 (
+    asic_multiplier_wrapper asic_multiplier_wrapper_23 (
         .io_in  (sw_023_module_data_in),
         .io_out (sw_023_module_data_out)
     );
 
-    // [024] https://github.com/TomKeddie/tinytapeout-2022-2a
+    // [024] https://github.com/89Mods/tt2-avalonsemi-TBB1143
     wire sw_024_clk_out, sw_024_data_out, sw_024_scan_out, sw_024_latch_out;
     wire [7:0] sw_024_module_data_in;
     wire [7:0] sw_024_module_data_out;
@@ -659,12 +659,12 @@ module user_project_wrapper #(
         .module_data_out (sw_024_module_data_out)
     );
 
-    tomkeddie_top_tto_a tomkeddie_top_tto_a_24 (
+    tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143_24 (
         .io_in  (sw_024_module_data_in),
         .io_out (sw_024_module_data_out)
     );
 
-    // [025] https://github.com/TinyTapeout/tt02-test-straight
+    // [025] https://github.com/TomKeddie/tinytapeout-2022-2a
     wire sw_025_clk_out, sw_025_data_out, sw_025_scan_out, sw_025_latch_out;
     wire [7:0] sw_025_module_data_in;
     wire [7:0] sw_025_module_data_out;
@@ -681,12 +681,12 @@ module user_project_wrapper #(
         .module_data_out (sw_025_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_25 (
+    tomkeddie_top_tto_a tomkeddie_top_tto_a_25 (
         .io_in  (sw_025_module_data_in),
         .io_out (sw_025_module_data_out)
     );
 
-    // [026] https://github.com/TinyTapeout/tt02-test-straight
+    // [026] https://github.com/mm21/tinytapeout2-led-matrix
     wire sw_026_clk_out, sw_026_data_out, sw_026_scan_out, sw_026_latch_out;
     wire [7:0] sw_026_module_data_in;
     wire [7:0] sw_026_module_data_out;
@@ -703,12 +703,12 @@ module user_project_wrapper #(
         .module_data_out (sw_026_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_26 (
+    mm21_LEDMatrixTop mm21_LEDMatrixTop_26 (
         .io_in  (sw_026_module_data_in),
         .io_out (sw_026_module_data_out)
     );
 
-    // [027] https://github.com/TinyTapeout/tt02-test-straight
+    // [027] https://github.com/argunda/tt02-TinyPFD
     wire sw_027_clk_out, sw_027_data_out, sw_027_scan_out, sw_027_latch_out;
     wire [7:0] sw_027_module_data_in;
     wire [7:0] sw_027_module_data_out;
@@ -725,12 +725,12 @@ module user_project_wrapper #(
         .module_data_out (sw_027_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_27 (
+    user_module_348195845106041428 user_module_348195845106041428_27 (
         .io_in  (sw_027_module_data_in),
         .io_out (sw_027_module_data_out)
     );
 
-    // [028] https://github.com/TinyTapeout/tt02-test-straight
+    // [028] https://github.com/meriac/loading-animation
     wire sw_028_clk_out, sw_028_data_out, sw_028_scan_out, sw_028_latch_out;
     wire [7:0] sw_028_module_data_in;
     wire [7:0] sw_028_module_data_out;
@@ -747,7 +747,7 @@ module user_project_wrapper #(
         .module_data_out (sw_028_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_28 (
+    user_module_348121131386929746 user_module_348121131386929746_28 (
         .io_in  (sw_028_module_data_in),
         .io_out (sw_028_module_data_out)
     );
