@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import re, glob
+import re, glob, json
 import yaml
 from typing import List
 from urllib.parse import urlparse
@@ -64,13 +64,18 @@ class Projects():
                     project.fetch_gds()
 
             # projects should now be installed, so load all the data from the yaml files
-            logging.info(f"loading project yaml")
+            logging.debug(f"loading project yaml")
             # fill projects will load from the fill project's directory
             project.load_yaml()
 
-            logging.info(f"copying files to caravel")
-            if filler == False:
-                project.copy_files_to_caravel()
+
+            if args.update_caravel:
+                logging.debug(f"copying files to caravel")
+                if filler == False:
+                    project.copy_files_to_caravel()
+
+                # check all top level module ports are correct
+                project.check_ports()
 
             self.projects.append(project)
         
@@ -80,6 +85,7 @@ class Projects():
 
         all_top_files = [ project.get_top_verilog_file() for project in self.projects if not project.fill ]
         assert len(all_top_files) == len(unique(all_top_files))
+
     
 
     def check_dupes(self):
@@ -105,6 +111,23 @@ class Project():
         else:
             return os.path.join(os.path.join(self.project_dir, str(self.index)))
 
+    def check_ports(self):
+        top = self.get_macro_name()
+        sources = [ os.path.join(self.local_dir, 'src', src) for src in self.src_files ]
+        source_list = " ".join(sources)
+        
+        json_file = '/tmp/ports.json'
+        os.system("yosys -qp 'read_verilog -sv %s; hierarchy -top %s ; proc; json -o %s x:*'" % (source_list, top, json_file))
+        with open(json_file) as fh:                                                                                                                                                                                         
+            ports = json.load(fh)                                                                                                                                                                                           
+        module_ports = ports['modules'][top]['ports']
+        for port in ['io_in', 'io_out']:
+            assert port in module_ports
+            assert len(module_ports[port]['bits']) == 8
+
+    def check_num_cells(self):
+        pass
+
     def is_wokwi(self):
         if self.wokwi_id != 0:
             return True
@@ -123,9 +146,16 @@ class Project():
         self.wokwi_id = self.yaml['project']['wokwi_id']
 
         if self.is_hdl():
-            self.top_module = self.yaml['project']['top_module']
-            self.src_files = self.yaml['project']['source_files']
-            self.top_verilog_file = self.find_top_verilog()
+            self.top_module         = self.yaml['project']['top_module']
+            self.src_files          = self.yaml['project']['source_files']
+            self.top_verilog_file   = self.find_top_verilog()
+        else:
+            self.top_module         = f"user_module_{self.wokwi_id}"
+            self.src_files          = [ f"user_module_{self.wokwi_id}.v" ]
+            self.top_verilog_file   = self.src_files[0]
+
+        self.macro_instance         = f"{self.top_module}_{self.index}"
+        self.scanchain_instance     = f"scanchain_{self.index}"
   
     def get_index_row(self):
         return f'| {self.yaml["documentation"]["author"]} | {self.yaml["documentation"]["title"]} | {self.git_url} |\n'
@@ -162,21 +192,15 @@ class Project():
         install_artifacts(self.git_url, self.local_dir)
 
     def get_macro_name(self):
-        if self.is_hdl():
-            return self.top_module
-        else:
-            return f"user_module_{self.wokwi_id}"
+        return self.top_module
 
     # instance name of the project, different for each id
     def get_macro_instance(self):
-        if self.is_hdl():
-            return f"{self.top_module}_{self.index}"
-        else:
-            return f"user_module_{self.wokwi_id}_{self.index}"
+        return self.macro_instance
 
     # instance name of the scanchain module, different for each id
     def get_scanchain_instance(self):
-        return f"scanchain_{self.index}"
+        return self.scanchain_instance
 
     # unique id
     def get_index(self):
@@ -184,32 +208,18 @@ class Project():
 
     # name of the gds file
     def get_macro_gds_name(self):
-        if self.is_hdl():
-            return f"{self.top_module}.gds"
-        else:
-            # return diff if fill
-            return f"user_module_{self.wokwi_id}.gds"
+        return f"{self.top_module}.gds"
 
     def get_macro_lef_name(self):
-        if self.is_hdl():
-            return f"{self.top_module}.lef"
-        else:
-            # return diff if fill
-            return f"user_module_{self.wokwi_id}.lef"
+        return f"{self.top_module}.lef"
 
     # for black boxing when building GDS, just need module name and ports
     def get_verilog_include(self):
-        if self.is_hdl():
-            return f'`include "{self.get_top_verilog_file()}"\n'
-        else:
-            return f'`include "user_module_{self.wokwi_id}.v"\n'
+        return f'`include "{self.get_top_verilog_file()}"\n'
 
     # for GL sims
     def get_gl_verilog_names(self):
-        if self.is_hdl():
-            return f"{self.top_module}.v"
-        else:
-            return f'user_module_{self.wokwi_id}.v'
+        return f"{self.top_module}.v"
 
     def get_top_verilog_file(self):
         if self.is_hdl():
@@ -535,6 +545,10 @@ class CaravelConfig():
                 if not project.fill:
                     fh.write(project.get_index_row())
 
+    def update_image(self):
+        cmd = "klayout -l caravel.lyp gds/user_project_wrapper.gds -r dump_pic.rb -c klayoutrc"
+        logging.info(cmd)                                                                                                                                                                                                   
+        os.system(cmd)  
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="TinyTapeout")
@@ -545,6 +559,7 @@ if __name__ == '__main__':
     parser.add_argument('--limit-num-projects', help='only configure for the first n projects', type=int, default=DEFAULT_NUM_PROJECTS)
     parser.add_argument('--test', help='use test projects', action='store_const', const=True)
     parser.add_argument('--debug', help="debug logging", action="store_const", dest="loglevel", const=logging.DEBUG, default=logging.INFO)
+    parser.add_argument('--update-image', help="update the image", action="store_const", const=True)
 
 
     args = parser.parse_args()
@@ -578,3 +593,6 @@ if __name__ == '__main__':
         caravel.instantiate()
         if not args.test:
             caravel.build_index()
+
+    if args.update_image:
+        caravel.update_image()

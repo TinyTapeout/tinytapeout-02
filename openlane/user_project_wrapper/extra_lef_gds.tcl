@@ -2,8 +2,6 @@ set ::env(EXTRA_LEFS) "\
 $script_dir/../../lef/scan_controller.lef \
 $script_dir/../../lef/scanchain.lef \
 $script_dir/../../lef/user_module_339501025136214612.lef \
-$script_dir/../../lef/fraserbc_simon.lef \
-$script_dir/../../lef/tomkeddie_top_tto.lef \
 $script_dir/../../lef/chrisruk_matrix.lef \
 $script_dir/../../lef/loxodes_sequencer.lef \
 $script_dir/../../lef/migcorre_pwm.lef \
@@ -29,13 +27,33 @@ $script_dir/../../lef/tholin_avalonsemi_tbb1143.lef \
 $script_dir/../../lef/tomkeddie_top_tto_a.lef \
 $script_dir/../../lef/mm21_LEDMatrixTop.lef \
 $script_dir/../../lef/user_module_348195845106041428.lef \
-$script_dir/../../lef/user_module_348121131386929746.lef"
+$script_dir/../../lef/user_module_348121131386929746.lef \
+$script_dir/../../lef/yubex_egg_timer.lef \
+$script_dir/../../lef/xyz_peppergray_Potato1_top.lef \
+$script_dir/../../lef/zoechip.lef \
+$script_dir/../../lef/user_module_348255968419643987.lef \
+$script_dir/../../lef/mbikovitsky_top.lef \
+$script_dir/../../lef/user_module_348260124451668562.lef \
+$script_dir/../../lef/rolfmobile99_alu_fsm_top.lef \
+$script_dir/../../lef/jar_illegal_logic.lef \
+$script_dir/../../lef/user_module_348242239268323922.lef \
+$script_dir/../../lef/thezoq2_yafpga.lef \
+$script_dir/../../lef/moyes0_top_module.lef \
+$script_dir/../../lef/yupferris_bitslam.lef \
+$script_dir/../../lef/user_module_341620484740219475.lef \
+$script_dir/../../lef/top.lef \
+$script_dir/../../lef/rc5_top.lef \
+$script_dir/../../lef/user_module_341614374571475540.lef \
+$script_dir/../../lef/meriac_tt02_play_tune.lef \
+$script_dir/../../lef/phasenoisepon_seven_segment_seconds.lef \
+$script_dir/../../lef/user_module_341541108650607187.lef \
+$script_dir/../../lef/user_module_341516949939814994.lef \
+$script_dir/../../lef/tt2_tholin_multiplier.lef \
+$script_dir/../../lef/tt2_tholin_multiplexed_counter.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
 $script_dir/../../gds/user_module_339501025136214612.gds \
-$script_dir/../../gds/fraserbc_simon.gds \
-$script_dir/../../gds/tomkeddie_top_tto.gds \
 $script_dir/../../gds/chrisruk_matrix.gds \
 $script_dir/../../gds/loxodes_sequencer.gds \
 $script_dir/../../gds/migcorre_pwm.gds \
@@ -61,4 +79,26 @@ $script_dir/../../gds/tholin_avalonsemi_tbb1143.gds \
 $script_dir/../../gds/tomkeddie_top_tto_a.gds \
 $script_dir/../../gds/mm21_LEDMatrixTop.gds \
 $script_dir/../../gds/user_module_348195845106041428.gds \
-$script_dir/../../gds/user_module_348121131386929746.gds"
+$script_dir/../../gds/user_module_348121131386929746.gds \
+$script_dir/../../gds/yubex_egg_timer.gds \
+$script_dir/../../gds/xyz_peppergray_Potato1_top.gds \
+$script_dir/../../gds/zoechip.gds \
+$script_dir/../../gds/user_module_348255968419643987.gds \
+$script_dir/../../gds/mbikovitsky_top.gds \
+$script_dir/../../gds/user_module_348260124451668562.gds \
+$script_dir/../../gds/rolfmobile99_alu_fsm_top.gds \
+$script_dir/../../gds/jar_illegal_logic.gds \
+$script_dir/../../gds/user_module_348242239268323922.gds \
+$script_dir/../../gds/thezoq2_yafpga.gds \
+$script_dir/../../gds/moyes0_top_module.gds \
+$script_dir/../../gds/yupferris_bitslam.gds \
+$script_dir/../../gds/user_module_341620484740219475.gds \
+$script_dir/../../gds/top.gds \
+$script_dir/../../gds/rc5_top.gds \
+$script_dir/../../gds/user_module_341614374571475540.gds \
+$script_dir/../../gds/meriac_tt02_play_tune.gds \
+$script_dir/../../gds/phasenoisepon_seven_segment_seconds.gds \
+$script_dir/../../gds/user_module_341541108650607187.gds \
+$script_dir/../../gds/user_module_341516949939814994.gds \
+$script_dir/../../gds/tt2_tholin_multiplier.gds \
+$script_dir/../../gds/tt2_tholin_multiplexed_counter.gds"

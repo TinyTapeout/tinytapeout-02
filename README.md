@@ -21,19 +21,17 @@ We are building a datasheet of all the projects.  To read it, click the tt_datas
 | Author | Title | Git Repo |
 | ------ | ------| ---------|
 | Matt Venn | Test Straight Project | https://github.com/TinyTapeout/tt02-test-straight |
-| Fraser Price | SIMON Cipher | https://github.com/Fraserbc/tt02-simon |
-| Tom Keddie | HD74480 Clock | https://github.com/TomKeddie/tinytapeout-2022-2 |
-| Chris | Matrix display | https://github.com/chrisruk/matrixchip |
+| Chris | Scrolling Binary Matrix display | https://github.com/chrisruk/matrixchip |
 | Jon Klein | Power supply sequencer | https://github.com/loxodes/tt02-submission-loxodes |
 | Marcelo Pouso / Miguel Correia | Duty Controler | https://github.com/migcorre/tt02-dc |
-| Jan Gray | S4GA | https://github.com/grayresearch/tt02-s4ga |
+| Jan Gray | S4GA: Super Slow Serial SRAM FPGA | https://github.com/grayresearch/tt02-s4ga |
 | Ryan C | CPU | https://github.com/ryancor/tt02-submission-template |
 | Aidan Good | The McCoy 6-bit Microprocessor | https://github.com/AidanGood/tt02-McCoy |
 | Azdle | binary clock | https://github.com/azdle/binary-clock-asic |
 | Justin Pelan | TinySensor | https://github.com/justinP-wrk/tt02-TinySensor |
 | James Ross | 8x8 SRAM | https://github.com/jar/tt02_sram |
 | Jens Schleusner | German Traffic Light State Machine | https://github.com/JensIMS/tt02-trafficlight |
-| Seppe Van Dyck | Ising Spin | https://github.com/svd321/tt02-Ising |
+| Seppe Van Dyck | 4-spin Ising Chain Simulation | https://github.com/svd321/tt02-Ising |
 | Tholin | Avalon Semiconductors '5401' 4-bit Microprocessor | https://github.com/89Mods/tt2-AvalonSemi-5401 |
 | Rice Shelley | small FFT | https://github.com/RiceShelley/tiny-fft |
 | William Moyes | Stream Integrator | https://github.com/moyesw/tt02-moyesw-StreamIntegrator |
@@ -48,4 +46,26 @@ We are building a datasheet of all the projects.  To read it, click the tt_datas
 | Tom Keddie | Transmit UART | https://github.com/TomKeddie/tinytapeout-2022-2a |
 | Matt M | RGB LED Matrix Driver | https://github.com/mm21/tinytapeout2-led-matrix |
 | argunda | Tiny Phase/Frequency Detector | https://github.com/argunda/tt02-TinyPFD |
-| Milosch & Andre Meriac | Loading Animation | https://github.com/meriac/loading-animation |
+| Andre & Milosch Meriac | Loading Animation | https://github.com/meriac/loading-animation |
+| yubex | tiny egg timer | https://github.com/yubex/tt02-tiny_egg_timer |
+| Pepper Gray (they/them) | Potato-1 (Brainfuck CPU) | https://github.com/peppergrayxyz/Potato-1 |
+| zoe nguyen.  taylor | heart zoe mom dad | https://github.com/zoent/tt02-zoe-chip |
+| Nanik Adnani | Tiny Synth | https://github.com/nanikgeorge/tt02-submission-template |
+| Michael Bikovitsky | 5-bit Galois LFSR | https://github.com/mbikovitsky/tt02-lfsr |
+| Tom Schucker | prbs15 | https://github.com/teaandtechtime/tt02-submission-prbs15 |
+| Rolf Widenfelt | 4-bit badge ALU | https://github.com/rolfmobile99/tt02-submission-template |
+| James Ross | Illegal Logic | https://github.com/jar/tt02_freespeech |
+| Alan Green | Siren | https://github.com/alanvgreen/tt02-siren |
+| Frans Skarman | YaFPGA | https://github.com/TheZoq2/smolfpga |
+| William Moyes | M0 | https://github.com/moyesw/TT02-M0 |
+| Jake "ferris" Taylor | bitslam | https://github.com/yupferris/bitslam |
+| Thorsten Knoll | 8x8 Bit Pattern Player | https://github.com/ThorKn/tinytapeout02_pattern_player |
+| proppy | XLS: bit population count | https://github.com/proppy/tt02-xls-popcount |
+| Jean THOMAS | RC5 decoder | https://github.com/jeanthom/tt02-rc5-receiver |
+| Maria CHiara Molteni | chiDOM | https://github.com/mmolteni-secpat/tinytapeout02_chiDOM |
+| Milosch Meriac | Super Mario Tune on A Piezo Speaker | https://github.com/meriac/tt02-play-tune |
+| Phase Noise | Tiny rot13 | https://github.com/phasenoisepon/tt02-phasenoisepon |
+| 13arn | 4 bit counter on steamdeck | https://github.com/13arn/tt02_counter_steamdeck |
+| Thorsten Knoll | Shiftregister Challenge 40 Bit | https://github.com/ThorKn/tinytapeout02_shiftregister_challenge |
+| Tholin | TinyTapeout2 4-bit multiplier. | https://github.com/89Mods/tt2-4x4-multiply |
+| Tholin | TinyTapeout2 multiplexed segment display timer. | https://github.com/89Mods/tt2-multiplexed-counter |

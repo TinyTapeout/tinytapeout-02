@@ -479,6 +479,7 @@ module user_module_347592305412145748(
   wire net471;
   wire net472;
   wire net473;
+  wire net474;
 
   assign io_out[0] = net9;
   assign io_out[1] = net10;
@@ -2389,192 +2390,201 @@ module user_module_347592305412145748(
     .b (net432),
     .out (net433)
   );
-  or_cell gate6 (
-    .a (net134),
-    .b (net433),
-    .out (net434)
-  );
   not_cell gate185 (
     .in (net280),
-    .out (net435)
+    .out (net434)
   );
   and_cell gate338 (
-    .a (net435),
+    .a (net434),
     .b (net373),
-    .out (net436)
+    .out (net435)
   );
   or_cell gate339 (
-    .a (net436),
-    .b (net437),
-    .out (net438)
+    .a (net435),
+    .b (net436),
+    .out (net437)
   );
   not_cell gate340 (
     .in (net373),
-    .out (net439)
+    .out (net438)
   );
   not_cell gate341 (
     .in (net277),
-    .out (net440)
+    .out (net439)
   );
   not_cell gate342 (
     .in (net362),
-    .out (net441)
+    .out (net440)
   );
   not_cell gate343 (
     .in (net273),
-    .out (net442)
+    .out (net441)
   );
   not_cell gate344 (
     .in (net345),
-    .out (net443)
+    .out (net442)
   );
   not_cell gate345 (
     .in (net270),
-    .out (net444)
+    .out (net443)
   );
   and_cell gate346 (
     .a (net280),
-    .b (net439),
-    .out (net437)
+    .b (net438),
+    .out (net436)
   );
   and_cell gate347 (
-    .a (net440),
+    .a (net439),
     .b (net362),
-    .out (net445)
+    .out (net444)
   );
   and_cell gate348 (
     .a (net277),
-    .b (net441),
-    .out (net446)
+    .b (net440),
+    .out (net445)
   );
   and_cell gate349 (
-    .a (net442),
+    .a (net441),
     .b (net345),
-    .out (net447)
+    .out (net446)
   );
   and_cell gate350 (
     .a (net273),
-    .b (net443),
-    .out (net448)
+    .b (net442),
+    .out (net447)
   );
   and_cell gate351 (
-    .a (net444),
-    .b (net449),
-    .out (net450)
+    .a (net443),
+    .b (net328),
+    .out (net448)
   );
   or_cell gate352 (
-    .a (net445),
-    .b (net446),
-    .out (net451)
+    .a (net444),
+    .b (net445),
+    .out (net449)
   );
   or_cell gate353 (
-    .a (net447),
-    .b (net448),
-    .out (net452)
+    .a (net446),
+    .b (net447),
+    .out (net450)
   );
   not_cell gate354 (
-    .in (net452),
-    .out (net453)
+    .in (net450),
+    .out (net451)
   );
   not_cell gate355 (
-    .in (net451),
-    .out (net454)
+    .in (net449),
+    .out (net452)
   );
   not_cell gate356 (
-    .in (net438),
-    .out (net455)
+    .in (net437),
+    .out (net453)
   );
   and_cell gate357 (
-    .a (net455),
-    .b (net445),
-    .out (net456)
+    .a (net453),
+    .b (net444),
+    .out (net454)
   );
   or_cell gate358 (
-    .a (net436),
+    .a (net435),
+    .b (net454),
+    .out (net455)
+  );
+  or_cell gate359 (
+    .a (net455),
     .b (net456),
     .out (net457)
   );
-  or_cell gate359 (
-    .a (net457),
-    .b (net458),
-    .out (net459)
-  );
   and_cell gate360 (
-    .a (net460),
-    .b (net447),
-    .out (net458)
+    .a (net458),
+    .b (net446),
+    .out (net456)
   );
   and_cell gate361 (
-    .a (net455),
-    .b (net454),
-    .out (net460)
+    .a (net453),
+    .b (net452),
+    .out (net458)
   );
   or_cell gate362 (
-    .a (net459),
-    .b (net461),
-    .out (net462)
+    .a (net457),
+    .b (net459),
+    .out (net460)
   );
   and_cell gate363 (
-    .a (net463),
-    .b (net450),
-    .out (net461)
+    .a (net461),
+    .b (net448),
+    .out (net459)
   );
   and_cell gate364 (
-    .a (net460),
-    .b (net453),
-    .out (net463)
+    .a (net458),
+    .b (net451),
+    .out (net461)
   );
   and_cell gate371 (
-    .a (net434),
-    .b (net462),
-    .out (net136)
-  );
-  buffer_cell gate365 (
-    .in (net328),
-    .out (net449)
+    .a (net433),
+    .b (net460),
+    .out (net462)
   );
   dff_cell flipflop1 (
     .d (net186),
     .clk (net1),
-    .q (net464),
-    .notq (net465)
+    .q (net463),
+    .notq (net464)
   );
   dff_cell flipflop44 (
-    .d (net464),
+    .d (net463),
     .clk (net1),
-    .q (net466),
-    .notq (net467)
+    .q (net465),
+    .notq (net466)
   );
   and_cell gate366 (
-    .a (net465),
-    .b (net467),
-    .out (net468)
+    .a (net464),
+    .b (net466),
+    .out (net467)
   );
   dff_cell flipflop45 (
-    .d (net466),
+    .d (net465),
     .clk (net1),
-    .q (net469),
-    .notq (net470)
+    .q (net468),
+    .notq (net469)
   );
   dff_cell flipflop46 (
-    .d (net469),
+    .d (net468),
     .clk (net1),
     .q (net13),
-    .notq (net471)
+    .notq (net470)
   );
   and_cell gate367 (
-    .a (net470),
-    .b (net471),
-    .out (net472)
+    .a (net469),
+    .b (net470),
+    .out (net471)
   );
   and_cell gate368 (
     .a (net188),
-    .b (net473),
+    .b (net472),
     .out (net189)
   );
   and_cell gate369 (
-    .a (net468),
-    .b (net472),
+    .a (net467),
+    .b (net471),
+    .out (net472)
+  );
+  or_cell gate370 (
+    .a (net134),
+    .b (net462),
+    .out (net136)
+  );
+  not_cell gate6 (
+    .in (net328),
     .out (net473)
+  );
+  and_cell gate372 (
+    .a (net270),
+    .b (net473),
+    .out (net474)
+  );
+  or_cell gate365 (
+    .a (net448),
+    .b (net474)
   );
 endmodule
