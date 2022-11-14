@@ -35,6 +35,12 @@ jobs:
         cache: 'pip'
     - run: pip install -r requirements.txt
 
+    # install oss fpga tools for yosys to sanity check module ports
+    - name: install oss-cad-suite
+      uses: YosysHQ/setup-oss-cad-suite@v1
+      with:
+          osscadsuite-version: '2022-09-03' # pin the version, latest one fails to work with caravel
+
     # pwd debug
     - name: pwd
       run: |
