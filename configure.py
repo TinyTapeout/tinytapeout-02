@@ -76,6 +76,7 @@ class Projects():
 
                 # check all top level module ports are correct
                 project.check_ports()
+                project.check_num_cells()
 
             self.projects.append(project)
         
@@ -116,17 +117,37 @@ class Project():
         sources = [ os.path.join(self.local_dir, 'src', src) for src in self.src_files ]
         source_list = " ".join(sources)
         
-        json_file = '/tmp/ports.json'
+        json_file = 'ports.json'
         os.system("yosys -qp 'read_verilog -sv %s; hierarchy -top %s ; proc; json -o %s x:*'" % (source_list, top, json_file))
         with open(json_file) as fh:                                                                                                                                                                                         
             ports = json.load(fh)                                                                                                                                                                                           
+        os.unlink(json_file)
+
         module_ports = ports['modules'][top]['ports']
         for port in ['io_in', 'io_out']:
-            assert port in module_ports
-            assert len(module_ports[port]['bits']) == 8
+            if port not in module_ports:
+                logging.error(f"{port} not found in top")
+                exit(1)
+            if len(module_ports[port]['bits']) != 8:
+                logging.error(f"{port} doesn't have 8 bits")
+                exit(1)
+
 
     def check_num_cells(self):
-        pass
+        num_cells = 0
+        yosys_report = glob.glob(f'{self.local_dir}/runs/wokwi/reports/synthesis/1-synthesis.*0.stat.rpt')[0] # can't open a file with \ in the path
+        with open(yosys_report) as fh:
+            for line in fh.readlines():
+                m = re.search(r'Number of cells:\s+(\d+)', line)
+                if m is not None:
+                    num_cells = int(m.group(1))
+        if not self.fill and self.index != 0:
+            if self.is_hdl():
+                if num_cells < 20:
+                    logging.error(f"{self} only has {num_cells} cells")
+            else:
+                if num_cells < 11:
+                    logging.error(f"{self} only has {num_cells} cells")
 
     def is_wokwi(self):
         if self.wokwi_id != 0:
@@ -158,7 +179,12 @@ class Project():
         self.scanchain_instance     = f"scanchain_{self.index}"
   
     def get_index_row(self):
-        return f'| {self.yaml["documentation"]["author"]} | {self.yaml["documentation"]["title"]} | {self.git_url} |\n'
+        if self.is_wokwi():
+            type_string = f"[Wokwi](https://wokwi.com/projects/{self.wokwi_id})"
+        else:
+            type_string = f"HDL"
+
+        return f'| {self.yaml["documentation"]["author"]} | {self.yaml["documentation"]["title"]} | {type_string} | {self.git_url} |\n'
 
     # top module name is defined in one of the source files, which one?
     def find_top_verilog(self):
@@ -539,8 +565,8 @@ class CaravelConfig():
             readme = fh.read()
         with open("README.md", 'w') as fh:
             fh.write(readme)
-            fh.write("| Author | Title | Git Repo |\n")
-            fh.write("| ------ | ------| ---------|\n")
+            fh.write("| Author | Title | Type | Git Repo |\n")
+            fh.write("| ------ | ------| -----| ---------|\n")
             for project in self.projects:
                 if not project.fill:
                     fh.write(project.get_index_row())
