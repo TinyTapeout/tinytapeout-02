@@ -142,10 +142,10 @@ class Project():
         if not self.fill and self.index != 0:
             if self.is_hdl():
                 if num_cells < 20:
-                    logging.error(f"{self} only has {num_cells} cells")
+                    logging.warning(f"{self} only has {num_cells} cells")
             else:
                 if num_cells < 11:
-                    logging.error(f"{self} only has {num_cells} cells")
+                    logging.warning(f"{self} only has {num_cells} cells")
 
     def is_fill(self):
         return self.fill
@@ -214,6 +214,7 @@ class Project():
         return top_verilog[0]
 
     def clone(self):
+        # could check if it already exists and then skip for faster local builds
         try:
             git.Repo.clone_from(self.git_url, self.local_dir)
         except git.exc.GitCommandError as e:
@@ -693,7 +694,7 @@ if __name__ == '__main__':
         caravel.create_macro_config()
         caravel.instantiate()
         if not args.test:
-            caravel.build_index()
+            docs.build_index()
 
     if args.update_image:
         docs.update_image()

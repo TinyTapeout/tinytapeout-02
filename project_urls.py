@@ -6,6 +6,8 @@ test_project_urls = [
     ]
 project_urls = [
     'https://github.com/TinyTapeout/tt02-test-straight',
+    "https://github.com/Fraserbc/tt02-simon",
+    "https://github.com/TomKeddie/tinytapeout-2022-2",
     "https://github.com/chrisruk/matrixchip",
     "https://github.com/loxodes/tt02-submission-loxodes",
     "https://github.com/migcorre/tt02-dc",
@@ -54,4 +56,9 @@ project_urls = [
     "https://github.com/ThorKn/tinytapeout02_shiftregister_challenge",
     "https://github.com/89Mods/tt2-4x4-multiply",
     "https://github.com/89Mods/tt2-multiplexed-counter",
+    "https://github.com/proppy/tt02-xls-counter",
+    "https://github.com/QuantamHD/ethan-evan-random-numbers",
+    "https://github.com/QuantamHD/evan-submission",
+    "https://github.com/FlyGoat/tt02-play-tune-flygoat",
+    "https://github.com/jleightcap/clash-silicon-tinytapeout",
     ]
