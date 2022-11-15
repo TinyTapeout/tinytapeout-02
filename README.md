@@ -10,7 +10,9 @@
 
 # Datasheet
 
-We are building a datasheet of all the projects.  To read it, click the tt_datasheet badge above, then download the PDF artifact.
+[PDF Download](datasheet.pdf).
+
+For the most recent automatic build, click the tt_datasheet badge above, then download the PDF artifact.
 
 # GDS layout of all projects
 
