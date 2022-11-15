@@ -24,42 +24,27 @@ jobs:
     - name: setup python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.7.7' # install the python version needed
+        python-version: '3.7.7'
+        cache: 'pip'
+    - run: pip install -r requirements.txt
 
-    # python deps from reqirements file, use a marketplace action
-    - name: Install Python dependencies
-      uses: py-actions/py-dependency-install@v4
-      with:
-        path: "tt_docs/requirements.txt"
+    # fetch the repos
+    - name: fetch all
+      run: python ./configure.py --clone-all --debug
 
-    # run the job
-    - name: build datasheet
-      run: |
-        cp project_urls.py tt_docs/tt02_projects.py
-        cd tt_docs
-        python builddoc.py
-
-    # convert to PDF
+    # pandoc deps
     - name: Pandoc deps
       run: | 
         sudo apt-get update -y
         sudo apt-get install -y pandoc texlive-xetex
 
-    - name: convert pdf
-      run: |
-        cd tt_docs
-        ./pandoc.sh
+    # dump pdf
+    - name: update datasheet
+      run: python ./configure.py --dump-markdown datasheet.md --dump-pdf datasheet.pdf
 
     # archive the PDF
     - name: Archive PDF
       uses: actions/upload-artifact@v3
       with:
           name: PDF
-          path: tt_docs/tt02.pdf
-
-    # archive the MD
-    - name: Archive MD
-      uses: actions/upload-artifact@v3
-      with:
-          name: MD
-          path: tt_docs/tt02.md
+          path: datasheet.pdf

@@ -42,6 +42,7 @@ def fetch_file_from_git(git_url, path):
 
     return file_content
 
+
 # the latest artifact isn't necessarily the one related to the latest commit, as github
 # could have taken longer to process an older commit than a newer one.
 # so iterate through commits and return the artifact that matches
@@ -50,6 +51,7 @@ def get_most_recent_action_url(commits, artifacts):
     for commit in commits:
         if commit['sha'] in release_sha_to_download_url:
             return release_sha_to_download_url[commit['sha']]
+
 
 def split_git_url(url):
     res = urlparse(url)
@@ -60,6 +62,7 @@ def split_git_url(url):
         exit(1)
     repo = repo.replace('.git', '')
     return user_name, repo
+
 
 # download the artifact for each project to get the gds & lef
 def install_artifacts(url, directory):
