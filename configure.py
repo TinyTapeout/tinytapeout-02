@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 import re, glob, json
 import yaml
-from typing import List
-from urllib.parse import urlparse
-import argparse, requests, base64, io, logging, pickle, shutil, sys, os, collections, subprocess
-from git_utils import fetch_file_from_git, install_artifacts
+import argparse, logging, shutil, sys, os, collections
+from git_utils import install_artifacts
 import git
 from project_urls import filler_project_url, test_project_urls, project_urls
+
 
 # pipe handling
 from signal import signal, SIGPIPE, SIG_DFL
@@ -14,6 +13,7 @@ signal(SIGPIPE, SIG_DFL)
 
 tmp_dir = '/tmp/tt'
 DEFAULT_NUM_PROJECTS = 473
+
 
 def unique(duplist):
     unique_list = []
@@ -23,6 +23,7 @@ def unique(duplist):
         if x not in unique_list:
             unique_list.append(x)
     return unique_list
+
 
 class Projects():
 
@@ -48,30 +49,29 @@ class Projects():
         for index in range(args.limit_num_projects):
             try:
                 git_url = self.project_urls[index]
-            except IndexError as e:
-                if filler == False:
+            except IndexError:
+                if filler is False:
                     git_url = filler_project_url
-                    filler_id = 0 # first project is always fill
+                    filler_id = 0  # first project is always fill
                 filler = True
 
             project = Project(index, git_url, project_dir, fill=filler, fill_id=filler_id)
-           
+
             # clone git repos locally & gds artifacts from action build
             if args.clone_all:
                 logging.info(f"cloning & fetching gds for {project}")
-                if filler == False:
+                if filler is False:
                     project.clone()
                     project.fetch_gds()
 
             # projects should now be installed, so load all the data from the yaml files
-            logging.debug(f"loading project yaml")
+            logging.debug("loading project yaml")
             # fill projects will load from the fill project's directory
             project.load_yaml()
 
-
             if args.update_caravel:
-                logging.debug(f"copying files to caravel")
-                if filler == False:
+                logging.debug("copying files to caravel")
+                if filler is False:
                     project.copy_files_to_caravel()
 
                 # check all top level module ports are correct
@@ -79,15 +79,13 @@ class Projects():
                 project.check_num_cells()
 
             self.projects.append(project)
-        
+
         # now do some sanity checks
-        all_macro_instances = [ project.get_macro_instance() for project in self.projects ]
+        all_macro_instances = [project.get_macro_instance() for project in self.projects]
         assert len(all_macro_instances) == len(unique(all_macro_instances))
 
-        all_top_files = [ project.get_top_verilog_file() for project in self.projects if not project.fill ]
+        all_top_files = [project.get_top_verilog_file() for project in self.projects if not project.is_fill()]
         assert len(all_top_files) == len(unique(all_top_files))
-
-    
 
     def check_dupes(self):
         from project_urls import project_urls
@@ -95,6 +93,7 @@ class Projects():
         if duplicates:
             logging.error("duplicate projects: {}".format(duplicates))
             exit(1)
+
 
 class Project():
 
@@ -114,13 +113,13 @@ class Project():
 
     def check_ports(self):
         top = self.get_macro_name()
-        sources = [ os.path.join(self.local_dir, 'src', src) for src in self.src_files ]
+        sources = [os.path.join(self.local_dir, 'src', src) for src in self.src_files]
         source_list = " ".join(sources)
-        
+
         json_file = 'ports.json'
         os.system("yosys -qp 'read_verilog -sv %s; hierarchy -top %s ; proc; json -o %s x:*'" % (source_list, top, json_file))
-        with open(json_file) as fh:                                                                                                                                                                                         
-            ports = json.load(fh)                                                                                                                                                                                           
+        with open(json_file) as fh:
+            ports = json.load(fh)
         os.unlink(json_file)
 
         module_ports = ports['modules'][top]['ports']
@@ -132,10 +131,9 @@ class Project():
                 logging.error(f"{port} doesn't have 8 bits")
                 exit(1)
 
-
     def check_num_cells(self):
         num_cells = 0
-        yosys_report = glob.glob(f'{self.local_dir}/runs/wokwi/reports/synthesis/1-synthesis.*0.stat.rpt')[0] # can't open a file with \ in the path
+        yosys_report = glob.glob(f'{self.local_dir}/runs/wokwi/reports/synthesis/1-synthesis.*0.stat.rpt')[0]  # can't open a file with \ in the path
         with open(yosys_report) as fh:
             for line in fh.readlines():
                 m = re.search(r'Number of cells:\s+(\d+)', line)
@@ -148,6 +146,9 @@ class Project():
             else:
                 if num_cells < 11:
                     logging.error(f"{self} only has {num_cells} cells")
+
+    def is_fill(self):
+        return self.fill
 
     def is_wokwi(self):
         if self.wokwi_id != 0:
@@ -165,6 +166,7 @@ class Project():
             exit(1)
 
         self.wokwi_id = self.yaml['project']['wokwi_id']
+        self.yaml['project']['git_url'] = self.git_url
 
         if self.is_hdl():
             self.top_module         = self.yaml['project']['top_module']
@@ -172,19 +174,31 @@ class Project():
             self.top_verilog_file   = self.find_top_verilog()
         else:
             self.top_module         = f"user_module_{self.wokwi_id}"
-            self.src_files          = [ f"user_module_{self.wokwi_id}.v" ]
+            self.src_files          = [f"user_module_{self.wokwi_id}.v"]
             self.top_verilog_file   = self.src_files[0]
 
         self.macro_instance         = f"{self.top_module}_{self.index}"
         self.scanchain_instance     = f"scanchain_{self.index}"
-  
-    def get_index_row(self):
-        if self.is_wokwi():
-            type_string = f"[Wokwi](https://wokwi.com/projects/{self.wokwi_id})"
-        else:
-            type_string = f"HDL"
 
-        return f'| {self.yaml["documentation"]["author"]} | {self.yaml["documentation"]["title"]} | {type_string} | {self.git_url} |\n'
+    # docs stuff for index on README.md
+    def get_index_row(self):
+        return f'| {self.yaml["documentation"]["author"]} | {self.yaml["documentation"]["title"]} | {self.get_project_type_string()} | {self.git_url} |\n'
+
+    def get_project_type_string(self):
+        if self.is_wokwi():
+            return f"[Wokwi]({self.get_wokwi_url()})"
+        else:
+            return "HDL"
+
+    def get_project_doc_yaml(self):
+        # fstring dict support is limited to one level deep, so put the git url and wokwi url in the docs key
+        docs = self.yaml['documentation']
+        docs['project_type'] = self.get_project_type_string()
+        docs['git_url'] = self.git_url
+        return docs
+
+    def get_wokwi_url(self):
+        return f'https://wokwi.com/projects/{self.wokwi_id}'
 
     # top module name is defined in one of the source files, which one?
     def find_top_verilog(self):
@@ -212,7 +226,6 @@ class Project():
 
     def __str__(self):
         return f"[{self.index:03} : {self.git_url}]"
-        #return f"[{self.index:03} : {self.git_url} fill {self.fill} wokwi id {self.wokwi_id}]"
 
     def fetch_gds(self):
         install_artifacts(self.git_url, self.local_dir)
@@ -257,9 +270,9 @@ class Project():
 
     # for the includes file for simulation
     def get_verilog_names(self):
-        return [ self.get_gl_verilog_names() ]
+        return [self.get_gl_verilog_names()]
 
-    def get_giturl(self):
+    def get_git_url(self):
         return self.git_url
 
     def copy_files_to_caravel(self):
@@ -293,7 +306,6 @@ class CaravelConfig():
     def __init__(self, projects, num_projects):
         self.projects = projects
         self.num_projects = num_projects
-
 
     # create macro file & positions, power hooks
     def create_macro_config(self):
@@ -462,8 +474,7 @@ class CaravelConfig():
             pfx      = f"sw_{idx:03d}"
             prev_pfx = f"sw_{idx-1:03d}" if idx > 0 else "sc"
             # Pickup the Wokwi design ID and github URL for the project
-            index  = self.projects[idx].get_index()
-            giturl = self.projects[idx].get_giturl()
+            giturl = self.projects[idx].get_git_url()
 
             # Append the instance to the body
             body += [
@@ -559,6 +570,13 @@ class CaravelConfig():
             logging.info(project)
 
 
+class Docs():
+
+    def __init__(self, projects, args):
+        self.projects = projects
+        self.args = args
+
+    # stuff related to docs
     def build_index(self):
         logging.info("building doc index")
         with open("README_init.md") as fh:
@@ -568,16 +586,73 @@ class CaravelConfig():
             fh.write("| Author | Title | Type | Git Repo |\n")
             fh.write("| ------ | ------| -----| ---------|\n")
             for project in self.projects:
-                if not project.fill:
+                if not project.is_fill():
                     fh.write(project.get_index_row())
 
     def update_image(self):
         cmd = "klayout -l caravel.lyp gds/user_project_wrapper.gds -r dump_pic.rb -c klayoutrc"
-        logging.info(cmd)                                                                                                                                                                                                   
-        os.system(cmd)  
+        logging.info(cmd)
+        os.system(cmd)
+
+    # create a json file of all the project info, this is then used by tinytapeout.com to show projects
+    def dump_json(self):
+        designs = []
+        for project in self.projects:
+            design = project.get_project_yaml()
+            designs.append(design)
+
+        with open(args.dump_json, "w") as fh:
+            fh.write(json.dumps(designs, indent=4))
+        logging.info(f'wrote json to {args.dump_json}')
+
+    def dump_markdown(self):
+
+        with open("doc_header.md") as fh:
+            doc_header = fh.read()
+
+        with open("doc_template.md") as fh:
+            doc_template = fh.read()
+
+        with open("INFO.md") as fh:
+            doc_info = fh.read()
+
+        with open(args.dump_markdown, 'w') as fh:
+            fh.write(doc_header)
+
+            for project in self.projects:
+                if project.is_fill():
+                    continue
+                yaml_data = project.get_project_doc_yaml()
+
+                logging.info(f"building datasheet for {project}")
+                # handle pictures
+                yaml_data['picture_link'] = ''
+                if yaml_data['picture']:
+                    # skip SVG for now, not supported by pandoc
+                    picture_name = yaml_data['picture']
+                    if 'svg' not in picture_name:
+                        picture_filename = os.path.join(project.local_dir, picture_name)
+                        yaml_data['picture_link'] = '![picture]({})'.format(picture_filename)
+
+                # now build the doc & print it
+                try:
+                    doc = doc_template.format(**yaml_data)
+                    fh.write(doc)
+                    fh.write("\n\pagebreak\n")
+                except IndexError as e:
+                    logging.error(e)
+
+            # ending
+            fh.write(doc_info)
+
+        logging.info(f'wrote markdown to {args.dump_markdown}')
+
+        if args.dump_pdf:
+            os.system(f'pandoc --toc --toc-depth 2 --pdf-engine=xelatex -i {args.dump_markdown} -o {args.dump_pdf}')
+
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="TinyTapeout")
+    parser = argparse.ArgumentParser(description="TinyTapeout configuration and docs")
 
     parser.add_argument('--list', help="list projects", action='store_const', const=True)
     parser.add_argument('--clone-all', help="clone all projects", action="store_const", const=True)
@@ -586,7 +661,9 @@ if __name__ == '__main__':
     parser.add_argument('--test', help='use test projects', action='store_const', const=True)
     parser.add_argument('--debug', help="debug logging", action="store_const", dest="loglevel", const=logging.DEBUG, default=logging.INFO)
     parser.add_argument('--update-image', help="update the image", action="store_const", const=True)
-
+    parser.add_argument('--dump-json', help="dump json of all project data to given file")
+    parser.add_argument('--dump-markdown', help="dump markdown of all project data to given file")
+    parser.add_argument('--dump-pdf', help="create pdf from the markdown")
 
     args = parser.parse_args()
 
@@ -596,9 +673,6 @@ if __name__ == '__main__':
     log = logging.getLogger('')
     # has to be set to debug as is the root logger
     log.setLevel(args.loglevel)
-    # turn off debug logging for requests
-    logging.getLogger("requests").setLevel(logging.INFO)
-    logging.getLogger("urllib3").setLevel(logging.INFO)
 
     # create console handler and set level to info
     ch = logging.StreamHandler(sys.stdout)
@@ -609,6 +683,7 @@ if __name__ == '__main__':
     projects = Projects(args)
 #    projects.check_dupes()
 
+    docs = Docs(projects.projects, args=args)
     caravel = CaravelConfig(projects.projects, num_projects=args.limit_num_projects)
 
     if args.list:
@@ -621,4 +696,10 @@ if __name__ == '__main__':
             caravel.build_index()
 
     if args.update_image:
-        caravel.update_image()
+        docs.update_image()
+
+    if args.dump_json:
+        docs.dump_json()
+
+    if args.dump_markdown:
+        docs.dump_markdown()
