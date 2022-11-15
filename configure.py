@@ -639,8 +639,8 @@ class Docs():
                     doc = doc_template.format(**yaml_data)
                     fh.write(doc)
                     fh.write("\n\pagebreak\n")
-                except IndexError as e:
-                    logging.error(e)
+                except IndexError:
+                    logging.warning("missing pins in info.yaml, skipping")
 
             # ending
             fh.write(doc_info)
