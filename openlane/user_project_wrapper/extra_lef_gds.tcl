@@ -49,7 +49,11 @@ $script_dir/../../lef/phasenoisepon_seven_segment_seconds.lef \
 $script_dir/../../lef/user_module_341541108650607187.lef \
 $script_dir/../../lef/user_module_341516949939814994.lef \
 $script_dir/../../lef/tt2_tholin_multiplier.lef \
-$script_dir/../../lef/tt2_tholin_multiplexed_counter.lef"
+$script_dir/../../lef/tt2_tholin_multiplexed_counter.lef \
+$script_dir/../../lef/xor_shift32_quantamhd.lef \
+$script_dir/../../lef/xor_shift32_evango.lef \
+$script_dir/../../lef/flygoat_tt02_play_tune.lef \
+$script_dir/../../lef/jleightcap_top.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -101,4 +105,8 @@ $script_dir/../../gds/phasenoisepon_seven_segment_seconds.gds \
 $script_dir/../../gds/user_module_341541108650607187.gds \
 $script_dir/../../gds/user_module_341516949939814994.gds \
 $script_dir/../../gds/tt2_tholin_multiplier.gds \
-$script_dir/../../gds/tt2_tholin_multiplexed_counter.gds"
+$script_dir/../../gds/tt2_tholin_multiplexed_counter.gds \
+$script_dir/../../gds/xor_shift32_quantamhd.gds \
+$script_dir/../../gds/xor_shift32_evango.gds \
+$script_dir/../../gds/flygoat_tt02_play_tune.gds \
+$script_dir/../../gds/jleightcap_top.gds"

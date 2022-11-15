@@ -51,3 +51,7 @@
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_341516949939814994.v
 -v $(USER_PROJECT_VERILOG)/rtl/tt2_tholin_multiplier.v
 -v $(USER_PROJECT_VERILOG)/rtl/tt2_tholin_multiplexed_counter.v
+-v $(USER_PROJECT_VERILOG)/rtl/xor_shift32_quantamhd.v
+-v $(USER_PROJECT_VERILOG)/rtl/xor_shift32_evango.v
+-v $(USER_PROJECT_VERILOG)/rtl/flygoat_tt02_play_tune.v
+-v $(USER_PROJECT_VERILOG)/rtl/jleightcap_top.v

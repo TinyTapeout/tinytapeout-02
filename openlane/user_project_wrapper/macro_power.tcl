@@ -99,19 +99,19 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
 	scanchain_48 vccd1 vssd1 vccd1 vssd1, \
 	tt2_tholin_multiplexed_counter_48 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_49 vccd1 vssd1 vccd1 vssd1, \
-	user_module_339501025136214612_49 vccd1 vssd1 vccd1 vssd1, \
+	tt2_tholin_multiplier_49 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_50 vccd1 vssd1 vccd1 vssd1, \
-	user_module_339501025136214612_50 vccd1 vssd1 vccd1 vssd1, \
+	tt2_tholin_multiplexed_counter_50 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_51 vccd1 vssd1 vccd1 vssd1, \
-	user_module_339501025136214612_51 vccd1 vssd1 vccd1 vssd1, \
+	top_51 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_52 vccd1 vssd1 vccd1 vssd1, \
-	user_module_339501025136214612_52 vccd1 vssd1 vccd1 vssd1, \
+	xor_shift32_quantamhd_52 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_53 vccd1 vssd1 vccd1 vssd1, \
-	user_module_339501025136214612_53 vccd1 vssd1 vccd1 vssd1, \
+	xor_shift32_evango_53 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_54 vccd1 vssd1 vccd1 vssd1, \
-	user_module_339501025136214612_54 vccd1 vssd1 vccd1 vssd1, \
+	flygoat_tt02_play_tune_54 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_55 vccd1 vssd1 vccd1 vssd1, \
-	user_module_339501025136214612_55 vccd1 vssd1 vccd1 vssd1, \
+	jleightcap_top_55 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_56 vccd1 vssd1 vccd1 vssd1, \
 	user_module_339501025136214612_56 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_57 vccd1 vssd1 vccd1 vssd1, \
