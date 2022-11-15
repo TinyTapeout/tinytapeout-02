@@ -135,21 +135,21 @@ class Project():
         num_cells = 0
         try:
             yosys_report = glob.glob(f'{self.local_dir}/runs/wokwi/reports/synthesis/1-synthesis.*0.stat.rpt')[0]  # can't open a file with \ in the path
-        except IndexError:
-            logging.warning("couldn't open yosys cell report for cell checking {self}")
+            with open(yosys_report) as fh:
+                for line in fh.readlines():
+                    m = re.search(r'Number of cells:\s+(\d+)', line)
+                    if m is not None:
+                        num_cells = int(m.group(1))
+            if not self.fill and self.index != 0:
+                if self.is_hdl():
+                    if num_cells < 20:
+                        logging.warning(f"{self} only has {num_cells} cells")
+                else:
+                    if num_cells < 11:
+                        logging.warning(f"{self} only has {num_cells} cells")
 
-        with open(yosys_report) as fh:
-            for line in fh.readlines():
-                m = re.search(r'Number of cells:\s+(\d+)', line)
-                if m is not None:
-                    num_cells = int(m.group(1))
-        if not self.fill and self.index != 0:
-            if self.is_hdl():
-                if num_cells < 20:
-                    logging.warning(f"{self} only has {num_cells} cells")
-            else:
-                if num_cells < 11:
-                    logging.warning(f"{self} only has {num_cells} cells")
+        except IndexError:
+            logging.warning(f"couldn't open yosys cell report for cell checking {self}")
 
     def is_fill(self):
         return self.fill
