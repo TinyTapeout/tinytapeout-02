@@ -41,14 +41,13 @@ jobs:
       with:
           osscadsuite-version: '2022-09-03' # pin the version, latest one fails to work with caravel
 
-    # pwd debug
-    - name: pwd
-      run: |
-        pwd # /home/runner/work/tinytapeout-mpw7/tinytapeout-mpw7
-
     # fetch the repos
     - name: fetch all
       run: python ./configure.py --clone-all --debug
+
+    # pwd debug
+    - name: show projects
+      run: find projects
 
     # install projects
     - name: configure

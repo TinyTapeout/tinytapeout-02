@@ -59,8 +59,8 @@ class Projects():
 
             # clone git repos locally & gds artifacts from action build
             if args.clone_all:
-                logging.info(f"cloning & fetching gds for {project}")
                 if filler is False:
+                    logging.info(f"cloning & fetching gds for {project}")
                     project.clone()
                     project.fetch_gds()
 
@@ -133,7 +133,11 @@ class Project():
 
     def check_num_cells(self):
         num_cells = 0
-        yosys_report = glob.glob(f'{self.local_dir}/runs/wokwi/reports/synthesis/1-synthesis.*0.stat.rpt')[0]  # can't open a file with \ in the path
+        try:
+            yosys_report = glob.glob(f'{self.local_dir}/runs/wokwi/reports/synthesis/1-synthesis.*0.stat.rpt')[0]  # can't open a file with \ in the path
+        except IndexError:
+            logging.warning("couldn't open yosys cell report for cell checking {self}")
+
         with open(yosys_report) as fh:
             for line in fh.readlines():
                 m = re.search(r'Number of cells:\s+(\d+)', line)
