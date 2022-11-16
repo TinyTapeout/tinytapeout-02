@@ -183,8 +183,8 @@ class Project():
             self.src_files              = [f"user_module_{self.wokwi_id}.v"]
             self.top_verilog_filename   = self.src_files[0]
 
-        self.macro_instance         = f"{self.top_module}_{self.index}"
-        self.scanchain_instance     = f"scanchain_{self.index}"
+        self.macro_instance         = f"{self.top_module}_{self.index :03}"
+        self.scanchain_instance     = f"scanchain_{self.index :03}"
 
     # docs stuff for index on README.md
     def get_index_row(self):
@@ -270,7 +270,7 @@ class Project():
             # a few people use 'top.v', which is OK as long as the top module is called something more unique
             # but then it needs to be made unique so the source can be found
             filename = os.path.basename(self.top_verilog_filename)
-            return f'{self.index}_{filename}'
+            return f'{self.index :03}_{filename}'
         else:
             return self.top_verilog_filename
 

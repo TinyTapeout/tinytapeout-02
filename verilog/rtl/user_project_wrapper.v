@@ -118,7 +118,7 @@ module user_project_wrapper #(
     wire sw_000_clk_out, sw_000_data_out, sw_000_scan_out, sw_000_latch_out;
     wire [7:0] sw_000_module_data_in;
     wire [7:0] sw_000_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_0 (
+    scanchain #(.NUM_IOS(8)) scanchain_000 (
         .clk_in          (sc_clk_out),
         .data_in         (sc_data_out),
         .scan_select_in  (sc_scan_out),
@@ -131,7 +131,7 @@ module user_project_wrapper #(
         .module_data_out (sw_000_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_0 (
+    user_module_339501025136214612 user_module_339501025136214612_000 (
         .io_in  (sw_000_module_data_in),
         .io_out (sw_000_module_data_out)
     );
@@ -140,7 +140,7 @@ module user_project_wrapper #(
     wire sw_001_clk_out, sw_001_data_out, sw_001_scan_out, sw_001_latch_out;
     wire [7:0] sw_001_module_data_in;
     wire [7:0] sw_001_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_1 (
+    scanchain #(.NUM_IOS(8)) scanchain_001 (
         .clk_in          (sw_000_clk_out),
         .data_in         (sw_000_data_out),
         .scan_select_in  (sw_000_scan_out),
@@ -153,7 +153,7 @@ module user_project_wrapper #(
         .module_data_out (sw_001_module_data_out)
     );
 
-    fraserbc_simon fraserbc_simon_1 (
+    fraserbc_simon fraserbc_simon_001 (
         .io_in  (sw_001_module_data_in),
         .io_out (sw_001_module_data_out)
     );
@@ -162,7 +162,7 @@ module user_project_wrapper #(
     wire sw_002_clk_out, sw_002_data_out, sw_002_scan_out, sw_002_latch_out;
     wire [7:0] sw_002_module_data_in;
     wire [7:0] sw_002_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_2 (
+    scanchain #(.NUM_IOS(8)) scanchain_002 (
         .clk_in          (sw_001_clk_out),
         .data_in         (sw_001_data_out),
         .scan_select_in  (sw_001_scan_out),
@@ -175,7 +175,7 @@ module user_project_wrapper #(
         .module_data_out (sw_002_module_data_out)
     );
 
-    tomkeddie_top_tto tomkeddie_top_tto_2 (
+    tomkeddie_top_tto tomkeddie_top_tto_002 (
         .io_in  (sw_002_module_data_in),
         .io_out (sw_002_module_data_out)
     );
@@ -184,7 +184,7 @@ module user_project_wrapper #(
     wire sw_003_clk_out, sw_003_data_out, sw_003_scan_out, sw_003_latch_out;
     wire [7:0] sw_003_module_data_in;
     wire [7:0] sw_003_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_3 (
+    scanchain #(.NUM_IOS(8)) scanchain_003 (
         .clk_in          (sw_002_clk_out),
         .data_in         (sw_002_data_out),
         .scan_select_in  (sw_002_scan_out),
@@ -197,7 +197,7 @@ module user_project_wrapper #(
         .module_data_out (sw_003_module_data_out)
     );
 
-    chrisruk_matrix chrisruk_matrix_3 (
+    chrisruk_matrix chrisruk_matrix_003 (
         .io_in  (sw_003_module_data_in),
         .io_out (sw_003_module_data_out)
     );
@@ -206,7 +206,7 @@ module user_project_wrapper #(
     wire sw_004_clk_out, sw_004_data_out, sw_004_scan_out, sw_004_latch_out;
     wire [7:0] sw_004_module_data_in;
     wire [7:0] sw_004_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_4 (
+    scanchain #(.NUM_IOS(8)) scanchain_004 (
         .clk_in          (sw_003_clk_out),
         .data_in         (sw_003_data_out),
         .scan_select_in  (sw_003_scan_out),
@@ -219,7 +219,7 @@ module user_project_wrapper #(
         .module_data_out (sw_004_module_data_out)
     );
 
-    loxodes_sequencer loxodes_sequencer_4 (
+    loxodes_sequencer loxodes_sequencer_004 (
         .io_in  (sw_004_module_data_in),
         .io_out (sw_004_module_data_out)
     );
@@ -228,7 +228,7 @@ module user_project_wrapper #(
     wire sw_005_clk_out, sw_005_data_out, sw_005_scan_out, sw_005_latch_out;
     wire [7:0] sw_005_module_data_in;
     wire [7:0] sw_005_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_5 (
+    scanchain #(.NUM_IOS(8)) scanchain_005 (
         .clk_in          (sw_004_clk_out),
         .data_in         (sw_004_data_out),
         .scan_select_in  (sw_004_scan_out),
@@ -241,7 +241,7 @@ module user_project_wrapper #(
         .module_data_out (sw_005_module_data_out)
     );
 
-    migcorre_pwm migcorre_pwm_5 (
+    migcorre_pwm migcorre_pwm_005 (
         .io_in  (sw_005_module_data_in),
         .io_out (sw_005_module_data_out)
     );
@@ -250,7 +250,7 @@ module user_project_wrapper #(
     wire sw_006_clk_out, sw_006_data_out, sw_006_scan_out, sw_006_latch_out;
     wire [7:0] sw_006_module_data_in;
     wire [7:0] sw_006_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_6 (
+    scanchain #(.NUM_IOS(8)) scanchain_006 (
         .clk_in          (sw_005_clk_out),
         .data_in         (sw_005_data_out),
         .scan_select_in  (sw_005_scan_out),
@@ -263,7 +263,7 @@ module user_project_wrapper #(
         .module_data_out (sw_006_module_data_out)
     );
 
-    s4ga s4ga_6 (
+    s4ga s4ga_006 (
         .io_in  (sw_006_module_data_in),
         .io_out (sw_006_module_data_out)
     );
@@ -272,7 +272,7 @@ module user_project_wrapper #(
     wire sw_007_clk_out, sw_007_data_out, sw_007_scan_out, sw_007_latch_out;
     wire [7:0] sw_007_module_data_in;
     wire [7:0] sw_007_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_7 (
+    scanchain #(.NUM_IOS(8)) scanchain_007 (
         .clk_in          (sw_006_clk_out),
         .data_in         (sw_006_data_out),
         .scan_select_in  (sw_006_scan_out),
@@ -285,7 +285,7 @@ module user_project_wrapper #(
         .module_data_out (sw_007_module_data_out)
     );
 
-    alu_top alu_top_7 (
+    alu_top alu_top_007 (
         .io_in  (sw_007_module_data_in),
         .io_out (sw_007_module_data_out)
     );
@@ -294,7 +294,7 @@ module user_project_wrapper #(
     wire sw_008_clk_out, sw_008_data_out, sw_008_scan_out, sw_008_latch_out;
     wire [7:0] sw_008_module_data_in;
     wire [7:0] sw_008_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_8 (
+    scanchain #(.NUM_IOS(8)) scanchain_008 (
         .clk_in          (sw_007_clk_out),
         .data_in         (sw_007_data_out),
         .scan_select_in  (sw_007_scan_out),
@@ -307,7 +307,7 @@ module user_project_wrapper #(
         .module_data_out (sw_008_module_data_out)
     );
 
-    aidan_McCoy aidan_McCoy_8 (
+    aidan_McCoy aidan_McCoy_008 (
         .io_in  (sw_008_module_data_in),
         .io_out (sw_008_module_data_out)
     );
@@ -316,7 +316,7 @@ module user_project_wrapper #(
     wire sw_009_clk_out, sw_009_data_out, sw_009_scan_out, sw_009_latch_out;
     wire [7:0] sw_009_module_data_in;
     wire [7:0] sw_009_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_9 (
+    scanchain #(.NUM_IOS(8)) scanchain_009 (
         .clk_in          (sw_008_clk_out),
         .data_in         (sw_008_data_out),
         .scan_select_in  (sw_008_scan_out),
@@ -329,7 +329,7 @@ module user_project_wrapper #(
         .module_data_out (sw_009_module_data_out)
     );
 
-    azdle_binary_clock azdle_binary_clock_9 (
+    azdle_binary_clock azdle_binary_clock_009 (
         .io_in  (sw_009_module_data_in),
         .io_out (sw_009_module_data_out)
     );
@@ -338,7 +338,7 @@ module user_project_wrapper #(
     wire sw_010_clk_out, sw_010_data_out, sw_010_scan_out, sw_010_latch_out;
     wire [7:0] sw_010_module_data_in;
     wire [7:0] sw_010_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_10 (
+    scanchain #(.NUM_IOS(8)) scanchain_010 (
         .clk_in          (sw_009_clk_out),
         .data_in         (sw_009_data_out),
         .scan_select_in  (sw_009_scan_out),
@@ -351,7 +351,7 @@ module user_project_wrapper #(
         .module_data_out (sw_010_module_data_out)
     );
 
-    user_module_347787021138264660 user_module_347787021138264660_10 (
+    user_module_347787021138264660 user_module_347787021138264660_010 (
         .io_in  (sw_010_module_data_in),
         .io_out (sw_010_module_data_out)
     );
@@ -360,7 +360,7 @@ module user_project_wrapper #(
     wire sw_011_clk_out, sw_011_data_out, sw_011_scan_out, sw_011_latch_out;
     wire [7:0] sw_011_module_data_in;
     wire [7:0] sw_011_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_11 (
+    scanchain #(.NUM_IOS(8)) scanchain_011 (
         .clk_in          (sw_010_clk_out),
         .data_in         (sw_010_data_out),
         .scan_select_in  (sw_010_scan_out),
@@ -373,7 +373,7 @@ module user_project_wrapper #(
         .module_data_out (sw_011_module_data_out)
     );
 
-    jar_sram_top jar_sram_top_11 (
+    jar_sram_top jar_sram_top_011 (
         .io_in  (sw_011_module_data_in),
         .io_out (sw_011_module_data_out)
     );
@@ -382,7 +382,7 @@ module user_project_wrapper #(
     wire sw_012_clk_out, sw_012_data_out, sw_012_scan_out, sw_012_latch_out;
     wire [7:0] sw_012_module_data_in;
     wire [7:0] sw_012_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_12 (
+    scanchain #(.NUM_IOS(8)) scanchain_012 (
         .clk_in          (sw_011_clk_out),
         .data_in         (sw_011_data_out),
         .scan_select_in  (sw_011_scan_out),
@@ -395,7 +395,7 @@ module user_project_wrapper #(
         .module_data_out (sw_012_module_data_out)
     );
 
-    user_module_347690870424732244 user_module_347690870424732244_12 (
+    user_module_347690870424732244 user_module_347690870424732244_012 (
         .io_in  (sw_012_module_data_in),
         .io_out (sw_012_module_data_out)
     );
@@ -404,7 +404,7 @@ module user_project_wrapper #(
     wire sw_013_clk_out, sw_013_data_out, sw_013_scan_out, sw_013_latch_out;
     wire [7:0] sw_013_module_data_in;
     wire [7:0] sw_013_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_13 (
+    scanchain #(.NUM_IOS(8)) scanchain_013 (
         .clk_in          (sw_012_clk_out),
         .data_in         (sw_012_data_out),
         .scan_select_in  (sw_012_scan_out),
@@ -417,7 +417,7 @@ module user_project_wrapper #(
         .module_data_out (sw_013_module_data_out)
     );
 
-    user_module_347592305412145748 user_module_347592305412145748_13 (
+    user_module_347592305412145748 user_module_347592305412145748_013 (
         .io_in  (sw_013_module_data_in),
         .io_out (sw_013_module_data_out)
     );
@@ -426,7 +426,7 @@ module user_project_wrapper #(
     wire sw_014_clk_out, sw_014_data_out, sw_014_scan_out, sw_014_latch_out;
     wire [7:0] sw_014_module_data_in;
     wire [7:0] sw_014_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_14 (
+    scanchain #(.NUM_IOS(8)) scanchain_014 (
         .clk_in          (sw_013_clk_out),
         .data_in         (sw_013_data_out),
         .scan_select_in  (sw_013_scan_out),
@@ -439,7 +439,7 @@ module user_project_wrapper #(
         .module_data_out (sw_014_module_data_out)
     );
 
-    tholin_avalonsemi_5401 tholin_avalonsemi_5401_14 (
+    tholin_avalonsemi_5401 tholin_avalonsemi_5401_014 (
         .io_in  (sw_014_module_data_in),
         .io_out (sw_014_module_data_out)
     );
@@ -448,7 +448,7 @@ module user_project_wrapper #(
     wire sw_015_clk_out, sw_015_data_out, sw_015_scan_out, sw_015_latch_out;
     wire [7:0] sw_015_module_data_in;
     wire [7:0] sw_015_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_15 (
+    scanchain #(.NUM_IOS(8)) scanchain_015 (
         .clk_in          (sw_014_clk_out),
         .data_in         (sw_014_data_out),
         .scan_select_in  (sw_014_scan_out),
@@ -461,7 +461,7 @@ module user_project_wrapper #(
         .module_data_out (sw_015_module_data_out)
     );
 
-    tiny_fft tiny_fft_15 (
+    tiny_fft tiny_fft_015 (
         .io_in  (sw_015_module_data_in),
         .io_out (sw_015_module_data_out)
     );
@@ -470,7 +470,7 @@ module user_project_wrapper #(
     wire sw_016_clk_out, sw_016_data_out, sw_016_scan_out, sw_016_latch_out;
     wire [7:0] sw_016_module_data_in;
     wire [7:0] sw_016_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_16 (
+    scanchain #(.NUM_IOS(8)) scanchain_016 (
         .clk_in          (sw_015_clk_out),
         .data_in         (sw_015_data_out),
         .scan_select_in  (sw_015_scan_out),
@@ -483,7 +483,7 @@ module user_project_wrapper #(
         .module_data_out (sw_016_module_data_out)
     );
 
-    user_module_346553315158393428 user_module_346553315158393428_16 (
+    user_module_346553315158393428 user_module_346553315158393428_016 (
         .io_in  (sw_016_module_data_in),
         .io_out (sw_016_module_data_out)
     );
@@ -492,7 +492,7 @@ module user_project_wrapper #(
     wire sw_017_clk_out, sw_017_data_out, sw_017_scan_out, sw_017_latch_out;
     wire [7:0] sw_017_module_data_in;
     wire [7:0] sw_017_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_17 (
+    scanchain #(.NUM_IOS(8)) scanchain_017 (
         .clk_in          (sw_016_clk_out),
         .data_in         (sw_016_data_out),
         .scan_select_in  (sw_016_scan_out),
@@ -505,7 +505,7 @@ module user_project_wrapper #(
         .module_data_out (sw_017_module_data_out)
     );
 
-    user_module_347894637149553236 user_module_347894637149553236_17 (
+    user_module_347894637149553236 user_module_347894637149553236_017 (
         .io_in  (sw_017_module_data_in),
         .io_out (sw_017_module_data_out)
     );
@@ -514,7 +514,7 @@ module user_project_wrapper #(
     wire sw_018_clk_out, sw_018_data_out, sw_018_scan_out, sw_018_latch_out;
     wire [7:0] sw_018_module_data_in;
     wire [7:0] sw_018_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_18 (
+    scanchain #(.NUM_IOS(8)) scanchain_018 (
         .clk_in          (sw_017_clk_out),
         .data_in         (sw_017_data_out),
         .scan_select_in  (sw_017_scan_out),
@@ -527,7 +527,7 @@ module user_project_wrapper #(
         .module_data_out (sw_018_module_data_out)
     );
 
-    user_module_346916357828248146 user_module_346916357828248146_18 (
+    user_module_346916357828248146 user_module_346916357828248146_018 (
         .io_in  (sw_018_module_data_in),
         .io_out (sw_018_module_data_out)
     );
@@ -536,7 +536,7 @@ module user_project_wrapper #(
     wire sw_019_clk_out, sw_019_data_out, sw_019_scan_out, sw_019_latch_out;
     wire [7:0] sw_019_module_data_in;
     wire [7:0] sw_019_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_19 (
+    scanchain #(.NUM_IOS(8)) scanchain_019 (
         .clk_in          (sw_018_clk_out),
         .data_in         (sw_018_data_out),
         .scan_select_in  (sw_018_scan_out),
@@ -549,7 +549,7 @@ module user_project_wrapper #(
         .module_data_out (sw_019_module_data_out)
     );
 
-    user_module_347594509754827347 user_module_347594509754827347_19 (
+    user_module_347594509754827347 user_module_347594509754827347_019 (
         .io_in  (sw_019_module_data_in),
         .io_out (sw_019_module_data_out)
     );
@@ -558,7 +558,7 @@ module user_project_wrapper #(
     wire sw_020_clk_out, sw_020_data_out, sw_020_scan_out, sw_020_latch_out;
     wire [7:0] sw_020_module_data_in;
     wire [7:0] sw_020_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_20 (
+    scanchain #(.NUM_IOS(8)) scanchain_020 (
         .clk_in          (sw_019_clk_out),
         .data_in         (sw_019_data_out),
         .scan_select_in  (sw_019_scan_out),
@@ -571,7 +571,7 @@ module user_project_wrapper #(
         .module_data_out (sw_020_module_data_out)
     );
 
-    chase_the_beat chase_the_beat_20 (
+    chase_the_beat chase_the_beat_020 (
         .io_in  (sw_020_module_data_in),
         .io_out (sw_020_module_data_out)
     );
@@ -580,7 +580,7 @@ module user_project_wrapper #(
     wire sw_021_clk_out, sw_021_data_out, sw_021_scan_out, sw_021_latch_out;
     wire [7:0] sw_021_module_data_in;
     wire [7:0] sw_021_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_21 (
+    scanchain #(.NUM_IOS(8)) scanchain_021 (
         .clk_in          (sw_020_clk_out),
         .data_in         (sw_020_data_out),
         .scan_select_in  (sw_020_scan_out),
@@ -593,7 +593,7 @@ module user_project_wrapper #(
         .module_data_out (sw_021_module_data_out)
     );
 
-    user_module_347688030570545747 user_module_347688030570545747_21 (
+    user_module_347688030570545747 user_module_347688030570545747_021 (
         .io_in  (sw_021_module_data_in),
         .io_out (sw_021_module_data_out)
     );
@@ -602,7 +602,7 @@ module user_project_wrapper #(
     wire sw_022_clk_out, sw_022_data_out, sw_022_scan_out, sw_022_latch_out;
     wire [7:0] sw_022_module_data_in;
     wire [7:0] sw_022_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_22 (
+    scanchain #(.NUM_IOS(8)) scanchain_022 (
         .clk_in          (sw_021_clk_out),
         .data_in         (sw_021_data_out),
         .scan_select_in  (sw_021_scan_out),
@@ -615,7 +615,7 @@ module user_project_wrapper #(
         .module_data_out (sw_022_module_data_out)
     );
 
-    user_module_342981109408072274 user_module_342981109408072274_22 (
+    user_module_342981109408072274 user_module_342981109408072274_022 (
         .io_in  (sw_022_module_data_in),
         .io_out (sw_022_module_data_out)
     );
@@ -624,7 +624,7 @@ module user_project_wrapper #(
     wire sw_023_clk_out, sw_023_data_out, sw_023_scan_out, sw_023_latch_out;
     wire [7:0] sw_023_module_data_in;
     wire [7:0] sw_023_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_23 (
+    scanchain #(.NUM_IOS(8)) scanchain_023 (
         .clk_in          (sw_022_clk_out),
         .data_in         (sw_022_data_out),
         .scan_select_in  (sw_022_scan_out),
@@ -637,7 +637,7 @@ module user_project_wrapper #(
         .module_data_out (sw_023_module_data_out)
     );
 
-    asic_multiplier_wrapper asic_multiplier_wrapper_23 (
+    asic_multiplier_wrapper asic_multiplier_wrapper_023 (
         .io_in  (sw_023_module_data_in),
         .io_out (sw_023_module_data_out)
     );
@@ -646,7 +646,7 @@ module user_project_wrapper #(
     wire sw_024_clk_out, sw_024_data_out, sw_024_scan_out, sw_024_latch_out;
     wire [7:0] sw_024_module_data_in;
     wire [7:0] sw_024_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_24 (
+    scanchain #(.NUM_IOS(8)) scanchain_024 (
         .clk_in          (sw_023_clk_out),
         .data_in         (sw_023_data_out),
         .scan_select_in  (sw_023_scan_out),
@@ -659,7 +659,7 @@ module user_project_wrapper #(
         .module_data_out (sw_024_module_data_out)
     );
 
-    tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143_24 (
+    tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143_024 (
         .io_in  (sw_024_module_data_in),
         .io_out (sw_024_module_data_out)
     );
@@ -668,7 +668,7 @@ module user_project_wrapper #(
     wire sw_025_clk_out, sw_025_data_out, sw_025_scan_out, sw_025_latch_out;
     wire [7:0] sw_025_module_data_in;
     wire [7:0] sw_025_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_25 (
+    scanchain #(.NUM_IOS(8)) scanchain_025 (
         .clk_in          (sw_024_clk_out),
         .data_in         (sw_024_data_out),
         .scan_select_in  (sw_024_scan_out),
@@ -681,7 +681,7 @@ module user_project_wrapper #(
         .module_data_out (sw_025_module_data_out)
     );
 
-    tomkeddie_top_tto_a tomkeddie_top_tto_a_25 (
+    tomkeddie_top_tto_a tomkeddie_top_tto_a_025 (
         .io_in  (sw_025_module_data_in),
         .io_out (sw_025_module_data_out)
     );
@@ -690,7 +690,7 @@ module user_project_wrapper #(
     wire sw_026_clk_out, sw_026_data_out, sw_026_scan_out, sw_026_latch_out;
     wire [7:0] sw_026_module_data_in;
     wire [7:0] sw_026_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_26 (
+    scanchain #(.NUM_IOS(8)) scanchain_026 (
         .clk_in          (sw_025_clk_out),
         .data_in         (sw_025_data_out),
         .scan_select_in  (sw_025_scan_out),
@@ -703,7 +703,7 @@ module user_project_wrapper #(
         .module_data_out (sw_026_module_data_out)
     );
 
-    mm21_LEDMatrixTop mm21_LEDMatrixTop_26 (
+    mm21_LEDMatrixTop mm21_LEDMatrixTop_026 (
         .io_in  (sw_026_module_data_in),
         .io_out (sw_026_module_data_out)
     );
@@ -712,7 +712,7 @@ module user_project_wrapper #(
     wire sw_027_clk_out, sw_027_data_out, sw_027_scan_out, sw_027_latch_out;
     wire [7:0] sw_027_module_data_in;
     wire [7:0] sw_027_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_27 (
+    scanchain #(.NUM_IOS(8)) scanchain_027 (
         .clk_in          (sw_026_clk_out),
         .data_in         (sw_026_data_out),
         .scan_select_in  (sw_026_scan_out),
@@ -725,7 +725,7 @@ module user_project_wrapper #(
         .module_data_out (sw_027_module_data_out)
     );
 
-    user_module_348195845106041428 user_module_348195845106041428_27 (
+    user_module_348195845106041428 user_module_348195845106041428_027 (
         .io_in  (sw_027_module_data_in),
         .io_out (sw_027_module_data_out)
     );
@@ -734,7 +734,7 @@ module user_project_wrapper #(
     wire sw_028_clk_out, sw_028_data_out, sw_028_scan_out, sw_028_latch_out;
     wire [7:0] sw_028_module_data_in;
     wire [7:0] sw_028_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_28 (
+    scanchain #(.NUM_IOS(8)) scanchain_028 (
         .clk_in          (sw_027_clk_out),
         .data_in         (sw_027_data_out),
         .scan_select_in  (sw_027_scan_out),
@@ -747,7 +747,7 @@ module user_project_wrapper #(
         .module_data_out (sw_028_module_data_out)
     );
 
-    user_module_348121131386929746 user_module_348121131386929746_28 (
+    user_module_348121131386929746 user_module_348121131386929746_028 (
         .io_in  (sw_028_module_data_in),
         .io_out (sw_028_module_data_out)
     );
@@ -756,7 +756,7 @@ module user_project_wrapper #(
     wire sw_029_clk_out, sw_029_data_out, sw_029_scan_out, sw_029_latch_out;
     wire [7:0] sw_029_module_data_in;
     wire [7:0] sw_029_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_29 (
+    scanchain #(.NUM_IOS(8)) scanchain_029 (
         .clk_in          (sw_028_clk_out),
         .data_in         (sw_028_data_out),
         .scan_select_in  (sw_028_scan_out),
@@ -769,7 +769,7 @@ module user_project_wrapper #(
         .module_data_out (sw_029_module_data_out)
     );
 
-    yubex_egg_timer yubex_egg_timer_29 (
+    yubex_egg_timer yubex_egg_timer_029 (
         .io_in  (sw_029_module_data_in),
         .io_out (sw_029_module_data_out)
     );
@@ -778,7 +778,7 @@ module user_project_wrapper #(
     wire sw_030_clk_out, sw_030_data_out, sw_030_scan_out, sw_030_latch_out;
     wire [7:0] sw_030_module_data_in;
     wire [7:0] sw_030_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_30 (
+    scanchain #(.NUM_IOS(8)) scanchain_030 (
         .clk_in          (sw_029_clk_out),
         .data_in         (sw_029_data_out),
         .scan_select_in  (sw_029_scan_out),
@@ -791,7 +791,7 @@ module user_project_wrapper #(
         .module_data_out (sw_030_module_data_out)
     );
 
-    xyz_peppergray_Potato1_top xyz_peppergray_Potato1_top_30 (
+    xyz_peppergray_Potato1_top xyz_peppergray_Potato1_top_030 (
         .io_in  (sw_030_module_data_in),
         .io_out (sw_030_module_data_out)
     );
@@ -800,7 +800,7 @@ module user_project_wrapper #(
     wire sw_031_clk_out, sw_031_data_out, sw_031_scan_out, sw_031_latch_out;
     wire [7:0] sw_031_module_data_in;
     wire [7:0] sw_031_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_31 (
+    scanchain #(.NUM_IOS(8)) scanchain_031 (
         .clk_in          (sw_030_clk_out),
         .data_in         (sw_030_data_out),
         .scan_select_in  (sw_030_scan_out),
@@ -813,7 +813,7 @@ module user_project_wrapper #(
         .module_data_out (sw_031_module_data_out)
     );
 
-    zoechip zoechip_31 (
+    zoechip zoechip_031 (
         .io_in  (sw_031_module_data_in),
         .io_out (sw_031_module_data_out)
     );
@@ -822,7 +822,7 @@ module user_project_wrapper #(
     wire sw_032_clk_out, sw_032_data_out, sw_032_scan_out, sw_032_latch_out;
     wire [7:0] sw_032_module_data_in;
     wire [7:0] sw_032_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_32 (
+    scanchain #(.NUM_IOS(8)) scanchain_032 (
         .clk_in          (sw_031_clk_out),
         .data_in         (sw_031_data_out),
         .scan_select_in  (sw_031_scan_out),
@@ -835,7 +835,7 @@ module user_project_wrapper #(
         .module_data_out (sw_032_module_data_out)
     );
 
-    user_module_348255968419643987 user_module_348255968419643987_32 (
+    user_module_348255968419643987 user_module_348255968419643987_032 (
         .io_in  (sw_032_module_data_in),
         .io_out (sw_032_module_data_out)
     );
@@ -844,7 +844,7 @@ module user_project_wrapper #(
     wire sw_033_clk_out, sw_033_data_out, sw_033_scan_out, sw_033_latch_out;
     wire [7:0] sw_033_module_data_in;
     wire [7:0] sw_033_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_33 (
+    scanchain #(.NUM_IOS(8)) scanchain_033 (
         .clk_in          (sw_032_clk_out),
         .data_in         (sw_032_data_out),
         .scan_select_in  (sw_032_scan_out),
@@ -857,7 +857,7 @@ module user_project_wrapper #(
         .module_data_out (sw_033_module_data_out)
     );
 
-    mbikovitsky_top mbikovitsky_top_33 (
+    mbikovitsky_top mbikovitsky_top_033 (
         .io_in  (sw_033_module_data_in),
         .io_out (sw_033_module_data_out)
     );
@@ -866,7 +866,7 @@ module user_project_wrapper #(
     wire sw_034_clk_out, sw_034_data_out, sw_034_scan_out, sw_034_latch_out;
     wire [7:0] sw_034_module_data_in;
     wire [7:0] sw_034_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_34 (
+    scanchain #(.NUM_IOS(8)) scanchain_034 (
         .clk_in          (sw_033_clk_out),
         .data_in         (sw_033_data_out),
         .scan_select_in  (sw_033_scan_out),
@@ -879,7 +879,7 @@ module user_project_wrapper #(
         .module_data_out (sw_034_module_data_out)
     );
 
-    user_module_348260124451668562 user_module_348260124451668562_34 (
+    user_module_348260124451668562 user_module_348260124451668562_034 (
         .io_in  (sw_034_module_data_in),
         .io_out (sw_034_module_data_out)
     );
@@ -888,7 +888,7 @@ module user_project_wrapper #(
     wire sw_035_clk_out, sw_035_data_out, sw_035_scan_out, sw_035_latch_out;
     wire [7:0] sw_035_module_data_in;
     wire [7:0] sw_035_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_35 (
+    scanchain #(.NUM_IOS(8)) scanchain_035 (
         .clk_in          (sw_034_clk_out),
         .data_in         (sw_034_data_out),
         .scan_select_in  (sw_034_scan_out),
@@ -901,7 +901,7 @@ module user_project_wrapper #(
         .module_data_out (sw_035_module_data_out)
     );
 
-    rolfmobile99_alu_fsm_top rolfmobile99_alu_fsm_top_35 (
+    rolfmobile99_alu_fsm_top rolfmobile99_alu_fsm_top_035 (
         .io_in  (sw_035_module_data_in),
         .io_out (sw_035_module_data_out)
     );
@@ -910,7 +910,7 @@ module user_project_wrapper #(
     wire sw_036_clk_out, sw_036_data_out, sw_036_scan_out, sw_036_latch_out;
     wire [7:0] sw_036_module_data_in;
     wire [7:0] sw_036_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_36 (
+    scanchain #(.NUM_IOS(8)) scanchain_036 (
         .clk_in          (sw_035_clk_out),
         .data_in         (sw_035_data_out),
         .scan_select_in  (sw_035_scan_out),
@@ -923,7 +923,7 @@ module user_project_wrapper #(
         .module_data_out (sw_036_module_data_out)
     );
 
-    jar_illegal_logic jar_illegal_logic_36 (
+    jar_illegal_logic jar_illegal_logic_036 (
         .io_in  (sw_036_module_data_in),
         .io_out (sw_036_module_data_out)
     );
@@ -932,7 +932,7 @@ module user_project_wrapper #(
     wire sw_037_clk_out, sw_037_data_out, sw_037_scan_out, sw_037_latch_out;
     wire [7:0] sw_037_module_data_in;
     wire [7:0] sw_037_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_37 (
+    scanchain #(.NUM_IOS(8)) scanchain_037 (
         .clk_in          (sw_036_clk_out),
         .data_in         (sw_036_data_out),
         .scan_select_in  (sw_036_scan_out),
@@ -945,7 +945,7 @@ module user_project_wrapper #(
         .module_data_out (sw_037_module_data_out)
     );
 
-    user_module_348242239268323922 user_module_348242239268323922_37 (
+    user_module_348242239268323922 user_module_348242239268323922_037 (
         .io_in  (sw_037_module_data_in),
         .io_out (sw_037_module_data_out)
     );
@@ -954,7 +954,7 @@ module user_project_wrapper #(
     wire sw_038_clk_out, sw_038_data_out, sw_038_scan_out, sw_038_latch_out;
     wire [7:0] sw_038_module_data_in;
     wire [7:0] sw_038_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_38 (
+    scanchain #(.NUM_IOS(8)) scanchain_038 (
         .clk_in          (sw_037_clk_out),
         .data_in         (sw_037_data_out),
         .scan_select_in  (sw_037_scan_out),
@@ -967,7 +967,7 @@ module user_project_wrapper #(
         .module_data_out (sw_038_module_data_out)
     );
 
-    thezoq2_yafpga thezoq2_yafpga_38 (
+    thezoq2_yafpga thezoq2_yafpga_038 (
         .io_in  (sw_038_module_data_in),
         .io_out (sw_038_module_data_out)
     );
@@ -976,7 +976,7 @@ module user_project_wrapper #(
     wire sw_039_clk_out, sw_039_data_out, sw_039_scan_out, sw_039_latch_out;
     wire [7:0] sw_039_module_data_in;
     wire [7:0] sw_039_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_39 (
+    scanchain #(.NUM_IOS(8)) scanchain_039 (
         .clk_in          (sw_038_clk_out),
         .data_in         (sw_038_data_out),
         .scan_select_in  (sw_038_scan_out),
@@ -989,7 +989,7 @@ module user_project_wrapper #(
         .module_data_out (sw_039_module_data_out)
     );
 
-    moyes0_top_module moyes0_top_module_39 (
+    moyes0_top_module moyes0_top_module_039 (
         .io_in  (sw_039_module_data_in),
         .io_out (sw_039_module_data_out)
     );
@@ -998,7 +998,7 @@ module user_project_wrapper #(
     wire sw_040_clk_out, sw_040_data_out, sw_040_scan_out, sw_040_latch_out;
     wire [7:0] sw_040_module_data_in;
     wire [7:0] sw_040_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_40 (
+    scanchain #(.NUM_IOS(8)) scanchain_040 (
         .clk_in          (sw_039_clk_out),
         .data_in         (sw_039_data_out),
         .scan_select_in  (sw_039_scan_out),
@@ -1011,7 +1011,7 @@ module user_project_wrapper #(
         .module_data_out (sw_040_module_data_out)
     );
 
-    yupferris_bitslam yupferris_bitslam_40 (
+    yupferris_bitslam yupferris_bitslam_040 (
         .io_in  (sw_040_module_data_in),
         .io_out (sw_040_module_data_out)
     );
@@ -1020,7 +1020,7 @@ module user_project_wrapper #(
     wire sw_041_clk_out, sw_041_data_out, sw_041_scan_out, sw_041_latch_out;
     wire [7:0] sw_041_module_data_in;
     wire [7:0] sw_041_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_41 (
+    scanchain #(.NUM_IOS(8)) scanchain_041 (
         .clk_in          (sw_040_clk_out),
         .data_in         (sw_040_data_out),
         .scan_select_in  (sw_040_scan_out),
@@ -1033,7 +1033,7 @@ module user_project_wrapper #(
         .module_data_out (sw_041_module_data_out)
     );
 
-    user_module_341620484740219475 user_module_341620484740219475_41 (
+    user_module_341620484740219475 user_module_341620484740219475_041 (
         .io_in  (sw_041_module_data_in),
         .io_out (sw_041_module_data_out)
     );
@@ -1042,7 +1042,7 @@ module user_project_wrapper #(
     wire sw_042_clk_out, sw_042_data_out, sw_042_scan_out, sw_042_latch_out;
     wire [7:0] sw_042_module_data_in;
     wire [7:0] sw_042_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_42 (
+    scanchain #(.NUM_IOS(8)) scanchain_042 (
         .clk_in          (sw_041_clk_out),
         .data_in         (sw_041_data_out),
         .scan_select_in  (sw_041_scan_out),
@@ -1055,7 +1055,7 @@ module user_project_wrapper #(
         .module_data_out (sw_042_module_data_out)
     );
 
-    top top_42 (
+    top top_042 (
         .io_in  (sw_042_module_data_in),
         .io_out (sw_042_module_data_out)
     );
@@ -1064,7 +1064,7 @@ module user_project_wrapper #(
     wire sw_043_clk_out, sw_043_data_out, sw_043_scan_out, sw_043_latch_out;
     wire [7:0] sw_043_module_data_in;
     wire [7:0] sw_043_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_43 (
+    scanchain #(.NUM_IOS(8)) scanchain_043 (
         .clk_in          (sw_042_clk_out),
         .data_in         (sw_042_data_out),
         .scan_select_in  (sw_042_scan_out),
@@ -1077,7 +1077,7 @@ module user_project_wrapper #(
         .module_data_out (sw_043_module_data_out)
     );
 
-    rc5_top rc5_top_43 (
+    rc5_top rc5_top_043 (
         .io_in  (sw_043_module_data_in),
         .io_out (sw_043_module_data_out)
     );
@@ -1086,7 +1086,7 @@ module user_project_wrapper #(
     wire sw_044_clk_out, sw_044_data_out, sw_044_scan_out, sw_044_latch_out;
     wire [7:0] sw_044_module_data_in;
     wire [7:0] sw_044_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_44 (
+    scanchain #(.NUM_IOS(8)) scanchain_044 (
         .clk_in          (sw_043_clk_out),
         .data_in         (sw_043_data_out),
         .scan_select_in  (sw_043_scan_out),
@@ -1099,7 +1099,7 @@ module user_project_wrapper #(
         .module_data_out (sw_044_module_data_out)
     );
 
-    user_module_341614374571475540 user_module_341614374571475540_44 (
+    user_module_341614374571475540 user_module_341614374571475540_044 (
         .io_in  (sw_044_module_data_in),
         .io_out (sw_044_module_data_out)
     );
@@ -1108,7 +1108,7 @@ module user_project_wrapper #(
     wire sw_045_clk_out, sw_045_data_out, sw_045_scan_out, sw_045_latch_out;
     wire [7:0] sw_045_module_data_in;
     wire [7:0] sw_045_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_45 (
+    scanchain #(.NUM_IOS(8)) scanchain_045 (
         .clk_in          (sw_044_clk_out),
         .data_in         (sw_044_data_out),
         .scan_select_in  (sw_044_scan_out),
@@ -1121,7 +1121,7 @@ module user_project_wrapper #(
         .module_data_out (sw_045_module_data_out)
     );
 
-    meriac_tt02_play_tune meriac_tt02_play_tune_45 (
+    meriac_tt02_play_tune meriac_tt02_play_tune_045 (
         .io_in  (sw_045_module_data_in),
         .io_out (sw_045_module_data_out)
     );
@@ -1130,7 +1130,7 @@ module user_project_wrapper #(
     wire sw_046_clk_out, sw_046_data_out, sw_046_scan_out, sw_046_latch_out;
     wire [7:0] sw_046_module_data_in;
     wire [7:0] sw_046_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_46 (
+    scanchain #(.NUM_IOS(8)) scanchain_046 (
         .clk_in          (sw_045_clk_out),
         .data_in         (sw_045_data_out),
         .scan_select_in  (sw_045_scan_out),
@@ -1143,7 +1143,7 @@ module user_project_wrapper #(
         .module_data_out (sw_046_module_data_out)
     );
 
-    phasenoisepon_seven_segment_seconds phasenoisepon_seven_segment_seconds_46 (
+    phasenoisepon_seven_segment_seconds phasenoisepon_seven_segment_seconds_046 (
         .io_in  (sw_046_module_data_in),
         .io_out (sw_046_module_data_out)
     );
@@ -1152,7 +1152,7 @@ module user_project_wrapper #(
     wire sw_047_clk_out, sw_047_data_out, sw_047_scan_out, sw_047_latch_out;
     wire [7:0] sw_047_module_data_in;
     wire [7:0] sw_047_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_47 (
+    scanchain #(.NUM_IOS(8)) scanchain_047 (
         .clk_in          (sw_046_clk_out),
         .data_in         (sw_046_data_out),
         .scan_select_in  (sw_046_scan_out),
@@ -1165,7 +1165,7 @@ module user_project_wrapper #(
         .module_data_out (sw_047_module_data_out)
     );
 
-    user_module_341541108650607187 user_module_341541108650607187_47 (
+    user_module_341541108650607187 user_module_341541108650607187_047 (
         .io_in  (sw_047_module_data_in),
         .io_out (sw_047_module_data_out)
     );
@@ -1174,7 +1174,7 @@ module user_project_wrapper #(
     wire sw_048_clk_out, sw_048_data_out, sw_048_scan_out, sw_048_latch_out;
     wire [7:0] sw_048_module_data_in;
     wire [7:0] sw_048_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_48 (
+    scanchain #(.NUM_IOS(8)) scanchain_048 (
         .clk_in          (sw_047_clk_out),
         .data_in         (sw_047_data_out),
         .scan_select_in  (sw_047_scan_out),
@@ -1187,7 +1187,7 @@ module user_project_wrapper #(
         .module_data_out (sw_048_module_data_out)
     );
 
-    user_module_341516949939814994 user_module_341516949939814994_48 (
+    user_module_341516949939814994 user_module_341516949939814994_048 (
         .io_in  (sw_048_module_data_in),
         .io_out (sw_048_module_data_out)
     );
@@ -1196,7 +1196,7 @@ module user_project_wrapper #(
     wire sw_049_clk_out, sw_049_data_out, sw_049_scan_out, sw_049_latch_out;
     wire [7:0] sw_049_module_data_in;
     wire [7:0] sw_049_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_49 (
+    scanchain #(.NUM_IOS(8)) scanchain_049 (
         .clk_in          (sw_048_clk_out),
         .data_in         (sw_048_data_out),
         .scan_select_in  (sw_048_scan_out),
@@ -1209,7 +1209,7 @@ module user_project_wrapper #(
         .module_data_out (sw_049_module_data_out)
     );
 
-    tt2_tholin_multiplier tt2_tholin_multiplier_49 (
+    tt2_tholin_multiplier tt2_tholin_multiplier_049 (
         .io_in  (sw_049_module_data_in),
         .io_out (sw_049_module_data_out)
     );
@@ -1218,7 +1218,7 @@ module user_project_wrapper #(
     wire sw_050_clk_out, sw_050_data_out, sw_050_scan_out, sw_050_latch_out;
     wire [7:0] sw_050_module_data_in;
     wire [7:0] sw_050_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_50 (
+    scanchain #(.NUM_IOS(8)) scanchain_050 (
         .clk_in          (sw_049_clk_out),
         .data_in         (sw_049_data_out),
         .scan_select_in  (sw_049_scan_out),
@@ -1231,7 +1231,7 @@ module user_project_wrapper #(
         .module_data_out (sw_050_module_data_out)
     );
 
-    tt2_tholin_multiplexed_counter tt2_tholin_multiplexed_counter_50 (
+    tt2_tholin_multiplexed_counter tt2_tholin_multiplexed_counter_050 (
         .io_in  (sw_050_module_data_in),
         .io_out (sw_050_module_data_out)
     );
@@ -1240,7 +1240,7 @@ module user_project_wrapper #(
     wire sw_051_clk_out, sw_051_data_out, sw_051_scan_out, sw_051_latch_out;
     wire [7:0] sw_051_module_data_in;
     wire [7:0] sw_051_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_51 (
+    scanchain #(.NUM_IOS(8)) scanchain_051 (
         .clk_in          (sw_050_clk_out),
         .data_in         (sw_050_data_out),
         .scan_select_in  (sw_050_scan_out),
@@ -1253,7 +1253,7 @@ module user_project_wrapper #(
         .module_data_out (sw_051_module_data_out)
     );
 
-    xor_shift32_quantamhd xor_shift32_quantamhd_51 (
+    xor_shift32_quantamhd xor_shift32_quantamhd_051 (
         .io_in  (sw_051_module_data_in),
         .io_out (sw_051_module_data_out)
     );
@@ -1262,7 +1262,7 @@ module user_project_wrapper #(
     wire sw_052_clk_out, sw_052_data_out, sw_052_scan_out, sw_052_latch_out;
     wire [7:0] sw_052_module_data_in;
     wire [7:0] sw_052_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_52 (
+    scanchain #(.NUM_IOS(8)) scanchain_052 (
         .clk_in          (sw_051_clk_out),
         .data_in         (sw_051_data_out),
         .scan_select_in  (sw_051_scan_out),
@@ -1275,7 +1275,7 @@ module user_project_wrapper #(
         .module_data_out (sw_052_module_data_out)
     );
 
-    xor_shift32_evango xor_shift32_evango_52 (
+    xor_shift32_evango xor_shift32_evango_052 (
         .io_in  (sw_052_module_data_in),
         .io_out (sw_052_module_data_out)
     );
@@ -1284,7 +1284,7 @@ module user_project_wrapper #(
     wire sw_053_clk_out, sw_053_data_out, sw_053_scan_out, sw_053_latch_out;
     wire [7:0] sw_053_module_data_in;
     wire [7:0] sw_053_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_53 (
+    scanchain #(.NUM_IOS(8)) scanchain_053 (
         .clk_in          (sw_052_clk_out),
         .data_in         (sw_052_data_out),
         .scan_select_in  (sw_052_scan_out),
@@ -1297,7 +1297,7 @@ module user_project_wrapper #(
         .module_data_out (sw_053_module_data_out)
     );
 
-    flygoat_tt02_play_tune flygoat_tt02_play_tune_53 (
+    flygoat_tt02_play_tune flygoat_tt02_play_tune_053 (
         .io_in  (sw_053_module_data_in),
         .io_out (sw_053_module_data_out)
     );
@@ -1306,7 +1306,7 @@ module user_project_wrapper #(
     wire sw_054_clk_out, sw_054_data_out, sw_054_scan_out, sw_054_latch_out;
     wire [7:0] sw_054_module_data_in;
     wire [7:0] sw_054_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_54 (
+    scanchain #(.NUM_IOS(8)) scanchain_054 (
         .clk_in          (sw_053_clk_out),
         .data_in         (sw_053_data_out),
         .scan_select_in  (sw_053_scan_out),
@@ -1319,7 +1319,7 @@ module user_project_wrapper #(
         .module_data_out (sw_054_module_data_out)
     );
 
-    jleightcap_top jleightcap_top_54 (
+    jleightcap_top jleightcap_top_054 (
         .io_in  (sw_054_module_data_in),
         .io_out (sw_054_module_data_out)
     );
@@ -1328,7 +1328,7 @@ module user_project_wrapper #(
     wire sw_055_clk_out, sw_055_data_out, sw_055_scan_out, sw_055_latch_out;
     wire [7:0] sw_055_module_data_in;
     wire [7:0] sw_055_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_55 (
+    scanchain #(.NUM_IOS(8)) scanchain_055 (
         .clk_in          (sw_054_clk_out),
         .data_in         (sw_054_data_out),
         .scan_select_in  (sw_054_scan_out),
@@ -1341,7 +1341,7 @@ module user_project_wrapper #(
         .module_data_out (sw_055_module_data_out)
     );
 
-    tt2_tholin_namebadge tt2_tholin_namebadge_55 (
+    tt2_tholin_namebadge tt2_tholin_namebadge_055 (
         .io_in  (sw_055_module_data_in),
         .io_out (sw_055_module_data_out)
     );
@@ -1350,7 +1350,7 @@ module user_project_wrapper #(
     wire sw_056_clk_out, sw_056_data_out, sw_056_scan_out, sw_056_latch_out;
     wire [7:0] sw_056_module_data_in;
     wire [7:0] sw_056_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_56 (
+    scanchain #(.NUM_IOS(8)) scanchain_056 (
         .clk_in          (sw_055_clk_out),
         .data_in         (sw_055_data_out),
         .scan_select_in  (sw_055_scan_out),
@@ -1363,7 +1363,7 @@ module user_project_wrapper #(
         .module_data_out (sw_056_module_data_out)
     );
 
-    user_module_347619669052490324 user_module_347619669052490324_56 (
+    user_module_347619669052490324 user_module_347619669052490324_056 (
         .io_in  (sw_056_module_data_in),
         .io_out (sw_056_module_data_out)
     );
@@ -1372,7 +1372,7 @@ module user_project_wrapper #(
     wire sw_057_clk_out, sw_057_data_out, sw_057_scan_out, sw_057_latch_out;
     wire [7:0] sw_057_module_data_in;
     wire [7:0] sw_057_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_57 (
+    scanchain #(.NUM_IOS(8)) scanchain_057 (
         .clk_in          (sw_056_clk_out),
         .data_in         (sw_056_data_out),
         .scan_select_in  (sw_056_scan_out),
@@ -1385,7 +1385,7 @@ module user_project_wrapper #(
         .module_data_out (sw_057_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_57 (
+    user_module_339501025136214612 user_module_339501025136214612_057 (
         .io_in  (sw_057_module_data_in),
         .io_out (sw_057_module_data_out)
     );
@@ -1394,7 +1394,7 @@ module user_project_wrapper #(
     wire sw_058_clk_out, sw_058_data_out, sw_058_scan_out, sw_058_latch_out;
     wire [7:0] sw_058_module_data_in;
     wire [7:0] sw_058_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_58 (
+    scanchain #(.NUM_IOS(8)) scanchain_058 (
         .clk_in          (sw_057_clk_out),
         .data_in         (sw_057_data_out),
         .scan_select_in  (sw_057_scan_out),
@@ -1407,7 +1407,7 @@ module user_project_wrapper #(
         .module_data_out (sw_058_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_58 (
+    user_module_339501025136214612 user_module_339501025136214612_058 (
         .io_in  (sw_058_module_data_in),
         .io_out (sw_058_module_data_out)
     );
@@ -1416,7 +1416,7 @@ module user_project_wrapper #(
     wire sw_059_clk_out, sw_059_data_out, sw_059_scan_out, sw_059_latch_out;
     wire [7:0] sw_059_module_data_in;
     wire [7:0] sw_059_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_59 (
+    scanchain #(.NUM_IOS(8)) scanchain_059 (
         .clk_in          (sw_058_clk_out),
         .data_in         (sw_058_data_out),
         .scan_select_in  (sw_058_scan_out),
@@ -1429,7 +1429,7 @@ module user_project_wrapper #(
         .module_data_out (sw_059_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_59 (
+    user_module_339501025136214612 user_module_339501025136214612_059 (
         .io_in  (sw_059_module_data_in),
         .io_out (sw_059_module_data_out)
     );
@@ -1438,7 +1438,7 @@ module user_project_wrapper #(
     wire sw_060_clk_out, sw_060_data_out, sw_060_scan_out, sw_060_latch_out;
     wire [7:0] sw_060_module_data_in;
     wire [7:0] sw_060_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_60 (
+    scanchain #(.NUM_IOS(8)) scanchain_060 (
         .clk_in          (sw_059_clk_out),
         .data_in         (sw_059_data_out),
         .scan_select_in  (sw_059_scan_out),
@@ -1451,7 +1451,7 @@ module user_project_wrapper #(
         .module_data_out (sw_060_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_60 (
+    user_module_339501025136214612 user_module_339501025136214612_060 (
         .io_in  (sw_060_module_data_in),
         .io_out (sw_060_module_data_out)
     );
@@ -1460,7 +1460,7 @@ module user_project_wrapper #(
     wire sw_061_clk_out, sw_061_data_out, sw_061_scan_out, sw_061_latch_out;
     wire [7:0] sw_061_module_data_in;
     wire [7:0] sw_061_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_61 (
+    scanchain #(.NUM_IOS(8)) scanchain_061 (
         .clk_in          (sw_060_clk_out),
         .data_in         (sw_060_data_out),
         .scan_select_in  (sw_060_scan_out),
@@ -1473,7 +1473,7 @@ module user_project_wrapper #(
         .module_data_out (sw_061_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_61 (
+    user_module_339501025136214612 user_module_339501025136214612_061 (
         .io_in  (sw_061_module_data_in),
         .io_out (sw_061_module_data_out)
     );
@@ -1482,7 +1482,7 @@ module user_project_wrapper #(
     wire sw_062_clk_out, sw_062_data_out, sw_062_scan_out, sw_062_latch_out;
     wire [7:0] sw_062_module_data_in;
     wire [7:0] sw_062_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_62 (
+    scanchain #(.NUM_IOS(8)) scanchain_062 (
         .clk_in          (sw_061_clk_out),
         .data_in         (sw_061_data_out),
         .scan_select_in  (sw_061_scan_out),
@@ -1495,7 +1495,7 @@ module user_project_wrapper #(
         .module_data_out (sw_062_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_62 (
+    user_module_339501025136214612 user_module_339501025136214612_062 (
         .io_in  (sw_062_module_data_in),
         .io_out (sw_062_module_data_out)
     );
@@ -1504,7 +1504,7 @@ module user_project_wrapper #(
     wire sw_063_clk_out, sw_063_data_out, sw_063_scan_out, sw_063_latch_out;
     wire [7:0] sw_063_module_data_in;
     wire [7:0] sw_063_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_63 (
+    scanchain #(.NUM_IOS(8)) scanchain_063 (
         .clk_in          (sw_062_clk_out),
         .data_in         (sw_062_data_out),
         .scan_select_in  (sw_062_scan_out),
@@ -1517,7 +1517,7 @@ module user_project_wrapper #(
         .module_data_out (sw_063_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_63 (
+    user_module_339501025136214612 user_module_339501025136214612_063 (
         .io_in  (sw_063_module_data_in),
         .io_out (sw_063_module_data_out)
     );
@@ -1526,7 +1526,7 @@ module user_project_wrapper #(
     wire sw_064_clk_out, sw_064_data_out, sw_064_scan_out, sw_064_latch_out;
     wire [7:0] sw_064_module_data_in;
     wire [7:0] sw_064_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_64 (
+    scanchain #(.NUM_IOS(8)) scanchain_064 (
         .clk_in          (sw_063_clk_out),
         .data_in         (sw_063_data_out),
         .scan_select_in  (sw_063_scan_out),
@@ -1539,7 +1539,7 @@ module user_project_wrapper #(
         .module_data_out (sw_064_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_64 (
+    user_module_339501025136214612 user_module_339501025136214612_064 (
         .io_in  (sw_064_module_data_in),
         .io_out (sw_064_module_data_out)
     );
@@ -1548,7 +1548,7 @@ module user_project_wrapper #(
     wire sw_065_clk_out, sw_065_data_out, sw_065_scan_out, sw_065_latch_out;
     wire [7:0] sw_065_module_data_in;
     wire [7:0] sw_065_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_65 (
+    scanchain #(.NUM_IOS(8)) scanchain_065 (
         .clk_in          (sw_064_clk_out),
         .data_in         (sw_064_data_out),
         .scan_select_in  (sw_064_scan_out),
@@ -1561,7 +1561,7 @@ module user_project_wrapper #(
         .module_data_out (sw_065_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_65 (
+    user_module_339501025136214612 user_module_339501025136214612_065 (
         .io_in  (sw_065_module_data_in),
         .io_out (sw_065_module_data_out)
     );
@@ -1570,7 +1570,7 @@ module user_project_wrapper #(
     wire sw_066_clk_out, sw_066_data_out, sw_066_scan_out, sw_066_latch_out;
     wire [7:0] sw_066_module_data_in;
     wire [7:0] sw_066_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_66 (
+    scanchain #(.NUM_IOS(8)) scanchain_066 (
         .clk_in          (sw_065_clk_out),
         .data_in         (sw_065_data_out),
         .scan_select_in  (sw_065_scan_out),
@@ -1583,7 +1583,7 @@ module user_project_wrapper #(
         .module_data_out (sw_066_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_66 (
+    user_module_339501025136214612 user_module_339501025136214612_066 (
         .io_in  (sw_066_module_data_in),
         .io_out (sw_066_module_data_out)
     );
@@ -1592,7 +1592,7 @@ module user_project_wrapper #(
     wire sw_067_clk_out, sw_067_data_out, sw_067_scan_out, sw_067_latch_out;
     wire [7:0] sw_067_module_data_in;
     wire [7:0] sw_067_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_67 (
+    scanchain #(.NUM_IOS(8)) scanchain_067 (
         .clk_in          (sw_066_clk_out),
         .data_in         (sw_066_data_out),
         .scan_select_in  (sw_066_scan_out),
@@ -1605,7 +1605,7 @@ module user_project_wrapper #(
         .module_data_out (sw_067_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_67 (
+    user_module_339501025136214612 user_module_339501025136214612_067 (
         .io_in  (sw_067_module_data_in),
         .io_out (sw_067_module_data_out)
     );
@@ -1614,7 +1614,7 @@ module user_project_wrapper #(
     wire sw_068_clk_out, sw_068_data_out, sw_068_scan_out, sw_068_latch_out;
     wire [7:0] sw_068_module_data_in;
     wire [7:0] sw_068_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_68 (
+    scanchain #(.NUM_IOS(8)) scanchain_068 (
         .clk_in          (sw_067_clk_out),
         .data_in         (sw_067_data_out),
         .scan_select_in  (sw_067_scan_out),
@@ -1627,7 +1627,7 @@ module user_project_wrapper #(
         .module_data_out (sw_068_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_68 (
+    user_module_339501025136214612 user_module_339501025136214612_068 (
         .io_in  (sw_068_module_data_in),
         .io_out (sw_068_module_data_out)
     );
@@ -1636,7 +1636,7 @@ module user_project_wrapper #(
     wire sw_069_clk_out, sw_069_data_out, sw_069_scan_out, sw_069_latch_out;
     wire [7:0] sw_069_module_data_in;
     wire [7:0] sw_069_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_69 (
+    scanchain #(.NUM_IOS(8)) scanchain_069 (
         .clk_in          (sw_068_clk_out),
         .data_in         (sw_068_data_out),
         .scan_select_in  (sw_068_scan_out),
@@ -1649,7 +1649,7 @@ module user_project_wrapper #(
         .module_data_out (sw_069_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_69 (
+    user_module_339501025136214612 user_module_339501025136214612_069 (
         .io_in  (sw_069_module_data_in),
         .io_out (sw_069_module_data_out)
     );
@@ -1658,7 +1658,7 @@ module user_project_wrapper #(
     wire sw_070_clk_out, sw_070_data_out, sw_070_scan_out, sw_070_latch_out;
     wire [7:0] sw_070_module_data_in;
     wire [7:0] sw_070_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_70 (
+    scanchain #(.NUM_IOS(8)) scanchain_070 (
         .clk_in          (sw_069_clk_out),
         .data_in         (sw_069_data_out),
         .scan_select_in  (sw_069_scan_out),
@@ -1671,7 +1671,7 @@ module user_project_wrapper #(
         .module_data_out (sw_070_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_70 (
+    user_module_339501025136214612 user_module_339501025136214612_070 (
         .io_in  (sw_070_module_data_in),
         .io_out (sw_070_module_data_out)
     );
@@ -1680,7 +1680,7 @@ module user_project_wrapper #(
     wire sw_071_clk_out, sw_071_data_out, sw_071_scan_out, sw_071_latch_out;
     wire [7:0] sw_071_module_data_in;
     wire [7:0] sw_071_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_71 (
+    scanchain #(.NUM_IOS(8)) scanchain_071 (
         .clk_in          (sw_070_clk_out),
         .data_in         (sw_070_data_out),
         .scan_select_in  (sw_070_scan_out),
@@ -1693,7 +1693,7 @@ module user_project_wrapper #(
         .module_data_out (sw_071_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_71 (
+    user_module_339501025136214612 user_module_339501025136214612_071 (
         .io_in  (sw_071_module_data_in),
         .io_out (sw_071_module_data_out)
     );
@@ -1702,7 +1702,7 @@ module user_project_wrapper #(
     wire sw_072_clk_out, sw_072_data_out, sw_072_scan_out, sw_072_latch_out;
     wire [7:0] sw_072_module_data_in;
     wire [7:0] sw_072_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_72 (
+    scanchain #(.NUM_IOS(8)) scanchain_072 (
         .clk_in          (sw_071_clk_out),
         .data_in         (sw_071_data_out),
         .scan_select_in  (sw_071_scan_out),
@@ -1715,7 +1715,7 @@ module user_project_wrapper #(
         .module_data_out (sw_072_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_72 (
+    user_module_339501025136214612 user_module_339501025136214612_072 (
         .io_in  (sw_072_module_data_in),
         .io_out (sw_072_module_data_out)
     );
@@ -1724,7 +1724,7 @@ module user_project_wrapper #(
     wire sw_073_clk_out, sw_073_data_out, sw_073_scan_out, sw_073_latch_out;
     wire [7:0] sw_073_module_data_in;
     wire [7:0] sw_073_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_73 (
+    scanchain #(.NUM_IOS(8)) scanchain_073 (
         .clk_in          (sw_072_clk_out),
         .data_in         (sw_072_data_out),
         .scan_select_in  (sw_072_scan_out),
@@ -1737,7 +1737,7 @@ module user_project_wrapper #(
         .module_data_out (sw_073_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_73 (
+    user_module_339501025136214612 user_module_339501025136214612_073 (
         .io_in  (sw_073_module_data_in),
         .io_out (sw_073_module_data_out)
     );
@@ -1746,7 +1746,7 @@ module user_project_wrapper #(
     wire sw_074_clk_out, sw_074_data_out, sw_074_scan_out, sw_074_latch_out;
     wire [7:0] sw_074_module_data_in;
     wire [7:0] sw_074_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_74 (
+    scanchain #(.NUM_IOS(8)) scanchain_074 (
         .clk_in          (sw_073_clk_out),
         .data_in         (sw_073_data_out),
         .scan_select_in  (sw_073_scan_out),
@@ -1759,7 +1759,7 @@ module user_project_wrapper #(
         .module_data_out (sw_074_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_74 (
+    user_module_339501025136214612 user_module_339501025136214612_074 (
         .io_in  (sw_074_module_data_in),
         .io_out (sw_074_module_data_out)
     );
@@ -1768,7 +1768,7 @@ module user_project_wrapper #(
     wire sw_075_clk_out, sw_075_data_out, sw_075_scan_out, sw_075_latch_out;
     wire [7:0] sw_075_module_data_in;
     wire [7:0] sw_075_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_75 (
+    scanchain #(.NUM_IOS(8)) scanchain_075 (
         .clk_in          (sw_074_clk_out),
         .data_in         (sw_074_data_out),
         .scan_select_in  (sw_074_scan_out),
@@ -1781,7 +1781,7 @@ module user_project_wrapper #(
         .module_data_out (sw_075_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_75 (
+    user_module_339501025136214612 user_module_339501025136214612_075 (
         .io_in  (sw_075_module_data_in),
         .io_out (sw_075_module_data_out)
     );
@@ -1790,7 +1790,7 @@ module user_project_wrapper #(
     wire sw_076_clk_out, sw_076_data_out, sw_076_scan_out, sw_076_latch_out;
     wire [7:0] sw_076_module_data_in;
     wire [7:0] sw_076_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_76 (
+    scanchain #(.NUM_IOS(8)) scanchain_076 (
         .clk_in          (sw_075_clk_out),
         .data_in         (sw_075_data_out),
         .scan_select_in  (sw_075_scan_out),
@@ -1803,7 +1803,7 @@ module user_project_wrapper #(
         .module_data_out (sw_076_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_76 (
+    user_module_339501025136214612 user_module_339501025136214612_076 (
         .io_in  (sw_076_module_data_in),
         .io_out (sw_076_module_data_out)
     );
@@ -1812,7 +1812,7 @@ module user_project_wrapper #(
     wire sw_077_clk_out, sw_077_data_out, sw_077_scan_out, sw_077_latch_out;
     wire [7:0] sw_077_module_data_in;
     wire [7:0] sw_077_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_77 (
+    scanchain #(.NUM_IOS(8)) scanchain_077 (
         .clk_in          (sw_076_clk_out),
         .data_in         (sw_076_data_out),
         .scan_select_in  (sw_076_scan_out),
@@ -1825,7 +1825,7 @@ module user_project_wrapper #(
         .module_data_out (sw_077_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_77 (
+    user_module_339501025136214612 user_module_339501025136214612_077 (
         .io_in  (sw_077_module_data_in),
         .io_out (sw_077_module_data_out)
     );
@@ -1834,7 +1834,7 @@ module user_project_wrapper #(
     wire sw_078_clk_out, sw_078_data_out, sw_078_scan_out, sw_078_latch_out;
     wire [7:0] sw_078_module_data_in;
     wire [7:0] sw_078_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_78 (
+    scanchain #(.NUM_IOS(8)) scanchain_078 (
         .clk_in          (sw_077_clk_out),
         .data_in         (sw_077_data_out),
         .scan_select_in  (sw_077_scan_out),
@@ -1847,7 +1847,7 @@ module user_project_wrapper #(
         .module_data_out (sw_078_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_78 (
+    user_module_339501025136214612 user_module_339501025136214612_078 (
         .io_in  (sw_078_module_data_in),
         .io_out (sw_078_module_data_out)
     );
@@ -1856,7 +1856,7 @@ module user_project_wrapper #(
     wire sw_079_clk_out, sw_079_data_out, sw_079_scan_out, sw_079_latch_out;
     wire [7:0] sw_079_module_data_in;
     wire [7:0] sw_079_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_79 (
+    scanchain #(.NUM_IOS(8)) scanchain_079 (
         .clk_in          (sw_078_clk_out),
         .data_in         (sw_078_data_out),
         .scan_select_in  (sw_078_scan_out),
@@ -1869,7 +1869,7 @@ module user_project_wrapper #(
         .module_data_out (sw_079_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_79 (
+    user_module_339501025136214612 user_module_339501025136214612_079 (
         .io_in  (sw_079_module_data_in),
         .io_out (sw_079_module_data_out)
     );
@@ -1878,7 +1878,7 @@ module user_project_wrapper #(
     wire sw_080_clk_out, sw_080_data_out, sw_080_scan_out, sw_080_latch_out;
     wire [7:0] sw_080_module_data_in;
     wire [7:0] sw_080_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_80 (
+    scanchain #(.NUM_IOS(8)) scanchain_080 (
         .clk_in          (sw_079_clk_out),
         .data_in         (sw_079_data_out),
         .scan_select_in  (sw_079_scan_out),
@@ -1891,7 +1891,7 @@ module user_project_wrapper #(
         .module_data_out (sw_080_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_80 (
+    user_module_339501025136214612 user_module_339501025136214612_080 (
         .io_in  (sw_080_module_data_in),
         .io_out (sw_080_module_data_out)
     );
@@ -1900,7 +1900,7 @@ module user_project_wrapper #(
     wire sw_081_clk_out, sw_081_data_out, sw_081_scan_out, sw_081_latch_out;
     wire [7:0] sw_081_module_data_in;
     wire [7:0] sw_081_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_81 (
+    scanchain #(.NUM_IOS(8)) scanchain_081 (
         .clk_in          (sw_080_clk_out),
         .data_in         (sw_080_data_out),
         .scan_select_in  (sw_080_scan_out),
@@ -1913,7 +1913,7 @@ module user_project_wrapper #(
         .module_data_out (sw_081_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_81 (
+    user_module_339501025136214612 user_module_339501025136214612_081 (
         .io_in  (sw_081_module_data_in),
         .io_out (sw_081_module_data_out)
     );
@@ -1922,7 +1922,7 @@ module user_project_wrapper #(
     wire sw_082_clk_out, sw_082_data_out, sw_082_scan_out, sw_082_latch_out;
     wire [7:0] sw_082_module_data_in;
     wire [7:0] sw_082_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_82 (
+    scanchain #(.NUM_IOS(8)) scanchain_082 (
         .clk_in          (sw_081_clk_out),
         .data_in         (sw_081_data_out),
         .scan_select_in  (sw_081_scan_out),
@@ -1935,7 +1935,7 @@ module user_project_wrapper #(
         .module_data_out (sw_082_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_82 (
+    user_module_339501025136214612 user_module_339501025136214612_082 (
         .io_in  (sw_082_module_data_in),
         .io_out (sw_082_module_data_out)
     );
@@ -1944,7 +1944,7 @@ module user_project_wrapper #(
     wire sw_083_clk_out, sw_083_data_out, sw_083_scan_out, sw_083_latch_out;
     wire [7:0] sw_083_module_data_in;
     wire [7:0] sw_083_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_83 (
+    scanchain #(.NUM_IOS(8)) scanchain_083 (
         .clk_in          (sw_082_clk_out),
         .data_in         (sw_082_data_out),
         .scan_select_in  (sw_082_scan_out),
@@ -1957,7 +1957,7 @@ module user_project_wrapper #(
         .module_data_out (sw_083_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_83 (
+    user_module_339501025136214612 user_module_339501025136214612_083 (
         .io_in  (sw_083_module_data_in),
         .io_out (sw_083_module_data_out)
     );
@@ -1966,7 +1966,7 @@ module user_project_wrapper #(
     wire sw_084_clk_out, sw_084_data_out, sw_084_scan_out, sw_084_latch_out;
     wire [7:0] sw_084_module_data_in;
     wire [7:0] sw_084_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_84 (
+    scanchain #(.NUM_IOS(8)) scanchain_084 (
         .clk_in          (sw_083_clk_out),
         .data_in         (sw_083_data_out),
         .scan_select_in  (sw_083_scan_out),
@@ -1979,7 +1979,7 @@ module user_project_wrapper #(
         .module_data_out (sw_084_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_84 (
+    user_module_339501025136214612 user_module_339501025136214612_084 (
         .io_in  (sw_084_module_data_in),
         .io_out (sw_084_module_data_out)
     );
@@ -1988,7 +1988,7 @@ module user_project_wrapper #(
     wire sw_085_clk_out, sw_085_data_out, sw_085_scan_out, sw_085_latch_out;
     wire [7:0] sw_085_module_data_in;
     wire [7:0] sw_085_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_85 (
+    scanchain #(.NUM_IOS(8)) scanchain_085 (
         .clk_in          (sw_084_clk_out),
         .data_in         (sw_084_data_out),
         .scan_select_in  (sw_084_scan_out),
@@ -2001,7 +2001,7 @@ module user_project_wrapper #(
         .module_data_out (sw_085_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_85 (
+    user_module_339501025136214612 user_module_339501025136214612_085 (
         .io_in  (sw_085_module_data_in),
         .io_out (sw_085_module_data_out)
     );
@@ -2010,7 +2010,7 @@ module user_project_wrapper #(
     wire sw_086_clk_out, sw_086_data_out, sw_086_scan_out, sw_086_latch_out;
     wire [7:0] sw_086_module_data_in;
     wire [7:0] sw_086_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_86 (
+    scanchain #(.NUM_IOS(8)) scanchain_086 (
         .clk_in          (sw_085_clk_out),
         .data_in         (sw_085_data_out),
         .scan_select_in  (sw_085_scan_out),
@@ -2023,7 +2023,7 @@ module user_project_wrapper #(
         .module_data_out (sw_086_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_86 (
+    user_module_339501025136214612 user_module_339501025136214612_086 (
         .io_in  (sw_086_module_data_in),
         .io_out (sw_086_module_data_out)
     );
@@ -2032,7 +2032,7 @@ module user_project_wrapper #(
     wire sw_087_clk_out, sw_087_data_out, sw_087_scan_out, sw_087_latch_out;
     wire [7:0] sw_087_module_data_in;
     wire [7:0] sw_087_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_87 (
+    scanchain #(.NUM_IOS(8)) scanchain_087 (
         .clk_in          (sw_086_clk_out),
         .data_in         (sw_086_data_out),
         .scan_select_in  (sw_086_scan_out),
@@ -2045,7 +2045,7 @@ module user_project_wrapper #(
         .module_data_out (sw_087_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_87 (
+    user_module_339501025136214612 user_module_339501025136214612_087 (
         .io_in  (sw_087_module_data_in),
         .io_out (sw_087_module_data_out)
     );
@@ -2054,7 +2054,7 @@ module user_project_wrapper #(
     wire sw_088_clk_out, sw_088_data_out, sw_088_scan_out, sw_088_latch_out;
     wire [7:0] sw_088_module_data_in;
     wire [7:0] sw_088_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_88 (
+    scanchain #(.NUM_IOS(8)) scanchain_088 (
         .clk_in          (sw_087_clk_out),
         .data_in         (sw_087_data_out),
         .scan_select_in  (sw_087_scan_out),
@@ -2067,7 +2067,7 @@ module user_project_wrapper #(
         .module_data_out (sw_088_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_88 (
+    user_module_339501025136214612 user_module_339501025136214612_088 (
         .io_in  (sw_088_module_data_in),
         .io_out (sw_088_module_data_out)
     );
@@ -2076,7 +2076,7 @@ module user_project_wrapper #(
     wire sw_089_clk_out, sw_089_data_out, sw_089_scan_out, sw_089_latch_out;
     wire [7:0] sw_089_module_data_in;
     wire [7:0] sw_089_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_89 (
+    scanchain #(.NUM_IOS(8)) scanchain_089 (
         .clk_in          (sw_088_clk_out),
         .data_in         (sw_088_data_out),
         .scan_select_in  (sw_088_scan_out),
@@ -2089,7 +2089,7 @@ module user_project_wrapper #(
         .module_data_out (sw_089_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_89 (
+    user_module_339501025136214612 user_module_339501025136214612_089 (
         .io_in  (sw_089_module_data_in),
         .io_out (sw_089_module_data_out)
     );
@@ -2098,7 +2098,7 @@ module user_project_wrapper #(
     wire sw_090_clk_out, sw_090_data_out, sw_090_scan_out, sw_090_latch_out;
     wire [7:0] sw_090_module_data_in;
     wire [7:0] sw_090_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_90 (
+    scanchain #(.NUM_IOS(8)) scanchain_090 (
         .clk_in          (sw_089_clk_out),
         .data_in         (sw_089_data_out),
         .scan_select_in  (sw_089_scan_out),
@@ -2111,7 +2111,7 @@ module user_project_wrapper #(
         .module_data_out (sw_090_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_90 (
+    user_module_339501025136214612 user_module_339501025136214612_090 (
         .io_in  (sw_090_module_data_in),
         .io_out (sw_090_module_data_out)
     );
@@ -2120,7 +2120,7 @@ module user_project_wrapper #(
     wire sw_091_clk_out, sw_091_data_out, sw_091_scan_out, sw_091_latch_out;
     wire [7:0] sw_091_module_data_in;
     wire [7:0] sw_091_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_91 (
+    scanchain #(.NUM_IOS(8)) scanchain_091 (
         .clk_in          (sw_090_clk_out),
         .data_in         (sw_090_data_out),
         .scan_select_in  (sw_090_scan_out),
@@ -2133,7 +2133,7 @@ module user_project_wrapper #(
         .module_data_out (sw_091_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_91 (
+    user_module_339501025136214612 user_module_339501025136214612_091 (
         .io_in  (sw_091_module_data_in),
         .io_out (sw_091_module_data_out)
     );
@@ -2142,7 +2142,7 @@ module user_project_wrapper #(
     wire sw_092_clk_out, sw_092_data_out, sw_092_scan_out, sw_092_latch_out;
     wire [7:0] sw_092_module_data_in;
     wire [7:0] sw_092_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_92 (
+    scanchain #(.NUM_IOS(8)) scanchain_092 (
         .clk_in          (sw_091_clk_out),
         .data_in         (sw_091_data_out),
         .scan_select_in  (sw_091_scan_out),
@@ -2155,7 +2155,7 @@ module user_project_wrapper #(
         .module_data_out (sw_092_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_92 (
+    user_module_339501025136214612 user_module_339501025136214612_092 (
         .io_in  (sw_092_module_data_in),
         .io_out (sw_092_module_data_out)
     );
@@ -2164,7 +2164,7 @@ module user_project_wrapper #(
     wire sw_093_clk_out, sw_093_data_out, sw_093_scan_out, sw_093_latch_out;
     wire [7:0] sw_093_module_data_in;
     wire [7:0] sw_093_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_93 (
+    scanchain #(.NUM_IOS(8)) scanchain_093 (
         .clk_in          (sw_092_clk_out),
         .data_in         (sw_092_data_out),
         .scan_select_in  (sw_092_scan_out),
@@ -2177,7 +2177,7 @@ module user_project_wrapper #(
         .module_data_out (sw_093_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_93 (
+    user_module_339501025136214612 user_module_339501025136214612_093 (
         .io_in  (sw_093_module_data_in),
         .io_out (sw_093_module_data_out)
     );
@@ -2186,7 +2186,7 @@ module user_project_wrapper #(
     wire sw_094_clk_out, sw_094_data_out, sw_094_scan_out, sw_094_latch_out;
     wire [7:0] sw_094_module_data_in;
     wire [7:0] sw_094_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_94 (
+    scanchain #(.NUM_IOS(8)) scanchain_094 (
         .clk_in          (sw_093_clk_out),
         .data_in         (sw_093_data_out),
         .scan_select_in  (sw_093_scan_out),
@@ -2199,7 +2199,7 @@ module user_project_wrapper #(
         .module_data_out (sw_094_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_94 (
+    user_module_339501025136214612 user_module_339501025136214612_094 (
         .io_in  (sw_094_module_data_in),
         .io_out (sw_094_module_data_out)
     );
@@ -2208,7 +2208,7 @@ module user_project_wrapper #(
     wire sw_095_clk_out, sw_095_data_out, sw_095_scan_out, sw_095_latch_out;
     wire [7:0] sw_095_module_data_in;
     wire [7:0] sw_095_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_95 (
+    scanchain #(.NUM_IOS(8)) scanchain_095 (
         .clk_in          (sw_094_clk_out),
         .data_in         (sw_094_data_out),
         .scan_select_in  (sw_094_scan_out),
@@ -2221,7 +2221,7 @@ module user_project_wrapper #(
         .module_data_out (sw_095_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_95 (
+    user_module_339501025136214612 user_module_339501025136214612_095 (
         .io_in  (sw_095_module_data_in),
         .io_out (sw_095_module_data_out)
     );
@@ -2230,7 +2230,7 @@ module user_project_wrapper #(
     wire sw_096_clk_out, sw_096_data_out, sw_096_scan_out, sw_096_latch_out;
     wire [7:0] sw_096_module_data_in;
     wire [7:0] sw_096_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_96 (
+    scanchain #(.NUM_IOS(8)) scanchain_096 (
         .clk_in          (sw_095_clk_out),
         .data_in         (sw_095_data_out),
         .scan_select_in  (sw_095_scan_out),
@@ -2243,7 +2243,7 @@ module user_project_wrapper #(
         .module_data_out (sw_096_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_96 (
+    user_module_339501025136214612 user_module_339501025136214612_096 (
         .io_in  (sw_096_module_data_in),
         .io_out (sw_096_module_data_out)
     );
@@ -2252,7 +2252,7 @@ module user_project_wrapper #(
     wire sw_097_clk_out, sw_097_data_out, sw_097_scan_out, sw_097_latch_out;
     wire [7:0] sw_097_module_data_in;
     wire [7:0] sw_097_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_97 (
+    scanchain #(.NUM_IOS(8)) scanchain_097 (
         .clk_in          (sw_096_clk_out),
         .data_in         (sw_096_data_out),
         .scan_select_in  (sw_096_scan_out),
@@ -2265,7 +2265,7 @@ module user_project_wrapper #(
         .module_data_out (sw_097_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_97 (
+    user_module_339501025136214612 user_module_339501025136214612_097 (
         .io_in  (sw_097_module_data_in),
         .io_out (sw_097_module_data_out)
     );
@@ -2274,7 +2274,7 @@ module user_project_wrapper #(
     wire sw_098_clk_out, sw_098_data_out, sw_098_scan_out, sw_098_latch_out;
     wire [7:0] sw_098_module_data_in;
     wire [7:0] sw_098_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_98 (
+    scanchain #(.NUM_IOS(8)) scanchain_098 (
         .clk_in          (sw_097_clk_out),
         .data_in         (sw_097_data_out),
         .scan_select_in  (sw_097_scan_out),
@@ -2287,7 +2287,7 @@ module user_project_wrapper #(
         .module_data_out (sw_098_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_98 (
+    user_module_339501025136214612 user_module_339501025136214612_098 (
         .io_in  (sw_098_module_data_in),
         .io_out (sw_098_module_data_out)
     );
@@ -2296,7 +2296,7 @@ module user_project_wrapper #(
     wire sw_099_clk_out, sw_099_data_out, sw_099_scan_out, sw_099_latch_out;
     wire [7:0] sw_099_module_data_in;
     wire [7:0] sw_099_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_99 (
+    scanchain #(.NUM_IOS(8)) scanchain_099 (
         .clk_in          (sw_098_clk_out),
         .data_in         (sw_098_data_out),
         .scan_select_in  (sw_098_scan_out),
@@ -2309,7 +2309,7 @@ module user_project_wrapper #(
         .module_data_out (sw_099_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_99 (
+    user_module_339501025136214612 user_module_339501025136214612_099 (
         .io_in  (sw_099_module_data_in),
         .io_out (sw_099_module_data_out)
     );
