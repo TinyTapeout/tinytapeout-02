@@ -82,14 +82,16 @@ class Projects():
 
         # now do some sanity checks
         all_macro_instances = [project.get_macro_instance() for project in self.projects]
-        assert len(all_macro_instances) == len(unique(all_macro_instances))
+        self.assert_unique(all_macro_instances)
 
-        all_top_files = [project.get_top_verilog_file() for project in self.projects if not project.is_fill()]
-        assert len(all_top_files) == len(unique(all_top_files))
+        all_top_files = [project.get_top_verilog_filename() for project in self.projects if not project.is_fill()]
+        self.assert_unique(all_top_files)
 
-    def check_dupes(self):
-        from project_urls import project_urls
-        duplicates = [item for item, count in collections.Counter(project_urls).items() if count > 1]
+        all_gds_files = [project.get_macro_gds_filename() for project in self.projects if not project.is_fill()]
+        self.assert_unique(all_gds_files)
+
+    def assert_unique(self, check):
+        duplicates = [item for item, count in collections.Counter(check).items() if count > 1]
         if duplicates:
             logging.error("duplicate projects: {}".format(duplicates))
             exit(1)
@@ -107,9 +109,9 @@ class Project():
     # if the project is a filler, then use the config from the first fill project
     def gen_local_dir(self, fill_id):
         if self.fill:
-            return os.path.join(os.path.join(self.project_dir, str(fill_id)))
+            return os.path.join(os.path.join(self.project_dir, f'{fill_id :03}'))
         else:
-            return os.path.join(os.path.join(self.project_dir, str(self.index)))
+            return os.path.join(os.path.join(self.project_dir, f'{self.index :03}'))
 
     def check_ports(self):
         top = self.get_macro_name()
@@ -173,13 +175,13 @@ class Project():
         self.yaml['project']['git_url'] = self.git_url
 
         if self.is_hdl():
-            self.top_module         = self.yaml['project']['top_module']
-            self.src_files          = self.yaml['project']['source_files']
-            self.top_verilog_file   = self.find_top_verilog()
+            self.top_module             = self.yaml['project']['top_module']
+            self.src_files              = self.yaml['project']['source_files']
+            self.top_verilog_filename   = self.find_top_verilog()
         else:
-            self.top_module         = f"user_module_{self.wokwi_id}"
-            self.src_files          = [f"user_module_{self.wokwi_id}.v"]
-            self.top_verilog_file   = self.src_files[0]
+            self.top_module             = f"user_module_{self.wokwi_id}"
+            self.src_files              = [f"user_module_{self.wokwi_id}.v"]
+            self.top_verilog_filename   = self.src_files[0]
 
         self.macro_instance         = f"{self.top_module}_{self.index}"
         self.scanchain_instance     = f"scanchain_{self.index}"
@@ -251,57 +253,41 @@ class Project():
         return self.index
 
     # name of the gds file
-    def get_macro_gds_name(self):
+    def get_macro_gds_filename(self):
         return f"{self.top_module}.gds"
 
-    def get_macro_lef_name(self):
+    def get_macro_lef_filename(self):
         return f"{self.top_module}.lef"
 
-    # for black boxing when building GDS, just need module name and ports
-    def get_verilog_include(self):
-        return f'`include "{self.get_top_verilog_file()}"\n'
-
-    # for GL sims
-    def get_gl_verilog_names(self):
+    # for GL sims & blackboxing
+    def get_gl_verilog_filename(self):
         return f"{self.top_module}.v"
 
-    def get_top_verilog_file(self):
+    # for simulations
+    def get_top_verilog_filename(self):
         if self.is_hdl():
-            # make sure it's unique and without leading directories
-            filename = os.path.basename(self.top_verilog_file)
+            # make sure it's unique & without leading directories
+            # a few people use 'top.v', which is OK as long as the top module is called something more unique
+            # but then it needs to be made unique so the source can be found
+            filename = os.path.basename(self.top_verilog_filename)
             return f'{self.index}_{filename}'
         else:
-            return f'user_module_{self.wokwi_id}.v'
-
-    # for the includes file for simulation
-    def get_verilog_names(self):
-        return [self.get_gl_verilog_names()]
+            return self.top_verilog_filename
 
     def get_git_url(self):
         return self.git_url
 
     def copy_files_to_caravel(self):
-        if self.is_hdl():
-            # this is going to fail if people use duplicate top module names
-            # and can't be fixed by changing the name as that will not match with the gds or lef
-            files = [
-                (f"{self.index}/runs/wokwi/results/final/gds/{self.top_module}.gds", f"gds/{self.top_module}.gds"),
-                (f"{self.index}/runs/wokwi/results/final/lef/{self.top_module}.lef", f"lef/{self.top_module}.lef"),
-                (f"{self.index}/runs/wokwi/results/final/verilog/gl/{self.top_module}.v", f"verilog/gl/{self.top_module}.v"),
-                (f"{self.index}/src/{self.top_verilog_file}", f"verilog/rtl/{self.get_top_verilog_file()}"),
-                ]
-        else:
-            # copy all important files to the correct places. Everything is dependent on the id
-            files = [
-                (f"{self.index}/runs/wokwi/results/final/gds/user_module_{self.wokwi_id}.gds", f"gds/user_module_{self.wokwi_id}.gds"),
-                (f"{self.index}/runs/wokwi/results/final/lef/user_module_{self.wokwi_id}.lef", f"lef/user_module_{self.wokwi_id}.lef"),
-                (f"{self.index}/runs/wokwi/results/final/verilog/gl/user_module_{self.wokwi_id}.v", f"verilog/gl/user_module_{self.wokwi_id}.v"),
-                (f"{self.index}/src/user_module_{self.wokwi_id}.v", f"verilog/rtl/user_module_{self.wokwi_id}.v"),
-                ]
+        files = [
+            (f"runs/wokwi/results/final/gds/{self.get_macro_gds_filename()}", f"gds/{self.get_macro_gds_filename()}"),
+            (f"runs/wokwi/results/final/lef/{self.get_macro_lef_filename()}", f"lef/{self.get_macro_lef_filename()}"),
+            (f"runs/wokwi/results/final/verilog/gl/{self.get_gl_verilog_filename()}", f"verilog/gl/{self.get_gl_verilog_filename()}"),
+            (f"src/{self.top_verilog_filename}", f"verilog/rtl/{self.get_top_verilog_filename()}"),
+            ]
 
         logging.debug("copying files into position")
         for from_path, to_path in files:
-            from_path = os.path.join(self.project_dir, from_path)
+            from_path = os.path.join(self.local_dir, from_path)
             logging.debug(f"copy {from_path} to {to_path}")
             shutil.copyfile(from_path, to_path)
 
@@ -395,16 +381,13 @@ class CaravelConfig():
             fh.write('"\n')
 
         # extra_lef_gds.tcl
-        logging.info("creating extra_lef_gds.tcl")
         lefs = []
         gdss = []
-        for i in range(self.num_projects):
-            lefs.append(self.projects[i].get_macro_lef_name())
-            gdss.append(self.projects[i].get_macro_gds_name())
-
-        # can't have duplicates or OpenLane crashes at PDN
-        lefs = unique(lefs)
-        gdss = unique(gdss)
+        logging.info("creating extra_lef_gds.tcl")
+        for project in self.projects:
+            if not project.is_fill():
+                lefs.append(project.get_macro_lef_filename())
+                gdss.append(project.get_macro_gds_filename())
 
         with open("openlane/user_project_wrapper/extra_lef_gds.tcl", 'w') as fh:
             fh.write('set ::env(EXTRA_LEFS) "\\\n')
@@ -533,42 +516,32 @@ class CaravelConfig():
             with open("upw_post.v", "r") as fh_post:
                 fh.write(fh_post.read())
 
-        # build the user_project_includes.v file - used for blackboxing when building the GDS
-        verilogs = []
-        for i in range(self.num_projects):
-            verilogs.append(self.projects[i].get_verilog_include())
-        verilogs = unique(verilogs)
-
-        with open('verilog/rtl/user_project_includes.v', 'w') as fh:
-            fh.write('`include "scan_controller/scan_controller.v"\n')
-            fh.write('`include "scanchain/scanchain.v"\n')
-            for verilog in verilogs:
-                fh.write(verilog)
+        # build the blackbox_project_includes.v file - used for blackboxing when building the GDS
+        with open('verilog/blackbox_project_includes.v', 'w') as fh:
+            fh.write('`include "rtl/scan_controller/scan_controller.v"\n')
+            fh.write('`include "rtl/scanchain/scanchain.v"\n')
+            for project in self.projects:
+                if not project.is_fill():
+                    fh.write(f'`include "gl/{project.get_gl_verilog_filename()}"\n')
 
         # build complete list of filenames for sim
-        verilog_files = []
-        for i in range(self.num_projects):
-            verilog_files += self.projects[i].get_verilog_names()
-        verilog_files = unique(verilog_files)
         with open('verilog/includes/includes.rtl.caravel_user_project', 'w') as fh:
             fh.write('-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/rtl/scan_controller/scan_controller.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/rtl/scanchain/scanchain.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/rtl/cells.v\n')
-            for verilog in verilog_files:
-                fh.write('-v $(USER_PROJECT_VERILOG)/rtl/{}\n'.format(verilog))
+            for project in self.projects:
+                if not project.is_fill():
+                    fh.write(f'-v $(USER_PROJECT_VERILOG)/rtl/{project.get_top_verilog_filename()}\n')
 
         # build GL includes
-        verilog_files = []
-        for i in range(self.num_projects):
-            verilog_files += self.projects[i].get_gl_verilog_names()
-        verilog_files = unique(verilog_files)
         with open('verilog/includes/includes.gl.caravel_user_project', 'w') as fh:
             fh.write('-v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/gl/scan_controller.v\n')
             fh.write('-v $(USER_PROJECT_VERILOG)/gl/scanchain.v\n')
-            for verilog in verilog_files:
-                fh.write('-v $(USER_PROJECT_VERILOG)/gl/{}\n'.format(verilog))
+            for project in self.projects:
+                if not project.is_fill():
+                    fh.write(f'-v $(USER_PROJECT_VERILOG)/gl/{project.get_gl_verilog_filename()}"\n')
 
     def list(self):
         for project in self.projects:
@@ -621,6 +594,9 @@ class Docs():
         with open("INFO.md") as fh:
             doc_info = fh.read()
 
+        with open("VERIFICATION.md") as fh:
+            doc_verification = fh.read()
+
         with open(args.dump_markdown, 'w') as fh:
             fh.write(doc_header)
 
@@ -649,6 +625,8 @@ class Docs():
 
             # ending
             fh.write(doc_info)
+            fh.write("\n\pagebreak\n")
+            fh.write(doc_verification)
 
         logging.info(f'wrote markdown to {args.dump_markdown}')
 
@@ -686,7 +664,6 @@ if __name__ == '__main__':
     log.addHandler(ch)
 
     projects = Projects(args)
-#    projects.check_dupes()
 
     docs = Docs(projects.projects, args=args)
     caravel = CaravelConfig(projects.projects, num_projects=args.limit_num_projects)

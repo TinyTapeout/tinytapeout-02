@@ -129,7 +129,3 @@ It takes about 5 minutes and needs about 3GB of disk space.
 Then to create the GDS:
 
     make user_project_wrapper
-
-## Verification
-
-See the separate [verification](verification.md) doc.
