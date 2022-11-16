@@ -20,16 +20,20 @@ module user_module_346916357828248146(
   wire net12;
   wire net13;
   wire net14;
-  wire net15 = 1'b0;
-  wire net16 = 1'b1;
-  wire net17 = 1'b1;
+  wire net15;
+  wire net16;
+  wire net17 = 1'b0;
+  wire net18 = 1'b1;
+  wire net19 = 1'b1;
 
   assign io_out[0] = net9;
   assign io_out[1] = net10;
   assign io_out[2] = net11;
-  assign io_out[4] = net12;
-  assign io_out[5] = net13;
-  assign io_out[6] = net14;
+  assign io_out[3] = net12;
+  assign io_out[4] = net13;
+  assign io_out[5] = net14;
+  assign io_out[6] = net15;
+  assign io_out[7] = net16;
 
   xor_cell gate3 (
     .a (net9),
@@ -38,7 +42,7 @@ module user_module_346916357828248146(
   );
   nand_cell gate4 (
     .a (net10),
-    .b (net14),
+    .b (net15),
     .out (net11)
   );
   mux_cell mux1 (
@@ -48,19 +52,25 @@ module user_module_346916357828248146(
     .out (net9)
   );
   nand_cell nand1 (
-    .a (net13),
+    .a (net14),
     .b (net11),
-    .out (net14)
+    .out (net15)
   );
   mux_cell mux2 (
     .a (net5),
     .b (net6),
     .sel (net7),
-    .out (net12)
+    .out (net13)
   );
   xor_cell xor1 (
-    .a (net12),
+    .a (net13),
     .b (net8),
-    .out (net13)
+    .out (net14)
+  );
+  dff_cell flop1 (
+    .d (net14),
+    .clk (net10),
+    .q (net12),
+    .notq (net16)
   );
 endmodule

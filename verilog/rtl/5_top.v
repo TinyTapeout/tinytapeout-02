@@ -15,7 +15,7 @@ module migcorre_pwm (
   wire increase_duty_in = io_in[2];  // increase duty cycle by 10%
   wire decrease_duty_in = io_in[3];  // decrease duty cycle by 10%
   wire disable_debouncer_in = io_in[4];
-  wire pwm_out;  // 10kHz PWM output signal 
+  wire pwm_out;  // 1.2kHz PWM output signal 
 
   wire increase_duty_sync;
   wire decrease_duty_sync;

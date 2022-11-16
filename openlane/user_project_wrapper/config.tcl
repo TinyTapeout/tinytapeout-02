@@ -73,7 +73,7 @@ set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg
 ### Black-box verilog and views
 set ::env(VERILOG_FILES_BLACKBOX) "\
     $script_dir/../../caravel/verilog/rtl/defines.v \
-	$script_dir/../../verilog/rtl/user_project_includes.v"
+	$script_dir/../../verilog/blackbox_project_includes.v"
 
 ### user projects gds and lef files
 source $script_dir/extra_lef_gds.tcl

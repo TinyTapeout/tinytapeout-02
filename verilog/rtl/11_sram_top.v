@@ -43,5 +43,5 @@ module jar_sram_top
 		end
 	end
 
-	assign io_out = (oe) ? data_tmp : 8'b0000_000;
+	assign io_out = (oe) ? data_tmp : 8'b0000_0000;
 endmodule

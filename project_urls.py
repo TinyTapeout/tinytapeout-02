@@ -56,9 +56,11 @@ project_urls = [
     "https://github.com/ThorKn/tinytapeout02_shiftregister_challenge",
     "https://github.com/89Mods/tt2-4x4-multiply",
     "https://github.com/89Mods/tt2-multiplexed-counter",
-    "https://github.com/proppy/tt02-xls-counter",
+    #"https://github.com/proppy/tt02-xls-counter", # not unique
     "https://github.com/QuantamHD/ethan-evan-random-numbers",
     "https://github.com/QuantamHD/evan-submission",
     "https://github.com/FlyGoat/tt02-play-tune-flygoat",
     "https://github.com/jleightcap/clash-silicon-tinytapeout",
+    "https://github.com/89Mods/tt2-lcd-namebadge",
+    "https://github.com/Christina-Cyr/tt02-submission-UART-CC",
     ]

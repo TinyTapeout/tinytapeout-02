@@ -153,7 +153,7 @@ module user_project_wrapper #(
         .module_data_out (sw_001_module_data_out)
     );
 
-    chrisruk_matrix chrisruk_matrix_1 (
+    fraserbc_simon fraserbc_simon_1 (
         .io_in  (sw_001_module_data_in),
         .io_out (sw_001_module_data_out)
     );
@@ -175,7 +175,7 @@ module user_project_wrapper #(
         .module_data_out (sw_002_module_data_out)
     );
 
-    loxodes_sequencer loxodes_sequencer_2 (
+    tomkeddie_top_tto tomkeddie_top_tto_2 (
         .io_in  (sw_002_module_data_in),
         .io_out (sw_002_module_data_out)
     );
@@ -197,7 +197,7 @@ module user_project_wrapper #(
         .module_data_out (sw_003_module_data_out)
     );
 
-    migcorre_pwm migcorre_pwm_3 (
+    chrisruk_matrix chrisruk_matrix_3 (
         .io_in  (sw_003_module_data_in),
         .io_out (sw_003_module_data_out)
     );
@@ -219,7 +219,7 @@ module user_project_wrapper #(
         .module_data_out (sw_004_module_data_out)
     );
 
-    s4ga s4ga_4 (
+    loxodes_sequencer loxodes_sequencer_4 (
         .io_in  (sw_004_module_data_in),
         .io_out (sw_004_module_data_out)
     );
@@ -241,7 +241,7 @@ module user_project_wrapper #(
         .module_data_out (sw_005_module_data_out)
     );
 
-    alu_top alu_top_5 (
+    migcorre_pwm migcorre_pwm_5 (
         .io_in  (sw_005_module_data_in),
         .io_out (sw_005_module_data_out)
     );
@@ -263,7 +263,7 @@ module user_project_wrapper #(
         .module_data_out (sw_006_module_data_out)
     );
 
-    aidan_McCoy aidan_McCoy_6 (
+    s4ga s4ga_6 (
         .io_in  (sw_006_module_data_in),
         .io_out (sw_006_module_data_out)
     );
@@ -285,7 +285,7 @@ module user_project_wrapper #(
         .module_data_out (sw_007_module_data_out)
     );
 
-    azdle_binary_clock azdle_binary_clock_7 (
+    alu_top alu_top_7 (
         .io_in  (sw_007_module_data_in),
         .io_out (sw_007_module_data_out)
     );
@@ -307,7 +307,7 @@ module user_project_wrapper #(
         .module_data_out (sw_008_module_data_out)
     );
 
-    user_module_347787021138264660 user_module_347787021138264660_8 (
+    aidan_McCoy aidan_McCoy_8 (
         .io_in  (sw_008_module_data_in),
         .io_out (sw_008_module_data_out)
     );
@@ -329,7 +329,7 @@ module user_project_wrapper #(
         .module_data_out (sw_009_module_data_out)
     );
 
-    jar_sram_top jar_sram_top_9 (
+    azdle_binary_clock azdle_binary_clock_9 (
         .io_in  (sw_009_module_data_in),
         .io_out (sw_009_module_data_out)
     );
@@ -351,7 +351,7 @@ module user_project_wrapper #(
         .module_data_out (sw_010_module_data_out)
     );
 
-    user_module_347690870424732244 user_module_347690870424732244_10 (
+    user_module_347787021138264660 user_module_347787021138264660_10 (
         .io_in  (sw_010_module_data_in),
         .io_out (sw_010_module_data_out)
     );
@@ -373,7 +373,7 @@ module user_project_wrapper #(
         .module_data_out (sw_011_module_data_out)
     );
 
-    user_module_347592305412145748 user_module_347592305412145748_11 (
+    jar_sram_top jar_sram_top_11 (
         .io_in  (sw_011_module_data_in),
         .io_out (sw_011_module_data_out)
     );
@@ -395,7 +395,7 @@ module user_project_wrapper #(
         .module_data_out (sw_012_module_data_out)
     );
 
-    tholin_avalonsemi_5401 tholin_avalonsemi_5401_12 (
+    user_module_347690870424732244 user_module_347690870424732244_12 (
         .io_in  (sw_012_module_data_in),
         .io_out (sw_012_module_data_out)
     );
@@ -417,7 +417,7 @@ module user_project_wrapper #(
         .module_data_out (sw_013_module_data_out)
     );
 
-    tiny_fft tiny_fft_13 (
+    user_module_347592305412145748 user_module_347592305412145748_13 (
         .io_in  (sw_013_module_data_in),
         .io_out (sw_013_module_data_out)
     );
@@ -439,7 +439,7 @@ module user_project_wrapper #(
         .module_data_out (sw_014_module_data_out)
     );
 
-    user_module_346553315158393428 user_module_346553315158393428_14 (
+    tholin_avalonsemi_5401 tholin_avalonsemi_5401_14 (
         .io_in  (sw_014_module_data_in),
         .io_out (sw_014_module_data_out)
     );
@@ -461,7 +461,7 @@ module user_project_wrapper #(
         .module_data_out (sw_015_module_data_out)
     );
 
-    user_module_347894637149553236 user_module_347894637149553236_15 (
+    tiny_fft tiny_fft_15 (
         .io_in  (sw_015_module_data_in),
         .io_out (sw_015_module_data_out)
     );
@@ -483,7 +483,7 @@ module user_project_wrapper #(
         .module_data_out (sw_016_module_data_out)
     );
 
-    user_module_346916357828248146 user_module_346916357828248146_16 (
+    user_module_346553315158393428 user_module_346553315158393428_16 (
         .io_in  (sw_016_module_data_in),
         .io_out (sw_016_module_data_out)
     );
@@ -505,7 +505,7 @@ module user_project_wrapper #(
         .module_data_out (sw_017_module_data_out)
     );
 
-    user_module_347594509754827347 user_module_347594509754827347_17 (
+    user_module_347894637149553236 user_module_347894637149553236_17 (
         .io_in  (sw_017_module_data_in),
         .io_out (sw_017_module_data_out)
     );
@@ -527,7 +527,7 @@ module user_project_wrapper #(
         .module_data_out (sw_018_module_data_out)
     );
 
-    chase_the_beat chase_the_beat_18 (
+    user_module_346916357828248146 user_module_346916357828248146_18 (
         .io_in  (sw_018_module_data_in),
         .io_out (sw_018_module_data_out)
     );
@@ -549,7 +549,7 @@ module user_project_wrapper #(
         .module_data_out (sw_019_module_data_out)
     );
 
-    user_module_347688030570545747 user_module_347688030570545747_19 (
+    user_module_347594509754827347 user_module_347594509754827347_19 (
         .io_in  (sw_019_module_data_in),
         .io_out (sw_019_module_data_out)
     );
@@ -571,7 +571,7 @@ module user_project_wrapper #(
         .module_data_out (sw_020_module_data_out)
     );
 
-    user_module_342981109408072274 user_module_342981109408072274_20 (
+    chase_the_beat chase_the_beat_20 (
         .io_in  (sw_020_module_data_in),
         .io_out (sw_020_module_data_out)
     );
@@ -593,7 +593,7 @@ module user_project_wrapper #(
         .module_data_out (sw_021_module_data_out)
     );
 
-    asic_multiplier_wrapper asic_multiplier_wrapper_21 (
+    user_module_347688030570545747 user_module_347688030570545747_21 (
         .io_in  (sw_021_module_data_in),
         .io_out (sw_021_module_data_out)
     );
@@ -615,7 +615,7 @@ module user_project_wrapper #(
         .module_data_out (sw_022_module_data_out)
     );
 
-    tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143_22 (
+    user_module_342981109408072274 user_module_342981109408072274_22 (
         .io_in  (sw_022_module_data_in),
         .io_out (sw_022_module_data_out)
     );
@@ -637,7 +637,7 @@ module user_project_wrapper #(
         .module_data_out (sw_023_module_data_out)
     );
 
-    tomkeddie_top_tto_a tomkeddie_top_tto_a_23 (
+    asic_multiplier_wrapper asic_multiplier_wrapper_23 (
         .io_in  (sw_023_module_data_in),
         .io_out (sw_023_module_data_out)
     );
@@ -659,7 +659,7 @@ module user_project_wrapper #(
         .module_data_out (sw_024_module_data_out)
     );
 
-    mm21_LEDMatrixTop mm21_LEDMatrixTop_24 (
+    tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143_24 (
         .io_in  (sw_024_module_data_in),
         .io_out (sw_024_module_data_out)
     );
@@ -681,7 +681,7 @@ module user_project_wrapper #(
         .module_data_out (sw_025_module_data_out)
     );
 
-    user_module_348195845106041428 user_module_348195845106041428_25 (
+    tomkeddie_top_tto_a tomkeddie_top_tto_a_25 (
         .io_in  (sw_025_module_data_in),
         .io_out (sw_025_module_data_out)
     );
@@ -703,7 +703,7 @@ module user_project_wrapper #(
         .module_data_out (sw_026_module_data_out)
     );
 
-    user_module_348121131386929746 user_module_348121131386929746_26 (
+    mm21_LEDMatrixTop mm21_LEDMatrixTop_26 (
         .io_in  (sw_026_module_data_in),
         .io_out (sw_026_module_data_out)
     );
@@ -725,7 +725,7 @@ module user_project_wrapper #(
         .module_data_out (sw_027_module_data_out)
     );
 
-    yubex_egg_timer yubex_egg_timer_27 (
+    user_module_348195845106041428 user_module_348195845106041428_27 (
         .io_in  (sw_027_module_data_in),
         .io_out (sw_027_module_data_out)
     );
@@ -747,7 +747,7 @@ module user_project_wrapper #(
         .module_data_out (sw_028_module_data_out)
     );
 
-    xyz_peppergray_Potato1_top xyz_peppergray_Potato1_top_28 (
+    user_module_348121131386929746 user_module_348121131386929746_28 (
         .io_in  (sw_028_module_data_in),
         .io_out (sw_028_module_data_out)
     );
@@ -769,7 +769,7 @@ module user_project_wrapper #(
         .module_data_out (sw_029_module_data_out)
     );
 
-    zoechip zoechip_29 (
+    yubex_egg_timer yubex_egg_timer_29 (
         .io_in  (sw_029_module_data_in),
         .io_out (sw_029_module_data_out)
     );
@@ -791,7 +791,7 @@ module user_project_wrapper #(
         .module_data_out (sw_030_module_data_out)
     );
 
-    user_module_348255968419643987 user_module_348255968419643987_30 (
+    xyz_peppergray_Potato1_top xyz_peppergray_Potato1_top_30 (
         .io_in  (sw_030_module_data_in),
         .io_out (sw_030_module_data_out)
     );
@@ -813,7 +813,7 @@ module user_project_wrapper #(
         .module_data_out (sw_031_module_data_out)
     );
 
-    mbikovitsky_top mbikovitsky_top_31 (
+    zoechip zoechip_31 (
         .io_in  (sw_031_module_data_in),
         .io_out (sw_031_module_data_out)
     );
@@ -835,7 +835,7 @@ module user_project_wrapper #(
         .module_data_out (sw_032_module_data_out)
     );
 
-    user_module_348260124451668562 user_module_348260124451668562_32 (
+    user_module_348255968419643987 user_module_348255968419643987_32 (
         .io_in  (sw_032_module_data_in),
         .io_out (sw_032_module_data_out)
     );
@@ -857,7 +857,7 @@ module user_project_wrapper #(
         .module_data_out (sw_033_module_data_out)
     );
 
-    rolfmobile99_alu_fsm_top rolfmobile99_alu_fsm_top_33 (
+    mbikovitsky_top mbikovitsky_top_33 (
         .io_in  (sw_033_module_data_in),
         .io_out (sw_033_module_data_out)
     );
@@ -879,7 +879,7 @@ module user_project_wrapper #(
         .module_data_out (sw_034_module_data_out)
     );
 
-    jar_illegal_logic jar_illegal_logic_34 (
+    user_module_348260124451668562 user_module_348260124451668562_34 (
         .io_in  (sw_034_module_data_in),
         .io_out (sw_034_module_data_out)
     );
@@ -901,7 +901,7 @@ module user_project_wrapper #(
         .module_data_out (sw_035_module_data_out)
     );
 
-    user_module_348242239268323922 user_module_348242239268323922_35 (
+    rolfmobile99_alu_fsm_top rolfmobile99_alu_fsm_top_35 (
         .io_in  (sw_035_module_data_in),
         .io_out (sw_035_module_data_out)
     );
@@ -923,7 +923,7 @@ module user_project_wrapper #(
         .module_data_out (sw_036_module_data_out)
     );
 
-    thezoq2_yafpga thezoq2_yafpga_36 (
+    jar_illegal_logic jar_illegal_logic_36 (
         .io_in  (sw_036_module_data_in),
         .io_out (sw_036_module_data_out)
     );
@@ -945,7 +945,7 @@ module user_project_wrapper #(
         .module_data_out (sw_037_module_data_out)
     );
 
-    moyes0_top_module moyes0_top_module_37 (
+    user_module_348242239268323922 user_module_348242239268323922_37 (
         .io_in  (sw_037_module_data_in),
         .io_out (sw_037_module_data_out)
     );
@@ -967,7 +967,7 @@ module user_project_wrapper #(
         .module_data_out (sw_038_module_data_out)
     );
 
-    yupferris_bitslam yupferris_bitslam_38 (
+    thezoq2_yafpga thezoq2_yafpga_38 (
         .io_in  (sw_038_module_data_in),
         .io_out (sw_038_module_data_out)
     );
@@ -989,7 +989,7 @@ module user_project_wrapper #(
         .module_data_out (sw_039_module_data_out)
     );
 
-    user_module_341620484740219475 user_module_341620484740219475_39 (
+    moyes0_top_module moyes0_top_module_39 (
         .io_in  (sw_039_module_data_in),
         .io_out (sw_039_module_data_out)
     );
@@ -1011,7 +1011,7 @@ module user_project_wrapper #(
         .module_data_out (sw_040_module_data_out)
     );
 
-    top top_40 (
+    yupferris_bitslam yupferris_bitslam_40 (
         .io_in  (sw_040_module_data_in),
         .io_out (sw_040_module_data_out)
     );
@@ -1033,7 +1033,7 @@ module user_project_wrapper #(
         .module_data_out (sw_041_module_data_out)
     );
 
-    rc5_top rc5_top_41 (
+    user_module_341620484740219475 user_module_341620484740219475_41 (
         .io_in  (sw_041_module_data_in),
         .io_out (sw_041_module_data_out)
     );
@@ -1055,7 +1055,7 @@ module user_project_wrapper #(
         .module_data_out (sw_042_module_data_out)
     );
 
-    user_module_341614374571475540 user_module_341614374571475540_42 (
+    top top_42 (
         .io_in  (sw_042_module_data_in),
         .io_out (sw_042_module_data_out)
     );
@@ -1077,7 +1077,7 @@ module user_project_wrapper #(
         .module_data_out (sw_043_module_data_out)
     );
 
-    meriac_tt02_play_tune meriac_tt02_play_tune_43 (
+    rc5_top rc5_top_43 (
         .io_in  (sw_043_module_data_in),
         .io_out (sw_043_module_data_out)
     );
@@ -1099,7 +1099,7 @@ module user_project_wrapper #(
         .module_data_out (sw_044_module_data_out)
     );
 
-    phasenoisepon_seven_segment_seconds phasenoisepon_seven_segment_seconds_44 (
+    user_module_341614374571475540 user_module_341614374571475540_44 (
         .io_in  (sw_044_module_data_in),
         .io_out (sw_044_module_data_out)
     );
@@ -1121,7 +1121,7 @@ module user_project_wrapper #(
         .module_data_out (sw_045_module_data_out)
     );
 
-    user_module_341541108650607187 user_module_341541108650607187_45 (
+    meriac_tt02_play_tune meriac_tt02_play_tune_45 (
         .io_in  (sw_045_module_data_in),
         .io_out (sw_045_module_data_out)
     );
@@ -1143,7 +1143,7 @@ module user_project_wrapper #(
         .module_data_out (sw_046_module_data_out)
     );
 
-    user_module_341516949939814994 user_module_341516949939814994_46 (
+    phasenoisepon_seven_segment_seconds phasenoisepon_seven_segment_seconds_46 (
         .io_in  (sw_046_module_data_in),
         .io_out (sw_046_module_data_out)
     );
@@ -1165,7 +1165,7 @@ module user_project_wrapper #(
         .module_data_out (sw_047_module_data_out)
     );
 
-    tt2_tholin_multiplier tt2_tholin_multiplier_47 (
+    user_module_341541108650607187 user_module_341541108650607187_47 (
         .io_in  (sw_047_module_data_in),
         .io_out (sw_047_module_data_out)
     );
@@ -1187,7 +1187,7 @@ module user_project_wrapper #(
         .module_data_out (sw_048_module_data_out)
     );
 
-    tt2_tholin_multiplexed_counter tt2_tholin_multiplexed_counter_48 (
+    user_module_341516949939814994 user_module_341516949939814994_48 (
         .io_in  (sw_048_module_data_in),
         .io_out (sw_048_module_data_out)
     );
@@ -1236,7 +1236,7 @@ module user_project_wrapper #(
         .io_out (sw_050_module_data_out)
     );
 
-    // [051] https://github.com/proppy/tt02-xls-counter
+    // [051] https://github.com/QuantamHD/ethan-evan-random-numbers
     wire sw_051_clk_out, sw_051_data_out, sw_051_scan_out, sw_051_latch_out;
     wire [7:0] sw_051_module_data_in;
     wire [7:0] sw_051_module_data_out;
@@ -1253,12 +1253,12 @@ module user_project_wrapper #(
         .module_data_out (sw_051_module_data_out)
     );
 
-    top top_51 (
+    xor_shift32_quantamhd xor_shift32_quantamhd_51 (
         .io_in  (sw_051_module_data_in),
         .io_out (sw_051_module_data_out)
     );
 
-    // [052] https://github.com/QuantamHD/ethan-evan-random-numbers
+    // [052] https://github.com/QuantamHD/evan-submission
     wire sw_052_clk_out, sw_052_data_out, sw_052_scan_out, sw_052_latch_out;
     wire [7:0] sw_052_module_data_in;
     wire [7:0] sw_052_module_data_out;
@@ -1275,12 +1275,12 @@ module user_project_wrapper #(
         .module_data_out (sw_052_module_data_out)
     );
 
-    xor_shift32_quantamhd xor_shift32_quantamhd_52 (
+    xor_shift32_evango xor_shift32_evango_52 (
         .io_in  (sw_052_module_data_in),
         .io_out (sw_052_module_data_out)
     );
 
-    // [053] https://github.com/QuantamHD/evan-submission
+    // [053] https://github.com/FlyGoat/tt02-play-tune-flygoat
     wire sw_053_clk_out, sw_053_data_out, sw_053_scan_out, sw_053_latch_out;
     wire [7:0] sw_053_module_data_in;
     wire [7:0] sw_053_module_data_out;
@@ -1297,12 +1297,12 @@ module user_project_wrapper #(
         .module_data_out (sw_053_module_data_out)
     );
 
-    xor_shift32_evango xor_shift32_evango_53 (
+    flygoat_tt02_play_tune flygoat_tt02_play_tune_53 (
         .io_in  (sw_053_module_data_in),
         .io_out (sw_053_module_data_out)
     );
 
-    // [054] https://github.com/FlyGoat/tt02-play-tune-flygoat
+    // [054] https://github.com/jleightcap/clash-silicon-tinytapeout
     wire sw_054_clk_out, sw_054_data_out, sw_054_scan_out, sw_054_latch_out;
     wire [7:0] sw_054_module_data_in;
     wire [7:0] sw_054_module_data_out;
@@ -1319,12 +1319,12 @@ module user_project_wrapper #(
         .module_data_out (sw_054_module_data_out)
     );
 
-    flygoat_tt02_play_tune flygoat_tt02_play_tune_54 (
+    jleightcap_top jleightcap_top_54 (
         .io_in  (sw_054_module_data_in),
         .io_out (sw_054_module_data_out)
     );
 
-    // [055] https://github.com/jleightcap/clash-silicon-tinytapeout
+    // [055] https://github.com/89Mods/tt2-lcd-namebadge
     wire sw_055_clk_out, sw_055_data_out, sw_055_scan_out, sw_055_latch_out;
     wire [7:0] sw_055_module_data_in;
     wire [7:0] sw_055_module_data_out;
@@ -1341,12 +1341,12 @@ module user_project_wrapper #(
         .module_data_out (sw_055_module_data_out)
     );
 
-    jleightcap_top jleightcap_top_55 (
+    tt2_tholin_namebadge tt2_tholin_namebadge_55 (
         .io_in  (sw_055_module_data_in),
         .io_out (sw_055_module_data_out)
     );
 
-    // [056] https://github.com/TinyTapeout/tt02-test-straight
+    // [056] https://github.com/Christina-Cyr/tt02-submission-UART-CC
     wire sw_056_clk_out, sw_056_data_out, sw_056_scan_out, sw_056_latch_out;
     wire [7:0] sw_056_module_data_in;
     wire [7:0] sw_056_module_data_out;
@@ -1363,7 +1363,7 @@ module user_project_wrapper #(
         .module_data_out (sw_056_module_data_out)
     );
 
-    user_module_339501025136214612 user_module_339501025136214612_56 (
+    user_module_347619669052490324 user_module_347619669052490324_56 (
         .io_in  (sw_056_module_data_in),
         .io_out (sw_056_module_data_out)
     );

@@ -31,7 +31,7 @@ We are building a datasheet of all the projects.  To read it, click the tt_datas
 | Aidan Good | The McCoy 6-bit Microprocessor | HDL | https://github.com/AidanGood/tt02-McCoy |
 | Azdle | binary clock | HDL | https://github.com/azdle/binary-clock-asic |
 | Justin Pelan | TinySensor | [Wokwi](https://wokwi.com/projects/347787021138264660) | https://github.com/justinP-wrk/tt02-TinySensor |
-| James Ross | 8x8 SRAM | HDL | https://github.com/jar/tt02_sram |
+| James Ross | 8x8 SRAM & Streaming Signal Generator | HDL | https://github.com/jar/tt02_sram |
 | Jens Schleusner | German Traffic Light State Machine | [Wokwi](https://wokwi.com/projects/347690870424732244) | https://github.com/JensIMS/tt02-trafficlight |
 | Seppe Van Dyck | 4-spin Ising Chain Simulation | [Wokwi](https://wokwi.com/projects/347592305412145748) | https://github.com/svd321/tt02-Ising |
 | Tholin | Avalon Semiconductors '5401' 4-bit Microprocessor | HDL | https://github.com/89Mods/tt2-AvalonSemi-5401 |
@@ -71,8 +71,9 @@ We are building a datasheet of all the projects.  To read it, click the tt_datas
 | Thorsten Knoll | Shiftregister Challenge 40 Bit | [Wokwi](https://wokwi.com/projects/341516949939814994) | https://github.com/ThorKn/tinytapeout02_shiftregister_challenge |
 | Tholin | TinyTapeout2 4-bit multiplier. | HDL | https://github.com/89Mods/tt2-4x4-multiply |
 | Tholin | TinyTapeout2 multiplexed segment display timer. | HDL | https://github.com/89Mods/tt2-multiplexed-counter |
-| proppy | XLS: 8-bit counter | HDL | https://github.com/proppy/tt02-xls-counter |
 | Ethan Mahintorabi | XorShift32 | HDL | https://github.com/QuantamHD/ethan-evan-random-numbers |
 | Ethan Mahintorabi | XorShift32 | HDL | https://github.com/QuantamHD/evan-submission |
 | Jiaxun Yang | Multiple Tunes on A Piezo Speaker | HDL | https://github.com/FlyGoat/tt02-play-tune-flygoat |
 | Jack Leightcap | clash cpu | HDL | https://github.com/jleightcap/clash-silicon-tinytapeout |
+| Tholin | TinyTapeout 2 LCD Nametag | HDL | https://github.com/89Mods/tt2-lcd-namebadge |
+| Christina Cyr | UART-CC | [Wokwi](https://wokwi.com/projects/347619669052490324) | https://github.com/Christina-Cyr/tt02-submission-UART-CC |

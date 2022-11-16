@@ -2,6 +2,8 @@ set ::env(EXTRA_LEFS) "\
 $script_dir/../../lef/scan_controller.lef \
 $script_dir/../../lef/scanchain.lef \
 $script_dir/../../lef/user_module_339501025136214612.lef \
+$script_dir/../../lef/fraserbc_simon.lef \
+$script_dir/../../lef/tomkeddie_top_tto.lef \
 $script_dir/../../lef/chrisruk_matrix.lef \
 $script_dir/../../lef/loxodes_sequencer.lef \
 $script_dir/../../lef/migcorre_pwm.lef \
@@ -53,11 +55,15 @@ $script_dir/../../lef/tt2_tholin_multiplexed_counter.lef \
 $script_dir/../../lef/xor_shift32_quantamhd.lef \
 $script_dir/../../lef/xor_shift32_evango.lef \
 $script_dir/../../lef/flygoat_tt02_play_tune.lef \
-$script_dir/../../lef/jleightcap_top.lef"
+$script_dir/../../lef/jleightcap_top.lef \
+$script_dir/../../lef/tt2_tholin_namebadge.lef \
+$script_dir/../../lef/user_module_347619669052490324.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
 $script_dir/../../gds/user_module_339501025136214612.gds \
+$script_dir/../../gds/fraserbc_simon.gds \
+$script_dir/../../gds/tomkeddie_top_tto.gds \
 $script_dir/../../gds/chrisruk_matrix.gds \
 $script_dir/../../gds/loxodes_sequencer.gds \
 $script_dir/../../gds/migcorre_pwm.gds \
@@ -109,4 +115,6 @@ $script_dir/../../gds/tt2_tholin_multiplexed_counter.gds \
 $script_dir/../../gds/xor_shift32_quantamhd.gds \
 $script_dir/../../gds/xor_shift32_evango.gds \
 $script_dir/../../gds/flygoat_tt02_play_tune.gds \
-$script_dir/../../gds/jleightcap_top.gds"
+$script_dir/../../gds/jleightcap_top.gds \
+$script_dir/../../gds/tt2_tholin_namebadge.gds \
+$script_dir/../../gds/user_module_347619669052490324.gds"
