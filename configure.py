@@ -247,8 +247,17 @@ class Project():
 
     def harden(self):
         logging.info(f"hardening {self}")
+
+        # copy golden config
+        shutil.copyfile('config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
+
         cwd = os.getcwd()
         os.chdir(self.local_dir)
+
+        # setup user config
+        configure_cmd = './configure.py --create-user-config'
+        subprocess.run(configure_cmd, shell=True)
+
         # requires PDK_ROOT, OPENLANE_ROOT & OPENLANE_IMAGE_NAME to be set in local environment
         harden_cmd = 'docker run --rm -v $OPENLANE_ROOT:/openlane -v $PDK_ROOT:$PDK_ROOT -v $(pwd):/work -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $OPENLANE_IMAGE_NAME /bin/bash -c "./flow.tcl -overwrite -design /work/src -run_path /work/runs -tag wokwi"'
         env = os.environ.copy()
