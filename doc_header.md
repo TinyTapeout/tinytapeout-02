@@ -1,6 +1,10 @@
 ---
-title: "Tiny Tapeout 02 Datasheet"
-subtitle: Automatically generated at [https://github.com/TinyTapeout/tinytapeout-02](https://github.com/TinyTapeout/tinytapeout-02)
+title: |
+  ![](ttlogo.png){width=15cm}  
+    Tiny Tapeout 02 Datasheet
+subtitle: Project Repository [https://github.com/TinyTapeout/tinytapeout-02](https://github.com/TinyTapeout/tinytapeout-02)
+documentclass: scrartcl
+date: \today{}
 geometry: margin=2cm
 fontsize: 14pt
 mainfont: Latin Modern Sans
@@ -12,7 +16,7 @@ header-includes:
 
 \pagebreak
 
-# Full GDS
+# Render of whole chip
 
 ![Full GDS](tinytapeout.png)
 
