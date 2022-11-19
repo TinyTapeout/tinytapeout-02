@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import re, glob, json
 import yaml
+import subprocess
 import argparse, logging, shutil, sys, os, collections
 from git_utils import install_artifacts
 import git
@@ -47,6 +48,9 @@ class Projects():
         filler = False
         filler_id = 0
         for index in range(args.limit_num_projects):
+            if args.single and args.single != index:
+                continue
+
             try:
                 git_url = self.project_urls[index]
             except IndexError:
@@ -67,6 +71,9 @@ class Projects():
             logging.debug("loading project yaml")
             # fill projects will load from the fill project's directory
             project.load_yaml()
+
+            if args.harden:
+                project.harden()
 
             if args.update_caravel:
                 logging.debug("copying files to caravel")
@@ -237,6 +244,15 @@ class Project():
     def update(self):
         # do a pull
         pass
+
+    def harden(self):
+        cwd = os.getcwd()
+        os.chdir(self.local_dir)
+        # requires PDK_ROOT, OPENLANE_ROOT & OPENLANE_IMAGE_NAME to be set in local environment
+        harden_cmd = 'docker run --rm -v $OPENLANE_ROOT:/openlane -v $PDK_ROOT:$PDK_ROOT -v $(pwd):/work -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $OPENLANE_IMAGE_NAME /bin/bash -c "./flow.tcl -overwrite -design /work/src -run_path /work/runs -tag wokwi"'
+        env = os.environ.copy()
+        subprocess.run(harden_cmd, shell=True, env=env)
+        os.chdir(cwd)
 
     def __str__(self):
         return f"[{self.index:03} : {self.git_url}]"
@@ -646,7 +662,9 @@ if __name__ == '__main__':
 
     parser.add_argument('--list', help="list projects", action='store_const', const=True)
     parser.add_argument('--clone-all', help="clone all projects", action="store_const", const=True)
+    parser.add_argument('--single', help="do action on single project", type=int)
     parser.add_argument('--update-caravel', help='configure caravel for build', action='store_const', const=True)
+    parser.add_argument('--harden', help="harden project", action="store_const", const=True)
     parser.add_argument('--limit-num-projects', help='only configure for the first n projects', type=int, default=DEFAULT_NUM_PROJECTS)
     parser.add_argument('--test', help='use test projects', action='store_const', const=True)
     parser.add_argument('--debug', help="debug logging", action="store_const", dest="loglevel", const=logging.DEBUG, default=logging.INFO)
