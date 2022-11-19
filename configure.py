@@ -246,6 +246,7 @@ class Project():
         pass
 
     def harden(self):
+        logging.info(f"hardening {self}")
         cwd = os.getcwd()
         os.chdir(self.local_dir)
         # requires PDK_ROOT, OPENLANE_ROOT & OPENLANE_IMAGE_NAME to be set in local environment
@@ -339,7 +340,7 @@ class CaravelConfig():
         with open("openlane/user_project_wrapper/macro.cfg", 'w') as fh:
             fh.write("scan_controller 80 80 N\n")
             for row in range(rows):
-                if(row % 2 == 0):
+                if row % 2 == 0:
                     col_order = range(cols)
                     orientation = 'N'
                 else:
