@@ -62,7 +62,6 @@ class Projects():
                 if filler is False:
                     logging.info(f"cloning & fetching gds for {project}")
                     project.clone()
-                    project.fetch_gds()
 
             # projects should now be installed, so load all the data from the yaml files
             logging.debug("loading project yaml")
@@ -220,12 +219,20 @@ class Project():
         return top_verilog[0]
 
     def clone(self):
-        # could check if it already exists and then skip for faster local builds
-        try:
+        if os.path.exists(self.local_dir):
+            git_remote = list(git.Repo(self.local_dir).remotes[0].urls)[0]
+            if self.git_url == git_remote:
+                logging.info("git repo already exists and is correct - skipping")
+            else:
+                logging.error("git repo exists and remote doesn't match - abort")
+                logging.error(f"{self.git_url} != {git_remote}")
+                exit(1)
+        else:
+            logging.info("clone")
             git.Repo.clone_from(self.git_url, self.local_dir)
-        except git.exc.GitCommandError as e:
-            if 'already exists' in str(e):
-                logging.info("already exists")
+
+            # also fetch the gds
+            self.fetch_gds()
 
     def update(self):
         # do a pull
