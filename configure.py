@@ -73,7 +73,8 @@ class Projects():
             project.load_yaml()
 
             if args.harden:
-                project.harden()
+                if filler is False:
+                    project.harden()
 
             if args.update_caravel:
                 logging.debug("copying files to caravel")
