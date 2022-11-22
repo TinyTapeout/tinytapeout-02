@@ -1,0 +1,50 @@
+name: reharden all gds
+# either manually started, or on a schedule
+on: [ push, workflow_dispatch, pull_request ]
+jobs:
+  allgds:
+    env:
+        OPENLANE_ROOT:  /home/runner/openlane
+        PDK_ROOT:       /home/runner/pdk
+        PDK:            sky130B
+        GH_TOKEN:       ${{ secrets.GH_TOKEN }}
+        GH_USERNAME:    ${{ secrets.GH_USERNAME }}
+    # ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    # need the repo checked out
+    - name: checkout repo
+      uses: actions/checkout@v3
+
+    # build pdk - have to move this back above to get caravel makefile
+    - name: pdk & openlane & precheck
+      run: |
+        make setup
+        make precheck
+
+    # uncompress any gds commited to the repo
+    - name: uncompress gds
+      run: | 
+        make uncompress
+
+    # need python
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.7.7'
+        cache: 'pip'
+    - run: pip install -r requirements.txt
+
+    # install oss fpga tools for yosys to sanity check module ports
+    - name: install oss-cad-suite
+      uses: YosysHQ/setup-oss-cad-suite@v1
+      with:
+          osscadsuite-version: '2022-09-03' # pin the version, latest one fails to work with caravel
+
+    # fetch the repos
+    - name: fetch all
+      run: python ./configure.py --clone-all --debug
+
+    # harden all 
+    - name: reharden
+      run: python ./configure.py --harden
