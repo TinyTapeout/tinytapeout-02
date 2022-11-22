@@ -48,7 +48,7 @@ class Projects():
         filler = False
         filler_id = 0
         for index in range(args.limit_num_projects):
-            if args.single and args.single != index:
+            if args.single != index:
                 continue
 
             try:
@@ -256,10 +256,13 @@ class Project():
         os.chdir(self.local_dir)
 
         # setup user config, not including python fails on github action
-        configure_cmd = 'python ./configure.py --create-user-config'
+        if 'LOCAL' in os.environ:
+            configure_cmd = './configure.py --create-user-config'
+        else:
+            configure_cmd = 'python ./configure.py --create-user-config'
         p = subprocess.run(configure_cmd, shell=True)
         if p.returncode != 0:
-            logging.error(f"configure failed")
+            logging.error("configure failed")
             exit(1)
 
         # requires PDK_ROOT, OPENLANE_ROOT & OPENLANE_IMAGE_NAME to be set in local environment
@@ -267,7 +270,7 @@ class Project():
         env = os.environ.copy()
         p = subprocess.run(harden_cmd, shell=True, env=env)
         if p.returncode != 0:
-            logging.error(f"harden failed")
+            logging.error("harden failed")
             exit(1)
 
         os.chdir(cwd)
@@ -653,6 +656,9 @@ class Docs():
         with open("VERIFICATION.md") as fh:
             doc_verification = fh.read()
 
+        with open("CREDITS.md") as fh:
+            doc_credits = fh.read()
+
         with open(args.dump_markdown, 'w') as fh:
             fh.write(doc_header)
 
@@ -683,11 +689,17 @@ class Docs():
             fh.write(doc_info)
             fh.write("\n\pagebreak\n")
             fh.write(doc_verification)
+            fh.write("\n\pagebreak\n")
+            fh.write(doc_credits)
 
         logging.info(f'wrote markdown to {args.dump_markdown}')
 
         if args.dump_pdf:
-            os.system(f'pandoc --toc --toc-depth 2 --pdf-engine=xelatex -i {args.dump_markdown} -o {args.dump_pdf}')
+            pdf_cmd = f'pandoc --toc --toc-depth 2 --pdf-engine=xelatex -i {args.dump_markdown} -o {args.dump_pdf}'
+            logging.info(pdf_cmd)
+            p = subprocess.run(pdf_cmd, shell=True)
+            if p.returncode != 0:
+                logging.error("pdf command failed")
 
 
 if __name__ == '__main__':
@@ -695,7 +707,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--list', help="list projects", action='store_const', const=True)
     parser.add_argument('--clone-all', help="clone all projects", action="store_const", const=True)
-    parser.add_argument('--single', help="do action on single project", type=int)
+    parser.add_argument('--single', help="do action on single project", type=int, default=-1)
     parser.add_argument('--update-caravel', help='configure caravel for build', action='store_const', const=True)
     parser.add_argument('--harden', help="harden project", action="store_const", const=True)
     parser.add_argument('--limit-num-projects', help='only configure for the first n projects', type=int, default=DEFAULT_NUM_PROJECTS)
