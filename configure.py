@@ -13,7 +13,7 @@ from signal import signal, SIGPIPE, SIG_DFL
 signal(SIGPIPE, SIG_DFL)
 
 tmp_dir = '/tmp/tt'
-DEFAULT_NUM_PROJECTS = 473
+DEFAULT_NUM_PROJECTS = 250
 
 
 def unique(duplist):
@@ -250,19 +250,26 @@ class Project():
         logging.info(f"hardening {self}")
 
         # copy golden config
-        shutil.copyfile('config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
+        shutil.copyfile('golden_config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
 
         cwd = os.getcwd()
         os.chdir(self.local_dir)
 
         # setup user config
         configure_cmd = './configure.py --create-user-config'
-        subprocess.run(configure_cmd, shell=True)
+        p = subprocess.run(configure_cmd, shell=True)
+        if p.returncode != 0:
+            logging.error(f"configure failed")
+            exit(1)
 
         # requires PDK_ROOT, OPENLANE_ROOT & OPENLANE_IMAGE_NAME to be set in local environment
         harden_cmd = 'docker run --rm -v $OPENLANE_ROOT:/openlane -v $PDK_ROOT:$PDK_ROOT -v $(pwd):/work -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $OPENLANE_IMAGE_NAME /bin/bash -c "./flow.tcl -overwrite -design /work/src -run_path /work/runs -tag wokwi"'
         env = os.environ.copy()
-        subprocess.run(harden_cmd, shell=True, env=env)
+        p = subprocess.run(harden_cmd, shell=True, env=env)
+        if p.returncode != 0:
+            logging.error(f"harden failed")
+            exit(1)
+
         os.chdir(cwd)
 
     def __str__(self):
@@ -335,33 +342,35 @@ class CaravelConfig():
     # create macro file & positions, power hooks
     def create_macro_config(self):
         # array size
-        rows    = 25
-        cols    = 19
+        rows    = 18
+        cols    = 14
 
         # start point (lower left)
-        start_x = 80
-        start_y = 80
+        start_x = 50
+        start_y = 95
 
         # module block sizes
         scanchain_w = 30
         scanchain_spc = 6
-        module_w = 90
-        module_h = 120
+        module_w = 150
+        module_h = 170
 
         # how much x & y space to leave between blocks
-        space_x = 19
+        space_x = 15
         space_y = 15
 
         # step sizes
         step_x  = scanchain_w + module_w + scanchain_spc + space_x
         step_y  = module_h + space_y
 
+        logging.info(f"start_x {start_x} start_y {start_y} step_x {step_x} step_y {step_y }")
+
         num_macros_placed = 0
 
         # macro.cfg: where macros are placed
         logging.info("creating macro.cfg")
         with open("openlane/user_project_wrapper/macro.cfg", 'w') as fh:
-            fh.write("scan_controller 80 80 N\n")
+            fh.write("scan_controller 100 100 N\n")
             for row in range(rows):
                 if row % 2 == 0:
                     col_order = range(cols)

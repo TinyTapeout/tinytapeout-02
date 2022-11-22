@@ -86,7 +86,7 @@ module user_project_wrapper #(
     wire sc_clk_out, sc_data_out, sc_latch_out, sc_scan_out;
     wire sc_clk_in,  sc_data_in;
 
-    scan_controller #(.NUM_DESIGNS(473)) scan_controller (
+    scan_controller #(.NUM_DESIGNS(250)) scan_controller (
        .clk                    (wb_clk_i),
        .reset                  (wb_rst_i),
        .active_select          (io_in[20:12]),
@@ -136,7 +136,7 @@ module user_project_wrapper #(
         .io_out (sw_000_module_data_out)
     );
 
-    // [001] https://github.com/Fraserbc/tt02-simon
+    // [001] https://github.com/TinyTapeout/tt02-test-7seg
     wire sw_001_clk_out, sw_001_data_out, sw_001_scan_out, sw_001_latch_out;
     wire [7:0] sw_001_module_data_in;
     wire [7:0] sw_001_module_data_out;
@@ -153,12 +153,12 @@ module user_project_wrapper #(
         .module_data_out (sw_001_module_data_out)
     );
 
-    fraserbc_simon fraserbc_simon_001 (
+    user_module_340805072482992722 user_module_340805072482992722_001 (
         .io_in  (sw_001_module_data_in),
         .io_out (sw_001_module_data_out)
     );
 
-    // [002] https://github.com/TomKeddie/tinytapeout-2022-2
+    // [002] https://github.com/TinyTapeout/tt02-test-invert
     wire sw_002_clk_out, sw_002_data_out, sw_002_scan_out, sw_002_latch_out;
     wire [7:0] sw_002_module_data_in;
     wire [7:0] sw_002_module_data_out;
@@ -175,12 +175,12 @@ module user_project_wrapper #(
         .module_data_out (sw_002_module_data_out)
     );
 
-    tomkeddie_top_tto tomkeddie_top_tto_002 (
+    user_module_341535056611770964 user_module_341535056611770964_002 (
         .io_in  (sw_002_module_data_in),
         .io_out (sw_002_module_data_out)
     );
 
-    // [003] https://github.com/chrisruk/matrixchip
+    // [003] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_003_clk_out, sw_003_data_out, sw_003_scan_out, sw_003_latch_out;
     wire [7:0] sw_003_module_data_in;
     wire [7:0] sw_003_module_data_out;
@@ -197,12 +197,12 @@ module user_project_wrapper #(
         .module_data_out (sw_003_module_data_out)
     );
 
-    chrisruk_matrix chrisruk_matrix_003 (
+    user_module_339501025136214612 user_module_339501025136214612_003 (
         .io_in  (sw_003_module_data_in),
         .io_out (sw_003_module_data_out)
     );
 
-    // [004] https://github.com/loxodes/tt02-submission-loxodes
+    // [004] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_004_clk_out, sw_004_data_out, sw_004_scan_out, sw_004_latch_out;
     wire [7:0] sw_004_module_data_in;
     wire [7:0] sw_004_module_data_out;
@@ -219,12 +219,12 @@ module user_project_wrapper #(
         .module_data_out (sw_004_module_data_out)
     );
 
-    loxodes_sequencer loxodes_sequencer_004 (
+    user_module_339501025136214612 user_module_339501025136214612_004 (
         .io_in  (sw_004_module_data_in),
         .io_out (sw_004_module_data_out)
     );
 
-    // [005] https://github.com/migcorre/tt02-dc
+    // [005] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_005_clk_out, sw_005_data_out, sw_005_scan_out, sw_005_latch_out;
     wire [7:0] sw_005_module_data_in;
     wire [7:0] sw_005_module_data_out;
@@ -241,12 +241,12 @@ module user_project_wrapper #(
         .module_data_out (sw_005_module_data_out)
     );
 
-    migcorre_pwm migcorre_pwm_005 (
+    user_module_339501025136214612 user_module_339501025136214612_005 (
         .io_in  (sw_005_module_data_in),
         .io_out (sw_005_module_data_out)
     );
 
-    // [006] https://github.com/grayresearch/tt02-s4ga
+    // [006] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_006_clk_out, sw_006_data_out, sw_006_scan_out, sw_006_latch_out;
     wire [7:0] sw_006_module_data_in;
     wire [7:0] sw_006_module_data_out;
@@ -263,12 +263,12 @@ module user_project_wrapper #(
         .module_data_out (sw_006_module_data_out)
     );
 
-    s4ga s4ga_006 (
+    user_module_339501025136214612 user_module_339501025136214612_006 (
         .io_in  (sw_006_module_data_in),
         .io_out (sw_006_module_data_out)
     );
 
-    // [007] https://github.com/ryancor/tt02-submission-template
+    // [007] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_007_clk_out, sw_007_data_out, sw_007_scan_out, sw_007_latch_out;
     wire [7:0] sw_007_module_data_in;
     wire [7:0] sw_007_module_data_out;
@@ -285,12 +285,12 @@ module user_project_wrapper #(
         .module_data_out (sw_007_module_data_out)
     );
 
-    alu_top alu_top_007 (
+    user_module_339501025136214612 user_module_339501025136214612_007 (
         .io_in  (sw_007_module_data_in),
         .io_out (sw_007_module_data_out)
     );
 
-    // [008] https://github.com/AidanGood/tt02-McCoy
+    // [008] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_008_clk_out, sw_008_data_out, sw_008_scan_out, sw_008_latch_out;
     wire [7:0] sw_008_module_data_in;
     wire [7:0] sw_008_module_data_out;
@@ -307,12 +307,12 @@ module user_project_wrapper #(
         .module_data_out (sw_008_module_data_out)
     );
 
-    aidan_McCoy aidan_McCoy_008 (
+    user_module_339501025136214612 user_module_339501025136214612_008 (
         .io_in  (sw_008_module_data_in),
         .io_out (sw_008_module_data_out)
     );
 
-    // [009] https://github.com/azdle/binary-clock-asic
+    // [009] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_009_clk_out, sw_009_data_out, sw_009_scan_out, sw_009_latch_out;
     wire [7:0] sw_009_module_data_in;
     wire [7:0] sw_009_module_data_out;
@@ -329,12 +329,12 @@ module user_project_wrapper #(
         .module_data_out (sw_009_module_data_out)
     );
 
-    azdle_binary_clock azdle_binary_clock_009 (
+    user_module_339501025136214612 user_module_339501025136214612_009 (
         .io_in  (sw_009_module_data_in),
         .io_out (sw_009_module_data_out)
     );
 
-    // [010] https://github.com/justinP-wrk/tt02-TinySensor
+    // [010] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_010_clk_out, sw_010_data_out, sw_010_scan_out, sw_010_latch_out;
     wire [7:0] sw_010_module_data_in;
     wire [7:0] sw_010_module_data_out;
@@ -351,12 +351,12 @@ module user_project_wrapper #(
         .module_data_out (sw_010_module_data_out)
     );
 
-    user_module_347787021138264660 user_module_347787021138264660_010 (
+    user_module_339501025136214612 user_module_339501025136214612_010 (
         .io_in  (sw_010_module_data_in),
         .io_out (sw_010_module_data_out)
     );
 
-    // [011] https://github.com/jar/tt02_sram
+    // [011] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_011_clk_out, sw_011_data_out, sw_011_scan_out, sw_011_latch_out;
     wire [7:0] sw_011_module_data_in;
     wire [7:0] sw_011_module_data_out;
@@ -373,12 +373,12 @@ module user_project_wrapper #(
         .module_data_out (sw_011_module_data_out)
     );
 
-    jar_sram_top jar_sram_top_011 (
+    user_module_339501025136214612 user_module_339501025136214612_011 (
         .io_in  (sw_011_module_data_in),
         .io_out (sw_011_module_data_out)
     );
 
-    // [012] https://github.com/JensIMS/tt02-trafficlight
+    // [012] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_012_clk_out, sw_012_data_out, sw_012_scan_out, sw_012_latch_out;
     wire [7:0] sw_012_module_data_in;
     wire [7:0] sw_012_module_data_out;
@@ -395,12 +395,12 @@ module user_project_wrapper #(
         .module_data_out (sw_012_module_data_out)
     );
 
-    user_module_347690870424732244 user_module_347690870424732244_012 (
+    user_module_339501025136214612 user_module_339501025136214612_012 (
         .io_in  (sw_012_module_data_in),
         .io_out (sw_012_module_data_out)
     );
 
-    // [013] https://github.com/svd321/tt02-Ising
+    // [013] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_013_clk_out, sw_013_data_out, sw_013_scan_out, sw_013_latch_out;
     wire [7:0] sw_013_module_data_in;
     wire [7:0] sw_013_module_data_out;
@@ -417,12 +417,12 @@ module user_project_wrapper #(
         .module_data_out (sw_013_module_data_out)
     );
 
-    user_module_347592305412145748 user_module_347592305412145748_013 (
+    user_module_339501025136214612 user_module_339501025136214612_013 (
         .io_in  (sw_013_module_data_in),
         .io_out (sw_013_module_data_out)
     );
 
-    // [014] https://github.com/89Mods/tt2-AvalonSemi-5401
+    // [014] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_014_clk_out, sw_014_data_out, sw_014_scan_out, sw_014_latch_out;
     wire [7:0] sw_014_module_data_in;
     wire [7:0] sw_014_module_data_out;
@@ -439,12 +439,12 @@ module user_project_wrapper #(
         .module_data_out (sw_014_module_data_out)
     );
 
-    tholin_avalonsemi_5401 tholin_avalonsemi_5401_014 (
+    user_module_339501025136214612 user_module_339501025136214612_014 (
         .io_in  (sw_014_module_data_in),
         .io_out (sw_014_module_data_out)
     );
 
-    // [015] https://github.com/RiceShelley/tiny-fft
+    // [015] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_015_clk_out, sw_015_data_out, sw_015_scan_out, sw_015_latch_out;
     wire [7:0] sw_015_module_data_in;
     wire [7:0] sw_015_module_data_out;
@@ -461,12 +461,12 @@ module user_project_wrapper #(
         .module_data_out (sw_015_module_data_out)
     );
 
-    tiny_fft tiny_fft_015 (
+    user_module_339501025136214612 user_module_339501025136214612_015 (
         .io_in  (sw_015_module_data_in),
         .io_out (sw_015_module_data_out)
     );
 
-    // [016] https://github.com/moyesw/tt02-moyesw-StreamIntegrator
+    // [016] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_016_clk_out, sw_016_data_out, sw_016_scan_out, sw_016_latch_out;
     wire [7:0] sw_016_module_data_in;
     wire [7:0] sw_016_module_data_out;
@@ -483,12 +483,12 @@ module user_project_wrapper #(
         .module_data_out (sw_016_module_data_out)
     );
 
-    user_module_346553315158393428 user_module_346553315158393428_016 (
+    user_module_339501025136214612 user_module_339501025136214612_016 (
         .io_in  (sw_016_module_data_in),
         .io_out (sw_016_module_data_out)
     );
 
-    // [017] https://github.com/Tschucker/tt02-submission-tiny-fir
+    // [017] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_017_clk_out, sw_017_data_out, sw_017_scan_out, sw_017_latch_out;
     wire [7:0] sw_017_module_data_in;
     wire [7:0] sw_017_module_data_out;
@@ -505,12 +505,12 @@ module user_project_wrapper #(
         .module_data_out (sw_017_module_data_out)
     );
 
-    user_module_347894637149553236 user_module_347894637149553236_017 (
+    user_module_339501025136214612 user_module_339501025136214612_017 (
         .io_in  (sw_017_module_data_in),
         .io_out (sw_017_module_data_out)
     );
 
-    // [018] https://github.com/steieio/tt02-submission-universal-sr
+    // [018] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_018_clk_out, sw_018_data_out, sw_018_scan_out, sw_018_latch_out;
     wire [7:0] sw_018_module_data_in;
     wire [7:0] sw_018_module_data_out;
@@ -527,12 +527,12 @@ module user_project_wrapper #(
         .module_data_out (sw_018_module_data_out)
     );
 
-    user_module_346916357828248146 user_module_346916357828248146_018 (
+    user_module_339501025136214612 user_module_339501025136214612_018 (
         .io_in  (sw_018_module_data_in),
         .io_out (sw_018_module_data_out)
     );
 
-    // [019] https://github.com/leardilap/tt02-LUTRAM
+    // [019] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_019_clk_out, sw_019_data_out, sw_019_scan_out, sw_019_latch_out;
     wire [7:0] sw_019_module_data_in;
     wire [7:0] sw_019_module_data_out;
@@ -549,12 +549,12 @@ module user_project_wrapper #(
         .module_data_out (sw_019_module_data_out)
     );
 
-    user_module_347594509754827347 user_module_347594509754827347_019 (
+    user_module_339501025136214612 user_module_339501025136214612_019 (
         .io_in  (sw_019_module_data_in),
         .io_out (sw_019_module_data_out)
     );
 
-    // [020] https://github.com/ekliptik/tt02-chase-the-beat
+    // [020] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_020_clk_out, sw_020_data_out, sw_020_scan_out, sw_020_latch_out;
     wire [7:0] sw_020_module_data_in;
     wire [7:0] sw_020_module_data_out;
@@ -571,12 +571,12 @@ module user_project_wrapper #(
         .module_data_out (sw_020_module_data_out)
     );
 
-    chase_the_beat chase_the_beat_020 (
+    user_module_339501025136214612 user_module_339501025136214612_020 (
         .io_in  (sw_020_module_data_in),
         .io_out (sw_020_module_data_out)
     );
 
-    // [021] https://github.com/maehw/tt02-bcd-7segment-encoder
+    // [021] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_021_clk_out, sw_021_data_out, sw_021_scan_out, sw_021_latch_out;
     wire [7:0] sw_021_module_data_in;
     wire [7:0] sw_021_module_data_out;
@@ -593,12 +593,12 @@ module user_project_wrapper #(
         .module_data_out (sw_021_module_data_out)
     );
 
-    user_module_347688030570545747 user_module_347688030570545747_021 (
+    user_module_339501025136214612 user_module_339501025136214612_021 (
         .io_in  (sw_021_module_data_in),
         .io_out (sw_021_module_data_out)
     );
 
-    // [022] https://github.com/benevpi/tt02-LED-flasher
+    // [022] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_022_clk_out, sw_022_data_out, sw_022_scan_out, sw_022_latch_out;
     wire [7:0] sw_022_module_data_in;
     wire [7:0] sw_022_module_data_out;
@@ -615,12 +615,12 @@ module user_project_wrapper #(
         .module_data_out (sw_022_module_data_out)
     );
 
-    user_module_342981109408072274 user_module_342981109408072274_022 (
+    user_module_339501025136214612 user_module_339501025136214612_022 (
         .io_in  (sw_022_module_data_in),
         .io_out (sw_022_module_data_out)
     );
 
-    // [023] https://github.com/kuriousd/tt02-4bit-multiplier
+    // [023] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_023_clk_out, sw_023_data_out, sw_023_scan_out, sw_023_latch_out;
     wire [7:0] sw_023_module_data_in;
     wire [7:0] sw_023_module_data_out;
@@ -637,12 +637,12 @@ module user_project_wrapper #(
         .module_data_out (sw_023_module_data_out)
     );
 
-    asic_multiplier_wrapper asic_multiplier_wrapper_023 (
+    user_module_339501025136214612 user_module_339501025136214612_023 (
         .io_in  (sw_023_module_data_in),
         .io_out (sw_023_module_data_out)
     );
 
-    // [024] https://github.com/89Mods/tt2-avalonsemi-TBB1143
+    // [024] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_024_clk_out, sw_024_data_out, sw_024_scan_out, sw_024_latch_out;
     wire [7:0] sw_024_module_data_in;
     wire [7:0] sw_024_module_data_out;
@@ -659,12 +659,12 @@ module user_project_wrapper #(
         .module_data_out (sw_024_module_data_out)
     );
 
-    tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143_024 (
+    user_module_339501025136214612 user_module_339501025136214612_024 (
         .io_in  (sw_024_module_data_in),
         .io_out (sw_024_module_data_out)
     );
 
-    // [025] https://github.com/TomKeddie/tinytapeout-2022-2a
+    // [025] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_025_clk_out, sw_025_data_out, sw_025_scan_out, sw_025_latch_out;
     wire [7:0] sw_025_module_data_in;
     wire [7:0] sw_025_module_data_out;
@@ -681,12 +681,12 @@ module user_project_wrapper #(
         .module_data_out (sw_025_module_data_out)
     );
 
-    tomkeddie_top_tto_a tomkeddie_top_tto_a_025 (
+    user_module_339501025136214612 user_module_339501025136214612_025 (
         .io_in  (sw_025_module_data_in),
         .io_out (sw_025_module_data_out)
     );
 
-    // [026] https://github.com/mm21/tinytapeout2-led-matrix
+    // [026] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_026_clk_out, sw_026_data_out, sw_026_scan_out, sw_026_latch_out;
     wire [7:0] sw_026_module_data_in;
     wire [7:0] sw_026_module_data_out;
@@ -703,12 +703,12 @@ module user_project_wrapper #(
         .module_data_out (sw_026_module_data_out)
     );
 
-    mm21_LEDMatrixTop mm21_LEDMatrixTop_026 (
+    user_module_339501025136214612 user_module_339501025136214612_026 (
         .io_in  (sw_026_module_data_in),
         .io_out (sw_026_module_data_out)
     );
 
-    // [027] https://github.com/argunda/tt02-TinyPFD
+    // [027] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_027_clk_out, sw_027_data_out, sw_027_scan_out, sw_027_latch_out;
     wire [7:0] sw_027_module_data_in;
     wire [7:0] sw_027_module_data_out;
@@ -725,12 +725,12 @@ module user_project_wrapper #(
         .module_data_out (sw_027_module_data_out)
     );
 
-    user_module_348195845106041428 user_module_348195845106041428_027 (
+    user_module_339501025136214612 user_module_339501025136214612_027 (
         .io_in  (sw_027_module_data_in),
         .io_out (sw_027_module_data_out)
     );
 
-    // [028] https://github.com/meriac/loading-animation
+    // [028] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_028_clk_out, sw_028_data_out, sw_028_scan_out, sw_028_latch_out;
     wire [7:0] sw_028_module_data_in;
     wire [7:0] sw_028_module_data_out;
@@ -747,12 +747,12 @@ module user_project_wrapper #(
         .module_data_out (sw_028_module_data_out)
     );
 
-    user_module_348121131386929746 user_module_348121131386929746_028 (
+    user_module_339501025136214612 user_module_339501025136214612_028 (
         .io_in  (sw_028_module_data_in),
         .io_out (sw_028_module_data_out)
     );
 
-    // [029] https://github.com/yubex/tt02-tiny_egg_timer
+    // [029] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_029_clk_out, sw_029_data_out, sw_029_scan_out, sw_029_latch_out;
     wire [7:0] sw_029_module_data_in;
     wire [7:0] sw_029_module_data_out;
@@ -769,12 +769,12 @@ module user_project_wrapper #(
         .module_data_out (sw_029_module_data_out)
     );
 
-    yubex_egg_timer yubex_egg_timer_029 (
+    user_module_339501025136214612 user_module_339501025136214612_029 (
         .io_in  (sw_029_module_data_in),
         .io_out (sw_029_module_data_out)
     );
 
-    // [030] https://github.com/peppergrayxyz/Potato-1
+    // [030] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_030_clk_out, sw_030_data_out, sw_030_scan_out, sw_030_latch_out;
     wire [7:0] sw_030_module_data_in;
     wire [7:0] sw_030_module_data_out;
@@ -791,12 +791,12 @@ module user_project_wrapper #(
         .module_data_out (sw_030_module_data_out)
     );
 
-    xyz_peppergray_Potato1_top xyz_peppergray_Potato1_top_030 (
+    user_module_339501025136214612 user_module_339501025136214612_030 (
         .io_in  (sw_030_module_data_in),
         .io_out (sw_030_module_data_out)
     );
 
-    // [031] https://github.com/zoent/tt02-zoe-chip
+    // [031] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_031_clk_out, sw_031_data_out, sw_031_scan_out, sw_031_latch_out;
     wire [7:0] sw_031_module_data_in;
     wire [7:0] sw_031_module_data_out;
@@ -813,12 +813,12 @@ module user_project_wrapper #(
         .module_data_out (sw_031_module_data_out)
     );
 
-    zoechip zoechip_031 (
+    user_module_339501025136214612 user_module_339501025136214612_031 (
         .io_in  (sw_031_module_data_in),
         .io_out (sw_031_module_data_out)
     );
 
-    // [032] https://github.com/nanikgeorge/tt02-submission-template
+    // [032] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_032_clk_out, sw_032_data_out, sw_032_scan_out, sw_032_latch_out;
     wire [7:0] sw_032_module_data_in;
     wire [7:0] sw_032_module_data_out;
@@ -835,12 +835,12 @@ module user_project_wrapper #(
         .module_data_out (sw_032_module_data_out)
     );
 
-    user_module_348255968419643987 user_module_348255968419643987_032 (
+    user_module_339501025136214612 user_module_339501025136214612_032 (
         .io_in  (sw_032_module_data_in),
         .io_out (sw_032_module_data_out)
     );
 
-    // [033] https://github.com/mbikovitsky/tt02-lfsr
+    // [033] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_033_clk_out, sw_033_data_out, sw_033_scan_out, sw_033_latch_out;
     wire [7:0] sw_033_module_data_in;
     wire [7:0] sw_033_module_data_out;
@@ -857,12 +857,12 @@ module user_project_wrapper #(
         .module_data_out (sw_033_module_data_out)
     );
 
-    mbikovitsky_top mbikovitsky_top_033 (
+    user_module_339501025136214612 user_module_339501025136214612_033 (
         .io_in  (sw_033_module_data_in),
         .io_out (sw_033_module_data_out)
     );
 
-    // [034] https://github.com/teaandtechtime/tt02-submission-prbs15
+    // [034] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_034_clk_out, sw_034_data_out, sw_034_scan_out, sw_034_latch_out;
     wire [7:0] sw_034_module_data_in;
     wire [7:0] sw_034_module_data_out;
@@ -879,12 +879,12 @@ module user_project_wrapper #(
         .module_data_out (sw_034_module_data_out)
     );
 
-    user_module_348260124451668562 user_module_348260124451668562_034 (
+    user_module_339501025136214612 user_module_339501025136214612_034 (
         .io_in  (sw_034_module_data_in),
         .io_out (sw_034_module_data_out)
     );
 
-    // [035] https://github.com/rolfmobile99/tt02-submission-template
+    // [035] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_035_clk_out, sw_035_data_out, sw_035_scan_out, sw_035_latch_out;
     wire [7:0] sw_035_module_data_in;
     wire [7:0] sw_035_module_data_out;
@@ -901,12 +901,12 @@ module user_project_wrapper #(
         .module_data_out (sw_035_module_data_out)
     );
 
-    rolfmobile99_alu_fsm_top rolfmobile99_alu_fsm_top_035 (
+    user_module_339501025136214612 user_module_339501025136214612_035 (
         .io_in  (sw_035_module_data_in),
         .io_out (sw_035_module_data_out)
     );
 
-    // [036] https://github.com/jar/tt02_freespeech
+    // [036] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_036_clk_out, sw_036_data_out, sw_036_scan_out, sw_036_latch_out;
     wire [7:0] sw_036_module_data_in;
     wire [7:0] sw_036_module_data_out;
@@ -923,12 +923,12 @@ module user_project_wrapper #(
         .module_data_out (sw_036_module_data_out)
     );
 
-    jar_illegal_logic jar_illegal_logic_036 (
+    user_module_339501025136214612 user_module_339501025136214612_036 (
         .io_in  (sw_036_module_data_in),
         .io_out (sw_036_module_data_out)
     );
 
-    // [037] https://github.com/alanvgreen/tt02-siren
+    // [037] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_037_clk_out, sw_037_data_out, sw_037_scan_out, sw_037_latch_out;
     wire [7:0] sw_037_module_data_in;
     wire [7:0] sw_037_module_data_out;
@@ -945,12 +945,12 @@ module user_project_wrapper #(
         .module_data_out (sw_037_module_data_out)
     );
 
-    user_module_348242239268323922 user_module_348242239268323922_037 (
+    user_module_339501025136214612 user_module_339501025136214612_037 (
         .io_in  (sw_037_module_data_in),
         .io_out (sw_037_module_data_out)
     );
 
-    // [038] https://github.com/TheZoq2/smolfpga
+    // [038] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_038_clk_out, sw_038_data_out, sw_038_scan_out, sw_038_latch_out;
     wire [7:0] sw_038_module_data_in;
     wire [7:0] sw_038_module_data_out;
@@ -967,12 +967,12 @@ module user_project_wrapper #(
         .module_data_out (sw_038_module_data_out)
     );
 
-    thezoq2_yafpga thezoq2_yafpga_038 (
+    user_module_339501025136214612 user_module_339501025136214612_038 (
         .io_in  (sw_038_module_data_in),
         .io_out (sw_038_module_data_out)
     );
 
-    // [039] https://github.com/moyesw/TT02-M0
+    // [039] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_039_clk_out, sw_039_data_out, sw_039_scan_out, sw_039_latch_out;
     wire [7:0] sw_039_module_data_in;
     wire [7:0] sw_039_module_data_out;
@@ -989,12 +989,12 @@ module user_project_wrapper #(
         .module_data_out (sw_039_module_data_out)
     );
 
-    moyes0_top_module moyes0_top_module_039 (
+    user_module_339501025136214612 user_module_339501025136214612_039 (
         .io_in  (sw_039_module_data_in),
         .io_out (sw_039_module_data_out)
     );
 
-    // [040] https://github.com/yupferris/bitslam
+    // [040] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_040_clk_out, sw_040_data_out, sw_040_scan_out, sw_040_latch_out;
     wire [7:0] sw_040_module_data_in;
     wire [7:0] sw_040_module_data_out;
@@ -1011,12 +1011,12 @@ module user_project_wrapper #(
         .module_data_out (sw_040_module_data_out)
     );
 
-    yupferris_bitslam yupferris_bitslam_040 (
+    user_module_339501025136214612 user_module_339501025136214612_040 (
         .io_in  (sw_040_module_data_in),
         .io_out (sw_040_module_data_out)
     );
 
-    // [041] https://github.com/ThorKn/tinytapeout02_pattern_player
+    // [041] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_041_clk_out, sw_041_data_out, sw_041_scan_out, sw_041_latch_out;
     wire [7:0] sw_041_module_data_in;
     wire [7:0] sw_041_module_data_out;
@@ -1033,12 +1033,12 @@ module user_project_wrapper #(
         .module_data_out (sw_041_module_data_out)
     );
 
-    user_module_341620484740219475 user_module_341620484740219475_041 (
+    user_module_339501025136214612 user_module_339501025136214612_041 (
         .io_in  (sw_041_module_data_in),
         .io_out (sw_041_module_data_out)
     );
 
-    // [042] https://github.com/proppy/tt02-xls-popcount
+    // [042] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_042_clk_out, sw_042_data_out, sw_042_scan_out, sw_042_latch_out;
     wire [7:0] sw_042_module_data_in;
     wire [7:0] sw_042_module_data_out;
@@ -1055,12 +1055,12 @@ module user_project_wrapper #(
         .module_data_out (sw_042_module_data_out)
     );
 
-    top top_042 (
+    user_module_339501025136214612 user_module_339501025136214612_042 (
         .io_in  (sw_042_module_data_in),
         .io_out (sw_042_module_data_out)
     );
 
-    // [043] https://github.com/jeanthom/tt02-rc5-receiver
+    // [043] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_043_clk_out, sw_043_data_out, sw_043_scan_out, sw_043_latch_out;
     wire [7:0] sw_043_module_data_in;
     wire [7:0] sw_043_module_data_out;
@@ -1077,12 +1077,12 @@ module user_project_wrapper #(
         .module_data_out (sw_043_module_data_out)
     );
 
-    rc5_top rc5_top_043 (
+    user_module_339501025136214612 user_module_339501025136214612_043 (
         .io_in  (sw_043_module_data_in),
         .io_out (sw_043_module_data_out)
     );
 
-    // [044] https://github.com/mmolteni-secpat/tinytapeout02_chiDOM
+    // [044] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_044_clk_out, sw_044_data_out, sw_044_scan_out, sw_044_latch_out;
     wire [7:0] sw_044_module_data_in;
     wire [7:0] sw_044_module_data_out;
@@ -1099,12 +1099,12 @@ module user_project_wrapper #(
         .module_data_out (sw_044_module_data_out)
     );
 
-    user_module_341614374571475540 user_module_341614374571475540_044 (
+    user_module_339501025136214612 user_module_339501025136214612_044 (
         .io_in  (sw_044_module_data_in),
         .io_out (sw_044_module_data_out)
     );
 
-    // [045] https://github.com/meriac/tt02-play-tune
+    // [045] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_045_clk_out, sw_045_data_out, sw_045_scan_out, sw_045_latch_out;
     wire [7:0] sw_045_module_data_in;
     wire [7:0] sw_045_module_data_out;
@@ -1121,12 +1121,12 @@ module user_project_wrapper #(
         .module_data_out (sw_045_module_data_out)
     );
 
-    meriac_tt02_play_tune meriac_tt02_play_tune_045 (
+    user_module_339501025136214612 user_module_339501025136214612_045 (
         .io_in  (sw_045_module_data_in),
         .io_out (sw_045_module_data_out)
     );
 
-    // [046] https://github.com/phasenoisepon/tt02-phasenoisepon
+    // [046] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_046_clk_out, sw_046_data_out, sw_046_scan_out, sw_046_latch_out;
     wire [7:0] sw_046_module_data_in;
     wire [7:0] sw_046_module_data_out;
@@ -1143,12 +1143,12 @@ module user_project_wrapper #(
         .module_data_out (sw_046_module_data_out)
     );
 
-    phasenoisepon_seven_segment_seconds phasenoisepon_seven_segment_seconds_046 (
+    user_module_339501025136214612 user_module_339501025136214612_046 (
         .io_in  (sw_046_module_data_in),
         .io_out (sw_046_module_data_out)
     );
 
-    // [047] https://github.com/13arn/tt02_counter_steamdeck
+    // [047] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_047_clk_out, sw_047_data_out, sw_047_scan_out, sw_047_latch_out;
     wire [7:0] sw_047_module_data_in;
     wire [7:0] sw_047_module_data_out;
@@ -1165,12 +1165,12 @@ module user_project_wrapper #(
         .module_data_out (sw_047_module_data_out)
     );
 
-    user_module_341541108650607187 user_module_341541108650607187_047 (
+    user_module_339501025136214612 user_module_339501025136214612_047 (
         .io_in  (sw_047_module_data_in),
         .io_out (sw_047_module_data_out)
     );
 
-    // [048] https://github.com/ThorKn/tinytapeout02_shiftregister_challenge
+    // [048] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_048_clk_out, sw_048_data_out, sw_048_scan_out, sw_048_latch_out;
     wire [7:0] sw_048_module_data_in;
     wire [7:0] sw_048_module_data_out;
@@ -1187,12 +1187,12 @@ module user_project_wrapper #(
         .module_data_out (sw_048_module_data_out)
     );
 
-    user_module_341516949939814994 user_module_341516949939814994_048 (
+    user_module_339501025136214612 user_module_339501025136214612_048 (
         .io_in  (sw_048_module_data_in),
         .io_out (sw_048_module_data_out)
     );
 
-    // [049] https://github.com/89Mods/tt2-4x4-multiply
+    // [049] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_049_clk_out, sw_049_data_out, sw_049_scan_out, sw_049_latch_out;
     wire [7:0] sw_049_module_data_in;
     wire [7:0] sw_049_module_data_out;
@@ -1209,12 +1209,12 @@ module user_project_wrapper #(
         .module_data_out (sw_049_module_data_out)
     );
 
-    tt2_tholin_multiplier tt2_tholin_multiplier_049 (
+    user_module_339501025136214612 user_module_339501025136214612_049 (
         .io_in  (sw_049_module_data_in),
         .io_out (sw_049_module_data_out)
     );
 
-    // [050] https://github.com/89Mods/tt2-multiplexed-counter
+    // [050] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_050_clk_out, sw_050_data_out, sw_050_scan_out, sw_050_latch_out;
     wire [7:0] sw_050_module_data_in;
     wire [7:0] sw_050_module_data_out;
@@ -1231,12 +1231,12 @@ module user_project_wrapper #(
         .module_data_out (sw_050_module_data_out)
     );
 
-    tt2_tholin_multiplexed_counter tt2_tholin_multiplexed_counter_050 (
+    user_module_339501025136214612 user_module_339501025136214612_050 (
         .io_in  (sw_050_module_data_in),
         .io_out (sw_050_module_data_out)
     );
 
-    // [051] https://github.com/QuantamHD/ethan-evan-random-numbers
+    // [051] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_051_clk_out, sw_051_data_out, sw_051_scan_out, sw_051_latch_out;
     wire [7:0] sw_051_module_data_in;
     wire [7:0] sw_051_module_data_out;
@@ -1253,12 +1253,12 @@ module user_project_wrapper #(
         .module_data_out (sw_051_module_data_out)
     );
 
-    xor_shift32_quantamhd xor_shift32_quantamhd_051 (
+    user_module_339501025136214612 user_module_339501025136214612_051 (
         .io_in  (sw_051_module_data_in),
         .io_out (sw_051_module_data_out)
     );
 
-    // [052] https://github.com/QuantamHD/evan-submission
+    // [052] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_052_clk_out, sw_052_data_out, sw_052_scan_out, sw_052_latch_out;
     wire [7:0] sw_052_module_data_in;
     wire [7:0] sw_052_module_data_out;
@@ -1275,12 +1275,12 @@ module user_project_wrapper #(
         .module_data_out (sw_052_module_data_out)
     );
 
-    xor_shift32_evango xor_shift32_evango_052 (
+    user_module_339501025136214612 user_module_339501025136214612_052 (
         .io_in  (sw_052_module_data_in),
         .io_out (sw_052_module_data_out)
     );
 
-    // [053] https://github.com/FlyGoat/tt02-play-tune-flygoat
+    // [053] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_053_clk_out, sw_053_data_out, sw_053_scan_out, sw_053_latch_out;
     wire [7:0] sw_053_module_data_in;
     wire [7:0] sw_053_module_data_out;
@@ -1297,12 +1297,12 @@ module user_project_wrapper #(
         .module_data_out (sw_053_module_data_out)
     );
 
-    flygoat_tt02_play_tune flygoat_tt02_play_tune_053 (
+    user_module_339501025136214612 user_module_339501025136214612_053 (
         .io_in  (sw_053_module_data_in),
         .io_out (sw_053_module_data_out)
     );
 
-    // [054] https://github.com/jleightcap/clash-silicon-tinytapeout
+    // [054] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_054_clk_out, sw_054_data_out, sw_054_scan_out, sw_054_latch_out;
     wire [7:0] sw_054_module_data_in;
     wire [7:0] sw_054_module_data_out;
@@ -1319,12 +1319,12 @@ module user_project_wrapper #(
         .module_data_out (sw_054_module_data_out)
     );
 
-    jleightcap_top jleightcap_top_054 (
+    user_module_339501025136214612 user_module_339501025136214612_054 (
         .io_in  (sw_054_module_data_in),
         .io_out (sw_054_module_data_out)
     );
 
-    // [055] https://github.com/89Mods/tt2-lcd-namebadge
+    // [055] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_055_clk_out, sw_055_data_out, sw_055_scan_out, sw_055_latch_out;
     wire [7:0] sw_055_module_data_in;
     wire [7:0] sw_055_module_data_out;
@@ -1341,12 +1341,12 @@ module user_project_wrapper #(
         .module_data_out (sw_055_module_data_out)
     );
 
-    tt2_tholin_namebadge tt2_tholin_namebadge_055 (
+    user_module_339501025136214612 user_module_339501025136214612_055 (
         .io_in  (sw_055_module_data_in),
         .io_out (sw_055_module_data_out)
     );
 
-    // [056] https://github.com/Christina-Cyr/tt02-submission-UART-CC
+    // [056] https://github.com/TinyTapeout/tt02-test-straight
     wire sw_056_clk_out, sw_056_data_out, sw_056_scan_out, sw_056_latch_out;
     wire [7:0] sw_056_module_data_in;
     wire [7:0] sw_056_module_data_out;
@@ -1363,7 +1363,7 @@ module user_project_wrapper #(
         .module_data_out (sw_056_module_data_out)
     );
 
-    user_module_347619669052490324 user_module_347619669052490324_056 (
+    user_module_339501025136214612 user_module_339501025136214612_056 (
         .io_in  (sw_056_module_data_in),
         .io_out (sw_056_module_data_out)
     );
@@ -5614,4915 +5614,9 @@ module user_project_wrapper #(
         .io_out (sw_249_module_data_out)
     );
 
-    // [250] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_250_clk_out, sw_250_data_out, sw_250_scan_out, sw_250_latch_out;
-    wire [7:0] sw_250_module_data_in;
-    wire [7:0] sw_250_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_250 (
-        .clk_in          (sw_249_clk_out),
-        .data_in         (sw_249_data_out),
-        .scan_select_in  (sw_249_scan_out),
-        .latch_enable_in (sw_249_latch_out),
-        .clk_out         (sw_250_clk_out),
-        .data_out        (sw_250_data_out),
-        .scan_select_out (sw_250_scan_out),
-        .latch_enable_out(sw_250_latch_out),
-        .module_data_in  (sw_250_module_data_in),
-        .module_data_out (sw_250_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_250 (
-        .io_in  (sw_250_module_data_in),
-        .io_out (sw_250_module_data_out)
-    );
-
-    // [251] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_251_clk_out, sw_251_data_out, sw_251_scan_out, sw_251_latch_out;
-    wire [7:0] sw_251_module_data_in;
-    wire [7:0] sw_251_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_251 (
-        .clk_in          (sw_250_clk_out),
-        .data_in         (sw_250_data_out),
-        .scan_select_in  (sw_250_scan_out),
-        .latch_enable_in (sw_250_latch_out),
-        .clk_out         (sw_251_clk_out),
-        .data_out        (sw_251_data_out),
-        .scan_select_out (sw_251_scan_out),
-        .latch_enable_out(sw_251_latch_out),
-        .module_data_in  (sw_251_module_data_in),
-        .module_data_out (sw_251_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_251 (
-        .io_in  (sw_251_module_data_in),
-        .io_out (sw_251_module_data_out)
-    );
-
-    // [252] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_252_clk_out, sw_252_data_out, sw_252_scan_out, sw_252_latch_out;
-    wire [7:0] sw_252_module_data_in;
-    wire [7:0] sw_252_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_252 (
-        .clk_in          (sw_251_clk_out),
-        .data_in         (sw_251_data_out),
-        .scan_select_in  (sw_251_scan_out),
-        .latch_enable_in (sw_251_latch_out),
-        .clk_out         (sw_252_clk_out),
-        .data_out        (sw_252_data_out),
-        .scan_select_out (sw_252_scan_out),
-        .latch_enable_out(sw_252_latch_out),
-        .module_data_in  (sw_252_module_data_in),
-        .module_data_out (sw_252_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_252 (
-        .io_in  (sw_252_module_data_in),
-        .io_out (sw_252_module_data_out)
-    );
-
-    // [253] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_253_clk_out, sw_253_data_out, sw_253_scan_out, sw_253_latch_out;
-    wire [7:0] sw_253_module_data_in;
-    wire [7:0] sw_253_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_253 (
-        .clk_in          (sw_252_clk_out),
-        .data_in         (sw_252_data_out),
-        .scan_select_in  (sw_252_scan_out),
-        .latch_enable_in (sw_252_latch_out),
-        .clk_out         (sw_253_clk_out),
-        .data_out        (sw_253_data_out),
-        .scan_select_out (sw_253_scan_out),
-        .latch_enable_out(sw_253_latch_out),
-        .module_data_in  (sw_253_module_data_in),
-        .module_data_out (sw_253_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_253 (
-        .io_in  (sw_253_module_data_in),
-        .io_out (sw_253_module_data_out)
-    );
-
-    // [254] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_254_clk_out, sw_254_data_out, sw_254_scan_out, sw_254_latch_out;
-    wire [7:0] sw_254_module_data_in;
-    wire [7:0] sw_254_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_254 (
-        .clk_in          (sw_253_clk_out),
-        .data_in         (sw_253_data_out),
-        .scan_select_in  (sw_253_scan_out),
-        .latch_enable_in (sw_253_latch_out),
-        .clk_out         (sw_254_clk_out),
-        .data_out        (sw_254_data_out),
-        .scan_select_out (sw_254_scan_out),
-        .latch_enable_out(sw_254_latch_out),
-        .module_data_in  (sw_254_module_data_in),
-        .module_data_out (sw_254_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_254 (
-        .io_in  (sw_254_module_data_in),
-        .io_out (sw_254_module_data_out)
-    );
-
-    // [255] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_255_clk_out, sw_255_data_out, sw_255_scan_out, sw_255_latch_out;
-    wire [7:0] sw_255_module_data_in;
-    wire [7:0] sw_255_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_255 (
-        .clk_in          (sw_254_clk_out),
-        .data_in         (sw_254_data_out),
-        .scan_select_in  (sw_254_scan_out),
-        .latch_enable_in (sw_254_latch_out),
-        .clk_out         (sw_255_clk_out),
-        .data_out        (sw_255_data_out),
-        .scan_select_out (sw_255_scan_out),
-        .latch_enable_out(sw_255_latch_out),
-        .module_data_in  (sw_255_module_data_in),
-        .module_data_out (sw_255_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_255 (
-        .io_in  (sw_255_module_data_in),
-        .io_out (sw_255_module_data_out)
-    );
-
-    // [256] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_256_clk_out, sw_256_data_out, sw_256_scan_out, sw_256_latch_out;
-    wire [7:0] sw_256_module_data_in;
-    wire [7:0] sw_256_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_256 (
-        .clk_in          (sw_255_clk_out),
-        .data_in         (sw_255_data_out),
-        .scan_select_in  (sw_255_scan_out),
-        .latch_enable_in (sw_255_latch_out),
-        .clk_out         (sw_256_clk_out),
-        .data_out        (sw_256_data_out),
-        .scan_select_out (sw_256_scan_out),
-        .latch_enable_out(sw_256_latch_out),
-        .module_data_in  (sw_256_module_data_in),
-        .module_data_out (sw_256_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_256 (
-        .io_in  (sw_256_module_data_in),
-        .io_out (sw_256_module_data_out)
-    );
-
-    // [257] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_257_clk_out, sw_257_data_out, sw_257_scan_out, sw_257_latch_out;
-    wire [7:0] sw_257_module_data_in;
-    wire [7:0] sw_257_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_257 (
-        .clk_in          (sw_256_clk_out),
-        .data_in         (sw_256_data_out),
-        .scan_select_in  (sw_256_scan_out),
-        .latch_enable_in (sw_256_latch_out),
-        .clk_out         (sw_257_clk_out),
-        .data_out        (sw_257_data_out),
-        .scan_select_out (sw_257_scan_out),
-        .latch_enable_out(sw_257_latch_out),
-        .module_data_in  (sw_257_module_data_in),
-        .module_data_out (sw_257_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_257 (
-        .io_in  (sw_257_module_data_in),
-        .io_out (sw_257_module_data_out)
-    );
-
-    // [258] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_258_clk_out, sw_258_data_out, sw_258_scan_out, sw_258_latch_out;
-    wire [7:0] sw_258_module_data_in;
-    wire [7:0] sw_258_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_258 (
-        .clk_in          (sw_257_clk_out),
-        .data_in         (sw_257_data_out),
-        .scan_select_in  (sw_257_scan_out),
-        .latch_enable_in (sw_257_latch_out),
-        .clk_out         (sw_258_clk_out),
-        .data_out        (sw_258_data_out),
-        .scan_select_out (sw_258_scan_out),
-        .latch_enable_out(sw_258_latch_out),
-        .module_data_in  (sw_258_module_data_in),
-        .module_data_out (sw_258_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_258 (
-        .io_in  (sw_258_module_data_in),
-        .io_out (sw_258_module_data_out)
-    );
-
-    // [259] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_259_clk_out, sw_259_data_out, sw_259_scan_out, sw_259_latch_out;
-    wire [7:0] sw_259_module_data_in;
-    wire [7:0] sw_259_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_259 (
-        .clk_in          (sw_258_clk_out),
-        .data_in         (sw_258_data_out),
-        .scan_select_in  (sw_258_scan_out),
-        .latch_enable_in (sw_258_latch_out),
-        .clk_out         (sw_259_clk_out),
-        .data_out        (sw_259_data_out),
-        .scan_select_out (sw_259_scan_out),
-        .latch_enable_out(sw_259_latch_out),
-        .module_data_in  (sw_259_module_data_in),
-        .module_data_out (sw_259_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_259 (
-        .io_in  (sw_259_module_data_in),
-        .io_out (sw_259_module_data_out)
-    );
-
-    // [260] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_260_clk_out, sw_260_data_out, sw_260_scan_out, sw_260_latch_out;
-    wire [7:0] sw_260_module_data_in;
-    wire [7:0] sw_260_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_260 (
-        .clk_in          (sw_259_clk_out),
-        .data_in         (sw_259_data_out),
-        .scan_select_in  (sw_259_scan_out),
-        .latch_enable_in (sw_259_latch_out),
-        .clk_out         (sw_260_clk_out),
-        .data_out        (sw_260_data_out),
-        .scan_select_out (sw_260_scan_out),
-        .latch_enable_out(sw_260_latch_out),
-        .module_data_in  (sw_260_module_data_in),
-        .module_data_out (sw_260_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_260 (
-        .io_in  (sw_260_module_data_in),
-        .io_out (sw_260_module_data_out)
-    );
-
-    // [261] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_261_clk_out, sw_261_data_out, sw_261_scan_out, sw_261_latch_out;
-    wire [7:0] sw_261_module_data_in;
-    wire [7:0] sw_261_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_261 (
-        .clk_in          (sw_260_clk_out),
-        .data_in         (sw_260_data_out),
-        .scan_select_in  (sw_260_scan_out),
-        .latch_enable_in (sw_260_latch_out),
-        .clk_out         (sw_261_clk_out),
-        .data_out        (sw_261_data_out),
-        .scan_select_out (sw_261_scan_out),
-        .latch_enable_out(sw_261_latch_out),
-        .module_data_in  (sw_261_module_data_in),
-        .module_data_out (sw_261_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_261 (
-        .io_in  (sw_261_module_data_in),
-        .io_out (sw_261_module_data_out)
-    );
-
-    // [262] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_262_clk_out, sw_262_data_out, sw_262_scan_out, sw_262_latch_out;
-    wire [7:0] sw_262_module_data_in;
-    wire [7:0] sw_262_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_262 (
-        .clk_in          (sw_261_clk_out),
-        .data_in         (sw_261_data_out),
-        .scan_select_in  (sw_261_scan_out),
-        .latch_enable_in (sw_261_latch_out),
-        .clk_out         (sw_262_clk_out),
-        .data_out        (sw_262_data_out),
-        .scan_select_out (sw_262_scan_out),
-        .latch_enable_out(sw_262_latch_out),
-        .module_data_in  (sw_262_module_data_in),
-        .module_data_out (sw_262_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_262 (
-        .io_in  (sw_262_module_data_in),
-        .io_out (sw_262_module_data_out)
-    );
-
-    // [263] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_263_clk_out, sw_263_data_out, sw_263_scan_out, sw_263_latch_out;
-    wire [7:0] sw_263_module_data_in;
-    wire [7:0] sw_263_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_263 (
-        .clk_in          (sw_262_clk_out),
-        .data_in         (sw_262_data_out),
-        .scan_select_in  (sw_262_scan_out),
-        .latch_enable_in (sw_262_latch_out),
-        .clk_out         (sw_263_clk_out),
-        .data_out        (sw_263_data_out),
-        .scan_select_out (sw_263_scan_out),
-        .latch_enable_out(sw_263_latch_out),
-        .module_data_in  (sw_263_module_data_in),
-        .module_data_out (sw_263_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_263 (
-        .io_in  (sw_263_module_data_in),
-        .io_out (sw_263_module_data_out)
-    );
-
-    // [264] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_264_clk_out, sw_264_data_out, sw_264_scan_out, sw_264_latch_out;
-    wire [7:0] sw_264_module_data_in;
-    wire [7:0] sw_264_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_264 (
-        .clk_in          (sw_263_clk_out),
-        .data_in         (sw_263_data_out),
-        .scan_select_in  (sw_263_scan_out),
-        .latch_enable_in (sw_263_latch_out),
-        .clk_out         (sw_264_clk_out),
-        .data_out        (sw_264_data_out),
-        .scan_select_out (sw_264_scan_out),
-        .latch_enable_out(sw_264_latch_out),
-        .module_data_in  (sw_264_module_data_in),
-        .module_data_out (sw_264_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_264 (
-        .io_in  (sw_264_module_data_in),
-        .io_out (sw_264_module_data_out)
-    );
-
-    // [265] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_265_clk_out, sw_265_data_out, sw_265_scan_out, sw_265_latch_out;
-    wire [7:0] sw_265_module_data_in;
-    wire [7:0] sw_265_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_265 (
-        .clk_in          (sw_264_clk_out),
-        .data_in         (sw_264_data_out),
-        .scan_select_in  (sw_264_scan_out),
-        .latch_enable_in (sw_264_latch_out),
-        .clk_out         (sw_265_clk_out),
-        .data_out        (sw_265_data_out),
-        .scan_select_out (sw_265_scan_out),
-        .latch_enable_out(sw_265_latch_out),
-        .module_data_in  (sw_265_module_data_in),
-        .module_data_out (sw_265_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_265 (
-        .io_in  (sw_265_module_data_in),
-        .io_out (sw_265_module_data_out)
-    );
-
-    // [266] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_266_clk_out, sw_266_data_out, sw_266_scan_out, sw_266_latch_out;
-    wire [7:0] sw_266_module_data_in;
-    wire [7:0] sw_266_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_266 (
-        .clk_in          (sw_265_clk_out),
-        .data_in         (sw_265_data_out),
-        .scan_select_in  (sw_265_scan_out),
-        .latch_enable_in (sw_265_latch_out),
-        .clk_out         (sw_266_clk_out),
-        .data_out        (sw_266_data_out),
-        .scan_select_out (sw_266_scan_out),
-        .latch_enable_out(sw_266_latch_out),
-        .module_data_in  (sw_266_module_data_in),
-        .module_data_out (sw_266_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_266 (
-        .io_in  (sw_266_module_data_in),
-        .io_out (sw_266_module_data_out)
-    );
-
-    // [267] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_267_clk_out, sw_267_data_out, sw_267_scan_out, sw_267_latch_out;
-    wire [7:0] sw_267_module_data_in;
-    wire [7:0] sw_267_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_267 (
-        .clk_in          (sw_266_clk_out),
-        .data_in         (sw_266_data_out),
-        .scan_select_in  (sw_266_scan_out),
-        .latch_enable_in (sw_266_latch_out),
-        .clk_out         (sw_267_clk_out),
-        .data_out        (sw_267_data_out),
-        .scan_select_out (sw_267_scan_out),
-        .latch_enable_out(sw_267_latch_out),
-        .module_data_in  (sw_267_module_data_in),
-        .module_data_out (sw_267_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_267 (
-        .io_in  (sw_267_module_data_in),
-        .io_out (sw_267_module_data_out)
-    );
-
-    // [268] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_268_clk_out, sw_268_data_out, sw_268_scan_out, sw_268_latch_out;
-    wire [7:0] sw_268_module_data_in;
-    wire [7:0] sw_268_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_268 (
-        .clk_in          (sw_267_clk_out),
-        .data_in         (sw_267_data_out),
-        .scan_select_in  (sw_267_scan_out),
-        .latch_enable_in (sw_267_latch_out),
-        .clk_out         (sw_268_clk_out),
-        .data_out        (sw_268_data_out),
-        .scan_select_out (sw_268_scan_out),
-        .latch_enable_out(sw_268_latch_out),
-        .module_data_in  (sw_268_module_data_in),
-        .module_data_out (sw_268_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_268 (
-        .io_in  (sw_268_module_data_in),
-        .io_out (sw_268_module_data_out)
-    );
-
-    // [269] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_269_clk_out, sw_269_data_out, sw_269_scan_out, sw_269_latch_out;
-    wire [7:0] sw_269_module_data_in;
-    wire [7:0] sw_269_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_269 (
-        .clk_in          (sw_268_clk_out),
-        .data_in         (sw_268_data_out),
-        .scan_select_in  (sw_268_scan_out),
-        .latch_enable_in (sw_268_latch_out),
-        .clk_out         (sw_269_clk_out),
-        .data_out        (sw_269_data_out),
-        .scan_select_out (sw_269_scan_out),
-        .latch_enable_out(sw_269_latch_out),
-        .module_data_in  (sw_269_module_data_in),
-        .module_data_out (sw_269_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_269 (
-        .io_in  (sw_269_module_data_in),
-        .io_out (sw_269_module_data_out)
-    );
-
-    // [270] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_270_clk_out, sw_270_data_out, sw_270_scan_out, sw_270_latch_out;
-    wire [7:0] sw_270_module_data_in;
-    wire [7:0] sw_270_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_270 (
-        .clk_in          (sw_269_clk_out),
-        .data_in         (sw_269_data_out),
-        .scan_select_in  (sw_269_scan_out),
-        .latch_enable_in (sw_269_latch_out),
-        .clk_out         (sw_270_clk_out),
-        .data_out        (sw_270_data_out),
-        .scan_select_out (sw_270_scan_out),
-        .latch_enable_out(sw_270_latch_out),
-        .module_data_in  (sw_270_module_data_in),
-        .module_data_out (sw_270_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_270 (
-        .io_in  (sw_270_module_data_in),
-        .io_out (sw_270_module_data_out)
-    );
-
-    // [271] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_271_clk_out, sw_271_data_out, sw_271_scan_out, sw_271_latch_out;
-    wire [7:0] sw_271_module_data_in;
-    wire [7:0] sw_271_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_271 (
-        .clk_in          (sw_270_clk_out),
-        .data_in         (sw_270_data_out),
-        .scan_select_in  (sw_270_scan_out),
-        .latch_enable_in (sw_270_latch_out),
-        .clk_out         (sw_271_clk_out),
-        .data_out        (sw_271_data_out),
-        .scan_select_out (sw_271_scan_out),
-        .latch_enable_out(sw_271_latch_out),
-        .module_data_in  (sw_271_module_data_in),
-        .module_data_out (sw_271_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_271 (
-        .io_in  (sw_271_module_data_in),
-        .io_out (sw_271_module_data_out)
-    );
-
-    // [272] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_272_clk_out, sw_272_data_out, sw_272_scan_out, sw_272_latch_out;
-    wire [7:0] sw_272_module_data_in;
-    wire [7:0] sw_272_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_272 (
-        .clk_in          (sw_271_clk_out),
-        .data_in         (sw_271_data_out),
-        .scan_select_in  (sw_271_scan_out),
-        .latch_enable_in (sw_271_latch_out),
-        .clk_out         (sw_272_clk_out),
-        .data_out        (sw_272_data_out),
-        .scan_select_out (sw_272_scan_out),
-        .latch_enable_out(sw_272_latch_out),
-        .module_data_in  (sw_272_module_data_in),
-        .module_data_out (sw_272_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_272 (
-        .io_in  (sw_272_module_data_in),
-        .io_out (sw_272_module_data_out)
-    );
-
-    // [273] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_273_clk_out, sw_273_data_out, sw_273_scan_out, sw_273_latch_out;
-    wire [7:0] sw_273_module_data_in;
-    wire [7:0] sw_273_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_273 (
-        .clk_in          (sw_272_clk_out),
-        .data_in         (sw_272_data_out),
-        .scan_select_in  (sw_272_scan_out),
-        .latch_enable_in (sw_272_latch_out),
-        .clk_out         (sw_273_clk_out),
-        .data_out        (sw_273_data_out),
-        .scan_select_out (sw_273_scan_out),
-        .latch_enable_out(sw_273_latch_out),
-        .module_data_in  (sw_273_module_data_in),
-        .module_data_out (sw_273_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_273 (
-        .io_in  (sw_273_module_data_in),
-        .io_out (sw_273_module_data_out)
-    );
-
-    // [274] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_274_clk_out, sw_274_data_out, sw_274_scan_out, sw_274_latch_out;
-    wire [7:0] sw_274_module_data_in;
-    wire [7:0] sw_274_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_274 (
-        .clk_in          (sw_273_clk_out),
-        .data_in         (sw_273_data_out),
-        .scan_select_in  (sw_273_scan_out),
-        .latch_enable_in (sw_273_latch_out),
-        .clk_out         (sw_274_clk_out),
-        .data_out        (sw_274_data_out),
-        .scan_select_out (sw_274_scan_out),
-        .latch_enable_out(sw_274_latch_out),
-        .module_data_in  (sw_274_module_data_in),
-        .module_data_out (sw_274_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_274 (
-        .io_in  (sw_274_module_data_in),
-        .io_out (sw_274_module_data_out)
-    );
-
-    // [275] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_275_clk_out, sw_275_data_out, sw_275_scan_out, sw_275_latch_out;
-    wire [7:0] sw_275_module_data_in;
-    wire [7:0] sw_275_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_275 (
-        .clk_in          (sw_274_clk_out),
-        .data_in         (sw_274_data_out),
-        .scan_select_in  (sw_274_scan_out),
-        .latch_enable_in (sw_274_latch_out),
-        .clk_out         (sw_275_clk_out),
-        .data_out        (sw_275_data_out),
-        .scan_select_out (sw_275_scan_out),
-        .latch_enable_out(sw_275_latch_out),
-        .module_data_in  (sw_275_module_data_in),
-        .module_data_out (sw_275_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_275 (
-        .io_in  (sw_275_module_data_in),
-        .io_out (sw_275_module_data_out)
-    );
-
-    // [276] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_276_clk_out, sw_276_data_out, sw_276_scan_out, sw_276_latch_out;
-    wire [7:0] sw_276_module_data_in;
-    wire [7:0] sw_276_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_276 (
-        .clk_in          (sw_275_clk_out),
-        .data_in         (sw_275_data_out),
-        .scan_select_in  (sw_275_scan_out),
-        .latch_enable_in (sw_275_latch_out),
-        .clk_out         (sw_276_clk_out),
-        .data_out        (sw_276_data_out),
-        .scan_select_out (sw_276_scan_out),
-        .latch_enable_out(sw_276_latch_out),
-        .module_data_in  (sw_276_module_data_in),
-        .module_data_out (sw_276_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_276 (
-        .io_in  (sw_276_module_data_in),
-        .io_out (sw_276_module_data_out)
-    );
-
-    // [277] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_277_clk_out, sw_277_data_out, sw_277_scan_out, sw_277_latch_out;
-    wire [7:0] sw_277_module_data_in;
-    wire [7:0] sw_277_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_277 (
-        .clk_in          (sw_276_clk_out),
-        .data_in         (sw_276_data_out),
-        .scan_select_in  (sw_276_scan_out),
-        .latch_enable_in (sw_276_latch_out),
-        .clk_out         (sw_277_clk_out),
-        .data_out        (sw_277_data_out),
-        .scan_select_out (sw_277_scan_out),
-        .latch_enable_out(sw_277_latch_out),
-        .module_data_in  (sw_277_module_data_in),
-        .module_data_out (sw_277_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_277 (
-        .io_in  (sw_277_module_data_in),
-        .io_out (sw_277_module_data_out)
-    );
-
-    // [278] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_278_clk_out, sw_278_data_out, sw_278_scan_out, sw_278_latch_out;
-    wire [7:0] sw_278_module_data_in;
-    wire [7:0] sw_278_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_278 (
-        .clk_in          (sw_277_clk_out),
-        .data_in         (sw_277_data_out),
-        .scan_select_in  (sw_277_scan_out),
-        .latch_enable_in (sw_277_latch_out),
-        .clk_out         (sw_278_clk_out),
-        .data_out        (sw_278_data_out),
-        .scan_select_out (sw_278_scan_out),
-        .latch_enable_out(sw_278_latch_out),
-        .module_data_in  (sw_278_module_data_in),
-        .module_data_out (sw_278_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_278 (
-        .io_in  (sw_278_module_data_in),
-        .io_out (sw_278_module_data_out)
-    );
-
-    // [279] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_279_clk_out, sw_279_data_out, sw_279_scan_out, sw_279_latch_out;
-    wire [7:0] sw_279_module_data_in;
-    wire [7:0] sw_279_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_279 (
-        .clk_in          (sw_278_clk_out),
-        .data_in         (sw_278_data_out),
-        .scan_select_in  (sw_278_scan_out),
-        .latch_enable_in (sw_278_latch_out),
-        .clk_out         (sw_279_clk_out),
-        .data_out        (sw_279_data_out),
-        .scan_select_out (sw_279_scan_out),
-        .latch_enable_out(sw_279_latch_out),
-        .module_data_in  (sw_279_module_data_in),
-        .module_data_out (sw_279_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_279 (
-        .io_in  (sw_279_module_data_in),
-        .io_out (sw_279_module_data_out)
-    );
-
-    // [280] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_280_clk_out, sw_280_data_out, sw_280_scan_out, sw_280_latch_out;
-    wire [7:0] sw_280_module_data_in;
-    wire [7:0] sw_280_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_280 (
-        .clk_in          (sw_279_clk_out),
-        .data_in         (sw_279_data_out),
-        .scan_select_in  (sw_279_scan_out),
-        .latch_enable_in (sw_279_latch_out),
-        .clk_out         (sw_280_clk_out),
-        .data_out        (sw_280_data_out),
-        .scan_select_out (sw_280_scan_out),
-        .latch_enable_out(sw_280_latch_out),
-        .module_data_in  (sw_280_module_data_in),
-        .module_data_out (sw_280_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_280 (
-        .io_in  (sw_280_module_data_in),
-        .io_out (sw_280_module_data_out)
-    );
-
-    // [281] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_281_clk_out, sw_281_data_out, sw_281_scan_out, sw_281_latch_out;
-    wire [7:0] sw_281_module_data_in;
-    wire [7:0] sw_281_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_281 (
-        .clk_in          (sw_280_clk_out),
-        .data_in         (sw_280_data_out),
-        .scan_select_in  (sw_280_scan_out),
-        .latch_enable_in (sw_280_latch_out),
-        .clk_out         (sw_281_clk_out),
-        .data_out        (sw_281_data_out),
-        .scan_select_out (sw_281_scan_out),
-        .latch_enable_out(sw_281_latch_out),
-        .module_data_in  (sw_281_module_data_in),
-        .module_data_out (sw_281_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_281 (
-        .io_in  (sw_281_module_data_in),
-        .io_out (sw_281_module_data_out)
-    );
-
-    // [282] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_282_clk_out, sw_282_data_out, sw_282_scan_out, sw_282_latch_out;
-    wire [7:0] sw_282_module_data_in;
-    wire [7:0] sw_282_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_282 (
-        .clk_in          (sw_281_clk_out),
-        .data_in         (sw_281_data_out),
-        .scan_select_in  (sw_281_scan_out),
-        .latch_enable_in (sw_281_latch_out),
-        .clk_out         (sw_282_clk_out),
-        .data_out        (sw_282_data_out),
-        .scan_select_out (sw_282_scan_out),
-        .latch_enable_out(sw_282_latch_out),
-        .module_data_in  (sw_282_module_data_in),
-        .module_data_out (sw_282_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_282 (
-        .io_in  (sw_282_module_data_in),
-        .io_out (sw_282_module_data_out)
-    );
-
-    // [283] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_283_clk_out, sw_283_data_out, sw_283_scan_out, sw_283_latch_out;
-    wire [7:0] sw_283_module_data_in;
-    wire [7:0] sw_283_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_283 (
-        .clk_in          (sw_282_clk_out),
-        .data_in         (sw_282_data_out),
-        .scan_select_in  (sw_282_scan_out),
-        .latch_enable_in (sw_282_latch_out),
-        .clk_out         (sw_283_clk_out),
-        .data_out        (sw_283_data_out),
-        .scan_select_out (sw_283_scan_out),
-        .latch_enable_out(sw_283_latch_out),
-        .module_data_in  (sw_283_module_data_in),
-        .module_data_out (sw_283_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_283 (
-        .io_in  (sw_283_module_data_in),
-        .io_out (sw_283_module_data_out)
-    );
-
-    // [284] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_284_clk_out, sw_284_data_out, sw_284_scan_out, sw_284_latch_out;
-    wire [7:0] sw_284_module_data_in;
-    wire [7:0] sw_284_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_284 (
-        .clk_in          (sw_283_clk_out),
-        .data_in         (sw_283_data_out),
-        .scan_select_in  (sw_283_scan_out),
-        .latch_enable_in (sw_283_latch_out),
-        .clk_out         (sw_284_clk_out),
-        .data_out        (sw_284_data_out),
-        .scan_select_out (sw_284_scan_out),
-        .latch_enable_out(sw_284_latch_out),
-        .module_data_in  (sw_284_module_data_in),
-        .module_data_out (sw_284_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_284 (
-        .io_in  (sw_284_module_data_in),
-        .io_out (sw_284_module_data_out)
-    );
-
-    // [285] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_285_clk_out, sw_285_data_out, sw_285_scan_out, sw_285_latch_out;
-    wire [7:0] sw_285_module_data_in;
-    wire [7:0] sw_285_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_285 (
-        .clk_in          (sw_284_clk_out),
-        .data_in         (sw_284_data_out),
-        .scan_select_in  (sw_284_scan_out),
-        .latch_enable_in (sw_284_latch_out),
-        .clk_out         (sw_285_clk_out),
-        .data_out        (sw_285_data_out),
-        .scan_select_out (sw_285_scan_out),
-        .latch_enable_out(sw_285_latch_out),
-        .module_data_in  (sw_285_module_data_in),
-        .module_data_out (sw_285_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_285 (
-        .io_in  (sw_285_module_data_in),
-        .io_out (sw_285_module_data_out)
-    );
-
-    // [286] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_286_clk_out, sw_286_data_out, sw_286_scan_out, sw_286_latch_out;
-    wire [7:0] sw_286_module_data_in;
-    wire [7:0] sw_286_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_286 (
-        .clk_in          (sw_285_clk_out),
-        .data_in         (sw_285_data_out),
-        .scan_select_in  (sw_285_scan_out),
-        .latch_enable_in (sw_285_latch_out),
-        .clk_out         (sw_286_clk_out),
-        .data_out        (sw_286_data_out),
-        .scan_select_out (sw_286_scan_out),
-        .latch_enable_out(sw_286_latch_out),
-        .module_data_in  (sw_286_module_data_in),
-        .module_data_out (sw_286_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_286 (
-        .io_in  (sw_286_module_data_in),
-        .io_out (sw_286_module_data_out)
-    );
-
-    // [287] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_287_clk_out, sw_287_data_out, sw_287_scan_out, sw_287_latch_out;
-    wire [7:0] sw_287_module_data_in;
-    wire [7:0] sw_287_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_287 (
-        .clk_in          (sw_286_clk_out),
-        .data_in         (sw_286_data_out),
-        .scan_select_in  (sw_286_scan_out),
-        .latch_enable_in (sw_286_latch_out),
-        .clk_out         (sw_287_clk_out),
-        .data_out        (sw_287_data_out),
-        .scan_select_out (sw_287_scan_out),
-        .latch_enable_out(sw_287_latch_out),
-        .module_data_in  (sw_287_module_data_in),
-        .module_data_out (sw_287_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_287 (
-        .io_in  (sw_287_module_data_in),
-        .io_out (sw_287_module_data_out)
-    );
-
-    // [288] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_288_clk_out, sw_288_data_out, sw_288_scan_out, sw_288_latch_out;
-    wire [7:0] sw_288_module_data_in;
-    wire [7:0] sw_288_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_288 (
-        .clk_in          (sw_287_clk_out),
-        .data_in         (sw_287_data_out),
-        .scan_select_in  (sw_287_scan_out),
-        .latch_enable_in (sw_287_latch_out),
-        .clk_out         (sw_288_clk_out),
-        .data_out        (sw_288_data_out),
-        .scan_select_out (sw_288_scan_out),
-        .latch_enable_out(sw_288_latch_out),
-        .module_data_in  (sw_288_module_data_in),
-        .module_data_out (sw_288_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_288 (
-        .io_in  (sw_288_module_data_in),
-        .io_out (sw_288_module_data_out)
-    );
-
-    // [289] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_289_clk_out, sw_289_data_out, sw_289_scan_out, sw_289_latch_out;
-    wire [7:0] sw_289_module_data_in;
-    wire [7:0] sw_289_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_289 (
-        .clk_in          (sw_288_clk_out),
-        .data_in         (sw_288_data_out),
-        .scan_select_in  (sw_288_scan_out),
-        .latch_enable_in (sw_288_latch_out),
-        .clk_out         (sw_289_clk_out),
-        .data_out        (sw_289_data_out),
-        .scan_select_out (sw_289_scan_out),
-        .latch_enable_out(sw_289_latch_out),
-        .module_data_in  (sw_289_module_data_in),
-        .module_data_out (sw_289_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_289 (
-        .io_in  (sw_289_module_data_in),
-        .io_out (sw_289_module_data_out)
-    );
-
-    // [290] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_290_clk_out, sw_290_data_out, sw_290_scan_out, sw_290_latch_out;
-    wire [7:0] sw_290_module_data_in;
-    wire [7:0] sw_290_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_290 (
-        .clk_in          (sw_289_clk_out),
-        .data_in         (sw_289_data_out),
-        .scan_select_in  (sw_289_scan_out),
-        .latch_enable_in (sw_289_latch_out),
-        .clk_out         (sw_290_clk_out),
-        .data_out        (sw_290_data_out),
-        .scan_select_out (sw_290_scan_out),
-        .latch_enable_out(sw_290_latch_out),
-        .module_data_in  (sw_290_module_data_in),
-        .module_data_out (sw_290_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_290 (
-        .io_in  (sw_290_module_data_in),
-        .io_out (sw_290_module_data_out)
-    );
-
-    // [291] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_291_clk_out, sw_291_data_out, sw_291_scan_out, sw_291_latch_out;
-    wire [7:0] sw_291_module_data_in;
-    wire [7:0] sw_291_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_291 (
-        .clk_in          (sw_290_clk_out),
-        .data_in         (sw_290_data_out),
-        .scan_select_in  (sw_290_scan_out),
-        .latch_enable_in (sw_290_latch_out),
-        .clk_out         (sw_291_clk_out),
-        .data_out        (sw_291_data_out),
-        .scan_select_out (sw_291_scan_out),
-        .latch_enable_out(sw_291_latch_out),
-        .module_data_in  (sw_291_module_data_in),
-        .module_data_out (sw_291_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_291 (
-        .io_in  (sw_291_module_data_in),
-        .io_out (sw_291_module_data_out)
-    );
-
-    // [292] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_292_clk_out, sw_292_data_out, sw_292_scan_out, sw_292_latch_out;
-    wire [7:0] sw_292_module_data_in;
-    wire [7:0] sw_292_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_292 (
-        .clk_in          (sw_291_clk_out),
-        .data_in         (sw_291_data_out),
-        .scan_select_in  (sw_291_scan_out),
-        .latch_enable_in (sw_291_latch_out),
-        .clk_out         (sw_292_clk_out),
-        .data_out        (sw_292_data_out),
-        .scan_select_out (sw_292_scan_out),
-        .latch_enable_out(sw_292_latch_out),
-        .module_data_in  (sw_292_module_data_in),
-        .module_data_out (sw_292_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_292 (
-        .io_in  (sw_292_module_data_in),
-        .io_out (sw_292_module_data_out)
-    );
-
-    // [293] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_293_clk_out, sw_293_data_out, sw_293_scan_out, sw_293_latch_out;
-    wire [7:0] sw_293_module_data_in;
-    wire [7:0] sw_293_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_293 (
-        .clk_in          (sw_292_clk_out),
-        .data_in         (sw_292_data_out),
-        .scan_select_in  (sw_292_scan_out),
-        .latch_enable_in (sw_292_latch_out),
-        .clk_out         (sw_293_clk_out),
-        .data_out        (sw_293_data_out),
-        .scan_select_out (sw_293_scan_out),
-        .latch_enable_out(sw_293_latch_out),
-        .module_data_in  (sw_293_module_data_in),
-        .module_data_out (sw_293_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_293 (
-        .io_in  (sw_293_module_data_in),
-        .io_out (sw_293_module_data_out)
-    );
-
-    // [294] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_294_clk_out, sw_294_data_out, sw_294_scan_out, sw_294_latch_out;
-    wire [7:0] sw_294_module_data_in;
-    wire [7:0] sw_294_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_294 (
-        .clk_in          (sw_293_clk_out),
-        .data_in         (sw_293_data_out),
-        .scan_select_in  (sw_293_scan_out),
-        .latch_enable_in (sw_293_latch_out),
-        .clk_out         (sw_294_clk_out),
-        .data_out        (sw_294_data_out),
-        .scan_select_out (sw_294_scan_out),
-        .latch_enable_out(sw_294_latch_out),
-        .module_data_in  (sw_294_module_data_in),
-        .module_data_out (sw_294_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_294 (
-        .io_in  (sw_294_module_data_in),
-        .io_out (sw_294_module_data_out)
-    );
-
-    // [295] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_295_clk_out, sw_295_data_out, sw_295_scan_out, sw_295_latch_out;
-    wire [7:0] sw_295_module_data_in;
-    wire [7:0] sw_295_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_295 (
-        .clk_in          (sw_294_clk_out),
-        .data_in         (sw_294_data_out),
-        .scan_select_in  (sw_294_scan_out),
-        .latch_enable_in (sw_294_latch_out),
-        .clk_out         (sw_295_clk_out),
-        .data_out        (sw_295_data_out),
-        .scan_select_out (sw_295_scan_out),
-        .latch_enable_out(sw_295_latch_out),
-        .module_data_in  (sw_295_module_data_in),
-        .module_data_out (sw_295_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_295 (
-        .io_in  (sw_295_module_data_in),
-        .io_out (sw_295_module_data_out)
-    );
-
-    // [296] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_296_clk_out, sw_296_data_out, sw_296_scan_out, sw_296_latch_out;
-    wire [7:0] sw_296_module_data_in;
-    wire [7:0] sw_296_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_296 (
-        .clk_in          (sw_295_clk_out),
-        .data_in         (sw_295_data_out),
-        .scan_select_in  (sw_295_scan_out),
-        .latch_enable_in (sw_295_latch_out),
-        .clk_out         (sw_296_clk_out),
-        .data_out        (sw_296_data_out),
-        .scan_select_out (sw_296_scan_out),
-        .latch_enable_out(sw_296_latch_out),
-        .module_data_in  (sw_296_module_data_in),
-        .module_data_out (sw_296_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_296 (
-        .io_in  (sw_296_module_data_in),
-        .io_out (sw_296_module_data_out)
-    );
-
-    // [297] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_297_clk_out, sw_297_data_out, sw_297_scan_out, sw_297_latch_out;
-    wire [7:0] sw_297_module_data_in;
-    wire [7:0] sw_297_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_297 (
-        .clk_in          (sw_296_clk_out),
-        .data_in         (sw_296_data_out),
-        .scan_select_in  (sw_296_scan_out),
-        .latch_enable_in (sw_296_latch_out),
-        .clk_out         (sw_297_clk_out),
-        .data_out        (sw_297_data_out),
-        .scan_select_out (sw_297_scan_out),
-        .latch_enable_out(sw_297_latch_out),
-        .module_data_in  (sw_297_module_data_in),
-        .module_data_out (sw_297_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_297 (
-        .io_in  (sw_297_module_data_in),
-        .io_out (sw_297_module_data_out)
-    );
-
-    // [298] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_298_clk_out, sw_298_data_out, sw_298_scan_out, sw_298_latch_out;
-    wire [7:0] sw_298_module_data_in;
-    wire [7:0] sw_298_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_298 (
-        .clk_in          (sw_297_clk_out),
-        .data_in         (sw_297_data_out),
-        .scan_select_in  (sw_297_scan_out),
-        .latch_enable_in (sw_297_latch_out),
-        .clk_out         (sw_298_clk_out),
-        .data_out        (sw_298_data_out),
-        .scan_select_out (sw_298_scan_out),
-        .latch_enable_out(sw_298_latch_out),
-        .module_data_in  (sw_298_module_data_in),
-        .module_data_out (sw_298_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_298 (
-        .io_in  (sw_298_module_data_in),
-        .io_out (sw_298_module_data_out)
-    );
-
-    // [299] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_299_clk_out, sw_299_data_out, sw_299_scan_out, sw_299_latch_out;
-    wire [7:0] sw_299_module_data_in;
-    wire [7:0] sw_299_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_299 (
-        .clk_in          (sw_298_clk_out),
-        .data_in         (sw_298_data_out),
-        .scan_select_in  (sw_298_scan_out),
-        .latch_enable_in (sw_298_latch_out),
-        .clk_out         (sw_299_clk_out),
-        .data_out        (sw_299_data_out),
-        .scan_select_out (sw_299_scan_out),
-        .latch_enable_out(sw_299_latch_out),
-        .module_data_in  (sw_299_module_data_in),
-        .module_data_out (sw_299_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_299 (
-        .io_in  (sw_299_module_data_in),
-        .io_out (sw_299_module_data_out)
-    );
-
-    // [300] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_300_clk_out, sw_300_data_out, sw_300_scan_out, sw_300_latch_out;
-    wire [7:0] sw_300_module_data_in;
-    wire [7:0] sw_300_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_300 (
-        .clk_in          (sw_299_clk_out),
-        .data_in         (sw_299_data_out),
-        .scan_select_in  (sw_299_scan_out),
-        .latch_enable_in (sw_299_latch_out),
-        .clk_out         (sw_300_clk_out),
-        .data_out        (sw_300_data_out),
-        .scan_select_out (sw_300_scan_out),
-        .latch_enable_out(sw_300_latch_out),
-        .module_data_in  (sw_300_module_data_in),
-        .module_data_out (sw_300_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_300 (
-        .io_in  (sw_300_module_data_in),
-        .io_out (sw_300_module_data_out)
-    );
-
-    // [301] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_301_clk_out, sw_301_data_out, sw_301_scan_out, sw_301_latch_out;
-    wire [7:0] sw_301_module_data_in;
-    wire [7:0] sw_301_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_301 (
-        .clk_in          (sw_300_clk_out),
-        .data_in         (sw_300_data_out),
-        .scan_select_in  (sw_300_scan_out),
-        .latch_enable_in (sw_300_latch_out),
-        .clk_out         (sw_301_clk_out),
-        .data_out        (sw_301_data_out),
-        .scan_select_out (sw_301_scan_out),
-        .latch_enable_out(sw_301_latch_out),
-        .module_data_in  (sw_301_module_data_in),
-        .module_data_out (sw_301_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_301 (
-        .io_in  (sw_301_module_data_in),
-        .io_out (sw_301_module_data_out)
-    );
-
-    // [302] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_302_clk_out, sw_302_data_out, sw_302_scan_out, sw_302_latch_out;
-    wire [7:0] sw_302_module_data_in;
-    wire [7:0] sw_302_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_302 (
-        .clk_in          (sw_301_clk_out),
-        .data_in         (sw_301_data_out),
-        .scan_select_in  (sw_301_scan_out),
-        .latch_enable_in (sw_301_latch_out),
-        .clk_out         (sw_302_clk_out),
-        .data_out        (sw_302_data_out),
-        .scan_select_out (sw_302_scan_out),
-        .latch_enable_out(sw_302_latch_out),
-        .module_data_in  (sw_302_module_data_in),
-        .module_data_out (sw_302_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_302 (
-        .io_in  (sw_302_module_data_in),
-        .io_out (sw_302_module_data_out)
-    );
-
-    // [303] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_303_clk_out, sw_303_data_out, sw_303_scan_out, sw_303_latch_out;
-    wire [7:0] sw_303_module_data_in;
-    wire [7:0] sw_303_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_303 (
-        .clk_in          (sw_302_clk_out),
-        .data_in         (sw_302_data_out),
-        .scan_select_in  (sw_302_scan_out),
-        .latch_enable_in (sw_302_latch_out),
-        .clk_out         (sw_303_clk_out),
-        .data_out        (sw_303_data_out),
-        .scan_select_out (sw_303_scan_out),
-        .latch_enable_out(sw_303_latch_out),
-        .module_data_in  (sw_303_module_data_in),
-        .module_data_out (sw_303_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_303 (
-        .io_in  (sw_303_module_data_in),
-        .io_out (sw_303_module_data_out)
-    );
-
-    // [304] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_304_clk_out, sw_304_data_out, sw_304_scan_out, sw_304_latch_out;
-    wire [7:0] sw_304_module_data_in;
-    wire [7:0] sw_304_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_304 (
-        .clk_in          (sw_303_clk_out),
-        .data_in         (sw_303_data_out),
-        .scan_select_in  (sw_303_scan_out),
-        .latch_enable_in (sw_303_latch_out),
-        .clk_out         (sw_304_clk_out),
-        .data_out        (sw_304_data_out),
-        .scan_select_out (sw_304_scan_out),
-        .latch_enable_out(sw_304_latch_out),
-        .module_data_in  (sw_304_module_data_in),
-        .module_data_out (sw_304_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_304 (
-        .io_in  (sw_304_module_data_in),
-        .io_out (sw_304_module_data_out)
-    );
-
-    // [305] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_305_clk_out, sw_305_data_out, sw_305_scan_out, sw_305_latch_out;
-    wire [7:0] sw_305_module_data_in;
-    wire [7:0] sw_305_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_305 (
-        .clk_in          (sw_304_clk_out),
-        .data_in         (sw_304_data_out),
-        .scan_select_in  (sw_304_scan_out),
-        .latch_enable_in (sw_304_latch_out),
-        .clk_out         (sw_305_clk_out),
-        .data_out        (sw_305_data_out),
-        .scan_select_out (sw_305_scan_out),
-        .latch_enable_out(sw_305_latch_out),
-        .module_data_in  (sw_305_module_data_in),
-        .module_data_out (sw_305_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_305 (
-        .io_in  (sw_305_module_data_in),
-        .io_out (sw_305_module_data_out)
-    );
-
-    // [306] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_306_clk_out, sw_306_data_out, sw_306_scan_out, sw_306_latch_out;
-    wire [7:0] sw_306_module_data_in;
-    wire [7:0] sw_306_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_306 (
-        .clk_in          (sw_305_clk_out),
-        .data_in         (sw_305_data_out),
-        .scan_select_in  (sw_305_scan_out),
-        .latch_enable_in (sw_305_latch_out),
-        .clk_out         (sw_306_clk_out),
-        .data_out        (sw_306_data_out),
-        .scan_select_out (sw_306_scan_out),
-        .latch_enable_out(sw_306_latch_out),
-        .module_data_in  (sw_306_module_data_in),
-        .module_data_out (sw_306_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_306 (
-        .io_in  (sw_306_module_data_in),
-        .io_out (sw_306_module_data_out)
-    );
-
-    // [307] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_307_clk_out, sw_307_data_out, sw_307_scan_out, sw_307_latch_out;
-    wire [7:0] sw_307_module_data_in;
-    wire [7:0] sw_307_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_307 (
-        .clk_in          (sw_306_clk_out),
-        .data_in         (sw_306_data_out),
-        .scan_select_in  (sw_306_scan_out),
-        .latch_enable_in (sw_306_latch_out),
-        .clk_out         (sw_307_clk_out),
-        .data_out        (sw_307_data_out),
-        .scan_select_out (sw_307_scan_out),
-        .latch_enable_out(sw_307_latch_out),
-        .module_data_in  (sw_307_module_data_in),
-        .module_data_out (sw_307_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_307 (
-        .io_in  (sw_307_module_data_in),
-        .io_out (sw_307_module_data_out)
-    );
-
-    // [308] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_308_clk_out, sw_308_data_out, sw_308_scan_out, sw_308_latch_out;
-    wire [7:0] sw_308_module_data_in;
-    wire [7:0] sw_308_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_308 (
-        .clk_in          (sw_307_clk_out),
-        .data_in         (sw_307_data_out),
-        .scan_select_in  (sw_307_scan_out),
-        .latch_enable_in (sw_307_latch_out),
-        .clk_out         (sw_308_clk_out),
-        .data_out        (sw_308_data_out),
-        .scan_select_out (sw_308_scan_out),
-        .latch_enable_out(sw_308_latch_out),
-        .module_data_in  (sw_308_module_data_in),
-        .module_data_out (sw_308_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_308 (
-        .io_in  (sw_308_module_data_in),
-        .io_out (sw_308_module_data_out)
-    );
-
-    // [309] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_309_clk_out, sw_309_data_out, sw_309_scan_out, sw_309_latch_out;
-    wire [7:0] sw_309_module_data_in;
-    wire [7:0] sw_309_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_309 (
-        .clk_in          (sw_308_clk_out),
-        .data_in         (sw_308_data_out),
-        .scan_select_in  (sw_308_scan_out),
-        .latch_enable_in (sw_308_latch_out),
-        .clk_out         (sw_309_clk_out),
-        .data_out        (sw_309_data_out),
-        .scan_select_out (sw_309_scan_out),
-        .latch_enable_out(sw_309_latch_out),
-        .module_data_in  (sw_309_module_data_in),
-        .module_data_out (sw_309_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_309 (
-        .io_in  (sw_309_module_data_in),
-        .io_out (sw_309_module_data_out)
-    );
-
-    // [310] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_310_clk_out, sw_310_data_out, sw_310_scan_out, sw_310_latch_out;
-    wire [7:0] sw_310_module_data_in;
-    wire [7:0] sw_310_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_310 (
-        .clk_in          (sw_309_clk_out),
-        .data_in         (sw_309_data_out),
-        .scan_select_in  (sw_309_scan_out),
-        .latch_enable_in (sw_309_latch_out),
-        .clk_out         (sw_310_clk_out),
-        .data_out        (sw_310_data_out),
-        .scan_select_out (sw_310_scan_out),
-        .latch_enable_out(sw_310_latch_out),
-        .module_data_in  (sw_310_module_data_in),
-        .module_data_out (sw_310_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_310 (
-        .io_in  (sw_310_module_data_in),
-        .io_out (sw_310_module_data_out)
-    );
-
-    // [311] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_311_clk_out, sw_311_data_out, sw_311_scan_out, sw_311_latch_out;
-    wire [7:0] sw_311_module_data_in;
-    wire [7:0] sw_311_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_311 (
-        .clk_in          (sw_310_clk_out),
-        .data_in         (sw_310_data_out),
-        .scan_select_in  (sw_310_scan_out),
-        .latch_enable_in (sw_310_latch_out),
-        .clk_out         (sw_311_clk_out),
-        .data_out        (sw_311_data_out),
-        .scan_select_out (sw_311_scan_out),
-        .latch_enable_out(sw_311_latch_out),
-        .module_data_in  (sw_311_module_data_in),
-        .module_data_out (sw_311_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_311 (
-        .io_in  (sw_311_module_data_in),
-        .io_out (sw_311_module_data_out)
-    );
-
-    // [312] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_312_clk_out, sw_312_data_out, sw_312_scan_out, sw_312_latch_out;
-    wire [7:0] sw_312_module_data_in;
-    wire [7:0] sw_312_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_312 (
-        .clk_in          (sw_311_clk_out),
-        .data_in         (sw_311_data_out),
-        .scan_select_in  (sw_311_scan_out),
-        .latch_enable_in (sw_311_latch_out),
-        .clk_out         (sw_312_clk_out),
-        .data_out        (sw_312_data_out),
-        .scan_select_out (sw_312_scan_out),
-        .latch_enable_out(sw_312_latch_out),
-        .module_data_in  (sw_312_module_data_in),
-        .module_data_out (sw_312_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_312 (
-        .io_in  (sw_312_module_data_in),
-        .io_out (sw_312_module_data_out)
-    );
-
-    // [313] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_313_clk_out, sw_313_data_out, sw_313_scan_out, sw_313_latch_out;
-    wire [7:0] sw_313_module_data_in;
-    wire [7:0] sw_313_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_313 (
-        .clk_in          (sw_312_clk_out),
-        .data_in         (sw_312_data_out),
-        .scan_select_in  (sw_312_scan_out),
-        .latch_enable_in (sw_312_latch_out),
-        .clk_out         (sw_313_clk_out),
-        .data_out        (sw_313_data_out),
-        .scan_select_out (sw_313_scan_out),
-        .latch_enable_out(sw_313_latch_out),
-        .module_data_in  (sw_313_module_data_in),
-        .module_data_out (sw_313_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_313 (
-        .io_in  (sw_313_module_data_in),
-        .io_out (sw_313_module_data_out)
-    );
-
-    // [314] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_314_clk_out, sw_314_data_out, sw_314_scan_out, sw_314_latch_out;
-    wire [7:0] sw_314_module_data_in;
-    wire [7:0] sw_314_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_314 (
-        .clk_in          (sw_313_clk_out),
-        .data_in         (sw_313_data_out),
-        .scan_select_in  (sw_313_scan_out),
-        .latch_enable_in (sw_313_latch_out),
-        .clk_out         (sw_314_clk_out),
-        .data_out        (sw_314_data_out),
-        .scan_select_out (sw_314_scan_out),
-        .latch_enable_out(sw_314_latch_out),
-        .module_data_in  (sw_314_module_data_in),
-        .module_data_out (sw_314_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_314 (
-        .io_in  (sw_314_module_data_in),
-        .io_out (sw_314_module_data_out)
-    );
-
-    // [315] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_315_clk_out, sw_315_data_out, sw_315_scan_out, sw_315_latch_out;
-    wire [7:0] sw_315_module_data_in;
-    wire [7:0] sw_315_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_315 (
-        .clk_in          (sw_314_clk_out),
-        .data_in         (sw_314_data_out),
-        .scan_select_in  (sw_314_scan_out),
-        .latch_enable_in (sw_314_latch_out),
-        .clk_out         (sw_315_clk_out),
-        .data_out        (sw_315_data_out),
-        .scan_select_out (sw_315_scan_out),
-        .latch_enable_out(sw_315_latch_out),
-        .module_data_in  (sw_315_module_data_in),
-        .module_data_out (sw_315_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_315 (
-        .io_in  (sw_315_module_data_in),
-        .io_out (sw_315_module_data_out)
-    );
-
-    // [316] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_316_clk_out, sw_316_data_out, sw_316_scan_out, sw_316_latch_out;
-    wire [7:0] sw_316_module_data_in;
-    wire [7:0] sw_316_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_316 (
-        .clk_in          (sw_315_clk_out),
-        .data_in         (sw_315_data_out),
-        .scan_select_in  (sw_315_scan_out),
-        .latch_enable_in (sw_315_latch_out),
-        .clk_out         (sw_316_clk_out),
-        .data_out        (sw_316_data_out),
-        .scan_select_out (sw_316_scan_out),
-        .latch_enable_out(sw_316_latch_out),
-        .module_data_in  (sw_316_module_data_in),
-        .module_data_out (sw_316_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_316 (
-        .io_in  (sw_316_module_data_in),
-        .io_out (sw_316_module_data_out)
-    );
-
-    // [317] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_317_clk_out, sw_317_data_out, sw_317_scan_out, sw_317_latch_out;
-    wire [7:0] sw_317_module_data_in;
-    wire [7:0] sw_317_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_317 (
-        .clk_in          (sw_316_clk_out),
-        .data_in         (sw_316_data_out),
-        .scan_select_in  (sw_316_scan_out),
-        .latch_enable_in (sw_316_latch_out),
-        .clk_out         (sw_317_clk_out),
-        .data_out        (sw_317_data_out),
-        .scan_select_out (sw_317_scan_out),
-        .latch_enable_out(sw_317_latch_out),
-        .module_data_in  (sw_317_module_data_in),
-        .module_data_out (sw_317_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_317 (
-        .io_in  (sw_317_module_data_in),
-        .io_out (sw_317_module_data_out)
-    );
-
-    // [318] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_318_clk_out, sw_318_data_out, sw_318_scan_out, sw_318_latch_out;
-    wire [7:0] sw_318_module_data_in;
-    wire [7:0] sw_318_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_318 (
-        .clk_in          (sw_317_clk_out),
-        .data_in         (sw_317_data_out),
-        .scan_select_in  (sw_317_scan_out),
-        .latch_enable_in (sw_317_latch_out),
-        .clk_out         (sw_318_clk_out),
-        .data_out        (sw_318_data_out),
-        .scan_select_out (sw_318_scan_out),
-        .latch_enable_out(sw_318_latch_out),
-        .module_data_in  (sw_318_module_data_in),
-        .module_data_out (sw_318_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_318 (
-        .io_in  (sw_318_module_data_in),
-        .io_out (sw_318_module_data_out)
-    );
-
-    // [319] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_319_clk_out, sw_319_data_out, sw_319_scan_out, sw_319_latch_out;
-    wire [7:0] sw_319_module_data_in;
-    wire [7:0] sw_319_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_319 (
-        .clk_in          (sw_318_clk_out),
-        .data_in         (sw_318_data_out),
-        .scan_select_in  (sw_318_scan_out),
-        .latch_enable_in (sw_318_latch_out),
-        .clk_out         (sw_319_clk_out),
-        .data_out        (sw_319_data_out),
-        .scan_select_out (sw_319_scan_out),
-        .latch_enable_out(sw_319_latch_out),
-        .module_data_in  (sw_319_module_data_in),
-        .module_data_out (sw_319_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_319 (
-        .io_in  (sw_319_module_data_in),
-        .io_out (sw_319_module_data_out)
-    );
-
-    // [320] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_320_clk_out, sw_320_data_out, sw_320_scan_out, sw_320_latch_out;
-    wire [7:0] sw_320_module_data_in;
-    wire [7:0] sw_320_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_320 (
-        .clk_in          (sw_319_clk_out),
-        .data_in         (sw_319_data_out),
-        .scan_select_in  (sw_319_scan_out),
-        .latch_enable_in (sw_319_latch_out),
-        .clk_out         (sw_320_clk_out),
-        .data_out        (sw_320_data_out),
-        .scan_select_out (sw_320_scan_out),
-        .latch_enable_out(sw_320_latch_out),
-        .module_data_in  (sw_320_module_data_in),
-        .module_data_out (sw_320_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_320 (
-        .io_in  (sw_320_module_data_in),
-        .io_out (sw_320_module_data_out)
-    );
-
-    // [321] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_321_clk_out, sw_321_data_out, sw_321_scan_out, sw_321_latch_out;
-    wire [7:0] sw_321_module_data_in;
-    wire [7:0] sw_321_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_321 (
-        .clk_in          (sw_320_clk_out),
-        .data_in         (sw_320_data_out),
-        .scan_select_in  (sw_320_scan_out),
-        .latch_enable_in (sw_320_latch_out),
-        .clk_out         (sw_321_clk_out),
-        .data_out        (sw_321_data_out),
-        .scan_select_out (sw_321_scan_out),
-        .latch_enable_out(sw_321_latch_out),
-        .module_data_in  (sw_321_module_data_in),
-        .module_data_out (sw_321_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_321 (
-        .io_in  (sw_321_module_data_in),
-        .io_out (sw_321_module_data_out)
-    );
-
-    // [322] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_322_clk_out, sw_322_data_out, sw_322_scan_out, sw_322_latch_out;
-    wire [7:0] sw_322_module_data_in;
-    wire [7:0] sw_322_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_322 (
-        .clk_in          (sw_321_clk_out),
-        .data_in         (sw_321_data_out),
-        .scan_select_in  (sw_321_scan_out),
-        .latch_enable_in (sw_321_latch_out),
-        .clk_out         (sw_322_clk_out),
-        .data_out        (sw_322_data_out),
-        .scan_select_out (sw_322_scan_out),
-        .latch_enable_out(sw_322_latch_out),
-        .module_data_in  (sw_322_module_data_in),
-        .module_data_out (sw_322_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_322 (
-        .io_in  (sw_322_module_data_in),
-        .io_out (sw_322_module_data_out)
-    );
-
-    // [323] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_323_clk_out, sw_323_data_out, sw_323_scan_out, sw_323_latch_out;
-    wire [7:0] sw_323_module_data_in;
-    wire [7:0] sw_323_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_323 (
-        .clk_in          (sw_322_clk_out),
-        .data_in         (sw_322_data_out),
-        .scan_select_in  (sw_322_scan_out),
-        .latch_enable_in (sw_322_latch_out),
-        .clk_out         (sw_323_clk_out),
-        .data_out        (sw_323_data_out),
-        .scan_select_out (sw_323_scan_out),
-        .latch_enable_out(sw_323_latch_out),
-        .module_data_in  (sw_323_module_data_in),
-        .module_data_out (sw_323_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_323 (
-        .io_in  (sw_323_module_data_in),
-        .io_out (sw_323_module_data_out)
-    );
-
-    // [324] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_324_clk_out, sw_324_data_out, sw_324_scan_out, sw_324_latch_out;
-    wire [7:0] sw_324_module_data_in;
-    wire [7:0] sw_324_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_324 (
-        .clk_in          (sw_323_clk_out),
-        .data_in         (sw_323_data_out),
-        .scan_select_in  (sw_323_scan_out),
-        .latch_enable_in (sw_323_latch_out),
-        .clk_out         (sw_324_clk_out),
-        .data_out        (sw_324_data_out),
-        .scan_select_out (sw_324_scan_out),
-        .latch_enable_out(sw_324_latch_out),
-        .module_data_in  (sw_324_module_data_in),
-        .module_data_out (sw_324_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_324 (
-        .io_in  (sw_324_module_data_in),
-        .io_out (sw_324_module_data_out)
-    );
-
-    // [325] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_325_clk_out, sw_325_data_out, sw_325_scan_out, sw_325_latch_out;
-    wire [7:0] sw_325_module_data_in;
-    wire [7:0] sw_325_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_325 (
-        .clk_in          (sw_324_clk_out),
-        .data_in         (sw_324_data_out),
-        .scan_select_in  (sw_324_scan_out),
-        .latch_enable_in (sw_324_latch_out),
-        .clk_out         (sw_325_clk_out),
-        .data_out        (sw_325_data_out),
-        .scan_select_out (sw_325_scan_out),
-        .latch_enable_out(sw_325_latch_out),
-        .module_data_in  (sw_325_module_data_in),
-        .module_data_out (sw_325_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_325 (
-        .io_in  (sw_325_module_data_in),
-        .io_out (sw_325_module_data_out)
-    );
-
-    // [326] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_326_clk_out, sw_326_data_out, sw_326_scan_out, sw_326_latch_out;
-    wire [7:0] sw_326_module_data_in;
-    wire [7:0] sw_326_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_326 (
-        .clk_in          (sw_325_clk_out),
-        .data_in         (sw_325_data_out),
-        .scan_select_in  (sw_325_scan_out),
-        .latch_enable_in (sw_325_latch_out),
-        .clk_out         (sw_326_clk_out),
-        .data_out        (sw_326_data_out),
-        .scan_select_out (sw_326_scan_out),
-        .latch_enable_out(sw_326_latch_out),
-        .module_data_in  (sw_326_module_data_in),
-        .module_data_out (sw_326_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_326 (
-        .io_in  (sw_326_module_data_in),
-        .io_out (sw_326_module_data_out)
-    );
-
-    // [327] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_327_clk_out, sw_327_data_out, sw_327_scan_out, sw_327_latch_out;
-    wire [7:0] sw_327_module_data_in;
-    wire [7:0] sw_327_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_327 (
-        .clk_in          (sw_326_clk_out),
-        .data_in         (sw_326_data_out),
-        .scan_select_in  (sw_326_scan_out),
-        .latch_enable_in (sw_326_latch_out),
-        .clk_out         (sw_327_clk_out),
-        .data_out        (sw_327_data_out),
-        .scan_select_out (sw_327_scan_out),
-        .latch_enable_out(sw_327_latch_out),
-        .module_data_in  (sw_327_module_data_in),
-        .module_data_out (sw_327_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_327 (
-        .io_in  (sw_327_module_data_in),
-        .io_out (sw_327_module_data_out)
-    );
-
-    // [328] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_328_clk_out, sw_328_data_out, sw_328_scan_out, sw_328_latch_out;
-    wire [7:0] sw_328_module_data_in;
-    wire [7:0] sw_328_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_328 (
-        .clk_in          (sw_327_clk_out),
-        .data_in         (sw_327_data_out),
-        .scan_select_in  (sw_327_scan_out),
-        .latch_enable_in (sw_327_latch_out),
-        .clk_out         (sw_328_clk_out),
-        .data_out        (sw_328_data_out),
-        .scan_select_out (sw_328_scan_out),
-        .latch_enable_out(sw_328_latch_out),
-        .module_data_in  (sw_328_module_data_in),
-        .module_data_out (sw_328_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_328 (
-        .io_in  (sw_328_module_data_in),
-        .io_out (sw_328_module_data_out)
-    );
-
-    // [329] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_329_clk_out, sw_329_data_out, sw_329_scan_out, sw_329_latch_out;
-    wire [7:0] sw_329_module_data_in;
-    wire [7:0] sw_329_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_329 (
-        .clk_in          (sw_328_clk_out),
-        .data_in         (sw_328_data_out),
-        .scan_select_in  (sw_328_scan_out),
-        .latch_enable_in (sw_328_latch_out),
-        .clk_out         (sw_329_clk_out),
-        .data_out        (sw_329_data_out),
-        .scan_select_out (sw_329_scan_out),
-        .latch_enable_out(sw_329_latch_out),
-        .module_data_in  (sw_329_module_data_in),
-        .module_data_out (sw_329_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_329 (
-        .io_in  (sw_329_module_data_in),
-        .io_out (sw_329_module_data_out)
-    );
-
-    // [330] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_330_clk_out, sw_330_data_out, sw_330_scan_out, sw_330_latch_out;
-    wire [7:0] sw_330_module_data_in;
-    wire [7:0] sw_330_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_330 (
-        .clk_in          (sw_329_clk_out),
-        .data_in         (sw_329_data_out),
-        .scan_select_in  (sw_329_scan_out),
-        .latch_enable_in (sw_329_latch_out),
-        .clk_out         (sw_330_clk_out),
-        .data_out        (sw_330_data_out),
-        .scan_select_out (sw_330_scan_out),
-        .latch_enable_out(sw_330_latch_out),
-        .module_data_in  (sw_330_module_data_in),
-        .module_data_out (sw_330_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_330 (
-        .io_in  (sw_330_module_data_in),
-        .io_out (sw_330_module_data_out)
-    );
-
-    // [331] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_331_clk_out, sw_331_data_out, sw_331_scan_out, sw_331_latch_out;
-    wire [7:0] sw_331_module_data_in;
-    wire [7:0] sw_331_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_331 (
-        .clk_in          (sw_330_clk_out),
-        .data_in         (sw_330_data_out),
-        .scan_select_in  (sw_330_scan_out),
-        .latch_enable_in (sw_330_latch_out),
-        .clk_out         (sw_331_clk_out),
-        .data_out        (sw_331_data_out),
-        .scan_select_out (sw_331_scan_out),
-        .latch_enable_out(sw_331_latch_out),
-        .module_data_in  (sw_331_module_data_in),
-        .module_data_out (sw_331_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_331 (
-        .io_in  (sw_331_module_data_in),
-        .io_out (sw_331_module_data_out)
-    );
-
-    // [332] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_332_clk_out, sw_332_data_out, sw_332_scan_out, sw_332_latch_out;
-    wire [7:0] sw_332_module_data_in;
-    wire [7:0] sw_332_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_332 (
-        .clk_in          (sw_331_clk_out),
-        .data_in         (sw_331_data_out),
-        .scan_select_in  (sw_331_scan_out),
-        .latch_enable_in (sw_331_latch_out),
-        .clk_out         (sw_332_clk_out),
-        .data_out        (sw_332_data_out),
-        .scan_select_out (sw_332_scan_out),
-        .latch_enable_out(sw_332_latch_out),
-        .module_data_in  (sw_332_module_data_in),
-        .module_data_out (sw_332_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_332 (
-        .io_in  (sw_332_module_data_in),
-        .io_out (sw_332_module_data_out)
-    );
-
-    // [333] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_333_clk_out, sw_333_data_out, sw_333_scan_out, sw_333_latch_out;
-    wire [7:0] sw_333_module_data_in;
-    wire [7:0] sw_333_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_333 (
-        .clk_in          (sw_332_clk_out),
-        .data_in         (sw_332_data_out),
-        .scan_select_in  (sw_332_scan_out),
-        .latch_enable_in (sw_332_latch_out),
-        .clk_out         (sw_333_clk_out),
-        .data_out        (sw_333_data_out),
-        .scan_select_out (sw_333_scan_out),
-        .latch_enable_out(sw_333_latch_out),
-        .module_data_in  (sw_333_module_data_in),
-        .module_data_out (sw_333_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_333 (
-        .io_in  (sw_333_module_data_in),
-        .io_out (sw_333_module_data_out)
-    );
-
-    // [334] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_334_clk_out, sw_334_data_out, sw_334_scan_out, sw_334_latch_out;
-    wire [7:0] sw_334_module_data_in;
-    wire [7:0] sw_334_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_334 (
-        .clk_in          (sw_333_clk_out),
-        .data_in         (sw_333_data_out),
-        .scan_select_in  (sw_333_scan_out),
-        .latch_enable_in (sw_333_latch_out),
-        .clk_out         (sw_334_clk_out),
-        .data_out        (sw_334_data_out),
-        .scan_select_out (sw_334_scan_out),
-        .latch_enable_out(sw_334_latch_out),
-        .module_data_in  (sw_334_module_data_in),
-        .module_data_out (sw_334_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_334 (
-        .io_in  (sw_334_module_data_in),
-        .io_out (sw_334_module_data_out)
-    );
-
-    // [335] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_335_clk_out, sw_335_data_out, sw_335_scan_out, sw_335_latch_out;
-    wire [7:0] sw_335_module_data_in;
-    wire [7:0] sw_335_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_335 (
-        .clk_in          (sw_334_clk_out),
-        .data_in         (sw_334_data_out),
-        .scan_select_in  (sw_334_scan_out),
-        .latch_enable_in (sw_334_latch_out),
-        .clk_out         (sw_335_clk_out),
-        .data_out        (sw_335_data_out),
-        .scan_select_out (sw_335_scan_out),
-        .latch_enable_out(sw_335_latch_out),
-        .module_data_in  (sw_335_module_data_in),
-        .module_data_out (sw_335_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_335 (
-        .io_in  (sw_335_module_data_in),
-        .io_out (sw_335_module_data_out)
-    );
-
-    // [336] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_336_clk_out, sw_336_data_out, sw_336_scan_out, sw_336_latch_out;
-    wire [7:0] sw_336_module_data_in;
-    wire [7:0] sw_336_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_336 (
-        .clk_in          (sw_335_clk_out),
-        .data_in         (sw_335_data_out),
-        .scan_select_in  (sw_335_scan_out),
-        .latch_enable_in (sw_335_latch_out),
-        .clk_out         (sw_336_clk_out),
-        .data_out        (sw_336_data_out),
-        .scan_select_out (sw_336_scan_out),
-        .latch_enable_out(sw_336_latch_out),
-        .module_data_in  (sw_336_module_data_in),
-        .module_data_out (sw_336_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_336 (
-        .io_in  (sw_336_module_data_in),
-        .io_out (sw_336_module_data_out)
-    );
-
-    // [337] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_337_clk_out, sw_337_data_out, sw_337_scan_out, sw_337_latch_out;
-    wire [7:0] sw_337_module_data_in;
-    wire [7:0] sw_337_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_337 (
-        .clk_in          (sw_336_clk_out),
-        .data_in         (sw_336_data_out),
-        .scan_select_in  (sw_336_scan_out),
-        .latch_enable_in (sw_336_latch_out),
-        .clk_out         (sw_337_clk_out),
-        .data_out        (sw_337_data_out),
-        .scan_select_out (sw_337_scan_out),
-        .latch_enable_out(sw_337_latch_out),
-        .module_data_in  (sw_337_module_data_in),
-        .module_data_out (sw_337_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_337 (
-        .io_in  (sw_337_module_data_in),
-        .io_out (sw_337_module_data_out)
-    );
-
-    // [338] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_338_clk_out, sw_338_data_out, sw_338_scan_out, sw_338_latch_out;
-    wire [7:0] sw_338_module_data_in;
-    wire [7:0] sw_338_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_338 (
-        .clk_in          (sw_337_clk_out),
-        .data_in         (sw_337_data_out),
-        .scan_select_in  (sw_337_scan_out),
-        .latch_enable_in (sw_337_latch_out),
-        .clk_out         (sw_338_clk_out),
-        .data_out        (sw_338_data_out),
-        .scan_select_out (sw_338_scan_out),
-        .latch_enable_out(sw_338_latch_out),
-        .module_data_in  (sw_338_module_data_in),
-        .module_data_out (sw_338_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_338 (
-        .io_in  (sw_338_module_data_in),
-        .io_out (sw_338_module_data_out)
-    );
-
-    // [339] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_339_clk_out, sw_339_data_out, sw_339_scan_out, sw_339_latch_out;
-    wire [7:0] sw_339_module_data_in;
-    wire [7:0] sw_339_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_339 (
-        .clk_in          (sw_338_clk_out),
-        .data_in         (sw_338_data_out),
-        .scan_select_in  (sw_338_scan_out),
-        .latch_enable_in (sw_338_latch_out),
-        .clk_out         (sw_339_clk_out),
-        .data_out        (sw_339_data_out),
-        .scan_select_out (sw_339_scan_out),
-        .latch_enable_out(sw_339_latch_out),
-        .module_data_in  (sw_339_module_data_in),
-        .module_data_out (sw_339_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_339 (
-        .io_in  (sw_339_module_data_in),
-        .io_out (sw_339_module_data_out)
-    );
-
-    // [340] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_340_clk_out, sw_340_data_out, sw_340_scan_out, sw_340_latch_out;
-    wire [7:0] sw_340_module_data_in;
-    wire [7:0] sw_340_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_340 (
-        .clk_in          (sw_339_clk_out),
-        .data_in         (sw_339_data_out),
-        .scan_select_in  (sw_339_scan_out),
-        .latch_enable_in (sw_339_latch_out),
-        .clk_out         (sw_340_clk_out),
-        .data_out        (sw_340_data_out),
-        .scan_select_out (sw_340_scan_out),
-        .latch_enable_out(sw_340_latch_out),
-        .module_data_in  (sw_340_module_data_in),
-        .module_data_out (sw_340_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_340 (
-        .io_in  (sw_340_module_data_in),
-        .io_out (sw_340_module_data_out)
-    );
-
-    // [341] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_341_clk_out, sw_341_data_out, sw_341_scan_out, sw_341_latch_out;
-    wire [7:0] sw_341_module_data_in;
-    wire [7:0] sw_341_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_341 (
-        .clk_in          (sw_340_clk_out),
-        .data_in         (sw_340_data_out),
-        .scan_select_in  (sw_340_scan_out),
-        .latch_enable_in (sw_340_latch_out),
-        .clk_out         (sw_341_clk_out),
-        .data_out        (sw_341_data_out),
-        .scan_select_out (sw_341_scan_out),
-        .latch_enable_out(sw_341_latch_out),
-        .module_data_in  (sw_341_module_data_in),
-        .module_data_out (sw_341_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_341 (
-        .io_in  (sw_341_module_data_in),
-        .io_out (sw_341_module_data_out)
-    );
-
-    // [342] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_342_clk_out, sw_342_data_out, sw_342_scan_out, sw_342_latch_out;
-    wire [7:0] sw_342_module_data_in;
-    wire [7:0] sw_342_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_342 (
-        .clk_in          (sw_341_clk_out),
-        .data_in         (sw_341_data_out),
-        .scan_select_in  (sw_341_scan_out),
-        .latch_enable_in (sw_341_latch_out),
-        .clk_out         (sw_342_clk_out),
-        .data_out        (sw_342_data_out),
-        .scan_select_out (sw_342_scan_out),
-        .latch_enable_out(sw_342_latch_out),
-        .module_data_in  (sw_342_module_data_in),
-        .module_data_out (sw_342_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_342 (
-        .io_in  (sw_342_module_data_in),
-        .io_out (sw_342_module_data_out)
-    );
-
-    // [343] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_343_clk_out, sw_343_data_out, sw_343_scan_out, sw_343_latch_out;
-    wire [7:0] sw_343_module_data_in;
-    wire [7:0] sw_343_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_343 (
-        .clk_in          (sw_342_clk_out),
-        .data_in         (sw_342_data_out),
-        .scan_select_in  (sw_342_scan_out),
-        .latch_enable_in (sw_342_latch_out),
-        .clk_out         (sw_343_clk_out),
-        .data_out        (sw_343_data_out),
-        .scan_select_out (sw_343_scan_out),
-        .latch_enable_out(sw_343_latch_out),
-        .module_data_in  (sw_343_module_data_in),
-        .module_data_out (sw_343_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_343 (
-        .io_in  (sw_343_module_data_in),
-        .io_out (sw_343_module_data_out)
-    );
-
-    // [344] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_344_clk_out, sw_344_data_out, sw_344_scan_out, sw_344_latch_out;
-    wire [7:0] sw_344_module_data_in;
-    wire [7:0] sw_344_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_344 (
-        .clk_in          (sw_343_clk_out),
-        .data_in         (sw_343_data_out),
-        .scan_select_in  (sw_343_scan_out),
-        .latch_enable_in (sw_343_latch_out),
-        .clk_out         (sw_344_clk_out),
-        .data_out        (sw_344_data_out),
-        .scan_select_out (sw_344_scan_out),
-        .latch_enable_out(sw_344_latch_out),
-        .module_data_in  (sw_344_module_data_in),
-        .module_data_out (sw_344_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_344 (
-        .io_in  (sw_344_module_data_in),
-        .io_out (sw_344_module_data_out)
-    );
-
-    // [345] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_345_clk_out, sw_345_data_out, sw_345_scan_out, sw_345_latch_out;
-    wire [7:0] sw_345_module_data_in;
-    wire [7:0] sw_345_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_345 (
-        .clk_in          (sw_344_clk_out),
-        .data_in         (sw_344_data_out),
-        .scan_select_in  (sw_344_scan_out),
-        .latch_enable_in (sw_344_latch_out),
-        .clk_out         (sw_345_clk_out),
-        .data_out        (sw_345_data_out),
-        .scan_select_out (sw_345_scan_out),
-        .latch_enable_out(sw_345_latch_out),
-        .module_data_in  (sw_345_module_data_in),
-        .module_data_out (sw_345_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_345 (
-        .io_in  (sw_345_module_data_in),
-        .io_out (sw_345_module_data_out)
-    );
-
-    // [346] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_346_clk_out, sw_346_data_out, sw_346_scan_out, sw_346_latch_out;
-    wire [7:0] sw_346_module_data_in;
-    wire [7:0] sw_346_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_346 (
-        .clk_in          (sw_345_clk_out),
-        .data_in         (sw_345_data_out),
-        .scan_select_in  (sw_345_scan_out),
-        .latch_enable_in (sw_345_latch_out),
-        .clk_out         (sw_346_clk_out),
-        .data_out        (sw_346_data_out),
-        .scan_select_out (sw_346_scan_out),
-        .latch_enable_out(sw_346_latch_out),
-        .module_data_in  (sw_346_module_data_in),
-        .module_data_out (sw_346_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_346 (
-        .io_in  (sw_346_module_data_in),
-        .io_out (sw_346_module_data_out)
-    );
-
-    // [347] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_347_clk_out, sw_347_data_out, sw_347_scan_out, sw_347_latch_out;
-    wire [7:0] sw_347_module_data_in;
-    wire [7:0] sw_347_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_347 (
-        .clk_in          (sw_346_clk_out),
-        .data_in         (sw_346_data_out),
-        .scan_select_in  (sw_346_scan_out),
-        .latch_enable_in (sw_346_latch_out),
-        .clk_out         (sw_347_clk_out),
-        .data_out        (sw_347_data_out),
-        .scan_select_out (sw_347_scan_out),
-        .latch_enable_out(sw_347_latch_out),
-        .module_data_in  (sw_347_module_data_in),
-        .module_data_out (sw_347_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_347 (
-        .io_in  (sw_347_module_data_in),
-        .io_out (sw_347_module_data_out)
-    );
-
-    // [348] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_348_clk_out, sw_348_data_out, sw_348_scan_out, sw_348_latch_out;
-    wire [7:0] sw_348_module_data_in;
-    wire [7:0] sw_348_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_348 (
-        .clk_in          (sw_347_clk_out),
-        .data_in         (sw_347_data_out),
-        .scan_select_in  (sw_347_scan_out),
-        .latch_enable_in (sw_347_latch_out),
-        .clk_out         (sw_348_clk_out),
-        .data_out        (sw_348_data_out),
-        .scan_select_out (sw_348_scan_out),
-        .latch_enable_out(sw_348_latch_out),
-        .module_data_in  (sw_348_module_data_in),
-        .module_data_out (sw_348_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_348 (
-        .io_in  (sw_348_module_data_in),
-        .io_out (sw_348_module_data_out)
-    );
-
-    // [349] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_349_clk_out, sw_349_data_out, sw_349_scan_out, sw_349_latch_out;
-    wire [7:0] sw_349_module_data_in;
-    wire [7:0] sw_349_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_349 (
-        .clk_in          (sw_348_clk_out),
-        .data_in         (sw_348_data_out),
-        .scan_select_in  (sw_348_scan_out),
-        .latch_enable_in (sw_348_latch_out),
-        .clk_out         (sw_349_clk_out),
-        .data_out        (sw_349_data_out),
-        .scan_select_out (sw_349_scan_out),
-        .latch_enable_out(sw_349_latch_out),
-        .module_data_in  (sw_349_module_data_in),
-        .module_data_out (sw_349_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_349 (
-        .io_in  (sw_349_module_data_in),
-        .io_out (sw_349_module_data_out)
-    );
-
-    // [350] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_350_clk_out, sw_350_data_out, sw_350_scan_out, sw_350_latch_out;
-    wire [7:0] sw_350_module_data_in;
-    wire [7:0] sw_350_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_350 (
-        .clk_in          (sw_349_clk_out),
-        .data_in         (sw_349_data_out),
-        .scan_select_in  (sw_349_scan_out),
-        .latch_enable_in (sw_349_latch_out),
-        .clk_out         (sw_350_clk_out),
-        .data_out        (sw_350_data_out),
-        .scan_select_out (sw_350_scan_out),
-        .latch_enable_out(sw_350_latch_out),
-        .module_data_in  (sw_350_module_data_in),
-        .module_data_out (sw_350_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_350 (
-        .io_in  (sw_350_module_data_in),
-        .io_out (sw_350_module_data_out)
-    );
-
-    // [351] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_351_clk_out, sw_351_data_out, sw_351_scan_out, sw_351_latch_out;
-    wire [7:0] sw_351_module_data_in;
-    wire [7:0] sw_351_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_351 (
-        .clk_in          (sw_350_clk_out),
-        .data_in         (sw_350_data_out),
-        .scan_select_in  (sw_350_scan_out),
-        .latch_enable_in (sw_350_latch_out),
-        .clk_out         (sw_351_clk_out),
-        .data_out        (sw_351_data_out),
-        .scan_select_out (sw_351_scan_out),
-        .latch_enable_out(sw_351_latch_out),
-        .module_data_in  (sw_351_module_data_in),
-        .module_data_out (sw_351_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_351 (
-        .io_in  (sw_351_module_data_in),
-        .io_out (sw_351_module_data_out)
-    );
-
-    // [352] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_352_clk_out, sw_352_data_out, sw_352_scan_out, sw_352_latch_out;
-    wire [7:0] sw_352_module_data_in;
-    wire [7:0] sw_352_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_352 (
-        .clk_in          (sw_351_clk_out),
-        .data_in         (sw_351_data_out),
-        .scan_select_in  (sw_351_scan_out),
-        .latch_enable_in (sw_351_latch_out),
-        .clk_out         (sw_352_clk_out),
-        .data_out        (sw_352_data_out),
-        .scan_select_out (sw_352_scan_out),
-        .latch_enable_out(sw_352_latch_out),
-        .module_data_in  (sw_352_module_data_in),
-        .module_data_out (sw_352_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_352 (
-        .io_in  (sw_352_module_data_in),
-        .io_out (sw_352_module_data_out)
-    );
-
-    // [353] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_353_clk_out, sw_353_data_out, sw_353_scan_out, sw_353_latch_out;
-    wire [7:0] sw_353_module_data_in;
-    wire [7:0] sw_353_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_353 (
-        .clk_in          (sw_352_clk_out),
-        .data_in         (sw_352_data_out),
-        .scan_select_in  (sw_352_scan_out),
-        .latch_enable_in (sw_352_latch_out),
-        .clk_out         (sw_353_clk_out),
-        .data_out        (sw_353_data_out),
-        .scan_select_out (sw_353_scan_out),
-        .latch_enable_out(sw_353_latch_out),
-        .module_data_in  (sw_353_module_data_in),
-        .module_data_out (sw_353_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_353 (
-        .io_in  (sw_353_module_data_in),
-        .io_out (sw_353_module_data_out)
-    );
-
-    // [354] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_354_clk_out, sw_354_data_out, sw_354_scan_out, sw_354_latch_out;
-    wire [7:0] sw_354_module_data_in;
-    wire [7:0] sw_354_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_354 (
-        .clk_in          (sw_353_clk_out),
-        .data_in         (sw_353_data_out),
-        .scan_select_in  (sw_353_scan_out),
-        .latch_enable_in (sw_353_latch_out),
-        .clk_out         (sw_354_clk_out),
-        .data_out        (sw_354_data_out),
-        .scan_select_out (sw_354_scan_out),
-        .latch_enable_out(sw_354_latch_out),
-        .module_data_in  (sw_354_module_data_in),
-        .module_data_out (sw_354_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_354 (
-        .io_in  (sw_354_module_data_in),
-        .io_out (sw_354_module_data_out)
-    );
-
-    // [355] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_355_clk_out, sw_355_data_out, sw_355_scan_out, sw_355_latch_out;
-    wire [7:0] sw_355_module_data_in;
-    wire [7:0] sw_355_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_355 (
-        .clk_in          (sw_354_clk_out),
-        .data_in         (sw_354_data_out),
-        .scan_select_in  (sw_354_scan_out),
-        .latch_enable_in (sw_354_latch_out),
-        .clk_out         (sw_355_clk_out),
-        .data_out        (sw_355_data_out),
-        .scan_select_out (sw_355_scan_out),
-        .latch_enable_out(sw_355_latch_out),
-        .module_data_in  (sw_355_module_data_in),
-        .module_data_out (sw_355_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_355 (
-        .io_in  (sw_355_module_data_in),
-        .io_out (sw_355_module_data_out)
-    );
-
-    // [356] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_356_clk_out, sw_356_data_out, sw_356_scan_out, sw_356_latch_out;
-    wire [7:0] sw_356_module_data_in;
-    wire [7:0] sw_356_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_356 (
-        .clk_in          (sw_355_clk_out),
-        .data_in         (sw_355_data_out),
-        .scan_select_in  (sw_355_scan_out),
-        .latch_enable_in (sw_355_latch_out),
-        .clk_out         (sw_356_clk_out),
-        .data_out        (sw_356_data_out),
-        .scan_select_out (sw_356_scan_out),
-        .latch_enable_out(sw_356_latch_out),
-        .module_data_in  (sw_356_module_data_in),
-        .module_data_out (sw_356_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_356 (
-        .io_in  (sw_356_module_data_in),
-        .io_out (sw_356_module_data_out)
-    );
-
-    // [357] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_357_clk_out, sw_357_data_out, sw_357_scan_out, sw_357_latch_out;
-    wire [7:0] sw_357_module_data_in;
-    wire [7:0] sw_357_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_357 (
-        .clk_in          (sw_356_clk_out),
-        .data_in         (sw_356_data_out),
-        .scan_select_in  (sw_356_scan_out),
-        .latch_enable_in (sw_356_latch_out),
-        .clk_out         (sw_357_clk_out),
-        .data_out        (sw_357_data_out),
-        .scan_select_out (sw_357_scan_out),
-        .latch_enable_out(sw_357_latch_out),
-        .module_data_in  (sw_357_module_data_in),
-        .module_data_out (sw_357_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_357 (
-        .io_in  (sw_357_module_data_in),
-        .io_out (sw_357_module_data_out)
-    );
-
-    // [358] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_358_clk_out, sw_358_data_out, sw_358_scan_out, sw_358_latch_out;
-    wire [7:0] sw_358_module_data_in;
-    wire [7:0] sw_358_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_358 (
-        .clk_in          (sw_357_clk_out),
-        .data_in         (sw_357_data_out),
-        .scan_select_in  (sw_357_scan_out),
-        .latch_enable_in (sw_357_latch_out),
-        .clk_out         (sw_358_clk_out),
-        .data_out        (sw_358_data_out),
-        .scan_select_out (sw_358_scan_out),
-        .latch_enable_out(sw_358_latch_out),
-        .module_data_in  (sw_358_module_data_in),
-        .module_data_out (sw_358_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_358 (
-        .io_in  (sw_358_module_data_in),
-        .io_out (sw_358_module_data_out)
-    );
-
-    // [359] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_359_clk_out, sw_359_data_out, sw_359_scan_out, sw_359_latch_out;
-    wire [7:0] sw_359_module_data_in;
-    wire [7:0] sw_359_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_359 (
-        .clk_in          (sw_358_clk_out),
-        .data_in         (sw_358_data_out),
-        .scan_select_in  (sw_358_scan_out),
-        .latch_enable_in (sw_358_latch_out),
-        .clk_out         (sw_359_clk_out),
-        .data_out        (sw_359_data_out),
-        .scan_select_out (sw_359_scan_out),
-        .latch_enable_out(sw_359_latch_out),
-        .module_data_in  (sw_359_module_data_in),
-        .module_data_out (sw_359_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_359 (
-        .io_in  (sw_359_module_data_in),
-        .io_out (sw_359_module_data_out)
-    );
-
-    // [360] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_360_clk_out, sw_360_data_out, sw_360_scan_out, sw_360_latch_out;
-    wire [7:0] sw_360_module_data_in;
-    wire [7:0] sw_360_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_360 (
-        .clk_in          (sw_359_clk_out),
-        .data_in         (sw_359_data_out),
-        .scan_select_in  (sw_359_scan_out),
-        .latch_enable_in (sw_359_latch_out),
-        .clk_out         (sw_360_clk_out),
-        .data_out        (sw_360_data_out),
-        .scan_select_out (sw_360_scan_out),
-        .latch_enable_out(sw_360_latch_out),
-        .module_data_in  (sw_360_module_data_in),
-        .module_data_out (sw_360_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_360 (
-        .io_in  (sw_360_module_data_in),
-        .io_out (sw_360_module_data_out)
-    );
-
-    // [361] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_361_clk_out, sw_361_data_out, sw_361_scan_out, sw_361_latch_out;
-    wire [7:0] sw_361_module_data_in;
-    wire [7:0] sw_361_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_361 (
-        .clk_in          (sw_360_clk_out),
-        .data_in         (sw_360_data_out),
-        .scan_select_in  (sw_360_scan_out),
-        .latch_enable_in (sw_360_latch_out),
-        .clk_out         (sw_361_clk_out),
-        .data_out        (sw_361_data_out),
-        .scan_select_out (sw_361_scan_out),
-        .latch_enable_out(sw_361_latch_out),
-        .module_data_in  (sw_361_module_data_in),
-        .module_data_out (sw_361_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_361 (
-        .io_in  (sw_361_module_data_in),
-        .io_out (sw_361_module_data_out)
-    );
-
-    // [362] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_362_clk_out, sw_362_data_out, sw_362_scan_out, sw_362_latch_out;
-    wire [7:0] sw_362_module_data_in;
-    wire [7:0] sw_362_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_362 (
-        .clk_in          (sw_361_clk_out),
-        .data_in         (sw_361_data_out),
-        .scan_select_in  (sw_361_scan_out),
-        .latch_enable_in (sw_361_latch_out),
-        .clk_out         (sw_362_clk_out),
-        .data_out        (sw_362_data_out),
-        .scan_select_out (sw_362_scan_out),
-        .latch_enable_out(sw_362_latch_out),
-        .module_data_in  (sw_362_module_data_in),
-        .module_data_out (sw_362_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_362 (
-        .io_in  (sw_362_module_data_in),
-        .io_out (sw_362_module_data_out)
-    );
-
-    // [363] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_363_clk_out, sw_363_data_out, sw_363_scan_out, sw_363_latch_out;
-    wire [7:0] sw_363_module_data_in;
-    wire [7:0] sw_363_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_363 (
-        .clk_in          (sw_362_clk_out),
-        .data_in         (sw_362_data_out),
-        .scan_select_in  (sw_362_scan_out),
-        .latch_enable_in (sw_362_latch_out),
-        .clk_out         (sw_363_clk_out),
-        .data_out        (sw_363_data_out),
-        .scan_select_out (sw_363_scan_out),
-        .latch_enable_out(sw_363_latch_out),
-        .module_data_in  (sw_363_module_data_in),
-        .module_data_out (sw_363_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_363 (
-        .io_in  (sw_363_module_data_in),
-        .io_out (sw_363_module_data_out)
-    );
-
-    // [364] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_364_clk_out, sw_364_data_out, sw_364_scan_out, sw_364_latch_out;
-    wire [7:0] sw_364_module_data_in;
-    wire [7:0] sw_364_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_364 (
-        .clk_in          (sw_363_clk_out),
-        .data_in         (sw_363_data_out),
-        .scan_select_in  (sw_363_scan_out),
-        .latch_enable_in (sw_363_latch_out),
-        .clk_out         (sw_364_clk_out),
-        .data_out        (sw_364_data_out),
-        .scan_select_out (sw_364_scan_out),
-        .latch_enable_out(sw_364_latch_out),
-        .module_data_in  (sw_364_module_data_in),
-        .module_data_out (sw_364_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_364 (
-        .io_in  (sw_364_module_data_in),
-        .io_out (sw_364_module_data_out)
-    );
-
-    // [365] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_365_clk_out, sw_365_data_out, sw_365_scan_out, sw_365_latch_out;
-    wire [7:0] sw_365_module_data_in;
-    wire [7:0] sw_365_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_365 (
-        .clk_in          (sw_364_clk_out),
-        .data_in         (sw_364_data_out),
-        .scan_select_in  (sw_364_scan_out),
-        .latch_enable_in (sw_364_latch_out),
-        .clk_out         (sw_365_clk_out),
-        .data_out        (sw_365_data_out),
-        .scan_select_out (sw_365_scan_out),
-        .latch_enable_out(sw_365_latch_out),
-        .module_data_in  (sw_365_module_data_in),
-        .module_data_out (sw_365_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_365 (
-        .io_in  (sw_365_module_data_in),
-        .io_out (sw_365_module_data_out)
-    );
-
-    // [366] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_366_clk_out, sw_366_data_out, sw_366_scan_out, sw_366_latch_out;
-    wire [7:0] sw_366_module_data_in;
-    wire [7:0] sw_366_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_366 (
-        .clk_in          (sw_365_clk_out),
-        .data_in         (sw_365_data_out),
-        .scan_select_in  (sw_365_scan_out),
-        .latch_enable_in (sw_365_latch_out),
-        .clk_out         (sw_366_clk_out),
-        .data_out        (sw_366_data_out),
-        .scan_select_out (sw_366_scan_out),
-        .latch_enable_out(sw_366_latch_out),
-        .module_data_in  (sw_366_module_data_in),
-        .module_data_out (sw_366_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_366 (
-        .io_in  (sw_366_module_data_in),
-        .io_out (sw_366_module_data_out)
-    );
-
-    // [367] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_367_clk_out, sw_367_data_out, sw_367_scan_out, sw_367_latch_out;
-    wire [7:0] sw_367_module_data_in;
-    wire [7:0] sw_367_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_367 (
-        .clk_in          (sw_366_clk_out),
-        .data_in         (sw_366_data_out),
-        .scan_select_in  (sw_366_scan_out),
-        .latch_enable_in (sw_366_latch_out),
-        .clk_out         (sw_367_clk_out),
-        .data_out        (sw_367_data_out),
-        .scan_select_out (sw_367_scan_out),
-        .latch_enable_out(sw_367_latch_out),
-        .module_data_in  (sw_367_module_data_in),
-        .module_data_out (sw_367_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_367 (
-        .io_in  (sw_367_module_data_in),
-        .io_out (sw_367_module_data_out)
-    );
-
-    // [368] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_368_clk_out, sw_368_data_out, sw_368_scan_out, sw_368_latch_out;
-    wire [7:0] sw_368_module_data_in;
-    wire [7:0] sw_368_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_368 (
-        .clk_in          (sw_367_clk_out),
-        .data_in         (sw_367_data_out),
-        .scan_select_in  (sw_367_scan_out),
-        .latch_enable_in (sw_367_latch_out),
-        .clk_out         (sw_368_clk_out),
-        .data_out        (sw_368_data_out),
-        .scan_select_out (sw_368_scan_out),
-        .latch_enable_out(sw_368_latch_out),
-        .module_data_in  (sw_368_module_data_in),
-        .module_data_out (sw_368_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_368 (
-        .io_in  (sw_368_module_data_in),
-        .io_out (sw_368_module_data_out)
-    );
-
-    // [369] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_369_clk_out, sw_369_data_out, sw_369_scan_out, sw_369_latch_out;
-    wire [7:0] sw_369_module_data_in;
-    wire [7:0] sw_369_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_369 (
-        .clk_in          (sw_368_clk_out),
-        .data_in         (sw_368_data_out),
-        .scan_select_in  (sw_368_scan_out),
-        .latch_enable_in (sw_368_latch_out),
-        .clk_out         (sw_369_clk_out),
-        .data_out        (sw_369_data_out),
-        .scan_select_out (sw_369_scan_out),
-        .latch_enable_out(sw_369_latch_out),
-        .module_data_in  (sw_369_module_data_in),
-        .module_data_out (sw_369_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_369 (
-        .io_in  (sw_369_module_data_in),
-        .io_out (sw_369_module_data_out)
-    );
-
-    // [370] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_370_clk_out, sw_370_data_out, sw_370_scan_out, sw_370_latch_out;
-    wire [7:0] sw_370_module_data_in;
-    wire [7:0] sw_370_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_370 (
-        .clk_in          (sw_369_clk_out),
-        .data_in         (sw_369_data_out),
-        .scan_select_in  (sw_369_scan_out),
-        .latch_enable_in (sw_369_latch_out),
-        .clk_out         (sw_370_clk_out),
-        .data_out        (sw_370_data_out),
-        .scan_select_out (sw_370_scan_out),
-        .latch_enable_out(sw_370_latch_out),
-        .module_data_in  (sw_370_module_data_in),
-        .module_data_out (sw_370_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_370 (
-        .io_in  (sw_370_module_data_in),
-        .io_out (sw_370_module_data_out)
-    );
-
-    // [371] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_371_clk_out, sw_371_data_out, sw_371_scan_out, sw_371_latch_out;
-    wire [7:0] sw_371_module_data_in;
-    wire [7:0] sw_371_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_371 (
-        .clk_in          (sw_370_clk_out),
-        .data_in         (sw_370_data_out),
-        .scan_select_in  (sw_370_scan_out),
-        .latch_enable_in (sw_370_latch_out),
-        .clk_out         (sw_371_clk_out),
-        .data_out        (sw_371_data_out),
-        .scan_select_out (sw_371_scan_out),
-        .latch_enable_out(sw_371_latch_out),
-        .module_data_in  (sw_371_module_data_in),
-        .module_data_out (sw_371_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_371 (
-        .io_in  (sw_371_module_data_in),
-        .io_out (sw_371_module_data_out)
-    );
-
-    // [372] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_372_clk_out, sw_372_data_out, sw_372_scan_out, sw_372_latch_out;
-    wire [7:0] sw_372_module_data_in;
-    wire [7:0] sw_372_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_372 (
-        .clk_in          (sw_371_clk_out),
-        .data_in         (sw_371_data_out),
-        .scan_select_in  (sw_371_scan_out),
-        .latch_enable_in (sw_371_latch_out),
-        .clk_out         (sw_372_clk_out),
-        .data_out        (sw_372_data_out),
-        .scan_select_out (sw_372_scan_out),
-        .latch_enable_out(sw_372_latch_out),
-        .module_data_in  (sw_372_module_data_in),
-        .module_data_out (sw_372_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_372 (
-        .io_in  (sw_372_module_data_in),
-        .io_out (sw_372_module_data_out)
-    );
-
-    // [373] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_373_clk_out, sw_373_data_out, sw_373_scan_out, sw_373_latch_out;
-    wire [7:0] sw_373_module_data_in;
-    wire [7:0] sw_373_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_373 (
-        .clk_in          (sw_372_clk_out),
-        .data_in         (sw_372_data_out),
-        .scan_select_in  (sw_372_scan_out),
-        .latch_enable_in (sw_372_latch_out),
-        .clk_out         (sw_373_clk_out),
-        .data_out        (sw_373_data_out),
-        .scan_select_out (sw_373_scan_out),
-        .latch_enable_out(sw_373_latch_out),
-        .module_data_in  (sw_373_module_data_in),
-        .module_data_out (sw_373_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_373 (
-        .io_in  (sw_373_module_data_in),
-        .io_out (sw_373_module_data_out)
-    );
-
-    // [374] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_374_clk_out, sw_374_data_out, sw_374_scan_out, sw_374_latch_out;
-    wire [7:0] sw_374_module_data_in;
-    wire [7:0] sw_374_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_374 (
-        .clk_in          (sw_373_clk_out),
-        .data_in         (sw_373_data_out),
-        .scan_select_in  (sw_373_scan_out),
-        .latch_enable_in (sw_373_latch_out),
-        .clk_out         (sw_374_clk_out),
-        .data_out        (sw_374_data_out),
-        .scan_select_out (sw_374_scan_out),
-        .latch_enable_out(sw_374_latch_out),
-        .module_data_in  (sw_374_module_data_in),
-        .module_data_out (sw_374_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_374 (
-        .io_in  (sw_374_module_data_in),
-        .io_out (sw_374_module_data_out)
-    );
-
-    // [375] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_375_clk_out, sw_375_data_out, sw_375_scan_out, sw_375_latch_out;
-    wire [7:0] sw_375_module_data_in;
-    wire [7:0] sw_375_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_375 (
-        .clk_in          (sw_374_clk_out),
-        .data_in         (sw_374_data_out),
-        .scan_select_in  (sw_374_scan_out),
-        .latch_enable_in (sw_374_latch_out),
-        .clk_out         (sw_375_clk_out),
-        .data_out        (sw_375_data_out),
-        .scan_select_out (sw_375_scan_out),
-        .latch_enable_out(sw_375_latch_out),
-        .module_data_in  (sw_375_module_data_in),
-        .module_data_out (sw_375_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_375 (
-        .io_in  (sw_375_module_data_in),
-        .io_out (sw_375_module_data_out)
-    );
-
-    // [376] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_376_clk_out, sw_376_data_out, sw_376_scan_out, sw_376_latch_out;
-    wire [7:0] sw_376_module_data_in;
-    wire [7:0] sw_376_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_376 (
-        .clk_in          (sw_375_clk_out),
-        .data_in         (sw_375_data_out),
-        .scan_select_in  (sw_375_scan_out),
-        .latch_enable_in (sw_375_latch_out),
-        .clk_out         (sw_376_clk_out),
-        .data_out        (sw_376_data_out),
-        .scan_select_out (sw_376_scan_out),
-        .latch_enable_out(sw_376_latch_out),
-        .module_data_in  (sw_376_module_data_in),
-        .module_data_out (sw_376_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_376 (
-        .io_in  (sw_376_module_data_in),
-        .io_out (sw_376_module_data_out)
-    );
-
-    // [377] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_377_clk_out, sw_377_data_out, sw_377_scan_out, sw_377_latch_out;
-    wire [7:0] sw_377_module_data_in;
-    wire [7:0] sw_377_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_377 (
-        .clk_in          (sw_376_clk_out),
-        .data_in         (sw_376_data_out),
-        .scan_select_in  (sw_376_scan_out),
-        .latch_enable_in (sw_376_latch_out),
-        .clk_out         (sw_377_clk_out),
-        .data_out        (sw_377_data_out),
-        .scan_select_out (sw_377_scan_out),
-        .latch_enable_out(sw_377_latch_out),
-        .module_data_in  (sw_377_module_data_in),
-        .module_data_out (sw_377_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_377 (
-        .io_in  (sw_377_module_data_in),
-        .io_out (sw_377_module_data_out)
-    );
-
-    // [378] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_378_clk_out, sw_378_data_out, sw_378_scan_out, sw_378_latch_out;
-    wire [7:0] sw_378_module_data_in;
-    wire [7:0] sw_378_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_378 (
-        .clk_in          (sw_377_clk_out),
-        .data_in         (sw_377_data_out),
-        .scan_select_in  (sw_377_scan_out),
-        .latch_enable_in (sw_377_latch_out),
-        .clk_out         (sw_378_clk_out),
-        .data_out        (sw_378_data_out),
-        .scan_select_out (sw_378_scan_out),
-        .latch_enable_out(sw_378_latch_out),
-        .module_data_in  (sw_378_module_data_in),
-        .module_data_out (sw_378_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_378 (
-        .io_in  (sw_378_module_data_in),
-        .io_out (sw_378_module_data_out)
-    );
-
-    // [379] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_379_clk_out, sw_379_data_out, sw_379_scan_out, sw_379_latch_out;
-    wire [7:0] sw_379_module_data_in;
-    wire [7:0] sw_379_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_379 (
-        .clk_in          (sw_378_clk_out),
-        .data_in         (sw_378_data_out),
-        .scan_select_in  (sw_378_scan_out),
-        .latch_enable_in (sw_378_latch_out),
-        .clk_out         (sw_379_clk_out),
-        .data_out        (sw_379_data_out),
-        .scan_select_out (sw_379_scan_out),
-        .latch_enable_out(sw_379_latch_out),
-        .module_data_in  (sw_379_module_data_in),
-        .module_data_out (sw_379_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_379 (
-        .io_in  (sw_379_module_data_in),
-        .io_out (sw_379_module_data_out)
-    );
-
-    // [380] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_380_clk_out, sw_380_data_out, sw_380_scan_out, sw_380_latch_out;
-    wire [7:0] sw_380_module_data_in;
-    wire [7:0] sw_380_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_380 (
-        .clk_in          (sw_379_clk_out),
-        .data_in         (sw_379_data_out),
-        .scan_select_in  (sw_379_scan_out),
-        .latch_enable_in (sw_379_latch_out),
-        .clk_out         (sw_380_clk_out),
-        .data_out        (sw_380_data_out),
-        .scan_select_out (sw_380_scan_out),
-        .latch_enable_out(sw_380_latch_out),
-        .module_data_in  (sw_380_module_data_in),
-        .module_data_out (sw_380_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_380 (
-        .io_in  (sw_380_module_data_in),
-        .io_out (sw_380_module_data_out)
-    );
-
-    // [381] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_381_clk_out, sw_381_data_out, sw_381_scan_out, sw_381_latch_out;
-    wire [7:0] sw_381_module_data_in;
-    wire [7:0] sw_381_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_381 (
-        .clk_in          (sw_380_clk_out),
-        .data_in         (sw_380_data_out),
-        .scan_select_in  (sw_380_scan_out),
-        .latch_enable_in (sw_380_latch_out),
-        .clk_out         (sw_381_clk_out),
-        .data_out        (sw_381_data_out),
-        .scan_select_out (sw_381_scan_out),
-        .latch_enable_out(sw_381_latch_out),
-        .module_data_in  (sw_381_module_data_in),
-        .module_data_out (sw_381_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_381 (
-        .io_in  (sw_381_module_data_in),
-        .io_out (sw_381_module_data_out)
-    );
-
-    // [382] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_382_clk_out, sw_382_data_out, sw_382_scan_out, sw_382_latch_out;
-    wire [7:0] sw_382_module_data_in;
-    wire [7:0] sw_382_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_382 (
-        .clk_in          (sw_381_clk_out),
-        .data_in         (sw_381_data_out),
-        .scan_select_in  (sw_381_scan_out),
-        .latch_enable_in (sw_381_latch_out),
-        .clk_out         (sw_382_clk_out),
-        .data_out        (sw_382_data_out),
-        .scan_select_out (sw_382_scan_out),
-        .latch_enable_out(sw_382_latch_out),
-        .module_data_in  (sw_382_module_data_in),
-        .module_data_out (sw_382_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_382 (
-        .io_in  (sw_382_module_data_in),
-        .io_out (sw_382_module_data_out)
-    );
-
-    // [383] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_383_clk_out, sw_383_data_out, sw_383_scan_out, sw_383_latch_out;
-    wire [7:0] sw_383_module_data_in;
-    wire [7:0] sw_383_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_383 (
-        .clk_in          (sw_382_clk_out),
-        .data_in         (sw_382_data_out),
-        .scan_select_in  (sw_382_scan_out),
-        .latch_enable_in (sw_382_latch_out),
-        .clk_out         (sw_383_clk_out),
-        .data_out        (sw_383_data_out),
-        .scan_select_out (sw_383_scan_out),
-        .latch_enable_out(sw_383_latch_out),
-        .module_data_in  (sw_383_module_data_in),
-        .module_data_out (sw_383_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_383 (
-        .io_in  (sw_383_module_data_in),
-        .io_out (sw_383_module_data_out)
-    );
-
-    // [384] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_384_clk_out, sw_384_data_out, sw_384_scan_out, sw_384_latch_out;
-    wire [7:0] sw_384_module_data_in;
-    wire [7:0] sw_384_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_384 (
-        .clk_in          (sw_383_clk_out),
-        .data_in         (sw_383_data_out),
-        .scan_select_in  (sw_383_scan_out),
-        .latch_enable_in (sw_383_latch_out),
-        .clk_out         (sw_384_clk_out),
-        .data_out        (sw_384_data_out),
-        .scan_select_out (sw_384_scan_out),
-        .latch_enable_out(sw_384_latch_out),
-        .module_data_in  (sw_384_module_data_in),
-        .module_data_out (sw_384_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_384 (
-        .io_in  (sw_384_module_data_in),
-        .io_out (sw_384_module_data_out)
-    );
-
-    // [385] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_385_clk_out, sw_385_data_out, sw_385_scan_out, sw_385_latch_out;
-    wire [7:0] sw_385_module_data_in;
-    wire [7:0] sw_385_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_385 (
-        .clk_in          (sw_384_clk_out),
-        .data_in         (sw_384_data_out),
-        .scan_select_in  (sw_384_scan_out),
-        .latch_enable_in (sw_384_latch_out),
-        .clk_out         (sw_385_clk_out),
-        .data_out        (sw_385_data_out),
-        .scan_select_out (sw_385_scan_out),
-        .latch_enable_out(sw_385_latch_out),
-        .module_data_in  (sw_385_module_data_in),
-        .module_data_out (sw_385_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_385 (
-        .io_in  (sw_385_module_data_in),
-        .io_out (sw_385_module_data_out)
-    );
-
-    // [386] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_386_clk_out, sw_386_data_out, sw_386_scan_out, sw_386_latch_out;
-    wire [7:0] sw_386_module_data_in;
-    wire [7:0] sw_386_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_386 (
-        .clk_in          (sw_385_clk_out),
-        .data_in         (sw_385_data_out),
-        .scan_select_in  (sw_385_scan_out),
-        .latch_enable_in (sw_385_latch_out),
-        .clk_out         (sw_386_clk_out),
-        .data_out        (sw_386_data_out),
-        .scan_select_out (sw_386_scan_out),
-        .latch_enable_out(sw_386_latch_out),
-        .module_data_in  (sw_386_module_data_in),
-        .module_data_out (sw_386_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_386 (
-        .io_in  (sw_386_module_data_in),
-        .io_out (sw_386_module_data_out)
-    );
-
-    // [387] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_387_clk_out, sw_387_data_out, sw_387_scan_out, sw_387_latch_out;
-    wire [7:0] sw_387_module_data_in;
-    wire [7:0] sw_387_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_387 (
-        .clk_in          (sw_386_clk_out),
-        .data_in         (sw_386_data_out),
-        .scan_select_in  (sw_386_scan_out),
-        .latch_enable_in (sw_386_latch_out),
-        .clk_out         (sw_387_clk_out),
-        .data_out        (sw_387_data_out),
-        .scan_select_out (sw_387_scan_out),
-        .latch_enable_out(sw_387_latch_out),
-        .module_data_in  (sw_387_module_data_in),
-        .module_data_out (sw_387_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_387 (
-        .io_in  (sw_387_module_data_in),
-        .io_out (sw_387_module_data_out)
-    );
-
-    // [388] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_388_clk_out, sw_388_data_out, sw_388_scan_out, sw_388_latch_out;
-    wire [7:0] sw_388_module_data_in;
-    wire [7:0] sw_388_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_388 (
-        .clk_in          (sw_387_clk_out),
-        .data_in         (sw_387_data_out),
-        .scan_select_in  (sw_387_scan_out),
-        .latch_enable_in (sw_387_latch_out),
-        .clk_out         (sw_388_clk_out),
-        .data_out        (sw_388_data_out),
-        .scan_select_out (sw_388_scan_out),
-        .latch_enable_out(sw_388_latch_out),
-        .module_data_in  (sw_388_module_data_in),
-        .module_data_out (sw_388_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_388 (
-        .io_in  (sw_388_module_data_in),
-        .io_out (sw_388_module_data_out)
-    );
-
-    // [389] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_389_clk_out, sw_389_data_out, sw_389_scan_out, sw_389_latch_out;
-    wire [7:0] sw_389_module_data_in;
-    wire [7:0] sw_389_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_389 (
-        .clk_in          (sw_388_clk_out),
-        .data_in         (sw_388_data_out),
-        .scan_select_in  (sw_388_scan_out),
-        .latch_enable_in (sw_388_latch_out),
-        .clk_out         (sw_389_clk_out),
-        .data_out        (sw_389_data_out),
-        .scan_select_out (sw_389_scan_out),
-        .latch_enable_out(sw_389_latch_out),
-        .module_data_in  (sw_389_module_data_in),
-        .module_data_out (sw_389_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_389 (
-        .io_in  (sw_389_module_data_in),
-        .io_out (sw_389_module_data_out)
-    );
-
-    // [390] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_390_clk_out, sw_390_data_out, sw_390_scan_out, sw_390_latch_out;
-    wire [7:0] sw_390_module_data_in;
-    wire [7:0] sw_390_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_390 (
-        .clk_in          (sw_389_clk_out),
-        .data_in         (sw_389_data_out),
-        .scan_select_in  (sw_389_scan_out),
-        .latch_enable_in (sw_389_latch_out),
-        .clk_out         (sw_390_clk_out),
-        .data_out        (sw_390_data_out),
-        .scan_select_out (sw_390_scan_out),
-        .latch_enable_out(sw_390_latch_out),
-        .module_data_in  (sw_390_module_data_in),
-        .module_data_out (sw_390_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_390 (
-        .io_in  (sw_390_module_data_in),
-        .io_out (sw_390_module_data_out)
-    );
-
-    // [391] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_391_clk_out, sw_391_data_out, sw_391_scan_out, sw_391_latch_out;
-    wire [7:0] sw_391_module_data_in;
-    wire [7:0] sw_391_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_391 (
-        .clk_in          (sw_390_clk_out),
-        .data_in         (sw_390_data_out),
-        .scan_select_in  (sw_390_scan_out),
-        .latch_enable_in (sw_390_latch_out),
-        .clk_out         (sw_391_clk_out),
-        .data_out        (sw_391_data_out),
-        .scan_select_out (sw_391_scan_out),
-        .latch_enable_out(sw_391_latch_out),
-        .module_data_in  (sw_391_module_data_in),
-        .module_data_out (sw_391_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_391 (
-        .io_in  (sw_391_module_data_in),
-        .io_out (sw_391_module_data_out)
-    );
-
-    // [392] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_392_clk_out, sw_392_data_out, sw_392_scan_out, sw_392_latch_out;
-    wire [7:0] sw_392_module_data_in;
-    wire [7:0] sw_392_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_392 (
-        .clk_in          (sw_391_clk_out),
-        .data_in         (sw_391_data_out),
-        .scan_select_in  (sw_391_scan_out),
-        .latch_enable_in (sw_391_latch_out),
-        .clk_out         (sw_392_clk_out),
-        .data_out        (sw_392_data_out),
-        .scan_select_out (sw_392_scan_out),
-        .latch_enable_out(sw_392_latch_out),
-        .module_data_in  (sw_392_module_data_in),
-        .module_data_out (sw_392_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_392 (
-        .io_in  (sw_392_module_data_in),
-        .io_out (sw_392_module_data_out)
-    );
-
-    // [393] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_393_clk_out, sw_393_data_out, sw_393_scan_out, sw_393_latch_out;
-    wire [7:0] sw_393_module_data_in;
-    wire [7:0] sw_393_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_393 (
-        .clk_in          (sw_392_clk_out),
-        .data_in         (sw_392_data_out),
-        .scan_select_in  (sw_392_scan_out),
-        .latch_enable_in (sw_392_latch_out),
-        .clk_out         (sw_393_clk_out),
-        .data_out        (sw_393_data_out),
-        .scan_select_out (sw_393_scan_out),
-        .latch_enable_out(sw_393_latch_out),
-        .module_data_in  (sw_393_module_data_in),
-        .module_data_out (sw_393_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_393 (
-        .io_in  (sw_393_module_data_in),
-        .io_out (sw_393_module_data_out)
-    );
-
-    // [394] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_394_clk_out, sw_394_data_out, sw_394_scan_out, sw_394_latch_out;
-    wire [7:0] sw_394_module_data_in;
-    wire [7:0] sw_394_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_394 (
-        .clk_in          (sw_393_clk_out),
-        .data_in         (sw_393_data_out),
-        .scan_select_in  (sw_393_scan_out),
-        .latch_enable_in (sw_393_latch_out),
-        .clk_out         (sw_394_clk_out),
-        .data_out        (sw_394_data_out),
-        .scan_select_out (sw_394_scan_out),
-        .latch_enable_out(sw_394_latch_out),
-        .module_data_in  (sw_394_module_data_in),
-        .module_data_out (sw_394_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_394 (
-        .io_in  (sw_394_module_data_in),
-        .io_out (sw_394_module_data_out)
-    );
-
-    // [395] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_395_clk_out, sw_395_data_out, sw_395_scan_out, sw_395_latch_out;
-    wire [7:0] sw_395_module_data_in;
-    wire [7:0] sw_395_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_395 (
-        .clk_in          (sw_394_clk_out),
-        .data_in         (sw_394_data_out),
-        .scan_select_in  (sw_394_scan_out),
-        .latch_enable_in (sw_394_latch_out),
-        .clk_out         (sw_395_clk_out),
-        .data_out        (sw_395_data_out),
-        .scan_select_out (sw_395_scan_out),
-        .latch_enable_out(sw_395_latch_out),
-        .module_data_in  (sw_395_module_data_in),
-        .module_data_out (sw_395_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_395 (
-        .io_in  (sw_395_module_data_in),
-        .io_out (sw_395_module_data_out)
-    );
-
-    // [396] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_396_clk_out, sw_396_data_out, sw_396_scan_out, sw_396_latch_out;
-    wire [7:0] sw_396_module_data_in;
-    wire [7:0] sw_396_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_396 (
-        .clk_in          (sw_395_clk_out),
-        .data_in         (sw_395_data_out),
-        .scan_select_in  (sw_395_scan_out),
-        .latch_enable_in (sw_395_latch_out),
-        .clk_out         (sw_396_clk_out),
-        .data_out        (sw_396_data_out),
-        .scan_select_out (sw_396_scan_out),
-        .latch_enable_out(sw_396_latch_out),
-        .module_data_in  (sw_396_module_data_in),
-        .module_data_out (sw_396_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_396 (
-        .io_in  (sw_396_module_data_in),
-        .io_out (sw_396_module_data_out)
-    );
-
-    // [397] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_397_clk_out, sw_397_data_out, sw_397_scan_out, sw_397_latch_out;
-    wire [7:0] sw_397_module_data_in;
-    wire [7:0] sw_397_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_397 (
-        .clk_in          (sw_396_clk_out),
-        .data_in         (sw_396_data_out),
-        .scan_select_in  (sw_396_scan_out),
-        .latch_enable_in (sw_396_latch_out),
-        .clk_out         (sw_397_clk_out),
-        .data_out        (sw_397_data_out),
-        .scan_select_out (sw_397_scan_out),
-        .latch_enable_out(sw_397_latch_out),
-        .module_data_in  (sw_397_module_data_in),
-        .module_data_out (sw_397_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_397 (
-        .io_in  (sw_397_module_data_in),
-        .io_out (sw_397_module_data_out)
-    );
-
-    // [398] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_398_clk_out, sw_398_data_out, sw_398_scan_out, sw_398_latch_out;
-    wire [7:0] sw_398_module_data_in;
-    wire [7:0] sw_398_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_398 (
-        .clk_in          (sw_397_clk_out),
-        .data_in         (sw_397_data_out),
-        .scan_select_in  (sw_397_scan_out),
-        .latch_enable_in (sw_397_latch_out),
-        .clk_out         (sw_398_clk_out),
-        .data_out        (sw_398_data_out),
-        .scan_select_out (sw_398_scan_out),
-        .latch_enable_out(sw_398_latch_out),
-        .module_data_in  (sw_398_module_data_in),
-        .module_data_out (sw_398_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_398 (
-        .io_in  (sw_398_module_data_in),
-        .io_out (sw_398_module_data_out)
-    );
-
-    // [399] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_399_clk_out, sw_399_data_out, sw_399_scan_out, sw_399_latch_out;
-    wire [7:0] sw_399_module_data_in;
-    wire [7:0] sw_399_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_399 (
-        .clk_in          (sw_398_clk_out),
-        .data_in         (sw_398_data_out),
-        .scan_select_in  (sw_398_scan_out),
-        .latch_enable_in (sw_398_latch_out),
-        .clk_out         (sw_399_clk_out),
-        .data_out        (sw_399_data_out),
-        .scan_select_out (sw_399_scan_out),
-        .latch_enable_out(sw_399_latch_out),
-        .module_data_in  (sw_399_module_data_in),
-        .module_data_out (sw_399_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_399 (
-        .io_in  (sw_399_module_data_in),
-        .io_out (sw_399_module_data_out)
-    );
-
-    // [400] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_400_clk_out, sw_400_data_out, sw_400_scan_out, sw_400_latch_out;
-    wire [7:0] sw_400_module_data_in;
-    wire [7:0] sw_400_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_400 (
-        .clk_in          (sw_399_clk_out),
-        .data_in         (sw_399_data_out),
-        .scan_select_in  (sw_399_scan_out),
-        .latch_enable_in (sw_399_latch_out),
-        .clk_out         (sw_400_clk_out),
-        .data_out        (sw_400_data_out),
-        .scan_select_out (sw_400_scan_out),
-        .latch_enable_out(sw_400_latch_out),
-        .module_data_in  (sw_400_module_data_in),
-        .module_data_out (sw_400_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_400 (
-        .io_in  (sw_400_module_data_in),
-        .io_out (sw_400_module_data_out)
-    );
-
-    // [401] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_401_clk_out, sw_401_data_out, sw_401_scan_out, sw_401_latch_out;
-    wire [7:0] sw_401_module_data_in;
-    wire [7:0] sw_401_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_401 (
-        .clk_in          (sw_400_clk_out),
-        .data_in         (sw_400_data_out),
-        .scan_select_in  (sw_400_scan_out),
-        .latch_enable_in (sw_400_latch_out),
-        .clk_out         (sw_401_clk_out),
-        .data_out        (sw_401_data_out),
-        .scan_select_out (sw_401_scan_out),
-        .latch_enable_out(sw_401_latch_out),
-        .module_data_in  (sw_401_module_data_in),
-        .module_data_out (sw_401_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_401 (
-        .io_in  (sw_401_module_data_in),
-        .io_out (sw_401_module_data_out)
-    );
-
-    // [402] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_402_clk_out, sw_402_data_out, sw_402_scan_out, sw_402_latch_out;
-    wire [7:0] sw_402_module_data_in;
-    wire [7:0] sw_402_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_402 (
-        .clk_in          (sw_401_clk_out),
-        .data_in         (sw_401_data_out),
-        .scan_select_in  (sw_401_scan_out),
-        .latch_enable_in (sw_401_latch_out),
-        .clk_out         (sw_402_clk_out),
-        .data_out        (sw_402_data_out),
-        .scan_select_out (sw_402_scan_out),
-        .latch_enable_out(sw_402_latch_out),
-        .module_data_in  (sw_402_module_data_in),
-        .module_data_out (sw_402_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_402 (
-        .io_in  (sw_402_module_data_in),
-        .io_out (sw_402_module_data_out)
-    );
-
-    // [403] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_403_clk_out, sw_403_data_out, sw_403_scan_out, sw_403_latch_out;
-    wire [7:0] sw_403_module_data_in;
-    wire [7:0] sw_403_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_403 (
-        .clk_in          (sw_402_clk_out),
-        .data_in         (sw_402_data_out),
-        .scan_select_in  (sw_402_scan_out),
-        .latch_enable_in (sw_402_latch_out),
-        .clk_out         (sw_403_clk_out),
-        .data_out        (sw_403_data_out),
-        .scan_select_out (sw_403_scan_out),
-        .latch_enable_out(sw_403_latch_out),
-        .module_data_in  (sw_403_module_data_in),
-        .module_data_out (sw_403_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_403 (
-        .io_in  (sw_403_module_data_in),
-        .io_out (sw_403_module_data_out)
-    );
-
-    // [404] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_404_clk_out, sw_404_data_out, sw_404_scan_out, sw_404_latch_out;
-    wire [7:0] sw_404_module_data_in;
-    wire [7:0] sw_404_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_404 (
-        .clk_in          (sw_403_clk_out),
-        .data_in         (sw_403_data_out),
-        .scan_select_in  (sw_403_scan_out),
-        .latch_enable_in (sw_403_latch_out),
-        .clk_out         (sw_404_clk_out),
-        .data_out        (sw_404_data_out),
-        .scan_select_out (sw_404_scan_out),
-        .latch_enable_out(sw_404_latch_out),
-        .module_data_in  (sw_404_module_data_in),
-        .module_data_out (sw_404_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_404 (
-        .io_in  (sw_404_module_data_in),
-        .io_out (sw_404_module_data_out)
-    );
-
-    // [405] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_405_clk_out, sw_405_data_out, sw_405_scan_out, sw_405_latch_out;
-    wire [7:0] sw_405_module_data_in;
-    wire [7:0] sw_405_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_405 (
-        .clk_in          (sw_404_clk_out),
-        .data_in         (sw_404_data_out),
-        .scan_select_in  (sw_404_scan_out),
-        .latch_enable_in (sw_404_latch_out),
-        .clk_out         (sw_405_clk_out),
-        .data_out        (sw_405_data_out),
-        .scan_select_out (sw_405_scan_out),
-        .latch_enable_out(sw_405_latch_out),
-        .module_data_in  (sw_405_module_data_in),
-        .module_data_out (sw_405_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_405 (
-        .io_in  (sw_405_module_data_in),
-        .io_out (sw_405_module_data_out)
-    );
-
-    // [406] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_406_clk_out, sw_406_data_out, sw_406_scan_out, sw_406_latch_out;
-    wire [7:0] sw_406_module_data_in;
-    wire [7:0] sw_406_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_406 (
-        .clk_in          (sw_405_clk_out),
-        .data_in         (sw_405_data_out),
-        .scan_select_in  (sw_405_scan_out),
-        .latch_enable_in (sw_405_latch_out),
-        .clk_out         (sw_406_clk_out),
-        .data_out        (sw_406_data_out),
-        .scan_select_out (sw_406_scan_out),
-        .latch_enable_out(sw_406_latch_out),
-        .module_data_in  (sw_406_module_data_in),
-        .module_data_out (sw_406_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_406 (
-        .io_in  (sw_406_module_data_in),
-        .io_out (sw_406_module_data_out)
-    );
-
-    // [407] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_407_clk_out, sw_407_data_out, sw_407_scan_out, sw_407_latch_out;
-    wire [7:0] sw_407_module_data_in;
-    wire [7:0] sw_407_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_407 (
-        .clk_in          (sw_406_clk_out),
-        .data_in         (sw_406_data_out),
-        .scan_select_in  (sw_406_scan_out),
-        .latch_enable_in (sw_406_latch_out),
-        .clk_out         (sw_407_clk_out),
-        .data_out        (sw_407_data_out),
-        .scan_select_out (sw_407_scan_out),
-        .latch_enable_out(sw_407_latch_out),
-        .module_data_in  (sw_407_module_data_in),
-        .module_data_out (sw_407_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_407 (
-        .io_in  (sw_407_module_data_in),
-        .io_out (sw_407_module_data_out)
-    );
-
-    // [408] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_408_clk_out, sw_408_data_out, sw_408_scan_out, sw_408_latch_out;
-    wire [7:0] sw_408_module_data_in;
-    wire [7:0] sw_408_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_408 (
-        .clk_in          (sw_407_clk_out),
-        .data_in         (sw_407_data_out),
-        .scan_select_in  (sw_407_scan_out),
-        .latch_enable_in (sw_407_latch_out),
-        .clk_out         (sw_408_clk_out),
-        .data_out        (sw_408_data_out),
-        .scan_select_out (sw_408_scan_out),
-        .latch_enable_out(sw_408_latch_out),
-        .module_data_in  (sw_408_module_data_in),
-        .module_data_out (sw_408_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_408 (
-        .io_in  (sw_408_module_data_in),
-        .io_out (sw_408_module_data_out)
-    );
-
-    // [409] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_409_clk_out, sw_409_data_out, sw_409_scan_out, sw_409_latch_out;
-    wire [7:0] sw_409_module_data_in;
-    wire [7:0] sw_409_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_409 (
-        .clk_in          (sw_408_clk_out),
-        .data_in         (sw_408_data_out),
-        .scan_select_in  (sw_408_scan_out),
-        .latch_enable_in (sw_408_latch_out),
-        .clk_out         (sw_409_clk_out),
-        .data_out        (sw_409_data_out),
-        .scan_select_out (sw_409_scan_out),
-        .latch_enable_out(sw_409_latch_out),
-        .module_data_in  (sw_409_module_data_in),
-        .module_data_out (sw_409_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_409 (
-        .io_in  (sw_409_module_data_in),
-        .io_out (sw_409_module_data_out)
-    );
-
-    // [410] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_410_clk_out, sw_410_data_out, sw_410_scan_out, sw_410_latch_out;
-    wire [7:0] sw_410_module_data_in;
-    wire [7:0] sw_410_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_410 (
-        .clk_in          (sw_409_clk_out),
-        .data_in         (sw_409_data_out),
-        .scan_select_in  (sw_409_scan_out),
-        .latch_enable_in (sw_409_latch_out),
-        .clk_out         (sw_410_clk_out),
-        .data_out        (sw_410_data_out),
-        .scan_select_out (sw_410_scan_out),
-        .latch_enable_out(sw_410_latch_out),
-        .module_data_in  (sw_410_module_data_in),
-        .module_data_out (sw_410_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_410 (
-        .io_in  (sw_410_module_data_in),
-        .io_out (sw_410_module_data_out)
-    );
-
-    // [411] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_411_clk_out, sw_411_data_out, sw_411_scan_out, sw_411_latch_out;
-    wire [7:0] sw_411_module_data_in;
-    wire [7:0] sw_411_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_411 (
-        .clk_in          (sw_410_clk_out),
-        .data_in         (sw_410_data_out),
-        .scan_select_in  (sw_410_scan_out),
-        .latch_enable_in (sw_410_latch_out),
-        .clk_out         (sw_411_clk_out),
-        .data_out        (sw_411_data_out),
-        .scan_select_out (sw_411_scan_out),
-        .latch_enable_out(sw_411_latch_out),
-        .module_data_in  (sw_411_module_data_in),
-        .module_data_out (sw_411_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_411 (
-        .io_in  (sw_411_module_data_in),
-        .io_out (sw_411_module_data_out)
-    );
-
-    // [412] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_412_clk_out, sw_412_data_out, sw_412_scan_out, sw_412_latch_out;
-    wire [7:0] sw_412_module_data_in;
-    wire [7:0] sw_412_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_412 (
-        .clk_in          (sw_411_clk_out),
-        .data_in         (sw_411_data_out),
-        .scan_select_in  (sw_411_scan_out),
-        .latch_enable_in (sw_411_latch_out),
-        .clk_out         (sw_412_clk_out),
-        .data_out        (sw_412_data_out),
-        .scan_select_out (sw_412_scan_out),
-        .latch_enable_out(sw_412_latch_out),
-        .module_data_in  (sw_412_module_data_in),
-        .module_data_out (sw_412_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_412 (
-        .io_in  (sw_412_module_data_in),
-        .io_out (sw_412_module_data_out)
-    );
-
-    // [413] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_413_clk_out, sw_413_data_out, sw_413_scan_out, sw_413_latch_out;
-    wire [7:0] sw_413_module_data_in;
-    wire [7:0] sw_413_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_413 (
-        .clk_in          (sw_412_clk_out),
-        .data_in         (sw_412_data_out),
-        .scan_select_in  (sw_412_scan_out),
-        .latch_enable_in (sw_412_latch_out),
-        .clk_out         (sw_413_clk_out),
-        .data_out        (sw_413_data_out),
-        .scan_select_out (sw_413_scan_out),
-        .latch_enable_out(sw_413_latch_out),
-        .module_data_in  (sw_413_module_data_in),
-        .module_data_out (sw_413_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_413 (
-        .io_in  (sw_413_module_data_in),
-        .io_out (sw_413_module_data_out)
-    );
-
-    // [414] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_414_clk_out, sw_414_data_out, sw_414_scan_out, sw_414_latch_out;
-    wire [7:0] sw_414_module_data_in;
-    wire [7:0] sw_414_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_414 (
-        .clk_in          (sw_413_clk_out),
-        .data_in         (sw_413_data_out),
-        .scan_select_in  (sw_413_scan_out),
-        .latch_enable_in (sw_413_latch_out),
-        .clk_out         (sw_414_clk_out),
-        .data_out        (sw_414_data_out),
-        .scan_select_out (sw_414_scan_out),
-        .latch_enable_out(sw_414_latch_out),
-        .module_data_in  (sw_414_module_data_in),
-        .module_data_out (sw_414_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_414 (
-        .io_in  (sw_414_module_data_in),
-        .io_out (sw_414_module_data_out)
-    );
-
-    // [415] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_415_clk_out, sw_415_data_out, sw_415_scan_out, sw_415_latch_out;
-    wire [7:0] sw_415_module_data_in;
-    wire [7:0] sw_415_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_415 (
-        .clk_in          (sw_414_clk_out),
-        .data_in         (sw_414_data_out),
-        .scan_select_in  (sw_414_scan_out),
-        .latch_enable_in (sw_414_latch_out),
-        .clk_out         (sw_415_clk_out),
-        .data_out        (sw_415_data_out),
-        .scan_select_out (sw_415_scan_out),
-        .latch_enable_out(sw_415_latch_out),
-        .module_data_in  (sw_415_module_data_in),
-        .module_data_out (sw_415_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_415 (
-        .io_in  (sw_415_module_data_in),
-        .io_out (sw_415_module_data_out)
-    );
-
-    // [416] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_416_clk_out, sw_416_data_out, sw_416_scan_out, sw_416_latch_out;
-    wire [7:0] sw_416_module_data_in;
-    wire [7:0] sw_416_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_416 (
-        .clk_in          (sw_415_clk_out),
-        .data_in         (sw_415_data_out),
-        .scan_select_in  (sw_415_scan_out),
-        .latch_enable_in (sw_415_latch_out),
-        .clk_out         (sw_416_clk_out),
-        .data_out        (sw_416_data_out),
-        .scan_select_out (sw_416_scan_out),
-        .latch_enable_out(sw_416_latch_out),
-        .module_data_in  (sw_416_module_data_in),
-        .module_data_out (sw_416_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_416 (
-        .io_in  (sw_416_module_data_in),
-        .io_out (sw_416_module_data_out)
-    );
-
-    // [417] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_417_clk_out, sw_417_data_out, sw_417_scan_out, sw_417_latch_out;
-    wire [7:0] sw_417_module_data_in;
-    wire [7:0] sw_417_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_417 (
-        .clk_in          (sw_416_clk_out),
-        .data_in         (sw_416_data_out),
-        .scan_select_in  (sw_416_scan_out),
-        .latch_enable_in (sw_416_latch_out),
-        .clk_out         (sw_417_clk_out),
-        .data_out        (sw_417_data_out),
-        .scan_select_out (sw_417_scan_out),
-        .latch_enable_out(sw_417_latch_out),
-        .module_data_in  (sw_417_module_data_in),
-        .module_data_out (sw_417_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_417 (
-        .io_in  (sw_417_module_data_in),
-        .io_out (sw_417_module_data_out)
-    );
-
-    // [418] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_418_clk_out, sw_418_data_out, sw_418_scan_out, sw_418_latch_out;
-    wire [7:0] sw_418_module_data_in;
-    wire [7:0] sw_418_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_418 (
-        .clk_in          (sw_417_clk_out),
-        .data_in         (sw_417_data_out),
-        .scan_select_in  (sw_417_scan_out),
-        .latch_enable_in (sw_417_latch_out),
-        .clk_out         (sw_418_clk_out),
-        .data_out        (sw_418_data_out),
-        .scan_select_out (sw_418_scan_out),
-        .latch_enable_out(sw_418_latch_out),
-        .module_data_in  (sw_418_module_data_in),
-        .module_data_out (sw_418_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_418 (
-        .io_in  (sw_418_module_data_in),
-        .io_out (sw_418_module_data_out)
-    );
-
-    // [419] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_419_clk_out, sw_419_data_out, sw_419_scan_out, sw_419_latch_out;
-    wire [7:0] sw_419_module_data_in;
-    wire [7:0] sw_419_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_419 (
-        .clk_in          (sw_418_clk_out),
-        .data_in         (sw_418_data_out),
-        .scan_select_in  (sw_418_scan_out),
-        .latch_enable_in (sw_418_latch_out),
-        .clk_out         (sw_419_clk_out),
-        .data_out        (sw_419_data_out),
-        .scan_select_out (sw_419_scan_out),
-        .latch_enable_out(sw_419_latch_out),
-        .module_data_in  (sw_419_module_data_in),
-        .module_data_out (sw_419_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_419 (
-        .io_in  (sw_419_module_data_in),
-        .io_out (sw_419_module_data_out)
-    );
-
-    // [420] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_420_clk_out, sw_420_data_out, sw_420_scan_out, sw_420_latch_out;
-    wire [7:0] sw_420_module_data_in;
-    wire [7:0] sw_420_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_420 (
-        .clk_in          (sw_419_clk_out),
-        .data_in         (sw_419_data_out),
-        .scan_select_in  (sw_419_scan_out),
-        .latch_enable_in (sw_419_latch_out),
-        .clk_out         (sw_420_clk_out),
-        .data_out        (sw_420_data_out),
-        .scan_select_out (sw_420_scan_out),
-        .latch_enable_out(sw_420_latch_out),
-        .module_data_in  (sw_420_module_data_in),
-        .module_data_out (sw_420_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_420 (
-        .io_in  (sw_420_module_data_in),
-        .io_out (sw_420_module_data_out)
-    );
-
-    // [421] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_421_clk_out, sw_421_data_out, sw_421_scan_out, sw_421_latch_out;
-    wire [7:0] sw_421_module_data_in;
-    wire [7:0] sw_421_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_421 (
-        .clk_in          (sw_420_clk_out),
-        .data_in         (sw_420_data_out),
-        .scan_select_in  (sw_420_scan_out),
-        .latch_enable_in (sw_420_latch_out),
-        .clk_out         (sw_421_clk_out),
-        .data_out        (sw_421_data_out),
-        .scan_select_out (sw_421_scan_out),
-        .latch_enable_out(sw_421_latch_out),
-        .module_data_in  (sw_421_module_data_in),
-        .module_data_out (sw_421_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_421 (
-        .io_in  (sw_421_module_data_in),
-        .io_out (sw_421_module_data_out)
-    );
-
-    // [422] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_422_clk_out, sw_422_data_out, sw_422_scan_out, sw_422_latch_out;
-    wire [7:0] sw_422_module_data_in;
-    wire [7:0] sw_422_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_422 (
-        .clk_in          (sw_421_clk_out),
-        .data_in         (sw_421_data_out),
-        .scan_select_in  (sw_421_scan_out),
-        .latch_enable_in (sw_421_latch_out),
-        .clk_out         (sw_422_clk_out),
-        .data_out        (sw_422_data_out),
-        .scan_select_out (sw_422_scan_out),
-        .latch_enable_out(sw_422_latch_out),
-        .module_data_in  (sw_422_module_data_in),
-        .module_data_out (sw_422_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_422 (
-        .io_in  (sw_422_module_data_in),
-        .io_out (sw_422_module_data_out)
-    );
-
-    // [423] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_423_clk_out, sw_423_data_out, sw_423_scan_out, sw_423_latch_out;
-    wire [7:0] sw_423_module_data_in;
-    wire [7:0] sw_423_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_423 (
-        .clk_in          (sw_422_clk_out),
-        .data_in         (sw_422_data_out),
-        .scan_select_in  (sw_422_scan_out),
-        .latch_enable_in (sw_422_latch_out),
-        .clk_out         (sw_423_clk_out),
-        .data_out        (sw_423_data_out),
-        .scan_select_out (sw_423_scan_out),
-        .latch_enable_out(sw_423_latch_out),
-        .module_data_in  (sw_423_module_data_in),
-        .module_data_out (sw_423_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_423 (
-        .io_in  (sw_423_module_data_in),
-        .io_out (sw_423_module_data_out)
-    );
-
-    // [424] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_424_clk_out, sw_424_data_out, sw_424_scan_out, sw_424_latch_out;
-    wire [7:0] sw_424_module_data_in;
-    wire [7:0] sw_424_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_424 (
-        .clk_in          (sw_423_clk_out),
-        .data_in         (sw_423_data_out),
-        .scan_select_in  (sw_423_scan_out),
-        .latch_enable_in (sw_423_latch_out),
-        .clk_out         (sw_424_clk_out),
-        .data_out        (sw_424_data_out),
-        .scan_select_out (sw_424_scan_out),
-        .latch_enable_out(sw_424_latch_out),
-        .module_data_in  (sw_424_module_data_in),
-        .module_data_out (sw_424_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_424 (
-        .io_in  (sw_424_module_data_in),
-        .io_out (sw_424_module_data_out)
-    );
-
-    // [425] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_425_clk_out, sw_425_data_out, sw_425_scan_out, sw_425_latch_out;
-    wire [7:0] sw_425_module_data_in;
-    wire [7:0] sw_425_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_425 (
-        .clk_in          (sw_424_clk_out),
-        .data_in         (sw_424_data_out),
-        .scan_select_in  (sw_424_scan_out),
-        .latch_enable_in (sw_424_latch_out),
-        .clk_out         (sw_425_clk_out),
-        .data_out        (sw_425_data_out),
-        .scan_select_out (sw_425_scan_out),
-        .latch_enable_out(sw_425_latch_out),
-        .module_data_in  (sw_425_module_data_in),
-        .module_data_out (sw_425_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_425 (
-        .io_in  (sw_425_module_data_in),
-        .io_out (sw_425_module_data_out)
-    );
-
-    // [426] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_426_clk_out, sw_426_data_out, sw_426_scan_out, sw_426_latch_out;
-    wire [7:0] sw_426_module_data_in;
-    wire [7:0] sw_426_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_426 (
-        .clk_in          (sw_425_clk_out),
-        .data_in         (sw_425_data_out),
-        .scan_select_in  (sw_425_scan_out),
-        .latch_enable_in (sw_425_latch_out),
-        .clk_out         (sw_426_clk_out),
-        .data_out        (sw_426_data_out),
-        .scan_select_out (sw_426_scan_out),
-        .latch_enable_out(sw_426_latch_out),
-        .module_data_in  (sw_426_module_data_in),
-        .module_data_out (sw_426_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_426 (
-        .io_in  (sw_426_module_data_in),
-        .io_out (sw_426_module_data_out)
-    );
-
-    // [427] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_427_clk_out, sw_427_data_out, sw_427_scan_out, sw_427_latch_out;
-    wire [7:0] sw_427_module_data_in;
-    wire [7:0] sw_427_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_427 (
-        .clk_in          (sw_426_clk_out),
-        .data_in         (sw_426_data_out),
-        .scan_select_in  (sw_426_scan_out),
-        .latch_enable_in (sw_426_latch_out),
-        .clk_out         (sw_427_clk_out),
-        .data_out        (sw_427_data_out),
-        .scan_select_out (sw_427_scan_out),
-        .latch_enable_out(sw_427_latch_out),
-        .module_data_in  (sw_427_module_data_in),
-        .module_data_out (sw_427_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_427 (
-        .io_in  (sw_427_module_data_in),
-        .io_out (sw_427_module_data_out)
-    );
-
-    // [428] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_428_clk_out, sw_428_data_out, sw_428_scan_out, sw_428_latch_out;
-    wire [7:0] sw_428_module_data_in;
-    wire [7:0] sw_428_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_428 (
-        .clk_in          (sw_427_clk_out),
-        .data_in         (sw_427_data_out),
-        .scan_select_in  (sw_427_scan_out),
-        .latch_enable_in (sw_427_latch_out),
-        .clk_out         (sw_428_clk_out),
-        .data_out        (sw_428_data_out),
-        .scan_select_out (sw_428_scan_out),
-        .latch_enable_out(sw_428_latch_out),
-        .module_data_in  (sw_428_module_data_in),
-        .module_data_out (sw_428_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_428 (
-        .io_in  (sw_428_module_data_in),
-        .io_out (sw_428_module_data_out)
-    );
-
-    // [429] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_429_clk_out, sw_429_data_out, sw_429_scan_out, sw_429_latch_out;
-    wire [7:0] sw_429_module_data_in;
-    wire [7:0] sw_429_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_429 (
-        .clk_in          (sw_428_clk_out),
-        .data_in         (sw_428_data_out),
-        .scan_select_in  (sw_428_scan_out),
-        .latch_enable_in (sw_428_latch_out),
-        .clk_out         (sw_429_clk_out),
-        .data_out        (sw_429_data_out),
-        .scan_select_out (sw_429_scan_out),
-        .latch_enable_out(sw_429_latch_out),
-        .module_data_in  (sw_429_module_data_in),
-        .module_data_out (sw_429_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_429 (
-        .io_in  (sw_429_module_data_in),
-        .io_out (sw_429_module_data_out)
-    );
-
-    // [430] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_430_clk_out, sw_430_data_out, sw_430_scan_out, sw_430_latch_out;
-    wire [7:0] sw_430_module_data_in;
-    wire [7:0] sw_430_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_430 (
-        .clk_in          (sw_429_clk_out),
-        .data_in         (sw_429_data_out),
-        .scan_select_in  (sw_429_scan_out),
-        .latch_enable_in (sw_429_latch_out),
-        .clk_out         (sw_430_clk_out),
-        .data_out        (sw_430_data_out),
-        .scan_select_out (sw_430_scan_out),
-        .latch_enable_out(sw_430_latch_out),
-        .module_data_in  (sw_430_module_data_in),
-        .module_data_out (sw_430_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_430 (
-        .io_in  (sw_430_module_data_in),
-        .io_out (sw_430_module_data_out)
-    );
-
-    // [431] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_431_clk_out, sw_431_data_out, sw_431_scan_out, sw_431_latch_out;
-    wire [7:0] sw_431_module_data_in;
-    wire [7:0] sw_431_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_431 (
-        .clk_in          (sw_430_clk_out),
-        .data_in         (sw_430_data_out),
-        .scan_select_in  (sw_430_scan_out),
-        .latch_enable_in (sw_430_latch_out),
-        .clk_out         (sw_431_clk_out),
-        .data_out        (sw_431_data_out),
-        .scan_select_out (sw_431_scan_out),
-        .latch_enable_out(sw_431_latch_out),
-        .module_data_in  (sw_431_module_data_in),
-        .module_data_out (sw_431_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_431 (
-        .io_in  (sw_431_module_data_in),
-        .io_out (sw_431_module_data_out)
-    );
-
-    // [432] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_432_clk_out, sw_432_data_out, sw_432_scan_out, sw_432_latch_out;
-    wire [7:0] sw_432_module_data_in;
-    wire [7:0] sw_432_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_432 (
-        .clk_in          (sw_431_clk_out),
-        .data_in         (sw_431_data_out),
-        .scan_select_in  (sw_431_scan_out),
-        .latch_enable_in (sw_431_latch_out),
-        .clk_out         (sw_432_clk_out),
-        .data_out        (sw_432_data_out),
-        .scan_select_out (sw_432_scan_out),
-        .latch_enable_out(sw_432_latch_out),
-        .module_data_in  (sw_432_module_data_in),
-        .module_data_out (sw_432_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_432 (
-        .io_in  (sw_432_module_data_in),
-        .io_out (sw_432_module_data_out)
-    );
-
-    // [433] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_433_clk_out, sw_433_data_out, sw_433_scan_out, sw_433_latch_out;
-    wire [7:0] sw_433_module_data_in;
-    wire [7:0] sw_433_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_433 (
-        .clk_in          (sw_432_clk_out),
-        .data_in         (sw_432_data_out),
-        .scan_select_in  (sw_432_scan_out),
-        .latch_enable_in (sw_432_latch_out),
-        .clk_out         (sw_433_clk_out),
-        .data_out        (sw_433_data_out),
-        .scan_select_out (sw_433_scan_out),
-        .latch_enable_out(sw_433_latch_out),
-        .module_data_in  (sw_433_module_data_in),
-        .module_data_out (sw_433_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_433 (
-        .io_in  (sw_433_module_data_in),
-        .io_out (sw_433_module_data_out)
-    );
-
-    // [434] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_434_clk_out, sw_434_data_out, sw_434_scan_out, sw_434_latch_out;
-    wire [7:0] sw_434_module_data_in;
-    wire [7:0] sw_434_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_434 (
-        .clk_in          (sw_433_clk_out),
-        .data_in         (sw_433_data_out),
-        .scan_select_in  (sw_433_scan_out),
-        .latch_enable_in (sw_433_latch_out),
-        .clk_out         (sw_434_clk_out),
-        .data_out        (sw_434_data_out),
-        .scan_select_out (sw_434_scan_out),
-        .latch_enable_out(sw_434_latch_out),
-        .module_data_in  (sw_434_module_data_in),
-        .module_data_out (sw_434_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_434 (
-        .io_in  (sw_434_module_data_in),
-        .io_out (sw_434_module_data_out)
-    );
-
-    // [435] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_435_clk_out, sw_435_data_out, sw_435_scan_out, sw_435_latch_out;
-    wire [7:0] sw_435_module_data_in;
-    wire [7:0] sw_435_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_435 (
-        .clk_in          (sw_434_clk_out),
-        .data_in         (sw_434_data_out),
-        .scan_select_in  (sw_434_scan_out),
-        .latch_enable_in (sw_434_latch_out),
-        .clk_out         (sw_435_clk_out),
-        .data_out        (sw_435_data_out),
-        .scan_select_out (sw_435_scan_out),
-        .latch_enable_out(sw_435_latch_out),
-        .module_data_in  (sw_435_module_data_in),
-        .module_data_out (sw_435_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_435 (
-        .io_in  (sw_435_module_data_in),
-        .io_out (sw_435_module_data_out)
-    );
-
-    // [436] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_436_clk_out, sw_436_data_out, sw_436_scan_out, sw_436_latch_out;
-    wire [7:0] sw_436_module_data_in;
-    wire [7:0] sw_436_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_436 (
-        .clk_in          (sw_435_clk_out),
-        .data_in         (sw_435_data_out),
-        .scan_select_in  (sw_435_scan_out),
-        .latch_enable_in (sw_435_latch_out),
-        .clk_out         (sw_436_clk_out),
-        .data_out        (sw_436_data_out),
-        .scan_select_out (sw_436_scan_out),
-        .latch_enable_out(sw_436_latch_out),
-        .module_data_in  (sw_436_module_data_in),
-        .module_data_out (sw_436_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_436 (
-        .io_in  (sw_436_module_data_in),
-        .io_out (sw_436_module_data_out)
-    );
-
-    // [437] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_437_clk_out, sw_437_data_out, sw_437_scan_out, sw_437_latch_out;
-    wire [7:0] sw_437_module_data_in;
-    wire [7:0] sw_437_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_437 (
-        .clk_in          (sw_436_clk_out),
-        .data_in         (sw_436_data_out),
-        .scan_select_in  (sw_436_scan_out),
-        .latch_enable_in (sw_436_latch_out),
-        .clk_out         (sw_437_clk_out),
-        .data_out        (sw_437_data_out),
-        .scan_select_out (sw_437_scan_out),
-        .latch_enable_out(sw_437_latch_out),
-        .module_data_in  (sw_437_module_data_in),
-        .module_data_out (sw_437_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_437 (
-        .io_in  (sw_437_module_data_in),
-        .io_out (sw_437_module_data_out)
-    );
-
-    // [438] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_438_clk_out, sw_438_data_out, sw_438_scan_out, sw_438_latch_out;
-    wire [7:0] sw_438_module_data_in;
-    wire [7:0] sw_438_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_438 (
-        .clk_in          (sw_437_clk_out),
-        .data_in         (sw_437_data_out),
-        .scan_select_in  (sw_437_scan_out),
-        .latch_enable_in (sw_437_latch_out),
-        .clk_out         (sw_438_clk_out),
-        .data_out        (sw_438_data_out),
-        .scan_select_out (sw_438_scan_out),
-        .latch_enable_out(sw_438_latch_out),
-        .module_data_in  (sw_438_module_data_in),
-        .module_data_out (sw_438_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_438 (
-        .io_in  (sw_438_module_data_in),
-        .io_out (sw_438_module_data_out)
-    );
-
-    // [439] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_439_clk_out, sw_439_data_out, sw_439_scan_out, sw_439_latch_out;
-    wire [7:0] sw_439_module_data_in;
-    wire [7:0] sw_439_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_439 (
-        .clk_in          (sw_438_clk_out),
-        .data_in         (sw_438_data_out),
-        .scan_select_in  (sw_438_scan_out),
-        .latch_enable_in (sw_438_latch_out),
-        .clk_out         (sw_439_clk_out),
-        .data_out        (sw_439_data_out),
-        .scan_select_out (sw_439_scan_out),
-        .latch_enable_out(sw_439_latch_out),
-        .module_data_in  (sw_439_module_data_in),
-        .module_data_out (sw_439_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_439 (
-        .io_in  (sw_439_module_data_in),
-        .io_out (sw_439_module_data_out)
-    );
-
-    // [440] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_440_clk_out, sw_440_data_out, sw_440_scan_out, sw_440_latch_out;
-    wire [7:0] sw_440_module_data_in;
-    wire [7:0] sw_440_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_440 (
-        .clk_in          (sw_439_clk_out),
-        .data_in         (sw_439_data_out),
-        .scan_select_in  (sw_439_scan_out),
-        .latch_enable_in (sw_439_latch_out),
-        .clk_out         (sw_440_clk_out),
-        .data_out        (sw_440_data_out),
-        .scan_select_out (sw_440_scan_out),
-        .latch_enable_out(sw_440_latch_out),
-        .module_data_in  (sw_440_module_data_in),
-        .module_data_out (sw_440_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_440 (
-        .io_in  (sw_440_module_data_in),
-        .io_out (sw_440_module_data_out)
-    );
-
-    // [441] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_441_clk_out, sw_441_data_out, sw_441_scan_out, sw_441_latch_out;
-    wire [7:0] sw_441_module_data_in;
-    wire [7:0] sw_441_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_441 (
-        .clk_in          (sw_440_clk_out),
-        .data_in         (sw_440_data_out),
-        .scan_select_in  (sw_440_scan_out),
-        .latch_enable_in (sw_440_latch_out),
-        .clk_out         (sw_441_clk_out),
-        .data_out        (sw_441_data_out),
-        .scan_select_out (sw_441_scan_out),
-        .latch_enable_out(sw_441_latch_out),
-        .module_data_in  (sw_441_module_data_in),
-        .module_data_out (sw_441_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_441 (
-        .io_in  (sw_441_module_data_in),
-        .io_out (sw_441_module_data_out)
-    );
-
-    // [442] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_442_clk_out, sw_442_data_out, sw_442_scan_out, sw_442_latch_out;
-    wire [7:0] sw_442_module_data_in;
-    wire [7:0] sw_442_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_442 (
-        .clk_in          (sw_441_clk_out),
-        .data_in         (sw_441_data_out),
-        .scan_select_in  (sw_441_scan_out),
-        .latch_enable_in (sw_441_latch_out),
-        .clk_out         (sw_442_clk_out),
-        .data_out        (sw_442_data_out),
-        .scan_select_out (sw_442_scan_out),
-        .latch_enable_out(sw_442_latch_out),
-        .module_data_in  (sw_442_module_data_in),
-        .module_data_out (sw_442_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_442 (
-        .io_in  (sw_442_module_data_in),
-        .io_out (sw_442_module_data_out)
-    );
-
-    // [443] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_443_clk_out, sw_443_data_out, sw_443_scan_out, sw_443_latch_out;
-    wire [7:0] sw_443_module_data_in;
-    wire [7:0] sw_443_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_443 (
-        .clk_in          (sw_442_clk_out),
-        .data_in         (sw_442_data_out),
-        .scan_select_in  (sw_442_scan_out),
-        .latch_enable_in (sw_442_latch_out),
-        .clk_out         (sw_443_clk_out),
-        .data_out        (sw_443_data_out),
-        .scan_select_out (sw_443_scan_out),
-        .latch_enable_out(sw_443_latch_out),
-        .module_data_in  (sw_443_module_data_in),
-        .module_data_out (sw_443_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_443 (
-        .io_in  (sw_443_module_data_in),
-        .io_out (sw_443_module_data_out)
-    );
-
-    // [444] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_444_clk_out, sw_444_data_out, sw_444_scan_out, sw_444_latch_out;
-    wire [7:0] sw_444_module_data_in;
-    wire [7:0] sw_444_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_444 (
-        .clk_in          (sw_443_clk_out),
-        .data_in         (sw_443_data_out),
-        .scan_select_in  (sw_443_scan_out),
-        .latch_enable_in (sw_443_latch_out),
-        .clk_out         (sw_444_clk_out),
-        .data_out        (sw_444_data_out),
-        .scan_select_out (sw_444_scan_out),
-        .latch_enable_out(sw_444_latch_out),
-        .module_data_in  (sw_444_module_data_in),
-        .module_data_out (sw_444_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_444 (
-        .io_in  (sw_444_module_data_in),
-        .io_out (sw_444_module_data_out)
-    );
-
-    // [445] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_445_clk_out, sw_445_data_out, sw_445_scan_out, sw_445_latch_out;
-    wire [7:0] sw_445_module_data_in;
-    wire [7:0] sw_445_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_445 (
-        .clk_in          (sw_444_clk_out),
-        .data_in         (sw_444_data_out),
-        .scan_select_in  (sw_444_scan_out),
-        .latch_enable_in (sw_444_latch_out),
-        .clk_out         (sw_445_clk_out),
-        .data_out        (sw_445_data_out),
-        .scan_select_out (sw_445_scan_out),
-        .latch_enable_out(sw_445_latch_out),
-        .module_data_in  (sw_445_module_data_in),
-        .module_data_out (sw_445_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_445 (
-        .io_in  (sw_445_module_data_in),
-        .io_out (sw_445_module_data_out)
-    );
-
-    // [446] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_446_clk_out, sw_446_data_out, sw_446_scan_out, sw_446_latch_out;
-    wire [7:0] sw_446_module_data_in;
-    wire [7:0] sw_446_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_446 (
-        .clk_in          (sw_445_clk_out),
-        .data_in         (sw_445_data_out),
-        .scan_select_in  (sw_445_scan_out),
-        .latch_enable_in (sw_445_latch_out),
-        .clk_out         (sw_446_clk_out),
-        .data_out        (sw_446_data_out),
-        .scan_select_out (sw_446_scan_out),
-        .latch_enable_out(sw_446_latch_out),
-        .module_data_in  (sw_446_module_data_in),
-        .module_data_out (sw_446_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_446 (
-        .io_in  (sw_446_module_data_in),
-        .io_out (sw_446_module_data_out)
-    );
-
-    // [447] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_447_clk_out, sw_447_data_out, sw_447_scan_out, sw_447_latch_out;
-    wire [7:0] sw_447_module_data_in;
-    wire [7:0] sw_447_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_447 (
-        .clk_in          (sw_446_clk_out),
-        .data_in         (sw_446_data_out),
-        .scan_select_in  (sw_446_scan_out),
-        .latch_enable_in (sw_446_latch_out),
-        .clk_out         (sw_447_clk_out),
-        .data_out        (sw_447_data_out),
-        .scan_select_out (sw_447_scan_out),
-        .latch_enable_out(sw_447_latch_out),
-        .module_data_in  (sw_447_module_data_in),
-        .module_data_out (sw_447_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_447 (
-        .io_in  (sw_447_module_data_in),
-        .io_out (sw_447_module_data_out)
-    );
-
-    // [448] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_448_clk_out, sw_448_data_out, sw_448_scan_out, sw_448_latch_out;
-    wire [7:0] sw_448_module_data_in;
-    wire [7:0] sw_448_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_448 (
-        .clk_in          (sw_447_clk_out),
-        .data_in         (sw_447_data_out),
-        .scan_select_in  (sw_447_scan_out),
-        .latch_enable_in (sw_447_latch_out),
-        .clk_out         (sw_448_clk_out),
-        .data_out        (sw_448_data_out),
-        .scan_select_out (sw_448_scan_out),
-        .latch_enable_out(sw_448_latch_out),
-        .module_data_in  (sw_448_module_data_in),
-        .module_data_out (sw_448_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_448 (
-        .io_in  (sw_448_module_data_in),
-        .io_out (sw_448_module_data_out)
-    );
-
-    // [449] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_449_clk_out, sw_449_data_out, sw_449_scan_out, sw_449_latch_out;
-    wire [7:0] sw_449_module_data_in;
-    wire [7:0] sw_449_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_449 (
-        .clk_in          (sw_448_clk_out),
-        .data_in         (sw_448_data_out),
-        .scan_select_in  (sw_448_scan_out),
-        .latch_enable_in (sw_448_latch_out),
-        .clk_out         (sw_449_clk_out),
-        .data_out        (sw_449_data_out),
-        .scan_select_out (sw_449_scan_out),
-        .latch_enable_out(sw_449_latch_out),
-        .module_data_in  (sw_449_module_data_in),
-        .module_data_out (sw_449_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_449 (
-        .io_in  (sw_449_module_data_in),
-        .io_out (sw_449_module_data_out)
-    );
-
-    // [450] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_450_clk_out, sw_450_data_out, sw_450_scan_out, sw_450_latch_out;
-    wire [7:0] sw_450_module_data_in;
-    wire [7:0] sw_450_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_450 (
-        .clk_in          (sw_449_clk_out),
-        .data_in         (sw_449_data_out),
-        .scan_select_in  (sw_449_scan_out),
-        .latch_enable_in (sw_449_latch_out),
-        .clk_out         (sw_450_clk_out),
-        .data_out        (sw_450_data_out),
-        .scan_select_out (sw_450_scan_out),
-        .latch_enable_out(sw_450_latch_out),
-        .module_data_in  (sw_450_module_data_in),
-        .module_data_out (sw_450_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_450 (
-        .io_in  (sw_450_module_data_in),
-        .io_out (sw_450_module_data_out)
-    );
-
-    // [451] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_451_clk_out, sw_451_data_out, sw_451_scan_out, sw_451_latch_out;
-    wire [7:0] sw_451_module_data_in;
-    wire [7:0] sw_451_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_451 (
-        .clk_in          (sw_450_clk_out),
-        .data_in         (sw_450_data_out),
-        .scan_select_in  (sw_450_scan_out),
-        .latch_enable_in (sw_450_latch_out),
-        .clk_out         (sw_451_clk_out),
-        .data_out        (sw_451_data_out),
-        .scan_select_out (sw_451_scan_out),
-        .latch_enable_out(sw_451_latch_out),
-        .module_data_in  (sw_451_module_data_in),
-        .module_data_out (sw_451_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_451 (
-        .io_in  (sw_451_module_data_in),
-        .io_out (sw_451_module_data_out)
-    );
-
-    // [452] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_452_clk_out, sw_452_data_out, sw_452_scan_out, sw_452_latch_out;
-    wire [7:0] sw_452_module_data_in;
-    wire [7:0] sw_452_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_452 (
-        .clk_in          (sw_451_clk_out),
-        .data_in         (sw_451_data_out),
-        .scan_select_in  (sw_451_scan_out),
-        .latch_enable_in (sw_451_latch_out),
-        .clk_out         (sw_452_clk_out),
-        .data_out        (sw_452_data_out),
-        .scan_select_out (sw_452_scan_out),
-        .latch_enable_out(sw_452_latch_out),
-        .module_data_in  (sw_452_module_data_in),
-        .module_data_out (sw_452_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_452 (
-        .io_in  (sw_452_module_data_in),
-        .io_out (sw_452_module_data_out)
-    );
-
-    // [453] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_453_clk_out, sw_453_data_out, sw_453_scan_out, sw_453_latch_out;
-    wire [7:0] sw_453_module_data_in;
-    wire [7:0] sw_453_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_453 (
-        .clk_in          (sw_452_clk_out),
-        .data_in         (sw_452_data_out),
-        .scan_select_in  (sw_452_scan_out),
-        .latch_enable_in (sw_452_latch_out),
-        .clk_out         (sw_453_clk_out),
-        .data_out        (sw_453_data_out),
-        .scan_select_out (sw_453_scan_out),
-        .latch_enable_out(sw_453_latch_out),
-        .module_data_in  (sw_453_module_data_in),
-        .module_data_out (sw_453_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_453 (
-        .io_in  (sw_453_module_data_in),
-        .io_out (sw_453_module_data_out)
-    );
-
-    // [454] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_454_clk_out, sw_454_data_out, sw_454_scan_out, sw_454_latch_out;
-    wire [7:0] sw_454_module_data_in;
-    wire [7:0] sw_454_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_454 (
-        .clk_in          (sw_453_clk_out),
-        .data_in         (sw_453_data_out),
-        .scan_select_in  (sw_453_scan_out),
-        .latch_enable_in (sw_453_latch_out),
-        .clk_out         (sw_454_clk_out),
-        .data_out        (sw_454_data_out),
-        .scan_select_out (sw_454_scan_out),
-        .latch_enable_out(sw_454_latch_out),
-        .module_data_in  (sw_454_module_data_in),
-        .module_data_out (sw_454_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_454 (
-        .io_in  (sw_454_module_data_in),
-        .io_out (sw_454_module_data_out)
-    );
-
-    // [455] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_455_clk_out, sw_455_data_out, sw_455_scan_out, sw_455_latch_out;
-    wire [7:0] sw_455_module_data_in;
-    wire [7:0] sw_455_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_455 (
-        .clk_in          (sw_454_clk_out),
-        .data_in         (sw_454_data_out),
-        .scan_select_in  (sw_454_scan_out),
-        .latch_enable_in (sw_454_latch_out),
-        .clk_out         (sw_455_clk_out),
-        .data_out        (sw_455_data_out),
-        .scan_select_out (sw_455_scan_out),
-        .latch_enable_out(sw_455_latch_out),
-        .module_data_in  (sw_455_module_data_in),
-        .module_data_out (sw_455_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_455 (
-        .io_in  (sw_455_module_data_in),
-        .io_out (sw_455_module_data_out)
-    );
-
-    // [456] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_456_clk_out, sw_456_data_out, sw_456_scan_out, sw_456_latch_out;
-    wire [7:0] sw_456_module_data_in;
-    wire [7:0] sw_456_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_456 (
-        .clk_in          (sw_455_clk_out),
-        .data_in         (sw_455_data_out),
-        .scan_select_in  (sw_455_scan_out),
-        .latch_enable_in (sw_455_latch_out),
-        .clk_out         (sw_456_clk_out),
-        .data_out        (sw_456_data_out),
-        .scan_select_out (sw_456_scan_out),
-        .latch_enable_out(sw_456_latch_out),
-        .module_data_in  (sw_456_module_data_in),
-        .module_data_out (sw_456_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_456 (
-        .io_in  (sw_456_module_data_in),
-        .io_out (sw_456_module_data_out)
-    );
-
-    // [457] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_457_clk_out, sw_457_data_out, sw_457_scan_out, sw_457_latch_out;
-    wire [7:0] sw_457_module_data_in;
-    wire [7:0] sw_457_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_457 (
-        .clk_in          (sw_456_clk_out),
-        .data_in         (sw_456_data_out),
-        .scan_select_in  (sw_456_scan_out),
-        .latch_enable_in (sw_456_latch_out),
-        .clk_out         (sw_457_clk_out),
-        .data_out        (sw_457_data_out),
-        .scan_select_out (sw_457_scan_out),
-        .latch_enable_out(sw_457_latch_out),
-        .module_data_in  (sw_457_module_data_in),
-        .module_data_out (sw_457_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_457 (
-        .io_in  (sw_457_module_data_in),
-        .io_out (sw_457_module_data_out)
-    );
-
-    // [458] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_458_clk_out, sw_458_data_out, sw_458_scan_out, sw_458_latch_out;
-    wire [7:0] sw_458_module_data_in;
-    wire [7:0] sw_458_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_458 (
-        .clk_in          (sw_457_clk_out),
-        .data_in         (sw_457_data_out),
-        .scan_select_in  (sw_457_scan_out),
-        .latch_enable_in (sw_457_latch_out),
-        .clk_out         (sw_458_clk_out),
-        .data_out        (sw_458_data_out),
-        .scan_select_out (sw_458_scan_out),
-        .latch_enable_out(sw_458_latch_out),
-        .module_data_in  (sw_458_module_data_in),
-        .module_data_out (sw_458_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_458 (
-        .io_in  (sw_458_module_data_in),
-        .io_out (sw_458_module_data_out)
-    );
-
-    // [459] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_459_clk_out, sw_459_data_out, sw_459_scan_out, sw_459_latch_out;
-    wire [7:0] sw_459_module_data_in;
-    wire [7:0] sw_459_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_459 (
-        .clk_in          (sw_458_clk_out),
-        .data_in         (sw_458_data_out),
-        .scan_select_in  (sw_458_scan_out),
-        .latch_enable_in (sw_458_latch_out),
-        .clk_out         (sw_459_clk_out),
-        .data_out        (sw_459_data_out),
-        .scan_select_out (sw_459_scan_out),
-        .latch_enable_out(sw_459_latch_out),
-        .module_data_in  (sw_459_module_data_in),
-        .module_data_out (sw_459_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_459 (
-        .io_in  (sw_459_module_data_in),
-        .io_out (sw_459_module_data_out)
-    );
-
-    // [460] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_460_clk_out, sw_460_data_out, sw_460_scan_out, sw_460_latch_out;
-    wire [7:0] sw_460_module_data_in;
-    wire [7:0] sw_460_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_460 (
-        .clk_in          (sw_459_clk_out),
-        .data_in         (sw_459_data_out),
-        .scan_select_in  (sw_459_scan_out),
-        .latch_enable_in (sw_459_latch_out),
-        .clk_out         (sw_460_clk_out),
-        .data_out        (sw_460_data_out),
-        .scan_select_out (sw_460_scan_out),
-        .latch_enable_out(sw_460_latch_out),
-        .module_data_in  (sw_460_module_data_in),
-        .module_data_out (sw_460_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_460 (
-        .io_in  (sw_460_module_data_in),
-        .io_out (sw_460_module_data_out)
-    );
-
-    // [461] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_461_clk_out, sw_461_data_out, sw_461_scan_out, sw_461_latch_out;
-    wire [7:0] sw_461_module_data_in;
-    wire [7:0] sw_461_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_461 (
-        .clk_in          (sw_460_clk_out),
-        .data_in         (sw_460_data_out),
-        .scan_select_in  (sw_460_scan_out),
-        .latch_enable_in (sw_460_latch_out),
-        .clk_out         (sw_461_clk_out),
-        .data_out        (sw_461_data_out),
-        .scan_select_out (sw_461_scan_out),
-        .latch_enable_out(sw_461_latch_out),
-        .module_data_in  (sw_461_module_data_in),
-        .module_data_out (sw_461_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_461 (
-        .io_in  (sw_461_module_data_in),
-        .io_out (sw_461_module_data_out)
-    );
-
-    // [462] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_462_clk_out, sw_462_data_out, sw_462_scan_out, sw_462_latch_out;
-    wire [7:0] sw_462_module_data_in;
-    wire [7:0] sw_462_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_462 (
-        .clk_in          (sw_461_clk_out),
-        .data_in         (sw_461_data_out),
-        .scan_select_in  (sw_461_scan_out),
-        .latch_enable_in (sw_461_latch_out),
-        .clk_out         (sw_462_clk_out),
-        .data_out        (sw_462_data_out),
-        .scan_select_out (sw_462_scan_out),
-        .latch_enable_out(sw_462_latch_out),
-        .module_data_in  (sw_462_module_data_in),
-        .module_data_out (sw_462_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_462 (
-        .io_in  (sw_462_module_data_in),
-        .io_out (sw_462_module_data_out)
-    );
-
-    // [463] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_463_clk_out, sw_463_data_out, sw_463_scan_out, sw_463_latch_out;
-    wire [7:0] sw_463_module_data_in;
-    wire [7:0] sw_463_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_463 (
-        .clk_in          (sw_462_clk_out),
-        .data_in         (sw_462_data_out),
-        .scan_select_in  (sw_462_scan_out),
-        .latch_enable_in (sw_462_latch_out),
-        .clk_out         (sw_463_clk_out),
-        .data_out        (sw_463_data_out),
-        .scan_select_out (sw_463_scan_out),
-        .latch_enable_out(sw_463_latch_out),
-        .module_data_in  (sw_463_module_data_in),
-        .module_data_out (sw_463_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_463 (
-        .io_in  (sw_463_module_data_in),
-        .io_out (sw_463_module_data_out)
-    );
-
-    // [464] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_464_clk_out, sw_464_data_out, sw_464_scan_out, sw_464_latch_out;
-    wire [7:0] sw_464_module_data_in;
-    wire [7:0] sw_464_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_464 (
-        .clk_in          (sw_463_clk_out),
-        .data_in         (sw_463_data_out),
-        .scan_select_in  (sw_463_scan_out),
-        .latch_enable_in (sw_463_latch_out),
-        .clk_out         (sw_464_clk_out),
-        .data_out        (sw_464_data_out),
-        .scan_select_out (sw_464_scan_out),
-        .latch_enable_out(sw_464_latch_out),
-        .module_data_in  (sw_464_module_data_in),
-        .module_data_out (sw_464_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_464 (
-        .io_in  (sw_464_module_data_in),
-        .io_out (sw_464_module_data_out)
-    );
-
-    // [465] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_465_clk_out, sw_465_data_out, sw_465_scan_out, sw_465_latch_out;
-    wire [7:0] sw_465_module_data_in;
-    wire [7:0] sw_465_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_465 (
-        .clk_in          (sw_464_clk_out),
-        .data_in         (sw_464_data_out),
-        .scan_select_in  (sw_464_scan_out),
-        .latch_enable_in (sw_464_latch_out),
-        .clk_out         (sw_465_clk_out),
-        .data_out        (sw_465_data_out),
-        .scan_select_out (sw_465_scan_out),
-        .latch_enable_out(sw_465_latch_out),
-        .module_data_in  (sw_465_module_data_in),
-        .module_data_out (sw_465_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_465 (
-        .io_in  (sw_465_module_data_in),
-        .io_out (sw_465_module_data_out)
-    );
-
-    // [466] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_466_clk_out, sw_466_data_out, sw_466_scan_out, sw_466_latch_out;
-    wire [7:0] sw_466_module_data_in;
-    wire [7:0] sw_466_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_466 (
-        .clk_in          (sw_465_clk_out),
-        .data_in         (sw_465_data_out),
-        .scan_select_in  (sw_465_scan_out),
-        .latch_enable_in (sw_465_latch_out),
-        .clk_out         (sw_466_clk_out),
-        .data_out        (sw_466_data_out),
-        .scan_select_out (sw_466_scan_out),
-        .latch_enable_out(sw_466_latch_out),
-        .module_data_in  (sw_466_module_data_in),
-        .module_data_out (sw_466_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_466 (
-        .io_in  (sw_466_module_data_in),
-        .io_out (sw_466_module_data_out)
-    );
-
-    // [467] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_467_clk_out, sw_467_data_out, sw_467_scan_out, sw_467_latch_out;
-    wire [7:0] sw_467_module_data_in;
-    wire [7:0] sw_467_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_467 (
-        .clk_in          (sw_466_clk_out),
-        .data_in         (sw_466_data_out),
-        .scan_select_in  (sw_466_scan_out),
-        .latch_enable_in (sw_466_latch_out),
-        .clk_out         (sw_467_clk_out),
-        .data_out        (sw_467_data_out),
-        .scan_select_out (sw_467_scan_out),
-        .latch_enable_out(sw_467_latch_out),
-        .module_data_in  (sw_467_module_data_in),
-        .module_data_out (sw_467_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_467 (
-        .io_in  (sw_467_module_data_in),
-        .io_out (sw_467_module_data_out)
-    );
-
-    // [468] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_468_clk_out, sw_468_data_out, sw_468_scan_out, sw_468_latch_out;
-    wire [7:0] sw_468_module_data_in;
-    wire [7:0] sw_468_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_468 (
-        .clk_in          (sw_467_clk_out),
-        .data_in         (sw_467_data_out),
-        .scan_select_in  (sw_467_scan_out),
-        .latch_enable_in (sw_467_latch_out),
-        .clk_out         (sw_468_clk_out),
-        .data_out        (sw_468_data_out),
-        .scan_select_out (sw_468_scan_out),
-        .latch_enable_out(sw_468_latch_out),
-        .module_data_in  (sw_468_module_data_in),
-        .module_data_out (sw_468_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_468 (
-        .io_in  (sw_468_module_data_in),
-        .io_out (sw_468_module_data_out)
-    );
-
-    // [469] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_469_clk_out, sw_469_data_out, sw_469_scan_out, sw_469_latch_out;
-    wire [7:0] sw_469_module_data_in;
-    wire [7:0] sw_469_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_469 (
-        .clk_in          (sw_468_clk_out),
-        .data_in         (sw_468_data_out),
-        .scan_select_in  (sw_468_scan_out),
-        .latch_enable_in (sw_468_latch_out),
-        .clk_out         (sw_469_clk_out),
-        .data_out        (sw_469_data_out),
-        .scan_select_out (sw_469_scan_out),
-        .latch_enable_out(sw_469_latch_out),
-        .module_data_in  (sw_469_module_data_in),
-        .module_data_out (sw_469_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_469 (
-        .io_in  (sw_469_module_data_in),
-        .io_out (sw_469_module_data_out)
-    );
-
-    // [470] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_470_clk_out, sw_470_data_out, sw_470_scan_out, sw_470_latch_out;
-    wire [7:0] sw_470_module_data_in;
-    wire [7:0] sw_470_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_470 (
-        .clk_in          (sw_469_clk_out),
-        .data_in         (sw_469_data_out),
-        .scan_select_in  (sw_469_scan_out),
-        .latch_enable_in (sw_469_latch_out),
-        .clk_out         (sw_470_clk_out),
-        .data_out        (sw_470_data_out),
-        .scan_select_out (sw_470_scan_out),
-        .latch_enable_out(sw_470_latch_out),
-        .module_data_in  (sw_470_module_data_in),
-        .module_data_out (sw_470_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_470 (
-        .io_in  (sw_470_module_data_in),
-        .io_out (sw_470_module_data_out)
-    );
-
-    // [471] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_471_clk_out, sw_471_data_out, sw_471_scan_out, sw_471_latch_out;
-    wire [7:0] sw_471_module_data_in;
-    wire [7:0] sw_471_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_471 (
-        .clk_in          (sw_470_clk_out),
-        .data_in         (sw_470_data_out),
-        .scan_select_in  (sw_470_scan_out),
-        .latch_enable_in (sw_470_latch_out),
-        .clk_out         (sw_471_clk_out),
-        .data_out        (sw_471_data_out),
-        .scan_select_out (sw_471_scan_out),
-        .latch_enable_out(sw_471_latch_out),
-        .module_data_in  (sw_471_module_data_in),
-        .module_data_out (sw_471_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_471 (
-        .io_in  (sw_471_module_data_in),
-        .io_out (sw_471_module_data_out)
-    );
-
-    // [472] https://github.com/TinyTapeout/tt02-test-straight
-    wire sw_472_clk_out, sw_472_data_out, sw_472_scan_out, sw_472_latch_out;
-    wire [7:0] sw_472_module_data_in;
-    wire [7:0] sw_472_module_data_out;
-    scanchain #(.NUM_IOS(8)) scanchain_472 (
-        .clk_in          (sw_471_clk_out),
-        .data_in         (sw_471_data_out),
-        .scan_select_in  (sw_471_scan_out),
-        .latch_enable_in (sw_471_latch_out),
-        .clk_out         (sw_472_clk_out),
-        .data_out        (sw_472_data_out),
-        .scan_select_out (sw_472_scan_out),
-        .latch_enable_out(sw_472_latch_out),
-        .module_data_in  (sw_472_module_data_in),
-        .module_data_out (sw_472_module_data_out)
-    );
-
-    user_module_339501025136214612 user_module_339501025136214612_472 (
-        .io_in  (sw_472_module_data_in),
-        .io_out (sw_472_module_data_out)
-    );
-
     // Connect final signals back to the scan controller
-    assign sc_clk_in  = sw_472_clk_out;
-    assign sc_data_in = sw_472_data_out;
+    assign sc_clk_in  = sw_249_clk_out;
+    assign sc_data_in = sw_249_data_out;
 
     // end of module instantiation
 

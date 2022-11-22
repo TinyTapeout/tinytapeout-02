@@ -129,3 +129,13 @@ It takes about 5 minutes and needs about 3GB of disk space.
 Then to create the GDS:
 
     make user_project_wrapper
+
+## Changing macro block size
+
+After working out what size you want:
+
+* adjust configure.py in `CaravelConfig.create_macro_config()`.
+* adjust the PDN spacing to match in openlane/user_project_wrapper/config.tcl:
+    * ```set ::env(FP_PDN_HPITCH)```
+    * ```set ::env(FP_PDN_HOFFSET)```
+
