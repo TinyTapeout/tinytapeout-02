@@ -334,15 +334,28 @@ class CaravelConfig():
 
     # create macro file & positions, power hooks
     def create_macro_config(self):
-        start_x = 80
-        start_y = 80
-        step_x  = 145
-        step_y  = 135
+        # array size
         rows    = 25
         cols    = 19
+
+        # start point (lower left)
+        start_x = 80
+        start_y = 80
+
+        # module block sizes
         scanchain_w = 30
         scanchain_spc = 6
         module_w = 90
+        module_h = 120
+
+        # how much x & y space to leave between blocks
+        space_x = 19
+        space_y = 15
+
+        # step sizes
+        step_x  = scanchain_w + module_w + scanchain_spc + space_x
+        step_y  = module_h + space_y
+
         num_macros_placed = 0
 
         # macro.cfg: where macros are placed
