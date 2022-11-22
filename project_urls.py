@@ -44,7 +44,7 @@ project_urls = [
     "https://github.com/jar/tt02_freespeech",
     "https://github.com/alanvgreen/tt02-siren",
     "https://github.com/TheZoq2/smolfpga",
-    "https://github.com/moyesw/TT02-M0",
+    #"https://github.com/moyesw/TT02-M0", CTS is broken on Github
     "https://github.com/yupferris/bitslam",
     "https://github.com/ThorKn/tinytapeout02_pattern_player",
     "https://github.com/proppy/tt02-xls-popcount",
