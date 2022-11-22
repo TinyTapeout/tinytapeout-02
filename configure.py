@@ -48,7 +48,7 @@ class Projects():
         filler = False
         filler_id = 0
         for index in range(args.limit_num_projects):
-            if args.single != index:
+            if args.single >= 0 and args.single != index:
                 continue
 
             try:
