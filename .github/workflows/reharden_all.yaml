@@ -43,8 +43,8 @@ jobs:
 
     # fetch the repos
     - name: fetch all
-      run: ./configure.py --clone-all --debug
+      run: python ./configure.py --clone-all --debug
 
     # harden all 
     - name: reharden
-      run: ./configure.py --harden
+      run: python ./configure.py --harden

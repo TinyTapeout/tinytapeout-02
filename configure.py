@@ -255,8 +255,8 @@ class Project():
         cwd = os.getcwd()
         os.chdir(self.local_dir)
 
-        # setup user config
-        configure_cmd = './configure.py --create-user-config'
+        # setup user config, not including python fails on github action
+        configure_cmd = 'python ./configure.py --create-user-config'
         p = subprocess.run(configure_cmd, shell=True)
         if p.returncode != 0:
             logging.error(f"configure failed")

@@ -43,7 +43,7 @@ jobs:
 
     # fetch the repos
     - name: fetch all
-      run: ./configure.py --clone-all --debug
+      run: python ./configure.py --clone-all --debug
 
     # pwd debug
     - name: show projects
@@ -51,7 +51,7 @@ jobs:
 
     # install projects
     - name: configure
-      run: ./configure.py --update-caravel
+      run: python ./configure.py --update-caravel
 
     - name: user project wrapper GDS
       run: make user_project_wrapper
