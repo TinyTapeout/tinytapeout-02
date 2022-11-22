@@ -31,7 +31,7 @@ jobs:
     - name: setup python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.7.7'
+        python-version: '3.10'
         cache: 'pip'
     - run: pip install -r requirements.txt
 
@@ -43,7 +43,7 @@ jobs:
 
     # fetch the repos
     - name: fetch all
-      run: python ./configure.py --clone-all --debug
+      run: ./configure.py --clone-all --debug
 
     # pwd debug
     - name: show projects
@@ -51,7 +51,7 @@ jobs:
 
     # install projects
     - name: configure
-      run: python ./configure.py --update-caravel
+      run: ./configure.py --update-caravel
 
     - name: user project wrapper GDS
       run: make user_project_wrapper
