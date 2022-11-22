@@ -39,16 +39,16 @@ module chrisruk_matrix #( parameter MAX_COUNT = 1000 ) (
     reg [0:0] resetflag;
 
     initial begin
-        first = 1;              // For FPGA for some reason need to have this here too, otherwise we get duplicate first value
-        clk2 = 0;
-        counter = 0;
-        resetflag  = 1;         // Reset flag, only used by FPGA
+        first <= 1;              // For FPGA for some reason need to have this here too, otherwise we get duplicate first value
+        clk2 <= 0;
+        counter <= 0;
+        resetflag  <= 1;         // Reset flag, only used by FPGA
     end
 
     always @(posedge clk) begin
         if (counter == 2000) begin // Create 6kHz clock
-            clk2 = ~clk2;
-            counter = 0;
+            clk2 <= ~clk2;
+            counter <= 0;
         end else begin
             counter <= counter + 1;
         end
@@ -75,34 +75,38 @@ module chrisruk_matrix #( parameter MAX_COUNT = 1000 ) (
             fonts[1] <= 40'h18_28_08_08_3e; // 1
             digit1_cache <= 0;
             digit2_cache <= digit1;
-            first = 1;
+            first <= 1;
         end else begin
-            clock_1 = ~clock_1 ;
+            clock_1 <= ~clock_1 ;
             if (clock_1 == 1) begin
                 if (counter1 < 32) begin
-                    strip_1 = 0;
-                    // Provided we're not displaying first digit in scrolling marquee pattern, display digit
-                    // and shift each time
-                    if(!first) begin
-                        display = {16'b0,
-                                   fonts[digit1_cache][32:39] << shift,
-                                   fonts[digit1_cache][24:31] << shift,
-                                   fonts[digit1_cache][16:23] << shift,
-                                   fonts[digit1_cache][8:15]  << shift,
-                                   fonts[digit1_cache][0:7]   << shift,
-                                   8'b0};
-                    end else begin
-                        display = 0;
+                    strip_1 <= 0;
+                    if(counter1 == 1) begin
+                        // Provided we're not displaying first digit in scrolling marquee pattern, display digit
+                        // and shift each time
+                        if(!first) begin
+                            display <= {16'b0,
+                                    fonts[digit1_cache][32:39] << shift,
+                                    fonts[digit1_cache][24:31] << shift,
+                                    fonts[digit1_cache][16:23] << shift,
+                                    fonts[digit1_cache][8:15]  << shift,
+                                    fonts[digit1_cache][0:7]   << shift,
+                                    8'b0};
+                        end else begin
+                            display <= 0;
+                        end
+                    end else if(counter1 == 2) begin
+                        // Display part of next digit too
+                        display <= display | {16'b0,
+                                            fonts[digit2_cache][32:39] >> 8 - shift,
+                                            fonts[digit2_cache][24:31] >> 8 - shift,
+                                            fonts[digit2_cache][16:23] >> 8 - shift,
+                                            fonts[digit2_cache][8:15]  >> 8 - shift,
+                                            fonts[digit2_cache][0:7]   >> 8 - shift,
+                                            8'b0};
                     end
-                    // Display part of next digit too
-                    display = display | {16'b0,
-                                         fonts[digit2_cache][32:39] >> 8 - shift,
-                                         fonts[digit2_cache][24:31] >> 8 - shift,
-                                         fonts[digit2_cache][16:23] >> 8 - shift,
-                                         fonts[digit2_cache][8:15]  >> 8 - shift,
-                                         fonts[digit2_cache][0:7]   >> 8 - shift,
-                                         8'b0};
 
+                    counter1 <= counter1 + 1;
                 end else if (counter1 < 32 + (32 * (8*8))) begin
                     rowno = pidx / 8;
                     // Flip bit order if even row, as matrix of LEDs
@@ -115,35 +119,36 @@ module chrisruk_matrix #( parameter MAX_COUNT = 1000 ) (
 
                     // Extract bit from display buffer
                     if (display[bitidx] == 1) begin
-                        strip_1 = ledreg1[idx];
+                        strip_1 <= ledreg1[idx];
                     end else begin
-                        strip_1 = ledreg2[idx];
+                        strip_1 <= ledreg2[idx];
                     end
 
-                    idx = idx + 1;
-                    if (idx == 32) begin
-                        idx = 0;
-                        pidx = pidx + 1;
+                    if (idx == 31) begin
+                        idx <= 0;
+                        pidx <= pidx + 1;
+                    end else begin
+                        idx <= idx + 1;
                     end
+                    counter1 <= counter1 + 1;
                 end else if (counter1 < 32 + (32 * (8*8)) + 32 + 32) begin
                     // Need zeros at end of pattern
-                    strip_1 = 0;
+                    strip_1 <= 0;
+                    counter1 <= counter1 + 1;
                 end else begin
-                    counter1 = 0;
-                    pidx = 0;
-                    idx = 0;
+                    counter1 <= 0;
+                    pidx <= 0;
+                    idx <= 0;
                     if (shift == 7) begin
-                        digit1_cache = digit2_cache;
-                        digit2_cache = digit1;       // Grab next digit to be displayed from input pin
-                        shift = 0;
-                        first = 0;
+                        digit1_cache <= digit2_cache;
+                        digit2_cache <= digit1;       // Grab next digit to be displayed from input pin
+                        shift <= 0;
+                        first <= 0;
                     end else begin
                         // Need to wrap back to first letter
-                        shift = shift + 1;
+                        shift <= shift + 1;
                     end
                 end
-
-                counter1 = counter1 + 1;
             end
         end
     end
