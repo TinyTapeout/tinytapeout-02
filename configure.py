@@ -67,6 +67,12 @@ class Projects():
                     logging.info(f"cloning & fetching gds for {project}")
                     project.clone()
 
+            if args.update_all:
+                if filler is False:
+                    # only updates code, not gds artifacts
+                    logging.info(f"git pull for {project}")
+                    project.pull()
+
             # projects should now be installed, so load all the data from the yaml files
             logging.debug("loading project yaml")
             # fill projects will load from the fill project's directory
@@ -242,9 +248,12 @@ class Project():
             # also fetch the gds
             self.fetch_gds()
 
-    def update(self):
-        # do a pull
-        pass
+    def pull(self):
+        repo = git.Repo(self.local_dir)
+        # reset
+        repo.git.reset('--hard')
+        o = repo.remotes.origin
+        o.pull()
 
     def harden(self):
         logging.info(f"hardening {self}")
@@ -673,6 +682,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--list', help="list projects", action='store_const', const=True)
     parser.add_argument('--clone-all', help="clone all projects", action="store_const", const=True)
+    parser.add_argument('--update-all', help="git pull all projects", action="store_const", const=True)
     parser.add_argument('--single', help="do action on single project", type=int)
     parser.add_argument('--update-caravel', help='configure caravel for build', action='store_const', const=True)
     parser.add_argument('--harden', help="harden project", action="store_const", const=True)
