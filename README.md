@@ -22,7 +22,7 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 
 | Author | Title | Type | Git Repo |
 | ------ | ------| -----| ---------|
-| Matt Venn | Test Straight Project | [Wokwi](https://wokwi.com/projects/339501025136214612) | https://github.com/TinyTapeout/tt02-test-straight |
+| Matt Venn | Test Inverter Project | [Wokwi](https://wokwi.com/projects/341535056611770964) | https://github.com/TinyTapeout/tt02-test-invert |
 | Fraser Price | SIMON Cipher | HDL | https://github.com/Fraserbc/tt02-simon |
 | Tom Keddie | HD74480 Clock | HDL | https://github.com/TomKeddie/tinytapeout-2022-2 |
 | Chris | Scrolling Binary Matrix display | HDL | https://github.com/chrisruk/matrixchip |
@@ -79,3 +79,10 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | Jack Leightcap | clash cpu | HDL | https://github.com/jleightcap/clash-silicon-tinytapeout |
 | Tholin | TinyTapeout 2 LCD Nametag | HDL | https://github.com/89Mods/tt2-lcd-namebadge |
 | Christina Cyr | UART-CC | [Wokwi](https://wokwi.com/projects/347619669052490324) | https://github.com/Christina-Cyr/tt02-submission-UART-CC |
+| Ivan Krasin | 3-bit 8-channel PWM driver | HDL | https://github.com/krasin/tt02-verilog-3-bit-8-channel-pwm-driver |
+| Nick Østergaard | LEDChaser from LiteX test | HDL | https://github.com/nickoe/tinytapeout02-verilog-gds-test |
+| Clive Chan | 8-bit (E4M3) Floating Point Multiplier | HDL | https://github.com/cchan/fp8_mul |
+| Tholin | Dice roll | HDL | https://github.com/AvalonSemiconductors/tt2-diceroll |
+| N. Sertac Artan | CNS TT02 Test 1 | [Wokwi](https://wokwi.com/projects/348953272198890067) | https://github.com/NYIT-CNS/cns001-tt02-submission1 |
+| N. Sertac Artan | CNS002 (TT02-Test 2) | [Wokwi](https://wokwi.com/projects/348961139276644947) | https://github.com/NYIT-CNS/cns002-tt02-submission2 |
+| Shaos | Test2 | [Wokwi](https://wokwi.com/projects/348540666182107731) | https://github.com/shaos/tt02-submission-shaos |

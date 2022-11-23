@@ -13,7 +13,7 @@ from signal import signal, SIGPIPE, SIG_DFL
 signal(SIGPIPE, SIG_DFL)
 
 tmp_dir = '/tmp/tt'
-DEFAULT_NUM_PROJECTS = 473
+DEFAULT_NUM_PROJECTS = 250
 
 
 def unique(duplist):
@@ -48,7 +48,7 @@ class Projects():
         filler = False
         filler_id = 0
         for index in range(args.limit_num_projects):
-            if args.single and args.single != index:
+            if args.single >= 0 and args.single != index:
                 continue
 
             try:
@@ -259,19 +259,29 @@ class Project():
         logging.info(f"hardening {self}")
 
         # copy golden config
-        shutil.copyfile('config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
+        shutil.copyfile('golden_config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
 
         cwd = os.getcwd()
         os.chdir(self.local_dir)
 
-        # setup user config
-        configure_cmd = './configure.py --create-user-config'
-        subprocess.run(configure_cmd, shell=True)
+        # setup user config, not including python fails on github action
+        if 'LOCAL' in os.environ:
+            configure_cmd = './configure.py --create-user-config'
+        else:
+            configure_cmd = 'python ./configure.py --create-user-config'
+        p = subprocess.run(configure_cmd, shell=True)
+        if p.returncode != 0:
+            logging.error("configure failed")
+            exit(1)
 
         # requires PDK_ROOT, OPENLANE_ROOT & OPENLANE_IMAGE_NAME to be set in local environment
         harden_cmd = 'docker run --rm -v $OPENLANE_ROOT:/openlane -v $PDK_ROOT:$PDK_ROOT -v $(pwd):/work -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $OPENLANE_IMAGE_NAME /bin/bash -c "./flow.tcl -overwrite -design /work/src -run_path /work/runs -tag wokwi"'
         env = os.environ.copy()
-        subprocess.run(harden_cmd, shell=True, env=env)
+        p = subprocess.run(harden_cmd, shell=True, env=env)
+        if p.returncode != 0:
+            logging.error("harden failed")
+            exit(1)
+
         os.chdir(cwd)
 
     def __str__(self):
@@ -343,21 +353,36 @@ class CaravelConfig():
 
     # create macro file & positions, power hooks
     def create_macro_config(self):
-        start_x = 80
-        start_y = 80
-        step_x  = 145
-        step_y  = 135
-        rows    = 25
-        cols    = 19
+        # array size
+        rows    = 18
+        cols    = 14
+
+        # start point (lower left)
+        start_x = 50
+        start_y = 95
+
+        # module block sizes
         scanchain_w = 30
         scanchain_spc = 6
-        module_w = 90
+        module_w = 150
+        module_h = 170
+
+        # how much x & y space to leave between blocks
+        space_x = 15
+        space_y = 15
+
+        # step sizes
+        step_x  = scanchain_w + module_w + scanchain_spc + space_x
+        step_y  = module_h + space_y
+
+        logging.info(f"start_x {start_x} start_y {start_y} step_x {step_x} step_y {step_y }")
+
         num_macros_placed = 0
 
         # macro.cfg: where macros are placed
         logging.info("creating macro.cfg")
         with open("openlane/user_project_wrapper/macro.cfg", 'w') as fh:
-            fh.write("scan_controller 80 80 N\n")
+            fh.write("scan_controller 100 100 N\n")
             for row in range(rows):
                 if row % 2 == 0:
                     col_order = range(cols)
@@ -640,6 +665,9 @@ class Docs():
         with open("VERIFICATION.md") as fh:
             doc_verification = fh.read()
 
+        with open("CREDITS.md") as fh:
+            doc_credits = fh.read()
+
         with open(args.dump_markdown, 'w') as fh:
             fh.write(doc_header)
 
@@ -670,11 +698,17 @@ class Docs():
             fh.write(doc_info)
             fh.write("\n\pagebreak\n")
             fh.write(doc_verification)
+            fh.write("\n\pagebreak\n")
+            fh.write(doc_credits)
 
         logging.info(f'wrote markdown to {args.dump_markdown}')
 
         if args.dump_pdf:
-            os.system(f'pandoc --toc --toc-depth 2 --pdf-engine=xelatex -i {args.dump_markdown} -o {args.dump_pdf}')
+            pdf_cmd = f'pandoc --toc --toc-depth 2 --pdf-engine=xelatex -i {args.dump_markdown} -o {args.dump_pdf}'
+            logging.info(pdf_cmd)
+            p = subprocess.run(pdf_cmd, shell=True)
+            if p.returncode != 0:
+                logging.error("pdf command failed")
 
 
 if __name__ == '__main__':
@@ -683,7 +717,7 @@ if __name__ == '__main__':
     parser.add_argument('--list', help="list projects", action='store_const', const=True)
     parser.add_argument('--clone-all', help="clone all projects", action="store_const", const=True)
     parser.add_argument('--update-all', help="git pull all projects", action="store_const", const=True)
-    parser.add_argument('--single', help="do action on single project", type=int)
+    parser.add_argument('--single', help="do action on single project", type=int, default=-1)
     parser.add_argument('--update-caravel', help='configure caravel for build', action='store_const', const=True)
     parser.add_argument('--harden', help="harden project", action="store_const", const=True)
     parser.add_argument('--limit-num-projects', help='only configure for the first n projects', type=int, default=DEFAULT_NUM_PROJECTS)

@@ -1,7 +1,7 @@
 -v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v
 -v $(USER_PROJECT_VERILOG)/gl/scan_controller.v
 -v $(USER_PROJECT_VERILOG)/gl/scanchain.v
--v $(USER_PROJECT_VERILOG)/gl/user_module_339501025136214612.v"
+-v $(USER_PROJECT_VERILOG)/gl/user_module_341535056611770964.v"
 -v $(USER_PROJECT_VERILOG)/gl/fraserbc_simon.v"
 -v $(USER_PROJECT_VERILOG)/gl/tomkeddie_top_tto.v"
 -v $(USER_PROJECT_VERILOG)/gl/chrisruk_matrix.v"
@@ -58,3 +58,10 @@
 -v $(USER_PROJECT_VERILOG)/gl/jleightcap_top.v"
 -v $(USER_PROJECT_VERILOG)/gl/tt2_tholin_namebadge.v"
 -v $(USER_PROJECT_VERILOG)/gl/user_module_347619669052490324.v"
+-v $(USER_PROJECT_VERILOG)/gl/krasin_3_bit_8_channel_pwm_driver.v"
+-v $(USER_PROJECT_VERILOG)/gl/user_module_nickoe.v"
+-v $(USER_PROJECT_VERILOG)/gl/cchan_fp8_multiplier.v"
+-v $(USER_PROJECT_VERILOG)/gl/tt2_tholin_diceroll.v"
+-v $(USER_PROJECT_VERILOG)/gl/user_module_348953272198890067.v"
+-v $(USER_PROJECT_VERILOG)/gl/user_module_348961139276644947.v"
+-v $(USER_PROJECT_VERILOG)/gl/user_module_348540666182107731.v"

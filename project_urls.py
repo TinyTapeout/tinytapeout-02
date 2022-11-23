@@ -1,11 +1,11 @@
-filler_project_url = 'https://github.com/TinyTapeout/tt02-test-straight'
+filler_project_url = 'https://github.com/TinyTapeout/tt02-test-invert'
 test_project_urls = [
     'https://github.com/TinyTapeout/tt02-test-straight',
     'https://github.com/TinyTapeout/tt02-test-7seg',
     'https://github.com/TinyTapeout/tt02-test-invert',
     ]
 project_urls = [
-    'https://github.com/TinyTapeout/tt02-test-straight',
+    'https://github.com/TinyTapeout/tt02-test-invert',
     "https://github.com/Fraserbc/tt02-simon",
     "https://github.com/TomKeddie/tinytapeout-2022-2",
     "https://github.com/chrisruk/matrixchip",
@@ -44,7 +44,7 @@ project_urls = [
     "https://github.com/jar/tt02_freespeech",
     "https://github.com/alanvgreen/tt02-siren",
     "https://github.com/TheZoq2/smolfpga",
-    "https://github.com/moyesw/TT02-M0",
+    #"https://github.com/moyesw/TT02-M0", CTS is broken on Github
     "https://github.com/yupferris/bitslam",
     "https://github.com/ThorKn/tinytapeout02_pattern_player",
     "https://github.com/proppy/tt02-xls-popcount",
@@ -56,11 +56,18 @@ project_urls = [
     "https://github.com/ThorKn/tinytapeout02_shiftregister_challenge",
     "https://github.com/89Mods/tt2-4x4-multiply",
     "https://github.com/89Mods/tt2-multiplexed-counter",
-    #"https://github.com/proppy/tt02-xls-counter", # not unique
+    #"https://github.com/proppy/tt02-xls-counter",
     "https://github.com/QuantamHD/ethan-evan-random-numbers",
     "https://github.com/QuantamHD/evan-submission",
     "https://github.com/FlyGoat/tt02-play-tune-flygoat",
     "https://github.com/jleightcap/clash-silicon-tinytapeout",
     "https://github.com/89Mods/tt2-lcd-namebadge",
     "https://github.com/Christina-Cyr/tt02-submission-UART-CC",
+    "https://github.com/krasin/tt02-verilog-3-bit-8-channel-pwm-driver",
+    "https://github.com/nickoe/tinytapeout02-verilog-gds-test",
+    "https://github.com/cchan/fp8_mul",
+    "https://github.com/AvalonSemiconductors/tt2-diceroll",
+    "https://github.com/NYIT-CNS/cns001-tt02-submission1",
+    "https://github.com/NYIT-CNS/cns002-tt02-submission2",
+    "https://github.com/shaos/tt02-submission-shaos",
     ]

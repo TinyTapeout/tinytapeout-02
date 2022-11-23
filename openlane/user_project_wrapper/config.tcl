@@ -42,8 +42,8 @@ set ::env(FP_PDN_VPITCH) 140
 set ::env(FP_PDN_VOFFSET) 186
 
 # pitch and offset for horizontal straps (y axis)
-set ::env(FP_PDN_HPITCH) 135
-set ::env(FP_PDN_HOFFSET) 105
+set ::env(FP_PDN_HPITCH) 185
+set ::env(FP_PDN_HOFFSET) 130
 
 # save some time
 set ::env(RUN_KLAYOUT_XOR) 0
