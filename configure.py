@@ -64,8 +64,13 @@ class Projects():
             # clone git repos locally & gds artifacts from action build
             if args.clone_all:
                 if filler is False:
-                    logging.info(f"cloning & fetching gds for {project}")
+                    logging.info(f"cloning {project}")
                     project.clone()
+
+            if args.fetch_gds:
+                if filler is False:
+                    logging.info(f"fetching gds for {project}")
+                    project.fetch_gds()
 
             if args.update_all:
                 if filler is False:
@@ -244,9 +249,6 @@ class Project():
         else:
             logging.info("clone")
             git.Repo.clone_from(self.git_url, self.local_dir)
-
-            # also fetch the gds
-            self.fetch_gds()
 
     def pull(self):
         repo = git.Repo(self.local_dir)
@@ -717,6 +719,7 @@ if __name__ == '__main__':
     parser.add_argument('--list', help="list projects", action='store_const', const=True)
     parser.add_argument('--clone-all', help="clone all projects", action="store_const", const=True)
     parser.add_argument('--update-all', help="git pull all projects", action="store_const", const=True)
+    parser.add_argument('--fetch-gds', help="git fetch latest gds", action="store_const", const=True)
     parser.add_argument('--single', help="do action on single project", type=int, default=-1)
     parser.add_argument('--update-caravel', help='configure caravel for build', action='store_const', const=True)
     parser.add_argument('--harden', help="harden project", action="store_const", const=True)
