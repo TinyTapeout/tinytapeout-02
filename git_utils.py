@@ -106,10 +106,22 @@ def install_artifacts(url, directory):
         exit(1)
 
     download_url = get_most_recent_action_url(commits, artifacts)
-    logging.debug(f"download url {download_url}")
 
     # need actions access on the token to get the artifact
     # won't work on a pull request because they won't have the token
-    r = requests.get(download_url, headers=headers)
-    z = zipfile.ZipFile(io.BytesIO(r.content))
-    z.extractall(directory)
+    attempts = 1
+    max_attempts = 3
+    while attempts < max_attempts:
+        try:
+            logging.debug(f"download url {download_url} attempt {attempts}")
+            r = requests.get(download_url, headers=headers)
+            z = zipfile.ZipFile(io.BytesIO(r.content))
+            z.extractall(directory)
+            break
+        except zipfile.BadZipFile:
+            attempts += 1
+            logging.warning(f"problem with zipfile, retry {attempts}")
+
+    if attempts == max_attempts:
+        logging.error("gave up downloading zipfile")
+        exit(1)
