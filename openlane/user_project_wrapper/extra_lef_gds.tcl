@@ -43,7 +43,7 @@ $script_dir/../../lef/thezoq2_yafpga.lef \
 $script_dir/../../lef/moyes0_top_module.lef \
 $script_dir/../../lef/yupferris_bitslam.lef \
 $script_dir/../../lef/user_module_341620484740219475.lef \
-$script_dir/../../lef/top.lef \
+$script_dir/../../lef/github_com_proppy_tt02_xls_popcount.lef \
 $script_dir/../../lef/rc5_top.lef \
 $script_dir/../../lef/user_module_341614374571475540.lef \
 $script_dir/../../lef/meriac_tt02_play_tune.lef \
@@ -52,6 +52,7 @@ $script_dir/../../lef/user_module_341541108650607187.lef \
 $script_dir/../../lef/user_module_341516949939814994.lef \
 $script_dir/../../lef/tt2_tholin_multiplier.lef \
 $script_dir/../../lef/tt2_tholin_multiplexed_counter.lef \
+$script_dir/../../lef/github_com_proppy_tt02_xls_counter.lef \
 $script_dir/../../lef/xor_shift32_quantamhd.lef \
 $script_dir/../../lef/xor_shift32_evango.lef \
 $script_dir/../../lef/flygoat_tt02_play_tune.lef \
@@ -64,7 +65,17 @@ $script_dir/../../lef/cchan_fp8_multiplier.lef \
 $script_dir/../../lef/tt2_tholin_diceroll.lef \
 $script_dir/../../lef/user_module_348953272198890067.lef \
 $script_dir/../../lef/user_module_348961139276644947.lef \
-$script_dir/../../lef/user_module_348540666182107731.lef"
+$script_dir/../../lef/user_module_348540666182107731.lef \
+$script_dir/../../lef/user_module_341490465660469844.lef \
+$script_dir/../../lef/user_module_349047610915422802.lef \
+$script_dir/../../lef/udxs_sqrt_top.lef \
+$script_dir/../../lef/pwm_gen.lef \
+$script_dir/../../lef/user_module_341164910646919762.lef \
+$script_dir/../../lef/user_module_341609034095264340.lef \
+$script_dir/../../lef/navray_top.lef \
+$script_dir/../../lef/user_module_349011320806310484.lef \
+$script_dir/../../lef/krasin_tt02_verilog_spi_7_channel_pwm_driver.lef \
+$script_dir/../../lef/hex_sr.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -110,7 +121,7 @@ $script_dir/../../gds/thezoq2_yafpga.gds \
 $script_dir/../../gds/moyes0_top_module.gds \
 $script_dir/../../gds/yupferris_bitslam.gds \
 $script_dir/../../gds/user_module_341620484740219475.gds \
-$script_dir/../../gds/top.gds \
+$script_dir/../../gds/github_com_proppy_tt02_xls_popcount.gds \
 $script_dir/../../gds/rc5_top.gds \
 $script_dir/../../gds/user_module_341614374571475540.gds \
 $script_dir/../../gds/meriac_tt02_play_tune.gds \
@@ -119,6 +130,7 @@ $script_dir/../../gds/user_module_341541108650607187.gds \
 $script_dir/../../gds/user_module_341516949939814994.gds \
 $script_dir/../../gds/tt2_tholin_multiplier.gds \
 $script_dir/../../gds/tt2_tholin_multiplexed_counter.gds \
+$script_dir/../../gds/github_com_proppy_tt02_xls_counter.gds \
 $script_dir/../../gds/xor_shift32_quantamhd.gds \
 $script_dir/../../gds/xor_shift32_evango.gds \
 $script_dir/../../gds/flygoat_tt02_play_tune.gds \
@@ -131,4 +143,14 @@ $script_dir/../../gds/cchan_fp8_multiplier.gds \
 $script_dir/../../gds/tt2_tholin_diceroll.gds \
 $script_dir/../../gds/user_module_348953272198890067.gds \
 $script_dir/../../gds/user_module_348961139276644947.gds \
-$script_dir/../../gds/user_module_348540666182107731.gds"
+$script_dir/../../gds/user_module_348540666182107731.gds \
+$script_dir/../../gds/user_module_341490465660469844.gds \
+$script_dir/../../gds/user_module_349047610915422802.gds \
+$script_dir/../../gds/udxs_sqrt_top.gds \
+$script_dir/../../gds/pwm_gen.gds \
+$script_dir/../../gds/user_module_341164910646919762.gds \
+$script_dir/../../gds/user_module_341609034095264340.gds \
+$script_dir/../../gds/navray_top.gds \
+$script_dir/../../gds/user_module_349011320806310484.gds \
+$script_dir/../../gds/krasin_tt02_verilog_spi_7_channel_pwm_driver.gds \
+$script_dir/../../gds/hex_sr.gds"

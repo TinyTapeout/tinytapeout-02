@@ -1,4 +1,4 @@
-module top(
+module github_com_proppy_tt02_xls_popcount(
   input wire [7:0] io_in,
   output wire [7:0] io_out
 );

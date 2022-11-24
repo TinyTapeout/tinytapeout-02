@@ -43,7 +43,7 @@ jobs:
 
     # fetch the repos
     - name: fetch all
-      run: python ./configure.py --clone-all --debug
+      run: python ./configure.py --clone-all --fetch-gds --debug
 
     # pwd debug
     - name: show projects

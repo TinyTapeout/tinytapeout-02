@@ -85,7 +85,7 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
 	scanchain_041 vccd1 vssd1 vccd1 vssd1, \
 	user_module_341620484740219475_041 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_042 vccd1 vssd1 vccd1 vssd1, \
-	top_042 vccd1 vssd1 vccd1 vssd1, \
+	github_com_proppy_tt02_xls_popcount_042 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_043 vccd1 vssd1 vccd1 vssd1, \
 	rc5_top_043 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_044 vccd1 vssd1 vccd1 vssd1, \
@@ -103,53 +103,53 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
 	scanchain_050 vccd1 vssd1 vccd1 vssd1, \
 	tt2_tholin_multiplexed_counter_050 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_051 vccd1 vssd1 vccd1 vssd1, \
-	xor_shift32_quantamhd_051 vccd1 vssd1 vccd1 vssd1, \
+	github_com_proppy_tt02_xls_counter_051 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_052 vccd1 vssd1 vccd1 vssd1, \
-	xor_shift32_evango_052 vccd1 vssd1 vccd1 vssd1, \
+	xor_shift32_quantamhd_052 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_053 vccd1 vssd1 vccd1 vssd1, \
-	flygoat_tt02_play_tune_053 vccd1 vssd1 vccd1 vssd1, \
+	xor_shift32_evango_053 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_054 vccd1 vssd1 vccd1 vssd1, \
-	jleightcap_top_054 vccd1 vssd1 vccd1 vssd1, \
+	flygoat_tt02_play_tune_054 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_055 vccd1 vssd1 vccd1 vssd1, \
-	tt2_tholin_namebadge_055 vccd1 vssd1 vccd1 vssd1, \
+	jleightcap_top_055 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_056 vccd1 vssd1 vccd1 vssd1, \
-	user_module_347619669052490324_056 vccd1 vssd1 vccd1 vssd1, \
+	tt2_tholin_namebadge_056 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_057 vccd1 vssd1 vccd1 vssd1, \
-	krasin_3_bit_8_channel_pwm_driver_057 vccd1 vssd1 vccd1 vssd1, \
+	user_module_347619669052490324_057 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_058 vccd1 vssd1 vccd1 vssd1, \
-	user_module_nickoe_058 vccd1 vssd1 vccd1 vssd1, \
+	krasin_3_bit_8_channel_pwm_driver_058 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_059 vccd1 vssd1 vccd1 vssd1, \
-	cchan_fp8_multiplier_059 vccd1 vssd1 vccd1 vssd1, \
+	user_module_nickoe_059 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_060 vccd1 vssd1 vccd1 vssd1, \
-	tt2_tholin_diceroll_060 vccd1 vssd1 vccd1 vssd1, \
+	cchan_fp8_multiplier_060 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_061 vccd1 vssd1 vccd1 vssd1, \
-	user_module_348953272198890067_061 vccd1 vssd1 vccd1 vssd1, \
+	tt2_tholin_diceroll_061 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_062 vccd1 vssd1 vccd1 vssd1, \
-	user_module_348961139276644947_062 vccd1 vssd1 vccd1 vssd1, \
+	user_module_348953272198890067_062 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_063 vccd1 vssd1 vccd1 vssd1, \
-	user_module_348540666182107731_063 vccd1 vssd1 vccd1 vssd1, \
+	user_module_348961139276644947_063 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_064 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_064 vccd1 vssd1 vccd1 vssd1, \
+	user_module_348540666182107731_064 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_065 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_065 vccd1 vssd1 vccd1 vssd1, \
+	user_module_341490465660469844_065 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_066 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_066 vccd1 vssd1 vccd1 vssd1, \
+	user_module_349047610915422802_066 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_067 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_067 vccd1 vssd1 vccd1 vssd1, \
+	udxs_sqrt_top_067 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_068 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_068 vccd1 vssd1 vccd1 vssd1, \
+	pwm_gen_068 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_069 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_069 vccd1 vssd1 vccd1 vssd1, \
+	user_module_341164910646919762_069 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_070 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_070 vccd1 vssd1 vccd1 vssd1, \
+	user_module_341609034095264340_070 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_071 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_071 vccd1 vssd1 vccd1 vssd1, \
+	navray_top_071 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_072 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_072 vccd1 vssd1 vccd1 vssd1, \
+	user_module_349011320806310484_072 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_073 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_073 vccd1 vssd1 vccd1 vssd1, \
+	krasin_tt02_verilog_spi_7_channel_pwm_driver_073 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_074 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_074 vccd1 vssd1 vccd1 vssd1, \
+	hex_sr_074 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_075 vccd1 vssd1 vccd1 vssd1, \
 	user_module_341535056611770964_075 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_076 vccd1 vssd1 vccd1 vssd1, \

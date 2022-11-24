@@ -1,6 +1,6 @@
 `default_nettype none
 
-module xor_shift32_evango #( parameter MAX_COUNT = 1000 ) (
+module xor_shift32_quantamhd #( parameter MAX_COUNT = 1000 ) (
   input [7:0] io_in,
   output [7:0] io_out
 );

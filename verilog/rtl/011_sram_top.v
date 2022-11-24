@@ -2,7 +2,7 @@ module jar_sram_top
 # (
 	parameter AW = 4, // address width
 	parameter DW = 8, // data width
-	parameter DEPTH = 8 // number of bytes
+	parameter DEPTH = 16 // number of bytes
 )
 (
 	input  [DW-1:0] io_in,
@@ -15,18 +15,17 @@ module jar_sram_top
 	wire             oe     = io_in[2]; // Output Enable
 	wire             commit = io_in[3]; // Commit to memory
 	wire [AW-1:0] addr_data = io_in[DW-1:DW-AW];
-	wire         [2:0] addr = addr_data[2:0];
 
 	reg [DW-1:0] data_tmp;
 	reg [DW-1:0] mem [DEPTH];
-	reg [2:0] stream_index;
+	reg [AW-1:0] stream_index;
 
 	wire stream = we & oe;
 	wire reset = stream & commit;
 
 	always @(posedge clk) begin
 		if (reset) begin
-			stream_index <= addr;
+			stream_index <= addr_data;
 		end
 		else if (stream) begin
 			data_tmp <= mem[stream_index];
@@ -36,10 +35,10 @@ module jar_sram_top
 			data_tmp <= {addr_data, data_tmp[DW-1:AW]};
 		end
 		else if (oe) begin
-			data_tmp <= mem[addr];
+			data_tmp <= mem[addr_data];
 		end
 		else if (commit) begin
-			mem[addr] <= data_tmp;
+			mem[addr_data] <= data_tmp;
 		end
 	end
 
