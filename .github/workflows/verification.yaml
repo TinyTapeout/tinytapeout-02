@@ -63,7 +63,7 @@ jobs:
 
     # fetch the repos - test mode
     - name: fetch all
-      run: python ./configure.py --clone-all --debug --test
+      run: python ./configure.py --clone-all --fetch-gds --debug --test
 
     # install projects
     - name: configure for test
