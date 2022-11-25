@@ -60,7 +60,7 @@ project_urls = [
     "https://github.com/QuantamHD/ethan-evan-random-numbers",
     "https://github.com/QuantamHD/evan-submission",
     "https://github.com/FlyGoat/tt02-play-tune-flygoat",
-    "https://github.com/jleightcap/clash-silicon-tinytapeout",
+#    "https://github.com/jleightcap/clash-silicon-tinytapeout", # missing files
     "https://github.com/89Mods/tt2-lcd-namebadge",
     "https://github.com/Christina-Cyr/tt02-submission-UART-CC",
     "https://github.com/krasin/tt02-verilog-3-bit-8-channel-pwm-driver",
