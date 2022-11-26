@@ -80,4 +80,12 @@ project_urls = [
     "https://github.com/shaos-net/tt02-submission-shaos2",
     "https://github.com/krasin/tt02-verilog-spi-7-channel-pwm-driver",
     "https://github.com/brouhaha/tt02-hex-sr",
+    "https://github.com/ericsmi/tt02-verilog-ring-osc-demo",
+    "https://github.com/AidanMedcalf/tt02-pid",
+    "https://github.com/cpldcpu/tt02-TrainLED",
+    "https://github.com/cpldcpu/tt02-mcpu5plus",
+    "https://github.com/MoonbaseOtago/tt-cpu",
+    "https://github.com/davidsiaw/tt02-davidsiaw-stackcalc",
+    "https://github.com/mole99/tt02-1bit-alu",
+    "https://github.com/steieio/tt02-sfsm-wokwi",
     ]

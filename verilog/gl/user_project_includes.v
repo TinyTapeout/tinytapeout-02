@@ -1,0 +1,7 @@
+`include "scan_controller.v"
+`include "scanchain.v"
+`include "user_module_339501025136214612.v"
+`include "1_fraserbc_simon.v"
+`include "2_tomkeddie_top_tto.v"
+`include "3_chrisruk_matrix.v"
+`include "4_loxodes_sequencer.v"

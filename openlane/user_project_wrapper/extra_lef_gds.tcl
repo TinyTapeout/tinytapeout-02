@@ -56,7 +56,6 @@ $script_dir/../../lef/github_com_proppy_tt02_xls_counter.lef \
 $script_dir/../../lef/xor_shift32_quantamhd.lef \
 $script_dir/../../lef/xor_shift32_evango.lef \
 $script_dir/../../lef/flygoat_tt02_play_tune.lef \
-$script_dir/../../lef/jleightcap_top.lef \
 $script_dir/../../lef/tt2_tholin_namebadge.lef \
 $script_dir/../../lef/user_module_347619669052490324.lef \
 $script_dir/../../lef/krasin_3_bit_8_channel_pwm_driver.lef \
@@ -75,7 +74,15 @@ $script_dir/../../lef/user_module_341609034095264340.lef \
 $script_dir/../../lef/navray_top.lef \
 $script_dir/../../lef/user_module_349011320806310484.lef \
 $script_dir/../../lef/krasin_tt02_verilog_spi_7_channel_pwm_driver.lef \
-$script_dir/../../lef/hex_sr.lef"
+$script_dir/../../lef/hex_sr.lef \
+$script_dir/../../lef/ericsmi_speed_test.lef \
+$script_dir/../../lef/AidanMedcalf_pid_controller.lef \
+$script_dir/../../lef/cpldcpu_TrainLED2top.lef \
+$script_dir/../../lef/cpldcpu_MCPU5plus.lef \
+$script_dir/../../lef/moonbase_cpu_4bit.lef \
+$script_dir/../../lef/davidsiaw_stackcalc.lef \
+$script_dir/../../lef/user_module_340318610245288530.lef \
+$script_dir/../../lef/user_module_349228308755382868.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -134,7 +141,6 @@ $script_dir/../../gds/github_com_proppy_tt02_xls_counter.gds \
 $script_dir/../../gds/xor_shift32_quantamhd.gds \
 $script_dir/../../gds/xor_shift32_evango.gds \
 $script_dir/../../gds/flygoat_tt02_play_tune.gds \
-$script_dir/../../gds/jleightcap_top.gds \
 $script_dir/../../gds/tt2_tholin_namebadge.gds \
 $script_dir/../../gds/user_module_347619669052490324.gds \
 $script_dir/../../gds/krasin_3_bit_8_channel_pwm_driver.gds \
@@ -153,4 +159,12 @@ $script_dir/../../gds/user_module_341609034095264340.gds \
 $script_dir/../../gds/navray_top.gds \
 $script_dir/../../gds/user_module_349011320806310484.gds \
 $script_dir/../../gds/krasin_tt02_verilog_spi_7_channel_pwm_driver.gds \
-$script_dir/../../gds/hex_sr.gds"
+$script_dir/../../gds/hex_sr.gds \
+$script_dir/../../gds/ericsmi_speed_test.gds \
+$script_dir/../../gds/AidanMedcalf_pid_controller.gds \
+$script_dir/../../gds/cpldcpu_TrainLED2top.gds \
+$script_dir/../../gds/cpldcpu_MCPU5plus.gds \
+$script_dir/../../gds/moonbase_cpu_4bit.gds \
+$script_dir/../../gds/davidsiaw_stackcalc.gds \
+$script_dir/../../gds/user_module_340318610245288530.gds \
+$script_dir/../../gds/user_module_349228308755382868.gds"

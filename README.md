@@ -77,7 +77,6 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | Ethan Mahintorabi | XorShift32 | HDL | https://github.com/QuantamHD/ethan-evan-random-numbers |
 | Ethan Mahintorabi | XorShift32 | HDL | https://github.com/QuantamHD/evan-submission |
 | Jiaxun Yang | Multiple Tunes on A Piezo Speaker | HDL | https://github.com/FlyGoat/tt02-play-tune-flygoat |
-| Jack Leightcap | clash cpu | HDL | https://github.com/jleightcap/clash-silicon-tinytapeout |
 | Tholin | TinyTapeout 2 LCD Nametag | HDL | https://github.com/89Mods/tt2-lcd-namebadge |
 | Christina Cyr | UART-CC | [Wokwi](https://wokwi.com/projects/347619669052490324) | https://github.com/Christina-Cyr/tt02-submission-UART-CC |
 | Ivan Krasin | 3-bit 8-channel PWM driver | HDL | https://github.com/krasin/tt02-verilog-3-bit-8-channel-pwm-driver |
@@ -93,7 +92,15 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | argunda | Breathing LED | HDL | https://github.com/argunda/tt02-breathing-led |
 | Daniel Estevez | Fibonacci & Gold Code | HDL | https://github.com/daniestevez/tt02-gold-fibonacci |
 | Rakesh Peter | tinytapeout2-HELLo-3orLd-7seg | [Wokwi](https://wokwi.com/projects/341609034095264340) | https://github.com/r4d10n/tt02-HELLo-3orLd-7seg |
-| Wallace Everest | Square Root | HDL | https://github.com/navray/tt02-square-root |
+| Wallace Everest | Non-restoring Square-root | HDL | https://github.com/navray/tt02-square-root |
 | Shaos | GOL-Cell | [Wokwi](https://wokwi.com/projects/349011320806310484) | https://github.com/shaos-net/tt02-submission-shaos2 |
 | Ivan Krasin | 7-channel PWM driver controlled via SPI bus | HDL | https://github.com/krasin/tt02-verilog-spi-7-channel-pwm-driver |
 | Eric Smith | hex shift register | HDL | https://github.com/brouhaha/tt02-hex-sr |
+| Eric Smith | Ring OSC Speed Test | HDL | https://github.com/ericsmi/tt02-verilog-ring-osc-demo |
+| Aidan Medcalf | TinyPID | HDL | https://github.com/AidanMedcalf/tt02-pid |
+| cpldcpu | TrainLED2 - RGB-LED driver with 8 bit PWM engine | HDL | https://github.com/cpldcpu/tt02-TrainLED |
+| cpldcpu | Zinnia+ (MCPU5+) 8 Bit CPU | HDL | https://github.com/cpldcpu/tt02-mcpu5plus |
+| Paul Campell | 4 bit CPU | HDL | https://github.com/MoonbaseOtago/tt-cpu |
+| David Siaw | Stack Calculator | HDL | https://github.com/davidsiaw/tt02-davidsiaw-stackcalc |
+| Leo Moser | 1-bit ALU | [Wokwi](https://wokwi.com/projects/340318610245288530) | https://github.com/mole99/tt02-1bit-alu |
+| Greg Steiert | SPI Flash State Machine | [Wokwi](https://wokwi.com/projects/349228308755382868) | https://github.com/steieio/tt02-sfsm-wokwi |

@@ -212,6 +212,8 @@ MACRO navray_top
         RECT 2.000 9.200 127.900 18.000 ;
         RECT 2.400 7.800 127.900 9.200 ;
         RECT 2.000 5.275 127.900 7.800 ;
+      LAYER met4 ;
+        RECT 33.415 54.575 37.425 83.465 ;
   END
 END navray_top
 END LIBRARY
