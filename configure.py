@@ -50,6 +50,8 @@ class Projects():
         for index in range(args.limit_num_projects):
             if args.single >= 0 and args.single != index:
                 continue
+            if index < args.start_from:
+                continue
 
             try:
                 git_url = self.project_urls[index]
@@ -726,6 +728,7 @@ if __name__ == '__main__':
     parser.add_argument('--update-all', help="git pull all projects", action="store_const", const=True)
     parser.add_argument('--fetch-gds', help="git fetch latest gds", action="store_const", const=True)
     parser.add_argument('--single', help="do action on single project", type=int, default=-1)
+    parser.add_argument('--start-from', help="do action on projects after this index", type=int, default=0)
     parser.add_argument('--update-caravel', help='configure caravel for build', action='store_const', const=True)
     parser.add_argument('--harden', help="harden project", action="store_const", const=True)
     parser.add_argument('--limit-num-projects', help='only configure for the first n projects', type=int, default=DEFAULT_NUM_PROJECTS)
