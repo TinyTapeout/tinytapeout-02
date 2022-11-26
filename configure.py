@@ -93,7 +93,7 @@ class Projects():
                     project.copy_files_to_caravel()
 
                 # check all top level module ports are correct
-#                project.check_ports()
+                project.check_ports()
                 project.check_num_cells()
 
             self.projects.append(project)
@@ -137,7 +137,12 @@ class Project():
         source_list = " ".join(sources)
 
         json_file = 'ports.json'
-        os.system("yosys -qp 'read_verilog -sv %s; hierarchy -top %s ; proc; json -o %s x:*'" % (source_list, top, json_file))
+        yosys_cmd = f"yosys -qp 'read_verilog -lib -sv {source_list}; hierarchy -top {top} ; proc; write_json {json_file}'"
+        p = subprocess.run(yosys_cmd, shell=True)
+        if p.returncode != 0:
+            logging.error(f"yosys port read failed for {self}")
+            exit(1)
+
         with open(json_file) as fh:
             ports = json.load(fh)
         os.unlink(json_file)
@@ -145,10 +150,10 @@ class Project():
         module_ports = ports['modules'][top]['ports']
         for port in ['io_in', 'io_out']:
             if port not in module_ports:
-                logging.error(f"{port} not found in top")
+                logging.error(f"{self} {port} not found in top")
                 exit(1)
             if len(module_ports[port]['bits']) != 8:
-                logging.error(f"{port} doesn't have 8 bits")
+                logging.error(f"{self} {port} doesn't have 8 bits")
                 exit(1)
 
     def check_num_cells(self):
@@ -273,7 +278,7 @@ class Project():
             configure_cmd = 'python ./configure.py --create-user-config'
         p = subprocess.run(configure_cmd, shell=True)
         if p.returncode != 0:
-            logging.error("configure failed")
+            logging.error(f"configure failed for {self}")
             exit(1)
 
         # requires PDK_ROOT, OPENLANE_ROOT & OPENLANE_IMAGE_NAME to be set in local environment
@@ -281,7 +286,7 @@ class Project():
         env = os.environ.copy()
         p = subprocess.run(harden_cmd, shell=True, env=env)
         if p.returncode != 0:
-            logging.error("harden failed")
+            logging.error(f"harden failed for {self}")
             exit(1)
 
         os.chdir(cwd)
