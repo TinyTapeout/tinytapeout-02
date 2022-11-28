@@ -2,13 +2,13 @@
 
 {picture_link}
 
-* Author {author}
-* Description {description}
+* Author: {author}
+* Description: {description}
 * [GitHub repository]({git_url})
-* {project_type}
+* {project_type} project
 * [Extra docs]({doc_link})
-* Clock {clock_hz} Hz
-* External hardware {external_hw}
+* Clock: {clock_hz} Hz
+* External hardware: {external_hw}
 
 ### How it works
 
