@@ -1473,7 +1473,7 @@ module user_project_wrapper #(
         .module_data_out (sw_061_module_data_out)
     );
 
-    user_module_348953272198890067 user_module_348953272198890067_061 (
+    user_module_349405063877231188 user_module_349405063877231188_061 (
         .io_in  (sw_061_module_data_in),
         .io_out (sw_061_module_data_out)
     );
@@ -1918,7 +1918,7 @@ module user_project_wrapper #(
         .io_out (sw_081_module_data_out)
     );
 
-    // [082] https://github.com/TinyTapeout/tt02-test-invert
+    // [082] https://github.com/youngpines/tt02-youngpines-submission
     wire sw_082_clk_out, sw_082_data_out, sw_082_scan_out, sw_082_latch_out;
     wire [7:0] sw_082_module_data_in;
     wire [7:0] sw_082_module_data_out;
@@ -1935,12 +1935,12 @@ module user_project_wrapper #(
         .module_data_out (sw_082_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_082 (
+    user_module_341571228858843732 user_module_341571228858843732_082 (
         .io_in  (sw_082_module_data_in),
         .io_out (sw_082_module_data_out)
     );
 
-    // [083] https://github.com/TinyTapeout/tt02-test-invert
+    // [083] https://github.com/timvgso/tinatapeworm
     wire sw_083_clk_out, sw_083_data_out, sw_083_scan_out, sw_083_latch_out;
     wire [7:0] sw_083_module_data_in;
     wire [7:0] sw_083_module_data_out;
@@ -1957,12 +1957,12 @@ module user_project_wrapper #(
         .module_data_out (sw_083_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_083 (
+    user_module_348381622440034899 user_module_348381622440034899_083 (
         .io_in  (sw_083_module_data_in),
         .io_out (sw_083_module_data_out)
     );
 
-    // [084] https://github.com/TinyTapeout/tt02-test-invert
+    // [084] https://github.com/OneRNG/tt-cpu8
     wire sw_084_clk_out, sw_084_data_out, sw_084_scan_out, sw_084_latch_out;
     wire [7:0] sw_084_module_data_in;
     wire [7:0] sw_084_module_data_out;
@@ -1979,12 +1979,12 @@ module user_project_wrapper #(
         .module_data_out (sw_084_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_084 (
+    moonbase_cpu_8bit moonbase_cpu_8bit_084 (
         .io_in  (sw_084_module_data_in),
         .io_out (sw_084_module_data_out)
     );
 
-    // [085] https://github.com/TinyTapeout/tt02-test-invert
+    // [085] https://github.com/tcptomato/tt02-submission-template
     wire sw_085_clk_out, sw_085_data_out, sw_085_scan_out, sw_085_latch_out;
     wire [7:0] sw_085_module_data_in;
     wire [7:0] sw_085_module_data_out;
@@ -2001,12 +2001,12 @@ module user_project_wrapper #(
         .module_data_out (sw_085_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_085 (
+    user_module_341178154799333971 user_module_341178154799333971_085 (
         .io_in  (sw_085_module_data_in),
         .io_out (sw_085_module_data_out)
     );
 
-    // [086] https://github.com/TinyTapeout/tt02-test-invert
+    // [086] https://github.com/jglim/tt02-bcd-7seg
     wire sw_086_clk_out, sw_086_data_out, sw_086_scan_out, sw_086_latch_out;
     wire [7:0] sw_086_module_data_in;
     wire [7:0] sw_086_module_data_out;
@@ -2023,12 +2023,12 @@ module user_project_wrapper #(
         .module_data_out (sw_086_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_086 (
+    user_module_349546262775726676 user_module_349546262775726676_086 (
         .io_in  (sw_086_module_data_in),
         .io_out (sw_086_module_data_out)
     );
 
-    // [087] https://github.com/TinyTapeout/tt02-test-invert
+    // [087] https://github.com/ARamsey118/tiny_tapeout_freq_counter
     wire sw_087_clk_out, sw_087_data_out, sw_087_scan_out, sw_087_latch_out;
     wire [7:0] sw_087_module_data_in;
     wire [7:0] sw_087_module_data_out;
@@ -2045,12 +2045,12 @@ module user_project_wrapper #(
         .module_data_out (sw_087_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_087 (
+    aramsey118_freq_counter aramsey118_freq_counter_087 (
         .io_in  (sw_087_module_data_in),
         .io_out (sw_087_module_data_out)
     );
 
-    // [088] https://github.com/TinyTapeout/tt02-test-invert
+    // [088] https://github.com/splinedrive/thunderbird_taillight_1965
     wire sw_088_clk_out, sw_088_data_out, sw_088_scan_out, sw_088_latch_out;
     wire [7:0] sw_088_module_data_in;
     wire [7:0] sw_088_module_data_out;
@@ -2067,12 +2067,12 @@ module user_project_wrapper #(
         .module_data_out (sw_088_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_088 (
+    thunderbird_taillight_ctrl thunderbird_taillight_ctrl_088 (
         .io_in  (sw_088_module_data_in),
         .io_out (sw_088_module_data_out)
     );
 
-    // [089] https://github.com/TinyTapeout/tt02-test-invert
+    // [089] https://github.com/gatecat/tt02-fpga-respin
     wire sw_089_clk_out, sw_089_data_out, sw_089_scan_out, sw_089_latch_out;
     wire [7:0] sw_089_module_data_in;
     wire [7:0] sw_089_module_data_out;
@@ -2089,12 +2089,12 @@ module user_project_wrapper #(
         .module_data_out (sw_089_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_089 (
+    gatecat_fpga_top gatecat_fpga_top_089 (
         .io_in  (sw_089_module_data_in),
         .io_out (sw_089_module_data_out)
     );
 
-    // [090] https://github.com/TinyTapeout/tt02-test-invert
+    // [090] https://github.com/mmolteni-secpat/tinytapeout02_chi2shares
     wire sw_090_clk_out, sw_090_data_out, sw_090_scan_out, sw_090_latch_out;
     wire [7:0] sw_090_module_data_in;
     wire [7:0] sw_090_module_data_out;
@@ -2111,12 +2111,12 @@ module user_project_wrapper #(
         .module_data_out (sw_090_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_090 (
+    user_module_341589685194195540 user_module_341589685194195540_090 (
         .io_in  (sw_090_module_data_in),
         .io_out (sw_090_module_data_out)
     );
 
-    // [091] https://github.com/TinyTapeout/tt02-test-invert
+    // [091] https://github.com/mmolteni-secpat/tinytapeout02_chi3shares
     wire sw_091_clk_out, sw_091_data_out, sw_091_scan_out, sw_091_latch_out;
     wire [7:0] sw_091_module_data_in;
     wire [7:0] sw_091_module_data_out;
@@ -2133,12 +2133,12 @@ module user_project_wrapper #(
         .module_data_out (sw_091_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_091 (
+    user_module_341608574336631379 user_module_341608574336631379_091 (
         .io_in  (sw_091_module_data_in),
         .io_out (sw_091_module_data_out)
     );
 
-    // [092] https://github.com/TinyTapeout/tt02-test-invert
+    // [092] https://github.com/Wren6991/tt02-whisk-serial-processor
     wire sw_092_clk_out, sw_092_data_out, sw_092_scan_out, sw_092_latch_out;
     wire [7:0] sw_092_module_data_in;
     wire [7:0] sw_092_module_data_out;
@@ -2155,12 +2155,12 @@ module user_project_wrapper #(
         .module_data_out (sw_092_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_092 (
+    wren6991_whisk_tt2_io_wrapper wren6991_whisk_tt2_io_wrapper_092 (
         .io_in  (sw_092_module_data_in),
         .io_out (sw_092_module_data_out)
     );
 
-    // [093] https://github.com/TinyTapeout/tt02-test-invert
+    // [093] https://github.com/aiunderstand/tt02-4bit-tristate-loadable-counter
     wire sw_093_clk_out, sw_093_data_out, sw_093_scan_out, sw_093_latch_out;
     wire [7:0] sw_093_module_data_in;
     wire [7:0] sw_093_module_data_out;
@@ -2177,12 +2177,12 @@ module user_project_wrapper #(
         .module_data_out (sw_093_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_093 (
+    user_module_341423712597181012 user_module_341423712597181012_093 (
         .io_in  (sw_093_module_data_in),
         .io_out (sw_093_module_data_out)
     );
 
-    // [094] https://github.com/TinyTapeout/tt02-test-invert
+    // [094] https://github.com/aiunderstand/tt02-async-binary-ternary-convert-compare
     wire sw_094_clk_out, sw_094_data_out, sw_094_scan_out, sw_094_latch_out;
     wire [7:0] sw_094_module_data_in;
     wire [7:0] sw_094_module_data_out;
@@ -2199,12 +2199,12 @@ module user_project_wrapper #(
         .module_data_out (sw_094_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_094 (
+    user_module_341277789473735250 user_module_341277789473735250_094 (
         .io_in  (sw_094_module_data_in),
         .io_out (sw_094_module_data_out)
     );
 
-    // [095] https://github.com/TinyTapeout/tt02-test-invert
+    // [095] https://github.com/RobertRiachi/tt02-dot-product
     wire sw_095_clk_out, sw_095_data_out, sw_095_scan_out, sw_095_latch_out;
     wire [7:0] sw_095_module_data_in;
     wire [7:0] sw_095_module_data_out;
@@ -2221,7 +2221,7 @@ module user_project_wrapper #(
         .module_data_out (sw_095_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_095 (
+    user_module_348787952842703444 user_module_348787952842703444_095 (
         .io_in  (sw_095_module_data_in),
         .io_out (sw_095_module_data_out)
     );

@@ -62,7 +62,7 @@ $script_dir/../../lef/krasin_3_bit_8_channel_pwm_driver.lef \
 $script_dir/../../lef/user_module_nickoe.lef \
 $script_dir/../../lef/cchan_fp8_multiplier.lef \
 $script_dir/../../lef/tt2_tholin_diceroll.lef \
-$script_dir/../../lef/user_module_348953272198890067.lef \
+$script_dir/../../lef/user_module_349405063877231188.lef \
 $script_dir/../../lef/user_module_348961139276644947.lef \
 $script_dir/../../lef/user_module_348540666182107731.lef \
 $script_dir/../../lef/user_module_341490465660469844.lef \
@@ -82,7 +82,21 @@ $script_dir/../../lef/cpldcpu_MCPU5plus.lef \
 $script_dir/../../lef/moonbase_cpu_4bit.lef \
 $script_dir/../../lef/davidsiaw_stackcalc.lef \
 $script_dir/../../lef/user_module_340318610245288530.lef \
-$script_dir/../../lef/user_module_349228308755382868.lef"
+$script_dir/../../lef/user_module_349228308755382868.lef \
+$script_dir/../../lef/user_module_341571228858843732.lef \
+$script_dir/../../lef/user_module_348381622440034899.lef \
+$script_dir/../../lef/moonbase_cpu_8bit.lef \
+$script_dir/../../lef/user_module_341178154799333971.lef \
+$script_dir/../../lef/user_module_349546262775726676.lef \
+$script_dir/../../lef/aramsey118_freq_counter.lef \
+$script_dir/../../lef/thunderbird_taillight_ctrl.lef \
+$script_dir/../../lef/gatecat_fpga_top.lef \
+$script_dir/../../lef/user_module_341589685194195540.lef \
+$script_dir/../../lef/user_module_341608574336631379.lef \
+$script_dir/../../lef/wren6991_whisk_tt2_io_wrapper.lef \
+$script_dir/../../lef/user_module_341423712597181012.lef \
+$script_dir/../../lef/user_module_341277789473735250.lef \
+$script_dir/../../lef/user_module_348787952842703444.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -147,7 +161,7 @@ $script_dir/../../gds/krasin_3_bit_8_channel_pwm_driver.gds \
 $script_dir/../../gds/user_module_nickoe.gds \
 $script_dir/../../gds/cchan_fp8_multiplier.gds \
 $script_dir/../../gds/tt2_tholin_diceroll.gds \
-$script_dir/../../gds/user_module_348953272198890067.gds \
+$script_dir/../../gds/user_module_349405063877231188.gds \
 $script_dir/../../gds/user_module_348961139276644947.gds \
 $script_dir/../../gds/user_module_348540666182107731.gds \
 $script_dir/../../gds/user_module_341490465660469844.gds \
@@ -167,4 +181,18 @@ $script_dir/../../gds/cpldcpu_MCPU5plus.gds \
 $script_dir/../../gds/moonbase_cpu_4bit.gds \
 $script_dir/../../gds/davidsiaw_stackcalc.gds \
 $script_dir/../../gds/user_module_340318610245288530.gds \
-$script_dir/../../gds/user_module_349228308755382868.gds"
+$script_dir/../../gds/user_module_349228308755382868.gds \
+$script_dir/../../gds/user_module_341571228858843732.gds \
+$script_dir/../../gds/user_module_348381622440034899.gds \
+$script_dir/../../gds/moonbase_cpu_8bit.gds \
+$script_dir/../../gds/user_module_341178154799333971.gds \
+$script_dir/../../gds/user_module_349546262775726676.gds \
+$script_dir/../../gds/aramsey118_freq_counter.gds \
+$script_dir/../../gds/thunderbird_taillight_ctrl.gds \
+$script_dir/../../gds/gatecat_fpga_top.gds \
+$script_dir/../../gds/user_module_341589685194195540.gds \
+$script_dir/../../gds/user_module_341608574336631379.gds \
+$script_dir/../../gds/wren6991_whisk_tt2_io_wrapper.gds \
+$script_dir/../../gds/user_module_341423712597181012.gds \
+$script_dir/../../gds/user_module_341277789473735250.gds \
+$script_dir/../../gds/user_module_348787952842703444.gds"

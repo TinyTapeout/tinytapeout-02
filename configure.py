@@ -685,6 +685,8 @@ class Docs():
                     continue
                 yaml_data = project.get_project_doc_yaml()
 
+                yaml_data['index'] = project.index
+
                 logging.info(f"building datasheet for {project}")
                 # handle pictures
                 yaml_data['picture_link'] = ''

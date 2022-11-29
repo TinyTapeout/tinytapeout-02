@@ -83,7 +83,7 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | Nick Østergaard | LEDChaser from LiteX test | HDL | https://github.com/nickoe/tinytapeout02-verilog-gds-test |
 | Clive Chan | 8-bit (E4M3) Floating Point Multiplier | HDL | https://github.com/cchan/fp8_mul |
 | Tholin | Dice roll | HDL | https://github.com/AvalonSemiconductors/tt2-diceroll |
-| N. Sertac Artan | CNS TT02 Test 1 | [Wokwi](https://wokwi.com/projects/348953272198890067) | https://github.com/NYIT-CNS/cns001-tt02-submission1 |
+| Bryan Bonilla Garay and N. Sertac Artan | CNS TT02 Test 1:Score Board | [Wokwi](https://wokwi.com/projects/349405063877231188) | https://github.com/NYIT-CNS/cns001-tt02-submission1 |
 | N. Sertac Artan | CNS002 (TT02-Test 2) | [Wokwi](https://wokwi.com/projects/348961139276644947) | https://github.com/NYIT-CNS/cns002-tt02-submission2 |
 | Shaos | Test2 | [Wokwi](https://wokwi.com/projects/348540666182107731) | https://github.com/shaos/tt02-submission-shaos |
 | Joseph Chiu | 7-segment LED flasher | [Wokwi](https://wokwi.com/projects/341490465660469844) | https://github.com/toybuilder/tt02-learn-tinytapeout |
@@ -92,7 +92,7 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | argunda | Breathing LED | HDL | https://github.com/argunda/tt02-breathing-led |
 | Daniel Estevez | Fibonacci & Gold Code | HDL | https://github.com/daniestevez/tt02-gold-fibonacci |
 | Rakesh Peter | tinytapeout2-HELLo-3orLd-7seg | [Wokwi](https://wokwi.com/projects/341609034095264340) | https://github.com/r4d10n/tt02-HELLo-3orLd-7seg |
-| Wallace Everest | Non-restoring Square-root | HDL | https://github.com/navray/tt02-square-root |
+| Wallace Everest | Non-restoring Square Root | HDL | https://github.com/navray/tt02-square-root |
 | Shaos | GOL-Cell | [Wokwi](https://wokwi.com/projects/349011320806310484) | https://github.com/shaos-net/tt02-submission-shaos2 |
 | Ivan Krasin | 7-channel PWM driver controlled via SPI bus | HDL | https://github.com/krasin/tt02-verilog-spi-7-channel-pwm-driver |
 | Eric Smith | hex shift register | HDL | https://github.com/brouhaha/tt02-hex-sr |
@@ -104,3 +104,17 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | David Siaw | Stack Calculator | HDL | https://github.com/davidsiaw/tt02-davidsiaw-stackcalc |
 | Leo Moser | 1-bit ALU | [Wokwi](https://wokwi.com/projects/340318610245288530) | https://github.com/mole99/tt02-1bit-alu |
 | Greg Steiert | SPI Flash State Machine | [Wokwi](https://wokwi.com/projects/349228308755382868) | https://github.com/steieio/tt02-sfsm-wokwi |
+| youngpines | r2rdac | [Wokwi](https://wokwi.com/projects/341571228858843732) | https://github.com/youngpines/tt02-youngpines-submission |
+| Tim Victor | Worm in a Maze | [Wokwi](https://wokwi.com/projects/348381622440034899) | https://github.com/timvgso/tinatapeworm |
+| Paul Campell | 8 bit CPU | HDL | https://github.com/OneRNG/tt-cpu8 |
+| Thomas Böhm <thomas.bohm@gmail.com> | Pseudo-random number generator | [Wokwi](https://wokwi.com/projects/341178154799333971) | https://github.com/tcptomato/tt02-submission-template |
+| JinGen Lim | BCD to 7-Segment Decoder | [Wokwi](https://wokwi.com/projects/349546262775726676) | https://github.com/jglim/tt02-bcd-7seg |
+| Andrew Ramsey | Frequency Counter | HDL | https://github.com/ARamsey118/tiny_tapeout_freq_counter |
+| Hirosh Dabui | Taillight controller of a 1965 Ford Thunderbird | HDL | https://github.com/splinedrive/thunderbird_taillight_1965 |
+| myrtle | FPGA test | HDL | https://github.com/gatecat/tt02-fpga-respin |
+| Maria Chiara Molteni | chi 2 shares | [Wokwi](https://wokwi.com/projects/341589685194195540) | https://github.com/mmolteni-secpat/tinytapeout02_chi2shares |
+| Molteni Maria Chiara | chi 3 shares | [Wokwi](https://wokwi.com/projects/341608574336631379) | https://github.com/mmolteni-secpat/tinytapeout02_chi3shares |
+| Luke Wren | Whisk: 16-bit Serial RISC CPU | HDL | https://github.com/Wren6991/tt02-whisk-serial-processor |
+| Steven Bos | Scalable synchronous 4-bit tri-directional loadable counter | [Wokwi](https://wokwi.com/projects/341423712597181012) | https://github.com/aiunderstand/tt02-4bit-tristate-loadable-counter |
+| Steven Bos | Asynchronous Binary to Ternary Converter and Comparator | [Wokwi](https://wokwi.com/projects/341277789473735250) | https://github.com/aiunderstand/tt02-async-binary-ternary-convert-compare |
+| Robert Riachi | Vector dot product | [Wokwi](https://wokwi.com/projects/348787952842703444) | https://github.com/RobertRiachi/tt02-dot-product |

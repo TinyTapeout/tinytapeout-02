@@ -57,7 +57,7 @@ endmodule
 
 module ring_osc(input nrst,output osc);
   // We count for 1 scan_clk period which expected at 166uS (6KHz).
-  // If the delay of one inverter is 20ps and the ring is 100 inverters long,
+  // If the delay of one inverter is 20ps and the ring is 150 inverters long,
   // then the ring period is 6nS (2*150inv*20pS/inv)
   // This is 166MHz so expect a count of 166*166 nominally. 
   // For more time resolution make scan_clk slower but that requires more
