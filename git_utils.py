@@ -89,7 +89,7 @@ def install_artifacts(url, directory):
 
     # now get the artifacts
     api_url = f'https://api.github.com/repos/{user_name}/{repo}/actions/artifacts'
-    r = requests.get(api_url, headers=headers)
+    r = requests.get(api_url, headers=headers, params={'per_page': 100})
     data = r.json()
 
     # check there are some artifacts
