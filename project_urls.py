@@ -102,4 +102,9 @@ project_urls = [
     "https://github.com/aiunderstand/tt02-4bit-tristate-loadable-counter",
     "https://github.com/aiunderstand/tt02-async-binary-ternary-convert-compare",
     "https://github.com/RobertRiachi/tt02-dot-product",
+    "https://github.com/regymm/tt02-verilog-mcpi",
+    "https://github.com/regymm/tt02-verilog-funnyblinky",
+    "https://github.com/adamgreig/tt02-gpa-ca-prn",
+    "https://github.com/adamgreig/tt02-adc-dac",
+    "https://github.com/jglim/tt02-bcd-hex7seg-hdl",
     ]

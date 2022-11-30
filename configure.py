@@ -213,7 +213,7 @@ class Project():
 
     # docs stuff for index on README.md
     def get_index_row(self):
-        return f'| {self.yaml["documentation"]["author"]} | {self.yaml["documentation"]["title"]} | {self.get_project_type_string()} | {self.git_url} |\n'
+        return f'| {self.index} | {self.yaml["documentation"]["author"]} | {self.yaml["documentation"]["title"]} | {self.get_project_type_string()} | {self.git_url} |\n'
 
     def get_project_type_string(self):
         if self.is_wokwi():
@@ -268,7 +268,7 @@ class Project():
         logging.info(f"hardening {self}")
 
         # copy golden config
-        shutil.copyfile('golden_config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
+#        shutil.copyfile('golden_config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
 
         cwd = os.getcwd()
         os.chdir(self.local_dir)
@@ -638,8 +638,8 @@ class Docs():
             readme = fh.read()
         with open("README.md", 'w') as fh:
             fh.write(readme)
-            fh.write("| Author | Title | Type | Git Repo |\n")
-            fh.write("| ------ | ------| -----| ---------|\n")
+            fh.write("| Index | Author | Title | Type | Git Repo |\n")
+            fh.write("| ----- | ------ | ------| -----| ---------|\n")
             for project in self.projects:
                 if not project.is_fill():
                     fh.write(project.get_index_row())
