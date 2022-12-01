@@ -123,3 +123,7 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 98 | Adam Greig | GPS C/A PRN Generator | HDL | https://github.com/adamgreig/tt02-gpa-ca-prn |
 | 99 | Adam Greig | Sigma-Delta ADC/DAC | HDL | https://github.com/adamgreig/tt02-adc-dac |
 | 100 | JinGen Lim | BCD to Hex 7-Segment Decoder | HDL | https://github.com/jglim/tt02-bcd-hex7seg-hdl |
+| 101 | Chris Burton | SRLD | [Wokwi](https://wokwi.com/projects/349790606404354643) | https://github.com/burtyb/tt02-srld |
+| 102 | Adam Zeloof | Counter | [Wokwi](https://wokwi.com/projects/341279123277087315) | https://github.com/azzeloof/tt02-counter |
+| 103 | shan | 2bitALU | HDL | https://github.com/shan1293/tt02-2bitCPU |
+| 104 | Jos van 't Hof | A (7, 1/2) Convolutional Encoder | [Wokwi](https://wokwi.com/projects/349729432862196307) | https://github.com/Josvth/tt02-convolutional-encoder |

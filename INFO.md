@@ -2,7 +2,7 @@
 
 ## Scan chain
 
-All 498 designs are joined together in a long chain similiar to JTAG. We provide the inputs and outputs of that chain (see pinout below) externally, to the Caravel logic analyser, and to an internal scan chain driver.
+All 250 designs are joined together in a long chain similiar to JTAG. We provide the inputs and outputs of that chain (see pinout below) externally, to the Caravel logic analyser, and to an internal scan chain driver.
 
 The default is to use an external driver, this is in case anything goes wrong with the Caravel logic analyser or the internal driver.
 
@@ -44,10 +44,10 @@ Assuming:
 * 100MHz input clock
 * 8 ins & 8 outs
 * 2 clock cycles to push one bit through the scan chain (scan clock is half input clock rate)
-* 500 designs
+* 250 designs
 * scan controller can do a read/write cycle in one refresh
 
-So the max refresh rate is 100MHz / (8 * 2 * 500) = 12500Hz.
+So the max refresh rate is 100MHz / (8 * 2 * 250) = 25000Hz.
 
 ## Clock divider
 

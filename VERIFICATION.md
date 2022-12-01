@@ -10,7 +10,7 @@ See the sections below for details on each type of verification.
 
 You will need the GitHub tokens setup as described in [INFO](INFO.md#instructions-to-build-gds).
 
-The default of 498 projects takes a very long time to simulate, so I advise overriding the configuration:
+The default of 250 projects takes a very long time to simulate, so I advise overriding the configuration:
 
     # fetch the test projects
     ./configure.py --test --clone-all
@@ -35,7 +35,7 @@ This test only instantiates user_project_wrapper (which contains all the small p
 
 The Gate Level simulation requires scan_controller and user_project_wrapper to be re-hardened to get the correct gate level netlists: 
 
-* Edit openlane/scan_controller/config.tcl and change NUM_DESIGNS=498 to NUM_DESIGNS=20.
+* Edit openlane/scan_controller/config.tcl and change NUM_DESIGNS=250 to NUM_DESIGNS=20.
 * Then from the top level directory:
 
     make scan_controller
