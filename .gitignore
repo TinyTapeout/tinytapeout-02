@@ -1,4 +1,5 @@
 setuptokens.sh
+datasheet.md
 gds/*gds
 /.idea/
 /precheck_results/
