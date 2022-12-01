@@ -193,23 +193,23 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
 	scanchain_095 vccd1 vssd1 vccd1 vssd1, \
 	user_module_348787952842703444_095 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_096 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_096 vccd1 vssd1 vccd1 vssd1, \
+	regymm_mcpi_096 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_097 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_097 vccd1 vssd1 vccd1 vssd1, \
+	regymm_funnyblinky_097 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_098 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_098 vccd1 vssd1 vccd1 vssd1, \
+	adamgreig_tt02_gps_ca_prn_098 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_099 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_099 vccd1 vssd1 vccd1 vssd1, \
+	adamgreig_tt02_adc_dac_099 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_100 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_100 vccd1 vssd1 vccd1 vssd1, \
+	jglim_7seg_100 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_101 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_101 vccd1 vssd1 vccd1 vssd1, \
+	user_module_349790606404354643_101 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_102 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_102 vccd1 vssd1 vccd1 vssd1, \
+	user_module_341279123277087315_102 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_103 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_103 vccd1 vssd1 vccd1 vssd1, \
+	shan1293_2bitalu_103 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_104 vccd1 vssd1 vccd1 vssd1, \
-	user_module_341535056611770964_104 vccd1 vssd1 vccd1 vssd1, \
+	user_module_349729432862196307_104 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_105 vccd1 vssd1 vccd1 vssd1, \
 	user_module_341535056611770964_105 vccd1 vssd1 vccd1 vssd1, \
 	scanchain_106 vccd1 vssd1 vccd1 vssd1, \

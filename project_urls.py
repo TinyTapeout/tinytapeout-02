@@ -107,4 +107,8 @@ project_urls = [
     "https://github.com/adamgreig/tt02-gpa-ca-prn",
     "https://github.com/adamgreig/tt02-adc-dac",
     "https://github.com/jglim/tt02-bcd-hex7seg-hdl",
+    "https://github.com/burtyb/tt02-srld",
+    "https://github.com/azzeloof/tt02-counter",
+    "https://github.com/shan1293/tt02-2bitCPU",
+    "https://github.com/Josvth/tt02-convolutional-encoder",
     ]

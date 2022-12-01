@@ -2226,7 +2226,7 @@ module user_project_wrapper #(
         .io_out (sw_095_module_data_out)
     );
 
-    // [096] https://github.com/TinyTapeout/tt02-test-invert
+    // [096] https://github.com/regymm/tt02-verilog-mcpi
     wire sw_096_clk_out, sw_096_data_out, sw_096_scan_out, sw_096_latch_out;
     wire [7:0] sw_096_module_data_in;
     wire [7:0] sw_096_module_data_out;
@@ -2243,12 +2243,12 @@ module user_project_wrapper #(
         .module_data_out (sw_096_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_096 (
+    regymm_mcpi regymm_mcpi_096 (
         .io_in  (sw_096_module_data_in),
         .io_out (sw_096_module_data_out)
     );
 
-    // [097] https://github.com/TinyTapeout/tt02-test-invert
+    // [097] https://github.com/regymm/tt02-verilog-funnyblinky
     wire sw_097_clk_out, sw_097_data_out, sw_097_scan_out, sw_097_latch_out;
     wire [7:0] sw_097_module_data_in;
     wire [7:0] sw_097_module_data_out;
@@ -2265,12 +2265,12 @@ module user_project_wrapper #(
         .module_data_out (sw_097_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_097 (
+    regymm_funnyblinky regymm_funnyblinky_097 (
         .io_in  (sw_097_module_data_in),
         .io_out (sw_097_module_data_out)
     );
 
-    // [098] https://github.com/TinyTapeout/tt02-test-invert
+    // [098] https://github.com/adamgreig/tt02-gpa-ca-prn
     wire sw_098_clk_out, sw_098_data_out, sw_098_scan_out, sw_098_latch_out;
     wire [7:0] sw_098_module_data_in;
     wire [7:0] sw_098_module_data_out;
@@ -2287,12 +2287,12 @@ module user_project_wrapper #(
         .module_data_out (sw_098_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_098 (
+    adamgreig_tt02_gps_ca_prn adamgreig_tt02_gps_ca_prn_098 (
         .io_in  (sw_098_module_data_in),
         .io_out (sw_098_module_data_out)
     );
 
-    // [099] https://github.com/TinyTapeout/tt02-test-invert
+    // [099] https://github.com/adamgreig/tt02-adc-dac
     wire sw_099_clk_out, sw_099_data_out, sw_099_scan_out, sw_099_latch_out;
     wire [7:0] sw_099_module_data_in;
     wire [7:0] sw_099_module_data_out;
@@ -2309,12 +2309,12 @@ module user_project_wrapper #(
         .module_data_out (sw_099_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_099 (
+    adamgreig_tt02_adc_dac adamgreig_tt02_adc_dac_099 (
         .io_in  (sw_099_module_data_in),
         .io_out (sw_099_module_data_out)
     );
 
-    // [100] https://github.com/TinyTapeout/tt02-test-invert
+    // [100] https://github.com/jglim/tt02-bcd-hex7seg-hdl
     wire sw_100_clk_out, sw_100_data_out, sw_100_scan_out, sw_100_latch_out;
     wire [7:0] sw_100_module_data_in;
     wire [7:0] sw_100_module_data_out;
@@ -2331,12 +2331,12 @@ module user_project_wrapper #(
         .module_data_out (sw_100_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_100 (
+    jglim_7seg jglim_7seg_100 (
         .io_in  (sw_100_module_data_in),
         .io_out (sw_100_module_data_out)
     );
 
-    // [101] https://github.com/TinyTapeout/tt02-test-invert
+    // [101] https://github.com/burtyb/tt02-srld
     wire sw_101_clk_out, sw_101_data_out, sw_101_scan_out, sw_101_latch_out;
     wire [7:0] sw_101_module_data_in;
     wire [7:0] sw_101_module_data_out;
@@ -2353,12 +2353,12 @@ module user_project_wrapper #(
         .module_data_out (sw_101_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_101 (
+    user_module_349790606404354643 user_module_349790606404354643_101 (
         .io_in  (sw_101_module_data_in),
         .io_out (sw_101_module_data_out)
     );
 
-    // [102] https://github.com/TinyTapeout/tt02-test-invert
+    // [102] https://github.com/azzeloof/tt02-counter
     wire sw_102_clk_out, sw_102_data_out, sw_102_scan_out, sw_102_latch_out;
     wire [7:0] sw_102_module_data_in;
     wire [7:0] sw_102_module_data_out;
@@ -2375,12 +2375,12 @@ module user_project_wrapper #(
         .module_data_out (sw_102_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_102 (
+    user_module_341279123277087315 user_module_341279123277087315_102 (
         .io_in  (sw_102_module_data_in),
         .io_out (sw_102_module_data_out)
     );
 
-    // [103] https://github.com/TinyTapeout/tt02-test-invert
+    // [103] https://github.com/shan1293/tt02-2bitCPU
     wire sw_103_clk_out, sw_103_data_out, sw_103_scan_out, sw_103_latch_out;
     wire [7:0] sw_103_module_data_in;
     wire [7:0] sw_103_module_data_out;
@@ -2397,12 +2397,12 @@ module user_project_wrapper #(
         .module_data_out (sw_103_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_103 (
+    shan1293_2bitalu shan1293_2bitalu_103 (
         .io_in  (sw_103_module_data_in),
         .io_out (sw_103_module_data_out)
     );
 
-    // [104] https://github.com/TinyTapeout/tt02-test-invert
+    // [104] https://github.com/Josvth/tt02-convolutional-encoder
     wire sw_104_clk_out, sw_104_data_out, sw_104_scan_out, sw_104_latch_out;
     wire [7:0] sw_104_module_data_in;
     wire [7:0] sw_104_module_data_out;
@@ -2419,7 +2419,7 @@ module user_project_wrapper #(
         .module_data_out (sw_104_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_104 (
+    user_module_349729432862196307 user_module_349729432862196307_104 (
         .io_in  (sw_104_module_data_in),
         .io_out (sw_104_module_data_out)
     );

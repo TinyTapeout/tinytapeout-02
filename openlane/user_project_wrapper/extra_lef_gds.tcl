@@ -96,7 +96,16 @@ $script_dir/../../lef/user_module_341608574336631379.lef \
 $script_dir/../../lef/wren6991_whisk_tt2_io_wrapper.lef \
 $script_dir/../../lef/user_module_341423712597181012.lef \
 $script_dir/../../lef/user_module_341277789473735250.lef \
-$script_dir/../../lef/user_module_348787952842703444.lef"
+$script_dir/../../lef/user_module_348787952842703444.lef \
+$script_dir/../../lef/regymm_mcpi.lef \
+$script_dir/../../lef/regymm_funnyblinky.lef \
+$script_dir/../../lef/adamgreig_tt02_gps_ca_prn.lef \
+$script_dir/../../lef/adamgreig_tt02_adc_dac.lef \
+$script_dir/../../lef/jglim_7seg.lef \
+$script_dir/../../lef/user_module_349790606404354643.lef \
+$script_dir/../../lef/user_module_341279123277087315.lef \
+$script_dir/../../lef/shan1293_2bitalu.lef \
+$script_dir/../../lef/user_module_349729432862196307.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -195,4 +204,13 @@ $script_dir/../../gds/user_module_341608574336631379.gds \
 $script_dir/../../gds/wren6991_whisk_tt2_io_wrapper.gds \
 $script_dir/../../gds/user_module_341423712597181012.gds \
 $script_dir/../../gds/user_module_341277789473735250.gds \
-$script_dir/../../gds/user_module_348787952842703444.gds"
+$script_dir/../../gds/user_module_348787952842703444.gds \
+$script_dir/../../gds/regymm_mcpi.gds \
+$script_dir/../../gds/regymm_funnyblinky.gds \
+$script_dir/../../gds/adamgreig_tt02_gps_ca_prn.gds \
+$script_dir/../../gds/adamgreig_tt02_adc_dac.gds \
+$script_dir/../../gds/jglim_7seg.gds \
+$script_dir/../../gds/user_module_349790606404354643.gds \
+$script_dir/../../gds/user_module_341279123277087315.gds \
+$script_dir/../../gds/shan1293_2bitalu.gds \
+$script_dir/../../gds/user_module_349729432862196307.gds"
