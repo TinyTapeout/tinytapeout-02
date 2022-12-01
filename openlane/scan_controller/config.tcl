@@ -8,7 +8,7 @@ set ::env(DESIGN_NAME) scan_controller
 set ::env(RUN_KLAYOUT_XOR) 0
 set ::env(RUN_KLAYOUT_DRC) 0
 
-# add your source files here
+# caravel defines for number of IO, needed for internal drives of oen_b
 set ::env(VERILOG_FILES) "\
     $script_dir/../../caravel/verilog/rtl/defines.v \
     $script_dir/../../verilog/rtl/scan_controller/scan_controller.v" 
@@ -27,7 +27,7 @@ set ::env(FP_SIZING) absolute
 
 set ::env(SYNTH_PARAMETERS) "NUM_DESIGNS=250"
 
-# clock period is ns - 100MHz
+# clock period is ns - 200MHz
 set ::env(CLOCK_PERIOD) "5"
 set ::env(CLOCK_PORT) "clk"
 
