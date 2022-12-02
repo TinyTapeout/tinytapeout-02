@@ -31,14 +31,6 @@ jobs:
         make setup
         make precheck
 
-    # need python
-    - name: setup python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-        cache: 'pip'
-    - run: pip install -r requirements.txt
-
     # install riscv gcc
     - name: riscv gcc
       run: |
@@ -56,10 +48,11 @@ jobs:
       uses: YosysHQ/setup-oss-cad-suite@v1
       with:
           osscadsuite-version: '2022-09-03' # pin the version, latest one fails to work with caravel
-          python-override: true # don't want to use that python
+          python-override: true
     - run: | 
         yosys --version
         iverilog -V
+        pip install -r requirements.txt
 
     # fetch the repos - test mode
     - name: fetch all
