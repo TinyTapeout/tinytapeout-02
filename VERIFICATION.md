@@ -38,13 +38,17 @@ The Gate Level simulation requires scan_controller and user_project_wrapper to b
 * Edit openlane/scan_controller/config.tcl and change NUM_DESIGNS=250 to NUM_DESIGNS=20.
 * Then from the top level directory:
 
+
     make scan_controller
     make user_project_wrapper
 
+
 * Then run the GL test
+
 
     cd verilog/dv/scan_controller
     make test_scan_controller_gl
+
 
 #### single
 

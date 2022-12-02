@@ -618,7 +618,7 @@ class CaravelConfig():
             fh.write('-v $(USER_PROJECT_VERILOG)/gl/scanchain.v\n')
             for project in self.projects:
                 if not project.is_fill():
-                    fh.write(f'-v $(USER_PROJECT_VERILOG)/gl/{project.get_gl_verilog_filename()}"\n')
+                    fh.write(f'-v $(USER_PROJECT_VERILOG)/gl/{project.get_gl_verilog_filename()}\n')
 
     def list(self):
         for project in self.projects:
