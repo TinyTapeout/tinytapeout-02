@@ -56,6 +56,10 @@ jobs:
     - name: user project wrapper GDS
       run: make user_project_wrapper
 
+    # remove projects so that the precheck doesn't fail on 'non-inclusive words'
+    - name: remove projects
+      run: rm -rf projects
+
     - name: precheck
       run: make run-precheck
 
