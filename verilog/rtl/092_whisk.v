@@ -56,6 +56,10 @@ assign io_out[0] = io_mem_csn;
 assign io_out[1] = io_mem_sck;
 assign io_out[2] = io_mem_sdo;
 
+wire       io_retime_mem_out = io_in[4];
+wire [1:0] io_retime_mem_in  = io_in[6:5];
+wire       io_retime_ioport_out = io_in[7];
+
 // IO port (shift register interface)
 wire io_ioport_sdi = io_in[3];
 
@@ -63,6 +67,7 @@ wire io_ioport_sck;
 wire io_ioport_sdo;
 wire io_ioport_latch_i;
 wire io_ioport_latch_o;
+
 
 assign io_out[3] = io_ioport_sck;
 assign io_out[4] = io_ioport_sdo;
@@ -73,19 +78,23 @@ assign io_out[6] = io_ioport_latch_o;
 assign io_out[7] = 1'b0;
 
 whisk_top top_u (
-	.io_clk            (io_clk),
-	.io_rst_n          (io_rst_n),
+	.io_clk               (io_clk),
+	.io_rst_n             (io_rst_n),
 
-	.io_mem_sdi        (io_mem_sdi),
-	.io_mem_csn        (io_mem_csn),
-	.io_mem_sck        (io_mem_sck),
-	.io_mem_sdo        (io_mem_sdo),
+	.io_mem_sdi           (io_mem_sdi),
+	.io_mem_csn           (io_mem_csn),
+	.io_mem_sck           (io_mem_sck),
+	.io_mem_sdo           (io_mem_sdo),
 
-	.io_ioport_sdi     (io_ioport_sdi),
-	.io_ioport_sck     (io_ioport_sck),
-	.io_ioport_sdo     (io_ioport_sdo),
-	.io_ioport_latch_i (io_ioport_latch_i),
-	.io_ioport_latch_o (io_ioport_latch_o)
+	.io_retime_mem_out    (io_retime_mem_out),
+	.io_retime_mem_in     (io_retime_mem_in),
+	.io_retime_ioport_out (io_retime_mem_out),
+
+	.io_ioport_sdi        (io_ioport_sdi),
+	.io_ioport_sck        (io_ioport_sck),
+	.io_ioport_sdo        (io_ioport_sdo),
+	.io_ioport_latch_i    (io_ioport_latch_i),
+	.io_ioport_latch_o    (io_ioport_latch_o)
 );
 
 endmodule
@@ -96,19 +105,23 @@ endmodule
 // ============================================================================
 
 module whisk_top (
-	input  wire io_clk,
-	input  wire io_rst_n,
+	input  wire       io_clk,
+	input  wire       io_rst_n,
 
-	input  wire io_mem_sdi,
-	output wire io_mem_csn,
-	output wire io_mem_sck,
-	output wire io_mem_sdo,
+	input  wire       io_mem_sdi,
+	output wire       io_mem_csn,
+	output wire       io_mem_sck,
+	output wire       io_mem_sdo,
 
-	input  wire io_ioport_sdi,
-	output wire io_ioport_sck,
-	output wire io_ioport_sdo,
-	output wire io_ioport_latch_i,
-	output wire io_ioport_latch_o
+	input  wire       io_retime_mem_out,
+	input  wire [1:0] io_retime_mem_in,
+	input  wire       io_retime_ioport_out,
+
+	input  wire       io_ioport_sdi,
+	output wire       io_ioport_sck,
+	output wire       io_ioport_sdo,
+	output wire       io_ioport_latch_i,
+	output wire       io_ioport_latch_o
 );
 
 // ----------------------------------------------------------------------------
@@ -163,35 +176,40 @@ whisk_cpu cpu (
 // Serdes (IO registers)
 
 whisk_spi_serdes mem_serdes_u (
-	.clk        (clk),
-	.rst_n      (rst_n),
+	.clk                  (clk),
+	.rst_n                (rst_n),
 
-	.sdo        (mem_sdo_next),
-	.sck_en     (mem_sck_en_next),
-	.csn        (mem_csn_next),
-	.sdi        (mem_sdi_prev),
+	.sdo                  (mem_sdo_next),
+	.sck_en               (mem_sck_en_next),
+	.csn                  (mem_csn_next),
+	.sdi                  (mem_sdi_prev),
 
-	.padout_sck (io_mem_sck),
-	.padout_csn (io_mem_csn),
-	.padout_sdo (io_mem_sdo),
-	.padin_sdi  (io_mem_sdi)
+	.padout_sck           (io_mem_sck),
+	.padout_csn           (io_mem_csn),
+	.padout_sdo           (io_mem_sdo),
+	.padin_sdi            (io_mem_sdi),
+
+	.padin_retime_mem_out (io_retime_mem_out),
+	.padin_retime_mem_in  (io_retime_mem_in),
 );
 
 whisk_ioport_serdes io_serdes_u (
-	.clk             (clk),
-	.rst_n           (rst_n),
+	.clk                     (clk),
+	.rst_n                   (rst_n),
 
-	.sdo             (ioport_sdo_next),
-	.sck_en          (ioport_sck_en_next),
-	.latch_i         (ioport_latch_i_next),
-	.latch_o         (ioport_latch_o_next),
-	.sdi             (ioport_sdi_prev),
+	.sdo                     (ioport_sdo_next),
+	.sck_en                  (ioport_sck_en_next),
+	.latch_i                 (ioport_latch_i_next),
+	.latch_o                 (ioport_latch_o_next),
+	.sdi                     (ioport_sdi_prev),
 
-	.padout_sdo      (io_ioport_sdo),
-	.padout_sck      (io_ioport_sck),
-	.padout_latch_i  (io_ioport_latch_i),
-	.padout_latch_o  (io_ioport_latch_o),
-	.padin_sdi       (io_ioport_sdi)
+	.padout_sdo              (io_ioport_sdo),
+	.padout_sck              (io_ioport_sck),
+	.padout_latch_i          (io_ioport_latch_i),
+	.padout_latch_o          (io_ioport_latch_o),
+	.padin_sdi               (io_ioport_sdi),
+
+	.padin_retime_ioport_out (io_retime_ioport_out)
 );
 
 endmodule
@@ -240,27 +258,28 @@ localparam       INSTR_RD_LSB   = 13;
 localparam       INSTR_RD_MSB   = 15;
 
 // Major opcodes (instr[3:0])
-localparam [3:0] OP_ADD         = 4'h0; // rd =  rs + rt
-localparam [3:0] OP_SUB         = 4'h1; // rd =  rs - rt
-localparam [3:0] OP_AND         = 4'h2; // rd =  rs & rt
-localparam [3:0] OP_ANDN        = 4'h3; // rd = ~rs & rt
-localparam [3:0] OP_OR          = 4'h4; // rd =  rs | rt
+localparam [3:0] OP_ADD         = 4'h0; // rd = rs +  rt
+localparam [3:0] OP_SUB         = 4'h1; // rd = rs -  rt
+localparam [3:0] OP_AND         = 4'h2; // rd = rs &  rt
+localparam [3:0] OP_ANDN        = 4'h3; // rd = rs & ~rt
+localparam [3:0] OP_OR          = 4'h4; // rd = rs |  rt
 localparam [3:0] OP_SHIFT       = 4'h5; // Minor opcode in rt
 localparam [3:0] OP_INOUT       = 4'h6; // Minor opcode in rs
 
-localparam [3:0] OP_LD          = 4'h8; // rd = mem[rs     ];
-localparam [3:0] OP_LD_IA       = 4'h9; // rd = mem[rs     ]; rs += rt;
-localparam [3:0] OP_LD_ADD      = 4'ha; // rd = mem[rs + rt];
-localparam [3:0] OP_LD_IB       = 4'hb; // rd = mem[rs + rt]; rs += rt;
+localparam [3:0] OP_LB          = 4'h8; // rd = mem[rs     ];
+localparam [3:0] OP_LH_IA       = 4'h9; // rd = mem[rs     ]; rs += rt;
+localparam [3:0] OP_LH_ADD      = 4'ha; // rd = mem[rs + rt];
+localparam [3:0] OP_LH_IB       = 4'hb; // rd = mem[rs + rt]; rs += rt;
 
-localparam [3:0] OP_ST          = 4'hc; // mem[rs     ] = rd;
-localparam [3:0] OP_ST_IA       = 4'hd; // mem[rs     ] = rd; rs += rt;
-localparam [3:0] OP_ST_ADD      = 4'he; // mem[rs + rt] = rd;
-localparam [3:0] OP_ST_IB       = 4'hf; // mem[rs + rt] = rd; rs += rt;
+localparam [3:0] OP_SB          = 4'hc; // mem[rs     ] = rd;
+localparam [3:0] OP_SH_IA       = 4'hd; // mem[rs     ] = rd; rs += rt;
+localparam [3:0] OP_SH_ADD      = 4'he; // mem[rs + rt] = rd;
+localparam [3:0] OP_SH_IB       = 4'hf; // mem[rs + rt] = rd; rs += rt;
 
 // Minor opcodes (rt)
 localparam [2:0] OP2_SRL        = 3'h0;
 localparam [2:0] OP2_SRA        = 3'h1;
+localparam [2:0] OP2_ROR        = 3'h2;
 localparam [2:0] OP2_SLL        = 3'h4;
 
 // Minor opcodes (rs)
@@ -301,9 +320,9 @@ localparam [2:0] S_EXEC       = 3'd1; // Loop all GPRs, write one GPR
 localparam [2:0] S_PC_NONSEQ0 = 3'd2; // Issue cmd, then issue 1 PC bit
 localparam [2:0] S_PC_NONSEQ1 = 3'd3; // Issue rest of PC, then 1 cyc delay
 localparam [2:0] S_LS_ADDR0   = 3'd4; // Deferred LS SPI cmd following immediate
-localparam [2:0] S_LS_ADDR1   = 3'd4; // Issue addr then, if load, 1 cyc delay
-localparam [2:0] S_LS_DATA    = 3'd5; // Issue store data, or sample load data
-localparam [2:0] S_SKIP_IMM   = 3'd6; // Skip immediate following false condition
+localparam [2:0] S_LS_ADDR1   = 3'd5; // Issue addr then, if load, 1 cyc delay
+localparam [2:0] S_LS_DATA    = 3'd6; // Issue store data, or sample load data
+localparam [2:0] S_SKIP_IMM   = 3'd7; // Skip immediate following false condition
 
 reg [2:0] state_nxt_wrap;
 reg [2:0] state_nxt;
@@ -415,7 +434,7 @@ always @ (*) begin
 	end else if (state == S_FETCH) begin
 		if (bit_ctr == (INSTR_RT_MSB + 1)) begin
 			// Grab rt as it goes past (this is why rt is not the MSBs!)
-			instr_has_imm_operand_nxt = instr[W_INSTR-1 -: 3] == 3'd6;
+			instr_has_imm_operand_nxt = instr[W_INSTR-1 -: 3] == 3'd7;
 		end
 		if (bit_ctr == (INSTR_COND_MSB + 1)) begin
 			// Decode condition as it goes past
@@ -451,10 +470,9 @@ wire alu_result;
 
 wire writeback_wen =
 	state == S_EXEC && !(instr_op_ls && !instr_op_ls_sumr)  ||
-	state == S_LS_ADDR0 && instr_op_ls_sumr ||
 	state == S_LS_DATA && !instr_op_st_nld;
 
-wire writeback_data = state == S_LS_DATA ? mem_sdi_prev : alu_result;
+wire writeback_data = alu_result;
 
 wire [INSTR_RD_MSB-INSTR_RD_LSB:0] writeback_reg =
 	instr_op_ls && state != S_LS_DATA ? instr_rs : instr_rd;
@@ -526,8 +544,7 @@ wire alu_op_s_next =
 	instr_rs == 3'd7 ? pc_qr_next   : reg_rs_qr_next;
 
 wire alu_op_t =
-	instr_rt == 3'd7 ? pc_qr        :
-	instr_rt == 3'd6 ? mem_sdi_prev : reg_rt_qr;
+	instr_rt == 3'd7 ? mem_sdi_prev : reg_rt_qr;
 
 reg alu_ci;
 wire [1:0] alu_add = alu_op_s +  alu_op_t + (~|bit_ctr ? 1'b0 : alu_ci);
@@ -542,25 +559,47 @@ wire [1:0] alu_shift_l = {
 	|alu_ci && |bit_ctr
 };
 
+// Rotate uses the carry to remember prior LSB and insert it at MSB.
+// (Convenient because prior LSB is already the carry flag.)
+wire alu_shift_r_last_bit =
+	instr_rt[1] ? alu_ci : alu_op_s && instr_rt[0];
+
 wire [1:0] alu_shift_r = {
 	|bit_ctr ? alu_ci                  : alu_op_s,
-	&bit_ctr ? alu_op_s && instr_rt[0] : alu_op_s_next
+	&bit_ctr ? alu_shift_r_last_bit    : alu_op_s_next
 };
 
 // Carry is an all-ones flag for bitwise ops
-wire bit_co = alu_result && (alu_ci || ~|bit_ctr);
+wire alu_bitop_no_c =
+	instr_op == OP_AND    ? alu_op_s &&  alu_op_t :
+	instr_op == OP_ANDN   ? alu_op_s && !alu_op_t : alu_op_s ||  alu_op_t;
+
+wire alu_bit_co = alu_bitop_no_c && (alu_ci || ~|bit_ctr);
+
+wire [1:0] alu_bitop = {alu_bit_co, alu_bitop_no_c};
+
+// Byte loads must be zero- or sign-extended. Use the carry to
+// propagate the sign.
+wire instr_op_ls_byte = !(instr_op_ls_sumr || instr_op_ls_suma);
+wire instr_op_ls_sbyte = instr_rt[2];
+
+wire [1:0] alu_load = {
+	bit_ctr[3]                     ? alu_ci                      : mem_sdi_prev,
+	bit_ctr[3] && instr_op_ls_byte ? alu_ci && instr_op_ls_sbyte : mem_sdi_prev
+};
 
 wire alu_co;
 assign {alu_co, alu_result} =
-	instr_op_ls                          ? alu_add                         :
-	instr_op == OP_ADD                   ? alu_add                         :
-	instr_op == OP_SUB                   ? alu_sub                         :
-	instr_op == OP_AND                   ? {bit_co,  alu_op_s && alu_op_t} :
-	instr_op == OP_ANDN                  ? {bit_co, !alu_op_s && alu_op_t} :
-	instr_op == OP_OR                    ? {bit_co,  alu_op_s || alu_op_t} :
-	instr_op == OP_SHIFT &&  instr_rt[2] ? alu_shift_l                     :
-	instr_op == OP_SHIFT && !instr_rt[2] ? alu_shift_r                     :
-	instr_op == OP_INOUT                 ? ioport_sdi_prev                 : alu_add;
+	state == S_LS_DATA                   ? alu_load         :
+	instr_op_ls                          ? alu_add          :
+	instr_op == OP_ADD                   ? alu_add          :
+	instr_op == OP_SUB                   ? alu_sub          :
+	instr_op == OP_AND                   ? alu_bitop        :
+	instr_op == OP_ANDN                  ? alu_bitop        :
+	instr_op == OP_OR                    ? alu_bitop        :
+	instr_op == OP_SHIFT &&  instr_rt[2] ? alu_shift_l      :
+	instr_op == OP_SHIFT && !instr_rt[2] ? alu_shift_r      :
+	instr_op == OP_INOUT                 ? ioport_sdi_prev  : alu_add;
 
 always @ (posedge clk) begin
 	alu_ci <= alu_co;
@@ -573,15 +612,12 @@ reg flag_z;
 reg flag_c;
 reg flag_n;
 
-wire update_flag_zn = (state == S_EXEC || state == S_LS_DATA) && ~|instr_cond;
-wire update_flag_c = update_flag_zn && state == S_EXEC;
+wire update_flags = (state == S_EXEC || state == S_LS_DATA) && ~|instr_cond;
 
 always @ (posedge clk) begin
-	if (update_flag_zn) begin
+	if (update_flags) begin
 		flag_z <= (flag_z || ~|bit_ctr) && !alu_result;
 		flag_n <= alu_result;
-	end
-	if (update_flag_c) begin
 		flag_c <= alu_co;
 	end
 end
@@ -620,13 +656,18 @@ whisk_shiftreg_leftright #(
 	.q_all (ar_q_all)
 );
 
-// Shift left when replaying addresses.
-assign ar_l_nr = state == S_LS_ADDR1 ||	state == S_PC_NONSEQ1;
+// Shift left when replaying addresses. Also shift left in LS_ADDR0 to
+// recirculate the address generated during EXEC for use in LS_ADDR1.
+assign ar_l_nr =
+	state == S_LS_ADDR1 ||
+	state == S_PC_NONSEQ1 ||
+	state == S_LS_ADDR0;
+
+assign ar_dr = ar_ql;
 
 assign ar_dl =
 	state == S_PC_NONSEQ0 ? pc_qr   :
 	instr_op_ls_suma      ? alu_add : reg_rs_qr;
-
 // ----------------------------------------------------------------------------
 // SPI controls
 
@@ -635,7 +676,7 @@ assign ar_dl =
 // Note LS_ADDR0 state is skipped if we are able to issue from EXEC:
 wire issue_ls_addr_ph0 =
 	state == S_LS_ADDR0 ||
-	state == S_EXEC && instr_op_ls && !instr_has_imm_operand;
+	state == S_EXEC && instr_op_ls && !instr_has_imm_operand && instr_cond_true;
 
 wire [3:0] spi_cmd_start_cycle =
 	state == S_PC_NONSEQ0 ? 4'h7 :
@@ -646,26 +687,40 @@ assign mem_csn_next = bit_ctr < spi_cmd_start_cycle && (
 );
 
 // Pedal to the metal on SCK except when pulling CSn for a nonsequential
-// access, or when executing an unskipped instruction with no immediate.
+// access, or when executing an unskipped instruction without immediate or
+// early address issue. (Also mask for second half of byte accesses.)
+
+wire mem_sck_disable_on_imm =
+	state == (&bit_ctr[3:1] ? S_FETCH : S_EXEC) && instr_cond_true &&
+	!(instr_has_imm_operand || issue_ls_addr_ph0);
+
+wire mem_sck_disable_on_byte_ls =
+	state == S_LS_DATA && instr_op_ls_byte && bit_ctr[3];
 
 assign mem_sck_en_next = !(
 	mem_csn_next ||
-	state == (&bit_ctr[3:1] ? S_FETCH : S_EXEC) && !instr_has_imm_operand && instr_cond_true
+	mem_sck_disable_on_imm ||
+	mem_sck_disable_on_byte_ls
 );
 
 // Store address replays entirely in LS_ADDR1, but load/fetch extend one cycle
 // into previous state, so carefully pick what delay to observe the address
 // with. (Also mask address to zero for very first fetch at start of day.)
+//
+// Note in LS_ADDR0 that we are actually recirculating an address generated in
+// EXEC, because the address issue was deferred due to an immediate read, so
+// this case looks like load-LS_ADDR1 rather than like load-EXEC.
 
 wire mem_spi_addr =
 	!instr_cond_true                        ? 1'b0       :
 	state == S_PC_NONSEQ1                   ? ar_ql_next :
 	state == S_LS_ADDR1 &&  instr_op_st_nld ? ar_ql      :
-	state == S_LS_ADDR1 && !instr_op_st_nld ? ar_ql_next : ar_dl;
+	state == S_LS_ADDR1 && !instr_op_st_nld ? ar_ql_next :
+	state == S_LS_ADDR0                     ? ar_ql_next : ar_dl;
 
 // Note: SPI commands are MSB-first (the commands here are 03h and 02h).
 localparam [15:0] SPI_INSTR_READ  = 16'hc000 >> 1;
-localparam [15:0] SPI_INSTR_WRITE = 16'h8000;
+localparam [15:0] SPI_INSTR_WRITE = 16'h4000;
 
 wire mem_sdo_ls_addr_ph0 =
 	instr_op_st_nld ? SPI_INSTR_WRITE[bit_ctr] :
@@ -676,7 +731,7 @@ assign mem_sdo_next =
 	state == S_PC_NONSEQ1 ? mem_spi_addr                                 :
 	issue_ls_addr_ph0     ? mem_sdo_ls_addr_ph0                          :
 	state == S_LS_ADDR1   ? mem_spi_addr                                 :
-	state == S_LS_DATA    ? reg_rd_qr                                    : 1'b0;
+	state == S_LS_DATA    ? (instr_rd == 3'd7 ? pc_qr : reg_rd_qr)       : 1'b0;
 
 // ----------------------------------------------------------------------------
 // IO port
@@ -905,106 +960,128 @@ assign q = q_r;
 endmodule
 
 // ============================================================================
-// Module whisk_flop_en: a flop with an input enable (DFFE). For some reason
-// these are not mapped automatically, so we get a DFF, a mux and two buffers
-// ============================================================================
-
-module whisk_flop_en (
-	input  wire clk,
-	input  wire d,
-	input  wire e,
-	output wire q
-);
-
-`ifdef WHISK_CELLS_SKY130
-
-sky130_fd_sc_hd__edfxtp_1 dffe_u (
-	.CLK        (clk),
-	.D          (d),
-	.DE         (e),
-	.Q          (q),
-	.VPWR       (1'b1),
-	.VGND       (1'b0)
-);
-
-`else
-
-// Synthesisable model
-
-reg q_r;
-always @ (posedge clk) begin
-	if (e) begin
-		q_r <= d;
-	end
-end
-
-assign q = q_r;
-
-`endif
-
-endmodule
-// ============================================================================
 // Module whisk_spi_serdes: handle the timing of the SPI interface, and
-// provide a slightly abstracted interface to the whisk core, with all
-// signals on posedge of clk.
+// provide a slightly abstracted interface to the Whisk core
 // ============================================================================
+
+// Note the assumption in the core is that if it asserts the last address bit
+// by the end of cycle k then it can sample the first data bit at the end of
+// cycle k + 2.
+//
+// - clk posedge k: outputs are registered and go straight into scan chain
+// - clk negedge k: SCK rising edge for last address bit is launched into scan chain
+// - clk posedge k + 1: SCK falling edge following last address bit is launched into scan chain
+// - clk negedge k + 1: sample taken at falling SCK edge comes back through scan
+// - clk posedge k + 2: sample taken at SCK rising edge comes back through scan
+//
+// Unfortunately the sample coming back is not meaningfully constrained with
+// respect to clk, so we have some options to shmoo things around. The winner
+// is probably to launch our outputs a half cycle earlier (on the negedge) so
+// that the input is stable at the point the core samples it on its posedge.
+// This creates a half cycle path in the core, but the clock period is long
+// so we don't care. This is the default.
+//
+// Note without the scan problems the core's assumption about delay would be a
+// reasonable one.
 
 module whisk_spi_serdes(
-	input  wire clk,
-	input  wire rst_n,
+	input  wire       clk,
+	input  wire       rst_n,
 
 	// Core
-	input  wire sdo,
-	input  wire sck_en,
-	input  wire csn,
-	output wire sdi,
+	input  wire       sdo,
+	input  wire       sck_en,
+	input  wire       csn,
+	output wire       sdi,
 
 	// IOs
-	output wire padout_sck,
-	output wire padout_csn,
-	output wire padout_sdo,
-	input  wire padin_sdi
+	output wire       padout_sck,
+	output wire       padout_csn,
+	output wire       padout_sdo,
+	input  wire       padin_sdi,
+
+	input  wire       padin_retime_mem_out,
+	input  wire [1:0] padin_retime_mem_in
 );
 
 // ----------------------------------------------------------------------------
 // Output paths
 
-reg sdo_r;
-reg sck_en_r;
-reg csn_r;
+// There are multiple through-paths from the clock input to SPI outputs
+// (*mostly* via DFF CK-to-Q) and these should fully settle between the scan
+// input latches going transparent, and the outputs being registered back out
+// into the scan chain. We can't add IO constraints, but there are plenty of
+// wait states in the scan chain driver around this point. Hopefully on TT3
+// the scan chain stuff will go away and we can build a normal SPI
+// interface.
+
+reg sdo_pos_r;
+reg sck_en_pos_r;
+reg csn_pos_r;
 
 always @ (posedge clk or negedge rst_n) begin
 	if (!rst_n) begin
-		sdo_r <= 1'b0;
-		csn_r <= 1'b1;
-		sck_en_r <= 1'b0;
+		sdo_pos_r <= 1'b0;
+		sck_en_pos_r <= 1'b1;
+		csn_pos_r <= 1'b0;
 	end else begin
-		sdo_r <= sdo;
-		csn_r <= csn;
-		sck_en_r <= sck_en;
+		sdo_pos_r <= sdo;
+		sck_en_pos_r <= csn;
+		csn_pos_r <= sck_en;
 	end
 end
 
-assign padout_sdo = sdo_r;
-assign padout_csn = csn_r;
+// Through-path for clock input to SCK output. This *will* glitch, but gating
+// cell not required for TT2, as this signal is sampled by the scan flops at
+// the tile output.
+wire padout_sck_p = sck_en_pos_r && !clk;
 
-// Through-path for clock input to SCK output. TODO clock gating cell
-// required? This is sampled by the scan flops at the tile output.
-assign padout_sck = sck_en_r && !clk;
+// Very dirty option to advance all outputs by a half cycle.
+
+reg sdo_neg_r;
+reg sck_en_neg_r;
+reg csn_neg_r;
+
+always @ (negedge clk or negedge rst_n) begin
+	if (!rst_n) begin
+		sdo_neg_r <= 1'b0;
+		csn_neg_r <= 1'b1;
+		sck_en_neg_r <= 1'b0;
+	end else begin
+		sdo_neg_r <= sdo;
+		csn_neg_r <= csn;
+		sck_en_neg_r <= sck_en;
+	end
+end
+
+wire padout_sck_n = sck_en_neg_r && clk;
+
+assign padout_sdo = padin_retime_mem_out ? sdo_pos_r : sdo_neg_r;
+assign padout_csn = padin_retime_mem_out ? csn_pos_r : csn_neg_r;
+// Literally a behavioural mux on a clock lmao
+assign padout_sck = padin_retime_mem_out ? padout_sck_p : padout_sck_n;
 
 // ----------------------------------------------------------------------------
 // Input paths
 
+// 4 options:
+// - 0: Nothing
+// - 1: Some delay buffers
+// - 2: An active-high latch after delay buffers
+// - 3: A negedge flop
+
+wire padin_sdi_delay;
 `ifdef WHISK_CELLS_SKY130
-
-// ASIC version
-
-// TODO find a suitable delay buffer cell for hold buffering, and decide how to
-// dimension it against i[7:0] skew
-
-// TODO find a suitable latch cell (possibly sky130_fd_sc_hd__dlxtp)
-
-wire padin_sdi_delay = padin_sdi;
+wire [2:0] padin_sdi_delay_int;
+sky130_fd_sc_hd__dlymetal6s6s_1 delbuf[3:0] (
+	.A    ({padin_sdi_delay_int, padin_sdi}),
+	.X    ({padin_sdi_delay, padin_sdi_delay_int}),
+	.VPWR (1'b1),
+	.VGND (1'b0)
+);
+`else
+assign padin_sdi_delay = padin_sdi;
+`endif
 
 reg sdi_latch;
 
@@ -1014,22 +1091,20 @@ always @ (*) begin
 	end
 end
 
-assign sdi = sdi_latch;
+reg sdi_negedge;
 
-`else
-
-// Dodgy sim-only version
-
-reg padin_sdi_reg;
 always @ (negedge clk) begin
-	padin_sdi_reg <= padin_sdi;
+	sdi_negedge <= padin_sdi;
 end
 
-// FIXME there is something I don't understand here with the CXXRTL delta cycles
-// assign sdi = padin_sdi_reg;
-assign sdi = padin_sdi;
+wire [3:0] sdi_retime_opt = {
+	sdi_negedge,
+	sdi_latch,
+	padin_sdi_delay,
+	padin_sdi
+};
 
-`endif
+assign sdi = sdi_retime_opt[padin_retime_mem_in];
 
 endmodule
 
@@ -1054,78 +1129,67 @@ module whisk_ioport_serdes(
 	output wire padout_sck,
 	output wire padout_latch_i,
 	output wire padout_latch_o,
-	input  wire padin_sdi
+	input  wire padin_sdi,
+
+	input  wire padin_retime_ioport_out
 );
 
 // ----------------------------------------------------------------------------
 // Output paths
 
-reg sdo_r;
-reg sck_en_r;
-reg latch_i_r;
-reg latch_o_r;
+// Again, stupid cheesy half cycle retiming option that creates a half-cycle
+// path from the core
+
+reg sdo_pos;
+reg sck_en_pos;
+reg latch_i_pos;
+reg latch_o_pos;
 
 always @ (posedge clk or negedge rst_n) begin
 	if (!rst_n) begin
-		sdo_r <= 1'b0;
-		sck_en_r <= 1'b0;
-		latch_i_r <= 1'b0;
-		latch_o_r <= 1'b0;
+		sdo_pos <= 1'b0;
+		sck_en_pos <= 1'b0;
+		latch_i_pos <= 1'b0;
+		latch_o_pos <= 1'b0;
 	end else begin
-		sdo_r <= sdo;
-		sck_en_r <= sck_en;
-		latch_i_r <= latch_i;
-		latch_o_r <= latch_o;
+		sdo_pos <= sdo;
+		sck_en_pos <= sck_en;
+		latch_i_pos <= latch_i;
+		latch_o_pos <= latch_o;
 	end
 end
 
-assign padout_sdo = sdo_r;
-assign padout_latch_i = latch_i_r;
-assign padout_latch_o = latch_o_r;
+reg sdo_neg;
+reg sck_en_neg;
+reg latch_i_neg;
+reg latch_o_neg;
 
-// TODO clock gating cell?
-assign padout_sck = sck_en_r && !clk;
+always @ (negedge clk or negedge rst_n) begin
+	if (!rst_n) begin
+		sdo_neg <= 1'b0;
+		sck_en_neg <= 1'b0;
+		latch_i_neg <= 1'b0;
+		latch_o_neg <= 1'b0;
+	end else begin
+		sdo_neg <= sdo;
+		sck_en_neg <= sck_en;
+		latch_i_neg <= latch_i;
+		latch_o_neg <= latch_o;
+	end
+end
+
+assign padout_sdo     = padin_retime_ioport_out ? sdo_neg     : sdo_pos;
+assign padout_latch_i = padin_retime_ioport_out ? latch_i_neg : latch_i_pos;
+assign padout_latch_o = padin_retime_ioport_out ? latch_o_neg : latch_o_pos;
+
+// Again, no clock gating cell for TT2, but must revisit in future. Also
+// behavioural mux on clock lmao
+assign padout_sck = padin_retime_ioport_out ? (sck_en_neg && clk) : (sck_en_pos && !clk);
 
 // ----------------------------------------------------------------------------
 // Input paths
 
-// FIXME this is actually different from SPI, right? Probably transitions on
-// posedge? Need to find some actual datasheets for candidate shift
-// registers.
-
-`ifdef WHISK_CELLS_SKY130
-
-// ASIC version
-
-// TODO find a suitable delay buffer cell for hold buffering, and decide how to
-// dimension it against i[7:0] skew
-
-// TODO find a suitable latch cell (possibly sky130_fd_sc_hd__dlxtp)
-
-wire padin_sdi_delay = padin_sdi;
-
-reg sdi_latch;
-
-always @ (*) begin
-	if (clk) begin
-		sdi_latch <= padin_sdi_delay;
-	end
-end
-
-assign sdi = sdi_latch;
-
-`else
-
-// Dodgy sim-only version
-
-reg padin_sdi_reg;
-always @ (negedge clk) begin
-	padin_sdi_reg <= padin_sdi;
-end
-
-assign sdi = padin_sdi_reg;
-
-`endif
+assign sdi = padin_sdi;
 
 endmodule
 

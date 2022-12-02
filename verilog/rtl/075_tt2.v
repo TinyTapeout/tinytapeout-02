@@ -50,7 +50,6 @@ module AidanMedcalf_pid_controller (
     wire [7:0] kp;
     wire [7:0] ki;
     //wire [7:0] kd;
-    wire [15:0] stb_level;
 
     //assign sp = cfg_buf[0][3:0];
     //assign kp = cfg_buf[0][7:4];
@@ -63,7 +62,6 @@ module AidanMedcalf_pid_controller (
     assign kp = cfg_spi_buffer[15:8];
     assign ki = cfg_spi_buffer[23:16];
     //assign kd = cfg_spi_buffer[31:24];
-    assign stb_level = cfg_spi_buffer[39:24];
 
     wire pv_stb;
     wire pid_stb;
@@ -78,8 +76,8 @@ module AidanMedcalf_pid_controller (
 
     // Slave SPI for configuration
     //wire cfg_spi_done;
-    wire [39:0] cfg_spi_buffer;
-    spi_slave_in #(.BITS(40)) cfg_spi(.reset(reset), .clk(clk), .cs(cfg_cs), .sck(cfg_clk), .mosi(cfg_mosi), .out_buf(cfg_spi_buffer));
+    wire [23:0] cfg_spi_buffer;
+    spi_slave_in #(.BITS(24)) cfg_spi(.reset(reset), .clk(clk), .cs(cfg_cs), .sck(cfg_clk), .mosi(cfg_mosi), .out_buf(cfg_spi_buffer));
 
     // Shift input in
     spi_master_in spi_in(.reset(pid_rst), .clk(clk),
@@ -97,7 +95,7 @@ module AidanMedcalf_pid_controller (
              .kp(kp), .ki(ki),
              .stimulus(out));
     
-    strobe #(.BITS(16)) pv_stb_gen(.reset(reset), .clk(clk), .level(stb_level), .out(pv_stb));
+    strobe #(.BITS(16)) pv_stb_gen(.reset(reset), .clk(clk), .out(pv_stb));
 
     assign pid_stb = pv_in_cs_hist[0] && !pv_in_cs_hist[1];
 
@@ -137,16 +135,15 @@ module strobe #(
 ) (
     input reset,
     input clk,
-    input [BITS-1:0] level,
     output out
 );
     reg  [BITS-1:0] count;
     wire [BITS-1:0] next;
-    assign next = count - 'b1;
-    assign out = count == 0;
+    assign next = count + 'b1;
+    assign out = next == 'b0;
     always @(posedge clk) begin
-        if (reset || out) begin
-            count <= level;
+        if (reset) begin
+            count <= 'b0;
         end else begin
             count <= next;
         end

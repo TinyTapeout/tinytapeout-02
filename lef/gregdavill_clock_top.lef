@@ -1,0 +1,224 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO gregdavill_clock_top
+  CLASS BLOCK ;
+  FOREIGN gregdavill_clock_top ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 150.000 BY 170.000 ;
+  PIN io_in[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 8.200 2.000 8.800 ;
+    END
+  END io_in[0]
+  PIN io_in[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 18.400 2.000 19.000 ;
+    END
+  END io_in[1]
+  PIN io_in[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 28.600 2.000 29.200 ;
+    END
+  END io_in[2]
+  PIN io_in[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 38.800 2.000 39.400 ;
+    END
+  END io_in[3]
+  PIN io_in[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 49.000 2.000 49.600 ;
+    END
+  END io_in[4]
+  PIN io_in[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 59.200 2.000 59.800 ;
+    END
+  END io_in[5]
+  PIN io_in[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 69.400 2.000 70.000 ;
+    END
+  END io_in[6]
+  PIN io_in[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 79.600 2.000 80.200 ;
+    END
+  END io_in[7]
+  PIN io_out[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 89.800 2.000 90.400 ;
+    END
+  END io_out[0]
+  PIN io_out[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 100.000 2.000 100.600 ;
+    END
+  END io_out[1]
+  PIN io_out[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 110.200 2.000 110.800 ;
+    END
+  END io_out[2]
+  PIN io_out[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 120.400 2.000 121.000 ;
+    END
+  END io_out[3]
+  PIN io_out[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 130.600 2.000 131.200 ;
+    END
+  END io_out[4]
+  PIN io_out[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 140.800 2.000 141.400 ;
+    END
+  END io_out[5]
+  PIN io_out[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 151.000 2.000 151.600 ;
+    END
+  END io_out[6]
+  PIN io_out[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 161.200 2.000 161.800 ;
+    END
+  END io_out[7]
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 22.090 5.200 23.690 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 56.830 5.200 58.430 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 91.570 5.200 93.170 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 126.310 5.200 127.910 163.440 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 39.460 5.200 41.060 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 74.200 5.200 75.800 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 108.940 5.200 110.540 163.440 ;
+    END
+  END vssd1
+  OBS
+      LAYER li1 ;
+        RECT 5.520 5.355 144.440 163.285 ;
+      LAYER met1 ;
+        RECT 5.520 5.200 144.440 163.440 ;
+      LAYER met2 ;
+        RECT 6.540 5.255 127.880 163.385 ;
+      LAYER met3 ;
+        RECT 2.000 162.200 127.900 163.365 ;
+        RECT 2.400 160.800 127.900 162.200 ;
+        RECT 2.000 152.000 127.900 160.800 ;
+        RECT 2.400 150.600 127.900 152.000 ;
+        RECT 2.000 141.800 127.900 150.600 ;
+        RECT 2.400 140.400 127.900 141.800 ;
+        RECT 2.000 131.600 127.900 140.400 ;
+        RECT 2.400 130.200 127.900 131.600 ;
+        RECT 2.000 121.400 127.900 130.200 ;
+        RECT 2.400 120.000 127.900 121.400 ;
+        RECT 2.000 111.200 127.900 120.000 ;
+        RECT 2.400 109.800 127.900 111.200 ;
+        RECT 2.000 101.000 127.900 109.800 ;
+        RECT 2.400 99.600 127.900 101.000 ;
+        RECT 2.000 90.800 127.900 99.600 ;
+        RECT 2.400 89.400 127.900 90.800 ;
+        RECT 2.000 80.600 127.900 89.400 ;
+        RECT 2.400 79.200 127.900 80.600 ;
+        RECT 2.000 70.400 127.900 79.200 ;
+        RECT 2.400 69.000 127.900 70.400 ;
+        RECT 2.000 60.200 127.900 69.000 ;
+        RECT 2.400 58.800 127.900 60.200 ;
+        RECT 2.000 50.000 127.900 58.800 ;
+        RECT 2.400 48.600 127.900 50.000 ;
+        RECT 2.000 39.800 127.900 48.600 ;
+        RECT 2.400 38.400 127.900 39.800 ;
+        RECT 2.000 29.600 127.900 38.400 ;
+        RECT 2.400 28.200 127.900 29.600 ;
+        RECT 2.000 19.400 127.900 28.200 ;
+        RECT 2.400 18.000 127.900 19.400 ;
+        RECT 2.000 9.200 127.900 18.000 ;
+        RECT 2.400 7.800 127.900 9.200 ;
+        RECT 2.000 5.275 127.900 7.800 ;
+      LAYER met4 ;
+        RECT 17.775 8.335 21.690 102.505 ;
+        RECT 24.090 8.335 39.060 102.505 ;
+        RECT 41.460 8.335 56.430 102.505 ;
+        RECT 58.830 8.335 73.800 102.505 ;
+        RECT 76.200 8.335 76.985 102.505 ;
+  END
+END gregdavill_clock_top
+END LIBRARY
+

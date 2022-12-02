@@ -1,7 +1,7 @@
 module Asma_Mohsin_conv_enc_core(// Inputs
- input [3:0]io_in,
+ input [7:0]io_in,
 // Output
-output [1:0]io_out
+ output [7:0]io_out
 );
 parameter [4:0] POLY_1 = 5'b10111 ;
 parameter [4:0] POLY_2 = 5'b11001 ;

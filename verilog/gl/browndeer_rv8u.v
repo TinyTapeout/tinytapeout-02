@@ -1108,62 +1108,62 @@ module browndeer_rv8u (vccd1,
  wire \rd_3[0] ;
  wire \rd_3[1] ;
  wire \rd_3[2] ;
- wire \registers.r[1][0] ;
- wire \registers.r[1][1] ;
- wire \registers.r[1][2] ;
- wire \registers.r[1][3] ;
- wire \registers.r[1][4] ;
- wire \registers.r[1][5] ;
- wire \registers.r[1][6] ;
- wire \registers.r[1][7] ;
- wire \registers.r[2][0] ;
- wire \registers.r[2][1] ;
- wire \registers.r[2][2] ;
- wire \registers.r[2][3] ;
- wire \registers.r[2][4] ;
- wire \registers.r[2][5] ;
- wire \registers.r[2][6] ;
- wire \registers.r[2][7] ;
- wire \registers.r[3][0] ;
- wire \registers.r[3][1] ;
- wire \registers.r[3][2] ;
- wire \registers.r[3][3] ;
- wire \registers.r[3][4] ;
- wire \registers.r[3][5] ;
- wire \registers.r[3][6] ;
- wire \registers.r[3][7] ;
- wire \registers.r[4][0] ;
- wire \registers.r[4][1] ;
- wire \registers.r[4][2] ;
- wire \registers.r[4][3] ;
- wire \registers.r[4][4] ;
- wire \registers.r[4][5] ;
- wire \registers.r[4][6] ;
- wire \registers.r[4][7] ;
- wire \registers.r[5][0] ;
- wire \registers.r[5][1] ;
- wire \registers.r[5][2] ;
- wire \registers.r[5][3] ;
- wire \registers.r[5][4] ;
- wire \registers.r[5][5] ;
- wire \registers.r[5][6] ;
- wire \registers.r[5][7] ;
- wire \registers.r[6][0] ;
- wire \registers.r[6][1] ;
- wire \registers.r[6][2] ;
- wire \registers.r[6][3] ;
- wire \registers.r[6][4] ;
- wire \registers.r[6][5] ;
- wire \registers.r[6][6] ;
- wire \registers.r[6][7] ;
- wire \registers.r[7][0] ;
- wire \registers.r[7][1] ;
- wire \registers.r[7][2] ;
- wire \registers.r[7][3] ;
- wire \registers.r[7][4] ;
- wire \registers.r[7][5] ;
- wire \registers.r[7][6] ;
- wire \registers.r[7][7] ;
+ wire \registers.r1[0] ;
+ wire \registers.r1[1] ;
+ wire \registers.r1[2] ;
+ wire \registers.r1[3] ;
+ wire \registers.r1[4] ;
+ wire \registers.r1[5] ;
+ wire \registers.r1[6] ;
+ wire \registers.r1[7] ;
+ wire \registers.r2[0] ;
+ wire \registers.r2[1] ;
+ wire \registers.r2[2] ;
+ wire \registers.r2[3] ;
+ wire \registers.r2[4] ;
+ wire \registers.r2[5] ;
+ wire \registers.r2[6] ;
+ wire \registers.r2[7] ;
+ wire \registers.r3[0] ;
+ wire \registers.r3[1] ;
+ wire \registers.r3[2] ;
+ wire \registers.r3[3] ;
+ wire \registers.r3[4] ;
+ wire \registers.r3[5] ;
+ wire \registers.r3[6] ;
+ wire \registers.r3[7] ;
+ wire \registers.r4[0] ;
+ wire \registers.r4[1] ;
+ wire \registers.r4[2] ;
+ wire \registers.r4[3] ;
+ wire \registers.r4[4] ;
+ wire \registers.r4[5] ;
+ wire \registers.r4[6] ;
+ wire \registers.r4[7] ;
+ wire \registers.r5[0] ;
+ wire \registers.r5[1] ;
+ wire \registers.r5[2] ;
+ wire \registers.r5[3] ;
+ wire \registers.r5[4] ;
+ wire \registers.r5[5] ;
+ wire \registers.r5[6] ;
+ wire \registers.r5[7] ;
+ wire \registers.r6[0] ;
+ wire \registers.r6[1] ;
+ wire \registers.r6[2] ;
+ wire \registers.r6[3] ;
+ wire \registers.r6[4] ;
+ wire \registers.r6[5] ;
+ wire \registers.r6[6] ;
+ wire \registers.r6[7] ;
+ wire \registers.r7[0] ;
+ wire \registers.r7[1] ;
+ wire \registers.r7[2] ;
+ wire \registers.r7[3] ;
+ wire \registers.r7[4] ;
+ wire \registers.r7[5] ;
+ wire \registers.r7[6] ;
+ wire \registers.r7[7] ;
  wire \registers.rs1[0] ;
  wire \registers.rs1[1] ;
  wire \registers.rs1[2] ;
@@ -9703,16 +9703,16 @@ module browndeer_rv8u (vccd1,
     .X(_0356_));
  sky130_fd_sc_hd__and3_1 _0979_ (.A(\registers.rs2[1] ),
     .B(\registers.rs2[0] ),
-    .C(\registers.r[3][3] ),
+    .C(\registers.r3[3] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0357_));
- sky130_fd_sc_hd__a221oi_4 _0980_ (.A1(\registers.r[2][3] ),
+ sky130_fd_sc_hd__a221oi_4 _0980_ (.A1(\registers.r2[3] ),
     .A2(_0355_),
     .B1(_0356_),
-    .B2(\registers.r[1][3] ),
+    .B2(\registers.r1[3] ),
     .C1(_0357_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -9884,10 +9884,10 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0382_));
- sky130_fd_sc_hd__a22o_1 _1005_ (.A1(\registers.r[6][3] ),
+ sky130_fd_sc_hd__a22o_1 _1005_ (.A1(\registers.r6[3] ),
     .A2(_0379_),
     .B1(_0382_),
-    .B2(\registers.r[5][3] ),
+    .B2(\registers.r5[3] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
@@ -9937,26 +9937,26 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .Y(_0389_));
- sky130_fd_sc_hd__a22o_1 _1012_ (.A1(\registers.r[1][3] ),
+ sky130_fd_sc_hd__a22o_1 _1012_ (.A1(\registers.r1[3] ),
     .A2(_0388_),
     .B1(_0389_),
-    .B2(\registers.r[2][3] ),
+    .B2(\registers.r2[3] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0390_));
- sky130_fd_sc_hd__a221o_1 _1013_ (.A1(\registers.r[7][3] ),
+ sky130_fd_sc_hd__a221o_1 _1013_ (.A1(\registers.r7[3] ),
     .A2(_0385_),
     .B1(_0387_),
-    .B2(\registers.r[4][3] ),
+    .B2(\registers.r4[3] ),
     .C1(_0390_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0391_));
- sky130_fd_sc_hd__a211oi_4 _1014_ (.A1(\registers.r[3][3] ),
+ sky130_fd_sc_hd__a211oi_4 _1014_ (.A1(\registers.r3[3] ),
     .A2(_0376_),
     .B1(_0383_),
     .C1(_0391_),
@@ -9992,16 +9992,16 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0396_));
- sky130_fd_sc_hd__a22o_1 _1019_ (.A1(\registers.r[4][2] ),
+ sky130_fd_sc_hd__a22o_1 _1019_ (.A1(\registers.r4[2] ),
     .A2(_0386_),
     .B1(_0389_),
-    .B2(\registers.r[2][2] ),
+    .B2(\registers.r2[2] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0397_));
- sky130_fd_sc_hd__a21o_1 _1020_ (.A1(\registers.r[7][2] ),
+ sky130_fd_sc_hd__a21o_1 _1020_ (.A1(\registers.r7[2] ),
     .A2(_0396_),
     .B1(_0397_),
     .VGND(vssd1),
@@ -10009,19 +10009,19 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0398_));
- sky130_fd_sc_hd__a22o_1 _1021_ (.A1(\registers.r[1][2] ),
+ sky130_fd_sc_hd__a22o_1 _1021_ (.A1(\registers.r1[2] ),
     .A2(_0388_),
     .B1(_0381_),
-    .B2(\registers.r[5][2] ),
+    .B2(\registers.r5[2] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0399_));
- sky130_fd_sc_hd__a221o_1 _1022_ (.A1(\registers.r[6][2] ),
+ sky130_fd_sc_hd__a221o_1 _1022_ (.A1(\registers.r6[2] ),
     .A2(_0378_),
     .B1(_0375_),
-    .B2(\registers.r[3][2] ),
+    .B2(\registers.r3[2] ),
     .C1(_0399_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10089,16 +10089,16 @@ module browndeer_rv8u (vccd1,
     .X(_0409_));
  sky130_fd_sc_hd__and3_1 _1032_ (.A(_0408_),
     .B(_0409_),
-    .C(\registers.r[3][2] ),
+    .C(\registers.r3[2] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0410_));
- sky130_fd_sc_hd__a221o_1 _1033_ (.A1(\registers.r[2][2] ),
+ sky130_fd_sc_hd__a221o_1 _1033_ (.A1(\registers.r2[2] ),
     .A2(_0406_),
     .B1(_0407_),
-    .B2(\registers.r[1][2] ),
+    .B2(\registers.r1[2] ),
     .C1(_0410_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10127,19 +10127,19 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .Y(_0414_));
- sky130_fd_sc_hd__a22o_1 _1037_ (.A1(\registers.r[6][1] ),
+ sky130_fd_sc_hd__a22o_1 _1037_ (.A1(\registers.r6[1] ),
     .A2(_0378_),
     .B1(_0381_),
-    .B2(\registers.r[5][1] ),
+    .B2(\registers.r5[1] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0415_));
- sky130_fd_sc_hd__a22o_1 _1038_ (.A1(\registers.r[4][1] ),
+ sky130_fd_sc_hd__a22o_1 _1038_ (.A1(\registers.r4[1] ),
     .A2(_0386_),
     .B1(_0375_),
-    .B2(\registers.r[3][1] ),
+    .B2(\registers.r3[1] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
@@ -10148,16 +10148,16 @@ module browndeer_rv8u (vccd1,
  sky130_fd_sc_hd__and4_1 _1039_ (.A(_0377_),
     .B(_0373_),
     .C(_0374_),
-    .D(\registers.r[7][1] ),
+    .D(\registers.r7[1] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0417_));
- sky130_fd_sc_hd__a221o_1 _1040_ (.A1(\registers.r[1][1] ),
+ sky130_fd_sc_hd__a221o_1 _1040_ (.A1(\registers.r1[1] ),
     .A2(_0388_),
     .B1(_0389_),
-    .B2(\registers.r[2][1] ),
+    .B2(\registers.r2[1] ),
     .C1(_0417_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10226,14 +10226,14 @@ module browndeer_rv8u (vccd1,
     .X(_0426_));
  sky130_fd_sc_hd__and3_1 _1049_ (.A(_0408_),
     .B(_0409_),
-    .C(\registers.r[3][1] ),
+    .C(\registers.r3[1] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0427_));
  sky130_fd_sc_hd__and3b_1 _1050_ (.A_N(_0409_),
-    .B(\registers.r[2][1] ),
+    .B(\registers.r2[1] ),
     .C(_0408_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10242,7 +10242,7 @@ module browndeer_rv8u (vccd1,
     .X(_0428_));
  sky130_fd_sc_hd__and3b_1 _1051_ (.A_N(_0408_),
     .B(_0409_),
-    .C(\registers.r[1][1] ),
+    .C(\registers.r1[1] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
@@ -10288,35 +10288,35 @@ module browndeer_rv8u (vccd1,
  sky130_fd_sc_hd__and4_1 _1057_ (.A(_0372_),
     .B(_0380_),
     .C(_0384_),
-    .D(\registers.r[7][0] ),
+    .D(\registers.r7[0] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0435_));
- sky130_fd_sc_hd__a221o_1 _1058_ (.A1(\registers.r[1][0] ),
+ sky130_fd_sc_hd__a221o_1 _1058_ (.A1(\registers.r1[0] ),
     .A2(_0433_),
     .B1(_0434_),
-    .B2(\registers.r[2][0] ),
+    .B2(\registers.r2[0] ),
     .C1(_0435_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0436_));
- sky130_fd_sc_hd__a22o_1 _1059_ (.A1(\registers.r[6][0] ),
+ sky130_fd_sc_hd__a22o_1 _1059_ (.A1(\registers.r6[0] ),
     .A2(_0378_),
     .B1(_0381_),
-    .B2(\registers.r[5][0] ),
+    .B2(\registers.r5[0] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0437_));
- sky130_fd_sc_hd__a22o_1 _1060_ (.A1(\registers.r[4][0] ),
+ sky130_fd_sc_hd__a22o_1 _1060_ (.A1(\registers.r4[0] ),
     .A2(_0386_),
     .B1(_0375_),
-    .B2(\registers.r[3][0] ),
+    .B2(\registers.r3[0] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
@@ -10373,7 +10373,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0445_));
  sky130_fd_sc_hd__and3b_1 _1068_ (.A_N(_0442_),
-    .B(\registers.r[2][0] ),
+    .B(\registers.r2[0] ),
     .C(_0408_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10382,7 +10382,7 @@ module browndeer_rv8u (vccd1,
     .X(_0446_));
  sky130_fd_sc_hd__and3_1 _1069_ (.A(_0421_),
     .B(_0409_),
-    .C(\registers.r[3][0] ),
+    .C(\registers.r3[0] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
@@ -10390,7 +10390,7 @@ module browndeer_rv8u (vccd1,
     .X(_0447_));
  sky130_fd_sc_hd__and3b_1 _1070_ (.A_N(_0421_),
     .B(_0442_),
-    .C(\registers.r[1][0] ),
+    .C(\registers.r1[0] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
@@ -10482,16 +10482,16 @@ module browndeer_rv8u (vccd1,
     .X(_0459_));
  sky130_fd_sc_hd__and3_1 _1082_ (.A(_0459_),
     .B(_0442_),
-    .C(\registers.r[3][5] ),
+    .C(\registers.r3[5] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0460_));
- sky130_fd_sc_hd__a221o_1 _1083_ (.A1(\registers.r[2][5] ),
+ sky130_fd_sc_hd__a221o_1 _1083_ (.A1(\registers.r2[5] ),
     .A2(_0406_),
     .B1(_0407_),
-    .B2(\registers.r[1][5] ),
+    .B2(\registers.r1[5] ),
     .C1(_0460_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10519,35 +10519,35 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .Y(_0464_));
- sky130_fd_sc_hd__a22o_1 _1087_ (.A1(\registers.r[6][5] ),
+ sky130_fd_sc_hd__a22o_1 _1087_ (.A1(\registers.r6[5] ),
     .A2(_0379_),
     .B1(_0382_),
-    .B2(\registers.r[5][5] ),
+    .B2(\registers.r5[5] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0465_));
- sky130_fd_sc_hd__a22o_1 _1088_ (.A1(\registers.r[1][5] ),
+ sky130_fd_sc_hd__a22o_1 _1088_ (.A1(\registers.r1[5] ),
     .A2(_0433_),
     .B1(_0434_),
-    .B2(\registers.r[2][5] ),
+    .B2(\registers.r2[5] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0466_));
- sky130_fd_sc_hd__a221o_1 _1089_ (.A1(\registers.r[7][5] ),
+ sky130_fd_sc_hd__a221o_1 _1089_ (.A1(\registers.r7[5] ),
     .A2(_0396_),
     .B1(_0387_),
-    .B2(\registers.r[4][5] ),
+    .B2(\registers.r4[5] ),
     .C1(_0466_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0467_));
- sky130_fd_sc_hd__a211oi_4 _1090_ (.A1(\registers.r[3][5] ),
+ sky130_fd_sc_hd__a211oi_4 _1090_ (.A1(\registers.r3[5] ),
     .A2(_0376_),
     .B1(_0465_),
     .C1(_0467_),
@@ -10579,16 +10579,16 @@ module browndeer_rv8u (vccd1,
     .Y(_0471_));
  sky130_fd_sc_hd__and3_1 _1094_ (.A(_0421_),
     .B(_0442_),
-    .C(\registers.r[3][4] ),
+    .C(\registers.r3[4] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0472_));
- sky130_fd_sc_hd__a221o_1 _1095_ (.A1(\registers.r[2][4] ),
+ sky130_fd_sc_hd__a221o_1 _1095_ (.A1(\registers.r2[4] ),
     .A2(_0406_),
     .B1(_0407_),
-    .B2(\registers.r[1][4] ),
+    .B2(\registers.r1[4] ),
     .C1(_0472_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10609,16 +10609,16 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0475_));
- sky130_fd_sc_hd__a22o_1 _1098_ (.A1(\registers.r[1][4] ),
+ sky130_fd_sc_hd__a22o_1 _1098_ (.A1(\registers.r1[4] ),
     .A2(_0433_),
     .B1(_0434_),
-    .B2(\registers.r[2][4] ),
+    .B2(\registers.r2[4] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0476_));
- sky130_fd_sc_hd__a21o_1 _1099_ (.A1(\registers.r[7][4] ),
+ sky130_fd_sc_hd__a21o_1 _1099_ (.A1(\registers.r7[4] ),
     .A2(_0396_),
     .B1(_0476_),
     .VGND(vssd1),
@@ -10626,19 +10626,19 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0477_));
- sky130_fd_sc_hd__a22o_1 _1100_ (.A1(\registers.r[6][4] ),
+ sky130_fd_sc_hd__a22o_1 _1100_ (.A1(\registers.r6[4] ),
     .A2(_0379_),
     .B1(_0382_),
-    .B2(\registers.r[5][4] ),
+    .B2(\registers.r5[4] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0478_));
- sky130_fd_sc_hd__a221o_1 _1101_ (.A1(\registers.r[4][4] ),
+ sky130_fd_sc_hd__a221o_1 _1101_ (.A1(\registers.r4[4] ),
     .A2(_0387_),
     .B1(_0376_),
-    .B2(\registers.r[3][4] ),
+    .B2(\registers.r3[4] ),
     .C1(_0478_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10708,16 +10708,16 @@ module browndeer_rv8u (vccd1,
     .X(_0487_));
  sky130_fd_sc_hd__and3_1 _1110_ (.A(_0459_),
     .B(_0443_),
-    .C(\registers.r[3][6] ),
+    .C(\registers.r3[6] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0488_));
- sky130_fd_sc_hd__a221o_1 _1111_ (.A1(\registers.r[2][6] ),
+ sky130_fd_sc_hd__a221o_1 _1111_ (.A1(\registers.r2[6] ),
     .A2(_0406_),
     .B1(_0407_),
-    .B2(\registers.r[1][6] ),
+    .B2(\registers.r1[6] ),
     .C1(_0488_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10732,35 +10732,35 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .Y(_0490_));
- sky130_fd_sc_hd__a22o_1 _1113_ (.A1(\registers.r[6][6] ),
+ sky130_fd_sc_hd__a22o_1 _1113_ (.A1(\registers.r6[6] ),
     .A2(_0379_),
     .B1(_0382_),
-    .B2(\registers.r[5][6] ),
+    .B2(\registers.r5[6] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0491_));
- sky130_fd_sc_hd__a22o_1 _1114_ (.A1(\registers.r[4][6] ),
+ sky130_fd_sc_hd__a22o_1 _1114_ (.A1(\registers.r4[6] ),
     .A2(_0387_),
     .B1(_0434_),
-    .B2(\registers.r[2][6] ),
+    .B2(\registers.r2[6] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0492_));
- sky130_fd_sc_hd__a221o_1 _1115_ (.A1(\registers.r[1][6] ),
+ sky130_fd_sc_hd__a221o_1 _1115_ (.A1(\registers.r1[6] ),
     .A2(_0433_),
     .B1(_0376_),
-    .B2(\registers.r[3][6] ),
+    .B2(\registers.r3[6] ),
     .C1(_0492_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0493_));
- sky130_fd_sc_hd__a211oi_4 _1116_ (.A1(\registers.r[7][6] ),
+ sky130_fd_sc_hd__a211oi_4 _1116_ (.A1(\registers.r7[6] ),
     .A2(_0396_),
     .B1(_0491_),
     .C1(_0493_),
@@ -10813,16 +10813,16 @@ module browndeer_rv8u (vccd1,
     .Y(_0500_));
  sky130_fd_sc_hd__and3_1 _1123_ (.A(_0459_),
     .B(_0443_),
-    .C(\registers.r[3][7] ),
+    .C(\registers.r3[7] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0501_));
- sky130_fd_sc_hd__a221o_1 _1124_ (.A1(\registers.r[2][7] ),
+ sky130_fd_sc_hd__a221o_1 _1124_ (.A1(\registers.r2[7] ),
     .A2(_0406_),
     .B1(_0407_),
-    .B2(\registers.r[1][7] ),
+    .B2(\registers.r1[7] ),
     .C1(_0501_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -10837,35 +10837,35 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0503_));
- sky130_fd_sc_hd__a22o_1 _1126_ (.A1(\registers.r[6][7] ),
+ sky130_fd_sc_hd__a22o_1 _1126_ (.A1(\registers.r6[7] ),
     .A2(_0379_),
     .B1(_0382_),
-    .B2(\registers.r[5][7] ),
+    .B2(\registers.r5[7] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0504_));
- sky130_fd_sc_hd__a22o_1 _1127_ (.A1(\registers.r[7][7] ),
+ sky130_fd_sc_hd__a22o_1 _1127_ (.A1(\registers.r7[7] ),
     .A2(_0396_),
     .B1(_0433_),
-    .B2(\registers.r[1][7] ),
+    .B2(\registers.r1[7] ),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0505_));
- sky130_fd_sc_hd__a221o_1 _1128_ (.A1(\registers.r[4][7] ),
+ sky130_fd_sc_hd__a221o_1 _1128_ (.A1(\registers.r4[7] ),
     .A2(_0387_),
     .B1(_0376_),
-    .B2(\registers.r[3][7] ),
+    .B2(\registers.r3[7] ),
     .C1(_0505_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0506_));
- sky130_fd_sc_hd__a211oi_4 _1129_ (.A1(\registers.r[2][7] ),
+ sky130_fd_sc_hd__a211oi_4 _1129_ (.A1(\registers.r2[7] ),
     .A2(_0434_),
     .B1(_0504_),
     .C1(_0506_),
@@ -13780,7 +13780,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0883_));
- sky130_fd_sc_hd__mux2_1 _1516_ (.A0(\registers.r[7][0] ),
+ sky130_fd_sc_hd__mux2_1 _1516_ (.A0(\registers.r7[0] ),
     .A1(_0873_),
     .S(_0883_),
     .VGND(vssd1),
@@ -13817,7 +13817,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0887_));
- sky130_fd_sc_hd__mux2_1 _1521_ (.A0(\registers.r[7][1] ),
+ sky130_fd_sc_hd__mux2_1 _1521_ (.A0(\registers.r7[1] ),
     .A1(_0887_),
     .S(_0883_),
     .VGND(vssd1),
@@ -13854,7 +13854,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0891_));
- sky130_fd_sc_hd__mux2_1 _1526_ (.A0(\registers.r[7][2] ),
+ sky130_fd_sc_hd__mux2_1 _1526_ (.A0(\registers.r7[2] ),
     .A1(_0891_),
     .S(_0883_),
     .VGND(vssd1),
@@ -13913,7 +13913,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0898_));
- sky130_fd_sc_hd__mux2_1 _1534_ (.A0(\registers.r[7][3] ),
+ sky130_fd_sc_hd__mux2_1 _1534_ (.A0(\registers.r7[3] ),
     .A1(_0898_),
     .S(_0883_),
     .VGND(vssd1),
@@ -13957,7 +13957,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0903_));
- sky130_fd_sc_hd__mux2_1 _1540_ (.A0(\registers.r[7][4] ),
+ sky130_fd_sc_hd__mux2_1 _1540_ (.A0(\registers.r7[4] ),
     .A1(_0903_),
     .S(_0883_),
     .VGND(vssd1),
@@ -14001,7 +14001,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0908_));
- sky130_fd_sc_hd__mux2_1 _1546_ (.A0(\registers.r[7][5] ),
+ sky130_fd_sc_hd__mux2_1 _1546_ (.A0(\registers.r7[5] ),
     .A1(_0908_),
     .S(_0882_),
     .VGND(vssd1),
@@ -14046,7 +14046,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0913_));
- sky130_fd_sc_hd__mux2_1 _1552_ (.A0(\registers.r[7][6] ),
+ sky130_fd_sc_hd__mux2_1 _1552_ (.A0(\registers.r7[6] ),
     .A1(_0913_),
     .S(_0882_),
     .VGND(vssd1),
@@ -14091,7 +14091,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0918_));
- sky130_fd_sc_hd__mux2_1 _1558_ (.A0(\registers.r[7][7] ),
+ sky130_fd_sc_hd__mux2_1 _1558_ (.A0(\registers.r7[7] ),
     .A1(_0918_),
     .S(_0882_),
     .VGND(vssd1),
@@ -15795,7 +15795,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0272_));
- sky130_fd_sc_hd__mux2_1 _1794_ (.A0(\registers.r[6][0] ),
+ sky130_fd_sc_hd__mux2_1 _1794_ (.A0(\registers.r6[0] ),
     .A1(_0872_),
     .S(_0272_),
     .VGND(vssd1),
@@ -15809,7 +15809,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0098_));
- sky130_fd_sc_hd__mux2_1 _1796_ (.A0(\registers.r[6][1] ),
+ sky130_fd_sc_hd__mux2_1 _1796_ (.A0(\registers.r6[1] ),
     .A1(_0886_),
     .S(_0272_),
     .VGND(vssd1),
@@ -15823,7 +15823,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0099_));
- sky130_fd_sc_hd__mux2_1 _1798_ (.A0(\registers.r[6][2] ),
+ sky130_fd_sc_hd__mux2_1 _1798_ (.A0(\registers.r6[2] ),
     .A1(_0890_),
     .S(_0272_),
     .VGND(vssd1),
@@ -15837,7 +15837,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0100_));
- sky130_fd_sc_hd__mux2_1 _1800_ (.A0(\registers.r[6][3] ),
+ sky130_fd_sc_hd__mux2_1 _1800_ (.A0(\registers.r6[3] ),
     .A1(_0897_),
     .S(_0272_),
     .VGND(vssd1),
@@ -15851,7 +15851,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0101_));
- sky130_fd_sc_hd__mux2_1 _1802_ (.A0(\registers.r[6][4] ),
+ sky130_fd_sc_hd__mux2_1 _1802_ (.A0(\registers.r6[4] ),
     .A1(_0902_),
     .S(_0272_),
     .VGND(vssd1),
@@ -15865,7 +15865,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0102_));
- sky130_fd_sc_hd__mux2_1 _1804_ (.A0(\registers.r[6][5] ),
+ sky130_fd_sc_hd__mux2_1 _1804_ (.A0(\registers.r6[5] ),
     .A1(_0907_),
     .S(_0271_),
     .VGND(vssd1),
@@ -15879,7 +15879,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0103_));
- sky130_fd_sc_hd__mux2_1 _1806_ (.A0(\registers.r[6][6] ),
+ sky130_fd_sc_hd__mux2_1 _1806_ (.A0(\registers.r6[6] ),
     .A1(_0912_),
     .S(_0271_),
     .VGND(vssd1),
@@ -15893,7 +15893,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0104_));
- sky130_fd_sc_hd__mux2_1 _1808_ (.A0(\registers.r[6][7] ),
+ sky130_fd_sc_hd__mux2_1 _1808_ (.A0(\registers.r6[7] ),
     .A1(_0917_),
     .S(_0271_),
     .VGND(vssd1),
@@ -15921,7 +15921,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0282_));
- sky130_fd_sc_hd__mux2_1 _1812_ (.A0(\registers.r[5][0] ),
+ sky130_fd_sc_hd__mux2_1 _1812_ (.A0(\registers.r5[0] ),
     .A1(_0872_),
     .S(_0282_),
     .VGND(vssd1),
@@ -15935,7 +15935,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0106_));
- sky130_fd_sc_hd__mux2_1 _1814_ (.A0(\registers.r[5][1] ),
+ sky130_fd_sc_hd__mux2_1 _1814_ (.A0(\registers.r5[1] ),
     .A1(_0886_),
     .S(_0282_),
     .VGND(vssd1),
@@ -15949,7 +15949,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0107_));
- sky130_fd_sc_hd__mux2_1 _1816_ (.A0(\registers.r[5][2] ),
+ sky130_fd_sc_hd__mux2_1 _1816_ (.A0(\registers.r5[2] ),
     .A1(_0890_),
     .S(_0282_),
     .VGND(vssd1),
@@ -15963,7 +15963,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0108_));
- sky130_fd_sc_hd__mux2_1 _1818_ (.A0(\registers.r[5][3] ),
+ sky130_fd_sc_hd__mux2_1 _1818_ (.A0(\registers.r5[3] ),
     .A1(_0897_),
     .S(_0282_),
     .VGND(vssd1),
@@ -15977,7 +15977,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0109_));
- sky130_fd_sc_hd__mux2_1 _1820_ (.A0(\registers.r[5][4] ),
+ sky130_fd_sc_hd__mux2_1 _1820_ (.A0(\registers.r5[4] ),
     .A1(_0902_),
     .S(_0282_),
     .VGND(vssd1),
@@ -15991,7 +15991,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0110_));
- sky130_fd_sc_hd__mux2_1 _1822_ (.A0(\registers.r[5][5] ),
+ sky130_fd_sc_hd__mux2_1 _1822_ (.A0(\registers.r5[5] ),
     .A1(_0907_),
     .S(_0281_),
     .VGND(vssd1),
@@ -16005,7 +16005,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0111_));
- sky130_fd_sc_hd__mux2_1 _1824_ (.A0(\registers.r[5][6] ),
+ sky130_fd_sc_hd__mux2_1 _1824_ (.A0(\registers.r5[6] ),
     .A1(_0912_),
     .S(_0281_),
     .VGND(vssd1),
@@ -16019,7 +16019,7 @@ module browndeer_rv8u (vccd1,
     .VPB(vccd1),
     .VPWR(vccd1),
     .X(_0112_));
- sky130_fd_sc_hd__mux2_1 _1826_ (.A0(\registers.r[5][7] ),
+ sky130_fd_sc_hd__mux2_1 _1826_ (.A0(\registers.r5[7] ),
     .A1(_0917_),
     .S(_0281_),
     .VGND(vssd1),
@@ -16048,7 +16048,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0292_));
  sky130_fd_sc_hd__mux2_1 _1830_ (.A0(_0873_),
-    .A1(\registers.r[4][0] ),
+    .A1(\registers.r4[0] ),
     .S(_0292_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16062,7 +16062,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0114_));
  sky130_fd_sc_hd__mux2_1 _1832_ (.A0(_0887_),
-    .A1(\registers.r[4][1] ),
+    .A1(\registers.r4[1] ),
     .S(_0292_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16076,7 +16076,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0115_));
  sky130_fd_sc_hd__mux2_1 _1834_ (.A0(_0891_),
-    .A1(\registers.r[4][2] ),
+    .A1(\registers.r4[2] ),
     .S(_0292_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16090,7 +16090,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0116_));
  sky130_fd_sc_hd__mux2_1 _1836_ (.A0(_0898_),
-    .A1(\registers.r[4][3] ),
+    .A1(\registers.r4[3] ),
     .S(_0292_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16104,7 +16104,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0117_));
  sky130_fd_sc_hd__mux2_1 _1838_ (.A0(_0903_),
-    .A1(\registers.r[4][4] ),
+    .A1(\registers.r4[4] ),
     .S(_0292_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16118,7 +16118,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0118_));
  sky130_fd_sc_hd__mux2_1 _1840_ (.A0(_0908_),
-    .A1(\registers.r[4][5] ),
+    .A1(\registers.r4[5] ),
     .S(_0291_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16132,7 +16132,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0119_));
  sky130_fd_sc_hd__mux2_1 _1842_ (.A0(_0913_),
-    .A1(\registers.r[4][6] ),
+    .A1(\registers.r4[6] ),
     .S(_0291_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16146,7 +16146,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0120_));
  sky130_fd_sc_hd__mux2_1 _1844_ (.A0(_0918_),
-    .A1(\registers.r[4][7] ),
+    .A1(\registers.r4[7] ),
     .S(_0291_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16182,7 +16182,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0303_));
  sky130_fd_sc_hd__mux2_1 _1849_ (.A0(_0873_),
-    .A1(\registers.r[3][0] ),
+    .A1(\registers.r3[0] ),
     .S(_0303_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16196,7 +16196,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0122_));
  sky130_fd_sc_hd__mux2_1 _1851_ (.A0(_0887_),
-    .A1(\registers.r[3][1] ),
+    .A1(\registers.r3[1] ),
     .S(_0303_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16210,7 +16210,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0123_));
  sky130_fd_sc_hd__mux2_1 _1853_ (.A0(_0891_),
-    .A1(\registers.r[3][2] ),
+    .A1(\registers.r3[2] ),
     .S(_0303_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16224,7 +16224,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0124_));
  sky130_fd_sc_hd__mux2_1 _1855_ (.A0(_0898_),
-    .A1(\registers.r[3][3] ),
+    .A1(\registers.r3[3] ),
     .S(_0303_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16238,7 +16238,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0125_));
  sky130_fd_sc_hd__mux2_1 _1857_ (.A0(_0903_),
-    .A1(\registers.r[3][4] ),
+    .A1(\registers.r3[4] ),
     .S(_0303_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16252,7 +16252,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0126_));
  sky130_fd_sc_hd__mux2_1 _1859_ (.A0(_0908_),
-    .A1(\registers.r[3][5] ),
+    .A1(\registers.r3[5] ),
     .S(_0302_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16266,7 +16266,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0127_));
  sky130_fd_sc_hd__mux2_1 _1861_ (.A0(_0913_),
-    .A1(\registers.r[3][6] ),
+    .A1(\registers.r3[6] ),
     .S(_0302_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16280,7 +16280,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0128_));
  sky130_fd_sc_hd__mux2_1 _1863_ (.A0(_0918_),
-    .A1(\registers.r[3][7] ),
+    .A1(\registers.r3[7] ),
     .S(_0302_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16308,7 +16308,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0313_));
  sky130_fd_sc_hd__mux2_1 _1867_ (.A0(_0873_),
-    .A1(\registers.r[2][0] ),
+    .A1(\registers.r2[0] ),
     .S(_0313_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16322,7 +16322,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0130_));
  sky130_fd_sc_hd__mux2_1 _1869_ (.A0(_0887_),
-    .A1(\registers.r[2][1] ),
+    .A1(\registers.r2[1] ),
     .S(_0313_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16336,7 +16336,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0131_));
  sky130_fd_sc_hd__mux2_1 _1871_ (.A0(_0891_),
-    .A1(\registers.r[2][2] ),
+    .A1(\registers.r2[2] ),
     .S(_0313_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16350,7 +16350,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0132_));
  sky130_fd_sc_hd__mux2_1 _1873_ (.A0(_0898_),
-    .A1(\registers.r[2][3] ),
+    .A1(\registers.r2[3] ),
     .S(_0313_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16364,7 +16364,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0133_));
  sky130_fd_sc_hd__mux2_1 _1875_ (.A0(_0903_),
-    .A1(\registers.r[2][4] ),
+    .A1(\registers.r2[4] ),
     .S(_0313_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16378,7 +16378,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0134_));
  sky130_fd_sc_hd__mux2_1 _1877_ (.A0(_0908_),
-    .A1(\registers.r[2][5] ),
+    .A1(\registers.r2[5] ),
     .S(_0312_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16392,7 +16392,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0135_));
  sky130_fd_sc_hd__mux2_1 _1879_ (.A0(_0913_),
-    .A1(\registers.r[2][6] ),
+    .A1(\registers.r2[6] ),
     .S(_0312_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16406,7 +16406,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0136_));
  sky130_fd_sc_hd__mux2_1 _1881_ (.A0(_0918_),
-    .A1(\registers.r[2][7] ),
+    .A1(\registers.r2[7] ),
     .S(_0312_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16434,7 +16434,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0323_));
  sky130_fd_sc_hd__mux2_1 _1885_ (.A0(_0873_),
-    .A1(\registers.r[1][0] ),
+    .A1(\registers.r1[0] ),
     .S(_0323_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16448,7 +16448,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0138_));
  sky130_fd_sc_hd__mux2_1 _1887_ (.A0(_0887_),
-    .A1(\registers.r[1][1] ),
+    .A1(\registers.r1[1] ),
     .S(_0323_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16462,7 +16462,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0139_));
  sky130_fd_sc_hd__mux2_1 _1889_ (.A0(_0891_),
-    .A1(\registers.r[1][2] ),
+    .A1(\registers.r1[2] ),
     .S(_0323_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16476,7 +16476,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0140_));
  sky130_fd_sc_hd__mux2_1 _1891_ (.A0(_0898_),
-    .A1(\registers.r[1][3] ),
+    .A1(\registers.r1[3] ),
     .S(_0323_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16490,7 +16490,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0141_));
  sky130_fd_sc_hd__mux2_1 _1893_ (.A0(_0903_),
-    .A1(\registers.r[1][4] ),
+    .A1(\registers.r1[4] ),
     .S(_0323_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16504,7 +16504,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0142_));
  sky130_fd_sc_hd__mux2_1 _1895_ (.A0(_0908_),
-    .A1(\registers.r[1][5] ),
+    .A1(\registers.r1[5] ),
     .S(_0322_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16518,7 +16518,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0143_));
  sky130_fd_sc_hd__mux2_1 _1897_ (.A0(_0913_),
-    .A1(\registers.r[1][6] ),
+    .A1(\registers.r1[6] ),
     .S(_0322_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16532,7 +16532,7 @@ module browndeer_rv8u (vccd1,
     .VPWR(vccd1),
     .X(_0144_));
  sky130_fd_sc_hd__mux2_1 _1899_ (.A0(_0918_),
-    .A1(\registers.r[1][7] ),
+    .A1(\registers.r1[7] ),
     .S(_0322_),
     .VGND(vssd1),
     .VNB(vssd1),
@@ -16714,56 +16714,56 @@ module browndeer_rv8u (vccd1,
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[7][0] ));
+    .Q(\registers.r7[0] ));
  sky130_fd_sc_hd__dfxtp_1 _1925_ (.CLK(net31),
     .D(_0009_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[7][1] ));
+    .Q(\registers.r7[1] ));
  sky130_fd_sc_hd__dfxtp_1 _1926_ (.CLK(net33),
     .D(_0010_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[7][2] ));
+    .Q(\registers.r7[2] ));
  sky130_fd_sc_hd__dfxtp_1 _1927_ (.CLK(net27),
     .D(_0011_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[7][3] ));
+    .Q(\registers.r7[3] ));
  sky130_fd_sc_hd__dfxtp_1 _1928_ (.CLK(net27),
     .D(_0012_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[7][4] ));
+    .Q(\registers.r7[4] ));
  sky130_fd_sc_hd__dfxtp_1 _1929_ (.CLK(net26),
     .D(_0013_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[7][5] ));
+    .Q(\registers.r7[5] ));
  sky130_fd_sc_hd__dfxtp_1 _1930_ (.CLK(net25),
     .D(_0014_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[7][6] ));
+    .Q(\registers.r7[6] ));
  sky130_fd_sc_hd__dfxtp_1 _1931_ (.CLK(net25),
     .D(_0015_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[7][7] ));
+    .Q(\registers.r7[7] ));
  sky130_fd_sc_hd__dfxtp_1 _1932_ (.CLK(net21),
     .D(_0016_),
     .VGND(vssd1),
@@ -17368,336 +17368,336 @@ module browndeer_rv8u (vccd1,
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[6][0] ));
+    .Q(\registers.r6[0] ));
  sky130_fd_sc_hd__dfxtp_1 _2018_ (.CLK(net35),
     .D(_0099_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[6][1] ));
+    .Q(\registers.r6[1] ));
  sky130_fd_sc_hd__dfxtp_1 _2019_ (.CLK(net35),
     .D(_0100_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[6][2] ));
+    .Q(\registers.r6[2] ));
  sky130_fd_sc_hd__dfxtp_1 _2020_ (.CLK(net23),
     .D(_0101_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[6][3] ));
+    .Q(\registers.r6[3] ));
  sky130_fd_sc_hd__dfxtp_1 _2021_ (.CLK(net23),
     .D(_0102_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[6][4] ));
+    .Q(\registers.r6[4] ));
  sky130_fd_sc_hd__dfxtp_1 _2022_ (.CLK(net15),
     .D(_0103_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[6][5] ));
+    .Q(\registers.r6[5] ));
  sky130_fd_sc_hd__dfxtp_1 _2023_ (.CLK(net14),
     .D(_0104_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[6][6] ));
+    .Q(\registers.r6[6] ));
  sky130_fd_sc_hd__dfxtp_1 _2024_ (.CLK(net15),
     .D(_0105_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[6][7] ));
+    .Q(\registers.r6[7] ));
  sky130_fd_sc_hd__dfxtp_1 _2025_ (.CLK(net24),
     .D(_0106_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[5][0] ));
+    .Q(\registers.r5[0] ));
  sky130_fd_sc_hd__dfxtp_1 _2026_ (.CLK(net38),
     .D(_0107_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[5][1] ));
+    .Q(\registers.r5[1] ));
  sky130_fd_sc_hd__dfxtp_1 _2027_ (.CLK(net34),
     .D(_0108_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[5][2] ));
+    .Q(\registers.r5[2] ));
  sky130_fd_sc_hd__dfxtp_1 _2028_ (.CLK(net24),
     .D(_0109_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[5][3] ));
+    .Q(\registers.r5[3] ));
  sky130_fd_sc_hd__dfxtp_1 _2029_ (.CLK(net23),
     .D(_0110_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[5][4] ));
+    .Q(\registers.r5[4] ));
  sky130_fd_sc_hd__dfxtp_1 _2030_ (.CLK(net12),
     .D(_0111_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[5][5] ));
+    .Q(\registers.r5[5] ));
  sky130_fd_sc_hd__dfxtp_1 _2031_ (.CLK(net15),
     .D(_0112_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[5][6] ));
+    .Q(\registers.r5[6] ));
  sky130_fd_sc_hd__dfxtp_1 _2032_ (.CLK(net14),
     .D(_0113_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[5][7] ));
+    .Q(\registers.r5[7] ));
  sky130_fd_sc_hd__dfxtp_1 _2033_ (.CLK(net31),
     .D(_0114_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[4][0] ));
+    .Q(\registers.r4[0] ));
  sky130_fd_sc_hd__dfxtp_1 _2034_ (.CLK(net32),
     .D(_0115_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[4][1] ));
+    .Q(\registers.r4[1] ));
  sky130_fd_sc_hd__dfxtp_1 _2035_ (.CLK(net27),
     .D(_0116_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[4][2] ));
+    .Q(\registers.r4[2] ));
  sky130_fd_sc_hd__dfxtp_1 _2036_ (.CLK(net27),
     .D(_0117_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[4][3] ));
+    .Q(\registers.r4[3] ));
  sky130_fd_sc_hd__dfxtp_1 _2037_ (.CLK(net26),
     .D(_0118_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[4][4] ));
+    .Q(\registers.r4[4] ));
  sky130_fd_sc_hd__dfxtp_1 _2038_ (.CLK(net25),
     .D(_0119_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[4][5] ));
+    .Q(\registers.r4[5] ));
  sky130_fd_sc_hd__dfxtp_1 _2039_ (.CLK(net26),
     .D(_0120_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[4][6] ));
+    .Q(\registers.r4[6] ));
  sky130_fd_sc_hd__dfxtp_1 _2040_ (.CLK(net25),
     .D(_0121_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[4][7] ));
+    .Q(\registers.r4[7] ));
  sky130_fd_sc_hd__dfxtp_1 _2041_ (.CLK(net37),
     .D(_0122_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[3][0] ));
+    .Q(\registers.r3[0] ));
  sky130_fd_sc_hd__dfxtp_1 _2042_ (.CLK(net37),
     .D(_0123_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[3][1] ));
+    .Q(\registers.r3[1] ));
  sky130_fd_sc_hd__dfxtp_1 _2043_ (.CLK(net32),
     .D(_0124_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[3][2] ));
+    .Q(\registers.r3[2] ));
  sky130_fd_sc_hd__dfxtp_1 _2044_ (.CLK(net29),
     .D(_0125_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[3][3] ));
+    .Q(\registers.r3[3] ));
  sky130_fd_sc_hd__dfxtp_1 _2045_ (.CLK(net26),
     .D(_0126_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[3][4] ));
+    .Q(\registers.r3[4] ));
  sky130_fd_sc_hd__dfxtp_1 _2046_ (.CLK(net30),
     .D(_0127_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[3][5] ));
+    .Q(\registers.r3[5] ));
  sky130_fd_sc_hd__dfxtp_1 _2047_ (.CLK(net22),
     .D(_0128_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[3][6] ));
+    .Q(\registers.r3[6] ));
  sky130_fd_sc_hd__dfxtp_1 _2048_ (.CLK(net13),
     .D(_0129_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[3][7] ));
+    .Q(\registers.r3[7] ));
  sky130_fd_sc_hd__dfxtp_1 _2049_ (.CLK(net37),
     .D(_0130_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[2][0] ));
+    .Q(\registers.r2[0] ));
  sky130_fd_sc_hd__dfxtp_1 _2050_ (.CLK(net33),
     .D(_0131_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[2][1] ));
+    .Q(\registers.r2[1] ));
  sky130_fd_sc_hd__dfxtp_1 _2051_ (.CLK(net32),
     .D(_0132_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[2][2] ));
+    .Q(\registers.r2[2] ));
  sky130_fd_sc_hd__dfxtp_1 _2052_ (.CLK(net28),
     .D(_0133_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[2][3] ));
+    .Q(\registers.r2[3] ));
  sky130_fd_sc_hd__dfxtp_1 _2053_ (.CLK(net29),
     .D(_0134_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[2][4] ));
+    .Q(\registers.r2[4] ));
  sky130_fd_sc_hd__dfxtp_1 _2054_ (.CLK(net14),
     .D(_0135_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[2][5] ));
+    .Q(\registers.r2[5] ));
  sky130_fd_sc_hd__dfxtp_1 _2055_ (.CLK(net13),
     .D(_0136_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[2][6] ));
+    .Q(\registers.r2[6] ));
  sky130_fd_sc_hd__dfxtp_1 _2056_ (.CLK(net22),
     .D(_0137_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[2][7] ));
+    .Q(\registers.r2[7] ));
  sky130_fd_sc_hd__dfxtp_1 _2057_ (.CLK(net37),
     .D(_0138_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[1][0] ));
+    .Q(\registers.r1[0] ));
  sky130_fd_sc_hd__dfxtp_1 _2058_ (.CLK(net31),
     .D(_0139_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[1][1] ));
+    .Q(\registers.r1[1] ));
  sky130_fd_sc_hd__dfxtp_1 _2059_ (.CLK(net28),
     .D(_0140_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[1][2] ));
+    .Q(\registers.r1[2] ));
  sky130_fd_sc_hd__dfxtp_1 _2060_ (.CLK(net34),
     .D(_0141_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[1][3] ));
+    .Q(\registers.r1[3] ));
  sky130_fd_sc_hd__dfxtp_1 _2061_ (.CLK(net30),
     .D(_0142_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[1][4] ));
+    .Q(\registers.r1[4] ));
  sky130_fd_sc_hd__dfxtp_1 _2062_ (.CLK(net13),
     .D(_0143_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[1][5] ));
+    .Q(\registers.r1[5] ));
  sky130_fd_sc_hd__dfxtp_1 _2063_ (.CLK(net22),
     .D(_0144_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[1][6] ));
+    .Q(\registers.r1[6] ));
  sky130_fd_sc_hd__dfxtp_1 _2064_ (.CLK(net13),
     .D(_0145_),
     .VGND(vssd1),
     .VNB(vssd1),
     .VPB(vccd1),
     .VPWR(vccd1),
-    .Q(\registers.r[1][7] ));
+    .Q(\registers.r1[7] ));
  sky130_fd_sc_hd__dfrtp_1 _2065_ (.CLK(clknet_1_1__leaf_io_in[0]),
     .D(_0146_),
     .RESET_B(_0006_),

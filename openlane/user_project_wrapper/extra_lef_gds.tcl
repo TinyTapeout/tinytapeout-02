@@ -63,6 +63,7 @@ $script_dir/../../lef/user_module_nickoe.lef \
 $script_dir/../../lef/cchan_fp8_multiplier.lef \
 $script_dir/../../lef/tt2_tholin_diceroll.lef \
 $script_dir/../../lef/user_module_349901899339661908.lef \
+$script_dir/../../lef/user_module_349953952950780498.lef \
 $script_dir/../../lef/user_module_348540666182107731.lef \
 $script_dir/../../lef/user_module_341490465660469844.lef \
 $script_dir/../../lef/user_module_349047610915422802.lef \
@@ -124,7 +125,26 @@ $script_dir/../../lef/rglenn_hex_to_7_seg.lef \
 $script_dir/../../lef/zymason_tinytop.lef \
 $script_dir/../../lef/user_module_341178481588044372.lef \
 $script_dir/../../lef/klei22_ra.lef \
-$script_dir/../../lef/afoote_w5s8_tt02_top.lef"
+$script_dir/../../lef/afoote_w5s8_tt02_top.lef \
+$script_dir/../../lef/user_module_349255310782759507.lef \
+$script_dir/../../lef/gregdavill_clock_top.lef \
+$script_dir/../../lef/gregdavill_serv_top.lef \
+$script_dir/../../lef/user_module_349813388252021330.lef \
+$script_dir/../../lef/user_module_349934460979905106.lef \
+$script_dir/../../lef/user_module_skylersaleh.lef \
+$script_dir/../../lef/user_module_341628725785264722.lef \
+$script_dir/../../lef/recepsaid_euclidean_algorithm.lef \
+$script_dir/../../lef/user_module_349833797657690706.lef \
+$script_dir/../../lef/msaghir_top_level.lef \
+$script_dir/../../lef/user_module_341631644820570706.lef \
+$script_dir/../../lef/option23ser.lef \
+$script_dir/../../lef/option23.lef \
+$script_dir/../../lef/option22.lef \
+$script_dir/../../lef/user_module_341557831870186068.lef \
+$script_dir/../../lef/user_module_341438392303616596.lef \
+$script_dir/../../lef/user_module_349952820323025491.lef \
+$script_dir/../../lef/femto_top.lef \
+$script_dir/../../lef/logisim_demo.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -190,6 +210,7 @@ $script_dir/../../gds/user_module_nickoe.gds \
 $script_dir/../../gds/cchan_fp8_multiplier.gds \
 $script_dir/../../gds/tt2_tholin_diceroll.gds \
 $script_dir/../../gds/user_module_349901899339661908.gds \
+$script_dir/../../gds/user_module_349953952950780498.gds \
 $script_dir/../../gds/user_module_348540666182107731.gds \
 $script_dir/../../gds/user_module_341490465660469844.gds \
 $script_dir/../../gds/user_module_349047610915422802.gds \
@@ -251,4 +272,23 @@ $script_dir/../../gds/rglenn_hex_to_7_seg.gds \
 $script_dir/../../gds/zymason_tinytop.gds \
 $script_dir/../../gds/user_module_341178481588044372.gds \
 $script_dir/../../gds/klei22_ra.gds \
-$script_dir/../../gds/afoote_w5s8_tt02_top.gds"
+$script_dir/../../gds/afoote_w5s8_tt02_top.gds \
+$script_dir/../../gds/user_module_349255310782759507.gds \
+$script_dir/../../gds/gregdavill_clock_top.gds \
+$script_dir/../../gds/gregdavill_serv_top.gds \
+$script_dir/../../gds/user_module_349813388252021330.gds \
+$script_dir/../../gds/user_module_349934460979905106.gds \
+$script_dir/../../gds/user_module_skylersaleh.gds \
+$script_dir/../../gds/user_module_341628725785264722.gds \
+$script_dir/../../gds/recepsaid_euclidean_algorithm.gds \
+$script_dir/../../gds/user_module_349833797657690706.gds \
+$script_dir/../../gds/msaghir_top_level.gds \
+$script_dir/../../gds/user_module_341631644820570706.gds \
+$script_dir/../../gds/option23ser.gds \
+$script_dir/../../gds/option23.gds \
+$script_dir/../../gds/option22.gds \
+$script_dir/../../gds/user_module_341557831870186068.gds \
+$script_dir/../../gds/user_module_341438392303616596.gds \
+$script_dir/../../gds/user_module_349952820323025491.gds \
+$script_dir/../../gds/femto_top.gds \
+$script_dir/../../gds/logisim_demo.gds"

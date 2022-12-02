@@ -255,7 +255,7 @@ class Project():
                 exit(1)
         else:
             logging.info("clone")
-            git.Repo.clone_from(self.git_url, self.local_dir)
+            git.Repo.clone_from(self.git_url, self.local_dir, recursive=True)
 
     def pull(self):
         repo = git.Repo(self.local_dir)

@@ -3,8 +3,8 @@
 module aramsey118_freq_counter #(
     parameter DEPTH = 200
 ) (
-  input [7:0] io_in,
-  output [7:0] io_out
+  input wire [7:0] io_in,
+  output wire [7:0] io_out
 );
 
     // Precalculate the boundaries
