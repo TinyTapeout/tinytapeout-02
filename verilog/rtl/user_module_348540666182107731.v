@@ -21,9 +21,13 @@ module user_module_348540666182107731(
   wire net13;
   wire net14;
   wire net15;
-  wire net16 = 1'b0;
-  wire net17 = 1'b1;
+  wire net16;
+  wire net17 = 1'b0;
   wire net18 = 1'b1;
+  wire net19 = 1'b1;
+  wire net20;
+  wire net21;
+  wire net22;
 
   assign io_out[0] = net9;
   assign io_out[1] = net10;
@@ -32,7 +36,7 @@ module user_module_348540666182107731(
   assign io_out[4] = net13;
   assign io_out[5] = net14;
   assign io_out[6] = net15;
-  assign io_out[7] = net1;
+  assign io_out[7] = net16;
 
   and_cell gate1 (
 
@@ -41,9 +45,7 @@ module user_module_348540666182107731(
 
   );
   xor_cell gate3 (
-    .a (net2),
-    .b (net8),
-    .out (net15)
+
   );
   nand_cell gate4 (
     .a (net6),
@@ -80,5 +82,29 @@ module user_module_348540666182107731(
     .a (net13),
     .b (net7),
     .out (net14)
+  );
+  and_cell gate8 (
+    .a (net2),
+    .b (net8),
+    .out (net20)
+  );
+  or_cell gate9 (
+    .a (net2),
+    .b (net8),
+    .out (net21)
+  );
+  and_cell gate10 (
+    .a (net21),
+    .b (net15),
+    .out (net22)
+  );
+  or_cell gate11 (
+    .a (net20),
+    .b (net22),
+    .out (net15)
+  );
+  not_cell gate12 (
+    .in (net1),
+    .out (net16)
   );
 endmodule

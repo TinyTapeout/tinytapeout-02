@@ -123,7 +123,7 @@ project_urls = [
     "https://github.com/swalense/tt02-graycode_counter",
     "https://github.com/Luthor2k/tt02-baudot",
     "https://github.com/ctag/tt02-submission-ctag",
-#    "https://github.com/AsmaMohsin1507/tt02-channel-coding", illegal in/out
+    "https://github.com/AsmaMohsin1507/tt02-channel-coding",
     "https://github.com/stevenmburns/tt02-scannable-gcd",
     "https://github.com/cy384/tt02-submission-template",
     "https://github.com/rglenn/tt02-rglenn-hex-to-7-seg",

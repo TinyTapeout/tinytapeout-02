@@ -14,8 +14,6 @@ module aidan_McCoy(
     wire clk = io_in[0];
     wire reset = io_in[1];
     wire [5:0] instr = io_in[7:2];
-    // opcode instr[2:0]
-    // reg or imm instr[5:3]
     
     // decode signals
     wire bez;
@@ -28,18 +26,18 @@ module aidan_McCoy(
     wire [1:0] x8Sel;
     
     // Other wires
-    wire [5:0] pc;
-    wire [5:0] pc1;
-    wire [5:0] nextPC;
+    wire [7:0] pc;
+    wire [7:0] pc1;
+    wire [7:0] nextPC;
     wire pcSel;
-    wire [5:0] aluOut;
-    wire [5:0] x8;
-    wire [5:0] newx8;
-    wire [5:0] op1;
-    wire [5:0] op2;
-    wire [5:0] regOut;
-    wire [5:0] imm;
-    wire [5:0] notx8;
+    wire [7:0] aluOut;
+    wire [7:0] x8;
+    wire [7:0] newx8;
+    wire [7:0] op1;
+    wire [7:0] op2;
+    wire [7:0] regOut;
+    wire [7:0] imm;
+    wire [7:0] notx8;
 
     /* Misc. blocks */ 
     
@@ -78,7 +76,7 @@ module aidan_McCoy(
     mux4 x8Mux( .in0(regOut), .in1(imm), .in2(aluOut), .in3(notx8), .sel(x8Sel), .out(newx8));
     
     
-    assign io_out = clk ? {2'b00, pc} : {2'b00, x8};
+    assign io_out = clk ?  pc : x8;
 
     
 endmodule

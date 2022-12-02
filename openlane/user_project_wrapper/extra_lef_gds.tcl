@@ -37,7 +37,7 @@ $script_dir/../../lef/user_module_348255968419643987.lef \
 $script_dir/../../lef/mbikovitsky_top.lef \
 $script_dir/../../lef/user_module_348260124451668562.lef \
 $script_dir/../../lef/rolfmobile99_alu_fsm_top.lef \
-$script_dir/../../lef/jar_illegal_logic.lef \
+$script_dir/../../lef/jar_pi.lef \
 $script_dir/../../lef/user_module_348242239268323922.lef \
 $script_dir/../../lef/thezoq2_yafpga.lef \
 $script_dir/../../lef/moyes0_top_module.lef \
@@ -62,8 +62,7 @@ $script_dir/../../lef/krasin_3_bit_8_channel_pwm_driver.lef \
 $script_dir/../../lef/user_module_nickoe.lef \
 $script_dir/../../lef/cchan_fp8_multiplier.lef \
 $script_dir/../../lef/tt2_tholin_diceroll.lef \
-$script_dir/../../lef/user_module_349405063877231188.lef \
-$script_dir/../../lef/user_module_348961139276644947.lef \
+$script_dir/../../lef/user_module_349901899339661908.lef \
 $script_dir/../../lef/user_module_348540666182107731.lef \
 $script_dir/../../lef/user_module_341490465660469844.lef \
 $script_dir/../../lef/user_module_349047610915422802.lef \
@@ -105,7 +104,27 @@ $script_dir/../../lef/jglim_7seg.lef \
 $script_dir/../../lef/user_module_349790606404354643.lef \
 $script_dir/../../lef/user_module_341279123277087315.lef \
 $script_dir/../../lef/shan1293_2bitalu.lef \
-$script_dir/../../lef/user_module_349729432862196307.lef"
+$script_dir/../../lef/user_module_349729432862196307.lef \
+$script_dir/../../lef/tiny_kinda_pic.lef \
+$script_dir/../../lef/browndeer_rv8u.lef \
+$script_dir/../../lef/user_module_341432030163108435.lef \
+$script_dir/../../lef/prog_melody_gen.lef \
+$script_dir/../../lef/vaishnavachath_rotary_toplevel.lef \
+$script_dir/../../lef/user_module_341614346808328788.lef \
+$script_dir/../../lef/user_module_341631511790879314.lef \
+$script_dir/../../lef/rotary_encoder.lef \
+$script_dir/../../lef/frog.lef \
+$script_dir/../../lef/swalense_top.lef \
+$script_dir/../../lef/luthor2k_top_tto.lef \
+$script_dir/../../lef/user_module_349886696875098706.lef \
+$script_dir/../../lef/Asma_Mohsin_conv_enc_core.lef \
+$script_dir/../../lef/stevenmburns_toplevel.lef \
+$script_dir/../../lef/user_module_341546888233747026.lef \
+$script_dir/../../lef/rglenn_hex_to_7_seg.lef \
+$script_dir/../../lef/zymason_tinytop.lef \
+$script_dir/../../lef/user_module_341178481588044372.lef \
+$script_dir/../../lef/klei22_ra.lef \
+$script_dir/../../lef/afoote_w5s8_tt02_top.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -145,7 +164,7 @@ $script_dir/../../gds/user_module_348255968419643987.gds \
 $script_dir/../../gds/mbikovitsky_top.gds \
 $script_dir/../../gds/user_module_348260124451668562.gds \
 $script_dir/../../gds/rolfmobile99_alu_fsm_top.gds \
-$script_dir/../../gds/jar_illegal_logic.gds \
+$script_dir/../../gds/jar_pi.gds \
 $script_dir/../../gds/user_module_348242239268323922.gds \
 $script_dir/../../gds/thezoq2_yafpga.gds \
 $script_dir/../../gds/moyes0_top_module.gds \
@@ -170,8 +189,7 @@ $script_dir/../../gds/krasin_3_bit_8_channel_pwm_driver.gds \
 $script_dir/../../gds/user_module_nickoe.gds \
 $script_dir/../../gds/cchan_fp8_multiplier.gds \
 $script_dir/../../gds/tt2_tholin_diceroll.gds \
-$script_dir/../../gds/user_module_349405063877231188.gds \
-$script_dir/../../gds/user_module_348961139276644947.gds \
+$script_dir/../../gds/user_module_349901899339661908.gds \
 $script_dir/../../gds/user_module_348540666182107731.gds \
 $script_dir/../../gds/user_module_341490465660469844.gds \
 $script_dir/../../gds/user_module_349047610915422802.gds \
@@ -213,4 +231,24 @@ $script_dir/../../gds/jglim_7seg.gds \
 $script_dir/../../gds/user_module_349790606404354643.gds \
 $script_dir/../../gds/user_module_341279123277087315.gds \
 $script_dir/../../gds/shan1293_2bitalu.gds \
-$script_dir/../../gds/user_module_349729432862196307.gds"
+$script_dir/../../gds/user_module_349729432862196307.gds \
+$script_dir/../../gds/tiny_kinda_pic.gds \
+$script_dir/../../gds/browndeer_rv8u.gds \
+$script_dir/../../gds/user_module_341432030163108435.gds \
+$script_dir/../../gds/prog_melody_gen.gds \
+$script_dir/../../gds/vaishnavachath_rotary_toplevel.gds \
+$script_dir/../../gds/user_module_341614346808328788.gds \
+$script_dir/../../gds/user_module_341631511790879314.gds \
+$script_dir/../../gds/rotary_encoder.gds \
+$script_dir/../../gds/frog.gds \
+$script_dir/../../gds/swalense_top.gds \
+$script_dir/../../gds/luthor2k_top_tto.gds \
+$script_dir/../../gds/user_module_349886696875098706.gds \
+$script_dir/../../gds/Asma_Mohsin_conv_enc_core.gds \
+$script_dir/../../gds/stevenmburns_toplevel.gds \
+$script_dir/../../gds/user_module_341546888233747026.gds \
+$script_dir/../../gds/rglenn_hex_to_7_seg.gds \
+$script_dir/../../gds/zymason_tinytop.gds \
+$script_dir/../../gds/user_module_341178481588044372.gds \
+$script_dir/../../gds/klei22_ra.gds \
+$script_dir/../../gds/afoote_w5s8_tt02_top.gds"
