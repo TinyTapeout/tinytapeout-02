@@ -44,6 +44,13 @@ class Projects():
         if not os.path.exists(project_dir):
             os.makedirs(project_dir)
 
+        # useful for contacting people when I find problems in the repo
+        try:
+            with open('git_url_to_email.json') as fh:
+                self.git_url_to_email_map = json.load(fh)
+        except FileNotFoundError:
+            self.git_url_to_email_map = {}
+
         self.projects = []
         filler = False
         filler_id = 0
@@ -61,7 +68,12 @@ class Projects():
                     filler_id = 0  # first project is always fill
                 filler = True
 
-            project = Project(index, git_url, project_dir, fill=filler, fill_id=filler_id)
+            try:
+                email = self.git_url_to_email_map[git_url]
+            except KeyError:
+                email = 'none'
+
+            project = Project(index, git_url, email, args, project_dir, fill=filler, fill_id=filler_id)
 
             # clone git repos locally & gds artifacts from action build
             if args.clone_all:
@@ -84,6 +96,8 @@ class Projects():
             logging.debug("loading project yaml")
             # fill projects will load from the fill project's directory
             project.load_yaml()
+
+            logging.info(project)
 
             if args.harden:
                 if filler is False:
@@ -119,8 +133,10 @@ class Projects():
 
 class Project():
 
-    def __init__(self, index, git_url, project_dir, fill, fill_id=0):
+    def __init__(self, index, git_url, email, args, project_dir, fill, fill_id=0):
         self.git_url = git_url
+        self.args = args
+        self.email = email
         self.index = index
         self.fill = fill
         self.project_dir = project_dir
@@ -255,7 +271,7 @@ class Project():
                 exit(1)
         else:
             logging.info("clone")
-            git.Repo.clone_from(self.git_url, self.local_dir, recursive=True)
+            git.Repo.clone_from(self.git_url, self.local_dir)
 
     def pull(self):
         repo = git.Repo(self.local_dir)
@@ -294,7 +310,10 @@ class Project():
         os.chdir(cwd)
 
     def __str__(self):
-        return f"[{self.index:03} : {self.git_url}]"
+        if self.args.log_email:
+            return f"[{self.index:03} : {self.email} : {self.git_url}]"
+        else:
+            return f"[{self.index:03} : {self.git_url}]"
 
     def fetch_gds(self):
         install_artifacts(self.git_url, self.local_dir)
@@ -736,6 +755,7 @@ if __name__ == '__main__':
     parser.add_argument('--limit-num-projects', help='only configure for the first n projects', type=int, default=DEFAULT_NUM_PROJECTS)
     parser.add_argument('--test', help='use test projects', action='store_const', const=True)
     parser.add_argument('--debug', help="debug logging", action="store_const", dest="loglevel", const=logging.DEBUG, default=logging.INFO)
+    parser.add_argument('--log-email', help="print persons email in messages", action="store_const", const=True)
     parser.add_argument('--update-image', help="update the image", action="store_const", const=True)
     parser.add_argument('--dump-json', help="dump json of all project data to given file")
     parser.add_argument('--dump-markdown', help="dump markdown of all project data to given file")
