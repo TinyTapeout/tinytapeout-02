@@ -60,7 +60,7 @@ project_urls = [
     "https://github.com/QuantamHD/ethan-evan-random-numbers",
     "https://github.com/QuantamHD/evan-submission",
     "https://github.com/FlyGoat/tt02-play-tune-flygoat",
-#    "https://github.com/jleightcap/clash-silicon-tinytapeout",
+    "https://github.com/jleightcap/clash-silicon-tinytapeout",
     "https://github.com/89Mods/tt2-lcd-namebadge",
     "https://github.com/Christina-Cyr/tt02-submission-UART-CC",
     "https://github.com/krasin/tt02-verilog-3-bit-8-channel-pwm-driver",
@@ -150,4 +150,18 @@ project_urls = [
     "https://github.com/jdrosent/tt02-submission-template",
     "https://github.com/majdiabdulsamad/tt02-Femto",
     "https://github.com/AvalonSemiconductors/tt02-logisim-example",
+    "https://github.com/bitluni/tt02-SecretFile",
+    # anish
+    "https://github.com/cmu-stuco-98154/f22-tt02-qilins",
+    "https://github.com/cmu-stuco-98154/f22-tt02-jxlu",
+    "https://github.com/cmu-stuco-98154/f22-tt02-mgee3",
+    "https://github.com/cmu-stuco-98154/f22-tt02-sophiali",
+    "https://github.com/cmu-stuco-98154/f22-tt02-jrecta",
+    "https://github.com/asinghani/tt02-beepboop",
+    "https://github.com/noahgaertner/tt02-verilog-demo",
+    # student form
+    #"https://github.com/H-Bydn/TinyTapeout2-PWMgenerator", broken
+    # late
+    "https://github.com/prabaldutta/tt02-adi-demo",
+    "https://github.com/TinyTapeout/tt02-tinytapeout-clock-divider-asic",
     ]
