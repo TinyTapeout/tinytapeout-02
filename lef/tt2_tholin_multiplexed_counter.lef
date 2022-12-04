@@ -175,9 +175,9 @@ MACRO tt2_tholin_multiplexed_counter
       LAYER li1 ;
         RECT 5.520 5.355 144.440 163.285 ;
       LAYER met1 ;
-        RECT 5.520 5.200 144.440 163.440 ;
+        RECT 5.520 4.120 144.440 163.440 ;
       LAYER met2 ;
-        RECT 5.610 5.255 127.880 163.385 ;
+        RECT 7.460 4.090 127.880 163.385 ;
       LAYER met3 ;
         RECT 2.000 162.200 127.900 163.365 ;
         RECT 2.400 160.800 127.900 162.200 ;
@@ -213,9 +213,9 @@ MACRO tt2_tholin_multiplexed_counter
         RECT 2.400 7.800 127.900 9.200 ;
         RECT 2.000 5.275 127.900 7.800 ;
       LAYER met4 ;
-        RECT 7.655 70.895 21.690 150.785 ;
-        RECT 24.090 70.895 39.060 150.785 ;
-        RECT 41.460 70.895 53.065 150.785 ;
+        RECT 19.615 13.095 21.690 146.025 ;
+        RECT 24.090 13.095 39.060 146.025 ;
+        RECT 41.460 13.095 53.065 146.025 ;
   END
 END tt2_tholin_multiplexed_counter
 END LIBRARY

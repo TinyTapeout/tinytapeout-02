@@ -175,9 +175,9 @@ MACRO user_module_skylersaleh
       LAYER li1 ;
         RECT 5.520 5.355 144.440 163.285 ;
       LAYER met1 ;
-        RECT 5.520 5.200 144.440 163.440 ;
+        RECT 5.520 4.460 144.440 163.440 ;
       LAYER met2 ;
-        RECT 6.990 5.255 127.880 163.385 ;
+        RECT 6.990 4.430 127.880 163.385 ;
       LAYER met3 ;
         RECT 2.000 162.200 127.900 163.365 ;
         RECT 2.400 160.800 127.900 162.200 ;
@@ -213,7 +213,7 @@ MACRO user_module_skylersaleh
         RECT 2.400 7.800 127.900 9.200 ;
         RECT 2.000 5.275 127.900 7.800 ;
       LAYER met4 ;
-        RECT 37.095 47.095 37.425 72.585 ;
+        RECT 26.975 18.535 28.225 55.585 ;
   END
 END user_module_skylersaleh
 END LIBRARY

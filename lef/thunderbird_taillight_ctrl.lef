@@ -175,9 +175,9 @@ MACRO thunderbird_taillight_ctrl
       LAYER li1 ;
         RECT 5.520 5.355 144.440 163.285 ;
       LAYER met1 ;
-        RECT 5.520 5.200 144.440 163.440 ;
+        RECT 5.130 5.200 144.440 163.440 ;
       LAYER met2 ;
-        RECT 5.620 5.255 127.880 163.385 ;
+        RECT 5.160 5.255 127.880 163.385 ;
       LAYER met3 ;
         RECT 2.000 162.200 127.900 163.365 ;
         RECT 2.400 160.800 127.900 162.200 ;
@@ -213,8 +213,7 @@ MACRO thunderbird_taillight_ctrl
         RECT 2.400 7.800 127.900 9.200 ;
         RECT 2.000 5.275 127.900 7.800 ;
       LAYER met4 ;
-        RECT 10.415 61.375 21.690 109.985 ;
-        RECT 24.090 61.375 36.505 109.985 ;
+        RECT 35.255 10.375 35.585 55.585 ;
   END
 END thunderbird_taillight_ctrl
 END LIBRARY

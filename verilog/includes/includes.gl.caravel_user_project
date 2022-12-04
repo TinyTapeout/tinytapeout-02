@@ -56,6 +56,7 @@
 -v $(USER_PROJECT_VERILOG)/gl/xor_shift32_quantamhd.v
 -v $(USER_PROJECT_VERILOG)/gl/xor_shift32_evango.v
 -v $(USER_PROJECT_VERILOG)/gl/flygoat_tt02_play_tune.v
+-v $(USER_PROJECT_VERILOG)/gl/jleightcap_top.v
 -v $(USER_PROJECT_VERILOG)/gl/tt2_tholin_namebadge.v
 -v $(USER_PROJECT_VERILOG)/gl/user_module_347619669052490324.v
 -v $(USER_PROJECT_VERILOG)/gl/krasin_3_bit_8_channel_pwm_driver.v
@@ -145,3 +146,18 @@
 -v $(USER_PROJECT_VERILOG)/gl/user_module_349952820323025491.v
 -v $(USER_PROJECT_VERILOG)/gl/femto_top.v
 -v $(USER_PROJECT_VERILOG)/gl/logisim_demo.v
+-v $(USER_PROJECT_VERILOG)/gl/secretFile.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_349519263900369490.v
+-v $(USER_PROJECT_VERILOG)/gl/poisonninja_top.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_349803790984020562.v
+-v $(USER_PROJECT_VERILOG)/gl/sophialiCMU_math.v
+-v $(USER_PROJECT_VERILOG)/gl/jonpaolo02_async_fifo.v
+-v $(USER_PROJECT_VERILOG)/gl/asinghani_beepboop.v
+-v $(USER_PROJECT_VERILOG)/gl/noahgaertner_cpu.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_341613097060926036.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_341353928049295956.v
+-v $(USER_PROJECT_VERILOG)/gl/tucanae47_gray_ctr6.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_340805072482992722.v
+-v $(USER_PROJECT_VERILOG)/gl/seven_segment_seconds.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_341678527574180436.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_339688086163161683.v

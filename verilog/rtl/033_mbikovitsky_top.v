@@ -69,12 +69,8 @@ module mbikovitsky_top #(
     wire        memory_we;
     wire [15:0] cpu_memory_out;
 
-    // Address map (in 16-bit words)
-    // ---
-    // 0            -   0x3FFF          - Zeroes
-    // 0x4000       -   0x4000          - io_in (high 8 bits are always 0 on read)
-    // 0x4001       -   0x4001          - io_out (high 8 bits are ignored on write,
-    //                                            0 on read)
+    // All memory reads and writes always go to (cpu_io_out), regardless
+    // of the address output by the CPU.
 
     // I/O output
     reg [15:0] cpu_io_out;

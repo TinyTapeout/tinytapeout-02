@@ -212,6 +212,8 @@ MACRO vaishnavachath_rotary_toplevel
         RECT 2.000 9.200 127.900 18.000 ;
         RECT 2.400 7.800 127.900 9.200 ;
         RECT 2.000 5.275 127.900 7.800 ;
+      LAYER met4 ;
+        RECT 13.175 55.935 13.505 115.425 ;
   END
 END vaishnavachath_rotary_toplevel
 END LIBRARY

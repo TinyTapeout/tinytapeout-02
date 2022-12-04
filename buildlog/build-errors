@@ -1,0 +1,27 @@
+all needed the original golden config:
+set ::env(PL_BASIC_PLACEMENT) {1}
+
+except 106
+
+projects/117/runs/wokwi/errors.log
+projects/156/runs/wokwi/errors.log
+projects/087/runs/wokwi/errors.log
+projects/027/runs/wokwi/errors.log
+projects/062/runs/wokwi/errors.log
+projects/141/runs/wokwi/errors.log
+
+# this needed original config from repo
+projects/106/runs/wokwi/errors.log
+
+projects/140/runs/wokwi/errors.log
+projects/129/runs/wokwi/errors.log
+projects/047/runs/wokwi/errors.log
+projects/153/runs/wokwi/errors.log
+projects/000/runs/wokwi/errors.log
+projects/146/runs/wokwi/errors.log
+projects/126/runs/wokwi/errors.log
+projects/094/runs/wokwi/errors.log
+projects/064/runs/wokwi/errors.log
+projects/081/runs/wokwi/errors.log
+projects/118/runs/wokwi/errors.log
+projects/092/runs/wokwi/errors.log

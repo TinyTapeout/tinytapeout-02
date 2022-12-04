@@ -177,7 +177,7 @@ MACRO recepsaid_euclidean_algorithm
       LAYER met1 ;
         RECT 5.520 5.200 144.440 163.440 ;
       LAYER met2 ;
-        RECT 7.000 5.255 127.880 163.385 ;
+        RECT 6.530 5.255 139.280 163.385 ;
       LAYER met3 ;
         RECT 2.000 162.200 127.900 163.365 ;
         RECT 2.400 160.800 127.900 162.200 ;
@@ -213,9 +213,9 @@ MACRO recepsaid_euclidean_algorithm
         RECT 2.400 7.800 127.900 9.200 ;
         RECT 2.000 5.275 127.900 7.800 ;
       LAYER met4 ;
-        RECT 16.855 8.335 21.690 114.065 ;
-        RECT 24.090 8.335 39.060 114.065 ;
-        RECT 41.460 8.335 50.305 114.065 ;
+        RECT 8.575 9.695 21.690 141.265 ;
+        RECT 24.090 9.695 39.060 141.265 ;
+        RECT 41.460 9.695 47.545 141.265 ;
   END
 END recepsaid_euclidean_algorithm
 END LIBRARY

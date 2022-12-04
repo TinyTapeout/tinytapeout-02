@@ -56,6 +56,7 @@ $script_dir/../../lef/github_com_proppy_tt02_xls_counter.lef \
 $script_dir/../../lef/xor_shift32_quantamhd.lef \
 $script_dir/../../lef/xor_shift32_evango.lef \
 $script_dir/../../lef/flygoat_tt02_play_tune.lef \
+$script_dir/../../lef/jleightcap_top.lef \
 $script_dir/../../lef/tt2_tholin_namebadge.lef \
 $script_dir/../../lef/user_module_347619669052490324.lef \
 $script_dir/../../lef/krasin_3_bit_8_channel_pwm_driver.lef \
@@ -144,7 +145,22 @@ $script_dir/../../lef/user_module_341557831870186068.lef \
 $script_dir/../../lef/user_module_341438392303616596.lef \
 $script_dir/../../lef/user_module_349952820323025491.lef \
 $script_dir/../../lef/femto_top.lef \
-$script_dir/../../lef/logisim_demo.lef"
+$script_dir/../../lef/logisim_demo.lef \
+$script_dir/../../lef/secretFile.lef \
+$script_dir/../../lef/user_module_349519263900369490.lef \
+$script_dir/../../lef/poisonninja_top.lef \
+$script_dir/../../lef/user_module_349803790984020562.lef \
+$script_dir/../../lef/sophialiCMU_math.lef \
+$script_dir/../../lef/jonpaolo02_async_fifo.lef \
+$script_dir/../../lef/asinghani_beepboop.lef \
+$script_dir/../../lef/noahgaertner_cpu.lef \
+$script_dir/../../lef/user_module_341613097060926036.lef \
+$script_dir/../../lef/user_module_341353928049295956.lef \
+$script_dir/../../lef/tucanae47_gray_ctr6.lef \
+$script_dir/../../lef/user_module_340805072482992722.lef \
+$script_dir/../../lef/seven_segment_seconds.lef \
+$script_dir/../../lef/user_module_341678527574180436.lef \
+$script_dir/../../lef/user_module_339688086163161683.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -203,6 +219,7 @@ $script_dir/../../gds/github_com_proppy_tt02_xls_counter.gds \
 $script_dir/../../gds/xor_shift32_quantamhd.gds \
 $script_dir/../../gds/xor_shift32_evango.gds \
 $script_dir/../../gds/flygoat_tt02_play_tune.gds \
+$script_dir/../../gds/jleightcap_top.gds \
 $script_dir/../../gds/tt2_tholin_namebadge.gds \
 $script_dir/../../gds/user_module_347619669052490324.gds \
 $script_dir/../../gds/krasin_3_bit_8_channel_pwm_driver.gds \
@@ -291,4 +308,19 @@ $script_dir/../../gds/user_module_341557831870186068.gds \
 $script_dir/../../gds/user_module_341438392303616596.gds \
 $script_dir/../../gds/user_module_349952820323025491.gds \
 $script_dir/../../gds/femto_top.gds \
-$script_dir/../../gds/logisim_demo.gds"
+$script_dir/../../gds/logisim_demo.gds \
+$script_dir/../../gds/secretFile.gds \
+$script_dir/../../gds/user_module_349519263900369490.gds \
+$script_dir/../../gds/poisonninja_top.gds \
+$script_dir/../../gds/user_module_349803790984020562.gds \
+$script_dir/../../gds/sophialiCMU_math.gds \
+$script_dir/../../gds/jonpaolo02_async_fifo.gds \
+$script_dir/../../gds/asinghani_beepboop.gds \
+$script_dir/../../gds/noahgaertner_cpu.gds \
+$script_dir/../../gds/user_module_341613097060926036.gds \
+$script_dir/../../gds/user_module_341353928049295956.gds \
+$script_dir/../../gds/tucanae47_gray_ctr6.gds \
+$script_dir/../../gds/user_module_340805072482992722.gds \
+$script_dir/../../gds/seven_segment_seconds.gds \
+$script_dir/../../gds/user_module_341678527574180436.gds \
+$script_dir/../../gds/user_module_339688086163161683.gds"

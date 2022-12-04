@@ -213,9 +213,7 @@ MACRO chase_the_beat
         RECT 2.400 7.800 127.900 9.200 ;
         RECT 2.000 5.275 127.900 7.800 ;
       LAYER met4 ;
-        RECT 18.695 9.015 21.690 142.625 ;
-        RECT 24.090 9.015 39.060 142.625 ;
-        RECT 41.460 9.015 46.625 142.625 ;
+        RECT 17.775 40.295 19.945 112.025 ;
   END
 END chase_the_beat
 END LIBRARY
