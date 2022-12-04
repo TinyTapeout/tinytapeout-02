@@ -165,4 +165,10 @@ project_urls = [
     # late
     "https://github.com/prabaldutta/tt02-adi-demo",
     "https://github.com/TinyTapeout/tt02-tinytapeout-clock-divider-asic",
+    'https://github.com/tucanae47/tt02-gray-counter',
+    # mine
+    'https://github.com/TinyTapeout/tt02-test-7seg',
+    'https://github.com/TinyTapeout/tt02-verilog-demo',
+    'https://github.com/mattvenn/tt02-laura',
+    'https://github.com/mattvenn/tt02-m-segments',
     ]
