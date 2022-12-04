@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-import re, glob, json
+import re, glob, json, csv
+import datetime
 import yaml
 import subprocess
 import argparse, logging, shutil, sys, os, collections
@@ -58,6 +59,8 @@ class Projects():
             if args.single >= 0 and args.single != index:
                 continue
             if index < args.start_from:
+                continue
+            if args.end_at != 0 and index > args.end_at:
                 continue
 
             try:
@@ -124,11 +127,22 @@ class Projects():
         all_gds_files = [project.get_macro_gds_filename() for project in self.projects if not project.is_fill()]
         self.assert_unique(all_gds_files)
 
+        if args.metrics:
+            self.build_metrics()
+
     def assert_unique(self, check):
         duplicates = [item for item, count in collections.Counter(check).items() if count > 1]
         if duplicates:
             logging.error("duplicate projects: {}".format(duplicates))
             exit(1)
+
+    def build_metrics(self):
+        total_seconds = 0
+        for project in self.projects:
+            dt = datetime.datetime.strptime(project.metrics['total_runtime'][:-3], '%Hh%Mm%Ss')
+            delt = datetime.timedelta(hours=dt.hour, minutes=dt.minute, seconds=dt.second)
+            total_seconds += delt.total_seconds()
+        logging.info(f"build time for all projects {total_seconds / 3600} hrs")
 
 
 class Project():
@@ -141,6 +155,14 @@ class Project():
         self.fill = fill
         self.project_dir = project_dir
         self.local_dir = self.gen_local_dir(fill_id)
+        self.load_metrics()
+
+    def load_metrics(self):
+        try:
+            with open(self.get_metrics_path()) as fh:
+                self.metrics = next(csv.DictReader(fh))
+        except FileNotFoundError:
+            self.metrics = {}
 
     # if the project is a filler, then use the config from the first fill project
     def gen_local_dir(self, fill_id):
@@ -283,8 +305,8 @@ class Project():
     def harden(self):
         logging.info(f"hardening {self}")
 
-        # copy golden config
-#        shutil.copyfile('golden_config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
+       # copy golden config
+        shutil.copyfile('golden_config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
 
         cwd = os.getcwd()
         os.chdir(self.local_dir)
@@ -332,6 +354,10 @@ class Project():
     # unique id
     def get_index(self):
         return self.index
+
+    # metrics
+    def get_metrics_path(self):
+        return os.path.join(self.local_dir, 'runs/wokwi/reports/metrics.csv')
 
     # name of the gds file
     def get_macro_gds_filename(self):
@@ -750,6 +776,7 @@ if __name__ == '__main__':
     parser.add_argument('--fetch-gds', help="git fetch latest gds", action="store_const", const=True)
     parser.add_argument('--single', help="do action on single project", type=int, default=-1)
     parser.add_argument('--start-from', help="do action on projects after this index", type=int, default=0)
+    parser.add_argument('--end-at', help="do action on projects before this index", type=int, default=0)
     parser.add_argument('--update-caravel', help='configure caravel for build', action='store_const', const=True)
     parser.add_argument('--harden', help="harden project", action="store_const", const=True)
     parser.add_argument('--limit-num-projects', help='only configure for the first n projects', type=int, default=DEFAULT_NUM_PROJECTS)
@@ -760,6 +787,7 @@ if __name__ == '__main__':
     parser.add_argument('--dump-json', help="dump json of all project data to given file")
     parser.add_argument('--dump-markdown', help="dump markdown of all project data to given file")
     parser.add_argument('--dump-pdf', help="create pdf from the markdown")
+    parser.add_argument('--metrics', help="print some project metrics", action="store_const", const=True)
 
     args = parser.parse_args()
 
