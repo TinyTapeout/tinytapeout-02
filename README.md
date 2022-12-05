@@ -182,3 +182,9 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 157 | Matt Venn | 7 segment seconds | HDL | https://github.com/TinyTapeout/tt02-verilog-demo |
 | 158 | Laura | Laura's L | [Wokwi](https://wokwi.com/projects/341678527574180436) | https://github.com/mattvenn/tt02-laura |
 | 159 | Matt Venn | M segments | [Wokwi](https://wokwi.com/projects/339688086163161683) | https://github.com/mattvenn/tt02-m-segments |
+| 160 | Tiny Tapeout 02 (J. Rosenthal) | 7-Seg 'Tiny Tapeout' Display | [Wokwi](https://wokwi.com/projects/347497504164545108) | https://github.com/jdrosent/tt02-7segstringdisplay |
+| 161 | Tiny Tapeout 02 (J. Rosenthal) | Customizable UART Character | [Wokwi](https://wokwi.com/projects/347140425276981843) | https://github.com/jdrosent/tt02-UARTcharacter |
+| 162 | Tiny Tapeout 02 (J. Rosenthal) | Customizable UART String | [Wokwi](https://wokwi.com/projects/347144898258928211) | https://github.com/jdrosent/tt02-UARTstring |
+| 163 | Tiny Tapeout 02 (J. Rosenthal) | Customizable Padlock | [Wokwi](https://wokwi.com/projects/347417602591556180) | https://github.com/jdrosent/tt02-padlock |
+| 164 | Hassan Baydoun <hhb16@mail.aub.edu>, Razan Thebian <rat17@mail.aub.edu>: Electrical and Computer Engineering Department, American University of Beirut  | PWM Generator | HDL | https://github.com/H-Bydn/TinyTapeout2-PWMgenerator |
+| 165 | Steven Bos | MRCS Verilog test | HDL | https://github.com/aiunderstand/tt02-mrcs-verilog-test |

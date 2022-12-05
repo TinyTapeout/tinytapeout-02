@@ -171,4 +171,12 @@ project_urls = [
     'https://github.com/TinyTapeout/tt02-verilog-demo',
     'https://github.com/mattvenn/tt02-laura',
     'https://github.com/mattvenn/tt02-m-segments',
+    # tt demos
+    'https://github.com/jdrosent/tt02-7segstringdisplay',
+    'https://github.com/jdrosent/tt02-UARTcharacter',
+    'https://github.com/jdrosent/tt02-UARTstring',
+    'https://github.com/jdrosent/tt02-padlock',
+    # last minute students
+    'https://github.com/H-Bydn/TinyTapeout2-PWMgenerator',
+    'https://github.com/aiunderstand/tt02-mrcs-verilog-test',
     ]

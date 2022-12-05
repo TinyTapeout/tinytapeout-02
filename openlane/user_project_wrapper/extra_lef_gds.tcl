@@ -160,7 +160,13 @@ $script_dir/../../lef/tucanae47_gray_ctr6.lef \
 $script_dir/../../lef/user_module_340805072482992722.lef \
 $script_dir/../../lef/seven_segment_seconds.lef \
 $script_dir/../../lef/user_module_341678527574180436.lef \
-$script_dir/../../lef/user_module_339688086163161683.lef"
+$script_dir/../../lef/user_module_339688086163161683.lef \
+$script_dir/../../lef/user_module_347497504164545108.lef \
+$script_dir/../../lef/user_module_347140425276981843.lef \
+$script_dir/../../lef/user_module_347144898258928211.lef \
+$script_dir/../../lef/user_module_347417602591556180.lef \
+$script_dir/../../lef/razhas_top_level.lef \
+$script_dir/../../lef/c_tt2_mrcs_test.lef"
 set ::env(EXTRA_GDS_FILES) "\
 $script_dir/../../gds/scan_controller.gds \
 $script_dir/../../gds/scanchain.gds \
@@ -323,4 +329,10 @@ $script_dir/../../gds/tucanae47_gray_ctr6.gds \
 $script_dir/../../gds/user_module_340805072482992722.gds \
 $script_dir/../../gds/seven_segment_seconds.gds \
 $script_dir/../../gds/user_module_341678527574180436.gds \
-$script_dir/../../gds/user_module_339688086163161683.gds"
+$script_dir/../../gds/user_module_339688086163161683.gds \
+$script_dir/../../gds/user_module_347497504164545108.gds \
+$script_dir/../../gds/user_module_347140425276981843.gds \
+$script_dir/../../gds/user_module_347144898258928211.gds \
+$script_dir/../../gds/user_module_347417602591556180.gds \
+$script_dir/../../gds/razhas_top_level.gds \
+$script_dir/../../gds/c_tt2_mrcs_test.gds"

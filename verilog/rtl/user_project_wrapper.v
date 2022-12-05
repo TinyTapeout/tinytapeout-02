@@ -3634,7 +3634,7 @@ module user_project_wrapper #(
         .io_out (sw_159_module_data_out)
     );
 
-    // [160] https://github.com/TinyTapeout/tt02-test-invert
+    // [160] https://github.com/jdrosent/tt02-7segstringdisplay
     wire sw_160_clk_out, sw_160_data_out, sw_160_scan_out, sw_160_latch_out;
     wire [7:0] sw_160_module_data_in;
     wire [7:0] sw_160_module_data_out;
@@ -3651,12 +3651,12 @@ module user_project_wrapper #(
         .module_data_out (sw_160_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_160 (
+    user_module_347497504164545108 user_module_347497504164545108_160 (
         .io_in  (sw_160_module_data_in),
         .io_out (sw_160_module_data_out)
     );
 
-    // [161] https://github.com/TinyTapeout/tt02-test-invert
+    // [161] https://github.com/jdrosent/tt02-UARTcharacter
     wire sw_161_clk_out, sw_161_data_out, sw_161_scan_out, sw_161_latch_out;
     wire [7:0] sw_161_module_data_in;
     wire [7:0] sw_161_module_data_out;
@@ -3673,12 +3673,12 @@ module user_project_wrapper #(
         .module_data_out (sw_161_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_161 (
+    user_module_347140425276981843 user_module_347140425276981843_161 (
         .io_in  (sw_161_module_data_in),
         .io_out (sw_161_module_data_out)
     );
 
-    // [162] https://github.com/TinyTapeout/tt02-test-invert
+    // [162] https://github.com/jdrosent/tt02-UARTstring
     wire sw_162_clk_out, sw_162_data_out, sw_162_scan_out, sw_162_latch_out;
     wire [7:0] sw_162_module_data_in;
     wire [7:0] sw_162_module_data_out;
@@ -3695,12 +3695,12 @@ module user_project_wrapper #(
         .module_data_out (sw_162_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_162 (
+    user_module_347144898258928211 user_module_347144898258928211_162 (
         .io_in  (sw_162_module_data_in),
         .io_out (sw_162_module_data_out)
     );
 
-    // [163] https://github.com/TinyTapeout/tt02-test-invert
+    // [163] https://github.com/jdrosent/tt02-padlock
     wire sw_163_clk_out, sw_163_data_out, sw_163_scan_out, sw_163_latch_out;
     wire [7:0] sw_163_module_data_in;
     wire [7:0] sw_163_module_data_out;
@@ -3717,12 +3717,12 @@ module user_project_wrapper #(
         .module_data_out (sw_163_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_163 (
+    user_module_347417602591556180 user_module_347417602591556180_163 (
         .io_in  (sw_163_module_data_in),
         .io_out (sw_163_module_data_out)
     );
 
-    // [164] https://github.com/TinyTapeout/tt02-test-invert
+    // [164] https://github.com/H-Bydn/TinyTapeout2-PWMgenerator
     wire sw_164_clk_out, sw_164_data_out, sw_164_scan_out, sw_164_latch_out;
     wire [7:0] sw_164_module_data_in;
     wire [7:0] sw_164_module_data_out;
@@ -3739,12 +3739,12 @@ module user_project_wrapper #(
         .module_data_out (sw_164_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_164 (
+    razhas_top_level razhas_top_level_164 (
         .io_in  (sw_164_module_data_in),
         .io_out (sw_164_module_data_out)
     );
 
-    // [165] https://github.com/TinyTapeout/tt02-test-invert
+    // [165] https://github.com/aiunderstand/tt02-mrcs-verilog-test
     wire sw_165_clk_out, sw_165_data_out, sw_165_scan_out, sw_165_latch_out;
     wire [7:0] sw_165_module_data_in;
     wire [7:0] sw_165_module_data_out;
@@ -3761,7 +3761,7 @@ module user_project_wrapper #(
         .module_data_out (sw_165_module_data_out)
     );
 
-    user_module_341535056611770964 user_module_341535056611770964_165 (
+    c_tt2_mrcs_test c_tt2_mrcs_test_165 (
         .io_in  (sw_165_module_data_in),
         .io_out (sw_165_module_data_out)
     );

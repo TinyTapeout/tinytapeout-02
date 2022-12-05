@@ -1,3 +1,28 @@
+# Mon  5 Dec 11:19:40 CET 2022
+
+Add last set of designs
+used projects.bz previously uploaded to gdrive
+would be easy to overwrite all the newly rehardened gds with the ones from the repos
+only rehardened 165 as it had a changed config, the rest were all with the latest config
+
+needed to change io def for 165 as it only had 2 inputs
+
+160 -> 164 fetched gds from github
+
+rebuilt scanchain
+
+rebuilt scan_controller (first checked set to 250 designs)
+
+then setup caravel
+
+./configure --update-caravel
+
+make user_project_wrapper
+
+rebuilt datasheet
+
+# Mon  4 Dec 
+
 all needed the original golden config:
 set ::env(PL_BASIC_PLACEMENT) {1}
 
