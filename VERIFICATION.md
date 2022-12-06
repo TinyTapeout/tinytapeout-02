@@ -6,7 +6,7 @@ We can split the verification effort into functional testing (simulation), stati
 
 See the sections below for details on each type of verification.
 
-# Setup
+## Setup
 
 You will need the GitHub tokens setup as described in [INFO](INFO.md#instructions-to-build-gds).
 
