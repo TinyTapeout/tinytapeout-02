@@ -112,7 +112,8 @@ class Projects():
                     project.copy_files_to_caravel()
 
                 # check all top level module ports are correct
-                project.check_ports()
+                if not project.art_only:
+                    project.check_ports()
                 project.check_num_cells()
 
             self.projects.append(project)
@@ -236,6 +237,7 @@ class Project():
 
         self.wokwi_id = self.yaml['project']['wokwi_id']
         self.yaml['project']['git_url'] = self.git_url
+        self.art_only = self.yaml['project'].get('art_only', False)
 
         if self.is_hdl():
             self.top_module             = self.yaml['project']['top_module']
@@ -611,8 +613,13 @@ class CaravelConfig():
             body += [
                 "",
                 f"{self.projects[idx].get_macro_name()} {self.projects[idx].get_macro_instance()} (",
-                f"    .io_in  ({pfx}_module_data_in),",
-                f"    .io_out ({pfx}_module_data_out)",
+            ]
+            if not self.projects[idx].art_only:
+                body += [
+                    f"    .io_in  ({pfx}_module_data_in),",
+                    f"    .io_out ({pfx}_module_data_out)",
+                ]
+            body += [
                 ");"
 
             ]
