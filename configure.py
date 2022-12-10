@@ -249,6 +249,13 @@ class Project():
         self.macro_instance         = f"{self.top_module}_{self.index :03}"
         self.scanchain_instance     = f"scanchain_{self.index :03}"
 
+    def get_yaml(self):
+        yaml = self.yaml
+        return yaml
+
+    def get_hugo_row(self):
+        return f'| {self.index} | [{self.yaml["documentation"]["title"]}]({self.index :03}) | {self.yaml["documentation"]["author"]}|\n'
+
     # docs stuff for index on README.md
     def get_index_row(self):
         return f'| {self.index} | {self.yaml["documentation"]["author"]} | {self.yaml["documentation"]["title"]} | {self.get_project_type_string()} | {self.git_url} |\n'
@@ -305,7 +312,7 @@ class Project():
     def harden(self):
         logging.info(f"hardening {self}")
 
-       # copy golden config
+        # copy golden config
         shutil.copyfile('golden_config.tcl', os.path.join(self.local_dir, 'src', 'config.tcl'))
 
         cwd = os.getcwd()
@@ -698,7 +705,7 @@ class Docs():
     def dump_json(self):
         designs = []
         for project in self.projects:
-            design = project.get_project_yaml()
+            design = project.get_yaml()
             designs.append(design)
 
         with open(args.dump_json, "w") as fh:
@@ -766,6 +773,57 @@ class Docs():
             if p.returncode != 0:
                 logging.error("pdf command failed")
 
+    def build_hugo_content(self):
+        hugo_root = args.build_hugo_content
+        hugo_images = os.path.join(hugo_root, 'images')
+        shutil.rmtree(hugo_root)
+        os.makedirs(hugo_root)
+        os.makedirs(hugo_images)
+
+        with open("doc_template.md") as fh:
+            doc_template = fh.read()
+
+        # copy image
+        shutil.copyfile('tinytapeout.png', os.path.join(hugo_images, 'tinytapeout.png'))
+
+        # index page
+        with open(os.path.join(hugo_root, '_index.md'), 'w') as fh:
+            fh.write('''---
+title: "Tiny Tapeout 02"
+weight: 20
+description: First guaranteed run
+---
+''')
+            fh.write('# GDS render of whole chip\n')
+            fh.write('![tiny tapeout](images/tinytapeout.png)\n')
+
+            fh.write('# All projects\n')
+            fh.write("| Index | Title | Author |\n")
+            fh.write("| ----- | ----- | -------|\n")
+            for project in self.projects:
+                if not project.is_fill():
+                    fh.write(project.get_hugo_row())
+
+                project_dir = os.path.join(hugo_root, f'{project.get_index() :03}')
+                project_image_dir = os.path.join(project_dir, 'images')
+                os.makedirs(project_dir)
+                os.makedirs(project_image_dir)
+                yaml_data = project.get_project_doc_yaml()
+                yaml_data['index'] = project.index
+                yaml_data['picture_link'] = ''
+                if yaml_data['picture']:
+                    picture_name = yaml_data['picture']
+                    picture_filename = os.path.join(project.local_dir, picture_name)
+                    picture_basename = os.path.basename(picture_filename)
+                    try:
+                        shutil.copyfile(picture_filename, os.path.join(project_image_dir, picture_basename))
+                        yaml_data['picture_link'] = f'![picture](images/{picture_basename})'
+                    except FileNotFoundError:
+                        yaml_data['picture_link'] = 'Image path is broken'
+                doc = doc_template.format(**yaml_data)
+                with open(os.path.join(project_dir, '_index.md'), 'w') as pfh:
+                    pfh.write(doc)
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="TinyTapeout configuration and docs")
@@ -787,6 +845,7 @@ if __name__ == '__main__':
     parser.add_argument('--dump-json', help="dump json of all project data to given file")
     parser.add_argument('--dump-markdown', help="dump markdown of all project data to given file")
     parser.add_argument('--dump-pdf', help="create pdf from the markdown")
+    parser.add_argument('--build-hugo-content', help="directory to where to build hugo content")
     parser.add_argument('--metrics', help="print some project metrics", action="store_const", const=True)
 
     args = parser.parse_args()
@@ -826,3 +885,6 @@ if __name__ == '__main__':
 
     if args.dump_markdown:
         docs.dump_markdown()
+
+    if args.build_hugo_content:
+        docs.build_hugo_content()
