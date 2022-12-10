@@ -4,7 +4,7 @@ import datetime
 import yaml
 import subprocess
 import argparse, logging, shutil, sys, os, collections
-from git_utils import install_artifacts
+from git_utils import install_artifacts, get_latest_action_url
 import git
 from project_urls import filler_project_url, test_project_urls, project_urls
 
@@ -346,6 +346,9 @@ class Project():
 
     def fetch_gds(self):
         install_artifacts(self.git_url, self.local_dir)
+
+    def get_latest_action_url(self):
+        return get_latest_action_url(self.git_url, self.local_dir)
 
     def get_macro_name(self):
         return self.top_module
@@ -780,13 +783,14 @@ class Docs():
         os.makedirs(hugo_root)
         os.makedirs(hugo_images)
 
-        with open("doc_template.md") as fh:
+        with open("hugo_template.md") as fh:
             doc_template = fh.read()
 
         # copy image
         shutil.copyfile('tinytapeout.png', os.path.join(hugo_images, 'tinytapeout.png'))
 
         # index page
+        logging.info("building pages - can take a minute as fetching latest GDS action URLs for all projects")
         with open(os.path.join(hugo_root, '_index.md'), 'w') as fh:
             fh.write('''---
 title: "Tiny Tapeout 02"
@@ -801,6 +805,7 @@ description: First guaranteed run
             fh.write("| Index | Title | Author |\n")
             fh.write("| ----- | ----- | -------|\n")
             for project in self.projects:
+                logging.info(project)
                 if not project.is_fill():
                     fh.write(project.get_hugo_row())
 
@@ -810,6 +815,7 @@ description: First guaranteed run
                 os.makedirs(project_image_dir)
                 yaml_data = project.get_project_doc_yaml()
                 yaml_data['index'] = project.index
+                yaml_data['git_action'] = project.get_latest_action_url()
                 yaml_data['picture_link'] = ''
                 if yaml_data['picture']:
                     picture_name = yaml_data['picture']
