@@ -53,6 +53,13 @@ def get_most_recent_action_url(commits, artifacts):
             return release_sha_to_download_url[commit['sha']]
 
 
+def get_most_recent_action_page(commits, runs):
+    release_sha_to_page_url = {run['head_sha']: run['html_url'] for run in runs if run['name'] == 'gds'}
+    for commit in commits:
+        if commit['sha'] in release_sha_to_page_url:
+            return release_sha_to_page_url[commit['sha']]
+
+
 def split_git_url(url):
     res = urlparse(url)
     try:
@@ -125,3 +132,34 @@ def install_artifacts(url, directory):
     if attempts == max_attempts:
         logging.error("gave up downloading zipfile")
         exit(1)
+
+
+def get_latest_action_url(url, directory):
+    logging.debug(url)
+    user_name, repo = split_git_url(url)
+
+    # authenticate for rate limiting
+    auth_string = os.environ['GH_USERNAME'] + ':' + os.environ['GH_TOKEN']
+    encoded = base64.b64encode(auth_string.encode('ascii'))
+    headers = {
+        "authorization" : 'Basic ' + encoded.decode('ascii'),
+        "Accept"        : "application/vnd.github+json",
+        }
+
+    # first fetch the git commit history
+    api_url = f'https://api.github.com/repos/{user_name}/{repo}/commits'
+    r = requests.get(api_url, headers=headers)
+    requests_remaining = int(r.headers['X-RateLimit-Remaining'])
+    if requests_remaining == 0:
+        logging.error("no API requests remaining")
+        exit(1)
+
+    commits = r.json()
+
+    # get runs
+    api_url = f'https://api.github.com/repos/{user_name}/{repo}/actions/runs'
+    r = requests.get(api_url, headers=headers, params={'per_page': 100})
+    runs = r.json()
+    page_url = get_most_recent_action_page(commits, runs['workflow_runs'])
+
+    return page_url

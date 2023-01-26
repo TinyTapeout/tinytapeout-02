@@ -18,13 +18,21 @@ create_clock [get_ports scan_clk_in] -name clk_scan_in -period [expr {$::env(CLO
 set_min_delay 0.25                              -from [get_clocks clk_scan_in] -to [get_clocks $::env(CLOCK_PORT)]
 set_max_delay [expr {$::env(CLOCK_PERIOD) / 2}] -from [get_clocks clk_scan_in] -to [get_clocks $::env(CLOCK_PORT)]
 
-# IO delays
+# Input delays
+# check is that the input stable windows, modified by the data and clock delays from the inputs up to the FFs, 
+# will satisy the stable window required by the FFs (setup/hold).
+# It will also use that as "guide" to actually make it work -
+# shifting the input window forward/backward by adding delays on the clock/data lines
+
 # Scan chain input  0.5 ns setup time, 0.5 ns hold time
 set_input_delay  -min  0.5 -clock [get_clocks clk_scan_in]  [get_ports {scan_data_in}]
 set_input_delay  -max  0.5 -clock [get_clocks clk_scan_in]  [get_ports {scan_data_in}]
 
+# Output delays
 # Scan chain output 1.5 ns setup time, 1.5 ns hold time
 # scan_data_out cannot change in this window around clk_scan_out rising edge
+# -min is negative because the values for set_output_delay are both defined as "times before the edge"
+# so for some time after the edge, need a negative value
 set_output_delay -min -1.5 -clock [get_clocks clk_scan_out] [get_ports {scan_data_out}]
 set_output_delay -max  1.5 -clock [get_clocks clk_scan_out] [get_ports {scan_data_out}]
 
