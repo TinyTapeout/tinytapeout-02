@@ -6,6 +6,12 @@ import os
 import zipfile, io
 
 
+def check_status(r):
+    if r.status_code == 401:
+        logging.error("unauthorised, check INFO.md for information about GitHub API keys")
+        exit(1)
+
+
 def fetch_file_from_git(git_url, path):
     # get the basics
     user_name, repo = split_git_url(git_url)
@@ -23,6 +29,7 @@ def fetch_file_from_git(git_url, path):
 
     logging.debug(api_url)
     r = requests.get(api_url, headers=headers)
+    check_status(r)
     requests_remaining = int(r.headers['X-RateLimit-Remaining'])
     if requests_remaining == 0:
         logging.error("no API requests remaining")
@@ -87,6 +94,7 @@ def install_artifacts(url, directory):
     # first fetch the git commit history
     api_url = f'https://api.github.com/repos/{user_name}/{repo}/commits'
     r = requests.get(api_url, headers=headers)
+    check_status(r)
     requests_remaining = int(r.headers['X-RateLimit-Remaining'])
     if requests_remaining == 0:
         logging.error("no API requests remaining")
@@ -97,6 +105,7 @@ def install_artifacts(url, directory):
     # now get the artifacts
     api_url = f'https://api.github.com/repos/{user_name}/{repo}/actions/artifacts'
     r = requests.get(api_url, headers=headers, params={'per_page': 100})
+    check_status(r)
     data = r.json()
 
     # check there are some artifacts
@@ -122,6 +131,7 @@ def install_artifacts(url, directory):
         try:
             logging.debug(f"download url {download_url} attempt {attempts}")
             r = requests.get(download_url, headers=headers)
+            check_status(r)
             z = zipfile.ZipFile(io.BytesIO(r.content))
             z.extractall(directory)
             break
@@ -149,6 +159,7 @@ def get_latest_action_url(url, directory):
     # first fetch the git commit history
     api_url = f'https://api.github.com/repos/{user_name}/{repo}/commits'
     r = requests.get(api_url, headers=headers)
+    check_status(r)
     requests_remaining = int(r.headers['X-RateLimit-Remaining'])
     if requests_remaining == 0:
         logging.error("no API requests remaining")
@@ -159,6 +170,7 @@ def get_latest_action_url(url, directory):
     # get runs
     api_url = f'https://api.github.com/repos/{user_name}/{repo}/actions/runs'
     r = requests.get(api_url, headers=headers, params={'per_page': 100})
+    check_status(r)
     runs = r.json()
     page_url = get_most_recent_action_page(commits, runs['workflow_runs'])
 
