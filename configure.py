@@ -138,11 +138,54 @@ class Projects():
 
     def build_metrics(self):
         total_seconds = 0
+        total_wire_length = 0
+        total_wires_count = 0
+        total_physical_cells = 0
+        max_cells = 0
+        min_cells = 1000
+        max_util = 0
+        min_util = 100
+        languages = {}
+
         for project in self.projects:
             dt = datetime.datetime.strptime(project.metrics['total_runtime'][:-3], '%Hh%Mm%Ss')
             delt = datetime.timedelta(hours=dt.hour, minutes=dt.minute, seconds=dt.second)
             total_seconds += delt.total_seconds()
+
+            total_wire_length += int(project.metrics['wire_length'])
+            total_wires_count += int(project.metrics['wires_count'])
+            util = float(project.metrics['OpenDP_Util'])
+            num_cells = project.check_num_cells()
+            total_physical_cells += num_cells
+
+            yaml_data = project.get_project_doc_yaml()
+            lang = yaml_data['language'].lower()
+            if lang in languages:
+                languages[lang] += 1
+            else:
+                languages[lang] = 1
+
+            if num_cells > max_cells:
+                max_cells = num_cells
+                max_cell_project = project
+            if num_cells < min_cells:
+                min_cells = num_cells
+
+            if util > max_util:
+                max_util = util
+                max_util_project = project
+            if util < min_util:
+                min_util = util
+
+
         logging.info(f"build time for all projects {total_seconds / 3600} hrs")
+        logging.info(f"total wire length {total_wire_length} um")
+        logging.info(f"total cells {total_physical_cells}")
+        logging.info(f"max cells {max_cells} for project {max_cell_project}")
+        logging.info(f"min cells {min_cells}")
+        logging.info(f"max util {max_util} for project {max_util_project}")
+        logging.info(f"min util {min_util}")
+        logging.info(f"languages {languages}")
 
 
 class Project():
@@ -215,6 +258,7 @@ class Project():
 
         except IndexError:
             logging.warning(f"couldn't open yosys cell report for cell checking {self}")
+        return num_cells
 
     def is_fill(self):
         return self.fill
@@ -329,7 +373,7 @@ class Project():
             exit(1)
 
         # requires PDK_ROOT, OPENLANE_ROOT & OPENLANE_IMAGE_NAME to be set in local environment
-        harden_cmd = 'docker run --rm -v $OPENLANE_ROOT:/openlane -v $PDK_ROOT:$PDK_ROOT -v $(pwd):/work -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $OPENLANE_IMAGE_NAME /bin/bash -c "./flow.tcl -overwrite -design /work/src -run_path /work/runs -tag wokwi"'
+        harden_cmd = 'docker run --rm -v $OPENLANE_ROOT:/openlane -v $PDK_ROOT:$PDK_ROOT -v $(pwd):/work -e PDK=$PDK -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $OPENLANE_IMAGE_NAME /bin/bash -c "./flow.tcl -overwrite -design /work/src -run_path /work/runs -tag wokwi"'
         env = os.environ.copy()
         p = subprocess.run(harden_cmd, shell=True, env=env)
         if p.returncode != 0:
@@ -786,21 +830,16 @@ class Docs():
         with open("hugo_template.md") as fh:
             doc_template = fh.read()
 
+        with open("hugo_index_template.md") as fh:
+            index_template = fh.read()
+
         # copy image
         shutil.copyfile('tinytapeout.png', os.path.join(hugo_images, 'tinytapeout.png'))
 
         # index page
         logging.info("building pages - can take a minute as fetching latest GDS action URLs for all projects")
         with open(os.path.join(hugo_root, '_index.md'), 'w') as fh:
-            fh.write('''---
-title: "Tiny Tapeout 02"
-weight: 20
-description: First guaranteed run
----
-''')
-            fh.write('# GDS render of whole chip\n')
-            fh.write('![tiny tapeout](images/tinytapeout.png)\n')
-
+            fh.write(index_template)
             fh.write('# All projects\n')
             fh.write("| Index | Title | Author |\n")
             fh.write("| ----- | ----- | -------|\n")
