@@ -148,34 +148,35 @@ class Projects():
         languages = {}
 
         for project in self.projects:
-            dt = datetime.datetime.strptime(project.metrics['total_runtime'][:-3], '%Hh%Mm%Ss')
-            delt = datetime.timedelta(hours=dt.hour, minutes=dt.minute, seconds=dt.second)
-            total_seconds += delt.total_seconds()
+            if not project.is_fill():
+                dt = datetime.datetime.strptime(project.metrics['total_runtime'][:-3], '%Hh%Mm%Ss')
+                delt = datetime.timedelta(hours=dt.hour, minutes=dt.minute, seconds=dt.second)
+                total_seconds += delt.total_seconds()
 
-            total_wire_length += int(project.metrics['wire_length'])
-            total_wires_count += int(project.metrics['wires_count'])
-            util = float(project.metrics['OpenDP_Util'])
-            num_cells = project.check_num_cells()
-            total_physical_cells += num_cells
+                total_wire_length += int(project.metrics['wire_length'])
+                total_wires_count += int(project.metrics['wires_count'])
+                util = float(project.metrics['OpenDP_Util'])
+                num_cells = project.check_num_cells()
+                total_physical_cells += num_cells
 
-            yaml_data = project.get_project_doc_yaml()
-            lang = yaml_data['language'].lower()
-            if lang in languages:
-                languages[lang] += 1
-            else:
-                languages[lang] = 1
+                yaml_data = project.get_project_doc_yaml()
+                lang = yaml_data['language'].lower()
+                if lang in languages:
+                    languages[lang] += 1
+                else:
+                    languages[lang] = 1
 
-            if num_cells > max_cells:
-                max_cells = num_cells
-                max_cell_project = project
-            if num_cells < min_cells:
-                min_cells = num_cells
+                if num_cells > max_cells:
+                    max_cells = num_cells
+                    max_cell_project = project
+                if num_cells < min_cells:
+                    min_cells = num_cells
 
-            if util > max_util:
-                max_util = util
-                max_util_project = project
-            if util < min_util:
-                min_util = util
+                if util > max_util:
+                    max_util = util
+                    max_util_project = project
+                if util < min_util:
+                    min_util = util
 
 
         logging.info(f"build time for all projects {total_seconds / 3600} hrs")
@@ -848,26 +849,27 @@ class Docs():
                 if not project.is_fill():
                     fh.write(project.get_hugo_row())
 
-                project_dir = os.path.join(hugo_root, f'{project.get_index() :03}')
-                project_image_dir = os.path.join(project_dir, 'images')
-                os.makedirs(project_dir)
-                os.makedirs(project_image_dir)
-                yaml_data = project.get_project_doc_yaml()
-                yaml_data['index'] = project.index
-                yaml_data['git_action'] = project.get_latest_action_url()
-                yaml_data['picture_link'] = ''
-                if yaml_data['picture']:
-                    picture_name = yaml_data['picture']
-                    picture_filename = os.path.join(project.local_dir, picture_name)
-                    picture_basename = os.path.basename(picture_filename)
-                    try:
-                        shutil.copyfile(picture_filename, os.path.join(project_image_dir, picture_basename))
-                        yaml_data['picture_link'] = f'![picture](images/{picture_basename})'
-                    except FileNotFoundError:
-                        yaml_data['picture_link'] = 'Image path is broken'
-                doc = doc_template.format(**yaml_data)
-                with open(os.path.join(project_dir, '_index.md'), 'w') as pfh:
-                    pfh.write(doc)
+                    project_dir = os.path.join(hugo_root, f'{project.get_index() :03}')
+                    project_image_dir = os.path.join(project_dir, 'images')
+                    os.makedirs(project_dir)
+                    os.makedirs(project_image_dir)
+                    yaml_data = project.get_project_doc_yaml()
+                    yaml_data['index'] = project.index
+                    yaml_data['weight'] = project.index + 1
+                    yaml_data['git_action'] = project.get_latest_action_url()
+                    yaml_data['picture_link'] = ''
+                    if yaml_data['picture']:
+                        picture_name = yaml_data['picture']
+                        picture_filename = os.path.join(project.local_dir, picture_name)
+                        picture_basename = os.path.basename(picture_filename)
+                        try:
+                            shutil.copyfile(picture_filename, os.path.join(project_image_dir, picture_basename))
+                            yaml_data['picture_link'] = f'![picture](images/{picture_basename})'
+                        except FileNotFoundError:
+                            yaml_data['picture_link'] = 'Image path is broken'
+                    doc = doc_template.format(**yaml_data)
+                    with open(os.path.join(project_dir, '_index.md'), 'w') as pfh:
+                        pfh.write(doc)
 
 
 if __name__ == '__main__':
