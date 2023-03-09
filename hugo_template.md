@@ -1,3 +1,8 @@
+---
+title: "{index} {title}"
+weight: {weight}
+---
+
 ## {index} : {title}
 
 * Author: {author}

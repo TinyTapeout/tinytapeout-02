@@ -24,10 +24,11 @@ description: Overview
 
 * 165 projects submitted. Each project is 150 x 170um
 * Youngest submitter: [4 years old](https://tinytapeout.com/runs/tt02/031)
-* 65 used Wokwi graphical editor, 100 HDL [, XXX HDL  specifics]
-* XXX standard cells used across all projects.
-* Most cells used in a design was XXX, the least was XXX.
-* Total wire length XXX mm.
+* 64 used Wokwi graphical editor, 82 Verilog, 5 Amaranth, 1 Chisel
+* 39935 standard cells used across all projects.
+* Most cells used in a design was 1105, the least was 8.
+* Max utilisation was 52%
+* Total wire length 2024 mm.
 
 ## Whole die render
 
