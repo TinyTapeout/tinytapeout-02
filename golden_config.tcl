@@ -34,7 +34,7 @@ set ::env(FP_CORE_UTIL) 55
 
 # fails for small jobs but much faster for bigger ones
 set ::env(PL_BASIC_PLACEMENT) {0}
-set ::env(GLB_RT_ALLOW_CONGESTION) "1"
+set ::env(GRT_ALLOW_CONGESTION) "1"
 
 set ::env(FP_IO_HLENGTH) 2
 set ::env(FP_IO_VLENGTH) 2
