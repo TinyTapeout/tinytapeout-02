@@ -4,8 +4,8 @@ docker run --rm \
     -v $OPENLANE_ROOT:$OPENLANE_ROOT \
     -v $PDK_ROOT:$PDK_ROOT \
     --user 1000:1000 \
-    -ti efabless/openlane:a35b64aa200c91e9eb7dde56db787d6b4c0ea12a-amd64 \
-    cd /home/matt/work/asic-workshop/shuttle7/tinytapeout-02 && sh verilog/gl/sta.sh
+    efabless/openlane:a35b64aa200c91e9eb7dde56db787d6b4c0ea12a-amd64 \
+    cd $(pwd) && sh verilog/gl/sta.sh
 
     #sh verilog/gl/sta.sh
     #-v /home/matt/work/asic-workshop/shuttle7/openlane/designs:/openlane/install \
