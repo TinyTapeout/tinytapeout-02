@@ -2,13 +2,11 @@ name: sta
 # either manually started, or on a schedule
 on: [ push, workflow_dispatch, pull_request ]
 jobs:
-  tinytapeout:
+  sta:
     env:
         OPENLANE_ROOT:  /home/runner/openlane
         PDK_ROOT:       /home/runner/pdk
-        PDK:            sky130B
-        GH_TOKEN:       ${{ secrets.GH_TOKEN }}
-        GH_USERNAME:    ${{ secrets.GH_USERNAME }}
+        PDK:            sky130A
     # ubuntu
     runs-on: ubuntu-latest
     steps:
@@ -17,9 +15,8 @@ jobs:
       uses: actions/checkout@v3
 
     # build pdk - have to move this back above to get caravel makefile
-    - name: pdk & openlane & precheck
-      run: |
-        make setup
+    - name: pdk & openlane
+      run: make setup
 
     # need python
     - name: setup python
