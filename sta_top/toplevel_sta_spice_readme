@@ -1,0 +1,91 @@
+Notes on running toplevel STA and Spice analysis for TinyTapeout-NN
+J Birch 22 March 2023
+
+Introduction
+
+TinyTapeout02 is a design made using the OpenLane flow that consists of two three major components:
+1) up to 250 user designs with a common interface, each of which has been composed using the OpenLane
+synthesis, P&R flows
+2) a scanchain block that is instanced for each user design to provide input data and to sink output data
+3) a scan chain controller
+
+The OpenLane flow allows for timing analysis of each of these individual blocks but does not provide for
+analysis of the assembly of them, which leaves potential holes in timing etc that could cause failures.
+
+This work allows a single design to be assembled out of the sub-blocks and this can then be submitted to
+a standalone STA for analysis.
+
+In addition, an example critical path (for the clock that is passed along the scanchain) is created using
+a pythin script so that it can be run through SPICE.
+
+
+Prerequisites
+To do this, the following files need to be available:
+1) a gate level verilog netlist of the top level design
+2) a gate level verilog netlist for each sub-block
+3) a SPEF format parasitics file for the top level wiring
+4) a SPEF format parasitics file for each sub-block
+5) the relevant SkyWorks libraries for STA analysis
+6) OpenSTA 2.4.0 (or later) needs to be on the PATH
+7) python3.9 or later
+8) verilog parser (pip3 install verilog-parser)
+9) a constraints file
+
+Assumptions:
+all of the verilog files are in a single directory
+all of the SPEF files are in a single directory
+
+NB the verilog parser has two bugs: it does not recognise 'inout' and it does not cope
+with escaped names (starting with a '\'). Locally this has been fixed but to use the
+off-the-shelf parser we preprocess the file to change inout to input and remove the escapes and
+substitute the [nnn] with _nnn_ in the names 
+
+
+Invoking STA analysis:
+
+toplevel_sta.py <path to verilog> <path to spef> <sdc> 
+eg
+toplevel_sta.py ./verilog/gl/user_project_wrapper.v ./spef/user_project_wrapper.spef ./top.sdc > sta.log
+results are in the log file
+Alternately you  can drop into interactive mode after analysis:
+toplevel_sta.py ./verilog/gl/user_project_wrapper.v ./spef/user_project_wrapper.spef ./top.sdc -i
+
+This does the following steps:
+preprocesses the main verilog
+parses the main verilog to find which modules are used
+creates a new merged verilog containing all the module netlists and the main netlist
+creates a tcl script in the spef directory to load the relevant spefs for each instanced module in the main verilog
+creates all_sta.tcl in the verilog directory that does the main STA steps (loading design, loading constraints,
+running analyses) - this mimics what OpenLane does
+creates a script sta.sh in the verilog directory which sets up the environment and invokes STA to run all_sta.tcl
+runs sta.sh
+
+
+Invoking Spice simulation:
+
+[NB this uses at least ngspice-34, tested on ngspice-39, which has features to increase speed
+and reduce memory image when running with the SkyWorks spice models. In addition the following
+needs to be set in ~/spice.rc and/or ~/.spiceinit:
+set ngbehavior=hs
+NB note the spelling of ngbehavior (no u)
+If this is not set then the simulation will run out of memory]
+
+NB if the critical path changes then the spice_path.py script will need to be adapted to follow suit
+
+
+#go to where the included spice files will be found - or set up paths accordingly?!
+cd OpenLane/pdks/sky130A/libs.tech/ngspice
+#run the script to get the critical path spice circuit - 250 stages of the clock
+spice_path.py path.spice
+#invoke spice
+ngspice path.spice
+#run the sim
+-> tran 1n 70n
+#show the results
+-> plot i0 i250
+#now measure pulse widths, delays etc off the plot
+
+
+
+
+
