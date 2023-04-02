@@ -1,10 +1,6 @@
 name: tt_datasheet
 # either manually started, or on a schedule
-on:
-  push:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 4 * * *' # At 4:00 UTC everyday
+on: [ push, workflow_dispatch, pull_request ]
 jobs:
   build_datasheet:
     env:
