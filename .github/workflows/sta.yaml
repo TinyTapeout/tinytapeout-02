@@ -29,6 +29,10 @@ jobs:
         cache: 'pip'
     - run: pip install verilog-parser
 
+    # setup sta script
+    - name: setup sta
+      run: python ./sta_top/toplevel_sta.py ./verilog/gl/user_project_wrapper.v ./spef/user_project_wrapper.spef sta_top/top.sdc
+
     # run sta
     - name: run sta
       run: ./stadocker.sh

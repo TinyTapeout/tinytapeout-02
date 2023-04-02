@@ -1,5 +1,4 @@
 #!/bin/bash
-./sta_top/toplevel_sta.py  ./verilog/gl/user_project_wrapper.v ./spef/user_project_wrapper.spef sta_top/top.sdc
 docker run --rm \
     -v $(pwd):$(pwd) \
     -v $OPENLANE_ROOT:$OPENLANE_ROOT \
