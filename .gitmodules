@@ -1,0 +1,498 @@
+[submodule "submissions/0"]
+	path = submissions/0
+	url = https://github.com/TinyTapeout/tt02-test-invert
+[submodule "submissions/1"]
+	path = submissions/1
+	url = https://github.com/Fraserbc/tt02-simon
+[submodule "submissions/2"]
+	path = submissions/2
+	url = https://github.com/TomKeddie/tinytapeout-2022-2
+[submodule "submissions/3"]
+	path = submissions/3
+	url = https://github.com/chrisruk/matrixchip
+[submodule "submissions/4"]
+	path = submissions/4
+	url = https://github.com/loxodes/tt02-submission-loxodes
+[submodule "submissions/5"]
+	path = submissions/5
+	url = https://github.com/migcorre/tt02-dc
+[submodule "submissions/6"]
+	path = submissions/6
+	url = https://github.com/grayresearch/tt02-s4ga
+[submodule "submissions/7"]
+	path = submissions/7
+	url = https://github.com/ryancor/tt02-submission-template
+[submodule "submissions/8"]
+	path = submissions/8
+	url = https://github.com/AidanGood/tt02-McCoy
+[submodule "submissions/9"]
+	path = submissions/9
+	url = https://github.com/azdle/binary-clock-asic
+[submodule "submissions/10"]
+	path = submissions/10
+	url = https://github.com/justinP-wrk/tt02-TinySensor
+[submodule "submissions/11"]
+	path = submissions/11
+	url = https://github.com/jar/tt02_sram
+[submodule "submissions/12"]
+	path = submissions/12
+	url = https://github.com/JensIMS/tt02-trafficlight
+[submodule "submissions/13"]
+	path = submissions/13
+	url = https://github.com/svd321/tt02-Ising
+[submodule "submissions/14"]
+	path = submissions/14
+	url = https://github.com/89Mods/tt2-AvalonSemi-5401
+[submodule "submissions/15"]
+	path = submissions/15
+	url = https://github.com/RiceShelley/tiny-fft
+[submodule "submissions/16"]
+	path = submissions/16
+	url = https://github.com/moyesw/tt02-moyesw-StreamIntegrator
+[submodule "submissions/17"]
+	path = submissions/17
+	url = https://github.com/Tschucker/tt02-submission-tiny-fir
+[submodule "submissions/18"]
+	path = submissions/18
+	url = https://github.com/steieio/tt02-submission-universal-sr
+[submodule "submissions/19"]
+	path = submissions/19
+	url = https://github.com/leardilap/tt02-LUTRAM
+[submodule "submissions/20"]
+	path = submissions/20
+	url = https://github.com/ekliptik/tt02-chase-the-beat
+[submodule "submissions/21"]
+	path = submissions/21
+	url = https://github.com/maehw/tt02-bcd-7segment-encoder
+[submodule "submissions/22"]
+	path = submissions/22
+	url = https://github.com/benevpi/tt02-LED-flasher
+[submodule "submissions/23"]
+	path = submissions/23
+	url = https://github.com/kuriousd/tt02-4bit-multiplier
+[submodule "submissions/24"]
+	path = submissions/24
+	url = https://github.com/89Mods/tt2-avalonsemi-TBB1143
+[submodule "submissions/25"]
+	path = submissions/25
+	url = https://github.com/TomKeddie/tinytapeout-2022-2a
+[submodule "submissions/26"]
+	path = submissions/26
+	url = https://github.com/mm21/tinytapeout2-led-matrix
+[submodule "submissions/27"]
+	path = submissions/27
+	url = https://github.com/argunda/tt02-TinyPFD
+[submodule "submissions/28"]
+	path = submissions/28
+	url = https://github.com/meriac/loading-animation
+[submodule "submissions/29"]
+	path = submissions/29
+	url = https://github.com/yubex/tt02-tiny_egg_timer
+[submodule "submissions/30"]
+	path = submissions/30
+	url = https://github.com/peppergrayxyz/Potato-1
+[submodule "submissions/31"]
+	path = submissions/31
+	url = https://github.com/zoent/tt02-zoe-chip
+[submodule "submissions/32"]
+	path = submissions/32
+	url = https://github.com/nanikgeorge/tt02-submission-template
+[submodule "submissions/33"]
+	path = submissions/33
+	url = https://github.com/mbikovitsky/tt02-lfsr
+[submodule "submissions/34"]
+	path = submissions/34
+	url = https://github.com/teaandtechtime/tt02-submission-prbs15
+[submodule "submissions/35"]
+	path = submissions/35
+	url = https://github.com/rolfmobile99/tt02-submission-template
+[submodule "submissions/36"]
+	path = submissions/36
+	url = https://github.com/jar/tt02_freespeech
+[submodule "submissions/37"]
+	path = submissions/37
+	url = https://github.com/alanvgreen/tt02-siren
+[submodule "submissions/38"]
+	path = submissions/38
+	url = https://github.com/TheZoq2/smolfpga
+[submodule "submissions/39"]
+	path = submissions/39
+	url = https://github.com/moyesw/TT02-M0
+[submodule "submissions/40"]
+	path = submissions/40
+	url = https://github.com/yupferris/bitslam
+[submodule "submissions/41"]
+	path = submissions/41
+	url = https://github.com/ThorKn/tinytapeout02_pattern_player
+[submodule "submissions/42"]
+	path = submissions/42
+	url = https://github.com/proppy/tt02-xls-popcount
+[submodule "submissions/43"]
+	path = submissions/43
+	url = https://github.com/jeanthom/tt02-rc5-receiver
+[submodule "submissions/44"]
+	path = submissions/44
+	url = https://github.com/mmolteni-secpat/tinytapeout02_chiDOM
+[submodule "submissions/45"]
+	path = submissions/45
+	url = https://github.com/meriac/tt02-play-tune
+[submodule "submissions/46"]
+	path = submissions/46
+	url = https://github.com/phasenoisepon/tt02-phasenoisepon
+[submodule "submissions/47"]
+	path = submissions/47
+	url = https://github.com/13arn/tt02_counter_steamdeck
+[submodule "submissions/48"]
+	path = submissions/48
+	url = https://github.com/ThorKn/tinytapeout02_shiftregister_challenge
+[submodule "submissions/49"]
+	path = submissions/49
+	url = https://github.com/89Mods/tt2-4x4-multiply
+[submodule "submissions/50"]
+	path = submissions/50
+	url = https://github.com/89Mods/tt2-multiplexed-counter
+[submodule "submissions/51"]
+	path = submissions/51
+	url = https://github.com/proppy/tt02-xls-counter
+[submodule "submissions/52"]
+	path = submissions/52
+	url = https://github.com/QuantamHD/ethan-evan-random-numbers
+[submodule "submissions/53"]
+	path = submissions/53
+	url = https://github.com/QuantamHD/evan-submission
+[submodule "submissions/54"]
+	path = submissions/54
+	url = https://github.com/FlyGoat/tt02-play-tune-flygoat
+[submodule "submissions/55"]
+	path = submissions/55
+	url = https://github.com/mattvenn/clash-silicon-tinytapeout.git
+[submodule "submissions/56"]
+	path = submissions/56
+	url = https://github.com/89Mods/tt2-lcd-namebadge
+[submodule "submissions/57"]
+	path = submissions/57
+	url = https://github.com/Christina-Cyr/tt02-submission-UART-CC
+[submodule "submissions/58"]
+	path = submissions/58
+	url = https://github.com/krasin/tt02-verilog-3-bit-8-channel-pwm-driver
+[submodule "submissions/59"]
+	path = submissions/59
+	url = https://github.com/nickoe/tinytapeout02-verilog-gds-test
+[submodule "submissions/60"]
+	path = submissions/60
+	url = https://github.com/cchan/fp8_mul
+[submodule "submissions/61"]
+	path = submissions/61
+	url = https://github.com/AvalonSemiconductors/tt2-diceroll
+[submodule "submissions/62"]
+	path = submissions/62
+	url = https://github.com/NYIT-CNS/cns001-tt02-submission1
+[submodule "submissions/63"]
+	path = submissions/63
+	url = https://github.com/NYIT-CNS/cns002-tt02-submission2
+[submodule "submissions/64"]
+	path = submissions/64
+	url = https://github.com/shaos/tt02-submission-shaos
+[submodule "submissions/65"]
+	path = submissions/65
+	url = https://github.com/toybuilder/tt02-learn-tinytapeout
+[submodule "submissions/66"]
+	path = submissions/66
+	url = https://github.com/drburke3/tt02-nano-neuron
+[submodule "submissions/67"]
+	path = submissions/67
+	url = https://github.com/UDXS/sqrt-tt02
+[submodule "submissions/68"]
+	path = submissions/68
+	url = https://github.com/argunda/tt02-breathing-led
+[submodule "submissions/69"]
+	path = submissions/69
+	url = https://github.com/daniestevez/tt02-gold-fibonacci
+[submodule "submissions/70"]
+	path = submissions/70
+	url = https://github.com/r4d10n/tt02-HELLo-3orLd-7seg
+[submodule "submissions/71"]
+	path = submissions/71
+	url = https://github.com/navray/tt02-square-root
+[submodule "submissions/72"]
+	path = submissions/72
+	url = https://github.com/shaos-net/tt02-submission-shaos2
+[submodule "submissions/73"]
+	path = submissions/73
+	url = https://github.com/krasin/tt02-verilog-spi-7-channel-pwm-driver
+[submodule "submissions/74"]
+	path = submissions/74
+	url = https://github.com/brouhaha/tt02-hex-sr
+[submodule "submissions/75"]
+	path = submissions/75
+	url = https://github.com/ericsmi/tt02-verilog-ring-osc-demo
+[submodule "submissions/76"]
+	path = submissions/76
+	url = https://github.com/AidanMedcalf/tt02-pid
+[submodule "submissions/77"]
+	path = submissions/77
+	url = https://github.com/cpldcpu/tt02-TrainLED
+[submodule "submissions/78"]
+	path = submissions/78
+	url = https://github.com/cpldcpu/tt02-mcpu5plus
+[submodule "submissions/79"]
+	path = submissions/79
+	url = https://github.com/MoonbaseOtago/tt-cpu
+[submodule "submissions/80"]
+	path = submissions/80
+	url = https://github.com/davidsiaw/tt02-davidsiaw-stackcalc
+[submodule "submissions/81"]
+	path = submissions/81
+	url = https://github.com/mole99/tt02-1bit-alu
+[submodule "submissions/82"]
+	path = submissions/82
+	url = https://github.com/steieio/tt02-sfsm-wokwi
+[submodule "submissions/83"]
+	path = submissions/83
+	url = https://github.com/youngpines/tt02-youngpines-submission
+[submodule "submissions/84"]
+	path = submissions/84
+	url = https://github.com/timvgso/tinatapeworm
+[submodule "submissions/85"]
+	path = submissions/85
+	url = https://github.com/OneRNG/tt-cpu8
+[submodule "submissions/86"]
+	path = submissions/86
+	url = https://github.com/tcptomato/tt02-submission-template
+[submodule "submissions/87"]
+	path = submissions/87
+	url = https://github.com/jglim/tt02-bcd-7seg
+[submodule "submissions/88"]
+	path = submissions/88
+	url = https://github.com/ARamsey118/tiny_tapeout_freq_counter
+[submodule "submissions/89"]
+	path = submissions/89
+	url = https://github.com/splinedrive/thunderbird_taillight_1965
+[submodule "submissions/90"]
+	path = submissions/90
+	url = https://github.com/gatecat/tt02-fpga-respin
+[submodule "submissions/91"]
+	path = submissions/91
+	url = https://github.com/mmolteni-secpat/tinytapeout02_chi2shares
+[submodule "submissions/92"]
+	path = submissions/92
+	url = https://github.com/mmolteni-secpat/tinytapeout02_chi3shares
+[submodule "submissions/93"]
+	path = submissions/93
+	url = https://github.com/Wren6991/tt02-whisk-serial-processor
+[submodule "submissions/94"]
+	path = submissions/94
+	url = https://github.com/aiunderstand/tt02-4bit-tristate-loadable-counter
+[submodule "submissions/95"]
+	path = submissions/95
+	url = https://github.com/aiunderstand/tt02-async-binary-ternary-convert-compare
+[submodule "submissions/96"]
+	path = submissions/96
+	url = https://github.com/RobertRiachi/tt02-dot-product
+[submodule "submissions/97"]
+	path = submissions/97
+	url = https://github.com/regymm/tt02-verilog-mcpi
+[submodule "submissions/98"]
+	path = submissions/98
+	url = https://github.com/regymm/tt02-verilog-funnyblinky
+[submodule "submissions/99"]
+	path = submissions/99
+	url = https://github.com/adamgreig/tt02-gpa-ca-prn
+[submodule "submissions/100"]
+	path = submissions/100
+	url = https://github.com/adamgreig/tt02-adc-dac
+[submodule "submissions/101"]
+	path = submissions/101
+	url = https://github.com/jglim/tt02-bcd-hex7seg-hdl
+[submodule "submissions/102"]
+	path = submissions/102
+	url = https://github.com/burtyb/tt02-srld
+[submodule "submissions/103"]
+	path = submissions/103
+	url = https://github.com/azzeloof/tt02-counter
+[submodule "submissions/104"]
+	path = submissions/104
+	url = https://github.com/shan1293/tt02-2bitCPU
+[submodule "submissions/105"]
+	path = submissions/105
+	url = https://github.com/Josvth/tt02-convolutional-encoder
+[submodule "submissions/106"]
+	path = submissions/106
+	url = https://github.com/gatecat/tt02-pic
+[submodule "submissions/107"]
+	path = submissions/107
+	url = https://github.com/browndeer/rv8u
+[submodule "submissions/108"]
+	path = submissions/108
+	url = https://github.com/Sirawit7205/tt02-2G97-2G98
+[submodule "submissions/109"]
+	path = submissions/109
+	url = https://github.com/gatecat/tt02-melody-gen
+[submodule "submissions/110"]
+	path = submissions/110
+	url = https://github.com/vaishnavachath/tt02-submission-rotary-encoder-counter
+[submodule "submissions/111"]
+	path = submissions/111
+	url = https://github.com/maehw/tt02-wokwi-wolf-goat-cabbage
+[submodule "submissions/112"]
+	path = submissions/112
+	url = https://github.com/maehw/tt02-wokwi-lowspeed-tiny-uart
+[submodule "submissions/113"]
+	path = submissions/113
+	url = https://github.com/wimdams/tt02-rotary-encoder
+[submodule "submissions/114"]
+	path = submissions/114
+	url = https://github.com/ChrisPVille/tt02-FROG4bitCPU
+[submodule "submissions/115"]
+	path = submissions/115
+	url = https://github.com/swalense/tt02-graycode_counter
+[submodule "submissions/116"]
+	path = submissions/116
+	url = https://github.com/Luthor2k/tt02-baudot
+[submodule "submissions/117"]
+	path = submissions/117
+	url = https://github.com/ctag/tt02-submission-ctag
+[submodule "submissions/118"]
+	path = submissions/118
+	url = https://github.com/AsmaMohsin1507/tt02-channel-coding
+[submodule "submissions/119"]
+	path = submissions/119
+	url = https://github.com/stevenmburns/tt02-scannable-gcd
+[submodule "submissions/120"]
+	path = submissions/120
+	url = https://github.com/cy384/tt02-submission-template
+[submodule "submissions/121"]
+	path = submissions/121
+	url = https://github.com/rglenn/tt02-rglenn-hex-to-7-seg
+[submodule "submissions/122"]
+	path = submissions/122
+	url = https://github.com/zymason/tt02-zymason
+[submodule "submissions/123"]
+	path = submissions/123
+	url = https://github.com/DaveyPocket/chaser_tt2
+[submodule "submissions/124"]
+	path = submissions/124
+	url = https://github.com/klei22/Rolling-Average
+[submodule "submissions/125"]
+	path = submissions/125
+	url = https://github.com/andars/tt02-universal-turing-machine-w5s8
+[submodule "submissions/126"]
+	path = submissions/126
+	url = https://github.com/ternary-info/tt02-submission-shaos3
+[submodule "submissions/127"]
+	path = submissions/127
+	url = https://github.com/gregdavill/tt02-clock
+[submodule "submissions/128"]
+	path = submissions/128
+	url = https://github.com/gregdavill/tt02-serv
+[submodule "submissions/129"]
+	path = submissions/129
+	url = https://github.com/saicharan0112/tt02-submission-template
+[submodule "submissions/130"]
+	path = submissions/130
+	url = https://github.com/tanishnk/Tiny-Tapeout-2-submission-Tanish-k
+[submodule "submissions/131"]
+	path = submissions/131
+	url = https://github.com/skylersaleh/tt02-hello
+[submodule "submissions/132"]
+	path = submissions/132
+	url = https://github.com/BarsMonster/MicroAsicVI
+[submodule "submissions/133"]
+	path = submissions/133
+	url = https://github.com/RecepSaid/tt02-euclidean-algorithm
+[submodule "submissions/134"]
+	path = submissions/134
+	url = https://github.com/8086net/tt02-CRC16
+[submodule "submissions/135"]
+	path = submissions/135
+	url = https://github.com/mazensaghir/tt02-sevsegfx
+[submodule "submissions/136"]
+	path = submissions/136
+	url = https://github.com/tzachari/tt02-lab11
+[submodule "submissions/137"]
+	path = submissions/137
+	url = https://github.com/bitluni/tt02-option23ser
+[submodule "submissions/138"]
+	path = submissions/138
+	url = https://github.com/bitluni/tt02-option23
+[submodule "submissions/139"]
+	path = submissions/139
+	url = https://github.com/bitluni/tt02-option22
+[submodule "submissions/140"]
+	path = submissions/140
+	url = https://github.com/theFestest/tt02-4x4-ram
+[submodule "submissions/141"]
+	path = submissions/141
+	url = https://github.com/jeanthom/tinytapout-lock
+[submodule "submissions/142"]
+	path = submissions/142
+	url = https://github.com/jdrosent/tt02-submission-template
+[submodule "submissions/143"]
+	path = submissions/143
+	url = https://github.com/majdiabdulsamad/tt02-Femto
+[submodule "submissions/144"]
+	path = submissions/144
+	url = https://github.com/AvalonSemiconductors/tt02-logisim-example
+[submodule "submissions/145"]
+	path = submissions/145
+	url = https://github.com/bitluni/tt02-SecretFile
+[submodule "submissions/146"]
+	path = submissions/146
+	url = https://github.com/cmu-stuco-98154/f22-tt02-qilins
+[submodule "submissions/147"]
+	path = submissions/147
+	url = https://github.com/cmu-stuco-98154/f22-tt02-jxlu
+[submodule "submissions/148"]
+	path = submissions/148
+	url = https://github.com/cmu-stuco-98154/f22-tt02-mgee3
+[submodule "submissions/149"]
+	path = submissions/149
+	url = https://github.com/cmu-stuco-98154/f22-tt02-sophiali
+[submodule "submissions/150"]
+	path = submissions/150
+	url = https://github.com/cmu-stuco-98154/f22-tt02-jrecta
+[submodule "submissions/151"]
+	path = submissions/151
+	url = https://github.com/asinghani/tt02-beepboop
+[submodule "submissions/152"]
+	path = submissions/152
+	url = https://github.com/noahgaertner/tt02-verilog-demo
+[submodule "submissions/153"]
+	path = submissions/153
+	url = https://github.com/prabaldutta/tt02-adi-demo
+[submodule "submissions/154"]
+	path = submissions/154
+	url = https://github.com/TinyTapeout/tt02-tinytapeout-clock-divider-asic
+[submodule "submissions/155"]
+	path = submissions/155
+	url = https://github.com/tucanae47/tt02-gray-counter
+[submodule "submissions/156"]
+	path = submissions/156
+	url = https://github.com/TinyTapeout/tt02-test-7seg
+[submodule "submissions/157"]
+	path = submissions/157
+	url = https://github.com/TinyTapeout/tt02-verilog-demo
+[submodule "submissions/158"]
+	path = submissions/158
+	url = https://github.com/mattvenn/tt02-laura
+[submodule "submissions/159"]
+	path = submissions/159
+	url = https://github.com/mattvenn/tt02-m-segments
+[submodule "submissions/160"]
+	path = submissions/160
+	url = https://github.com/jdrosent/tt02-7segstringdisplay
+[submodule "submissions/161"]
+	path = submissions/161
+	url = https://github.com/jdrosent/tt02-UARTcharacter
+[submodule "submissions/162"]
+	path = submissions/162
+	url = https://github.com/jdrosent/tt02-UARTstring
+[submodule "submissions/163"]
+	path = submissions/163
+	url = https://github.com/jdrosent/tt02-padlock
+[submodule "submissions/164"]
+	path = submissions/164
+	url = https://github.com/H-Bydn/TinyTapeout2-PWMgenerator
+[submodule "submissions/165"]
+	path = submissions/165
+	url = https://github.com/aiunderstand/tt02-mrcs-verilog-test
