@@ -281,7 +281,7 @@
     },
     "55": {
       "macro": "jleightcap_top",
-      "repo": "https://github.com/mattvenn/clash-silicon-tinytapeout.git",
+      "repo": "https://github.com/mattvenn/clash-silicon-tinytapeout",
       "commit": "e0615673335a379b50d8666a1bab501e766262ba"
     },
     "56": {
