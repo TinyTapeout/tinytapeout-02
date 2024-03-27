@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - hex_sr.v
+    - sr_recirc.v
+  top_module:  "hex_sr"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Eric Smith"      # Your name
+  discord:      "brouhaha"      # Your discord handle
+  title:        "hex shift register"      # Project title
+  description:  "six 40-bit shift registers"      # Short description of what your project does
+  how_it_works: "Six 40-bit shift registers. A multiplexer selects input data or recirulating output data."      # Longer description of how the project works
+  how_to_test:  "on each clock n, six bits are shifted in, and the six bits that were input at clock n-4 are output"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/brouhaha/tt02-hex-sr/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     ""       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clk               # external clock
+    - recirc            # recirculate
+    - data_in[0]        # data input 0 (only used when recirc == 0)
+    - data_in[1]        # data input 1 (only used when recirc == 0)
+    - data_in[2]        # data input 2 (only used when recirc == 0)
+    - data_in[3]        # data input 3 (only used when recirc == 0)
+    - data_in[4]        # data input 4 (only used when recirc == 0)
+    - data_in[5]        # data input 5 (only used when recirc == 0)
+  outputs:
+    - none         # a description of what the outputs do
+    - none
+    - data_out[0]       # data input 0
+    - data_out[1]       # data input 1
+    - data_out[2]       # data input 2
+    - data_out[3]       # data input 3
+    - data_out[4]       # data input 4
+    - data_out[5]       # data input 5
+

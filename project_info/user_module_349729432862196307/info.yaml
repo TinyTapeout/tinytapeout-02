@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    349729432862196307        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Jos van 't Hof"      # Your name
+  discord:      "josvth#1973"      # Your discord handle - make sure to include the # part as well
+  title:        "A (7, 1/2) Convolutional Encoder"      # Project title
+  description:  "A (7, 1/2) Convolutional Encoder following the CCSDS 131.0-B-4 standard."      # Short description of what your project does
+  how_it_works: "A Convolutional Encoder adds additional bits to a data stream or message that may later be used to correct errors in the transmission of the data. The specific implemented encoder is used in space applications and is a half-rate (R = 1/2) code with a constrain lenght of seven (K = 7). This means that the encoder generates two output bits (called symbols) for every input bit, and the encoder has m = K - 1 = 6 states."      # Longer description of how the project works
+  how_to_test:  "Pull the write_not_shift input (IN1) high and set a 6-bit binary input (using IN2 to IN7), for example 0b100110. Provide a clock cycle on the clock input (IN0) to write the input into the shift register and clear the encoder. Pull the write_not_shift input (IN2) low to start shifting. Provide 24 clock cycles (2 each for the 6 shift registers and 6 encoder registers 2x(6+6) = 24). After each clock cycle a 0 or 1 is displayed on the 8-segment display. The encoded output for the input 0b100110 is 0b10111|0010001101000111001. The first 6 bits of the encoded output may be discared."
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/Josvth/tt02-convolutional-encoder/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - write_not_shift
+    - shift_input_0
+    - shift_input_1
+    - shift_input_2
+    - shift_input_3
+    - shift_input_4
+    - shift_input_5
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - segment dp (used to indicate clock)
+

@@ -1,0 +1,50 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+# wokwi id: 347889351946928723
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - tt2.v
+    - pid.v
+    - spi_master_in.v
+    - spi_master_out.v
+    - spi_slave.v
+  top_module:  "AidanMedcalf_pid_controller"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Aidan Medcalf"      # Your name
+  discord:      "Pomme de Terrible#1820"      # Your discord handle - make sure to include the # part as well
+  title:        "TinyPID"      # Project title
+  description:  "Tiny PID controller with SPI configuration channel, SPI ADC and DAC driver"      # Short description of what your project does
+  how_it_works: "TinyPID reads from a shift register, calculates error and PID values, and writes to a shift register. All parameters of this process are configurable."      # Longer description of how the project works
+  how_to_test:  "Shift in config, then shift in PV input and see what happens. There are three bytes of configuration (setpoint, kp, ki), which are zero on startup."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "One shift register / ADC for PV read, one shift register / DAC for stimulus output."       # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/AidanMedcalf/tt02-pid/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - none
+    - cfg_clk
+    - cfg_mosi
+    - none
+    - cfg_cs
+    - pv_in_miso
+  outputs:
+    - pv_in_clk
+    - pv_in_cs
+    - out_clk
+    - out_mosi
+    - out_cs
+    - none
+    - none
+    - none
+

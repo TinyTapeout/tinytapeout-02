@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    349934460979905106        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Tanish Khanchandani"      # Your name
+  discord:      "ripper#0014"      # Your discord handle - make sure to include the # part as well
+  title:        "PS2 keyboard Interface"      # Project title
+  description:  "PS2 keyboard interface to enter charecters into a computer. Use the PS2 hex scan codes (https://techdocs.altium.com/display/FPGA/PS2+Keyboard+Scan+Codes) to enter hex codes and it will send the letter to your computer."      # Short description of what your project does
+  how_it_works: "Most likely does not work. Takes in keyboard hex scan codes and sends data to your PC. The chip emulates a key being pressed down and released. (link to protocol - https://techdocs.altium.com/display/FPGA/PS2_W+-+Transmission+Protocols). The logic puts data into a parallel to serial interface and sends the data with some of the other protocol necessities to simulate a key being pressed and released."      # Longer description of how the project works
+  how_to_test:  "Select clock with input 1. Set the first hex character using inputs 2-5. Set input 6 to 1. Set input 6 back to 0. Set the second hex character using inputs 2-5 and set input 7 to 1 and then back to 0. Set input 8 to 1 to send the data."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "3.3V to 5V logic level converter"      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     6000       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - hex Bit 1
+    - hex Bit 2
+    - hex Bit 3
+    - hex Bit 4
+    - Set 1st hex
+    - set 2nd hex
+    - Enable to send
+  outputs:
+    - NC         # a description of what the outputs do
+    - NC
+    - NC
+    - NC
+    - NC
+    - NC
+    - Clock
+    - Data
+

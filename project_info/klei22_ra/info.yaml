@@ -1,0 +1,47 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - klei22_ra.v
+    - shift_register_line.v
+    - rolling_average.v
+  top_module:  "klei22_ra"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  author:       "Kauna Lei"      # Your name
+  discord:      "akuna#2874"      # Your discord handle
+  title:        "Rolling Average - 5 bit, 8 bank"      # Project title
+  description:  "5bit moving average"      # Short description of what your project does
+  how_it_works: "Using Shift Register Line and Rolling Sum Trick"      # Longer description of how the project works
+  how_to_test:  "Clock in the high 5 bits of io_in (io_in[7:3]) with the i_data_clk (io_in[2]) (active high), and read output on io_out[4:0]"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "gpios to connect with io_in[7:2] and to read io_out[4:0]"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - i_data_clk
+    - i_value[0]
+    - i_value[1]
+    - i_value[2]
+    - i_value[3]
+    - i_value[4]
+  outputs:
+    - ra_out[0]
+    - ra_out[1]
+    - ra_out[2]
+    - ra_out[3]
+    - ra_out[4]
+    - 0
+    - 0
+    - 0
+

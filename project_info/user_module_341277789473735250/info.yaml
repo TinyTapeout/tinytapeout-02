@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    341277789473735250        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Steven Bos"      # Your name
+  discord:      "steveb#6973"      # Your discord handle - make sure to include the # part as well
+  title:        "Asynchronous Binary to Ternary Converter and Comparator"      # Project title
+  description:  "This chip offers various kinds of conversions and comparisons between binary encoded ternary and unary encoded ternary in both machine readible output and human readible (7-segment display decimal) output"
+  how_it_works: "See the full documentation, youtube movie and image. The chip has four stages. The opcode stage set the mode of the chip. The second stage convert the input to output based on the selected mode. The third stage encoded the output to machine or human based on selected mode. Finally the encoded output is decoded on a 7 segment display."
+  how_to_test:  "Set the chip mode [0:3] to 0111. This enables the chip, set unary encoded ternary channel A conversion and set it to user (decimal) output. Set the input [4:7] to 0010. The Channel A input using Unary Encoded Ternary is set to 2, which the 7 segment display also shows. Note that one combination of the two bits is illegal! (see doc)"
+  external_hw:  "no external hardware needed"
+  language:     "mixed radix circuit synthesis (MRCS), wokwi"
+  doc_link:     "https://github.com/aiunderstand/tt02-async-binary-ternary-convert-compare/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "asyncbinterconvcomp.png"
+  inputs:       # a description of what the inputs do from pin 0 to 7
+    - output mode (0 = human, 1 = machine)
+    - enable (0 = disable, 1 = enable)
+    - opcode0 (see table in documentation for all 4 modes)
+    - opcode1
+    - input channel B pin0 (see table in documentation what is don't care or illegal input for which mode)
+    - input channel B pin1
+    - input channel A pin0
+    - input channel A pin1
+  outputs:       # a description of what the outputs do from pin 0 to 7
+    - segment a (the 7 segment is used for human readable output, sometimes using decimals and sometimes using comparison symbols, see documentation for more details)         
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - segment dot (the dot is an extra indicator that the output is in machine format)

@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - counter.v
+    - decoder.v
+  top_module:  "phasenoisepon_seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Phase Noise"      # Your name
+  discord:      "@PhaseNoisePega"      # Your discord handle
+  title:        "Tiny rot13"      # Project title
+  description:  "implements rot13 in the constraints of TT02"      # Short description of what your project does
+  how_it_works: "shifts in low and high nibble to construct an ASCII character, performs rot13, then outputs. The design uses some registers to store the low and high nibbles before constructing them into the ASCII character. ROT13 is implemented with a LUT genetated from Python. Controlled using control lines instead of specific clock cycles. Any non-alphabetic characters are passed through"      # Longer description of how the project works
+  how_to_test:  "CTL0 and CTL1 are control lines. Let CTL[1:0], 2b00 -> Shift in low nibble on D[3:0] and set output[7:0]=0x0f, 2b01 -> Shift in high nibble on D[3:0] and set output[7:0]=0xf0, 2b1X -> Shift out S on output[7:0]. Shift in the low and high nibbles of rot13, then read the result on the next cycle. Internal registers are init to 0, so by default after a RST, the output will be 0x00 for a single cycle(if CTL=2'b10), otherwise it will 2'b00 before updating to whatever the control lines set it to. Every operation effectively sets the output of the next clock cycle. Every complete operation effectively takes 4 cycles. To test, Set RST, then write 0x1 as the low nibble (clock 0), 0x4 as the high nibble (clock 1), then set the control lines to output (clock 1). 0x4e should be read at clock 4, with the output sequence being C=0 out=0x00, C=1 out=0x01, C=2 out=0x10, C=3 out=0x4e. 0x00 should produce 0x00 while 0x7f should produce 0x7f."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "For basic usage, the carrier board should suffice. An MCU or FPGA would be required to use this to the fullest extent, and an FPGA with PCIe would let you build the world's worst ROT13 Accelerator!"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/phasenoisepon/tt02-phasenoisepon/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      "./ROT13.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset - Resets the system to a clean state
+    - CTL0 - LSB of control
+    - CTL1 - MSB of control
+    - D0 - LSB of input nibble
+    - D1
+    - D2
+    - D3 - MSB of input nibble
+  outputs:
+    - DO0 - LSB of output
+    - DO1
+    - DO2
+    - DO3
+    - DO4
+    - DO5
+    - DO6
+    - DO7 - MSB of output
+

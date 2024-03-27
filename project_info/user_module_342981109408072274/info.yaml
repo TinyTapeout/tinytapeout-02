@@ -1,0 +1,54 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    342981109408072274        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Ben Everard"      # Your name
+  discord:      "benev2"      # Your discord handle
+  title:        "A LED Flasher"      # Project title
+  description:  "Select different inputs to generate different LED patterns"      # Short description of what your project does
+  how_it_works: "see How To Test"      # Longer description of how the project works
+  how_to_test:  "
+  input 1 - clock input
+  input 2 - feed NOT LED 1 back into the shift register -- this creates a pattern where every other LED is switched on
+  input 3 - feed 1 into the shift register if both the first two LEDs are off. This creates a pattern where every third LED is on
+  input 4 - feed 1 into the shift register if the first three LEDs are off. This creates a pattern where every fourth LED is on
+  input 5 - feed 1 into the shift register if all the LEDs are off. This creates a pattern of one light scanning across the LEDs
+  input 6 - set the direction of the shift register
+  input 7 - toggles fixed direction or alternating direction. If alternating direction is set, the direction of the shift register will flip if all the LEDs are off
+  input 8 - enable the clock divider"     # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "A LED on each pin"      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/benevpi/tt02-LED-flasher/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      "https://github.com/benevpi/tt02-LED-flasher/tree/main"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+   - clock
+   - not_1
+   - not_1_2
+   - not_1_2_3
+   - not_all
+   - direction
+   - toggle_direction
+   - clock_div_enable
+  outputs:
+    - LED1
+    - LED2
+    - LED3
+    - LED4
+    - LED5
+    - LED6
+    - LED7
+    - LED8
+

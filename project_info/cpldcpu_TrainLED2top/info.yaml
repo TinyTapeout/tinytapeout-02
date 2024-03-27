@@ -1,0 +1,52 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - TrainLED2_top.v
+    - TrainLED2.v
+  top_module:  "cpldcpu_TrainLED2top"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "cpldcpu"      # Your name
+  discord:      "Azure#5593"      # Your discord handle - make sure to include the # part as well
+  title:        "TrainLED2 - RGB-LED driver with 8 bit PWM engine"      # Project title
+  description:  "A RGB-LED driver using the WS2812 protocol"      # Short description of what your project does
+  how_it_works: "A fully digital implementation of an RGB LED driver that accepts the WS2812 protocol for data input. The design is fully clocked, so the timing parameters of the protocol depend on the clock rate. A pulse between 1 and 5 clock cycles on the input will be interpreted as a zero, longer pulses as a one. Each driver accepts 3x8=24 bit of input data to set the brightness of LED1,LED2 and LED3 (R,G,B). After 24 bit have been received, additional input bits are retimed and forwarded to the data output.
+
+  After the data input was idle for 96 clock cycles, the input data is latched into the PWM engine and the data input is ready for the next data frame.
+
+  The PWM engine uses a special dithering scheme to allow flicker free LED dimming even for relatively low clock rates.  
+  "      # Longer description of how the project works
+  how_to_test:  "Execute the shell script 'run.sh' in the src folder. This will invoke the test bench."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "LEDs should be connected to the three LED outputs. The data input should be driven by a microcontroller, generating input data in a slowed down WS2812 scheme."      # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/cpldcpu/tt02-TrainLED"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     at least 6000   # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "tb_screenshot.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - Din Driver A
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - Dout Driver A         # a description of what the outputs do
+    - LED1A
+    - LED2A
+    - LED3A
+    - none
+    - none
+    - none
+    - none
+
+

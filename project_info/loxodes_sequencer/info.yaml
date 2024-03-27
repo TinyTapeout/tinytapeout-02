@@ -1,0 +1,40 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - sequencer.v
+  top_module:  "loxodes_sequencer"      # put the name of your top module here, make it unique by prepending your github username
+
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Jon Klein"      # Your name
+  discord:      "loxodes"      # Your discord handle
+  title:        "Power supply sequencer"      # Project title
+  description:  "Sequentially enable and disable channels with configurable delay"      # Short description of what your project does
+  how_it_works: "Counters and registers control and track the state of channel activations. The delay input sets the counter threshold."      # Longer description of how the project works
+  how_to_test:  "After reset, bring enable high to enable channels sequentially, starting with channel 0. Bring enable low to switch off channels sequentially, starting with channel 7."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "None, but could be useful for GaAs amplifiers or other circuits which need sequenced power supplies."      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     12500       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - enable 
+    - delay0 
+    - delay1 
+    - delay2 
+    - delay3 
+    - delay4 
+  outputs:
+    - channel 0         
+    - channel 1
+    - channel 2
+    - channel 3
+    - channel 4
+    - channel 5
+    - channel 6
+    - channel 7 
+

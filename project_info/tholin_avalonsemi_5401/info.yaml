@@ -1,0 +1,69 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - toplevel/logisimTopLevelShell.v
+    - arith/Adder.v
+    - arith/FullAdder.v
+    - arith/Comparator.v
+    - circuit/CPU.v
+    - circuit/clock_gen_2.v
+    - circuit/dest_reg_sel_new.v
+    - circuit/eq_0.v
+    - circuit/inst_dec.v
+    - circuit/int_memory.v
+    - circuit/main.v
+    - circuit/output_logic.v
+    - circuit/mul2.v
+    - circuit/div.v
+    - gates/AND_GATE.v
+    - gates/AND_GATE_BUS.v
+    - gates/NAND_GATE.v
+    - gates/NAND_GATE_BUS.v
+    - gates/NOR_GATE.v
+    - gates/OR_GATE.v
+    - gates/OR_GATE_BUS_4_INPUTS.v
+    - gates/XOR_GATE_ONEHOT.v
+    - memory/D_FLIPFLOP.v
+    - memory/REGISTER_FLIP_FLOP.v
+    - plexers/Demultiplexer_16.v
+  top_module:  "tholin_avalonsemi_5401"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  discord:      "Tholin#7559"
+  author:       "Tholin"      # Your name
+  title:        "Avalon Semiconductors '5401' 4-bit Microprocessor"      # Project title
+  description:  "4-bit CPU capable of addressing 4096 bytes program memory and 254 words data memory, with 6 words of on-chip RAM and two general-purpose input ports. Hopefully capable of more complex computation than previous CPU submissions."      # Short description of what your project does
+  how_it_works: "The chip contains a 4-bit ALU, a 4-bit Accumulator, 8-bit Memory Address Register and 12-bit ˝Destination Register˝, which is used to buffer branch target addresses. It also has two general-purpose input ports. The instruction set consists of 16 instructions, containing arihmatic, logical, load/store, branch and conditional branch instruction. See the full documentation for a complete architectural description."      # Longer description of how the project works
+  how_to_test:  "It is possible to test the CPU using a debounced push button as the clock, and using the DIP switches on the PCB to key in instructions manually. Set the switches to 0100_0000 to assert RST, and pulse the clock a few times. Then, change the switches to 0000_1000 (SEI instruction) and pulse the clock four times. After that, set the switches to all 0s (LD instruction). Pulse the clock once, then change the switches to 0001_0100, and pulse the clock three more times. Lastly, set the switches to 0011_1100 (LMH instruction). If done correctly, after two pulses of the clock, the outputs will read 0101_0000 and two more pulses after that, they will be xxxx_1000 (’x’ means don’t care). This sequence should repeat for as long as you keep pulsing the clock, without changing the inputs."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "At the very minimum a program memory, and the required glue logic. See ˝Example system diagram˝ in the full documentation."      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/89Mods/tt2-AvalonSemi-5401/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     6000       # Clock frequency in Hz (if required)
+  picture:      "assets/block_diag.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - "CLK"
+    - "RST"
+    - "I0 / D0"
+    - "I1 / D1"
+    - "I2 / D2"
+    - "I3 / D3"
+    - "EF0"
+    - "EF1"
+  outputs:
+    - "MAR0 / DR0 / DR8 / RR0"         # a description of what the outputs do
+    - "MAR1 / DR1 / DR9 / RR1"
+    - "MAR2 / DR2 / DR10 / RR2"
+    - "MAR3 / DR3 / DR11 / RR3"
+    - "MAR4 / DR4 / F_MAR"
+    - "MAR5 / DR5 / F_WRITE"
+    - "MAR6 / DR6 / F_JMP"
+    - "MAR7 / DR7 / F_I"
+

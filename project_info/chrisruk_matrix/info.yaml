@@ -1,0 +1,39 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0       # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - matrix.v
+  top_module:  "chrisruk_matrix"      # put the name of your top module here, make it unique by prepending your github username
+
+documentation: 
+  author:       "Chris"      # Your name
+  discord:      "hoglet"     # Your discord handle
+  title:        "Scrolling Binary Matrix display"      # Project title
+  description:  "Display scrolling binary data from input pin on 8x8 SK9822 LED matrix display"      # Short description of what your project does
+  how_it_works: "Uses 8x8 matrix SK9822 LED display to scroll binary data as 0s and 1s in a simple font, from the input pin.  Designed in verilog and tested using iCEstick FPGA Evaluation Kit.  Each LED takes a 32 bit value, consisting of r,g,b and brightness."            # Longer description of how the project works
+  how_to_test:  "Need 8x8 matrix SK9822 LED display and level shifter to convert output clock and data logic to 5V logic."
+  external_hw:  "Requires 8x8 matrix SK9822 LED display and 3.3V to 5V logic level shifter to convert the data and clock signals to the correct voltage for the display."      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/chrisruk/matrixchip/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     6000       # Clock frequency in Hz (if required)
+  picture:      "images/animation.gif"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock # Used to clock the design
+    - reset # Used to reset the design
+    - digit # Digit to display
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - LED Clock # Used to drive matrix display
+    - LED Data  # Data for matrix display
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+

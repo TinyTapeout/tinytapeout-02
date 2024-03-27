@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id: 0  
+  source_files:
+    - gray_ctr6.v
+  top_module:  "tucanae47_gray_ctr6"
+
+documentation: 
+  author:       "Camilo Soto"      
+  discord:      "tucanae47#6105" 
+  title:        "Amaranth 6 Bits Gray counter" 
+  description:  "Amaranth Gray 6 Bits gray counter" 
+  how_it_works: | 
+    The reflected binary code (RBC), also known as reflected binary (RB) or Gray code after Frank Gray, 
+    is an ordering of the binary numeral system such that two successive values differ in only one bit (binary digit).
+    For example, the representation of the decimal value "1" in binary would normally be "001" and "2" would be "010". 
+    In Gray code, these values are represented as "001" and "011". That way, incrementing a value from 1 to 2 requires
+    only one bit to change, instead of two (Wikipedia https://en.wikipedia.org/wiki/Gray_code)
+  how_to_test:  "Apply clk to the in[0], rst on in[1]"      
+  external_hw:  "None"     
+  language:     "Amaranth" 
+  doc_link:     "https://github.com/tucanae47/tt02-gray-counter"   
+  clock_hz:     3000    
+  picture:      "None" 
+  inputs:  
+    - clock
+    - reset
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - count[0]
+    - count[1]
+    - count[2]
+    - count[3]
+    - count[4]
+    - count[5]
+    - count[6]
+    - none
+    - none
+

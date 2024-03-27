@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+     - Asma_Mohsin_conv_enc_core.v
+  top_module:  "Asma_Mohsin_conv_enc_core"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Asma Mohsin"      # Your name
+  discord:      "Asma Mohsin#8645"      # Your discord handle - make sure to include the # part as well
+  title:        "channel coding"      # Project title
+  description:  "Convolutional coding is widely used in modern digital communication systems.We often get encoded data by using different polynomials having same constraint lengths (K)."      # Short description of what your project does
+  how_it_works: "We have two polynomials of 4th order and a shift register of 5 bits. we take input data of a single bit and put it in shift register on each clock edge as long as valid data bit is asserted. after this codeword is calculated by taking xor of the and of polynomial and shift register"      # Longer description of how the project works
+  how_to_test:  "apply clk,reset ,data valid and input data and do calculations to see if output is equal to the desired one"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/AsmaMohsin1507/tt02-channel-coding/blob/cccf2f01c80024d59eef60c292b57c8786c9e495/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     6000      # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - data valid
+    - data input
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - encoded data         # a description of what the outputs do
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+

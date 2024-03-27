@@ -1,0 +1,65 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+     - user_module_341164910646919762.v
+  top_module:  "user_module_341164910646919762"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Daniel Estevez"      # Your name
+  discord:      "destevez#8268"       # Your discord handle - make sure to include the # part as well
+  title:        "Fibonacci & Gold Code"      # Project title
+  description:  "This project includes two independent designs: a design that calculates terms of the Fibonacci sequence and displays them in hex one character at a time on a 7-segment display, and a Gold code generator that generates the codes used by CCSDS X-band PN Delta-DOR."      # Short description of what your project does
+  how_it_works: "The Fibonacci calculator uses 56-bit integers, so the terms of the Fibonacci sequence are displayed using 7 hex characters. Since the TinyTapeout PCB only has one 7-segment display, the terms of the Fibonacci sequence are displayed one hex character at a time, in LSB order. The dot of the 7-segment display lights up whenever the LSB is being displayed. On each clock cycle, 4-bits of the next Fibonacci term are calculated using a 4-bit adder, and 4-bits of the current term are displayed in the 7-segment display. The 7-segment display is ANDed with the project clock, so that the digits flash on the display.
+
+The Gold code generator computes a CCSDS X-band PN Delta-DOR Gold code one bit at a time using LFSRs. The output bit is shown on the 7-segment display dot. 6-bits of the second LFSR can be loaded in parallel using 6 project inputs in order to be able to generate different sequences. One of the project inputs is used to select whether the 7-segment display dot is driven by the Fibonacci calculator or by the Gold code generator."      # Longer description of how the project works
+  how_to_test:  "The project can be tested by manually driving the clock using a push button or switch. Just by de-asserting the reset and driving the clock, the digits of the Fibonacci sequence terms should appear on the 7-segment display. The output select input needs to be set to Gold code (high level) in order to test the gold code generator. The load enable input (active-low), as well as the 6 inputs corresponding to the load for the B register can be used to select the sequence to generate. The load value can be set in the 6 load inputs, and then the load enable should be pulsed to perform the load. This can be done with the clock running or stopped, as the load enable is asynchronous. After the load enable is de-asserted, for each clock cycle a new bit of the Gold code sequence should appear in the 7-segment display dot."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "No external hardware is needed"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - none
+
+  inputs:               # a description of what the inputs do
+    - clock
+    - output select (high selects Gold code; low selects Fibonacci LSB marker) & Gold code load value bit 0
+    - Fibonacci reset (active-low; asynchronous) & Gold code load value bit 1
+    - Gold code load enable (active-low; asynchronous)
+    - Gold code load value bit 2
+    - Gold code load value bit 3
+    - Gold code load value bit 4
+    - Gold code load value bit 5
+  outputs:
+    - segment a: Fibonacci hex digit         # a description of what the outputs do
+    - segment b: Fibonacci hex digit
+    - segment c: Fibonacci hex digit
+    - segment d: Fibonacci hex digit
+    - segment e: Fibonacci hex digit
+    - segment f: Fibonacci hex digit
+    - segment g: Fibonacci hex digit
+    - none: Gold code output / Fibonacci LSB digit marker

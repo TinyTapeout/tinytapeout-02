@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0
+  source_files:
+    - beepboop.sv
+  top_module:  "asinghani_beepboop"
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Anish Singhani"      # Your name
+  discord:      ""      # Your discord handle - make sure to include the # part as well
+  title:        "Beep Boop Traffic Light Controller"      # Project title
+  description:  "Sequencer for a traffic light with a walk button, with timings tuned to match the iconic 'beep boop' streetlight formerly installed in front of Carnegie Mellon University"      # Short description of what your project does
+  how_it_works: "Press the walk button and the traffic light will turn red, then the walk signal and 'beep boop' will begin"      # Longer description of how the project works
+  how_to_test:  "See inputs and outputs"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "LEDs, noisemaker, button"      # Describe any external hardware needed
+  language:     "SystemVerilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     100     # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - walk button
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - red
+    - yellow
+    - green
+    - walk
+    - no walk
+    - noisemaker
+    - none
+    - none
+

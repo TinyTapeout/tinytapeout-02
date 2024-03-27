@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:   349952820323025491        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "James R"      # Your name
+  discord:      "jamesr#0350"      # Your discord handle - make sure to include the # part as well
+  title:        "FFT Butterfly in Wokwi"      # Project title
+  description:  "Single FFT butterfly with 2-bit resolution"      # Short description of what your project does
+  how_it_works: "Calculates low-resolution FFT of two 2-bit inputs"      # Longer description of how the project works
+  how_to_test:  "Change the inputs"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "None"      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - xr0.0
+    - xr0.1
+    - xj0.0
+    - xj0.1
+    - xr1.0
+    - xr1.1
+    - xj1.0
+    - xj1.1
+  outputs:
+    - xr0.0
+    - Xr0.1
+    - Xj0.0
+    - Xj0.1
+    - Xr1.0
+    - Xr1.1
+    - Xj1.0
+    - Xj1.1
+

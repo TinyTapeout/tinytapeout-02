@@ -1,0 +1,41 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id: 0
+  source_files:
+    - jar_pi.v
+    - decoder.v
+  top_module:  "jar_pi"
+
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "James Ross"
+  discord:      "jar#1709"
+  title:        "Pi (π) to 1000+ decimal places"
+  description:  "This circuit outputs the first 1024 decimal digits of Pi (π), including the decimal after the three. The repository started out as something else, but after completing the 16x8 SRAM circiut (128 bits), I became curious about just how much information could be packed into the circuit area.  The D flip flops in SRAM aren't particularly dense and the circuit has other functionality beyond information storage.  For this demonstration, I needed something without a logical pattern, something familiar, and something which would exercise all the LEDs in the seven segment display.  The Pi constant was perfect.  After a number of experiments in Verilog, trying the Espresso Heuristic Logic Minimizer tool, the best results ended up being a large boring block of case statements and letting the toolchain figure it out. The information limit I found was 1023*log2(10)+1 ~= 3,400 bits, after which the toolchain struggled.  However, it appears in this case that the layout is limited by metal, not combinatorial logic.  I am interested to hear about better strategies to do something like this with synthesizable Verilog."
+  how_it_works: "There is some combinatorial logic which generates the first 1024 decimal digits and then decodes those digits (and the decimal) to the 7 segment display."
+  how_to_test:  "The clock is used to drive the incremental changes in the display.  The reset pin is used to zero the index."
+  external_hw:  "The seven segment display is used directly."
+  language:     "verilog"
+  doc_link:     "https://github.com/jar/tt02_freespeech/blob/main/README.md"
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "pi.png"
+  inputs:
+    - clk
+    - reset
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  outputs:
+    - segment a
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - decimal LED
+

@@ -1,0 +1,37 @@
+---
+project:
+  wokwi_id:    0
+  source_files:
+    - jleightcap_top.v
+    - top.v
+  top_module: "jleightcap_top"
+
+documentation:
+  author:       "Jack Leightcap"
+  title:        "clash cpu"
+  description:  "tiny register machine written in clash"
+  how_it_works: "poorly"
+  how_to_test:  "encode instructions. tick clock."
+  external_hw:  ""
+  language:     "verilog"
+  doc_link:     ""
+  clock_hz:     1000
+  picture:      ""
+  inputs:
+    - instr 5
+    - instr 4
+    - instr 3
+    - instr 2
+    - instr 1
+    - instr 0
+    - rst
+    - clock
+  outputs:
+    - jump
+    - unused
+    - unused
+    - register 4
+    - register 3
+    - register 2
+    - register 1
+    - register 0

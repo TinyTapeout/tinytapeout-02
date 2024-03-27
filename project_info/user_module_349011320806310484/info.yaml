@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    349011320806310484        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Shaos"      # Your name
+  discord:      "Shaos#3571"      # Your discord handle - make sure to include the # part as well
+  title:        "GOL-Cell"      # Project title
+  description:  "Game of Life Cell"      # Short description of what your project does
+  how_it_works: "Calculate survive/die decision based on number of neighbours and current state"      # Longer description of how the project works
+  how_to_test:  "Change number of neighbours and see"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "8 neighbours and rerouted current state need to go in 2 stages using 5 inputs"      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "wokwi-sch.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset # clean all flip-flops synchronously
+    - half # "0" for 1st half and "1" for 2nd half (last input is always current state)
+    - input 0 or 5
+    - input 1 or 6
+    - input 2 or 7
+    - input 3 or 8
+    - input 4 or 9 # current state (connected from output or independent input for testing)
+  outputs:
+    - segment a  # current state
+    - segment b  # current state
+    - segment c
+    - segment d  # re-routed input 9 (just in case)
+    - segment e
+    - segment f  # current state
+    - segment g  # current state
+    - inverted clock
+

@@ -1,0 +1,73 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - user_module_skylersaleh.v
+  top_module:  "user_module_skylersaleh"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Skyler Saleh"      # Your name
+  discord:      ""      # Your discord handle - make sure to include the # part as well
+  title:        "Hello Generator"      # Project title
+  description:  "Flashes 'H-E-L-L-O' on the 7 segment display"      # Short description of what your project does
+  how_it_works: "
+  An input clock signal is fed into a configureable clock divider which generates a slower clock every 1 to 2^15 cycles (depending on configuration). 
+  The rate of the clock divider is configured using the dipswitches under the equation of output_clock_hz = input_clock_hz/(2^clock_divider_ratio[3:0])
+
+  This slow clock increments a 3 bit counter which is used to index a built in character generator ROM, whose outputs will be used to drive the segment a,b,c,d,e,f,g on the 7 seg display. 
+  The character rom contains bits to light up the segments as 'H-E-L-L-O- - - '
+
+  The outputs of the character rom are anded with (slow_clock|flash_enable) to cause the display to blank between letters when flashing is enabled.
+
+  A debug harness(accessed by setting the debug_mode dip switch to 1) allows the character generator rom to be indexed using dip switch settings, and for the slow clock to be source from dip switches instead of the clock divider. 
+  "      # Longer description of how the project works
+  how_to_test:  "
+    Configure input clock rate as 2048hz on the first input. 
+
+    Set dip_switch[1] to 1
+    Set dip_switch[2] to 1
+    Set dip_switch[3] to 0
+    Set dip_switch[4] to 1
+
+    This will configure the input clock divider to generate a 1Hz slow clock from the 2048hz input clock. 
+
+    Set dip_switch[5] to 0
+    Set dip_switch[6] to 0
+    Set dip_switch[7] to 0
+
+    This will disable the test harness and setup normal operation. 
+
+    Connect a 7 segment display to outputs, and the device should flash 'H-E-L-L-O' followed by 3 letters worth of blank display. 
+
+  "      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "None"      # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     2048       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - "if debug_mode == 0: clock_divider_ratio[0] elif debug_mode == 1: character_rom_index[0]"
+    - "if debug_mode == 0: clock_divider_ratio[1] elif debug_mode == 1: character_rom_index[1]"
+    - "if debug_mode == 0: clock_divider_ratio[2] elif debug_mode == 1: character_rom_index[2]"
+    - "if debug_mode == 0: clock_divider_ratio[3] elif debug_mode == 1: slow_clock_output (used for flash generator)"
+    - "flash enable: 0 = Flash display between each output letter. 1 = Do not flash display."
+    - "must be zero: 0 = Prints 'H-E-L-L-O' 1 = Implementation defined behavior"
+    - "debug_mode: 0 = normal operation, 1 = debug mode"
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - segment decimal
+

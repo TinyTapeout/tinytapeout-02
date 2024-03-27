@@ -1,0 +1,48 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - freq_counter.v
+    - shift_reg.v
+    - moving_avg.v
+    - decoder.v
+  top_module:  "aramsey118_freq_counter"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  author:       "Andrew Ramsey"      # Your name
+  discord:      "andrewr#2834"      # Your discord handle
+  title:        "Frequency Counter"      # Project title
+  description:  "Estimates the frequency of an input signal"      # Short description of what your project does
+  how_it_works: "'Diffs' (XORs) the previous input with the current one to detect any edges (rising or falling). The edges are then fed into a windowed sum (think moving average, but without the division step). The summation is then converted into a value from 0-9 based on how close to the maximum frequency it is, where 0 is [0, 10)%, 1 is [10, 20)%, etc. which is displayed on the seven segment."      # Longer description of how the project works
+  how_to_test:  "Input a clock into the clock pin, toggle reset, and verify that the seven segment reads 0. Then apply a test signal and check that the seven segment displays the expected relationship between the clock and test signals. The actual frequency of the clock doesn't matter as long as timing constraints of the chip are met. 1000 Hz makes for convenient math and is a good starting point. If needed, the design will loop the input signal back to the output for a quick sanity check."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Clock and test signal generator"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - signal
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - signal
+

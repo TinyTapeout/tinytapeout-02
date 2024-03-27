@@ -1,0 +1,80 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - cpu.v
+  top_module:  "moonbase_cpu_4bit"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Paul Campell"      # Your name
+  discord:      "Taniwha"      # Your discord handle
+  title:        "4 bit CPU"      # Project title
+  description:  "simple cpu"      # Short description of what your project does
+  how_it_works: "
+It has a 4-bit accumulator, a 7-bit PC, 2 7-bit index registers and a carry bit.
+
+The main limitations are the 6/8-bit bus - it's designed to run with an external SRAM and a 7-bit address latch, code is loaded externally.
+
+There are 25 instructions. each 2 or 3 nibbles:
+
+- 0 V:	 add a, V(x/y)	- sets C
+- 1 V: 	 sub a, V(x/y)	- sets C
+- 2 V:	 or a, V(x/y)
+- 3 V:	 and a, V(x/y)
+- 4 V:	 xor a, V(x/y)
+- 5 V:	 mov a, V(x/y)
+- 6 V:	 movd a, V(x/y)
+- 7 0:	 swap x, y
+- 7 1:   add a, c
+- 7 2:   mov x.l, a
+- 7 3:   ret
+- 7 4:   add y, a
+- 7 5:   add x, a
+- 7 6:   add y, #1
+- 7 6:   add x, #1
+- 8 V:	 mov a, #V
+- 9 V:	 add a, #V 
+- a V:	 movd V(x/y), a
+- b V: 	 mov  V(x/y), a
+- c H L: mov x, #hl
+- d H L: jne a/c, hl	if H[3] the test c otherwise test a
+- e H L: jeq a/c, hl	if H[3] the test c otherwise test a
+- f H L: jmp/call hl    if H[3] call else jmp
+
+Memory is 128/256 (128 unified or 128xcode+128xdata) 4-bit nibbles, references are a 3 bit (8 nibble) offset from the X or Y index registers - the general idea is that the Y register points to an 8 register scratch pad block (a bit like an 8051) but can also be repurposed for copies when required. There is an on-chip SRAM block for data access only (addressed with the MSB of the data address) - mostly just to soak up any additional gates.
+
+There is also a 4-deep hardware call stack.
+
+"      # Longer description of how the project works
+  how_to_test:  "needs a 7-bit external address latch and SRAM"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "sram, latch"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      " "      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - ram_data0  # data in from RAM
+    - ram_data1
+    - ram_data2
+    - ram_data3
+    - io_data0   # IO in
+    - io_data1
+  outputs:
+    - data_out_0     # data bus
+    - data_out_1
+    - data_out_2
+    - data_out_3
+    - write_data_n   # write strobe* for external data
+    - write_ram_n    # write strobe* for sram (hook this and strobe to a MWS5101AEL3)
+    - a              # address upper bit
+    - strobe         # when asserted address latch is loaded from the next 7 bits
+

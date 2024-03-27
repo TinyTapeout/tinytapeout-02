@@ -1,0 +1,48 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - rotary_encoder.v
+    - decoder.v
+  top_module:  "rotary_encoder"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Wim Dams"      # Your name
+  discord:      "wda#2504"      # Your discord handle
+  title:        "Rotary encoder"      # Project title
+  description:  "Reads in a (incremental) rotary encoder and shows the result on the seven-segment display"      # Short description of what your project does
+  how_it_works: "The rotary pins are sampled every clock cycle. 
+  If a rising edge is detected on pin A, the 4 bit counter will be incremented/decremented depending on pin B.
+  The counter is put on the seven segment display and a debounce time is started (125 clk cycles) "      # Longer description of how the project works
+  how_to_test:  "After reset, turn the rotary encoder and the counter should increment/decrement as you turn"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Rotary encoder connected to pin A and pin B"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     10000       # Clock frequency in Hz (if required)
+  picture:      "doc/rotary_encoder.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - Rotary encoder pin A (sometimes marked as CLK)
+    - Rotary encoder pin B (sometimes marked as DT)
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - none
+

@@ -1,0 +1,58 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - mccoy.v
+    - add1.v
+    - alu.v
+    - branch.v
+    - decoder.v
+    - iSign.v
+    - mux2.v
+    - mux3.v
+    - mux4.v
+    - notx8.v
+    - pc.v
+    - register.v
+    - x8.v
+
+  top_module:  "aidan_McCoy"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Aidan Good"      # Your name
+  discord:      "Aidan G"      # Your discord handle
+  title:        "The McCoy 8-bit Microprocessor"      # Project title
+  description:  "Custom RISC-V inspired microprocessor capable of simple arithmatic, branching, and jumps through a custom ISA."      # Short description of what your project does
+  how_it_works: "This chip contains an opcode decoder, 8-bit ALU, 7 general purpose and 3 special purpose 6-bit registers, branch target selector, and other supporting structures all connected together to make a 1-stage microprocessor"      # Longer description of how the project works
+  how_to_test:  "To put the processor in a valid state, hold the reset pin high for one clock cycle. Instructions can begin to be fed into the processor at the beginning of the next cycle when reset is set low. When the clock signal is high, the PC will be output. When the clock signal is low, the x8 register will be output. There are example programs in the testbench folder and a more thourough explaination in the project readme."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Any source that allows for 16 GPIO pins. 8 to set the input pins, 8 to read the output pins."      # Describe any external hardware needed
+  language:     "Whole thing is written and tested in verilog." # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/cpldcpu/tinytapeout_mcpu5/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:            # Clock frequency in Hz (if required)
+  picture:      "https://github.com/cpldcpu/tinytapeout_mcpu5/blob/main/McCoy_Diagram.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clk
+    - reset
+    - in0
+    - in1
+    - in2
+    - in3
+    - in4
+    - in5
+  outputs:
+    - out0  # a description of what the outputs do
+    - out1
+    - out2
+    - out3
+    - out4
+    - out5
+    - out6
+    - out7
+

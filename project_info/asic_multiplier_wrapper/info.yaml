@@ -1,0 +1,54 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - bit_full_adder.v
+    - n_bit_adder.v
+    - seg7.v
+    - multiplier.v
+    - asic_multiplier.v
+    - asic_multiplier_wrapper.v
+  top_module:  "asic_multiplier_wrapper"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Fernando Dominguez Pousa"
+  discord:      "CuriosoD"
+  title:        "4-bit Multiplier"
+  description:  "4-bit Multiplier based on single bit full adders"
+  how_it_works: "Inputs to the multiplier are provided with the switch. As only eight inputs are available including clock and reset,
+  only three bits remain available for each multiplication factor. Thus, a bit zero is set as the fourth bit. The output product is showed in the 7 segment display.
+  Inputs are registered and a product is calculated. As output is 8-bit number, every 500ms a number appears. First the less significant 4 bits, after 500ms the most significant.
+  When less significant 4-bits are displayed, the led dot including in the display is powered on."
+  how_to_test:  "HDL code is tested using Makefile and cocotb. 4 set of tests are included: the single bit adder, the 4-bit adder, the 4-bit multiplier and the top design.
+                 In real hardware, the three less significant bits can create a number times the number created with the next three bits. Reset is asserted with the seventh bit of the switch."
+  external_hw:  "Clock divider to 2500 Hz. Seven segment display with dot led. 8-bit DIP Switch"
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     2500       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - i_factor_a[0]
+    - i_factor_a[1]
+    - i_factor_a[2]
+    - i_factor_b[3]
+    - i_factor_b[4]
+    - i_factor_b[5]
+  outputs:
+    - segment_1 (o_segments[0])
+    - segment_2 (o_segments[1])
+    - segment_3 (o_segments[2])
+    - segment_4 (o_segments[3])
+    - segment_5 (o_segments[4])
+    - segment_6 (o_segments[5])
+    - segment_7 (o_segments[6])
+    - segment_dot (o_lsb_digit)
+

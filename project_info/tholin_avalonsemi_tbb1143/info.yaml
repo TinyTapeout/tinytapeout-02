@@ -1,0 +1,58 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - toplevel/logisimTopLevelShell.v
+    - circuit/main.v
+    - circuit/tone_generator.v
+    - circuit/tone_generator_2.v
+    - circuit/triangle_wave_generator.v
+    - gates/AND_GATE.v
+    - gates/AND_GATE_BUS.v
+    - gates/OR_GATE.v
+    - gates/XNOR_GATE_ONEHOT.v
+    - gates/XOR_GATE_ONEHOT.v
+    - memory/D_FLIPFLOP.v
+    - memory/REGISTER_FLIP_FLOP.v
+    - plexers/Demultiplexer_16.v
+    - arith/Adder.v
+  top_module:  "tholin_avalonsemi_tbb1143"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  discord:      "Tholin#7559"
+  author:       "Tholin"      # Your name
+  title:        "Avalon Semiconductors 'TBB1143' Programmable Sound Generator"      # Project title
+  description:  "Sound generator with two square-wave voices, one sawtooth voice and one noise channel. Can also be used as a general-purpose frequency generator."      # Short description of what your project does
+  how_it_works: "All tone generators simply take the input clock frequency, multiplied by 256 and divide it by 16 times the generator's divisor setting. It does this by using a ring oscillator to generate a faster internal clock to be able to generate a wider range of tones. Of course, the outputs are stil only updated as fast as the scan chain allows. The output is a 6-bit digital sample, but can easily be converted to an analog signal using a resistor chain. Also uses the leftover output pins as general-purpose outputs."      # Longer description of how the project works
+  how_to_test:  "It is possible to use the DIP switches to program the generator according to the documentation. Writing 1101 into address 1, 1010 into address 2, 0000 into address 3 and finally 0001 into address 15 will cause a ~440Hz tone to appear on the output."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Lots of resistors or some other DAC, as well as a microprocessor or microcontroller to program the 1143."      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/AvalonSemiconductors/tt2-avalonsemi-TBB1143/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     6000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - CLK
+    - RST
+    - D0
+    - D1
+    - D2
+    - D3
+    - A0
+    - WRT
+  outputs:
+    - SOUT0         # a description of what the outputs do
+    - SOUT1
+    - T0
+    - T1
+    - T2
+    - T3
+    - LED0
+    - LED1
+

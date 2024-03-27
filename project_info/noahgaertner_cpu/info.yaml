@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - cpu.sv
+  top_module:  "noahgaertner_cpu"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Noah Gaertner"      # Your name
+  discord:      "Neptun0-#1146"      # Your discord handle
+  title:        "Basic 4 bit cpu "      # Project title
+  description:  "4-bit CPU that does add, subtract, multiply, left and right shifts, conditional jump based on external signal, logical and bitwise AND and OR, equality and inequality checking, bitwise inversion, and logical NOT"      # Short description of what your project does
+  how_it_works: "Implements a highly reduced ISA that fits on the limited allowed space, and uses a 4-bit bus to get the program and data values in and out of the chip, in addition to a two bit bus to tell it what to do at any given time, as well as a clock and reset signal"      # Longer description of how the project works
+  how_to_test:  "Write a program for the ISA and try to run it! Remember you need to synchronously RESET and then SETRUNPT to the proper value before you try to do anything!"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "test pattern generator, output reader (will probably work with just an arduino for both)"      # Describe any external hardware needed
+  language:     "SystemVerilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/noahgaertner/tt02-verilog-demo/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     50K (or lower, whatever)       # Clock frequency in Hz (if required)
+  picture:      "docs/pic.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - instruction
+    - instruction
+    - data
+    - data
+    - data
+    - data
+  outputs:
+    - program counter        # a description of what the outputs do
+    - program counter
+    - program counter
+    - program counter
+    - output data
+    - output data
+    - output data
+    - output data
+

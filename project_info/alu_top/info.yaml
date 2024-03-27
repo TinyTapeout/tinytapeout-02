@@ -1,0 +1,45 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - alu.v
+    - alu_top.v
+  top_module:  "alu_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  author:       "Ryan Cornateanu"      # Your name
+  discord:      "hackeranium#2982"      # Your discord handle - make sure to include the # part as well
+  title:        "ALU"      # Project title
+  description:  "2bit ALU with a ripple carry adder that has the capability to perform 16 different calculations"      # Short description of what your project does
+  how_it_works: "When 4 bits total are input'd into the ALU, it goes through 3 ripple carries and two finite state machines that adds to a temporary value that gets included in the basic ALU calculations"      # Longer description of how the project works
+  how_to_test:  "TODO"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - A1
+    - A2
+    - B1
+    - B2
+    - ALU_Sel1
+    - ALU_Sel2
+    - ALU_Sel3
+    - ALU_Sel4
+  outputs:
+    - ALU_Out1        # a description of what the outputs do
+    - ALU_Out2
+    - ALU_Out3
+    - ALU_Out4
+    - ALU_Out5
+    - ALU_Out6
+    - ALU_Out7
+    - CarryOut

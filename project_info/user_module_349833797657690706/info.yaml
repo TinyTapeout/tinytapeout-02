@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    349833797657690706        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Chris Burton"      # Your name
+  discord:      "burtyb#2164"      # Your discord handle - make sure to include the # part as well
+  title:        "CRC-16 and Parity calculator"      # Project title
+  description:  "CRC-16/XModem and Even Parity calculator based on Ben Eater error detection videos."      # Short description of what your project does
+  how_it_works: "Two banks of CRC calculators (A and B) each with inputs for the shift register data and clock, active low reset (when high toggle shiftClk to reset) and read back mode which disables the feedback XOR to allow reading data back out."      # Longer description of how the project works
+  how_to_test:  "Connect Pico as shown in Wokwi and run test code to send a string, read back calculated CRC/parity and compare."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Can be used with any microcontroller, or by toggling switches."      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - nRst_A
+    - shiftData_A
+    - shiftClk_A
+    - nRead_A
+    - nRst_B
+    - shiftData_B
+    - shiftClk_B
+    - nRead_B
+  outputs:
+    - crcOutput_A
+    - parity_A
+    - none
+    - none
+    - crcOutput_B
+    - parity_B
+    - none
+    - none
+

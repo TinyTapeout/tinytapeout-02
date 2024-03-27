@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    341423712597181012        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Steven Bos"     
+  discord:      "steveb#6973"     
+  title:        "Scalable synchronous 4-bit tri-directional loadable counter"      
+  description:  "This chip offers a scalable n-bit counter design that can be used as a program counter by setting the next address (eg. for a JMP instruction). It can work in 3 directions: counting up, down and pause." 
+  how_it_works: "See the full documentation, youtube movie and image. Each 1-bit counter has a flip-flop with count logic component reacting synchronously to the rising edge clock pulse and a count logic component that computes and setup the behavior for the next rising edge using async propagation when the level is low."
+  how_to_test:  "The count state is randomly initialized. Typically the first action is to reset the state to zero by setting the load switch and have one clock pulse. The second action is setting the direction by enabling count and setting countDown to true or false (and disable load). The counter overflows to all 0 when all 1 is reached and count up is set."     
+  external_hw:  "no external hardware needed"
+  language:     "mixed radix circuit synthesis (MRCS), wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/aiunderstand/tt02-4bit-tristate-loadable-counter/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "syncbintristateloadablecounter.png"
+  inputs:       # a description of what the inputs do from pin 0 to 7
+    - clock
+    - count     (0 = disable/countPause, 1 = enable) 
+    - load      (0 = count mode, 1 = load mode, overwriting any count logic)
+    - countDown (0 = countUp, 1 = countUp)
+    - addr3     (bits[4:7] are used for loadable count state)
+    - addr2
+    - addr1
+    - addr0
+  outputs:      # a description of what the outputs do from pin 0 to 7
+    - output3 (bits [0:3])
+    - output2
+    - output1
+    - output0
+    - none
+    - none
+    - none
+    - none
+

@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    339688086163161683        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Matt Venn"
+  title:        "M segments"
+  discord:      ""
+  description:  "Setting the correct input will show a 3 on the display"
+  how_it_works: "AND gates connect to the 7 segment display"
+  how_to_test:  "Turning on the first 4 inputs will show a 3 on the display"
+  external_hw:  "None"
+  doc_link:     ""
+  clock_hz:     0
+  language:     "wokwi"
+  picture:      "msegments.png"
+  inputs:               # a description of what the inputs do
+    - input 1
+    - input 2
+    - input 3
+    - input 4
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - dot
+

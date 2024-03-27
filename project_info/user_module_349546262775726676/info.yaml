@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    349546262775726676        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "JinGen Lim"      # Your name
+  discord:      ""      # Your discord handle - make sure to include the # part as well
+  title:        "BCD to 7-Segment Decoder"      # Project title
+  description:  "Converts a BCD input into a 7-segment display output"      # Short description of what your project does
+  how_it_works: "The IC accepts four binary-coded decimal input signals, and generates a corresponding 7-segment output signal"      # Longer description of how the project works
+  how_to_test:  "Connect the segment outputs to a 7-segment display. Configure the input (IN0:0, IN1:2, IN2:4, IN3:8). The input value will be shown on the 7-segment display"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "7-segment display"      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/jglim/tt02-bcd-7seg/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "ds.svg"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - input 1 (BCD 1)
+    - input 2 (BCD 2)
+    - input 3 (BCD 4)
+    - input 4 (BCD 8)
+    - decimal dot (passthrough)
+    - output invert
+    - none
+    - none
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - segment dot
+

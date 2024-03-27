@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0 # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+     - top.v
+  top_module:  "option23ser"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "bitluni"      # Your name
+  discord:      "bitluni#0204"      # Your discord handle - make sure to include the # part as well
+  title:        "Option23 Serial"      # Project title
+  description:  "Character ROM and bitmap shifter for POV displays"      # Short description of what your project does
+  how_it_works: "clock: clocks out character columns or shifts in data. Data is 8bits LSB first. Highest bit is ignored. Data = b01xxxxxx ASCII character no x + 32. data = b00xxxxxx bitmap column. under/over is underline and overline for all bitmap columns"      # Longer description of how the project works
+  how_to_test:  "Shift in some data and set din = 1111111 to clock out characters and graphics"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Pink LEDs"      # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - write
+    - din
+    - under
+    - over
+    - none
+    - none
+  outputs:
+    - led 0         # a description of what the outputs do
+    - led 1
+    - led 2
+    - led 3
+    - led 4
+    - led 5
+    - led 6
+    - led 7
+

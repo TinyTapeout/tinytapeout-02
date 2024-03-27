@@ -1,0 +1,51 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id: 0
+  source_files:
+    - c_tt2_mrcs_test.v
+  top_module:  "c_tt2_mrcs_test"
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Steven Bos"
+  discord:      "steveb#6973"
+  title:        "MRCS Verilog test"
+  description:  "Testing various auto-generated verilog for various sync and async logic gates"
+  how_it_works: |
+    This Project contains various latches and one edge detector. 
+
+    A larger description will follow.
+  how_to_test: |
+    A complete description to test will follow.
+
+    There are 5 components to test.
+  external_hw:  "none"
+  language:     "MRCS"
+  doc_link:     "https://github.com/aiunderstand/tt02-mrcs-verilog-test"
+  clock_hz:     0
+  picture:      ""
+  inputs:
+    - clock
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+

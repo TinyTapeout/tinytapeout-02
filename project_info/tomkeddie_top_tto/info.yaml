@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - tomkeddie_top_tto.v
+    - lcd.v
+  top_module:  "tomkeddie_top_tto"
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Tom Keddie"      # Your name
+  discord:      "TomKeddie#7070"       # Your discord handle
+  title:        "HD74480 Clock"   # Project title
+  description:  "Displays a clock on a attached HD74480"      # Short description of what your project does
+  how_it_works: "See https://github.com/TomKeddie/tinytapeout-2022-2/blob/main/doc/README.md"
+  how_to_test:  "See https://github.com/TomKeddie/tinytapeout-2022-2/blob/main/doc/README.md"
+  external_hw:  "HD74480"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/TomKeddie/tinytapeout-2022-2/blob/main/doc/README.md"
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      "doc/wiring.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - none
+    - none
+    - none
+    - none
+    - hour set
+    - minute set
+  outputs:
+    - lcd D4
+    - lcd D5
+    - lcd D6
+    - lcd D7
+    - lcd EN
+    - lcd RS
+    - none
+    - none
+

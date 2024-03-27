@@ -1,0 +1,49 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - ALU.v
+    - Femto-top.v
+    - reg_file.v
+    - decoder.v
+    - ibuff.v
+  top_module:  "femto_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Majdi Abdul Samad"      # Your name
+  discord:      "mia42#1188"      # Your discord handle - make sure to include the # part as well
+  title:        "Femto 4-bit CPU"      # Project title
+  description:  "Design of a small single-cycle CPU with simple RISC/Accumulator ISA"      # Short description of what your project does
+  how_it_works: "Contains a register file, ALU, and 7 segment decoder. Instructions are sent in from inputs 7 downto 1 (0 reserved for clk), the register source and destination are sent to the register file (synch write/asynch read). Opcode and register read data are sent to the ALU for the operation. The output data could be stored in the ALU, the reigster file, or sent to the 7 segment decoder to power the LED output."      # Longer description of how the project works
+  how_to_test:  "Design was tested with a ModelSim TCL script, provided here and should be compatible with other TCL accepting simulators."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "None"      # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     5       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "../Femto-arch.svg"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - opcode[0]
+    - opcode[1]
+    - opcode[2]
+    - reg_dest[0]
+    - reg_dest[1]
+    - reg_src[0]
+    - reg_src[1]
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - none
+

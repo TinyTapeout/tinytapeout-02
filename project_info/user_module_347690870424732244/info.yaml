@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    347690870424732244        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Jens Schleusner"      # Your name
+  discord:      "Jens S"      # Your discord handle
+  title:        "German Traffic Light State Machine"      # Project title
+  description:  "A state machine to control german traffic lights at an intersection."      # Short description of what your project does
+  how_it_works: "A state machine generates signals for vehicle and pedestrian traffic lights at an intersection of a main street and a side street. A blinking yellow light for the side street is generated in the reset state."      # Longer description of how the project works
+  how_to_test:  "Provide a clock, hook up LEDs and generate a reset signal to reset the intersection to all-red. If your leave the reset signal enabled, a blinking yellow light is shown for the side street."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "An additional inverter is required to generate the pedestrian red signals from the green output. Hookup your own LEDs for the signals."      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - main street red
+    - main street yellow
+    - main street green
+    - main street pedestrian green
+    - side street red
+    - side street yellow
+    - side street green
+    - side street pedestrian green
+

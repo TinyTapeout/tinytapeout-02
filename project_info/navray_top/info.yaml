@@ -1,0 +1,40 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id: 0
+  source_files:  # source files must be in ./src
+    - navray_top.sv
+    - sqrt.sv
+    - seg7.sv
+  top_module:  "navray_top"
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Wallace Everest"
+  discord:      "morningjava#9314"
+  title:        "Non-restoring Square Root"
+  description:  "Square root for use in RMS calculations"
+  how_it_works: "7-bit input, 4-bit output, unsigned"
+  how_to_test:  "Apply unsigned input {0x0..0x7F} to the logic pins"
+  external_hw:  "Result on 7-segment display {0x0..0xB}"
+  language:     "SystemVerilog"
+  doc_link:     "https://github.com/navray/tt02-square-root/blob/main/README.md"
+  clock_hz:     1000
+  picture:      "./pics/gravity_well.png"  # relative path to a picture in your repository
+  inputs:
+    - clk
+    - data(0)
+    - data(1)
+    - data(2)
+    - data(3)
+    - data(4)
+    - data(5)
+    - data(6)
+  outputs:
+    - segment a 
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - segment dp

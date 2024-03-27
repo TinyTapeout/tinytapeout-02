@@ -1,0 +1,46 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - top.sv
+    - async-fifo.sv
+  top_module:  "jonpaolo02_async_fifo"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  author:       "Jon Recta"      # Your name
+  discord:      "jonpaolo02#0802"      # Your discord handle - make sure to include the # part as well
+  title:        "Async FIFO"      # Project title
+  description:  "A very small asynchonous FIFO"      # Short description of what your project does
+  how_it_works: "After reset, run write_clock and assert write_enable with some data on wdata, then while run_clock is running, assert read_enable.
+  If write_enable is asserted while full is high, the data will be rejected. If read_enable is asserted while empty is high, read_data is invalid."      # Longer description of how the project works
+  how_to_test:  "After resetting, test above behavior with different ratios of write_clock and read_cloc."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "None"      # Describe any external hardware needed
+  language:     "SystemVerilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/jonpaolo02/tt02-async-fifo/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     5000    # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - write_clock
+    - read_clock
+    - reset
+    - write_enable
+    - read_enable
+    - wdata[0]
+    - wdata[1]
+    - wdata[2]
+  outputs:
+    - none         # a description of what the outputs do
+    - none
+    - none
+    - fifo_full
+    - fifo_empty
+    - rdata[0]
+    - rdata[1]
+    - rdata[2]

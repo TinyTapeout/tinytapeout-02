@@ -1,0 +1,88 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id: 0 # If using wokwi, set this to your project's ID
+  source_files: # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - potato1.v
+  top_module: "xyz_peppergray_Potato1_top" # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  author: "Pepper Gray (they/them)" # Your name
+  title: "Potato-1 (Brainfuck CPU)" # Project title
+  description: |
+    Potato-1 is part of a Brainfuck CPU. It is only the control logic, i.e. you have to bring your own registers, memory controller and io logic. It is very simple, hence likely very slow: You could probably run your brainfuck code on a potato and it would be equally fast, hence the name. The project picture was generated using DALL·E.
+  # Short description of what your project does
+  how_it_works: |
+    Each rising edge the CU will read in the instruction, zero flag and IO Wait flag and process it. Each falling edge the output pins will be updated. The output pins indiciate which action to take, i.e. which registers to increment/decrement. If Put or Get pin is set, the CU will pause execution until IO Wait is unset. If IO Wait is already unset, the CU will immidiatly execute the next command without waiting.
+
+    Additionaly to the 8 original brainfuck instructions there is a HALT instruction to stop execution and a NOP instructions to do nothing, also there are unused instruction (some of them may be used to extend the instruction set in a later itteration).
+
+    Instructions:
+      0000  >       Increment the data pointer 
+      0001  <       Decrement data pointer
+      0010  +       Increment value
+      0011  -       Decrement value
+      0100  .       Write value
+      0101  ,       Read value
+      0110  [       Start Loop (enter if value is non-zero, else jump to matchin ']')
+      0111  ]       End Loop (leave if value is zero, , else jump to matchin '[')
+      1000  NOP     No Operation
+      1111  HALT    Halt Execution
+
+  # Longer description of how the project works
+  how_to_test: |
+    Reset: 
+      Set Reset_n=0 and wait one clockycycle
+
+    Run: 
+      Set Reset_n=1
+
+    Simple Test:
+      - all input pins zero
+      - clock cycle
+      - Reset_n high
+      - clock cylce
+      --> PC++ high, all outer outputs are low
+     
+    Check test/test.py for small scripts to verify the CU logic
+
+  # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw: |
+    Bidirectional Counter (3x)
+      - program counter
+      - data pointer
+      - value
+    ROM (addressed via programm counter)
+    RAM (addressed via data pointer, all bytes must be zero after reset)
+
+    some TTL gates, e.g. to configure that the value is written to RAM every time it is changed or the data pointer is changed
+
+  # Describe any external hardware needed
+  language: "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link: "https://github.com/peppergrayxyz/Potato-1" # URL to longer form documentation, eg the README.md in your repository
+  clock_hz: 12500 # Clock frequency in Hz (if required)
+  picture: "doc/potato1.png" # relative path to a picture in your repository
+  inputs: # a description of what the inputs do
+    - Clock
+    - Reset_n
+    - IO Wait # wait till Put/Get from/to value is done
+    - Zero Flag # indicate that value is zero
+    - Instruction[0]
+    - Instruction[1]
+    - Instruction[2]
+    - Instruction[3]
+  outputs:
+    - PC++ # increment program counter
+    - PC-- # decrement program counter
+    - X++ # increment data pointer
+    - X-- # decrement data pointer
+    - A++ # increment value
+    - A-- # decrement value
+    - Put # write value
+    - Get # read value

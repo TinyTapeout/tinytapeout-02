@@ -1,0 +1,38 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id: 0
+  source_files:
+    - sram_top.v
+  top_module:  "jar_sram_top"
+
+documentation: 
+  author:       "James Ross"
+  discord:      "jar#1709"
+  title:        "16x8 SRAM & Streaming Signal Generator"
+  description:  "Write to, Read from, and Stream 16 addressable 8-bit words of memory"
+  how_it_works: "*WRITE MODE*: Write Enable (WE) pin high while passing 4-bits low data, 4-bits high data into an 8-bit temporary shift register. After loading data into the temporary shift register, setting Commit high while passing a 4-bit address will place the register value into memory.  Fast memset, such as zeroing memory, can be performed with Commit high while passing a new address per clock cycle.  *READ MODE*: While Output Enable (OE) high, a 4-bit address will place the data from memory into the temporary register returns 8-bit register to output data interface.  *STREAM MODE*: While WE, OE, and Commit high, pass the starting stream index address.  Then, while WE and OE are both high, the output cycles through all values in memory.  This may be used as a streaming signal generator."
+  how_to_test:  "After reset, you can write values into memory and read back. See the verilator testbench."
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "verilog"
+  doc_link:     "https://github.com/jar/tt02_sram/blob/main/README.md"
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      "16x8sram.png"
+  inputs:
+    - clk
+    - we
+    - oe
+    - commit
+    - addr[0]/high[0]/low[0]
+    - addr[1]/high[1]/low[1]
+    - addr[2]/high[2]/low[2]
+    - addr[3]/high[3]/low[3]
+  outputs:
+    - data[0]
+    - data[1]
+    - data[2]
+    - data[3]
+    - data[4]
+    - data[5]
+    - data[6]
+    - data[7]

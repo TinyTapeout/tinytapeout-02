@@ -1,0 +1,96 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - cpu.v
+  top_module:  "moonbase_cpu_8bit"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Paul Campell"      # Your name
+  discord:      "Taniwha"      # Your discord handle
+  title:        "8 bit CPU"      # Project title
+  description:  "8-bit version of the MoonBase 4-bit CPU"      # Short description of what your project does
+  how_it_works: "
+It has an 8-bit accumulator, a 12-bit PC, 2 13-bit index registers and a carry bit.
+
+The main limitations are the 6/8-bit external bus - it's designed to run with an external SRAM and a 12-bit address latch, code is loaded externally.
+
+There are 33 instructions. each 1, 2 or 3 bytes:
+
+    0v:         add a, v(x/y)   - sets C
+    1v:         sub a, v(x/y)   - sets C
+    2v:         or a, v(x/y)
+    3v:         and a, v(x/y)
+    4v:         xor a, v(x/y)
+    5v:         mov a, v(x/y)
+    6v:         movd a, v(x/y)
+    70:         add a, c
+    71:         inc a
+    72:         swap x, y
+    73:         ret
+    74:         add y, a
+    75:         add x, a
+    76:         add y, #1
+    77:         add x, #1
+    78:         mov a, y
+    79:         mov a, x
+    7a:         mov b, a
+    7b:         swap b, a
+    7c:         mov y, a
+    7d:         mov x, a
+    7e:         clr a
+    7f:         mov a, p
+    8v:         nop
+    9v:         nop
+    av:         movd v(x/y), a
+    bv:         mov  v(x/y), a
+    cv:         nop
+    dv:         nop
+    ev:         nop
+    f0 HL:      mov a, #HL
+    f1 HL:      add a, #HL
+    f2 HL:      mov y, #EEHL
+    f3 HL:      mov x, #EEHL
+    f4 HL:      jne a/c, EEHL     if EE[4] the test c otherwise test a
+    f5 HL:      jeq a/c, EEHL     if EE[4] the test c otherwise test a
+    f6 HL:      jmp/call EEHL
+    f7 HL:      nop
+
+Memory is 4096 8-bit bytes, references are a 3 bit (8 byte) offset from the X or Y index registers - the general idea is that the Y register points to a register scratch pad block (a bit like an 8051) but can also be repurposed for copies when required. There is an on-chip SRAM block for data access only (addressed with the MSB of the data address) - mostly just to soak up any additional gates.
+
+There is also a 3-deep hardware call stack.
+
+Assembler is here: https://github.com/MoonbaseOtago/tt-asm
+"      # Longer description of how the project works
+  how_to_test:  "needs a 7-bit external address latch and SRAM"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "sram, latch"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      " "      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - ram_data0  # data in from RAM
+    - ram_data1
+    - ram_data2
+    - ram_data3
+    - io_data0   # IO in
+    - io_data1
+  outputs:
+    - data_out_0     # data bus
+    - data_out_1
+    - data_out_2
+    - data_out_3
+    - write_data_n   # write strobe* for external data
+    - write_ram_n    # write strobe* for sram (hook this and strobe to a MWS5101AEL3)
+    - a              # address upper bit
+    - strobe         # when asserted address latch is loaded from the next 7 bits
+

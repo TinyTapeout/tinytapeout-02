@@ -1,0 +1,47 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id: 0
+  source_files:
+    - user_module.v
+    - top.v
+  top_module:  "github_com_proppy_tt02_xls_popcount"
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "proppy"      # Your name
+  discord:      "proppy"      # Your discord handle
+  title:        "XLS: bit population count"      # Project title
+  description:  "Count bits set in the input."      # Short description of what your project does
+  how_it_works: "https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetParallel"      # Longer description of how the project works
+  how_to_test:  "Pull up input bits, check that output bits represent the count."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "LEDs and resistors"      # Describe any external hardware neede
+  language:     "XLS" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/proppy/tt02-xls-popcount/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      "popcount.svg"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - bit0
+    - bit1
+    - bit2
+    - bit3
+    - bit4
+    - bit5
+    - bit6
+    - bit7
+  outputs:
+    - count0
+    - count1
+    - count2
+    - count3
+    - count4
+    - count5
+    - count6
+    - count7
+
+  

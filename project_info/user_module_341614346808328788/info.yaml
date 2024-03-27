@@ -1,0 +1,35 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    341614346808328788
+documentation: 
+  author:       "maehw"
+  discord:      "maehw#7519"
+  title:        "Wolf sheep cabbage river crossing puzzle ASIC design"
+  description:  "Play the wolf, goat and cabbage puzzle interactively."
+  how_it_works: "Truth table with the game logic (hidden easter egg). The inputs are the positions of the farmer, wolf, goat and cabbage. The 7-segment display shows the status of the game (won or lost)."
+  how_to_test:  "Slide the input switches, think, have a look at the 7-segment display."
+  external_hw:  "Input switches and 7-segment display"
+  language:     "wokwi"
+  doc_link:     "https://github.com/maehw/tt02-wokwi-wolf-goat-cabbage/blob/main/README.md"
+  clock_hz:     0       # purely combinatorial logic!
+  wokwi_id:     341614346808328788
+  picture:      "wokwi-simulation-io-mapping.png"
+  inputs:
+    - not connected because it is typically used for clocked designs and may be used in the future of this design
+    - input signal F for the position of the farmer
+    - input signal W for the position of the wolf
+    - input signal G for the position of the goat
+    - input signal C for the position of the cabbage
+    - here be dragons or an easter egg
+    - unused
+    - unused
+  outputs:
+    - output signal ~E, i.e. the top and bottom segments light up, when the game is over due to an unattended situation on any river bank side
+    - output signal ~R i.e. the top-right and bottom-right segments light up, to indicate an unattended situation on the right river bank (game over)
+    - output signal ~R i.e. the top-right and bottom-right segments light up, to indicate an unattended situation on the right river bank (game over)
+    - output signal ~E, i.e. the top and bottom segments light up, when the game is over due to an unattended situation on any river bank side
+    - output signal ~L i.e. the top-left and bottom-left segments light up, to indicate an unattended situation on the left river bank (game over)
+    - output signal ~L i.e. the top-left and bottom-left segments light up, to indicate an unattended situation on the left river bank (game over)
+    - here be dragons or an easter egg
+    - output signal A to light up the "dot LED" of the 7 segment display as an indicator that all objects have reached the right bank of the river and the game is won! 🎉🎉🎉

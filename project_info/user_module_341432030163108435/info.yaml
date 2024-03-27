@@ -1,0 +1,47 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    341432030163108435        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Sirawit Lappisatepun"      # Your name
+  discord:      "SL7205#1215"      # Your discord handle - make sure to include the # part as well
+  title:        "Logic-2G97-2G98"      # Project title
+  description:  "Replication of TI's Little Logic 1G97 and 1G98 configurable logic gates."      # Short description of what your project does
+  how_it_works: "This design replicates the circuit inside a TI configurable logic gates 74xx1G97 (and by including an inverted output, it will work as a 74xx1G98 as well). 
+                 Since there are still I/O pins left, I included two of these configurables, and also one 74xx1G79 D Flip-Flop (again, an inverted output means this will also work as a 74xx1G80)."      # Longer description of how the project works
+  how_to_test:  "You could refer to TI's 1G79/1G80/1G97/1G98 datasheet to test the device according to the pinout listed below."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - dff_clock
+    - dff_data
+    - gate1_in0
+    - gate1_in1
+    - gate1_in2
+    - gate2_in0
+    - gate2_in1
+    - gate2_in2
+  outputs:
+    - dff_out
+    - dff_out_bar
+    - gate1_out
+    - gate1_out_bar
+    - gate2_out
+    - gate2_out_bar
+    - none
+    - none
+

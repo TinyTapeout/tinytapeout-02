@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - razhas_top_level.v
+    - pwm_gen.v
+  top_module:  "razhas_top_level"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Hassan Baydoun <hhb16@mail.aub.edu>, Razan Thebian <rat17@mail.aub.edu>: Electrical and Computer Engineering Department, American University of Beirut "      # Your name
+  discord:      "bydn#1103"      # Your discord handle - make sure to include the # part as well
+  title:        "PWM Generator"      # Project title
+  description:  "It is a PWM Generator with selectable duty cycle 0-10-20-..-100% with clock divider built in"      # Short description of what your project does
+  how_it_works: "The design uses an external clock and 4 bits to select the duty cycle. It outputs a PWM signal with 1/10 the frequency of the clock supplied and a duty cycle depending on the 4 selected bits."      # Longer description of how the project works
+  how_to_test:  "Use clock on input 0, reset on input 1, Turn bits of duty cycle select (input 2:5) to choose duty cycle (0000 -> 0%, 0001 -> 10%, 0010 -> 20%,.., 1010 ->100% ) and choose freq0 and freq1 as clock dividers (1x, 1/2x, 1/4x, 1/8x)"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "You can control the intensity of an external LED using the PWM Output"      # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     12500Hz       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - duty0
+    - duty1
+    - duty2
+    - duty3
+    - freq0
+    - freq1
+  outputs:
+    - PWM_Out     # a description of what the outputs do
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+

@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0 # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+     - top.v
+  top_module:  "option22"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "bitluni"      # Your name
+  discord:      "bitluni#0204"      # Your discord handle - make sure to include the # part as well
+  title:        "Option22"      # Project title
+  description:  "Looong shift register. 22x8 bit"      # Short description of what your project does
+  how_it_works: "write=high: Data is shifted-in on clock positive edge. Each 8 clocks a full byte is buffered at the output. It rotatetes all 22 words. Reset only resets internal counter for the bit index."      # Longer description of how the project works
+  how_to_test:  "Keep write high and push 22x8 bits in. Keep clock with write low to recieve the bytes a the output"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Pink LEDs"      # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - write
+    - data
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - led 0         # a description of what the outputs do
+    - led 1
+    - led 2
+    - led 3
+    - led 4
+    - led 5
+    - led 6
+    - led 7
+

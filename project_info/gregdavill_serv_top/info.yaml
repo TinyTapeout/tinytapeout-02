@@ -1,0 +1,61 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - rtl/top.v
+    - rtl/scanchain.v
+    - rtl/wb_mux.v
+    - blocks/serv/rtl/serv_top.v
+    - blocks/serv/rtl/serv_mem_if.v
+    - blocks/serv/rtl/serv_rf_if.v
+    - blocks/serv/rtl/serv_alu.v
+    - blocks/serv/rtl/serv_ctrl.v
+    - blocks/serv/rtl/serv_bufreg2.v
+    - blocks/serv/rtl/serv_bufreg.v
+    - blocks/serv/rtl/serv_immdec.v
+    - blocks/serv/rtl/serv_decode.v
+    - blocks/serv/rtl/serv_state.v
+    - blocks/serv/rtl/serv_csr.v
+    - blocks/serv/servant/servant_arbiter.v
+    - blocks/serv/servant/servant_mux.v
+    - blocks/serv/servant/servant_gpio.v
+  top_module:  "gregdavill_serv_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Greg Davill"      # Your name
+  discord:      "Greg#9468"      # Your discord handle - make sure to include the # part as well
+  title:        "serv - Serial RISCV CPU"      # Project title
+  description:  "An award winning RISCV CPU!"      # Short description of what your project does
+  how_it_works: "This project contains a 96bit serial scanchain, and the core of the serv CPU. Signals present on the scanchain are a wishobne bus and the native registerfile interface. As there is not enough room inside the TinyTapeout project area to fit RAM/registerfiles these have to be implemented externally. In theory just a bit of custom code running on caravel will be enough to get the serv core running."      # Longer description of how the project works
+  how_to_test:  "tbd"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "tbd"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/olofk/serv/tree/main"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "tbd"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - none
+

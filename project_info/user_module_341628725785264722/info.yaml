@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - user_module_341628725785264722.v
+  top_module:  "user_module_341628725785264722"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Mikhail Svarichevsky"      # Your name
+  discord:      "ZeptoBars#7360"      # Your discord handle
+  title:        "MicroASIC VI"      # Project title
+  description:  "Free-running oscillators to verify simulation vs reality + TRNG"      # Short description of what your project does
+  how_it_works: "Combinational loops with dividers to bring output frequency to <50kHz range"      # Longer description of how the project works
+  how_to_test:  "Select oscillator (pins 4-6) and mesaure frequency on one of output pins. Observe true random numbers at pin 7."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "You might benefit from frequency counter than can do averaging across extended period of time. "      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock in (for debugging)
+    - reset
+    - shift register clk
+    - shift register data
+    - clock source id_0
+    - clock source id_1
+    - clock source id_2
+    - unused  
+  outputs:
+    - clock divided by 2^10
+    - clock divided by 2^14
+    - clock divided by 2^18
+    - clock divided by 2^22
+    - clock divided by 2^26
+    - clock divided by 2^30
+    - clock divided by 2^32
+    - Bit 11 of shift register (to ensure it's not optimized away)
+

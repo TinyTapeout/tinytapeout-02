@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - lcd.v
+    - toplevel.v
+  top_module:  "tt2_tholin_namebadge"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  discord: "Tholin#7559"
+  author:       "Tholin"      # Your name
+  title:        "TinyTapeout 2 LCD Nametag"      # Project title
+  description:  "Echoes out a predefined text onto a 20x4 character LCD."      # Short description of what your project does
+  how_it_works: "Mostly just contains a ROM holding the text to be printed, and some logic to print the reset sequence and cursor position changes."      # Longer description of how the project works
+  how_to_test:  "Connect up a character LCD according to the pinout, set the clock and hit reset. Run using an extra slow clock, as there is no internal clock divider. It’ll send data to the display as fast as it’s able to. After that, it should initialize the display and start printing stuff. Also, connect LEDs to LED0 and LED1 if you want some blinkenlights."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "A 20x4 character LCD."      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     100       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - CLK
+    - RST
+    - EF0
+    - EF1
+    - EF2
+    - NC
+    - NC
+    - NC
+  outputs:
+    - RS         # a description of what the outputs do
+    - E
+    - D4
+    - D5
+    - D6
+    - D7
+    - LED0
+    - LED1
+

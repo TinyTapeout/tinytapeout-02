@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    347144898258928211        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Tiny Tapeout 02 (J. Rosenthal)"      # Your name
+  discord:      "jamesr#0350"      # Your discord handle - make sure to include the # part as well
+  title:        "Customizable UART String"      # Project title
+  description:  "This design Supports sending multiple ASCII characters over UART."      # Short description of what your project does
+  how_it_works: "This circuit implements five shift registers with 21 bits: seven idle bits, one start bit, eight data bits, one stop bit, and four more idle bits. The circuit supports transmitting a string of ASCII characters "      # Longer description of how the project works
+  how_to_test:  "Connect an Arduino serial RX pin to the eight output pin (Output[7]). In the Arduino code, set the serial baud rate Serial.begin(<baud rate>); in the *.ino file to 300. Set the PCB clock frequency to 300 Hz as well. Set the slide switch to the clock. Set SW7 to OFF ('Load'). Set SW8 to ON ('Output Enable'). Set SW7 to ON ('TX')."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Arduino, computer with serial monitor connected to the Arduino"      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://wokwi.com/projects/347144898258928211"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     300       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    - Load/TX
+    - Output Enable
+  outputs:
+    - segment a (Output Enable)         # a description of what the outputs do
+    - segment b (Load/TX)
+    - segment c
+    - segment d
+    - segment e
+    - segment f 
+    - segment g
+    - UART Serial Out
+

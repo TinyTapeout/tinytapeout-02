@@ -1,0 +1,53 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0
+  source_files:
+    - simon.v
+  top_module:  "fraserbc_simon"
+
+documentation: 
+  author:       "Fraser Price"
+  discord:      "frsr#5381"
+  title:        "SIMON Cipher"
+  description:  "Simon32/64 Encryption"
+  how_it_works: >
+    Encrypts data by sending it through a feistel network for
+    32 rounds where it is combined with the round subkey and
+    the last round. Data is entered into the core via shift
+    registers.
+
+  how_to_test: >
+    Set shift high and shift data in lsb first, 4 bits at a time.
+    Shift in 96 bits, 32 being data and 64 being the key, with the
+    plaintext being shifted in first. Eg if the plaintext was
+    32'h65656877 and key was 64'h1918111009080100, then
+    96'h191811100908010065656877 would be shifted in. Once
+    bits have been shifted in, bring shift low, wait 32 clock
+    cycles then set it high again. The ciphertext will be shifted
+    out lsb first.
+
+  external_hw:  ""
+  language:     "verilog" 
+  doc_link:     ""
+  clock_hz:     1000
+  picture:      ""
+  inputs:
+    - clock
+    - shift
+    - data_in[0]
+    - data_in[1]
+    - data_in[2]
+    - data_in[3]
+    - none
+    - none
+  outputs:
+    - data_out[0]
+    - data_out[1]
+    - data_out[2]
+    - data_out[3]
+    - segment e
+    - segment f
+    - segment g
+    - none
+

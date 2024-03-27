@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - tomkeddie_top_tto_a.v
+    - uart_tx.v
+  top_module:  "tomkeddie_top_tto_a"
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Tom Keddie"      # Your name
+  discord:      "TomKeddie#7070"       # Your discord handle
+  title:        "Transmit UART"   # Project title
+  description:  "Transmits a async serial string on a pin"      # Short description of what your project does
+  how_it_works: "Sends an async uart message on severals pins"
+  how_to_test:  "Attach a uart receiver to each pins, set the baud rate to 1200 and read the messages"
+  external_hw:  "Serial cable"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""
+  clock_hz:     1200       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - uart_tx_0
+    - uart_tx_1
+    - uart_tx_2
+    - none
+    - none
+    - none
+    - none
+    - none
+

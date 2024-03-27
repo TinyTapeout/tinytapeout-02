@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - s4ga.v
+  top_module:  "s4ga"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Jan Gray"      # Your name
+  discord:      "jangray"      # Your discord handle
+  title:        "S4GA: Super Slow Serial SRAM FPGA"      # Project title
+  description:  "one fracturable 5-LUT that receives FPGA LUT configuration frames, serially evaluates LUT inputs and LUT outputs"      # Short description of what your project does
+  how_it_works: "The design is a single physical LUT into which an external agent pours a series of 92b LUT configuration frames, four bits per cycle. Every 23 clock cycles it evaluates a 5-input LUT. The last N=283 LUT output values are kept on die to be used as LUT inputs of subsequent LUTs. The design also has 2 FPGA input pins and 7 FPGA output pins."      # Longer description of how the project works
+  how_to_test:  "tricky"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "serial SRAM or FLASH"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/grayresearch/tt02-s4ga/blob/main/README.md"
+  clock_hz:     ""     # Clock frequency in Hz (if required)
+  picture:      "doc/S4GA-block-diagram.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clk               # external clock
+    - rst               # +ve sync reset -- assert for >N cycles
+    - si[0]             # LUT configuration lsb
+    - si[1]             # LUT configuration bit
+    - si[2]             # LUT configuration bit
+    - si[3]             # LUT configuration msb
+    - in[0]             # input 0
+    - in[1]             # input 1
+  outputs:
+    - out[0]            # output 0 <= LUT N-I+0
+    - out[1]            # output 1 <= LUT N-I+1
+    - out[2]            # output 2 <= LUT N-I+2
+    - out[3]            # output 3 <= LUT N-I+3
+    - out[4]            # output 4 <= LUT N-I+4
+    - out[5]            # output 5 <= LUT N-I+5
+    - out[6]            # output 6 <= LUT N-I+6
+    - debug             # debug: evaluated LUT input values, LUT output values
+

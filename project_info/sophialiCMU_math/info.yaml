@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - math.sv
+  top_module:  "sophialiCMU_math"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Sophia Li"      # Your name
+  discord:      "Sophia Li#3497"      # Your discord handle
+  title:        "Continious Math"      # Project title
+  description:  "output is a total you can ADD, SUBTRACT, XOR, or LEFT_SHIFT with the input  "      # Short description of what your project does
+  how_it_works: "uses a register and some combinational logic. There is a simple state machine so you must release the button for enable_arithmetic before enabeling it again. 
+                Basically, the same operation won't happen every clock cycle 100k times a second."      # Longer description of how the project works
+  how_to_test:  "Switch 6. after reset, the output should be zero. Hitting enable (Switch 5) will compute the current arithOp (+ = 2'b00, - = 2'b01, ^ = 2'b10, << = 2'b11"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "SystemVerilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - enable
+    - in_val[2]
+    - in_val[1]
+    - in_val[0]
+    - arithOp[1]
+    - arithOp[0]
+  outputs:
+    - LED[7]         # a description of what the outputs do
+    - LED[6]
+    - LED[5]
+    - LED[4]
+    - LED[3]
+    - LED[2]
+    - LED[1]
+    - LED[0]

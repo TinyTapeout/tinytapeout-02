@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - mcpu5plus.v
+  top_module:  "cpldcpu_MCPU5plus"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "cpldcpu"      # Your name
+  discord:      "Azure#5593"   # Your discord handle - make sure to include the # part as well
+  title:        "Zinnia+ (MCPU5+) 8 Bit CPU"      # Project title
+  description:  "A minimal 8 bit CPU"      # Short description of what your project does
+  how_it_works: "The CPU is based on the Harvard Architecture with separate data and program memories. The data memory is completely internal to the CPU. The program memory is external and is accessed through the I/O. All data has to be loaded as constants through machine code instructions.
+
+Two of the input pins are used for clock and reset, the remaining ones are used as program input, allowing for an instruction length of 6 bit. The output is multiplexed between the program counter (when clk is '1') and the content of the main register, the Accumulator. Interpreting the accumulator content allows reading the program output."      # Longer description of how the project works
+  how_to_test:  "Execute the shell script 'run.sh primes' in the src folder. This will invoke the testbench with a rom emulator and execute a small program to compute prime numbers."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "External program memory and bus demultiplexer is required."      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/cpldcpu/tt02-mcpu5plus"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     high       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "https://user-images.githubusercontent.com/4086406/203659032-e13c530f-e562-4d85-aa3f-09143ee01ffc.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset        # high active
+    - inst_in[0]   # Instruction input
+    - inst_in[1]
+    - inst_in[2]
+    - inst_in[3]
+    - inst_in[4]
+    - inst_in[5]
+  outputs:
+    - cpu_out[0]    # Multiplexed address and data bus. Address is valid for clk=1
+    - cpu_out[1]    
+    - cpu_out[2]    
+    - cpu_out[3]    
+    - cpu_out[4]    
+    - cpu_out[5]    
+    - cpu_out[6]    
+    - cpu_out[7]    

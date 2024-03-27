@@ -1,0 +1,54 @@
+---
+project:
+  wokwi_id: 0
+  source_files:
+    - mbikovitsky_top.v
+    - lfsr.v
+    - seven_segment.v
+    - uart.v
+    - ram.v
+    - alu.v
+    - extend_alu.v
+    - cpu.v
+  top_module:  "mbikovitsky_top"
+
+documentation:
+  author:       "Michael Bikovitsky"
+  discord:      ""
+  title:        "5-bit Galois LFSR"
+  description:  "5-bit Galois LFSR with configurable taps and initial state. Outputs a value every second."
+  how_it_works: "https://en.wikipedia.org/wiki/Linear-feedback_shift_register#Galois_LFSRs"
+  how_to_test:  |
+    1. Set the desired taps using the switches
+    2. Assert the reset_taps pin
+    3. Deassert reset_taps
+    4. Set the desired initial state
+    5. Assert reset_lfsr
+    6. Deassert reset_lfsr
+    7. Look at it go!
+       - Values between 0x00-0x0F are output as hex digits.
+       - Values between 0x10-0x1F are output as hex digits with a dot.
+    8. Did you know there is a secret CPU inside?
+  external_hw:  ""
+  language:     "verilog"
+  doc_link:     ""
+  clock_hz:     625
+  picture:      ""
+  inputs:
+    - clock
+    - reset_lfsr
+    - reset_taps
+    - data_in1
+    - data_in2
+    - data_in3
+    - data_in4
+    - data_in5
+  outputs:
+    - segment a
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - segment p

@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    341609034095264340        # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Rakesh Peter"      # Your name
+  discord:      "r4d10n#3258"      # Your discord handle - make sure to include the # part as well
+  title:        "tinytapeout2-HELLo-3orLd-7seg"      # Project title
+  description:  "HELLo-3orLd Runner on 7 segment Display"      # Short description of what your project does
+  how_it_works: "BCD to 7seg Counter is modified to suit the Simplified SoP equation for each segments. See the repo for SoP computation."      # Longer description of how the project works
+  how_to_test:  "All toggle switches in zero position and clock switch on for auto runner. Individual BCD bits can be toggled using corresponding inputs with clock switch off."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/r4d10n/tinytapeout-HELLo-3orLd-7seg/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      "HELLo-3orld-7seg.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - none
+    - dp toggle
+    - BCD bit 3
+    - BCD bit 2
+    - BCD bit 1
+    - BCD bit 0
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - segment dp
+

@@ -1,0 +1,49 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - recepsaid_euclidean_algorithm.v
+    - gcd_top.v
+    - gcd_control.v
+    - gcd_datapath.v
+    - ssd_decoder.v
+  top_module:  "recepsaid_euclidean_algorithm"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Recep Said Dulger"      # Your name
+  discord:      "Recep Said Dulger#4241"      # Your discord handle - make sure to include the # part as well
+  title:        "Optimised Euclidean Algorithm"      # Project title
+  description:  "Finding gcd of 2 4-bit number"      # Short description of what your project does
+  how_it_works: "This circuit finds the gcd (greatest common divisor) of 2 4-bit numbers which are entered by dip switch and it uses the Euclidean algorithm. Result displays by seven segment display. The algorithm has been optimized by designing the control unit and datapath."      # Longer description of how the project works
+  how_to_test:  "Enter 4-bit 1st number by dip switches and set num_okey switch to 1. By doing that 1st number saved in register. Set num_okey switch to 0 and enter 2nd 4-bit number. Set num_okey switch to 0 and after that gcd result will appear in seven segment display."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "None"      # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/RecepSaid/tt02-euclidean-algorithm"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock      #clock in switch-0
+    - number[0]  #4-bit number bit-0
+    - number[1]  #4-bit number bit-1
+    - number[2]  #4-bit number bit-2
+    - number[3]  #4-bit number bit-3
+    - none       #none
+    - rst        #reset
+    - num_okey   #okey signal for 4-bit number
+  outputs:
+    - ssd_out[0]  #seven segment display 
+    - ssd_out[1]  #seven segment display 
+    - ssd_out[2]  #seven segment display 
+    - ssd_out[3]  #seven segment display 
+    - ssd_out[4]  #seven segment display 
+    - ssd_out[5]  #seven segment display 
+    - ssd_out[6]  #seven segment display 
+    - none
+

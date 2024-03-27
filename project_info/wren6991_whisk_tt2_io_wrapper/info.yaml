@@ -1,0 +1,76 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - whisk.v
+  top_module:  "wren6991_whisk_tt2_io_wrapper"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Luke Wren"
+  discord:      "LukeW#3952"
+  title:        "Whisk: 16-bit Serial RISC CPU"
+  description:  "Execute a simple 16-bit RISC-style instruction set from up to 64 kilobytes of external SPI SRAM."
+  how_it_works: |
+    Whisk uses a single SPI interface for instruction fetch, loads and stores
+    on an external SPI SRAM. The SPI serial clock is driven at the same
+    frequency as Whisk's clock input. The program counter, and the six
+    general purpose registers, are all 16 bits in size, so up to 64 kilobytes
+    of memory can be addressed.
+
+    Internally, Whisk is fully serial: registers and the program counter are
+    read and written one bit at a time. This matches the throughput of the
+    SPI memory interface, and leaves more area free for having more/larger
+    general purpose registers as well as leaving room for expansion on future
+    Tiny Tapeouts.
+
+    An optional IO port interface adds up to 16 outputs and 8 inputs, using
+    standard parallel-in-serial-out and serial-in-parallel-out shift
+    registers. Whisk can read or write these ports in a single instruction.
+    These can be used for bitbanging external hardware such as displays, LEDs
+    and buttons.
+  how_to_test:  |
+    You will need a Whisk host board, with memory and the host interface to
+    load it. See the project GitHub page.
+  external_hw:  |
+    - An SPI SRAM with 16-bit addresses and support for sequential mode
+      accesses, e.g. Microchip 23K256T-I
+
+    - A host interface for loading and initialising the SPI SRAM, e.g.
+      Raspberry Pi Pico
+
+    - (optional) Two 74HC595 shift registers for a 16-bit output port
+
+    - (optional) A 74HC166 shift register for an 8-bit input port
+
+    All of these components will be integrated on the Whisk host board, see
+    the project GitHub page.
+  language:     "Verilog"
+  doc_link:     "https://github.com/Wren6991/tt02-whisk-serial-processor/blob/main/README.md"
+  clock_hz:     6000    # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:
+    - clk
+    - rst_n
+    - mem_sdi
+    - ioport_sdi
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - mem_csn
+    - mem_sck
+    - mem_sdo
+    - ioport_sck
+    - ioport_sdo
+    - ioport_latch_i
+    - ioport_latch_o
+    - none
+

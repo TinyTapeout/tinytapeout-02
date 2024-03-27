@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - stevenmburns_toplevel.v
+    - ScanBinary.v
+  top_module:  "stevenmburns_toplevel"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Steve Burns"      # Your name
+  discord:      ""      # Your discord handle - make sure to include the # part as well
+  title:        "Chisel 16-bit GCD with scan in and out"      # Project title
+  description:  "Simple chisel based design based on Knuth's BinaryGDC algorithm using scan chains for I/O."
+  how_it_works: "With the `ld` signal true, the `u_bit` and `v_bit` inputs are used to scan the `n`-bit numbers into the block. Simulataneously, the high-order bit of the `u` register is scanned out, allowing access to the result of the last computation. Upon lowering the `ld` signal, the Euclid iteration starts. When done, the `done` signal is raised."
+  how_to_test:  "Chiseltest enabled tests. Go to `chisel` and run `sbt test`."
+  external_hw:  "None"      # Describe any external hardware needed
+  language:     "Chisel" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - ld
+    - u_bit
+    - v_bit
+    - none
+    - none
+    - none
+  outputs:
+    - z_bit
+    - done
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+

@@ -1,0 +1,45 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - user_module_nickoe.v
+  top_module:  "user_module_nickoe"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  author:       "Nick Østergaard"      # Your name
+  discord:      "nickoe#3016"      # Your discord handle - make sure to include the # part as well
+  title:        "LEDChaser from LiteX test"      # Project title
+  description:  "This is just a small demo of synthezing verilog from LiteX, this does not include any CPU."      # Short description of what your project does
+  how_it_works: "It just implements LEDChaser from the LiteX LED core demo, where io_in[3:7] is duty cycle"      # Longer description of how the project works
+  how_to_test:  "Add LEDs on the outputs in a straight line -- or probe all signals on a scope and check that you get a 'moving' train of pulses."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "LiteX/Migen/Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - pwm_width 0
+    - pwm_width 1
+    - pwm_width 2
+    - pwm_width 3
+    - pwm_width 4
+    - pwm_width 5
+  outputs:
+    - led a         # a description of what the outputs do
+    - led b
+    - led c
+    - led d
+    - led e
+    - led f
+    - led g
+    - led h
+

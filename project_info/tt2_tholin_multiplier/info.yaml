@@ -1,0 +1,48 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - toplevel/logisimTopLevelShell.v
+    - circuit/main.v
+    - arith/Adder.v
+    - gates/AND_GATE_BUS.v
+  top_module:  "tt2_tholin_multiplier"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  discord: "Tholin#7559"
+  author:       "Tholin"      # Your name
+  title:        "TinyTapeout2 4-bit multiplier."      # Project title
+  description:  "Multiplies two 4-bit numbers presented on the input pins and outputs an 8-bit result."      # Short description of what your project does
+  how_it_works: "The multiplier is implemented using purely combinatorial logic. One 6-bit adder and two 8-bit adders as well as a heap of AND gates are the only used components."      # Longer description of how the project works
+  how_to_test:  "Input any two numbers on the input ports, and check if the 8-bit result is correct."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "DIP switches for the inputs, and LEDs on the outputs, to be able to read the binary result."      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     6000       # Clock frequency in Hz (if required)
+  picture:      "circuit.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - A0
+    - A1
+    - A2
+    - A3
+    - B0
+    - B1
+    - B2
+    - B3
+  outputs:
+    - R0         # a description of what the outputs do
+    - R1
+    - R2
+    - R3
+    - R4
+    - R5
+    - R6
+    - R7
+

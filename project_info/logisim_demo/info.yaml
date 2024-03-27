@@ -1,0 +1,51 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - toplevel/logisimTopLevelShell.v
+    - circuit/main.v
+    - gates/NAND_GATE.v
+    - gates/OR_GATE.v
+    - gates/OR_GATE_3_INPUTS.v
+    - gates/OR_GATE_4_INPUTS.v
+    - memory/D_FLIPFLOP.v
+  top_module:  "logisim_demo"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  discord: "Tholin#7559"
+  author:       "Tholin"      # Your name
+  title:        "Logisim demo - LED blinker"      # Project title
+  description:  "Example of how to use Logisim Evolution generated Verilog for TinyTapeout."      # Short description of what your project does
+  how_it_works: "Its a 4-bit ring-shift register with a single '1' cycling through it after reset."      # Longer description of how the project works
+  how_to_test:  "After starting the clock, the 4 outputs will remain off or in a random state until the reset input is activated. Then it should work as described."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "A button for reset, some way to display the output (LEDs)"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     2       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - CLK
+    - RST
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - O_0         # a description of what the outputs do
+    - O_1
+    - O_2
+    - O_3
+    - none
+    - none
+    - none
+    - none
+

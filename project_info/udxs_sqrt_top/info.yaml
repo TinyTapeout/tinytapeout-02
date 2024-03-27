@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - cells.v
+    - sqrt.v
+  top_module:  "udxs_sqrt_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Davit Margarian (UDXS)"      # Your name
+  discord:      "UDXS#2531"      # Your discord handle - make sure to include the # part as well
+  title:        "SQRT1 Square Root Engine"      # Project title
+  description:  "Computes 4.2 fixed-point square root for any 7-bit integer"      # Short description of what your project does
+  how_it_works: "This uses Newton's method to solve sqrt in 3 cycles."      # Longer description of how the project works
+  how_to_test:  "Set a 7-bit input value and toggle clock 3 times. After, the output will be correct, rounded down to the nearest 4th."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Optionally, binary to BCD converter for output"      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - i1
+    - i2
+    - i3
+    - i4
+    - i5
+    - i6
+    - i7
+  outputs:
+    - frac1         # a description of what the outputs do
+    - frac2
+    - whole1
+    - whole2
+    - whole3
+    - whole4
+    - none
+    - none
+

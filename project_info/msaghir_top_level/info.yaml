@@ -1,0 +1,66 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - mod8_counter.v
+    - cw0_pattern.v
+    - ccw0_pattern.v
+    - cw8_pattern.v
+    - ccw8_pattern.v
+    - snake_cw_pattern.v
+    - snake_ccw_pattern.v
+    - vscan_pattern.v
+    - hscan_pattern.v
+    - warn1_pattern.v
+    - warn2_pattern.v
+    - warn3_pattern.v
+    - warn4_pattern.v
+    - warn5_pattern.v
+    - warn6_pattern.v
+    - xscan_pattern.v
+    - rand_pattern.v
+    - fx_gen.v
+    - digit_gen.v
+    - mux2.v
+    - mux16.v
+    - msaghir_top_level.v
+  top_module:  "msaghir_top_level"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Mazen Saghir, ECE Department, American University of Beirut (mazen@aub.edu.lb)"      # Your name
+  discord:      "msaghir#7355"      # Your discord handle - make sure to include the # part as well
+  title:        "SevSegFX"      # Project title
+  description:  "Seven segment display effect generator"      # Short description of what your project does
+  how_it_works: "Generates hexadecimal digits and 16 dynamic patterns on the seven segment display."      # Longer description of how the project works
+  how_to_test:  "Use input[7] to display digits (=0) or effects (=1). Use input[6] to blink displayed digits (=1) or not (=0). Only digits can be blinked. Use inputs [5:2] to select digit or effect pattern to display."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     12500       # Clock frequency in Hz (if required) we are expecting max clock frequency to be ~6khz. Provided on input 0.
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - reset
+    - sel0/d0
+    - sel1/d1
+    - sel2/d2
+    - sel3/d2
+    - blink
+    - fx
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - none
+

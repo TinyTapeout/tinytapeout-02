@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - w5s8.v
+  top_module:  "afoote_w5s8_tt02_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Andrew Foote"      # Your name
+  discord:      ""      # Your discord handle
+  title:        "w5s8: universal turing machine core"      # Project title
+  description:  "State transition logic for a 5-state, 8-symbol universal turing machine"      # Short description of what your project does
+  how_it_works: "Uses combinational logic to implements a (state, symbol) -> (state, symbol, direction) transition function"      # Longer description of how the project works
+  how_to_test:  "Provide state & symbol as inputs, and the module should output the state, symbol, and direction according to the table in test.py."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  ""      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/andars/tt02-universal-turing-machine-w5s8#readme"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do. TODO: describe alternative pinout when mode is 1
+    - clock            # 0
+    - state_in[0]      # 1
+    - state_in[1]      # 2
+    - state_in[2]      # 3
+    - sym_in[0]        # 4
+    - sym_in[1]        # 5
+    - sym_in[2]        # 6
+    - mode             # 7
+  outputs: # a description of what the outputs do
+    - none             # 0
+    - next_direction   # 1
+    - new_sym[0]       # 2
+    - new_sym[1]       # 3
+    - new_sym[2]       # 4
+    - new_state[0]     # 5
+    - new_state[1]     # 6
+    - new_state[2]     # 7
+

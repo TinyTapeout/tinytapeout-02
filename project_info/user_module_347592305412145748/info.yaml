@@ -1,0 +1,45 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:  347592305412145748    # If using wokwi, set this to your project's ID
+#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Seppe Van Dyck"      # Your name
+  title:        "4-spin Ising Chain Simulation"      # Project title
+  description:  "A self-contained physics simulation. This circuit simulates 4 spins of an Ising chain in  an external field." # Short description of what your project does
+  how_it_works: "It runs the Metropolis-Hastings monte-carlo algorithm to simulate 4 Ising spins in a linear chain with two external neighbours and an external field. Every monte-carlo step (10 clock cycles) a random number is created through a 32-bit LFSR and is compared to an 8-bit representations of the acceptance probability of a random spin flip. Using the inputs for external neighbors, N of these circuits can be chained together to create a 4N spin Ising chain."
+  how_to_test:  "The design can be tested by enabling one of the neighbours (input 4 or 5) and leave all other inputs low, the system will evolve into a ground state with every other spin pointing up."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "None"      # Describe any external hardware needed
+  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     20       # Clock frequency in Hz (if required)
+  picture:      "Overview_2.png"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock, clock input.
+    - T0, LSB of the 3-bit temperature representation.
+    - T1, Middle bit of the 3-bit temperature.
+    - T2, MSB of the 3-bit temperature.
+    - N1, Value of neighbour 1 (up/1 or down/0).
+    - N2, Value of neighbour 2 (up/1 or down/0).
+    - J, The sign of the NN coupling constant J.
+    - H, Value of the coupling to the external field H.
+  outputs:
+    - segment a, Spin 0.
+    - segment b, Spin 1.
+    - segment c, Spin 2.
+    - segment d, Spin 3.
+    - segment e, Neighbour 2.
+    - segment f, Neighbour 1.
+    - none
+    - segment h, MC Step Indicator.
+

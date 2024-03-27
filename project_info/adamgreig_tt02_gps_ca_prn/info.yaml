@@ -1,0 +1,45 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id: 0
+  source_files:
+    - gps_ca_prn.v
+  top_module:  "adamgreig_tt02_gps_ca_prn"
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Adam Greig"
+  discord:      "adamgreig#1307"
+  title:        "GPS C/A PRN Generator"
+  description:  "Generate the GPS C/A PRN sequences PRN1 through PRN32"
+  how_it_works: "Two LFSRs are constructed per the GPS ICD, and the first is added to selected taps of the second to produce the selected final PRN sequence."
+  how_to_test:  "With io_in[2:7] set to 2 to select PRN2, reset and then drive the clock; the output sequence on io_out[2] will start with 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1."
+  external_hw:  "None"
+  language:     "Amaranth"
+  doc_link:     "https://github.com/adamgreig/tt02-gps-ca-prn"
+  clock_hz:     1000
+  picture:      ""
+  inputs:
+    - clock
+    - reset
+    - prn[0]
+    - prn[1]
+    - prn[2]
+    - prn[3]
+    - prn[4]
+    - none
+  outputs:
+    - G1
+    - G2
+    - Selected PRN
+    - none
+    - none
+    - none
+    - none
+    - none
+

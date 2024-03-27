@@ -1,0 +1,41 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    347894637149553236        # If using wokwi, set this to your project's ID 
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Tom Schucker"             # Your name
+  discord:      "tdsepsilon"               # Your discord handle
+  title:        "tiny-fir"                 # Project title
+  description:  "4bit 2-stage FIR filter"  # Short description of what your project does
+  how_it_works: "Multiplies the input by the tap coefficient for each stage and outputs the sum of all stages"      # Longer description of how the project works
+  how_to_test:  "Load tap coefficients by setting the value and pulsing 2 times, then repeat for second tap. Change input value each clock to run filter. Select signals change output to debug 00(normal) 01(output of mult 2) 10(tap values in mem) 11(output of mult 1). FIR output discards least significant bit due to output limitations"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Arduino or FPGA"  # Describe any external hardware needed
+  language:     "wokwi"            # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "FIR_README.md"    # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - clock
+    - data0/tap0
+    - data1/tap1
+    - data2/tap2
+    - data3/tap3
+    - select0
+    - select1
+    - loadpulse
+  outputs:
+    - fir1/mult0/tap10         # a description of what the outputs do
+    - fir2/mult1/tap11
+    - fir3/mult2/tap12
+    - fir4/mult3/tap13
+    - fir5/mult4/tap20
+    - fir6/mult5/tap21
+    - fir7/mult6/tap22
+    - fir8/mult7/tap23
+

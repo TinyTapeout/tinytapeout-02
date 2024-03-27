@@ -1,0 +1,46 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - dice.v
+    - toplevel.v
+  top_module:  "tt2_tholin_diceroll"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation:
+  discord:      "Tholin#7559"
+  author:       "Tholin"      # Your name
+  title:        "Dice roll"      # Project title
+  description:  "Will roll a random number from 1 - 6 on the 7-segment display, like a dice."      # Short description of what your project does
+  how_it_works: "Contains a LSFR for random numbers, that constantly updates no matter if the dice is rolling or not. Pressing the ’ROLL’ button will play an animation of random numbers cycling on the display, until settling on a number after a few seconds. The decimal point will light up when its done rolling."      # Longer description of how the project works
+  how_to_test:  "Reset, then pulse ’ROLL’ to roll the dice as many time as you like."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "A 7-segment-display. The one on-board the PCB will work."      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     6000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - CLK
+    - RST
+    - ROLL
+    - NC
+    - NC
+    - NC
+    - NC
+    - NC
+  outputs:
+    - segment a         # a description of what the outputs do
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - decimal point
+
